@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/work_static_objects/entities/wood_blocking_pulley.mb</source_data>
+    </contributor>
+    <created>2009-11-18T08:42:24Z</created>
+    <modified>2009-11-18T08:42:24Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file4" name="file4">
+      <init_from>file:///E:/lux/redist/entities/special/wood_blocking_pulley/wood_blocking_pulley.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file5" name="file5">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/entities/gameplay/pulley/pulley_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="pulley_mat" name="pulley_mat">
+      <instance_effect url="#pulley_mat-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="pulley_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file4-surface">
+          <surface type="2D">
+            <init_from>file4</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file4-sampler">
+          <sampler2D>
+            <source>file4-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file4-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file5-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <texture texture="file4-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pCubeShape1" name="pCubeShape1">
+      <mesh>
+        <source id="pCubeShape1-positions" name="position">
+          <float_array id="pCubeShape1-positions-array" count="60">-0.046693 -0.035445 0.444177 -0.035895 -0.046234 0.444158 -0.036348 -0.035445 0.465736 0.035895 -0.046234 0.444158 0.046693 -0.035445 0.444177 0.036348 -0.035445 0.465736 -0.035901 0.046235 0.444463 -0.046693 0.035267 0.444177 -0.036348 0.037251 0.465736 0.046693 0.035267 0.444177 0.035901 0.046235 0.444463 0.036348 0.037251 0.465736 -0.016969 -0.037604 -0.465736 -0.028202 -0.037604 -0.453892 -0.017399 -0.030042 -0.454178 0.028202 -0.037604 -0.453892 0.016969 -0.037604 -0.465736 0.017399 -0.030042 -0.454178 -0.017405 -0.046234 -0.453874 0.017405 -0.046234 -0.453874</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape1-positions-array" count="20" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCubeShape1-normals" name="normal">
+          <float_array id="pCubeShape1-normals-array" count="60">-0.898043 -0.391976 0.199682 -0.366739 -0.906979 0.207101 -0.502787 -0.500861 0.704517 0.366739 -0.906979 0.207101 0.898043 -0.391976 0.199682 0.502787 -0.500861 0.704517 -0.368079 0.919687 0.136727 -0.901959 0.397628 0.168409 -0.517928 0.518447 0.680414 0.901959 0.397628 0.168409 0.368078 0.919687 0.136727 0.517928 0.518447 0.680415 -0.441216 0.027893 -0.896967 -0.950168 0.014468 -0.311401 -0.31375 0.893032 -0.322575 0.950168 0.014467 -0.311401 0.441217 0.027892 -0.896967 0.31375 0.893032 -0.322575 -0.333221 -0.891495 -0.30692 0.333221 -0.891495 -0.30692</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape1-normals-array" count="20" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCubeShape1-map1" name="map1">
+          <float_array id="pCubeShape1-map1-array" count="60">0.097392 0.88602 0.036694 0.849692 0.473054 0.047443 0.598236 0.122366 0.090444 0.895909 0.031263 0.860489 0.454234 0.036158 0.017856 0.838439 0.610286 0.104026 0.483523 0.028157 0.616539 0.134436 0.116747 0.896489 0.974334 0.213251 0.879072 0.324862 0.75869 0.205661 0.869357 0.109304 0.989272 0.228043 0.888162 0.330154 0.752669 0.228338 0.856456 0.331107 0.854419 0.094512 0.753309 0.196624 0.736693 0.213252 0.18316 0.959089 0.950884 0.466848 0.17431 0.965232 0.131355 0.907792 0.1253 0.916703 0.195419 0.973042 0.871699 0.346933</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape1-map1-array" count="30" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCubeShape1-vertices">
+          <input semantic="POSITION" source="#pCubeShape1-positions" />
+          <input semantic="NORMAL" source="#pCubeShape1-normals" />
+        </vertices>
+        <triangles material="pulley_matSG" count="36">
+          <input semantic="VERTEX" source="#pCubeShape1-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#pCubeShape1-map1" offset="1" set="0" />
+          <p>3 2 1 3 19 1 18 0 19 1 1 3 5 12 11 13 2 15 11 13 8 14 2 15 7 22 13 11 0 10 15 28 9 29 4 24 10 19 17 23 6 18 17 23 14 26 6 18 1 3 0 10 18 0 0 10 13 11 18 0 2 8 1 3 5 9 1 3 3 2 5 9 2 15 8 14 0 20 0 20 8 14 7 21 3 2 19 1 4 6 4 6 19 1 15 7 5 12 4 16 11 13 4 16 9 17 11 13 6 18 14 26 7 22 7 22 14 26 13 11 8 14 11 13 6 18 6 18 11 13 10 19 10 19 9 29 17 23 9 29 15 28 17 23 14 26 17 23 12 27 12 27 17 23 16 25 18 0 12 4 19 1 12 4 16 5 19 1 0 10 1 3 2 8 3 2 4 6 5 9 6 18 7 22 8 14 9 29 10 19 11 13 12 27 13 11 14 26 15 28 16 25 17 23 18 0 13 11 12 4 15 7 19 1 16 5</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="wood_blocking_pulley">
+      <node id="pCube1" name="pCube1" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#pCubeShape1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="pulley_matSG" target="#pulley_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

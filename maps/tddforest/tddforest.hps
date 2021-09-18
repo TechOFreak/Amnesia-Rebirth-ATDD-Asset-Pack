@@ -1,0 +1,122 @@
+#include "interfaces/Map_Interface.hps"
+#include "base/Inputhandler_Types.hps"
+
+#include "helpers/helper_map.hps"
+#include "helpers/helper_props.hps"
+#include "helpers/helper_effects.hps"
+#include "helpers/helper_audio.hps"
+#include "helpers/helper_imgui.hps"
+#include "helpers/helper_sequences.hps"
+#include "helpers/helper_game.hps"
+#include "helpers/helper_modules.hps"
+#include "helpers/helper_ai.hps"
+#include "helpers/helper_player.hps"
+#include "helpers/helper_effects.hps"
+#include "helpers/helper_effects_custom.hps"
+#include "helpers/helper_agent.hps"
+ 
+class cScrMap : iScrMap
+{
+	void Setup()
+	{
+		GetBase().SetDisplayNameEntry("tddforest");
+	}
+		
+	void PreloadData()
+	{
+	}
+    
+	void OnStart()
+	{
+		if(cLux_ScriptDebugOn())
+		{
+		}
+	}
+    
+    void OnGui(float afTimeStep){
+        Player_SetCrossHairEnabled(false);
+        Player_ShowCrossHairIcons(false);
+    }
+    
+	void OnEnter()
+	{	
+        Effect_Fade_Out(0);
+        PlayerBody_SetActive(true);
+		Game_AutoSave();
+        Seq_WakeUpFromFall("");
+	}
+    
+	void OnLeave()
+	{
+	}
+    
+	void OnPlayerKilled(int alRecentDeaths, const tString&in asSource)
+	{
+	}
+    
+	bool OnDeath(const tString &in asSource)
+	{
+		cLux_AddTodoMessage("DEAD : SOURCE = " + asSource);
+		
+		if (asSource == "SomeReason")
+		{
+			Effect_Fade_Out(1.0f);
+			return true;
+		}
+		return false;
+	}
+    
+	bool OnRespawn(const tString &in asSource)
+	{	
+		return false;
+	}
+    
+	void OnAction(int alAction, bool abPressed) 
+	{
+		if(abPressed==false) return;
+		
+		if(alAction == eAction_Test1)
+		{
+		}
+	}
+    
+	float DrawDebugOutput(cGuiSet @apSet,iFontData @apFont,float afY)
+	{
+		return afY;
+	}
+    
+    cSequenceStatesData mSeq_WakeUpFromFall;
+    
+    void Seq_WakeUpFromFall(const tString &in asTimer){
+        Sequence_Begin("Seq_WakeUpFromFall", mSeq_WakeUpFromFall);
+        cVector3f landPos = cVector3f(2, .1, -1.75);
+
+        Sequence_Wait(3);
+        if(Sequence_DoStepAndWait(7)){
+            Effect_Fade_In(3);
+            Effect_ImageTrail_Start(3,0,8,1);
+            Sound_CreateAtEntity("Sound_PlayerHurt","player/vocalisations/hurt/player_death_wake", "player");
+            PlayerBody_PlayCutsceneAnimation("get_up_after_fall_from_plankbridge", false, 0, "OnEndOfAnim_GetUpFromFall", 1.0, 0, true, landPos, 3.2, false, false);
+            Entity_SetActive("grunt", true);
+            Entity_SetActive("brute", true);
+            Entity_SetActive("suitor", true);
+            Entity_SetActive("ghoul", true);
+        }
+        if(Sequence_DoStepAndWait(13)){
+            Sound_CreateAtEntity("Sound_PlayerHurt2","player/vocalisations/hurt/player_pain_big", "player");
+        }
+        
+        Sequence_End();
+    }
+    
+    void OnEndOfAnim_GetUpFromFall(const tString &in asAnim){
+        Sound_CreateAtEntity("Sound_PlayerHorror","player/emotes/horror_whisper", "player");
+        Map_AddTimer("Timer_DelayGhoul", 0.f, "OnTimer_DelayGhoul");
+    }
+    
+    void OnTimer_DelayGhoul(const tString &in asTimer){
+        Ghoul_SetInstantKill("ghoul", true);
+        Agent_SetSensesActive("ghoul", true);
+    }
+ 
+}

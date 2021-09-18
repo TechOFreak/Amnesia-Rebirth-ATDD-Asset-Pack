@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-05-03T11:38:08Z</created>
+    <modified>2009-05-03T11:38:08Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/hollow_needle/hollow_needle.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file2" name="file2">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/hollow_needle/hollow_needle_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="hollow_needle_material" name="hollow_needle_material">
+      <instance_effect url="#hollow_needle_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="hollow_needle_material-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file2-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="hollow_needleShape" name="hollow_needleShape">
+      <mesh>
+        <source id="hollow_needleShape-positions" name="position">
+          <float_array id="hollow_needleShape-positions-array" count="228">-0.008138 -0.004545 -0.056618 0 -0.003662 -0.1 -0.006845 -0.008524 -0.056618 0.008138 -0.004545 -0.056618 0.006845 -0.008524 -0.056618 0.013597 -0.002326 -0.020726 0.007407 -0.003551 -0.056618 -0.007407 -0.003551 -0.056618 -0.013597 -0.002326 -0.020726 -0.014314 -0.003481 -0.020894 -0.011841 -0.011093 -0.020894 -0.002614 -0.011598 -0.056618 -0.004523 -0.01641 -0.020894 0.002614 -0.011598 -0.056618 0.004523 -0.01641 -0.020894 0.011841 -0.011093 -0.020894 0.014314 -0.003481 -0.020894 0.012996 0.006082 0.015129 0.004964 0.011918 0.015129 0.005743 0.018638 0.09866 0.015036 0.011886 0.09866 -0.004964 0.011918 0.015129 -0.005743 0.018638 0.09866 -0.012996 0.006082 0.015129 -0.015036 0.011886 0.09866 -0.016064 -0.00336 0.015129 -0.018586 0.000961 0.09866 -0.012996 -0.012802 0.015129 -0.015036 -0.009963 0.09866 -0.004964 -0.018638 0.015129 -0.005743 -0.016715 0.09866 0.004964 -0.018638 0.015129 0.005743 -0.016715 0.09866 0.012996 -0.012802 0.015129 0.015036 -0.009963 0.09866 0.016064 -0.00336 0.015129 0.018586 0.000961 0.09866 -0.004541 0.011878 -0.005226 -0.014645 -0.002274 -0.019843 0.004541 0.011878 -0.005226 0.00527 0.017181 0.1 0.013797 0.010985 0.1 -0.00527 0.017181 0.1 -0.013797 0.010985 0.1 -0.017054 0.000961 0.1 -0.013797 -0.009062 0.1 -0.00527 -0.015258 0.1 0.00527 -0.015258 0.1 0.013797 -0.009062 0.1 0.017054 0.000961 0.1 0.012557 0.010085 0.09866 0.004796 0.015723 0.09866 0.007174 0.006579 0.015129 -0.004796 0.015723 0.09866 -0.007174 0.006579 0.015129 -0.012557 0.010085 0.09866 -0.015522 0.000961 0.09866 -0.011608 -0.007066 0.015129 -0.012557 -0.008162 0.09866 -0.004796 -0.0138 0.09866 0 -0.0142 0.015129 0.004796 -0.0138 0.09866 0.012557 -0.008162 0.09866 0.011608 -0.007066 0.015129 0.015522 0.000961 0.09866 0.004275 0.011349 -0.006604 0.008782 0.000705 -0.017594 0.003015 0.008875 -0.009159 -0.007545 -0.000675 -0.019021 -0.008782 0.000705 -0.017594 -0.003015 0.008875 -0.009159 0 0.009658 -0.00835 0.007545 -0.000675 -0.019021 -0.004275 0.011349 -0.006604 0.014661 -0.002274 -0.019848 0 -0.003551 -0.094051</float_array>
+          <technique_common>
+            <accessor source="#hollow_needleShape-positions-array" count="76" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hollow_needleShape-normals" name="normal">
+          <float_array id="hollow_needleShape-normals-array" count="228">-0.955912 0.236497 -0.174074 -0.000001 -0.808195 -0.588915 -0.796874 -0.579198 -0.171821 0.955912 0.236497 -0.174074 0.796873 -0.579199 -0.171821 0.287206 0.786189 -0.547191 0.365301 0.927653 -0.07756 -0.365302 0.927652 -0.07756 -0.288706 0.78661 -0.545797 -0.967617 0.022212 -0.251443 -0.804575 -0.584709 -0.103805 -0.304655 -0.937853 -0.166183 -0.30734 -0.94602 -0.102902 0.304656 -0.937853 -0.166183 0.30734 -0.94602 -0.102902 0.804574 -0.584709 -0.103805 0.967171 0.021279 -0.253236 0.795922 0.6026 -0.058156 0.308772 0.95013 -0.043729 0.28547 0.878371 0.383369 0.744384 0.540663 0.391889 -0.308772 0.95013 -0.043729 -0.285471 0.87837 0.383369 -0.795981 0.602507 -0.058303 -0.744383 0.540662 0.39189 -0.999399 0.002359 -0.034578 -0.914048 -0.000081 0.405606 -0.846073 -0.532172 -0.030891 -0.734497 -0.533643 0.419213 -0.30898 -0.95082 -0.021754 -0.279363 -0.859736 0.427564 0.308979 -0.95082 -0.021754 0.279362 -0.859736 0.427563 0.845917 -0.532419 -0.030883 0.734497 -0.533643 0.419212 0.999404 0.002001 -0.034456 0.914049 -0.000081 0.405604 -0.382034 0.901075 -0.205216 -0.843682 0.437579 -0.311008 0.381273 0.901294 -0.20567 0.000001 0.000002 1 0.000002 0.000000 1 0 0.000001 1 0 -0.000000 1 0.000001 -0.000000 1 0.000001 0.000000 1 0 -0.000001 1 0.000001 -0.000002 1 0.000000 -0.000001 1 0.000000 -0.000000 1 -0.721251 -0.524039 0.452968 -0.274498 -0.843879 0.460999 -0.514158 -0.85743 0.021352 0.274499 -0.843879 0.460998 0.514159 -0.857429 0.021352 0.721252 -0.524039 0.452967 0.89803 0.00023 0.439934 0.951921 0.293417 0.088052 0.723404 0.54062 0.429438 0.268442 0.866039 0.421801 0.000000 0.987195 0.159518 -0.268441 0.866039 0.421802 -0.723403 0.54062 0.429439 -0.951921 0.293416 0.088052 -0.89803 0.000229 0.439934 0.08966 0.796356 -0.598146 -0.563356 0.698343 -0.441529 -0.637748 0.02133 -0.76995 0.167623 0.955374 -0.243235 0.563356 0.698343 -0.441529 0.637747 0.021331 -0.76995 -0.000000 -0.314124 -0.949382 -0.167623 0.955374 -0.243235 -0.090358 0.796501 -0.597848 0.842787 0.437563 -0.313446 -0.000000 0.997655 -0.068444</float_array>
+          <technique_common>
+            <accessor source="#hollow_needleShape-normals-array" count="76" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hollow_needleShape-map1" name="map1">
+          <float_array id="hollow_needleShape-map1-array" count="210">0.441276 0.713799 0.502656 0.90358 0.401901 0.716688 0.604404 0.716885 0.642259 0.72139 0.661906 0.562143 0.590053 0.717366 0.456034 0.714457 0.412948 0.55758 0.396193 0.556348 0.32848 0.562651 0.355935 0.722687 0.252692 0.572107 0.312965 0.731168 0.177534 0.583698 0.685212 0.73021 0.746268 0.570042 0.820481 0.582981 0.679405 0.561233 0.676403 0.395906 0.590292 0.389968 0.598796 0.024787 0.694508 0.030165 0.502915 0.3888 0.50248 0.023627 0.41638 0.392399 0.406313 0.026756 0.337537 0.400091 0.310862 0.033221 0.257288 0.408115 0.215968 0.041288 0.174889 0.416182 0.120608 0.049299 0.090639 0.424146 0.022267 0.05436 0.917431 0.424087 0.833906 0.415556 0.88445 0.047819 0.982662 0.053596 0.754171 0.4056 0.789376 0.038625 0.507529 0.474013 0.398791 0.551672 0.577947 0.475149 0.599517 0.01601 0.695897 0.021255 0.502284 0.014854 0.40528 0.017867 0.309335 0.024137 0.214664 0.032056 0.121108 0.039937 0.028117 0.043621 0.884047 0.03839 0.976963 0.042769 0.790699 0.029472 0.633481 0.958612 0.579672 0.946713 0.813662 0.719802 0.526882 0.933959 0.735098 0.700769 0.478932 0.939232 0.42557 0.951279 0.241059 0.71318 0.37124 0.962534 0.161568 0.730244 0.315875 0.972668 0.260104 0.981753 0.082696 0.74218 0.20408 0.990132 0.799762 0.988392 0.743908 0.979406 0.893537 0.736251 0.972826 0.747582 0.688231 0.969584 0.578913 0.479378 0.616873 0.544857 0.56777 0.493564 0.471027 0.55071 0.460203 0.542113 0.194407 0.641513 0.21358 0.63927 0.933471 0.636727 0.857136 0.647738 0.117677 0.631196 0.1043 0.629067 0.012823 0.63427 0.83764 0.645693 0.506445 0.478144 0.542169 0.488527 0.946641 0.634324 0.677422 0.555928 0.516032 0.49264 0.505794 0.879033 0.604925 0.553066 0.600447 0.007425 0.697791 0.012624 0.792878 0.020711 0.884812 0.029353 0.97228 0.03329 0.033029 0.034188 0.120576 0.030922 0.212603 0.023241 0.307286 0.015417 0.40394 0.009231 0.502029 0.006264</float_array>
+          <technique_common>
+            <accessor source="#hollow_needleShape-map1-array" count="105" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="hollow_needleShape-vertices">
+          <input semantic="POSITION" source="#hollow_needleShape-positions" />
+          <input semantic="NORMAL" source="#hollow_needleShape-normals" />
+        </vertices>
+        <triangles material="blinn1SG" count="152">
+          <input semantic="VERTEX" source="#hollow_needleShape-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#hollow_needleShape-map1" offset="1" set="0" />
+          <p>0 0 1 1 2 2 1 1 3 3 4 4 5 5 6 6 8 8 8 8 6 6 7 7 9 9 0 0 10 10 10 10 0 0 2 2 11 11 12 12 2 2 2 2 12 12 10 10 11 11 13 13 12 12 12 12 13 13 14 14 13 15 4 4 14 17 14 17 4 4 15 16 4 4 3 3 15 16 15 16 3 3 16 18 17 19 18 20 20 22 20 22 18 20 19 21 18 20 21 23 19 21 19 21 21 23 22 24 23 25 24 26 21 23 21 23 24 26 22 24 25 27 26 28 23 25 23 25 26 28 24 26 27 29 28 30 25 27 25 27 28 30 26 28 29 31 30 32 27 29 27 29 30 32 28 30 29 31 31 33 30 32 30 32 31 33 32 34 31 35 33 36 32 38 32 38 33 36 34 37 33 36 35 39 34 37 34 37 35 39 36 40 35 39 17 19 36 40 36 40 17 19 20 22 37 41 38 42 23 25 39 43 37 41 18 20 18 20 37 41 21 23 15 16 16 18 33 36 15 16 33 36 14 17 14 17 33 36 31 35 12 12 14 14 29 31 29 31 14 14 31 33 10 10 12 12 27 29 27 29 12 12 29 31 20 22 19 21 41 45 41 45 19 21 40 44 19 21 22 24 40 44 40 44 22 24 42 46 22 24 24 26 42 46 42 46 24 26 43 47 24 26 26 28 43 47 43 47 26 28 44 48 26 28 28 30 44 48 44 48 28 30 45 49 28 30 30 32 45 49 45 49 30 32 46 50 30 32 32 34 46 50 46 50 32 34 47 51 32 38 34 37 47 53 47 53 34 37 48 52 34 37 36 40 48 52 48 52 36 40 49 54 36 40 20 22 49 54 49 54 20 22 41 45 50 55 51 56 52 57 51 56 53 58 52 57 52 57 53 58 54 59 53 60 55 61 54 62 55 61 56 63 54 62 54 62 56 63 57 64 56 63 58 65 57 64 58 65 59 66 57 64 57 64 59 66 60 67 59 66 61 68 60 67 62 70 63 71 61 69 61 69 63 71 60 72 62 70 64 73 63 71 50 55 52 57 64 73 64 73 52 57 63 71 5 5 66 75 65 74 65 74 66 75 67 76 68 77 8 8 69 78 54 62 70 79 71 80 66 81 63 71 67 82 67 82 63 71 52 57 69 83 57 64 68 84 68 84 57 64 60 67 68 84 60 67 72 85 54 59 71 86 52 57 52 57 71 86 67 82 73 87 65 74 71 88 69 83 70 79 57 64 57 64 70 79 54 62 60 72 63 71 72 89 72 89 63 71 66 81 1 1 4 4 13 15 1 1 13 13 11 11 1 1 11 11 2 2 17 19 39 43 18 20 74 90 17 19 35 39 8 8 73 87 69 78 69 78 73 87 70 91 9 9 27 29 38 42 38 42 27 29 25 27 38 42 25 27 23 25 6 6 75 92 7 7 1 1 0 0 75 92 75 92 0 0 7 7 1 1 75 92 3 3 3 3 75 92 6 6 3 3 6 6 16 18 16 18 6 6 5 5 7 7 0 0 8 8 8 8 0 0 9 9 5 5 74 90 16 18 8 8 9 9 38 42 73 87 71 88 70 91 65 74 67 76 71 88 37 41 73 87 38 42 38 42 73 87 8 8 73 87 37 41 65 74 65 74 37 41 39 43 39 43 74 90 65 74 65 74 74 90 5 5 68 77 72 93 8 8 8 8 72 93 5 5 5 5 72 93 66 75 74 90 39 43 17 19 37 41 23 25 21 23 16 18 74 90 33 36 33 36 74 90 35 39 27 29 9 9 10 10 41 45 40 44 50 95 50 95 40 44 51 94 49 54 41 45 64 96 64 96 41 45 50 95 48 52 49 54 62 97 62 97 49 54 64 96 47 53 48 52 61 98 61 98 48 52 62 97 46 50 47 51 59 100 59 100 47 51 61 99 45 49 46 50 58 101 58 101 46 50 59 100 44 48 45 49 56 102 56 102 45 49 58 101 43 47 44 48 55 103 55 103 44 48 56 102 42 46 43 47 53 104 53 104 43 47 55 103 40 44 42 46 51 94 51 94 42 46 53 104</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="hollow_needle">
+      <node id="hollow_needle" name="hollow_needle" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#hollow_needleShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#hollow_needle_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

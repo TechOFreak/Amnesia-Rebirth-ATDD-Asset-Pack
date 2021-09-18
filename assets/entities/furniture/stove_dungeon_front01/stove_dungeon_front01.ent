@@ -1,0 +1,52 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/furniture/stove_dungeon_front01/stove_dungeon_front01.dae">
+            <SubMesh ID="0" Name="pPlane1" CreStamp="0" ModStamp="0" WorldPos="0 0.805845 0.029964" Rotation="1.5708 0 0" Scale="1 1 1" TriCount="2" Material="" Static="true" />
+            <SubMesh ID="1" Name="coal_pile01" CreStamp="0" ModStamp="0" WorldPos="-0.129574 0 0.736827" Rotation="0 0 0" Scale="1 1 1" TriCount="586" Material="" Static="true" />
+            <SubMesh ID="2" Name="pPlane2" CreStamp="0" ModStamp="0" WorldPos="0 -0.053383 -1.0029" Rotation="0 0 0" Scale="1 1 1" TriCount="2" Material="" Static="true" />
+            <SubMesh ID="3" Name="pPlane3" CreStamp="0" ModStamp="0" WorldPos="-1.77115 -0.051383 0.768249" Rotation="0 1.5708 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="4" Name="pPlane4" CreStamp="0" ModStamp="0" WorldPos="0 0.002 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="5" Name="pPlane5" CreStamp="0" ModStamp="0" WorldPos="0 0.004 1.53649" Rotation="3.14159 -0 3.14159" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="6" Name="stove_dungeon_front01" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="435" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="8" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="1.15891 1 0.740702" Rotation="0 0 0" Scale="0.969645 2 1.53268" RelativeTranslation="1.17254 -0.622171 0.081229" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="9" Name="Shape_3" CreStamp="0" ModStamp="0" WorldPos="-1.18617 1 0.740702" Rotation="0 0 0" Scale="0.969645 2 1.53268" RelativeTranslation="-1.17254 -0.622171 0.081229" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="10" Name="Shape_4" CreStamp="0" ModStamp="0" WorldPos="0 1.65488 0.741" Rotation="0 0 1.5708" Scale="0.369645 2 1.53268" RelativeTranslation="0.0136345 0.0327036 0.081527" RelativeRotation="0 -0 1.5708" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="11" Name="Shape_5" CreStamp="0" ModStamp="0" WorldPos="0 2.09684 0.560471" Rotation="0 0 1.5708" Scale="0.619645 2.67006 1.15432" RelativeTranslation="0.0136345 0.474668 -0.099002" RelativeRotation="0 -0 1.5708" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="12" Name="Shape_6" CreStamp="0" ModStamp="0" WorldPos="0 3.18845 0.492252" Rotation="0 0 1.5708" Scale="1.61964 2.12501 1.1248" RelativeTranslation="0.0136345 1.56628 -0.167221" RelativeRotation="0 -0 1.5708" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="13" Name="Shape_7" CreStamp="0" ModStamp="0" WorldPos="0 0.833162 0.826694" Rotation="0 0 0" Scale="1.499 0.1 1.50098" RelativeTranslation="0.0136345 -0.789009 0.167221" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="14" Name="Shape_8" CreStamp="0" ModStamp="0" WorldPos="0 0.055889 0.826694" Rotation="0 0 0" Scale="1.499 0.1 1.50098" RelativeTranslation="0.0136345 -1.56628 0.167221" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="15" Name="Shape_9" CreStamp="0" ModStamp="0" WorldPos="0.066606 0.187439 0.826694" Rotation="0 0 0" Scale="0.646019 0.15 0.608228" RelativeTranslation="0.0802405 -1.43473 0.167221" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="16" Name="Body" CreStamp="0" ModStamp="0" WorldPos="-0.0136345 1.62217 0.659473" Rotation="0 0 0" Scale="1 1 1" Material="Rock" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="false" BlocksLight="true">
+                <Children>
+                    <Child ID="6" />
+                    <Child ID="5" />
+                    <Child ID="4" />
+                    <Child ID="3" />
+                    <Child ID="2" />
+                    <Child ID="1" />
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="12" />
+                <Shape ID="11" />
+                <Shape ID="8" />
+                <Shape ID="10" />
+                <Shape ID="9" />
+                <Shape ID="13" />
+                <Shape ID="15" />
+                <Shape ID="14" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

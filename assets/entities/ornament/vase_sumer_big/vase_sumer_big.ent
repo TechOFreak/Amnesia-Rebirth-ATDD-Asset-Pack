@@ -1,0 +1,24 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/ornament/vase_sumer_big/vase_sumer_big.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface1" Rotation="0.000000 0.000000 0.000000" Scale="1.300000 1.300000 1.300000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 -0.201248 0.000000" TriCount="456" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.300000 0.300000 0.300000" RelativeTranslation="0.000000 0.052875 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.390000 0.390000 0.390000" ShapeType="Sphere" ShapeTypeID="3" Tag="" Type="10" WorldPos="0.000000 0.679796 0.000822" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.250000 1.220000 0.250000" RelativeTranslation="-0.000282 0.000000 -0.000822" Rotation="0.000000 0.000000 0.000000" Scale="0.325000 1.586000 0.325000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="10" WorldPos="-0.000367 0.611058 -0.000247" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="4" LinearDamping="0.000000" Mass="0.000000" Material="Rock" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.300000 1.300000 1.300000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 0.611058 0.000822">
+                <Shape ID="1" />
+                <Shape ID="2" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

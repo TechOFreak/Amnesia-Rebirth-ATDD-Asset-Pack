@@ -1,0 +1,100 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/desktop/ink_bottle/ink_bottle_broken.dae">
+            <SubMesh ID="0" Name="polySurface12" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="188" Material="" Static="true" />
+            <SubMesh ID="1" Name="polySurface11" CreStamp="0" ModStamp="0" WorldPos="0.071829 0.077797 0" Rotation="0 0 0" Scale="1 1 1" TriCount="30" Material="" Static="true" />
+            <SubMesh ID="2" Name="polySurface13" CreStamp="0" ModStamp="0" WorldPos="-0.042423 0.050125 0" Rotation="0 0 0" Scale="1 1 1" TriCount="24" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="3" Name="BodyShape_1" CreStamp="0" ModStamp="0" WorldPos="-0.007169 0 -0.000964" Rotation="0 0 0" Scale="0.13 0.13 0.13" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="5" Name="BodyShape_1_clone_1" CreStamp="0" ModStamp="0" WorldPos="0.089015 0.174191 0.001404" Rotation="0 0 -1.06743" Scale="0.01 0.188556 0.065301" RelativeTranslation="0 0 0" RelativeRotation="0 -0 -1.06743" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="6" Name="BodyShape_1_clone_1_clone_1" CreStamp="0" ModStamp="0" WorldPos="0.207689 0.206883 0.001404" Rotation="0 0 -1.06743" Scale="0.01 0.1 0.01" RelativeTranslation="0.0660965 0.0472825 0" RelativeRotation="0 -0 -1.06743" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="7" Name="BodyShape_1_clone_1_clone_1_clone_1" CreStamp="0" ModStamp="0" WorldPos="0.138039 0.163976 0.001404" Rotation="0 0 -0.94354" Scale="0.01 0.1 0.01" RelativeTranslation="-0.00355351 0.0043755 0" RelativeRotation="0 -0 -0.94354" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="8" Name="BodyShape_1_clone_1_clone_1_clone_1_clone_1" CreStamp="0" ModStamp="0" WorldPos="0.075496 0.112318 0.001404" Rotation="0 0 -0.798332" Scale="0.01 0.1 0.01" RelativeTranslation="-0.0660965 -0.0472825 0" RelativeRotation="0 -0 -0.798332" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="9" Name="Body_1" CreStamp="0" ModStamp="0" WorldPos="0.141593 0.1596 0.001404" Rotation="0 0 0" Scale="1 1 1" Material="Default Hard" Mass="1" AngularDamping="0.2" LinearDamping="0.2" MaxAngularSpeed="8" MaxLinearSpeed="8" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="false" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="false" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="8" />
+                <Shape ID="7" />
+                <Shape ID="6" />
+            </Body>
+            <Body ID="10" Name="Body_2" CreStamp="0" ModStamp="0" WorldPos="0.089015 0.174191 0.001404" Rotation="0 0 0" Scale="1 1 1" Material="Default Soft" Mass="1" AngularDamping="0.1" LinearDamping="0.8" MaxAngularSpeed="1" MaxLinearSpeed="1" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="false" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="false" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="2" />
+                </Children>
+                <Shape ID="5" />
+            </Body>
+            <Body ID="11" Name="Body_3" CreStamp="0" ModStamp="0" WorldPos="-0.007169 0 -0.000964" Rotation="0 0 0" Scale="1 1 1" Material="Glass" Mass="2" AngularDamping="0.3" LinearDamping="0.3" MaxAngularSpeed="12" MaxLinearSpeed="12" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="false" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="false" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="3" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="100" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="4" />
+        <Var ObjectId="4294967295" Name="InteractOnlyWithMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="ScaryObject_BaseFearRate" Value="0.1" />
+        <Var ObjectId="4294967295" Name="ScaryObject_SurpriseFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="ScaryObject_LookAtFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationDelay" Value="0.2" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationLightLevel" Value="0.1" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationDistance" Value="3.5" />
+        <Var ObjectId="4294967295" Name="ScaryObject_DeactivationDistance" Value="3.5" />
+        <Var ObjectId="4294967295" Name="ScaryObject_InteractFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_BaseFearRate" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Threat_SurpriseFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_LookAtFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_ActivationDelay" Value="0.2" />
+        <Var ObjectId="4294967295" Name="Threat_ActivationLightLevel" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Threat_MaxFearDistance" Value="2.0" />
+        <Var ObjectId="4294967295" Name="Threat_MinFearDistance" Value="6.0" />
+    </UserDefinedVariables>
+</Entity>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///G:/Projects/3d/work/amnesia%20game/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-12-02T12:25:44Z</created>
+    <modified>2009-12-02T12:25:44Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file2" name="file2">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/machine/pipes/pipes.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file3" name="file3">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/machine/pipes/pipes_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file4" name="file4">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/machine/pipes/pipes_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="machine_pipes_material" name="machine_pipes_material">
+      <instance_effect url="#machine_pipes_material-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="machine_pipes_material-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file4-surface">
+          <surface type="2D">
+            <init_from>file4</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file4-sampler">
+          <sampler2D>
+            <source>file4-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file4-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file3-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="thin_straight_miniShape" name="thin_straight_miniShape">
+      <mesh>
+        <source id="thin_straight_miniShape-positions" name="position">
+          <float_array id="thin_straight_miniShape-positions-array" count="168">-0.01 0.106989 -0.147263 -0.01 0.000000 -0.182014 -0.058477 0.000000 -0.182014 -0.058477 0.106989 -0.147263 -0.01 -0.106988 -0.147263 -0.058477 -0.106988 -0.147263 -0.01 -0.173111 -0.056232 -0.058477 -0.173111 -0.056232 -0.01 -0.173111 0.056247 -0.058477 -0.173111 0.056247 -0.01 -0.106988 0.147263 -0.058477 -0.106988 0.147263 -0.01 0.000000 0.182014 -0.058477 0.000000 0.182014 -0.01 0.106989 0.147263 -0.058477 0.106989 0.147263 -0.01 0.173111 0.056247 -0.058477 0.173111 0.056247 -0.01 0.173111 -0.056232 -0.058477 0.173111 -0.056232 -0.441524 0.106989 -0.147263 -0.441524 0.000000 -0.182014 -0.49 0.000000 -0.182014 -0.49 0.106989 -0.147263 -0.441524 -0.106988 -0.147263 -0.49 -0.106988 -0.147263 -0.441524 -0.173111 -0.056232 -0.49 -0.173111 -0.056232 -0.441524 -0.173111 0.056247 -0.49 -0.173111 0.056247 -0.441524 -0.106988 0.147263 -0.49 -0.106988 0.147263 -0.441524 0.000000 0.182014 -0.49 0.000000 0.182014 -0.441524 0.106989 0.147263 -0.49 0.106989 0.147263 -0.441524 0.173111 0.056247 -0.49 0.173111 0.056247 -0.441524 0.173111 -0.056232 -0.49 0.173111 -0.056232 0 0.097319 -0.097312 0 0.000000 -0.137629 0 -0.097319 -0.097312 0 -0.13763 -0.000007 0 -0.097319 0.097321 0 0.000000 0.137634 0 0.097319 0.097321 0 0.137629 -0.000007 -0.5 0.097319 0.097321 -0.5 0.000000 0.137634 -0.5 -0.097319 0.097321 -0.5 -0.13763 -0.000007 -0.5 -0.097319 -0.097312 -0.5 0.000000 -0.137629 -0.5 0.097319 -0.097312 -0.5 0.137629 -0.000007</float_array>
+          <technique_common>
+            <accessor source="#thin_straight_miniShape-positions-array" count="56" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="thin_straight_miniShape-normals" name="normal">
+          <float_array id="thin_straight_miniShape-normals-array" count="264">0 0.58779 -0.809013 0 0.000000 -1 -0.724606 0.000000 -0.689163 -0.724629 0.405069 -0.557523 0 -0.587786 -0.809016 -0.724628 -0.405067 -0.557526 0 -0.951072 -0.308969 -0.465335 -0.841827 -0.273479 0 -0.95106 0.309005 -0.46534 -0.841814 0.27351 0 -0.587755 0.809039 -0.724624 -0.405048 0.557545 0 0.000000 1 -0.724606 0.000000 0.689163 0 0.587759 0.809036 -0.724624 0.405051 0.557542 0 0.951062 0.309001 -0.465339 0.841816 0.273507 0 0.951074 -0.308965 -0.465335 0.841828 -0.273475 1 0 0 1 0 0 1 0 0 1 0 0 0.724629 0.405069 -0.557523 0.724606 0.000000 -0.689163 0 0.000000 -1 0 0.58779 -0.809013 0.724628 -0.405067 -0.557526 0 -0.587786 -0.809016 0.465335 -0.841827 -0.273479 0 -0.951072 -0.308969 0.46534 -0.841814 0.273511 0 -0.95106 0.309005 0.724624 -0.405048 0.557545 0 -0.587755 0.809039 0.724606 0.000000 0.689163 0 0.000000 1 0.724624 0.405051 0.557542 0 0.587759 0.809036 0.465339 0.841816 0.273507 0 0.951062 0.309001 0.465335 0.841828 -0.273475 0 0.951074 -0.308965 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 0.707113 -0.707101 0 0.000003 -1 0 0.000003 -1 0 0.707113 -0.707101 0 -0.707108 -0.707106 0 -0.707108 -0.707106 0 -1 -0.000042 0 -1 -0.000042 0 -0.707123 0.70709 0 -0.707123 0.70709 0 0.000003 1 0 0.000003 1 0 0.707129 0.707085 0 0.707129 0.707085 0 1 -0.000042 0 1 -0.000042 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#thin_straight_miniShape-normals-array" count="88" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="thin_straight_miniShape-map1" name="map1">
+          <float_array id="thin_straight_miniShape-map1-array" count="196">0.938826 0.834814 0.934122 0.820347 0.940356 0.81832 0.94506 0.832787 0.934121 0.816296 0.938819 0.801827 0.945053 0.803852 0.941199 0.79855 0.953503 0.789603 0.957359 0.794905 0.957357 0.78835 0.972569 0.788347 0.972571 0.794902 0.976422 0.789597 0.988732 0.798536 0.98488 0.803841 0.991114 0.801812 0.99582 0.816279 0.989585 0.818307 0.99582 0.820331 0.991124 0.8348 0.984889 0.832776 0.988742 0.838079 0.976437 0.847024 0.972583 0.841721 0.972585 0.848276 0.957373 0.848281 0.957371 0.841725 0.953519 0.84703 0.941208 0.838091 0.983536 0.950417 0.978835 0.964885 0.966528 0.973827 0.951316 0.973827 0.939008 0.964885 0.934307 0.950417 0.939008 0.935949 0.951316 0.927007 0.966528 0.927007 0.978835 0.935949 0.977777 0.902092 0.982472 0.887622 0.988707 0.889646 0.984012 0.904115 0.977765 0.873156 0.983998 0.871127 0.988706 0.885593 0.965454 0.864219 0.969305 0.858914 0.981616 0.867852 0.950241 0.864225 0.95024 0.857668 0.965452 0.857664 0.937937 0.873172 0.934082 0.86787 0.946386 0.858923 0.933243 0.887642 0.927007 0.885619 0.931701 0.871149 0.937949 0.902107 0.931716 0.904136 0.927008 0.88967 0.950261 0.911044 0.946409 0.91635 0.934098 0.907413 0.965473 0.911038 0.965475 0.917594 0.950263 0.9176 0.981632 0.907394 0.969328 0.91634 0.408759 0.957717 0.41346 0.943249 0.425768 0.934307 0.44098 0.934307 0.453288 0.943249 0.457988 0.957717 0.453288 0.972185 0.44098 0.981127 0.425768 0.981127 0.41346 0.972185 0.679107 0.622828 0.679051 0.608584 0.678996 0.59434 0.67894 0.580096 0.678886 0.565848 0.678832 0.551599 0.67928 0.665571 0.679221 0.651323 0.679163 0.637074 0.746835 0.651047 0.746446 0.551347 0.746894 0.665292 0.7465 0.565591 0.746554 0.579835 0.74661 0.594078 0.746665 0.60832 0.746721 0.622563 0.746777 0.636804</float_array>
+          <technique_common>
+            <accessor source="#thin_straight_miniShape-map1-array" count="98" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="thin_straight_miniShape-vertices">
+          <input semantic="POSITION" source="#thin_straight_miniShape-positions"/>
+        </vertices>
+        <triangles material="blinn1SG" count="88">
+          <input semantic="VERTEX" source="#thin_straight_miniShape-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#thin_straight_miniShape-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#thin_straight_miniShape-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 3 3 3 3 3 3 1 1 1 2 2 2 1 1 4 4 4 5 2 2 2 2 2 2 4 4 5 5 5 6 4 4 7 6 6 8 5 5 6 5 5 6 6 6 8 7 7 9 6 6 10 8 8 11 7 7 9 7 7 9 8 8 11 9 9 12 8 8 13 10 10 14 9 9 12 9 9 12 10 10 14 11 11 15 10 10 16 12 12 17 11 11 15 11 11 15 12 12 17 13 13 18 12 12 19 14 14 20 13 13 18 13 13 18 14 14 20 15 15 21 14 14 22 16 16 23 15 15 21 15 15 21 16 16 23 17 17 24 16 16 25 18 18 26 17 17 24 17 17 24 18 18 26 19 19 27 18 18 28 0 0 29 19 19 27 19 19 27 0 0 29 3 3 3 1 20 30 0 21 31 12 23 35 12 23 35 0 21 31 14 22 34 2 2 2 13 13 18 3 3 3 3 3 3 13 13 18 15 15 21 20 24 40 21 25 41 23 27 43 23 27 43 21 25 41 22 26 42 21 25 41 24 28 44 22 26 46 22 26 46 24 28 44 25 29 45 24 28 44 26 30 47 25 29 49 25 29 49 26 30 47 27 31 48 26 30 47 28 32 50 27 31 52 27 31 52 28 32 50 29 33 51 28 32 50 30 34 53 29 33 55 29 33 55 30 34 53 31 35 54 30 34 53 32 36 56 31 35 58 31 35 58 32 36 56 33 37 57 32 36 56 34 38 59 33 37 61 33 37 61 34 38 59 35 39 60 34 38 59 36 40 62 35 39 64 35 39 64 36 40 62 37 41 63 36 40 62 38 42 65 37 41 67 37 41 67 38 42 65 39 43 66 38 42 65 20 24 40 39 43 69 39 43 69 20 24 40 23 27 68 34 38 59 20 24 40 36 40 62 36 40 62 20 24 40 38 42 65 23 44 79 35 45 76 39 47 78 39 47 78 35 45 76 37 46 77 40 48 80 41 49 81 54 51 96 54 51 96 41 49 81 53 50 95 41 49 81 42 52 82 53 50 95 53 50 95 42 52 82 52 53 94 42 52 82 43 54 83 52 53 94 52 53 94 43 54 83 51 55 93 43 54 83 44 56 84 51 55 93 51 55 93 44 56 84 50 57 92 44 56 84 45 58 85 50 57 92 50 57 92 45 58 85 49 59 90 45 58 86 46 60 87 49 59 91 49 59 91 46 60 87 48 61 89 46 60 87 47 62 88 48 61 89 48 61 89 47 62 88 55 63 97 47 62 88 40 48 80 55 63 97 55 63 97 40 48 80 54 51 96 21 25 41 32 36 56 24 28 44 24 28 44 32 36 56 30 34 53 21 25 41 20 24 40 32 36 56 32 36 56 20 24 40 34 38 59 24 28 44 30 34 53 26 30 47 26 30 47 30 34 53 28 32 50 31 64 74 25 65 71 29 67 73 29 67 73 25 65 71 27 66 72 22 68 70 33 69 75 23 71 79 23 71 79 33 69 75 35 70 76 22 72 70 25 73 71 33 75 75 33 75 75 25 73 71 31 74 74 3 3 3 15 15 21 19 19 27 19 19 27 15 15 21 17 17 24 11 11 15 5 5 6 9 9 12 9 9 12 5 5 6 7 7 9 2 2 2 5 5 6 13 13 18 13 13 18 5 5 6 11 11 15 14 76 34 0 77 31 16 79 33 16 79 33 0 77 31 18 78 32 4 80 39 10 81 36 6 83 38 6 83 38 10 81 36 8 82 37 1 84 30 12 85 35 4 87 39 4 87 39 12 85 35 10 86 36</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="machine_pipes">
+      <node id="thin_straight_mini" name="thin_straight_mini" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#thin_straight_miniShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#machine_pipes_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene"/>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,56 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/thewake/assets/entities/enemy/waterlurker/waterlurker.dae">
+            <SubMesh ID="0" Name="pSphere1" CreStamp="0" ModStamp="1617066530" WorldPos="0 0.5 0" Rotation="0 0 0" Scale="0.5 0.5 0.5" TriCount="760" Material="textures/screeneffects/water_drip_screen.mat" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="1" Name="ShapeBox_1" CreStamp="1617048455" ModStamp="1617048464" WorldPos="0 0.5 0" Rotation="0 0 0" Scale="1 1 1" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="2" Name="Body_1" CreStamp="0" ModStamp="1617065809" WorldPos="0 0.5 0" Rotation="0 0 0" Scale="1 1 1" Material="" Mass="0" AngularDamping="0.5" LinearDamping="0.1" MaxAngularSpeed="20" MaxLinearSpeed="20" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="false" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="false" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="false">
+                <Shape ID="1" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Agent_SandLurker">
+        <Var ObjectId="4294967295" Name="Note" Value="" />
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="VoiceSourceBone" Value="" />
+        <Var ObjectId="4294967295" Name="CastShadows" Value="false" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="CutsceneEndAlignmentBone" Value="" />
+        <Var ObjectId="4294967295" Name="CharBodySize" Value="1 1 1" />
+        <Var ObjectId="4294967295" Name="MeshPositionOffset" Value="0 0 0" />
+        <Var ObjectId="4294967295" Name="MeshRotationOffset" Value="0 0 0" />
+        <Var ObjectId="4294967295" Name="MeshScaleOffset" Value="1 1 1" />
+        <Var ObjectId="4294967295" Name="CharBodyPosBone" Value="Body_1" />
+        <Var ObjectId="4294967295" Name="CharBodyBoneIsFeet" Value="false" />
+        <Var ObjectId="4294967295" Name="CharBodyBoneYOffset" Value="0" />
+        <Var ObjectId="4294967295" Name="CharBodyMaterial" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="agent_water_lurker.hps" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="cScrAgentSandLurker" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_WalkAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_RunAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_BackwardAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraMinWait" Value="4" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraMaxWait" Value="10" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraPauseProcedural" Value="true" />
+        <Var ObjectId="4294967295" Name="HeadTracker_Bones" Value="" />
+        <Var ObjectId="4294967295" Name="HeadTracker_BoneMuls" Value="" />
+        <Var ObjectId="4294967295" Name="HeadTracker_ChestBone" Value="" />
+        <Var ObjectId="4294967295" Name="HeadTracker_SpeedMul" Value="1" />
+        <Var ObjectId="4294967295" Name="HeadTracker_MaxSpeed" Value="1" />
+        <Var ObjectId="4294967295" Name="HeadTracker_MaxAngle" Value="45" />
+    </UserDefinedVariables>
+</Entity>

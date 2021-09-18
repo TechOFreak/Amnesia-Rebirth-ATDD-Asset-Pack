@@ -1,0 +1,71 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/gameplay/valve_iron/valve_iron.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="valve_iron_valve" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="308" />
+            <SubMesh Active="true" ID="1" Material="" Name="valve_iron_base" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 0 0" TriCount="163" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="3" Name="Shape_1" RelativeRotation="1.5708 0 0" RelativeScale="0.105 0.024 0.105" RelativeTranslation="0 0 -0.0131855" Rotation="1.5708 0 0" Scale="0.105 0.024 0.105" ShapeType="Cylinder" Tag="" WorldPos="0 0 0.012" />
+            <BodyShape Active="true" ID="8" Name="Shape_6" RelativeRotation="1.5708 0 0" RelativeScale="0.07 0.03 0.07" RelativeTranslation="0 0 0.0131855" Rotation="1.5708 0 0" Scale="0.07 0.03 0.07" ShapeType="Cylinder" Tag="" WorldPos="0 0 0.038371" />
+            <BodyShape Active="true" ID="9" Name="Shape_7" RelativeRotation="1.5708 0 0" RelativeScale="0.021 0.096 0.021" RelativeTranslation="0 0 0.024399" Rotation="1.5708 0 0" Scale="0.021 0.096 0.021" ShapeType="Cylinder" Tag="" WorldPos="0 0 0.115947" />
+            <BodyShape Active="true" ID="10" Name="Shape_2" RelativeRotation="1.5708 0 0" RelativeScale="0.195 0.024 0.195" RelativeTranslation="0 0 0.056366" Rotation="1.5708 0 0" Scale="0.195 0.024 0.195" ShapeType="Cylinder" Tag="" WorldPos="0 0 0.147914" />
+            <BodyShape Active="true" ID="11" Name="Shape_8" RelativeRotation="1.5708 0 0" RelativeScale="0.0065 0.07 0.0065" RelativeTranslation="0 0 -0.056366" Rotation="1.5708 0 0" Scale="0.0065 0.07 0.0065" ShapeType="Cylinder" Tag="" WorldPos="0 0 0.035182" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.1" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="12" LinearDamping="0.1" Mass="5" Material="Metal" MaxAngularSpeed="2" MaxLinearSpeed="2" Name="Body" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0 0 0.091548">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="11" />
+                <Shape ID="9" />
+                <Shape ID="10" />
+            </Body>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="13" LinearDamping="0" Mass="0" Material="Metal" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0 0 0.0251855">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="8" />
+                <Shape ID="3" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="false" ConnectedChildBodyID="12" ConnectedParentBodyID="13" ID="14" LimitStepCount="0" MaxAngle="0" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="0.8" MaxMoveFreqSpeed="1.5" MaxMoveSpeed="2" MaxMoveVolume="0.7" MiddleMoveSpeed="1" MiddleMoveVolume="0.4" MinAngle="0" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.8" MinMoveFreqSpeed="0.5" MinMoveSpeed="0.1" MinMoveVolume="0.1" MoveSound="wheel_metal_move.snt" MoveType="Angular" Name="HingeJoint_1" PinDir="0 -3.61999e-006 -1" Rotation="-1.5708 0 0" Scale="1 1 1" StickyMaxLimit="false" StickyMinLimit="false" Stiffness="0" Tag="" WorldPos="0 0 0" />
+        </Joints>
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Wheel">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveMaxSpeed" Value="2" />
+        <Var Name="MoveSlowDownFactor" Value="1" />
+        <Var Name="MoveSpeedFactor" Value="2" />
+        <Var Name="MoveThrowImpulse" Value="1" />
+        <Var Name="CanInteractWithStaticBody" Value="true" />
+        <Var Name="MinLimitRange" Value="5.0" />
+        <Var Name="MaxLimitRange" Value="5.0" />
+        <Var Name="MinLimitSound" Value="C:/SVN/amnesia/redist/sounds/joint/wheel_metal_min_max.snt" />
+        <Var Name="MaxLimitSound" Value="C:/SVN/amnesia/redist/sounds/joint/wheel_metal_min_max.snt" />
+        <Var Name="StuckSound" Value="" />
+        <Var Name="SlowDownRotation" Value="true" />
+        <Var Name="SkipMiddleState" Value="true" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

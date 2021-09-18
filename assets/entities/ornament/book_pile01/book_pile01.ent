@@ -1,0 +1,22 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="E:/lux/redist/entities/ornament/book_pile01/book_pile01.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" TriCount="296" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.350000 0.300000 0.350000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.350000 0.300000 0.350000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.153436 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="2" LinearDamping="0.000000" Mass="0.000000" Material="Book" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 0.153436 0.000000">
+                <Shape ID="1" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

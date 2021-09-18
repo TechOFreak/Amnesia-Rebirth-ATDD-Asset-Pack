@@ -1,0 +1,32 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/ornament/stone_altar_shrine/stone_altar_shrine.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface6" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="762" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.120000 2.000000 0.180000" RelativeTranslation="0.002207 -0.151786 -0.292170" Rotation="0.000000 0.000000 0.000000" Scale="1.120000 2.000000 0.180000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.004620 1.004098 -0.416707" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.000000 0.500000 0.680000" RelativeTranslation="0.002207 -0.902797 0.021246" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 0.500000 0.680000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.004620 0.253087 -0.103290" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.750000 0.500000 0.680000" RelativeTranslation="0.002207 -0.902797 0.117207" Rotation="0.000000 0.000000 0.000000" Scale="0.750000 0.500000 0.680000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.004620 0.253087 -0.007330" />
+            <BodyShape Active="true" GroupID="0" ID="6" Name="Shape_5" RelativeRotation="-1.570796 0.000000 1.570796" RelativeScale="0.320000 0.300000 0.650000" RelativeTranslation="0.000000 0.832798 -0.281381" Rotation="-1.570796 0.000000 1.570796" Scale="0.320000 0.300000 0.650000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="10" WorldPos="0.002413 1.988682 -0.405917" />
+            <BodyShape Active="true" GroupID="0" ID="7" Name="Shape_6" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.130000 0.200000 0.160000" RelativeTranslation="0.503450 0.344732 -0.297207" Rotation="0.000000 0.000000 0.000000" Scale="0.130000 0.200000 0.160000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="10" WorldPos="0.505863 1.500616 -0.421743" />
+            <BodyShape Active="true" GroupID="0" ID="8" Name="Shape_7" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.130000 0.200000 0.160000" RelativeTranslation="-0.501081 0.344732 -0.294261" Rotation="0.000000 0.000000 0.000000" Scale="0.130000 0.200000 0.160000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="10" WorldPos="-0.498668 1.500616 -0.418798" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="9" LinearDamping="0.000000" Mass="0.000000" Material="Rock" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.002413 1.155884 -0.124537">
+                <Shape ID="6" />
+                <Shape ID="8" />
+                <Shape ID="7" />
+                <Shape ID="1" />
+                <Shape ID="3" />
+                <Shape ID="2" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

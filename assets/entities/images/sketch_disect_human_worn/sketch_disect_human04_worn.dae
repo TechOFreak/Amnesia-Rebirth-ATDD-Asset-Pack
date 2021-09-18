@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=1;removeStaticCurves=0;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=0;
+exportAnimations=0;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=0;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/Projects/3d/work/amnesia%20game/arbetsmapp/</source_data>
+    </contributor>
+    <created>2010-08-03T11:35:13Z</created>
+    <modified>2010-08-03T11:35:13Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///E:/Projects/3d/work/amnesia%20game/SVN/redist/entities/images/sketch_disect_human_worn/sketch_discet_human_worn.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="sketch_disect_human_worn" name="sketch_disect_human_worn">
+      <instance_effect url="#sketch_disect_human_worn-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="sketch_disect_human_worn-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="polySurfaceShape14" name="polySurfaceShape14">
+      <mesh>
+        <source id="polySurfaceShape14-positions" name="position">
+          <float_array id="polySurfaceShape14-positions-array" count="210">0.094982 0.012412 -0.348697 0.011095 1.24657 -0.363453 0.061379 0.003535 0.359753 0.011095 1.24657 0.359753 0.065892 1.24657 -0.001849 0.011095 -0.011386 -0.001849 0.011095 1.26115 -0.182651 0.045662 0.018223 -0.182651 0.011095 1.23036 0.178951 0.033924 0.003535 0.178951 0.049189 0.625053 -0.363453 0.021855 0.625053 -0.182651 0.070581 0.625053 -0.001849 0.021855 0.625053 0.178951 0.050717 0.625053 0.347963 0.011095 0.935811 -0.363453 0.021855 0.935811 -0.182651 0.021855 0.935811 -0.001849 0.011095 0.935811 0.178951 0.023796 0.935811 0.370519 0.011095 0.314294 -0.369469 0.014273 0.314294 -0.182651 0.021855 0.314294 -0.001849 0.011095 0.314294 0.178951 0.011095 0.314294 0.347585 0.040566 1.09119 -0.354657 0.011095 1.09119 -0.182651 0.022662 1.09119 -0.001849 0.060345 1.09119 0.178951 0.023796 1.09119 0.353816 0.045662 0.158914 -0.363453 0.059805 0.158914 -0.182651 0.011095 0.158914 -0.001849 0.033924 0.158914 0.178951 0.033924 0.158914 0.368802 0.090895 0.012412 -0.348697 0.007008 1.24657 -0.363453 0.057292 0.003535 0.359753 0.007008 1.24657 0.359753 0.061805 1.24657 -0.001849 0.007008 -0.011386 -0.001849 0.007008 1.26115 -0.182651 0.041574 0.018223 -0.182651 0.007008 1.23036 0.178951 0.029836 0.003535 0.178951 0.045102 0.625053 -0.363453 0.017768 0.625053 -0.182651 0.066494 0.625053 -0.001849 0.017768 0.625053 0.178951 0.04663 0.625053 0.347963 0.007008 0.935811 -0.363453 0.017768 0.935811 -0.182651 0.017768 0.935811 -0.001849 0.007008 0.935811 0.178951 0.019709 0.935811 0.370519 0.007008 0.314294 -0.369469 0.010186 0.314294 -0.182651 0.017768 0.314294 -0.001849 0.007008 0.314294 0.178951 0.007008 0.314294 0.347585 0.036479 1.09119 -0.354657 0.007008 1.09119 -0.182651 0.018574 1.09119 -0.001849 0.056257 1.09119 0.178951 0.019709 1.09119 0.353816 0.041574 0.158914 -0.363453 0.055717 0.158914 -0.182651 0.007008 0.158914 -0.001849 0.029836 0.158914 0.178951 0.029836 0.158914 0.368802</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape14-positions-array" count="70" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape14-normals" name="normal">
+          <float_array id="polySurfaceShape14-normals-array" count="210">0.907507 0.331498 0.257955 0.982528 0.185513 -0.014955 0.97244 0.180428 -0.147668 0.996626 0.081744 -0.007328 0.994914 -0.072174 -0.070259 0.994062 -0.033342 0.103583 0.998392 -0.018051 -0.053742 0.991582 0.045875 0.121077 0.955079 0.246237 0.164898 0.993951 0.045325 -0.100033 0.988763 -0.001425 0.149484 0.998362 -0.029208 -0.049202 0.999999 0.001082 -0.000608 0.999332 0.014196 0.033674 0.993394 -0.021303 -0.112755 0.998773 -0.000894 0.049506 0.996079 0.048206 -0.074177 0.994923 0.066235 0.075763 0.993196 -0.108697 -0.041784 0.999007 -0.037799 -0.023563 0.996037 0.088386 0.009882 0.995677 0.088818 0.027175 0.996462 -0.08384 0.005904 0.999383 0.024637 -0.025024 0.999955 0.00953 0 0.99412 -0.002475 0.108252 0.999492 -0.011105 0.029887 0.987777 -0.11002 -0.11042 0.998477 -0.034254 0.043253 0.980476 0.145726 0.13203 0.98756 0.153111 0.035803 0.991412 0.097234 0.087446 0.998925 0.040595 0.022361 0.995385 0.072734 -0.062594 0.992283 0.118322 -0.037084 -0.907507 -0.331498 -0.257955 -0.982528 -0.185513 0.014955 -0.97244 -0.180428 0.147668 -0.996626 -0.081744 0.007328 -0.994914 0.072174 0.070259 -0.994062 0.033342 -0.103583 -0.998392 0.018051 0.053742 -0.991582 -0.045875 -0.121077 -0.955079 -0.246237 -0.164898 -0.993951 -0.045325 0.100033 -0.988763 0.001425 -0.149484 -0.998362 0.029208 0.049202 -0.999999 -0.001082 0.000608 -0.999332 -0.014196 -0.033674 -0.993394 0.021303 0.112755 -0.998773 0.000894 -0.049506 -0.996079 -0.048206 0.074177 -0.994923 -0.066234 -0.075763 -0.993196 0.108697 0.041784 -0.999007 0.037799 0.023563 -0.996037 -0.088386 -0.009882 -0.995677 -0.088818 -0.027175 -0.996462 0.08384 -0.005904 -0.999383 -0.024637 0.025024 -0.999955 -0.00953 0 -0.99412 0.002475 -0.108252 -0.999492 0.011105 -0.029887 -0.987777 0.11002 0.11042 -0.998477 0.034254 -0.043253 -0.980476 -0.145725 -0.13203 -0.98756 -0.153111 -0.035803 -0.991412 -0.097234 -0.087446 -0.998925 -0.040595 -0.022361 -0.995385 -0.072734 0.062594 -0.992283 -0.118322 0.037084</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape14-normals-array" count="70" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape14-map1" name="map1">
+          <float_array id="polySurfaceShape14-map1-array" count="140">0.5 0 0.5 0.433054 1 0.433054 1 0 0.75 0.433054 0.75 0 0.625 0.433054 0.625 0 0.875 0.433054 0.875 0 0.5 0.216527 0.625 0.216527 0.75 0.216527 0.875 0.216527 1 0.216527 0.5 0.324791 0.625 0.324791 0.75 0.324791 0.875 0.324791 1 0.324791 0.5 0.108264 0.625 0.108264 0.75 0.108264 0.875 0.108264 1 0.108264 0.5 0.378922 0.625 0.378922 0.75 0.378922 0.875 0.378922 1 0.378922 0.5 0.054131 0.625 0.054131 0.75 0.054131 0.875 0.054131 1 0.054131 0.501127 0.448054 0.516023 0.440862 0.501127 0.440862 0.530919 0.448054 0.545815 0.440862 0.530919 0.440862 0.516023 0.448054 0.56071 0.448054 0.545815 0.448054 0.516023 0.484011 0.516023 0.469628 0.501127 0.484011 0.530919 0.484011 0.530919 0.469628 0.545815 0.469628 0.56071 0.484011 0.545815 0.484011 0.516023 0.491202 0.501127 0.491202 0.530919 0.491202 0.545815 0.491202 0.501127 0.455245 0.501127 0.469628 0.530919 0.455245 0.516023 0.455245 0.56071 0.469628 0.56071 0.455245 0.545815 0.455245 0.516023 0.498393 0.501127 0.498393 0.530919 0.498393 0.545815 0.498393 0.56071 0.498393 0.56071 0.491202 0.56071 0.440862</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape14-map1-array" count="70" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="polySurfaceShape14-vertices">
+          <input semantic="POSITION" source="#polySurfaceShape14-positions" />
+          <input semantic="NORMAL" source="#polySurfaceShape14-normals" />
+        </vertices>
+        <triangles material="lambert2SG" count="96">
+          <input semantic="VERTEX" source="#polySurfaceShape14-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#polySurfaceShape14-map1" offset="1" set="0" />
+          <p>30 30 7 7 0 0 32 32 9 9 5 5 31 31 5 5 7 7 34 34 9 9 33 33 16 16 11 11 15 15 17 17 12 12 16 16 17 17 13 13 12 12 19 19 13 13 18 18 26 26 15 15 25 25 27 27 16 16 26 26 28 28 18 18 27 27 28 28 19 19 18 18 11 11 20 20 10 10 11 11 22 22 21 21 13 13 22 22 12 12 14 14 24 24 23 23 6 6 25 25 1 1 4 4 27 27 6 6 8 8 28 28 4 4 3 2 29 29 8 8 20 20 31 31 30 30 21 21 32 32 31 31 23 23 32 32 22 22 23 23 34 34 33 33 31 31 7 7 30 30 21 21 31 31 20 20 32 32 5 5 31 31 6 6 26 26 25 25 8 8 29 29 28 28 34 34 2 3 9 9 4 4 28 28 27 27 29 29 19 19 28 28 26 26 16 16 15 15 15 15 11 11 10 10 11 11 21 21 20 20 13 13 23 23 22 22 16 16 12 12 11 11 18 18 13 13 17 17 12 12 22 22 11 11 14 14 23 23 13 13 19 19 14 14 13 13 27 27 18 18 17 17 6 6 27 27 26 26 27 27 17 17 16 16 22 22 32 32 21 21 33 33 9 9 32 32 23 23 33 33 32 32 24 24 34 34 23 23 65 35 35 37 42 36 67 38 40 40 44 39 66 41 42 36 40 40 69 42 68 43 44 39 51 44 50 46 46 45 52 47 51 44 47 48 52 47 47 48 48 49 54 50 53 51 48 49 61 52 60 53 50 46 62 54 61 52 51 44 63 55 62 54 53 51 63 55 53 51 54 50 46 45 45 57 55 56 46 45 56 59 57 58 48 49 47 48 57 58 49 60 58 62 59 61 41 63 36 64 60 53 39 65 41 63 62 54 43 66 39 65 63 55 38 67 43 66 64 68 55 56 65 35 66 41 56 59 66 41 67 38 58 62 57 58 67 38 58 62 68 43 69 42 66 41 65 35 42 36 56 59 55 56 66 41 67 38 66 41 40 40 41 63 60 53 61 52 43 66 63 55 64 68 69 42 44 39 37 69 39 65 62 54 63 55 64 68 63 55 54 50 61 52 50 46 51 44 50 46 45 57 46 45 46 45 55 56 56 59 48 49 57 58 58 62 51 44 46 45 47 48 53 51 52 47 48 49 47 48 46 45 57 58 49 60 48 49 58 62 54 50 48 49 49 60 62 54 52 47 53 51 41 63 61 52 62 54 62 54 51 44 52 47 57 58 56 59 67 38 68 43 67 38 44 39 58 62 67 38 68 43 59 61 58 62 69 42</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="sketch_disect_human_worn">
+      <node id="polySurface10" name="polySurface10" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#polySurfaceShape14">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2SG" target="#sketch_disect_human_worn">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

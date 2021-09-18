@@ -1,0 +1,99 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/bottle/chemical_jars/chemical_jar02.dae">
+            <SubMesh ID="0" Name="polySurface11_001" CreStamp="0" ModStamp="0" WorldPos="0 0.182941 0" Rotation="0 0 -0.02096" Scale="1 1 1" TriCount="156" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="1" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="-0.001289 0.054031 0.001095" Rotation="0 0 0" Scale="0.1 0.1 0.1" RelativeTranslation="0.0036585 -0.109178 0.0005475" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="2" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="0.000105 0.102031 0" Rotation="0 0 0" Scale="0.098 0.098 0.098" RelativeTranslation="0.0050525 -0.0611775 -0.0005475" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Sphere" />
+            <Shape ID="3" Name="Shape_3" CreStamp="0" ModStamp="0" WorldPos="-0.01 0.272386 0" Rotation="0 0 0" Scale="0.035 0.164624 0.035" RelativeTranslation="-0.0050525 0.109178 -0.0005475" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Cylinder" />
+        </Shapes>
+        <Bodies>
+            <Body ID="4" Name="Body" CreStamp="0" ModStamp="1617400457" WorldPos="-0.0049475 0.163209 0.0005475" Rotation="0 0 0" Scale="1 1 1" Material="glass_wine_bottle" Mass="1" AngularDamping="0.5" LinearDamping="0.5" MaxAngularSpeed="16" MaxLinearSpeed="16" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="false" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="1" />
+                <Shape ID="2" />
+                <Shape ID="3" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Grab">
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="100" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="4" />
+        <Var ObjectId="4294967295" Name="Grab_UseCustomOffset" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_CustomPositionOffset" Value="0" />
+        <Var ObjectId="4294967295" Name="Grab_CustomRotationOffset" Value="0" />
+        <Var ObjectId="4294967295" Name="Grab_UseCustomDepth" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_CustomDepth" Value="1.5" />
+        <Var ObjectId="4294967295" Name="Grab_MassMul" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Grab_MinDepth" Value="1.0" />
+        <Var ObjectId="4294967295" Name="Grab_MaxDepth" Value="2.2" />
+        <Var ObjectId="4294967295" Name="Grab_ForceMul" Value="1" />
+        <Var ObjectId="4294967295" Name="Grab_TorqueMul" Value="1" />
+        <Var ObjectId="4294967295" Name="Grab_ThrowImpulse" Value="10" />
+        <Var ObjectId="4294967295" Name="Grab_IsHeavy" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_CollisionWithPlayer" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_InteractOnlyWithMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_CanInteractWithNoMass" Value="true" />
+        <Var ObjectId="4294967295" Name="Grab_LowerMass" Value="true" />
+        <Var ObjectId="4294967295" Name="ScaryObject_BaseFearRate" Value="0.1" />
+        <Var ObjectId="4294967295" Name="ScaryObject_SurpriseFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="ScaryObject_LookAtFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationDelay" Value="0.2" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationLightLevel" Value="0.1" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationDistance" Value="3.5" />
+        <Var ObjectId="4294967295" Name="ScaryObject_DeactivationDistance" Value="3.5" />
+        <Var ObjectId="4294967295" Name="ScaryObject_InteractFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_BaseFearRate" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Threat_SurpriseFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_LookAtFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_ActivationDelay" Value="0.2" />
+        <Var ObjectId="4294967295" Name="Threat_ActivationLightLevel" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Threat_MaxFearDistance" Value="2.0" />
+        <Var ObjectId="4294967295" Name="Threat_MinFearDistance" Value="6.0" />
+    </UserDefinedVariables>
+</Entity>

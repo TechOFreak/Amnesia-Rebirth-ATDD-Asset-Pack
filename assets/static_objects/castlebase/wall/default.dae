@@ -1,0 +1,2772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/work_entities/desktop/ink_bottle/ink_bottle.mb</source_data>
+    </contributor>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=1;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/redist/static_objects/castlebase/wall/default.dae</source_data>
+    </contributor>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=1;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/redist/static_objects/castlebase/wall/default.dae</source_data>
+    </contributor>
+    <contributor>
+      <author>Marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=1;
+curveConstrainSampling=1;removeStaticCurves=0;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=0;
+exportAnimations=0;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=0</comments>
+      <source_data>file:///G:/amnesia/redist/static_objects/castlebase/wall/default.dae</source_data>
+    </contributor>
+    <created>2009-03-02T13:02:08Z</created>
+    <modified>2010-08-27T12:45:33Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file2" name="file2">
+      <init_from>file:///E:/lux/redist/entities/desktop/ink_bottle/ink_bottle.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file1" name="file1">
+      <init_from>file:///H:/HPL_2/redist/static_objects/thomas_testgeom/thomas_testgeom.tga</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file5" name="file5">
+      <init_from>file:///E:/lux/redist/static_objects/castlebase/wall/castlebase_wall.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="wall_extension_file5" name="wall_extension_file5">
+      <init_from>file:///E:/lux/redist/static_objects/castlebase/wall/castlebase_wall_extension.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx"/>
+    </material>
+    <material id="lambert1" name="lambert3">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+    <material id="blinn1" name="blinn1">
+      <instance_effect url="#blinn1-fx"/>
+    </material>
+    <material id="lambert3" name="lambert4">
+      <instance_effect url="#lambert3-fx"/>
+    </material>
+    <material id="lambert6" name="lambert6">
+      <instance_effect url="#lambert6-fx"/>
+    </material>
+    <material id="wall_extension_lambert6" name="wall_extension_lambert6">
+      <instance_effect url="#wall_extension_lambert6-fx"/>
+    </material>
+    <material id="default_lambert6" name="default_lambert6">
+      <instance_effect url="#default_lambert6-fx"/>
+    </material>
+    <material id="wall_extension_wall_extension_lambert6" name="wall_extension_wall_extension_lambert6">
+      <instance_effect url="#wall_extension_wall_extension_lambert6-fx"/>
+    </material>
+    <material id="lambert7" name="lambert7">
+      <instance_effect url="#lambert7-fx"/>
+    </material>
+    <material id="lambert8" name="lambert8">
+      <instance_effect url="#lambert8-fx"/>
+    </material>
+    <material id="wall_extension_lambert7" name="wall_extension_lambert7">
+      <instance_effect url="#wall_extension_lambert7-fx"/>
+    </material>
+    <material id="default_lambert7" name="default_lambert7">
+      <instance_effect url="#default_lambert7-fx"/>
+    </material>
+    <material id="wall_extension_wall_extension_lambert7" name="wall_extension_wall_extension_lambert7">
+      <instance_effect url="#wall_extension_wall_extension_lambert7-fx"/>
+    </material>
+    <material id="corner_concave_roof_lambert6" name="corner_concave_roof_lambert6">
+      <instance_effect url="#corner_concave_roof_lambert6-fx"/>
+    </material>
+    <material id="lambert9" name="lambert9">
+      <instance_effect url="#lambert9-fx"/>
+    </material>
+    <material id="lambert10" name="lambert10">
+      <instance_effect url="#lambert10-fx"/>
+    </material>
+    <material id="lambert11" name="lambert11">
+      <instance_effect url="#lambert11-fx"/>
+    </material>
+    <material id="lambert12" name="lambert12">
+      <instance_effect url="#lambert12-fx"/>
+    </material>
+    <material id="blinn2" name="blinn2">
+      <instance_effect url="#blinn2-fx"/>
+    </material>
+    <material id="lambert13" name="lambert13">
+      <instance_effect url="#lambert13-fx"/>
+    </material>
+    <material id="lambert14" name="lambert14">
+      <instance_effect url="#lambert14-fx"/>
+    </material>
+    <material id="wall_extension_lambert8" name="wall_extension_lambert8">
+      <instance_effect url="#wall_extension_lambert8-fx"/>
+    </material>
+    <material id="default_lambert8" name="default_lambert8">
+      <instance_effect url="#default_lambert8-fx"/>
+    </material>
+    <material id="wall_extension_wall_extension_lambert8" name="wall_extension_wall_extension_lambert8">
+      <instance_effect url="#wall_extension_wall_extension_lambert8-fx"/>
+    </material>
+    <material id="lambert15" name="lambert15">
+      <instance_effect url="#lambert15-fx"/>
+    </material>
+    <material id="lambert16" name="lambert16">
+      <instance_effect url="#lambert16-fx"/>
+    </material>
+    <material id="wall_extension_lambert9" name="wall_extension_lambert9">
+      <instance_effect url="#wall_extension_lambert9-fx"/>
+    </material>
+    <material id="default_lambert9" name="default_lambert9">
+      <instance_effect url="#default_lambert9-fx"/>
+    </material>
+    <material id="wall_extension_wall_extension_lambert9" name="wall_extension_wall_extension_lambert9">
+      <instance_effect url="#wall_extension_wall_extension_lambert9-fx"/>
+    </material>
+    <material id="corner_concave_roof_lambert7" name="corner_concave_roof_lambert7">
+      <instance_effect url="#corner_concave_roof_lambert7-fx"/>
+    </material>
+    <material id="lambert17" name="lambert17">
+      <instance_effect url="#lambert17-fx"/>
+    </material>
+    <material id="lambert18" name="lambert18">
+      <instance_effect url="#lambert18-fx"/>
+    </material>
+    <material id="lambert19" name="lambert19">
+      <instance_effect url="#lambert19-fx"/>
+    </material>
+    <material id="default_lambert10" name="default_lambert10">
+      <instance_effect url="#default_lambert10-fx"/>
+    </material>
+    <material id="wall_extension_lambert10" name="wall_extension_lambert10">
+      <instance_effect url="#wall_extension_lambert10-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="blinn1-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <texture texture="file1-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert3-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert6-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_lambert6-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="default_lambert6-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_wall_extension_lambert6-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert7-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert8-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_lambert7-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="default_lambert7-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_wall_extension_lambert7-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="corner_concave_roof_lambert6-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert9-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert10-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert11-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert12-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="blinn2-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <texture texture="file1-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert13-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert14-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_lambert8-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="default_lambert8-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_wall_extension_lambert8-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert15-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert16-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_lambert9-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="default_lambert9-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_wall_extension_lambert9-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="corner_concave_roof_lambert7-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert17-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert18-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert19-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="default_lambert10-fx">
+      <profile_COMMON>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wall_extension_lambert10-fx">
+      <profile_COMMON>
+        <newparam sid="wall_extension_file5-surface">
+          <surface type="2D">
+            <init_from>wall_extension_file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="wall_extension_file5-sampler">
+          <sampler2D>
+            <source>wall_extension_file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wall_extension_file5-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="polySurfaceShape111" name="polySurfaceShape111">
+      <mesh>
+        <source id="polySurfaceShape111-positions" name="position">
+          <float_array id="polySurfaceShape111-positions-array" count="390">-2 4 0.321904 2 4 0.321904 2 3.75 0 2 3.92814 0.302724 -2 3.92814 0.302724 -2 3.8632 0.163756 2 3.8632 0.163756 -2 3.87762 0.237206 2 3.87762 0.237206 -2 3.80896 0.123447 2 3.80896 0.123447 -2 3.76717 0.067893 2 3.76717 0.067893 -2 4 0 2 4 0 -2 3.75 0 2 1.4957 0 -2 3.75 0 -2 1.4957 0 2 3.75 0 1.75 0.459237 0 0.25 0.459237 0 1.75 1.02189 0 0.25 1.02189 0 1.75 0.27223 0 0.25 0.27223 0 0.25 1.20825 0 1.75 1.20825 0 -0.25 0.459237 0 -0.25 1.02189 0 -1.75 0.459237 0 -1.75 1.02189 0 -1.75 1.20825 0 -0.25 1.20825 0 -0.25 0.27223 0 -1.75 0.27223 0 -2 1.4957 0 2 1.35709 0.25 -2 1.35709 0.25 2 1.47316 0.115563 -2 1.47316 0.115563 2 1.4957 0.061488 -2 1.4957 0.061488 2 1.39109 0.241192 -2 1.39109 0.241192 2 1.42097 0.20368 -2 1.42097 0.20368 -0.25 0 0.151698 -0.25 0.157453 0.151698 0.25 0.157453 0.151698 0.25 0 0.151698 -1.75 0.157453 0.151698 -1.75 0 0.151698 1.75 0.157453 0.151698 1.75 0 0.151698 0.25 0.078726 0.151698 1.75 0.078726 0.151698 -0.25 0.078726 0.151698 -1.75 0.078726 0.151698 -1.75 0.020562 0.174576 -0.25 0.020562 0.174576 -0.25 0.058163 0.174576 -1.75 0.058163 0.174576 0.25 0.020562 0.174576 1.75 0.020562 0.174576 1.75 0.058163 0.174576 0.25 0.058163 0.174576 -1.75 0.214842 0.075849 -0.25 0.214842 0.075849 0.25 0.214842 0.075849 1.75 0.214842 0.075849 -1.75 0.252513 0.07354 -0.25 0.252513 0.07354 -0.25 0.280251 0.036879 -1.75 0.280251 0.036879 0.25 0.252513 0.07354 1.75 0.252513 0.07354 1.75 0.280251 0.036879 0.25 0.280251 0.036879 1.75 0.215218 0.267841 2 0.215218 0.267841 2 0.459237 0 1.75 0 0.29657 2 0 0.29657 -0.25 0.215218 0.267841 0.25 0.215218 0.267841 -0.25 0 0.29657 0.25 0 0.29657 -2 0.215218 0.267841 -1.75 0.215218 0.267841 -2 0.459237 0 -2 0 0.29657 -1.75 0 0.29657 1.75 1.35709 0.25 1.75 1.32264 0.089248 1.75 1.20825 0 -1.75 1.35709 0.25 -1.75 1.32264 0.089248 -0.25 1.20825 0 -0.25 1.32264 0.089248 -0.25 1.35709 0.25 0.25 1.32264 0.089248 0.25 1.35709 0.25 2 1.10507 0.111539 1.75 1.10507 0.111539 2 1.02189 0 -1.75 1.10507 0.111539 -2 1.10507 0.111539 -2 1.02189 0 0.25 1.10507 0.111539 -0.25 1.10507 0.111539 -2 1.27891 0.167395 -1.75 1.27891 0.167395 -0.25 1.27891 0.167395 0.25 1.27891 0.167395 1.75 1.27891 0.167395 2 1.27891 0.167395 2 1.4957 0 -1.75 1.20825 0 0.25 1.20825 0 1.75 1.02189 0 -1.75 1.02189 0 -0.25 1.02189 0 0.25 1.02189 0 0 1.35709 0.25 0 1.39109 0.241192 0 1.42097 0.20368 0 1.47316 0.115563 0 1.4957 0.061488 0 1.4957 0</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape111-positions-array" count="130" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape111-normals" name="normal">
+          <float_array id="polySurfaceShape111-normals-array" count="801">0 -0.457307 0.889309 0 -0.875768 0.482732 0 -0.644064 0.764971 0 -0.940417 0.340024 0 0.609147 0.793057 0 0.609147 0.793057 0 -0.596481 0.802628 0 -0.670142 0.742233 0 -0.596482 0.802627 0 -0.738317 0.674454 0 -0.981269 0.192644 0 -0.981268 0.192647 0 -0.871124 0.491063 0 -0.928913 0.370297 0 -0.969478 0.245178 0 -0.969479 0.245176 0 1 0 0 1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 -0.726292 0.687386 0 -0.726292 0.687386 0 -0.27608 0.961135 0 -0.27608 0.961135 0 -0.456425 0.889762 0 0.007252 0.999974 0 0.448381 0.893843 0 0.544528 0.838743 0 -0.161502 0.986872 0 -0.085349 0.996351 0 0.893899 0.448269 0 0.893899 0.448268 0 0.965339 0.260999 0 0.991448 0.130499 0 1 0 0 1 0 0 0.823253 0.567674 0 0.823254 0.567673 0 0.333564 0.942727 0 0.600571 0.799571 0 0.932743 0.360541 0 0.997907 0.064664 0 0.739215 0.673469 0 0.739215 0.673469 0 0.739215 0.673469 0 0.739215 0.673469 0 0 1 0 0 1 0 0.268478 0.963286 0 0.536957 0.84361 0 0.132314 0.991208 0 0.132314 0.991208 0 0.132314 0.991208 0 0.132314 0.991208 0 0.739215 0.673469 0 0.739215 0.673469 0 0.739215 0.673469 0 0.739215 0.673469 0 0.132314 0.991208 0 0.132314 0.991208 0 0.132314 0.991208 0 0.132314 0.991208 0 0.739215 0.673469 0 0.739215 0.673469 0 0.739215 0.673469 0 0.739215 0.673469 0 0.132314 0.991208 0 0.132314 0.991208 0 0.132314 0.991208 0 0.132314 0.991208 0 0.333564 0.942727 0 0.600571 0.799571 0 0.932743 0.360541 0 0.997907 0.064664 0 0.536957 0.84361 0 0.268478 0.963286 0 0 1 0 0 1 0 0 1 0 0 1 0 0.268478 0.963286 0 0.536957 0.84361 0 0.536957 0.84361 0 0.268478 0.963286 0 0 1 0 0 1 0 -0.74375 0.668458 0 -0.74375 0.668458 0 -0.74375 0.668458 0 -0.74375 0.668458 0 -0.74375 0.668458 0 -0.74375 0.668458 0 -0.74375 0.668458 0 -0.74375 0.668458 0 0.797458 0.603374 0 0.797458 0.603374 0 0.797458 0.603374 0 0.797458 0.603374 0 0.797458 0.603374 0 0.797458 0.603374 0 0.797458 0.603374 0 0.797458 0.603374 0 0.061179 0.998127 0 0.061179 0.998127 0 0.977155 -0.212526 0 0.977155 -0.212526 0 0.061179 0.998127 0 0.061179 0.998127 0 0.977155 -0.212526 0 0.977155 -0.212526 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0.000000 0 -1 0.000001 0 -1 0.000001 0 -1 0.000000 0 -1 0.000000 0 -1 0.000000 0 0 -0.801633 0.597816 0 -0.801633 0.597816 0 -0.801633 0.597816 0 -0.801634 0.597816 0 -0.777432 0.628966 0 -0.905122 0.425152 0 -0.977798 0.209547 0 -0.977798 0.209548 0 -0.615134 0.788423 0 -0.615134 0.788423 0 -0.726292 0.687386 0 -0.726292 0.687386 0 -0.801634 0.597816 0 -0.801634 0.597816 0 -0.801634 0.597816 0 -0.801634 0.597816 0 -0.801633 0.597816 0 -0.801633 0.597816 0 -0.801633 0.597816 0 -0.801634 0.597816 0 -0.726292 0.687386 0 -0.615134 0.788423 0 -0.615134 0.788423 0 -0.847427 0.530912 0 -0.847427 0.530912 0 -0.977798 0.209548 0 -0.977798 0.209547 -1 -0.000001 0 -1 -0.000000 0 -1 -0.000000 0 -1 0 0 -1 0 0 -1 0.000000 0 1 -0.000000 0 1 -0.000002 0 1 -0.000001 0 1 0 0 1 0 0 1 -0.000000 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 -0.305904 0.952062 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 -0.726292 0.687386 0 -0.085349 0.996351 0 -0.726293 0.687386 0 -0.726293 0.687386 0 -0.726293 0.687386 0 0.369111 0.929385 0 0.823254 0.567674 0 0.893899 0.448268 0 0.965339 0.260999 0 1 -0.000000 1 0.000000 0 1 -0.000000 0 1 -0.000000 0 1 -0.000000 0 -1 0.000000 0 -1 0 0 1 0 0 1 0 0 1 0 0 -1 0.000000 0 -1 0 0 -1 -0.000000 0 -1 0.000000 0 1 -0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000001 0 1 0.000001 0 1 0.000003 0 1 0.000002 0 1 0.000002 0 -1 -0.000000 0 -1 0.000000 0 -1 -0.000003 0 -1 -0.000001 0 -1 0.000000 0 -1 -0.000001 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.000001 0 1 0.000001 0 1 0.000001 0 1 0.000001 0</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape111-normals-array" count="267" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape111-map1" name="map1">
+          <float_array id="polySurfaceShape111-map1-array" count="470">0.576351 0.134308 0.588619 0.13164 0.588619 0.193845 0.385878 0.131299 0.398146 0.133967 0.385878 0.193505 0.576351 0.134308 0.588619 0.13164 0.588619 0.193845 0.385878 0.131299 0.398146 0.133967 0.385878 0.193505 0.645196 0.600896 0.391612 0.600896 0.391612 0.484372 0.645196 0.484372 0.645196 0.63949 0.391612 0.63949 0.307084 0.600896 0.307084 0.484372 0.391612 0.445644 0.645196 0.445643 0.053499 0.600896 0.053266 0.484938 0.053499 0.63949 0.307084 0.63949 0.053499 0.445644 0.307084 0.445644 0.053499 0.600896 0.000258 0.599108 0.000258 0.484938 0.053266 0.484938 0.70378 0.600795 0.645196 0.600896 0.645196 0.484372 0.70378 0.484227 0.982259 0.010402 0.982259 0.306935 0.963604 0.306935 0.963604 0.010402 0.995657 0.010402 0.995657 0.306935 0.949822 0.306935 0.949822 0.010045 0.917578 0.306935 0.917578 0.010045 0.885589 0.306935 0.885589 0.010402 0.870259 0.307408 0.870258 0.010402 0.859888 0.307408 0.859888 0.010402 0.949822 0.010045 0.949822 0.306935 0.917578 0.306935 0.917578 0.010045 0.963604 0.010402 0.963604 0.306935 0.885589 0.306935 0.885589 0.010402 0.982259 0.010402 0.982259 0.306935 0.870259 0.307408 0.870258 0.010402 0.995657 0.010402 0.995657 0.306935 0.859888 0.307408 0.859888 0.010402 0.847949 0.307408 0.847948 0.010045 0.475421 0.147947 0.475421 0.210355 0.847949 0.307408 0.847948 0.010045 0.438069 0.175803 0.419365 0.234017 0.768012 0.308487 0.768012 0.007734 0.824267 0.007734 0.824267 0.308487 0.733749 0.308487 0.733749 0.007734 0.824267 0.308487 0.768012 0.308487 0.768012 0.007734 0.824267 0.007734 0.733749 0.308487 0.733749 0.007734 1.83281 0.98636 1.83306 0.911662 1.83307 0.451522 1.83281 0.814264 1.83266 0.391517 1.83266 0.324613 1.8419 0.324613 1.84207 0.98636 1.85003 0.324613 1.8502 0.98636 1.87419 0.98636 1.87399 0.324613 1.88869 0.324613 1.88891 0.98636 1.90541 0.324614 1.90565 0.98636 0.391702 0.260197 0.445534 0.248662 0.035195 0.013832 0.105412 0.013832 0.105412 0.08021 0.035195 0.082368 0.105412 0.142816 0.035195 0.142816 0.02049 0.156371 0.131172 0.156371 0.131172 0.209077 0.02049 0.209077 0.131172 0.268836 0.02049 0.268836 0.022025 0.013832 0.092241 0.013832 0.092241 0.082368 0.022025 0.082368 0.092241 0.142816 0.022025 0.142816 0.132673 0.048414 0.22307 0.048414 0.22307 0.111271 0.132673 0.111271 0.132673 0.020145 0.22307 0.020145 0.22307 0.141349 0.132673 0.141349 0.144873 0.182139 0.250697 0.182139 0.250697 0.239916 0.144874 0.239916 0.250697 0.155318 0.144874 0.155318 0.250697 0.267563 0.144873 0.267563 0.152178 0.048414 0.242575 0.048414 0.242575 0.111271 0.152178 0.111271 0.152178 0.020145 0.242575 0.020145 0.242575 0.141349 0.152178 0.141349 0.002032 0.994781 0.002032 0.650232 0.695281 0.650232 0.695281 0.994781 0.851495 0.330827 0.874737 0.330827 0.872581 0.986836 0.852184 0.986956 0.891077 0.330826 0.891766 0.986956 0.445534 0.248662 0.906783 0.330826 0.907471 0.986956 0.475421 0.210355 0.927506 0.330826 0.928194 0.986956 0.945475 0.330826 0.946163 0.986956 0.967434 0.330826 0.970427 0.986836 0.475421 0.147947 0.438069 0.175803 0.7477 0.986956 0.747011 0.330827 0.564156 0.125081 0.540174 0.175803 0.502822 0.147947 0.499525 0.112676 0.563388 0.11255 0.538158 0.09346 0.538158 0.067273 0.538158 0.067273 0.530548 0.047925 0.489968 0.041085 0.538158 0.041085 0.443949 0.047584 0.436338 0.040744 0.484528 0.040744 0.443949 0.060092 0.474972 0.112335 0.436338 0.066932 0.436338 0.093119 0.411108 0.112209 0.41034 0.12474 0.502822 0.210355 0.532709 0.248662 0.564156 0.125081 0.586541 0.260197 0.558879 0.234017 0.499525 0.112676 0.563388 0.11255 0.538158 0.09346 0.538158 0.067273 0.538158 0.067273 0.530548 0.047925 0.489968 0.041085 0.538158 0.041085 0.391702 0.260197 0.41034 0.12474 0.474972 0.112335 0.419365 0.234017 0.411108 0.112209 0.436338 0.093119 0.436338 0.066932 0.443949 0.060092 0.443949 0.047584 0.484528 0.040744 0.436338 0.040744 0.586541 0.260197 0.532709 0.248662 0.558879 0.234017 0.540174 0.175803 0.502822 0.210355 0.502822 0.147947 0.197785 0.155318 1.83306 0.883181 1.84218 0.88299 1.84985 0.88299 1.87381 0.88299 1.88852 0.88299 1.90524 0.88299 1.88909 0.382979 1.90583 0.382979 1.87437 0.382979 1.85038 0.382979 1.84224 0.382979 1.83357 0.385848</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape111-map1-array" count="235" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="polySurfaceShape111-vertices">
+          <input semantic="POSITION" source="#polySurfaceShape111-positions"/>
+        </vertices>
+        <triangles material="lambert10SG" count="185">
+          <input semantic="VERTEX" source="#polySurfaceShape111-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#polySurfaceShape111-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#polySurfaceShape111-map1" offset="2" set="0"/>
+          <p>4 0 153 7 1 156 3 2 154 7 1 156 8 3 157 3 2 154 0 4 152 4 0 153 1 5 155 4 0 153 3 2 154 1 5 155 5 6 159 9 7 162 6 8 160 9 7 162 10 9 163 6 8 160 7 1 156 5 10 159 8 3 157 5 10 159 6 11 160 8 3 157 9 7 162 11 12 164 10 9 163 11 12 164 12 13 165 10 9 163 11 12 164 15 14 166 12 13 165 15 14 166 2 15 167 12 13 165 0 4 152 1 5 155 13 16 171 1 5 155 14 17 170 13 16 171 17 18 148 18 19 149 19 20 151 18 19 149 16 21 150 19 20 151 22 22 12 23 23 13 20 24 15 23 23 13 21 25 14 20 24 15 21 25 14 25 26 20 20 24 15 25 26 20 24 27 21 20 24 15 22 22 12 27 28 16 23 23 13 27 28 16 26 29 17 23 23 13 23 23 13 29 30 18 21 25 14 29 30 18 28 31 19 21 25 14 29 30 18 31 32 22 28 31 19 31 32 22 30 33 23 28 31 19 32 34 24 31 32 22 33 35 25 31 32 22 29 30 18 33 35 25 30 33 23 35 36 26 28 31 19 35 36 26 34 37 27 28 31 19 115 38 143 116 39 142 93 40 147 116 39 142 37 41 146 93 40 147 38 42 88 96 43 89 44 44 95 44 44 95 96 43 89 125 45 233 124 46 234 125 45 233 100 47 90 96 43 89 100 47 90 125 45 233 40 48 98 127 49 231 42 50 101 127 49 231 128 51 229 42 50 101 42 50 101 128 51 229 36 52 103 128 51 229 129 53 230 36 52 103 44 44 95 125 45 233 46 54 97 125 45 233 126 55 232 46 54 97 40 48 98 46 54 97 127 49 231 46 54 97 126 55 232 127 49 231 71 56 49 72 57 48 74 58 51 72 57 48 73 59 50 74 58 51 79 60 109 80 61 108 20 62 111 80 61 108 81 63 110 20 62 111 59 64 36 60 65 37 62 66 39 60 65 37 61 67 38 62 66 39 82 68 106 83 69 107 79 70 109 83 69 107 80 71 108 79 70 109 84 72 115 85 73 114 28 74 117 85 73 114 21 75 116 28 74 117 86 76 112 87 77 113 84 78 115 87 77 113 85 79 114 84 78 115 88 80 121 89 81 120 90 82 123 89 81 120 30 83 122 90 82 123 91 84 118 92 85 119 88 86 121 92 85 119 89 87 120 88 86 121 75 88 63 76 89 62 78 90 67 76 89 62 77 91 66 78 90 67 55 92 52 56 93 53 49 94 55 56 93 53 53 95 54 49 94 55 63 96 60 64 97 61 66 98 56 64 97 61 65 99 57 66 98 56 58 100 43 57 101 42 51 102 45 57 101 42 48 103 44 51 102 45 52 104 40 47 105 41 59 106 36 47 105 41 60 107 37 59 106 36 57 101 42 58 100 43 61 67 38 58 100 43 62 66 39 61 67 38 50 108 64 54 109 65 63 110 60 54 109 65 64 111 61 63 110 60 56 93 53 55 92 52 65 99 57 55 92 52 66 98 56 65 99 57 51 112 45 48 113 44 67 114 47 48 113 44 68 115 46 67 114 47 49 116 55 53 117 54 69 118 59 53 117 54 70 119 58 69 118 59 67 120 47 68 121 46 71 56 49 68 121 46 72 57 48 71 56 49 34 122 68 35 123 69 73 59 50 35 123 69 74 58 51 73 59 50 69 124 59 70 125 58 75 88 63 70 125 58 76 89 62 75 88 63 24 126 72 25 127 73 77 91 66 25 127 73 78 90 67 77 91 66 92 131 181 62 128 179 89 130 175 62 128 179 51 129 177 89 130 175 34 132 3 73 133 4 28 134 5 68 135 190 84 136 187 72 137 191 84 136 187 28 134 5 72 137 191 72 137 191 28 134 5 73 133 4 25 138 7 21 139 8 78 140 6 69 141 198 75 142 194 85 143 197 85 143 197 75 142 194 21 139 8 75 142 194 78 140 6 21 139 8 24 144 9 77 145 10 20 146 11 70 147 209 79 148 207 76 149 206 79 148 207 20 146 11 76 149 206 76 149 206 20 146 11 77 145 10 120 150 144 105 151 145 104 152 140 105 151 145 103 153 141 104 152 140 97 154 76 99 155 77 96 156 79 99 155 77 100 157 78 96 156 79 118 158 80 98 159 81 97 154 76 98 159 81 99 155 77 97 154 76 111 160 127 112 161 126 38 42 131 112 161 126 96 43 130 38 42 131 108 162 128 121 163 129 107 164 124 121 163 129 106 165 125 107 164 124 122 166 138 123 167 139 110 168 134 123 167 139 109 169 135 110 168 134 100 47 136 113 170 133 124 46 222 119 171 86 95 172 87 101 173 83 95 172 87 94 174 84 101 173 83 102 175 82 101 173 83 93 176 85 101 173 83 94 174 84 93 176 85 93 177 216 94 178 217 115 179 218 94 178 217 95 180 220 104 181 219 95 180 220 120 182 221 104 181 219 97 183 105 96 184 104 112 185 75 97 183 105 106 186 74 118 187 71 118 187 71 106 186 74 121 188 70 101 189 158 109 190 169 119 191 161 119 191 161 109 190 169 123 192 168 99 193 193 98 194 192 110 195 173 98 194 192 122 196 174 110 195 173 100 197 195 99 193 193 113 198 196 101 189 158 102 199 205 114 200 208 107 201 124 106 202 125 111 203 127 106 202 125 112 204 126 111 203 127 97 183 105 112 185 75 106 186 74 113 198 196 99 193 193 110 195 173 114 205 132 113 206 133 109 207 135 113 206 133 110 208 134 109 207 135 101 189 158 114 200 208 109 190 169 115 179 218 94 178 217 104 181 219 104 209 140 103 210 141 115 211 143 103 210 141 116 212 142 115 211 143 121 213 28 108 214 29 30 215 31 108 214 29 90 216 30 30 215 31 105 217 32 120 218 33 81 219 35 120 218 33 20 220 34 81 219 35 124 46 222 114 221 132 102 222 137 124 223 222 113 224 133 114 225 132 125 45 224 124 46 223 43 226 94 124 46 223 102 222 91 43 226 94 37 41 93 43 226 94 93 40 92 102 222 91 93 40 92 43 226 94 126 55 225 125 45 224 45 227 96 125 45 224 43 226 94 45 227 96 126 55 225 45 227 96 127 49 226 45 227 96 39 228 99 127 49 226 128 51 227 127 49 226 41 229 100 127 49 226 39 228 99 41 229 100 129 53 228 128 51 227 117 230 102 128 51 227 41 229 100 117 230 102 50 231 204 63 232 202 87 233 203 87 233 203 63 232 202 66 234 201 86 235 185 84 136 187 48 236 189 84 136 187 68 135 190 48 236 189 49 237 199 66 238 201 55 239 200 61 240 186 48 236 189 57 241 188 47 242 184 86 235 185 60 243 183 86 235 185 61 240 186 60 243 183 86 235 185 48 236 189 61 240 186 35 244 1 30 245 2 74 246 0 67 247 176 71 248 172 89 130 175 89 130 175 71 248 172 30 245 2 30 245 2 71 248 172 74 246 0 52 249 182 59 250 180 92 251 181 67 247 176 89 130 175 51 129 177 82 252 214 79 148 207 53 253 210 79 148 207 70 147 209 53 253 210 54 254 215 82 252 214 64 255 213 82 252 214 65 256 212 64 255 213 65 256 212 53 253 210 56 257 211 82 252 214 53 253 210 65 256 212 49 258 199 85 259 197 87 260 203 49 261 199 69 141 198 85 143 197 49 262 199 87 233 203 66 234 201 62 263 179 92 251 181 59 250 180 62 264 179 58 265 178 51 266 177</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="_collider_box_0Shape1" name="_collider_box_0Shape1">
+      <mesh>
+        <source id="_collider_box_0Shape1-positions" name="position">
+          <float_array id="_collider_box_0Shape1-positions-array" count="24">-0.5 -0.5 0.1 0.5 -0.5 0.1 -0.5 0.5 0.1 0.5 0.5 0.1 -0.5 0.5 -0.1 0.5 0.5 -0.1 -0.5 -0.5 -0.1 0.5 -0.5 -0.1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape1-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape1-normals" name="normal">
+          <float_array id="_collider_box_0Shape1-normals-array" count="72">0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape1-normals-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape1-map1" name="map1">
+          <float_array id="_collider_box_0Shape1-map1-array" count="28">0 0 1 0 0 1 1 1 0 2 1 2 0 3 1 3 0 4 1 4 2 0 2 1 -1 0 -1 1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape1-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_0Shape1-vertices">
+          <input semantic="POSITION" source="#_collider_box_0Shape1-positions"/>
+        </vertices>
+        <triangles material="lambert14SG" count="12">
+          <input semantic="VERTEX" source="#_collider_box_0Shape1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#_collider_box_0Shape1-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#_collider_box_0Shape1-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 2 2 2 2 4 2 3 5 3 4 6 4 3 5 3 5 7 5 4 6 4 4 8 4 5 9 5 6 10 6 5 9 5 7 11 7 6 10 6 6 12 6 7 13 7 0 14 8 7 13 7 1 15 9 0 14 8 1 16 1 7 17 10 3 18 3 7 17 10 5 19 11 3 18 3 6 20 12 0 21 0 4 22 13 0 21 0 2 23 2 4 22 13</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="_collider_box_0Shape3" name="_collider_box_0Shape3">
+      <mesh>
+        <source id="_collider_box_0Shape3-positions" name="position">
+          <float_array id="_collider_box_0Shape3-positions-array" count="24">-0.5 -0.5 0.1 0.5 -0.5 0.1 -0.5 0.5 0.1 0.5 0.5 0.1 -0.5 0.5 -0.1 0.5 0.5 -0.1 -0.5 -0.5 -0.1 0.5 -0.5 -0.1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape3-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape3-normals" name="normal">
+          <float_array id="_collider_box_0Shape3-normals-array" count="72">0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape3-normals-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape3-map1" name="map1">
+          <float_array id="_collider_box_0Shape3-map1-array" count="28">0 0 1 0 0 1 1 1 0 2 1 2 0 3 1 3 0 4 1 4 2 0 2 1 -1 0 -1 1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape3-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_0Shape3-vertices">
+          <input semantic="POSITION" source="#_collider_box_0Shape3-positions"/>
+        </vertices>
+        <triangles material="lambert14SG" count="12">
+          <input semantic="VERTEX" source="#_collider_box_0Shape3-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#_collider_box_0Shape3-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#_collider_box_0Shape3-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 2 2 2 2 4 2 3 5 3 4 6 4 3 5 3 5 7 5 4 6 4 4 8 4 5 9 5 6 10 6 5 9 5 7 11 7 6 10 6 6 12 6 7 13 7 0 14 8 7 13 7 1 15 9 0 14 8 1 16 1 7 17 10 3 18 3 7 17 10 5 19 11 3 18 3 6 20 12 0 21 0 4 22 13 0 21 0 2 23 2 4 22 13</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="_collider_box_0Shape4" name="_collider_box_0Shape4">
+      <mesh>
+        <source id="_collider_box_0Shape4-positions" name="position">
+          <float_array id="_collider_box_0Shape4-positions-array" count="24">-0.5 -0.5 0.1 0.5 -0.5 0.1 -0.5 0.5 0.1 0.5 0.5 0.1 -0.5 0.5 -0.1 0.5 0.5 -0.1 -0.5 -0.5 -0.1 0.5 -0.5 -0.1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape4-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape4-normals" name="normal">
+          <float_array id="_collider_box_0Shape4-normals-array" count="72">0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape4-normals-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape4-map1" name="map1">
+          <float_array id="_collider_box_0Shape4-map1-array" count="28">0 0 1 0 0 1 1 1 0 2 1 2 0 3 1 3 0 4 1 4 2 0 2 1 -1 0 -1 1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape4-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_0Shape4-vertices">
+          <input semantic="POSITION" source="#_collider_box_0Shape4-positions"/>
+        </vertices>
+        <triangles material="lambert14SG" count="12">
+          <input semantic="VERTEX" source="#_collider_box_0Shape4-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#_collider_box_0Shape4-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#_collider_box_0Shape4-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 2 2 2 2 4 2 3 5 3 4 6 4 3 5 3 5 7 5 4 6 4 4 8 4 5 9 5 6 10 6 5 9 5 7 11 7 6 10 6 6 12 6 7 13 7 0 14 8 7 13 7 1 15 9 0 14 8 1 16 1 7 17 10 3 18 3 7 17 10 5 19 11 3 18 3 6 20 12 0 21 0 4 22 13 0 21 0 2 23 2 4 22 13</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="_collider_box_0Shape5" name="_collider_box_0Shape5">
+      <mesh>
+        <source id="_collider_box_0Shape5-positions" name="position">
+          <float_array id="_collider_box_0Shape5-positions-array" count="24">-0.5 -0.5 0.1 0.5 -0.5 0.1 -0.5 0.5 0.1 0.5 0.5 0.1 -0.5 0.5 -0.1 0.5 0.5 -0.1 -0.5 -0.5 -0.1 0.5 -0.5 -0.1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape5-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape5-normals" name="normal">
+          <float_array id="_collider_box_0Shape5-normals-array" count="72">0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape5-normals-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape5-map1" name="map1">
+          <float_array id="_collider_box_0Shape5-map1-array" count="28">0 0 1 0 0 1 1 1 0 2 1 2 0 3 1 3 0 4 1 4 2 0 2 1 -1 0 -1 1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape5-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_0Shape5-vertices">
+          <input semantic="POSITION" source="#_collider_box_0Shape5-positions"/>
+        </vertices>
+        <triangles material="lambert14SG" count="12">
+          <input semantic="VERTEX" source="#_collider_box_0Shape5-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#_collider_box_0Shape5-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#_collider_box_0Shape5-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 2 2 2 2 4 2 3 5 3 4 6 4 3 5 3 5 7 5 4 6 4 4 8 4 5 9 5 6 10 6 5 9 5 7 11 7 6 10 6 6 12 6 7 13 7 0 14 8 7 13 7 1 15 9 0 14 8 1 16 1 7 17 10 3 18 3 7 17 10 5 19 11 3 18 3 6 20 12 0 21 0 4 22 13 0 21 0 2 23 2 4 22 13</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="_collider_box_0Shape6" name="_collider_box_0Shape6">
+      <mesh>
+        <source id="_collider_box_0Shape6-positions" name="position">
+          <float_array id="_collider_box_0Shape6-positions-array" count="24">-0.5 -0.5 0.1 0.5 -0.5 0.1 -0.5 0.5 0.1 0.5 0.5 0.1 -0.5 0.5 -0.1 0.5 0.5 -0.1 -0.5 -0.5 -0.1 0.5 -0.5 -0.1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape6-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape6-normals" name="normal">
+          <float_array id="_collider_box_0Shape6-normals-array" count="72">0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape6-normals-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape6-map1" name="map1">
+          <float_array id="_collider_box_0Shape6-map1-array" count="28">0 0 1 0 0 1 1 1 0 2 1 2 0 3 1 3 0 4 1 4 2 0 2 1 -1 0 -1 1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape6-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_0Shape6-vertices">
+          <input semantic="POSITION" source="#_collider_box_0Shape6-positions"/>
+        </vertices>
+        <triangles material="lambert14SG" count="12">
+          <input semantic="VERTEX" source="#_collider_box_0Shape6-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#_collider_box_0Shape6-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#_collider_box_0Shape6-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 2 2 2 2 4 2 3 5 3 4 6 4 3 5 3 5 7 5 4 6 4 4 8 4 5 9 5 6 10 6 5 9 5 7 11 7 6 10 6 6 12 6 7 13 7 0 14 8 7 13 7 1 15 9 0 14 8 1 16 1 7 17 10 3 18 3 7 17 10 5 19 11 3 18 3 6 20 12 0 21 0 4 22 13 0 21 0 2 23 2 4 22 13</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="_collider_box_0Shape7" name="_collider_box_0Shape7">
+      <mesh>
+        <source id="_collider_box_0Shape7-positions" name="position">
+          <float_array id="_collider_box_0Shape7-positions-array" count="24">-0.5 -0.5 0.1 0.5 -0.5 0.1 -0.5 0.5 0.1 0.5 0.5 0.1 -0.5 0.5 -0.1 0.5 0.5 -0.1 -0.5 -0.5 -0.1 0.5 -0.5 -0.1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape7-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape7-normals" name="normal">
+          <float_array id="_collider_box_0Shape7-normals-array" count="72">0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape7-normals-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_0Shape7-map1" name="map1">
+          <float_array id="_collider_box_0Shape7-map1-array" count="28">0 0 1 0 0 1 1 1 0 2 1 2 0 3 1 3 0 4 1 4 2 0 2 1 -1 0 -1 1</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_0Shape7-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_0Shape7-vertices">
+          <input semantic="POSITION" source="#_collider_box_0Shape7-positions"/>
+        </vertices>
+        <triangles material="lambert14SG" count="12">
+          <input semantic="VERTEX" source="#_collider_box_0Shape7-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#_collider_box_0Shape7-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#_collider_box_0Shape7-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 2 2 2 2 4 2 3 5 3 4 6 4 3 5 3 5 7 5 4 6 4 4 8 4 5 9 5 6 10 6 5 9 5 7 11 7 6 10 6 6 12 6 7 13 7 0 14 8 7 13 7 1 15 9 0 14 8 1 16 1 7 17 10 3 18 3 7 17 10 5 19 11 3 18 3 6 20 12 0 21 0 4 22 13 0 21 0 2 23 2 4 22 13</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="_charcollider_box_0Shape8" name="_charcollider_box_0Shape8">
+      <mesh>
+        <source id="_charcollider_box_0Shape8-positions" name="position">
+          <float_array id="_charcollider_box_0Shape8-positions-array" count="24">-0.5 -0.5 0.1 0.5 -0.5 0.1 -0.5 0.5 0.1 0.5 0.5 0.1 -0.5 0.5 -0.1 0.5 0.5 -0.1 -0.5 -0.5 -0.1 0.5 -0.5 -0.1</float_array>
+          <technique_common>
+            <accessor source="#_charcollider_box_0Shape8-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_charcollider_box_0Shape8-normals" name="normal">
+          <float_array id="_charcollider_box_0Shape8-normals-array" count="72">0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#_charcollider_box_0Shape8-normals-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_charcollider_box_0Shape8-map1" name="map1">
+          <float_array id="_charcollider_box_0Shape8-map1-array" count="28">0 0 1 0 0 1 1 1 0 2 1 2 0 3 1 3 0 4 1 4 2 0 2 1 -1 0 -1 1</float_array>
+          <technique_common>
+            <accessor source="#_charcollider_box_0Shape8-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_charcollider_box_0Shape8-vertices">
+          <input semantic="POSITION" source="#_charcollider_box_0Shape8-positions"/>
+        </vertices>
+        <triangles material="lambert14SG" count="12">
+          <input semantic="VERTEX" source="#_charcollider_box_0Shape8-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#_charcollider_box_0Shape8-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#_charcollider_box_0Shape8-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 2 2 2 2 4 2 3 5 3 4 6 4 3 5 3 5 7 5 4 6 4 4 8 4 5 9 5 6 10 6 5 9 5 7 11 7 6 10 6 6 12 6 7 13 7 0 14 8 7 13 7 1 15 9 0 14 8 1 16 1 7 17 10 3 18 3 7 17 10 5 19 11 3 18 3 6 20 12 0 21 0 4 22 13 0 21 0 2 23 2 4 22 13</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="default">
+      <node id="polySurface111" name="polySurface111" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#polySurfaceShape111">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert10SG" target="#lambert10">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <node id="_collider_box_01" name="_collider_box_01" type="NODE">
+          <translate sid="translate">0 1.99076 -0.081974</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">4.01112 3.97878 1</scale>
+          <instance_geometry url="#_collider_box_0Shape1">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert14SG" target="#lambert14">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_03" name="_collider_box_03" type="NODE">
+          <translate sid="translate">0 0.159576 0.100165</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">4.00078 0.310884 1</scale>
+          <instance_geometry url="#_collider_box_0Shape3">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert14SG" target="#lambert14">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_04" name="_collider_box_04" type="NODE">
+          <translate sid="translate">0 3.96836 0.114708</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">4.00078 0.310884 1</scale>
+          <instance_geometry url="#_collider_box_0Shape4">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert14SG" target="#lambert14">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_05" name="_collider_box_05" type="NODE">
+          <translate sid="translate">0 0.17747 0.100208</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">0.479324 0.378139 1.41022</scale>
+          <instance_geometry url="#_collider_box_0Shape5">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert14SG" target="#lambert14">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_06" name="_collider_box_06" type="NODE">
+          <translate sid="translate">1.86671 0.17747 0.093614</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">0.269172 0.378139 1.41022</scale>
+          <instance_geometry url="#_collider_box_0Shape6">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert14SG" target="#lambert14">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_07" name="_collider_box_07" type="NODE">
+          <translate sid="translate">-1.85663 0.17747 0.093614</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">0.269172 0.378139 1.41022</scale>
+          <instance_geometry url="#_collider_box_0Shape7">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert14SG" target="#lambert14">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_charcollider_box_08" name="_charcollider_box_08" type="NODE">
+          <translate sid="translate">0 1.99076 0.131289</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">4.01112 3.97878 1.68696</scale>
+          <instance_geometry url="#_charcollider_box_0Shape8">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert14SG" target="#lambert14">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene"/>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

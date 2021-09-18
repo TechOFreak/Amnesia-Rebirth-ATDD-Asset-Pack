@@ -1,0 +1,386 @@
+#include "interfaces/Map_Interface.hps"
+#include "base/Inputhandler_Types.hps"
+
+#include "helpers/helper_map.hps"
+#include "helpers/helper_props.hps"
+#include "helpers/helper_effects.hps"
+#include "helpers/helper_audio.hps"
+#include "helpers/helper_imgui.hps"
+#include "helpers/helper_sequences.hps"
+#include "helpers/helper_game.hps"
+#include "helpers/helper_modules.hps"
+#include "helpers/helper_ai.hps"
+#include "helpers/helper_player.hps"
+#include "helpers/helper_effects.hps"
+#include "helpers/helper_effects_custom.hps"
+#include "helpers/helper_agent.hps"
+ 
+class cScrMap : iScrMap
+{
+    
+    bool skipIntro = false;
+    
+	////////////////////////////
+	// Set up map environment
+	void Setup()
+	{
+		GetBase().SetDisplayNameEntry("tddtest");
+        Hint_SetCanShowHints(false);
+        Effect_Fade_Out(0);
+	}
+		
+	void PreloadData()
+	{
+        
+	}
+	void OnStart()
+	{
+		if(cLux_ScriptDebugOn())
+		{
+		}
+	}
+	void OnEnter()
+	{	
+        PlayerBody_SetActive(true);
+        Player_SetCrossHairEnabled(false);
+        Player_ShowCrossHairIcons(false);
+        Player_SetCrossHairState(eCrossHairState_None);
+		Game_AutoSave();
+        if(!skipIntro) Seq_Intro("");
+        else Effect_Fade_In(0);
+	}
+    
+    void OnGui(float afTimeStep){
+        Player_SetCrossHairEnabled(false);
+        Player_ShowCrossHairIcons(false);
+    }
+    
+	void OnLeave()
+	{
+	}
+    
+	void OnPlayerKilled(int alRecentDeaths, const tString&in asSource)
+	{
+	}
+    
+	bool OnDeath(const tString &in asSource)
+	{
+		cLux_AddTodoMessage("DEAD : SOURCE = " + asSource);
+		
+		if (asSource == "SomeReason")
+		{
+			Effect_Fade_Out(1.0f);
+			return true;
+		}
+		return false;
+	}
+    
+	bool OnRespawn(const tString &in asSource)
+	{
+		return false;
+	}
+    
+	void OnAction(int alAction, bool abPressed) 
+	{
+		if(abPressed==false) return;
+		
+		if(alAction == eAction_Test1)
+		{
+		}
+	}
+	float DrawDebugOutput(cGuiSet @apSet,iFontData @apFont,float afY)
+	{
+		//afY = cLux_DrawDebugText("My Debug value:"+..., afY);
+		return afY;
+	}
+    
+    //---------------------------------------------------------------
+    //Start wake up scene
+    //---------------------------------------------------------------
+    
+    cSequenceStatesData mSeq_Intro;
+    
+    void Seq_Intro(const tString &in asTimer){
+        Sequence_Begin("Seq_Intro", mSeq_Intro);
+        
+        if(Sequence_DoStepAndWait(.1)){ 
+            cLux_AddDebugMessage("Waiting...");
+            //Player_StartLookAt("door_castle", 100, 100, 100, true);
+            
+            Player_SetActive(false);
+            Player_SetCrossHairEnabled(false);
+            Player_ShowCrossHairIcons(false);
+        }
+        if(Sequence_DoStepAndWait(3)){
+            cLux_AddDebugMessage("Setting up player...");
+            cLux_GetPlayer().GetCharacterBody().SetPosition(cVector3f(2, .1, -0.75), false);
+            //PlayerBody_PlayAnimation("player_wake_up_seq_crawl", ePlayerBodyAnimationLayer_FullBody, false, false, false);
+            //Player_Disorient(24, true, true);
+            Effect_Fade_In(3);
+            
+            //Voice_Play("Global_Tasi_Bark_Stage1_Push_Heavy", 4);
+            Voice_Play("Global_Tasi_Bark_Stage2_Climb_Medium", 0);
+            
+            Effect_ImageTrail_Start(2,0,24,1);
+            PlayerBody_PlayCutsceneAnimation("player_struggle_wake_up_start", false, 0, "OnEndOfAnim_WakeUpStart", 1.0, 0, true, cVector3f(2, .1, -0.75), 0, false, false);
+            //PlayerBody_PlayInteractiveAnimationAtEntity("player_wake_up_seq_crawl", "brick", 0.f, "", false, false, false, 1.f, false, false, true, false);
+            //PlayerBody_PlayInteractiveAnimation("player_wake_up_seq_crawl", 0, "", false, false, false, 1, true, cVector3f(6.5, 0, -0.75), 2.4, false, false, false, true);
+            //PlayerBody_StopAnimation("crouch_idle", 1.0f);
+        }
+        if(Sequence_DoStepAndWait(3)){
+            Voice_Play("Global_Tasi_Bark_Stage2_Climb_Medium", 1);
+            Voice_Play("Global_Tasi_Bark_Stage3_Climb_Long", 0);
+        }
+        if(Sequence_DoStepAndWait(10)){
+            Voice_Play("Global_Tasi_Bark_Stage3_Climb_Long", 0);
+        }
+        if(Sequence_DoStepWaitAndRepeat(3,1.5)){
+            StruggleFlashHandler_DoFlash(0, 0, true);
+        }//what is this
+        if(Sequence_DoStepAndContinue()){
+            StruggleFlashHandler_DoFlash(0, 0, true);
+            Voice_Play("Global_Tasi_Bark_Stage1_Push_Heavy", 4);
+            PlayerBody_PlayCutsceneAnimation("player_struggle_wake_up_end", false, 1, "OnEndOfAnim_GetUp", 1.0, 0, true, cVector3f(2, .1, -0.75), 2.4, false, false);
+            Effect_ImageTrail_Start(5,0,1,1);
+            Player_SetActive(true);
+        }
+        if(Sequence_DoStepWaitAndRepeat(4,1)){
+            StruggleFlashHandler_DoFlash(0, 0, true);
+        }
+        if(Sequence_DoStepAndContinue()){
+            
+        }
+        
+        Sequence_End();
+    }
+    
+    void OnEndOfAnim_WakeUpStart(const tString &in asAnim){
+        StruggleFlashHandler_DoFlash(0, 0, true);
+        Voice_Play("Global_Tasi_Bark_Stage3_Climb_Long", 0);
+        PlayerBody_PlayCutsceneAnimation("player_struggle_wake_up_normal_loop", false, 0, "", 1.0, 0, true, cVector3f(2, .1, -0.75), 0, false, false);
+    }
+    
+    void OnEndOfAnim_GetUp(const tString &in asAnim){
+        cVector3f cameraPos = Player_GetCameraPosition();
+        Effect_ImageTrail_Start(5,0,1,1);
+        StruggleFlashHandler_DoFlash(0, 0, true);
+        PlayerBody_PlayCutsceneAnimation("fall_and_get_up_quickly", false, 0, "OnEndOfAnim_DoneStanding", 1.0, 0.6f, true, cVector3f(2.014, 0, -0.708), 1.6, false, false);
+    }
+    
+    void OnEndOfAnim_DoneStanding(const tString &in asAnim){
+        Effect_ImageTrail_Start(2,0,3,2);
+        Player_Disorient(3, true, false);
+        Voice_Play("Global_PostPermaFail_Monster_Minor", 2);
+    }
+    
+    //---------------------------------------------------------------
+    //Fall + Wakeup Scene
+    //---------------------------------------------------------------
+    
+    bool OnCollide_Player_FallTrigger(const tString &in asParent, const tString &in asChild, int alState)
+    {
+        if(alState == 1){
+            cVector3f fallPos = Map_GetEntity("fall_pos").GetPosition();
+            
+            Music_Stop(1.0f, eMusicPrio_BgAmb);
+			Music_Play("A2_01_02_FallingDown_Stinger.ogg", 0.3f, false, eMusicPrio_BigEvent);
+            Sound_CreateAtEntity("Sound_PlayerFall","01_02_caves/scare_events/tasi_cave_fall", "player");
+            PlayerBody_PlayCutsceneAnimation("fall_from_collapsed_plankbridge", false, 0, "OnEndOfAnim_GetUpFromPlanks", 1.0, 0, true, fallPos, 3, false, false);
+            //if(!Map_TimerExists("Timer_AnimationFrameTime")) Map_AddTimer("Timer_AnimationFrameTime", 0.f, "OnTimer_AnimationFrameTime");
+            if(!Map_TimerExists("Timer_FallEvent")) Map_AddTimer("Timer_FallEvent", 0.f, "OnTimer_FallEvent");
+            //5.15
+            return false;
+        }
+        return false;
+    }
+    
+    bool fallDone = false;
+    
+    void OnTimer_FallEvent(const tString &in asTimer){
+        float animTimePos = PlayerBody_GetAnimationState("fall_from_collapsed_plankbridge").GetTimePosition();
+        cVector3f fallPos2 = Map_GetEntity("fall_pos_2").GetPosition();
+        cVector3f fallPos3 = Map_GetEntity("fall_pos_3").GetPosition();
+        if(animTimePos > 4.15 && animTimePos < 4.24){
+            PlayerBody_PlayCutsceneAnimation("fall_from_collapsed_plankbridge", false, 1, "", 1.0, .339, true, fallPos2, 3, false, false);
+        }
+        if(animTimePos > 6.94 && animTimePos < 7.04){
+            PlayerBody_PlayCutsceneAnimation("fall_from_collapsed_plankbridge", false, 2, "", 1.0, .57, true, fallPos3, 3, false, false);
+        }
+        if(animTimePos > 7.78 && animTimePos < 7.88){
+            Effect_Fade_Out(0);
+            Sound_Stop("Sound_PlayerFall", 0);
+            Sound_CreateAtEntity("Sound_PlayerHitGround","player/foley/damage/player_hit", "player");
+            //Sound_CreateAtEntity("Sound_FallImpact","player/foley/damage/player_fall_damage","player");
+            fallDone = true;
+        }
+        
+        if(!fallDone){
+            Map_RestartCurrentTimer(.1f);
+        }else{
+            Seq_WakeUpFromFall("");
+        }
+        
+    }
+    
+    cSequenceStatesData mSeq_WakeUpFromFall;
+    
+    void Seq_WakeUpFromFall(const tString &in asTimer){
+        Sequence_Begin("Seq_WakeUpFromFall", mSeq_WakeUpFromFall);
+        cVector3f landPos = cVector3f(-52.5, -14.25, 15.25);
+        
+        Sequence_Wait(3);
+        if(Sequence_DoStepAndWait(7)){
+            Effect_Fade_In(3);
+            Effect_ImageTrail_Start(3,0,8,1);
+            Entity_SetActive("waterlurker", true);
+            Sound_CreateAtEntity("Sound_PlayerHurt","player/vocalisations/hurt/player_death_wake", "player");
+            PlayerBody_PlayCutsceneAnimation("get_up_after_fall_from_plankbridge", false, 0, "OnEndOfAnim_GetUpFromPlanks", 1.0, 0, true, landPos, 3.2, false, false);
+        }
+        if(Sequence_DoStepAndWait(13)){
+            Sound_CreateAtEntity("Sound_PlayerHurt2","player/vocalisations/hurt/player_pain_big", "player");
+        }
+        if(Sequence_DoStepAndWait(9)){
+            Player_StopLookAt(0);
+            Player_StartLookAt("waterlurker", 3, 3, 20, true);
+            Voice_Play("Global_PostPermaFail_Ill", 1);
+        }
+        if(Sequence_DoStepAndContinue()){
+            Player_StopLookAt(0);
+            Sound_CreateAtEntity("Sound_PlayerHorror","player/emotes/horror_whisper", "player");
+        }
+        
+        
+        Sequence_End();
+    }
+    
+    void OnTimer_AnimationFrameTime(const tString &in asTimer){
+        cLux_AddDebugMessage(cString_ToString(PlayerBody_GetAnimationState("fall_from_collapsed_plankbridge").GetTimePosition()));
+        Map_RestartCurrentTimer(.1f);
+    }
+    
+    void OnEndOfAnim_GetUpFromPlanks(const tString &in asAnim){
+        Player_StartLookAt("arm_bait", 5, 5, 20, true);
+        Map_GetEntity("arm_bait").GetMainBody().SetBuoyancyActive(true);
+        Map_GetEntity("arm_bait").GetMainBody().SetBuoyancyDensity(.001);
+        Map_GetEntity("arm_bait").GetMainBody().SetBuoyancyDensityMul(2);
+        Entity_AddForce("arm_bait", cVector3f(0,0,-900), false, false);
+        
+    }
+    
+    //---------------------------------------------------------------
+    //Monsters Scare Scene
+    //---------------------------------------------------------------
+    
+    bool OnCollide_Player_DungeonEnterTrigger(const tString &in asParent, const tString &in asChild, int alState)
+    {
+        if(alState == 1){
+            Entity_SetActive("grunt", true);
+            Ghoul_SetAllowPlayerThrow("grunt", false);
+            Map_Preload("tddforest.hpm");
+        }
+        return false;
+    }
+    
+    bool OnCollide_Player_DungeonGruntTrigger(const tString &in asParent, const tString &in asChild, int alState)
+    {
+        if(alState == 1){
+            Lamp_SetLit("grunt_torch_1", true, true);
+            Lamp_SetLit("grunt_torch_2", true, true);
+            Agent_SetSensesActive("grunt", true);
+            Agent_RevealPlayerPosition("grunt");
+            Ghoul_SetSmellingActive("grunt", false);
+            Ghoul_CommandThreatenPlayer_Execute("grunt", 3, true, true, -1, -1, true, "");
+            Sound_CreateAtEntity("grunt_enabled", "grunt_enabled.snt", "grunt", 0.0f, false, 1.0f, 1.0, 5.0);
+            Entity_SetActive("brute_scare_trigger", true);
+            SwingDoor_SetOpenAmount("door_brute", 0);
+        }
+        return false;
+    }
+    
+    bool OnCollide_Player_BruteScareTrigger(const tString &in asParent, const tString &in asChild, int alState)
+    {
+        if(alState == 1){
+            Seq_DoorBreak("");
+        }
+        return false;
+    }
+    
+    cSequenceStatesData mSeq_DoorBreak;
+    
+    void Seq_DoorBreak(const tString &in asTimer){
+        Sequence_Begin("Seq_DoorBreak", mSeq_DoorBreak);
+        
+        if(Sequence_DoStepAndWait(3.6f)){
+            Agent_SetSensesActive("grunt", false);
+            Entity_SetActive("brute", true);
+            Prop_SetHealth("door_brute", 0.0f);
+            Ghoul_SetAllowPlayerThrow("brute", false);
+            Ghoul_SetCanAttack("brute", false);
+            PlayerBody_PlayCutsceneAtEntity("spooked_fall_back_permafail_ghoul_encounter", "PosArea_DoorScare", false, 0.3f, "OnEndOfAnim_DoorScare", 1.0f, 0.f, 0.0f, -30.0f, true, false, false);
+        }
+        if(Sequence_DoStepAndWait(.4f)){
+            cVector3f cameraPos = Player_GetCameraPosition();
+            Effect_Fade_Out(.05);
+            PlayerBody_PlayCutsceneAnimation("fall_and_get_up_quickly", false, .3f, "", 1.0f, 0.3f, true, cVector3f(cameraPos.x, 25.625+.1, cameraPos.z), cLux_GetPlayer().GetCharacterBody().GetYaw()+3.5);
+            Agent_SetSensesActive("brute", false);
+        }
+        if(Sequence_DoStepAndWait(3.0f)){
+            Effect_Fade_In(.15);
+            Entity_SetActive("suitor_scare_trigger", true);
+        }
+        
+        Sequence_End();
+    }
+    
+    void OnEndOfAnim_DoorScare(const tString &in asAnim){
+        cLux_AddDebugMessage("Animation Complete");
+        
+    }
+    
+    bool OnCollide_Player_SuitorScareTrigger(const tString &in asParent, const tString &in asChild, int alState)
+    {
+        if(alState == 1){
+            Entity_SetActive("suitor", true);
+            Ghoul_CommandThreatenPlayer_Execute("suitor", 4, true, true, -1, -1, true, "");
+            Entity_SetActive("window_jump_trigger", true);
+        }
+        return false;
+    }
+    
+    bool OnCollide_Player_WindowJumpTrigger(const tString &in asParent, const tString &in asChild, int alState)
+    {
+        if(alState == 1){
+            Effect_Fade_Out(0);
+            Sound_CreateAtEntity("break_glass_large", "break_glass_large.snt", "player", 0.0f, false, 1.0f, 1.0, 5.0);
+            Agent_SetSensesActive("suitor", true);
+            Map_AddTimer("Timer_ChangeMap", 2.0f, "OnTimer_ChangeMap");
+        }
+        return true;
+    }
+    
+    void OnTimer_ChangeMap(const tString &in asTimer){
+        Map_ChangeMap("tddforest.hpm", "start_pos", "", "", false);
+    }
+    
+    //Custom Item Funtions-----------------------------------------------------
+    
+    bool CanUse_DungeonKey(const tString& in asItemType, const tString& in asItemID, const tString& in asPickedEntity){
+        return asPickedEntity == "door_dungeon";
+    }
+    
+    bool OnUse_DungeonKey(const tString& in asItemType, const tString& in asItemID, const tString& in asTargetEntity, const tString& in asItemEntity, float afTimeElapsed, float afTimeStep){
+        if(asTargetEntity == "door_dungeon"){
+            SwingDoor_SetLocked(asTargetEntity, false, true);
+            //Sound_CreateAtEntity("", "level_entity_shared/doors/relic_door/relic_door_unlock", asTargetEntity, 0, true);
+            Sound_CreateAtEntity("unlock_door", "unlock_door.snt", asTargetEntity, 0.0f, false, 1.0f, 1.0, 5.0);
+            Item_RemoveFromInventory(ItemType_GetFirstInInventory(asItemType));
+        }
+        return false;
+    }
+    
+    void lantern_1_OnPlayerInteract(const tString &in asEntity)
+    {
+        Lantern_SetAmount(10);
+    }
+    
+}

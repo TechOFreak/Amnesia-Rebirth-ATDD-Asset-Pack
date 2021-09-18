@@ -1,0 +1,62 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/gameplay/padlock_rusty/padlock_rusty.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="236" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.280000 0.300000 0.070000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.280000 0.300000 0.070000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.001777 -0.040397 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="2" LinearDamping="0.000000" Mass="5.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.001777 -0.040397 0.000000">
+                <Shape ID="1" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge Active="true" BreakForce="0.000000" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="2" ConnectedParentBodyID="-1" GroupID="0" ID="3" LimitStepCount="0" MaxAngle="170.000000" MaxLimitMaxSpeed="0.000000" MaxLimitMinSpeed="0.000000" MaxLimitSound="" MaxMoveFreq="0.800000" MaxMoveFreqSpeed="1.000000" MaxMoveSpeed="2.000000" MaxMoveVolume="0.600000" MiddleMoveSpeed="0.500000" MiddleMoveVolume="0.500000" MinAngle="0.000000" MinLimitMaxSpeed="0.000000" MinLimitMinSpeed="0.000000" MinLimitSound="" MinMoveFreq="0.100000" MinMoveFreqSpeed="0.500000" MinMoveSpeed="0.100000" MinMoveVolume="0.400000" MoveSound="joint_metal_gate.snt" MoveType="Angular" Name="HingeJoint_1" PinDir="1.000000 0.000000 0.000000" Rotation="0.000000 0.000000 -1.570796" Scale="1.000000 1.000000 1.000000" StickyMaxLimit="false" StickyMinLimit="false" SubType="1" Tag="" Type="12" WorldPos="0.000000 0.173319 -0.000859" />
+        </Joints>
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_SwingDoor">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveMaxSpeed" Value="6" />
+        <Var Name="MoveSlowDownFactor" Value="3.0" />
+        <Var Name="MoveSpeedFactor" Value="1.0" />
+        <Var Name="MoveThrowImpulse" Value="6.0" />
+        <Var Name="CloseOnSound" Value="" />
+        <Var Name="CloseOffSound" Value="" />
+        <Var Name="LockOnSound" Value="" />
+        <Var Name="LockOffSound" Value="" />
+        <Var Name="InteractLockedSound" Value="" />
+        <Var Name="Breakable" Value="false" />
+        <Var Name="DamageMesh1" Value="" />
+        <Var Name="DamageMesh2" Value="" />
+        <Var Name="BrokenEntity" Value="padlock_broken" />
+        <Var Name="DamageSound" Value="" />
+        <Var Name="DamagePS" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakPS" Value="" />
+        <Var Name="BreakImpulse" Value="2" />
+        <Var Name="HealthDamage1" Value="66" />
+        <Var Name="HealthDamage2" Value="33" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

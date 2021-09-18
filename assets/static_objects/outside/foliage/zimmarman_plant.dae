@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Bulgur</author>
+      <authoring_tool>COLLADAMax</authoring_tool>
+      <source_data>F://\test\zimmarman_ground\plant.max</source_data>
+    </contributor>
+    <created>2010-05-06T15:55:35Z</created>
+    <modified>2010-05-06T15:55:35Z</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="ColorEffectR0G0B0">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent>
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_3_-_Default">
+      <profile_COMMON>
+        <newparam sid="zimmerman_leaf_dds-surface">
+          <surface type="2D">
+            <init_from>zimmerman_leaf_dds</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="zimmerman_leaf_dds-sampler">
+          <sampler2D>
+            <source>zimmerman_leaf_dds-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="zimmerman_leaf_dds-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="zimmerman_leaf_dds-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="3dsMAX">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lexture_lock>1</ambient_diffuse_lexture_lock>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="ColorEffectR0G0B0-material" name="ColorEffectR0G0B0-material">
+      <instance_effect url="#ColorEffectR0G0B0"/>
+    </material>
+    <material id="_3_-_Default-material" name="_3_-_Default-material">
+      <instance_effect url="#_3_-_Default"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="geom-Plant" name="Plant">
+      <mesh>
+        <source id="geom-Plant-positions">
+          <float_array id="geom-Plant-positions-array" count="168">3.29462 0.378956 -0.0550736 0.478052 0.459617 -0.186644 -2.38047 -1.01018 0.014533 -0.422594 -0.66884 -1.25345 2.59809 0.0142992 -0.734853 -0.263963 -0.815932 0.894971 2.70204 -0.0997449 0.548381 -3.80776 0.36918 -4.44336 -2.74572 0.44916 -1.85711 -1.36708 -1.00821 0.627396 -3.327 -0.669763 -0.600704 -4.12677 0.00760479 -3.53256 -1.46279 -0.815612 -1.64355 -3.01715 -0.105476 -4.16371 -0.261968 -0.107032 -2.51226 -1.14479 -0.0602518 -1.13578 -1.87265 -0.912665 0.358269 -1.94177 -0.714706 -0.992772 -0.805368 -0.318516 -2.35954 -0.81671 -0.800013 -0.449451 -0.130714 -0.384657 -2.03964 -5.66723 0.288111 -2.246 -3.48016 0.362439 -0.843301 -1.10629 -0.991948 0.313192 -3.25294 -0.677414 0.423006 -5.42459 -0.0479133 -1.3826 -2.38967 -0.812957 -1.36458 -4.9163 -0.153003 -2.45455 -5.67898 0.217743 1.50758 -3.36233 0.287166 0.784889 -1.1097 -0.977829 -0.219259 -2.3199 -0.684055 1.38256 -4.91556 -0.0961025 1.85232 -3.08061 -0.810651 -0.308298 -5.37736 -0.194256 0.845093 -4.05217 0.350117 4.22385 -2.56789 0.428768 1.90957 -1.34413 -1.00439 -0.602356 -1.22793 -0.671562 1.66914 -3.13855 -0.00544967 3.96709 -3.11949 -0.814988 0.755659 -4.27285 -0.116651 3.42924 -0.633996 0.53567 5.54677 -1.04221 0.627257 2.37135 -1.83078 -1.04162 -0.785387 -0.0268863 -0.65405 1.1539 -0.0112014 0.121621 4.63388 -2.39798 -0.821066 1.75489 -1.42562 -0.00787049 5.00313 1.28446 0.113172 2.42836 -0.312361 0.175304 0.956167 -2.09869 -0.956847 -0.340453 -0.315598 -0.693924 -0.119256 1.21004 -0.167715 1.68237 -1.28574 -0.807226 1.227 0.636013 -0.255561 2.49104</float_array>
+          <technique_common>
+            <accessor source="#geom-Plant-positions-array" count="56" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Plant-normals">
+          <float_array id="geom-Plant-normals-array" count="168">-0.185984 0.98242 0.0161324 -0.449148 0.887556 0.102517 -0.242316 0.705605 0.665886 -0.024267 0.758795 0.650877 0.0225052 0.991745 0.126232 -0.319232 0.77303 -0.548192 0.0290657 0.827904 -0.560116 0.0932211 0.98242 0.161741 0.282731 0.887556 0.363741 0.705905 0.705605 -0.0618023 0.600151 0.758795 -0.253079 0.104894 0.991745 -0.0737448 -0.361917 0.77303 0.520999 -0.519921 0.827904 0.210373 -0.0790208 0.98242 0.169133 -0.135792 0.887556 0.440232 0.455516 0.705605 0.542795 0.551542 0.758795 0.346454 0.120573 0.991745 0.0436261 -0.634365 0.77303 0.0023672 -0.470542 0.827904 -0.30523 0.169133 0.98242 0.0790207 0.440232 0.887556 0.135791 0.542795 0.705605 -0.455516 0.346454 0.758795 -0.551543 0.0436262 0.991745 -0.120573 0.00236726 0.77303 0.634365 -0.305229 0.827904 0.470542 0.16925 0.98242 -0.0787698 0.386998 0.887556 -0.249952 -4.33595e-005 0.705605 -0.708605 -0.199809 0.758795 -0.619924 -0.064322 0.991745 -0.110922 0.487473 0.77303 0.405948 0.164258 0.827904 0.536278 0.0790209 0.98242 -0.169133 0.135791 0.887556 -0.440232 -0.455516 0.705605 -0.542795 -0.551542 0.758795 -0.346454 -0.120573 0.991745 -0.0436262 0.634365 0.77303 -0.00236722 0.470542 0.827904 0.30523 -0.0481831 0.98242 -0.180357 -0.178954 0.887556 -0.424523 -0.697847 0.705605 -0.123005 -0.645202 0.758795 0.0891252 -0.120407 0.991745 0.0440833 0.48443 0.77303 -0.409575 0.556653 0.827904 -0.068639 -0.152842 0.98242 -0.10719 -0.409964 0.887556 -0.210174 -0.613648 0.705605 0.35434 -0.436965 0.758795 0.483002 -0.0639006 0.991745 0.111166 0.107825 0.77303 -0.625138 0.382301 0.827904 -0.41039</float_array>
+          <technique_common>
+            <accessor source="#geom-Plant-normals-array" count="56" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Plant-map-channel1">
+          <float_array id="geom-Plant-map-channel1-array" count="168">1 0.951389 0 0.582358 0.515249 0 0.20254 0 0 0 0.468042 0 0.801808 1 0 0.650709 0 0 1 0.714771 0 1 0.951389 0 0.582358 0.515249 0 0.20254 0 0 0 0.468042 0 0.801808 1 0 0.650709 0 0 1 0.714771 0 1 0.951389 0 0.582358 0.515249 0 0.20254 0 0 0 0.468042 0 0.801808 1 0 0.650709 0 0 1 0.714771 0 1 0.951389 0 0.582358 0.515249 0 0.20254 0 0 0 0.468042 0 0.801808 1 0 0.650709 0 0 1 0.714771 0 1 0.951389 0 0.582358 0.515249 0 0.20254 0 0 0 0.468042 0 0.801808 1 0 0.650709 0 0 1 0.714771 0 1 0.951389 0 0.582358 0.515249 0 0.20254 0 0 0 0.468042 0 0.801808 1 0 0.650709 0 0 1 0.714771 0 1 0.951389 0 0.582358 0.515249 0 0.20254 0 0 0 0.468042 0 0.801808 1 0 0.650709 0 0 1 0.714771 0 1 0.951389 0 0.582358 0.515249 0 0.20254 0 0 0 0.468042 0 0.801808 1 0 0.650709 0 0 1 0.714771 0</float_array>
+          <technique_common>
+            <accessor source="#geom-Plant-map-channel1-array" count="56" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-Plant-vertices">
+          <input semantic="POSITION" source="#geom-Plant-positions"/>
+        </vertices>
+        <triangles material="_3_-_Default_1" count="48">
+          <input semantic="VERTEX" source="#geom-Plant-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Plant-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Plant-map-channel1" offset="2" set="1"/>
+          <p>1 0 1 2 1 2 5 2 5 1 0 1 5 2 5 6 3 6 1 0 1 6 3 6 0 4 0 3 5 3 2 1 2 1 0 1 4 6 4 3 5 3 1 0 1 4 6 4 1 0 1 0 4 0 8 7 8 9 8 9 12 9 12 8 7 8 12 9 12 13 10 13 8 7 8 13 10 13 7 11 7 10 12 10 9 8 9 8 7 8 11 13 11 10 12 10 8 7 8 11 13 11 8 7 8 7 11 7 15 14 15 16 15 16 19 16 19 15 14 15 19 16 19 20 17 20 15 14 15 20 17 20 14 18 14 17 19 17 16 15 16 15 14 15 18 20 18 17 19 17 15 14 15 18 20 18 15 14 15 14 18 14 22 21 22 23 22 23 26 23 26 22 21 22 26 23 26 27 24 27 22 21 22 27 24 27 21 25 21 24 26 24 23 22 23 22 21 22 25 27 25 24 26 24 22 21 22 25 27 25 22 21 22 21 25 21 29 28 29 30 29 30 33 30 33 29 28 29 33 30 33 34 31 34 29 28 29 34 31 34 28 32 28 31 33 31 30 29 30 29 28 29 32 34 32 31 33 31 29 28 29 32 34 32 29 28 29 28 32 28 36 35 36 37 36 37 40 37 40 36 35 36 40 37 40 41 38 41 36 35 36 41 38 41 35 39 35 38 40 38 37 36 37 36 35 36 39 41 39 38 40 38 36 35 36 39 41 39 36 35 36 35 39 35 43 42 43 44 43 44 47 44 47 43 42 43 47 44 47 48 45 48 43 42 43 48 45 48 42 46 42 45 47 45 44 43 44 43 42 43 46 48 46 45 47 45 43 42 43 46 48 46 43 42 43 42 46 42 50 49 50 51 50 51 54 51 54 50 49 50 54 51 54 55 52 55 50 49 50 55 52 55 49 53 49 52 54 52 51 50 51 50 49 50 53 55 53 52 54 52 50 49 50 53 55 53 50 49 50 49 53 49</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_images>
+    <image id="zimmerman_leaf_dds">
+      <init_from>file:///F:\test\zimmarman_ground\zimmerman_leaf.dds</init_from>
+    </image>
+  </library_images>
+  <library_visual_scenes>
+    <visual_scene id="MaxScene">
+      <node id="node-Scene_Root" name="Scene_Root">
+        <node id="node-Plant" name="Plant">
+          <rotate>0.377964 0.654654 0.654654 -221.41</rotate>
+          <scale>0.880708 0.880708 0.880708</scale>
+          <matrix>1 0 0 1.67554 0 1 0 0.778033 0 0 1 -3.40089e-008 0 0 0 1</matrix>
+          <instance_geometry url="#geom-Plant">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="_3_-_Default_1" target="#_3_-_Default-material"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#MaxScene"/>
+  </scene>
+</COLLADA>

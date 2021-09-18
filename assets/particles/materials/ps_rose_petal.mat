@@ -1,0 +1,17 @@
+﻿<Material>
+    <Main BlendMode="Alpha" DepthTest="true" PhysicsMaterial="Default" Type="translucent" UseAlpha="false" UVSubDivs="4 4" />
+    <TextureUnits>
+        <Diffuse AnimFrameTime="0" AnimMode="None" Compress="true" File="E:/lux/redist/particles/materials/ps_rose_petal.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <NMap AnimFrameTime="0" AnimMode="None" Compress="true" File="E:/lux/redist/particles/materials/ps_rose_petal_nrm.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+    </TextureUnits>
+    <SpecificVariables>
+        <Var Name="Refraction" Value="false" />
+        <Var Name="RefractionEdgeCheck" Value="true" />
+        <Var Name="RefractionNormals" Value="false" />
+        <Var Name="RefractionScale" Value="0.1" />
+        <Var Name="FrenselBias" Value="0.2" />
+        <Var Name="FrenselPow" Value="8" />
+        <Var Name="RimLightMul" Value="0" />
+        <Var Name="RimLightPow" Value="8" />
+    </SpecificVariables>
+</Material>

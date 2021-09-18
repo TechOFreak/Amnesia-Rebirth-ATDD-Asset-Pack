@@ -1,0 +1,30 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/equipment/coal_pile/coal_pile01.dae">
+            <SubMesh ID="0" Name="coal_pile01" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="586" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="1" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="0.471741 0.690885 0.03533" Rotation="0 0 0" Scale="0.507052 0.3 0.736275" RelativeTranslation="0.0080905 0.270442 0.059745" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="2" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="0.45556 0.3 0" Rotation="0 -0.441084 0" Scale="1.2 0.6 1.2" RelativeTranslation="-0.0080905 -0.120443 0.024415" RelativeRotation="0 -0.441084 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="3" Name="Shape_3" CreStamp="0" ModStamp="0" WorldPos="0.45556 0.15 -0.08416" Rotation="0 0.038272 0" Scale="2 0.3 2" RelativeTranslation="-0.0080905 -0.270443 -0.059745" RelativeRotation="0 0.038272 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="6" Name="Body" CreStamp="0" ModStamp="0" WorldPos="0.46365 0.420443 -0.024415" Rotation="0 0 0" Scale="1 1 1" Material="Sand" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="1" />
+                <Shape ID="2" />
+                <Shape ID="3" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

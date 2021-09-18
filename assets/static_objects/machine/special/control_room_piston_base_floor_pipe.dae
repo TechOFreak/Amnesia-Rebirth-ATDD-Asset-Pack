@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///G:/Projects/3d/work/amnesia%20game/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-12-15T12:48:56Z</created>
+    <modified>2009-12-15T12:48:56Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file2" name="file2">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/machine/pipes/pipes.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file3" name="file3">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/machine/pipes/pipes_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file4" name="file4">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/machine/pipes/pipes_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="machine_pipes_material" name="machine_pipes_material">
+      <instance_effect url="#machine_pipes_material-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="machine_pipes_material-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file4-surface">
+          <surface type="2D">
+            <init_from>file4</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file4-sampler">
+          <sampler2D>
+            <source>file4-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file4-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file3-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="control_room_piston_base_floor_pipeShape" name="control_room_piston_base_floor_pipeShape">
+      <mesh>
+        <source id="control_room_piston_base_floor_pipeShape-positions" name="position">
+          <float_array id="control_room_piston_base_floor_pipeShape-positions-array" count="240">0.182725 0.143601 -2.51849 0.000000 0.114678 -2.57033 0.000000 0.157011 -2.59395 0.182725 0.185934 -2.5421 -0.182721 0.143601 -2.51849 -0.182721 0.185934 -2.5421 -0.295651 0.219331 -2.38274 -0.295651 0.261664 -2.40636 -0.295651 0.31293 -2.21497 -0.295651 0.355263 -2.23858 -0.182721 0.38866 -2.07922 -0.182721 0.430994 -2.10284 0.000000 0.417582 -2.02738 0.000000 0.459915 -2.05099 0.182725 0.38866 -2.07922 0.182725 0.430994 -2.10284 0.295651 0.31293 -2.21497 0.295651 0.355263 -2.23858 0.295651 0.219331 -2.38274 0.295651 0.261664 -2.40636 0.182725 1.25148 -3.73999 0.000000 1.31085 -3.73999 0.000000 1.31085 -3.69151 0.182725 1.25148 -3.69151 -0.182721 1.25148 -3.73999 -0.182721 1.25148 -3.69151 -0.295651 1.09605 -3.73999 -0.295651 1.09605 -3.69151 -0.295651 0.903923 -3.73999 -0.295651 0.903923 -3.69151 -0.182721 0.748484 -3.73999 -0.182721 0.748484 -3.69151 0.000000 0.689124 -3.73999 0.000000 0.689123 -3.69151 0.182725 0.748484 -3.73999 0.182725 0.748484 -3.69151 0.295651 0.903923 -3.73999 0.295651 0.903923 -3.69151 0.295651 1.09605 -3.73999 0.295651 1.09605 -3.69151 0.166208 0.173411 -2.43166 0.000000 0.139874 -2.49177 -0.166206 0.173411 -2.43166 -0.23505 0.254388 -2.28651 -0.166206 0.335365 -2.14136 0.000000 0.368903 -2.08124 0.166208 0.335365 -2.14136 0.235055 0.254388 -2.28651 0.235055 1 -3.75 0.166208 0.833792 -3.75 0.166208 1.16621 -3.75 0.000000 1.23505 -3.75 -0.166206 1.16621 -3.75 -0.23505 1 -3.75 -0.166206 0.833792 -3.75 0.000000 0.764948 -3.75 0.166207 0.760282 -2.96511 0.235053 0.904091 -2.90099 0.166207 1.05794 -2.83282 -0.000000 1.12245 -2.80425 -0.166208 1.05794 -2.83282 -0.235052 0.904091 -2.90099 -0.166208 0.760282 -2.96511 -0.000000 0.704383 -2.99015 0.166208 0.509961 -2.60599 0.235054 0.617474 -2.48995 0.166208 0.733846 -2.3804 0.000000 0.782892 -2.33598 -0.166207 0.733846 -2.3804 -0.235051 0.617474 -2.48995 -0.166207 0.509961 -2.60599 0.000000 0.468481 -2.65584 0.166207 0.842225 -3.38483 0.235054 0.999649 -3.37088 0.166208 1.15742 -3.34643 0.000000 1.22255 -3.33504 -0.166207 1.15742 -3.34643 -0.235051 0.999649 -3.37088 -0.166207 0.842225 -3.38483 0.000000 0.777454 -3.38725</float_array>
+          <technique_common>
+            <accessor source="#control_room_piston_base_floor_pipeShape-positions-array" count="80" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="control_room_piston_base_floor_pipeShape-normals" name="normal">
+          <float_array id="control_room_piston_base_floor_pipeShape-normals-array" count="336">0.587791 -0.394148 -0.706505 -0.000001 -0.487195 -0.873293 -0.000001 -0.024855 -0.999691 0.520271 0.05751 -0.852062 -0.587786 -0.394149 -0.706508 -0.520267 0.057507 -0.852065 -0.95106 -0.150547 -0.269854 -0.841813 0.273124 -0.465568 -0.95106 0.150548 0.269854 -0.841813 0.539632 0.012144 -0.587782 0.394151 0.706511 -0.520263 0.755256 0.39864 -0.000001 0.487195 0.873293 -0.000001 0.837609 0.54627 0.587787 0.394149 0.706508 0.520267 0.755256 0.398636 0.951062 0.150544 0.269848 0.841816 0.539628 0.012139 0.951062 -0.150544 -0.269848 0.841816 0.273126 -0.465562 0.000000 -0.873293 0.487196 0.000000 -0.873293 0.487196 0.000000 -0.873293 0.487196 0.000000 -0.873293 0.487196 0 -0.873293 0.487196 0 -0.873293 0.487196 0 -0.873293 0.487196 0 -0.873293 0.487196 0 -0.873292 0.487197 0 -0.873292 0.487197 0 -0.873292 0.487197 0 -0.873292 0.487197 0 -0.873293 0.487196 0 -0.873293 0.487196 0 -0.873293 0.487196 0 -0.873293 0.487196 0.587791 0.809013 0 -0.000000 1 -0.000001 -0.000000 0.885132 0.46534 0.520272 0.716082 0.465342 -0.587785 0.809018 -0.000000 -0.520267 0.716087 0.465341 -0.951056 0.309017 0 -0.84181 0.273521 0.465341 -0.951059 -0.30901 -0.000000 -0.841812 -0.273515 0.46534 -0.587771 -0.809027 -0.000001 -0.520254 -0.716094 0.465344 -0.000001 -1 -0.000001 -0.000001 -0.885135 0.465334 0.587776 -0.809023 -0.000000 0.520258 -0.71609 0.465346 0.951061 -0.309003 0 0.841815 -0.273508 0.465339 0.951059 0.309009 0 0.841813 0.273514 0.46534 -0.000000 0 -1 -0.000000 0 -1 -0.000000 0 -1 -0.000000 0 -1 0 0.000001 -1 0 0.000001 -1 0 0.000001 -1 0 0.000001 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 -0.000000 -0.000000 -1 -0.000000 -0.000000 -1 -0.000000 -0.000000 -1 -0.000000 -0.000000 -1 0.700808 -0.470816 -0.535911 0.696814 -0.329896 -0.636882 -0.000000 -0.453442 -0.891286 -0.000000 -0.65646 -0.754361 -0.696819 -0.329896 -0.636876 -0.700813 -0.470814 -0.535906 -0.999977 0.005875 -0.003287 -0.999994 -0.000807 -0.003376 -0.69698 0.368802 0.614983 -0.706432 0.479356 0.520741 0 0.519357 0.854557 0 0.678629 0.734481 0.696976 0.368806 0.614986 0.706428 0.479361 0.520743 0.999977 0.005878 -0.00329 0.999994 -0.000805 -0.003378 0.999969 -0.007397 -0.002587 0.692495 -0.664266 -0.281428 0.694615 -0.716822 -0.060633 0.999991 -0.00386 0.001547 0.709313 0.647471 0.278668 0.702227 0.707933 0.075554 0 0.918434 0.395575 -0.000000 0.99424 0.107182 -0.709318 0.647467 0.278666 -0.702231 0.707929 0.075551 -0.999969 -0.007396 -0.002587 -0.999991 -0.003859 0.001544 -0.692499 -0.664262 -0.281426 -0.69462 -0.716817 -0.060634 0 -0.921204 -0.389079 0 -0.996807 -0.079848 0.699803 -0.714139 0.016748 0.999988 -0.000438 0.004791 0.700783 0.713205 0.015521 -0.000000 0.999662 0.026005 -0.700788 0.713201 0.015518 -0.999988 -0.000437 0.004787 -0.699808 -0.714135 0.016745 0 -0.999587 0.028755</float_array>
+          <technique_common>
+            <accessor source="#control_room_piston_base_floor_pipeShape-normals-array" count="112" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="control_room_piston_base_floor_pipeShape-map1" name="map1">
+          <float_array id="control_room_piston_base_floor_pipeShape-map1-array" count="250">0.627764 0.901597 0.602255 0.906529 0.601011 0.900094 0.626519 0.89516 0.598238 0.906032 0.574698 0.895038 0.577472 0.889097 0.571734 0.89227 0.559164 0.869532 0.564899 0.866361 0.558394 0.865558 0.561578 0.839772 0.568084 0.840576 0.563294 0.836102 0.581028 0.817114 0.585819 0.821589 0.584575 0.815151 0.610083 0.810219 0.611328 0.816655 0.614105 0.810715 0.637641 0.821717 0.634866 0.827655 0.640602 0.824481 0.653178 0.847217 0.647443 0.850389 0.653949 0.851195 0.650757 0.876978 0.644252 0.876173 0.649043 0.880647 0.63131 0.899635 0.770209 0.952369 0.762178 0.977077 0.741167 0.91238 0.762185 0.927658 0.694161 0.927652 0.715178 0.992372 0.694159 0.97707 0.686132 0.952361 0.715183 0.91238 0.741158 0.992373 0.818252 0.737508 0.810219 0.712799 0.816455 0.710772 0.824485 0.735481 0.810221 0.708746 0.818249 0.684036 0.824484 0.686062 0.820631 0.68076 0.841648 0.665486 0.845503 0.670789 0.845503 0.664234 0.871484 0.664234 0.871484 0.670789 0.875337 0.665486 0.896356 0.680758 0.892503 0.686061 0.898737 0.684035 0.906767 0.708743 0.900531 0.710769 0.906765 0.712794 0.898741 0.737504 0.892505 0.73548 0.896358 0.740782 0.875341 0.756056 0.871486 0.750752 0.871486 0.757307 0.845504 0.757307 0.845504 0.750751 0.841652 0.756054 0.820632 0.740786 0.675318 0.952386 0.667292 0.977097 0.646266 0.912409 0.667287 0.927677 0.599267 0.927685 0.620291 0.992374 0.599271 0.977104 0.591241 0.952395 0.620285 0.912413 0.646273 0.992372 0.414674 0.40269 0.40974 0.427118 0.409864 0.208257 0.414769 0.232691 0.422822 0.258565 0.430529 0.287071 0.433723 0.317702 0.430495 0.348329 0.422756 0.376826 0.0146 0.376649 0.022685 0.402517 0.006859 0.348132 0.003649 0.317477 0.006889 0.286824 0.014658 0.258314 0.022768 0.232452 0.027726 0.208029 0.02762 0.426945 0.219115 0.385389 0.219126 0.362066 0.219081 0.339371 0.219068 0.317577 0.219103 0.295783 0.219173 0.273088 0.219186 0.249765 0.219166 0.225628 0.219069 0.409526 0.322769 0.392988 0.326488 0.368548 0.328672 0.343302 0.329444 0.31764 0.3287 0.291977 0.326544 0.266729 0.322851 0.242284 0.319793 0.218018 0.319684 0.417251 0.115081 0.392853 0.111372 0.368422 0.109136 0.343191 0.108358 0.317525 0.109161 0.291858 0.111424 0.266629 0.115156 0.242201 0.118214 0.217939 0.118115 0.417118</float_array>
+          <technique_common>
+            <accessor source="#control_room_piston_base_floor_pipeShape-map1-array" count="125" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="control_room_piston_base_floor_pipeShape-vertices">
+          <input semantic="POSITION" source="#control_room_piston_base_floor_pipeShape-positions"/>
+        </vertices>
+        <triangles material="blinn1SG" count="136">
+          <input semantic="VERTEX" source="#control_room_piston_base_floor_pipeShape-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#control_room_piston_base_floor_pipeShape-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#control_room_piston_base_floor_pipeShape-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 3 3 3 3 3 3 1 1 1 2 2 2 1 1 4 4 4 5 2 2 2 2 2 2 4 4 5 5 5 6 4 4 7 6 6 8 5 5 6 5 5 6 6 6 8 7 7 9 6 6 10 8 8 11 7 7 9 7 7 9 8 8 11 9 9 12 8 8 13 10 10 14 9 9 12 9 9 12 10 10 14 11 11 15 10 10 16 12 12 17 11 11 15 11 11 15 12 12 17 13 13 18 12 12 19 14 14 20 13 13 18 13 13 18 14 14 20 15 15 21 14 14 22 16 16 23 15 15 21 15 15 21 16 16 23 17 17 24 16 16 25 18 18 26 17 17 24 17 17 24 18 18 26 19 19 27 18 18 28 0 0 29 19 19 27 19 19 27 0 0 29 3 3 3 1 20 30 0 21 31 4 23 33 4 23 33 0 21 31 6 22 32 2 2 2 5 5 6 3 3 3 7 7 9 9 9 12 5 5 6 11 11 15 13 13 18 9 9 12 15 15 21 17 17 24 13 13 18 19 19 27 3 3 3 17 17 24 5 5 6 9 9 12 3 3 3 9 9 12 13 13 18 3 3 3 13 13 18 17 17 24 3 3 3 10 24 34 16 25 35 12 27 37 12 27 37 16 25 35 14 26 36 8 28 38 18 29 39 10 31 34 10 31 34 18 29 39 16 30 35 6 32 32 0 33 31 8 35 38 8 35 38 0 33 31 18 34 39 20 36 40 21 37 41 23 39 43 23 39 43 21 37 41 22 38 42 21 37 44 24 40 45 22 38 42 22 38 42 24 40 45 25 41 46 24 40 47 26 42 48 25 41 46 25 41 46 26 42 48 27 43 49 26 42 50 28 44 51 27 43 49 27 43 49 28 44 51 29 45 52 28 44 53 30 46 54 29 45 52 29 45 52 30 46 54 31 47 55 30 46 56 32 48 57 31 47 55 31 47 55 32 48 57 33 49 58 32 48 59 34 50 60 33 49 58 33 49 58 34 50 60 35 51 61 34 50 62 36 52 63 35 51 61 35 51 61 36 52 63 37 53 64 36 52 65 38 54 66 37 53 64 37 53 64 38 54 66 39 55 67 38 54 68 20 36 69 39 55 67 39 55 67 20 36 69 23 39 43 21 56 70 20 57 71 24 59 73 24 59 73 20 57 71 26 58 72 22 38 42 25 41 46 23 39 43 27 43 49 29 45 52 25 41 46 31 47 55 33 49 58 29 45 52 35 51 61 37 53 64 33 49 58 39 55 67 23 39 43 37 53 64 25 41 46 29 45 52 23 39 43 29 45 52 33 49 58 23 39 43 33 49 58 37 53 64 23 39 43 30 60 74 36 61 75 32 63 77 32 63 77 36 61 75 34 62 76 28 64 78 38 65 79 30 67 74 30 67 74 38 65 79 36 66 75 26 68 72 20 69 71 28 71 78 28 71 78 20 69 71 38 70 79 64 72 107 40 73 80 71 75 115 71 75 115 40 73 80 41 74 81 41 74 82 42 76 83 71 75 114 71 75 114 42 76 83 70 77 113 42 76 83 43 78 84 70 77 113 70 77 113 43 78 84 69 79 112 43 78 84 44 80 85 69 79 112 69 79 112 44 80 85 68 81 111 44 80 85 45 82 86 68 81 111 68 81 111 45 82 86 67 83 110 46 84 87 66 85 109 45 82 86 45 82 86 66 85 109 67 83 110 47 86 88 65 87 108 46 84 87 46 84 87 65 87 108 66 85 109 40 73 80 64 72 107 47 86 88 47 86 88 64 72 107 65 87 108 57 88 99 56 89 98 73 91 117 73 91 117 56 89 98 72 90 116 58 92 100 57 88 99 74 93 118 74 93 118 57 88 99 73 91 117 59 94 101 58 92 100 75 95 119 75 95 119 58 92 100 74 93 118 59 94 101 75 95 119 60 96 102 60 96 102 75 95 119 76 97 120 60 96 102 76 97 120 61 98 103 61 98 103 76 97 120 77 99 121 61 98 103 77 99 121 62 100 104 62 100 104 77 99 121 78 101 122 62 100 104 78 101 122 63 102 105 63 102 105 78 101 122 79 103 123 56 89 98 63 102 106 72 90 116 72 90 116 63 102 106 79 103 124 65 87 108 64 72 107 57 88 99 57 88 99 64 72 107 56 89 98 65 87 108 57 88 99 66 85 109 66 85 109 57 88 99 58 92 100 66 85 109 58 92 100 67 83 110 67 83 110 58 92 100 59 94 101 68 81 111 67 83 110 60 96 102 60 96 102 67 83 110 59 94 101 69 79 112 68 81 111 61 98 103 61 98 103 68 81 111 60 96 102 69 79 112 61 98 103 70 77 113 70 77 113 61 98 103 62 100 104 70 77 113 62 100 104 71 75 114 71 75 114 62 100 104 63 102 105 64 72 107 71 75 115 56 89 98 56 89 98 71 75 115 63 102 106 73 91 117 72 90 116 48 105 89 48 105 89 72 90 116 49 104 90 74 93 118 73 91 117 50 106 91 50 106 91 73 91 117 48 105 89 75 95 119 74 93 118 51 107 92 51 107 92 74 93 118 50 106 91 75 95 119 51 107 92 76 97 120 76 97 120 51 107 92 52 108 93 76 97 120 52 108 93 77 99 121 77 99 121 52 108 93 53 109 94 77 99 121 53 109 94 78 101 122 78 101 122 53 109 94 54 110 95 78 101 122 54 110 95 79 103 123 79 103 123 54 110 95 55 111 96 72 90 116 79 103 124 49 104 90 49 104 90 79 103 124 55 111 97</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="control_room_piston">
+      <node id="control_room_piston_base_floor_pipe" name="control_room_piston_base_floor_pipe" type="NODE">
+        <translate sid="rotatePivot">0 0.761106 -3.02758</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <translate sid="rotatePivotInverse">0 -0.761106 3.02758</translate>
+        <translate sid="scalePivot">0 0.761106 -3.02758</translate>
+        <translate sid="scalePivotInverse">0 -0.761106 3.02758</translate>
+        <instance_geometry url="#control_room_piston_base_floor_pipeShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#machine_pipes_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene"/>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,58 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/gameplay/crank_wood/gameplay_crank_no_mount.dae">
+            <SubMesh Active="true" ID="9" Material="" Name="crank_wood_crank" Rotation="0 1.5708 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="336" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="2" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="0.085 0.45 0.085" RelativeTranslation="-0.002203 0 -0.112647" Rotation="0 0 0" Scale="0.085 0.45 0.085" ShapeType="Box" Tag="" WorldPos="-0.002203 0 0.137353" />
+            <BodyShape Active="true" ID="4" Name="Shape_3" RelativeRotation="0 0 0" RelativeScale="0.05 0.05 0.15" RelativeTranslation="0.000233 0.182434 -0.040818" Rotation="0 0 0" Scale="0.05 0.05 0.15" ShapeType="Box" Tag="" WorldPos="0.000233 0.182434 0.209182" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.5" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="false" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="5" LinearDamping="0" Mass="5" Material="Wood" MaxAngularSpeed="2.5" MaxLinearSpeed="0" Name="Body" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0 0 0.25">
+                <Children>
+                    <Child ID="9" />
+                </Children>
+                <Shape ID="4" />
+                <Shape ID="2" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="5" ConnectedParentBodyID="-1" ID="8" LimitStepCount="0" MaxAngle="0" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.2" MaxMoveFreqSpeed="2" MaxMoveSpeed="3" MaxMoveVolume="0.8" MiddleMoveSpeed="1" MiddleMoveVolume="0.6" MinAngle="0" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.8" MinMoveFreqSpeed="0.6" MinMoveSpeed="0.1" MinMoveVolume="0.2" MoveSound="17_crank_move.snt" MoveType="Angular" Name="HingeJoint_1" PinDir="0 3.13916e-007 1" Rotation="1.5708 0 0" Scale="1 1 1" StickyMaxLimit="false" StickyMinLimit="false" Stiffness="0" Tag="" WorldPos="0.000156 0 0.033627" />
+        </Joints>
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Wheel">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveMaxSpeed" Value="13.5" />
+        <Var Name="MoveSlowDownFactor" Value="3.0" />
+        <Var Name="MoveSpeedFactor" Value="1.0" />
+        <Var Name="MoveThrowImpulse" Value="6.0" />
+        <Var Name="CanInteractWithStaticBody" Value="true" />
+        <Var Name="MinLimitRange" Value="5.0" />
+        <Var Name="MaxLimitRange" Value="5.0" />
+        <Var Name="MinLimitSound" Value="" />
+        <Var Name="MaxLimitSound" Value="" />
+        <Var Name="StuckSound" Value="" />
+        <Var Name="SlowDownRotation" Value="true" />
+        <Var Name="SkipMiddleState" Value="true" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

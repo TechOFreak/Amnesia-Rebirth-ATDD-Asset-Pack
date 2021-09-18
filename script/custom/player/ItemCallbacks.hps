@@ -1,0 +1,461 @@
+#include "custom/helpers/helper_modules_custom.hps"
+#include "helpers/helper_player.hps"
+#include "helpers/helper_audio.hps"
+#include "custom/helpers/helper_items.hps"
+#include "custom/helpers/helper_areas_custom.hps"
+#include "custom/helpers/helper_player_custom.hps"
+#include "custom/components/ComponentInterfaces_Custom.hps"
+#include "helpers/helper_effects.hps"
+#include "helpers/helper_audio.hps"
+
+//---------------------------------------------------
+
+/////////////////////////////////////////
+// ITEM CALLBACKS
+/////////////////////////////////////////
+
+//---------------------------------------------------
+
+// Fill bottle every X seconds
+const float gfDrainInterval = 1.0f;
+
+//---------------------------------------------------
+
+class cScrItemCallbacks : iScrItemCallbacks
+{
+	//---------------------------------------------------
+	
+	/////////////////////////////////////////
+	// Interface
+	/////////////////////////////////////////
+	
+	//---------------------------------------------------
+	
+	void OnPickUp(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity)
+	{
+		if (asItemType == "Matchbook")
+		{
+			Hint_ShowHint("Hints", "HintMatchEquip", true);
+		}
+		else if (asItemType == "HerbertOil" || asItemType == "ModernOil" || asItemType == "AlchemistOil")
+		{
+			Hint_ShowHint("Hints", "HintOil");
+		}
+		// ==============================================
+		// OUTPOST - Gunpowder puzzle
+		// ==============================================	
+		else if (asItemType == "Sulfur_Solid" || asItemType == "Charcoal_Solid")
+		{
+			int lCount = cScript_GetGlobalVarInt("Outpost_ArsenalProgress") + 1;
+			if (lCount > 2) lCount = 2;
+			cScript_SetGlobalVarInt("Outpost_ArsenalProgress", lCount);
+		}
+		else if (asItemType == "Saltpeter_Solid" || asItemType == "Saltpeter_Powder")
+		{
+			cScript_SetGlobalVarBool("Outpost_LQDone", true);
+		}
+	}
+	
+	//---------------------------------------------------
+	
+	/**
+	* This function is called when the player tries to
+	* combine two items in their inventory (e.g.) use
+	* item A on item B.
+	* You should take action here, and return true if the
+	* combine was successful.
+	* REMEMBER: check if the items are used in the reverse
+	* order from what you expect, if each can be combined on the other!
+	*/
+	bool OnItemsCombined(const tString& in asItemTypeA, iScrItem@ pItemA, const tString& in asItemTypeB, iScrItem@ pItemB)
+	{
+		cLux_AddDebugMessage("COMBINE:"+asItemTypeA+" + "+asItemTypeB);
+		
+		if (asItemTypeA == "GunpowderMix" && asItemTypeB == "Bullet")
+		{
+			Item_RemoveFromInventory(pItemA.GetID());
+			Item_RemoveFromInventory(pItemB.GetID());
+			
+			//Do whatever you want to do here, maybe give the player an item Item_AddToInventory()
+
+		}
+		
+		return false;
+	}
+	
+	//---------------------------------------------------
+	
+	/**
+	* This function is called to check if the item can be used on the player.
+	* Note that it won't be called AT ALL unless Use OnSelf="true" in Inventory.cfg
+	* If CanUseOnSelfMapCallback="xxx" exists, that'll be called instead, if it exists in the map.
+	*/
+	bool CanUseOnSelf(const tString& in asItemType, iScrItem@ pItem)
+	{		
+
+		// ==============================================
+		// Drink from containers 
+		// ==============================================
+		if (pItem.IsContainer())
+		{
+			////////////////////////////
+			// Stamina
+			if (pItem.GetType().GetContainerContentType()=="Liquid")
+			{
+				if (pItem.GetAmount()==0)
+					return false;
+				return true;
+			}
+			
+			return false;
+		}
+
+		// ==============================================
+		// Healing items
+		// ==============================================
+		if (asItemType=="MedKit"|| asItemType=="Bandages_Roll" || asItemType=="Bandages_Jar")
+		{
+			if (Player_GetHealth()==1.0f)
+			{
+				return false;
+			}
+			return true;
+		}
+		
+		// ==============================================
+		// Food
+		// ==============================================
+		if (asItemType=="MeatChunk1" || asItemType == "MeatChunk")
+		{
+			return true;
+		}	
+		
+		// ==============================================
+		// Flare
+		// ==============================================
+		if (asItemType == "Flare")
+		{
+			return true;
+		}	
+		
+		return false;
+	}
+
+	//---------------------------------------------------
+	
+	/**
+	* This function is called when the player uses an item on themselves.
+	* Note that it won't be called AT ALL unless Use OnSelf="true" in Inventory.cfg
+	* If UseOnSelfMapCallback="xxx" exists, that'll be called instead, if it exists in the map.
+	* @return true If you have handled this item.
+	*/
+	bool UseOnSelf(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity, float afTimeElapsed, float afTimeStep)
+	{		
+		// ==============================================
+		// Drink from containers 
+		// ==============================================
+		if (pItem.IsContainer())
+		{
+			if (pItem.GetType().GetContainerContentType()=="Liquid")
+			{
+				DrinkFromItem(pItem);
+				Item_StopUsing(pItem.GetType().GetEquipHand());
+				return true;
+			}
+		}
+
+		// ==============================================
+		// Healing items
+		// ==============================================
+		if (asItemType=="MedKit")
+		{
+			if (afTimeElapsed>5.0f)
+			{
+				Item_StopUsing(pItem.GetType().GetEquipHand());
+				ApplyMedKit(pItem);
+			}
+			return true;
+		}
+
+		if (asItemType=="Bandages_Jar"||asItemType=="Bandages_Roll")
+		{
+			if (afTimeElapsed>2.0f)
+			{
+				Item_StopUsing(pItem.GetType().GetEquipHand());
+				ApplyBandage(pItem);
+			}
+			return true;
+		}
+		
+		// ==============================================
+		// Food 
+		// ==============================================
+		if (asItemType=="MeatChunk1" || asItemType == "MeatChunk")
+		{
+			
+			Player_AddHealth(0.1f);
+			Sound_PlayGui("creatures/vocalisations/creature/ghoul/ghoul_eat", 0.5f);			
+			Item_StopUsing(pItem.GetType().GetEquipHand());
+			Item_KillHeldItem(pItem.GetType().GetEquipHand());
+			Item_RemoveFromInventory(pItem.GetID());			
+			return true;		
+		}
+		
+		// ==============================================
+		// Flare 
+		// ==============================================
+		if (asItemType == "Flare")
+		{
+			Item_StopUsing(pItem.GetType().GetEquipHand());
+			Item_SetDisableUseOnSelf(pItem.GetID(), true);
+			cScript_RunGlobalFunc(asItemEntity, "cScrPropFlare", "_Global_Ignite");
+			return true;
+		}
+		
+		return false;
+	}
+	
+	//---------------------------------------------------
+	
+	void OnStoppedUsing(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity)
+	{
+		if (pItem.IsContainer())
+		{
+			if (Sound_Exists("bottle_fill"))
+			{
+				Sound_Stop("bottle_fill", 0);
+				//Sound_CreateAtEntity("bottle_fill_end", "player/tools/water_bottle/lake/water_bottle_fill_end", "player");
+			}
+		}
+	}
+	
+	//---------------------------------------------------
+	
+	/**
+	* This function is called to check if the item can be used on an entity in the world.
+	* Note that it won't be called AT ALL unless Use OnWorld="true" in Inventory.cfg
+	* If CanUseOnWorldMapCallback="xxx" exists, that'll be called instead, if it exists in the map.
+	*/
+	bool CanUseOnWorld(const tString& in asItemType, iScrItem@ pItem, const tString& in asPickedEntity)
+	{
+		// ==============================================
+		// Fill containers 
+		// ==============================================
+		if (pItem.IsContainer()&&pItem.GetType().GetContainerContentType()=="Liquid")
+		{
+			if (pItem.IsAmountMaxed())
+				return false;
+
+			iLuxEntity@ pEntity = Map_GetEntity(asPickedEntity);
+			iScrLiquidSourceComponent_Interface@ pLiquid = UserComponent_LiquidSource_Get(pEntity);
+			if (pLiquid !is null)
+			{
+				return (!pLiquid.IsEmpty() 
+					&& pItem.CanAddSubType("Liquid",pLiquid.GetContentSubType()) );
+			}
+		}
+		// ==============================================
+		// Oil 
+		// ==============================================
+		else if ((pItem.GetContentType()=="Oil")&&(pItem.GetAmount()>0)&&(pItem.GetType().GetID()!="Lantern")&&(pItem.GetType().GetID()!="ATDDLantern"))
+		{
+			iLuxEntity@ pEntity = cLux_GetCurrentMap().GetEntityByName(asPickedEntity,  eLuxEntityType_Prop, "cScrPropLamp");	
+			return (pEntity !is null) && Lamp_GetLit(asPickedEntity)==false;
+		}
+		// ==============================================
+		// Special
+		// ==============================================
+		else if (asItemType=="TransmitterKey")
+		{
+			if (asPickedEntity=="Transmitter")
+				return true;
+		}
+		return false;
+	}
+	
+	//---------------------------------------------------
+	
+	float mfDrainTimer=0.0f;
+	tString msLampLighting="";
+
+	/**
+	* This function is called when the player uses an item on the world.
+	* Note that it won't be called AT ALL unless Use OnWorld="true" in Inventory.cfg
+	* If UseOnWorldMapCallback="xxx" exists, that'll be called instead, if it exists in the map.
+	* @return true If you have handled this item.
+	*/
+	bool UseOnWorld(const tString& in asItemType, iScrItem@ pItem, const tString& in asTargetEntity, const tString& in asItemEntity, float afTimeElapsed, float afTimeStep)
+	{
+		// ==============================================
+		// Lighting a lamp!
+		// ==============================================
+		if (msLampLighting==asTargetEntity)
+		{
+			if ((pItem.GetContentType()=="Oil") && (pItem.GetAmount()>0))
+			{
+				// -----------------------------
+				// Using an oil container on a lamp
+				// -----------------------------
+				int nLevel = pItem.GetAmount();
+				Lamp_SetLit(asTargetEntity, true, true);
+				pItem.SetAmount(nLevel-1);
+				Sound_PlayGui("ui_use_tinderbox.snt", 1, eSoundEntryType_Gui);
+				cLux_AddTodoMessage("Hand animation uses lighter.");
+				Item_StopUsing();
+				msLampLighting="";
+				return true;
+			}
+			return false;
+		}
+		// ==============================================
+		// Fill containers 
+		// ==============================================
+		if (pItem.IsContainer()&&pItem.GetType().GetContainerContentType()=="Liquid")
+		{
+			iLuxEntity@ pEntity = Map_GetEntity(asTargetEntity);
+			iScrLiquidSourceComponent_Interface@ pLiquid = UserComponent_LiquidSource_Get(pEntity);
+			if (pLiquid !is null)
+			{
+				mfDrainTimer+=afTimeStep;
+
+				float afProgress = mfDrainTimer/gfDrainInterval;
+				Item_ReportUseProgress(afProgress);
+
+				if (mfDrainTimer>gfDrainInterval)
+				{
+					Item_ReportUseProgress(0.0f);
+					mfDrainTimer-=gfDrainInterval;
+
+					int alAmount = pLiquid.DispenseLiquid(1);
+					if (alAmount==0)
+					{
+						Item_StopUsing();
+						return true;
+					}
+					pItem.SetAmount(pItem.GetAmount()+1);
+					pItem.SetContentType(pLiquid.GetContentSubType());
+					
+					if (pLiquid.IsEmpty())
+						Item_StopUsing();
+						
+					if (Sound_Exists("bottle_fill")==false) 
+						Sound_CreateAtEntity("bottle_fill", "player/tools/water_bottle/lake/water_bottle_fill", "player");
+					Sound_SetParam("bottle_fill", "bottle_fill", pItem.GetAmount());
+				}
+				return true;
+			}
+		}
+		// ==============================================
+		// Oil 
+		// ==============================================
+		else if ( (pItem.GetContentType()=="Oil") && (pItem.GetAmount()>0) && (pItem.GetType().GetID()!="Lantern") && (pItem.GetType().GetID()!="ATDDLantern"))
+		{
+			msLampLighting = asTargetEntity;
+			return true;
+		}
+		return false;
+	}
+	
+	//---------------------------------------------------
+	
+	/**
+	* Called when an item is taken out.
+	*/
+	void OnTakeOut(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity, eItemHandlerHand aHand)
+	{
+		if (asItemType=="CurseMedallion")
+		{
+		}
+				
+		if (asItemType=="Match")
+		{
+			//Voice_PlayDelayed("Dialogue_MatchTutorial_Light",0.7f);
+			Item_ShowMatchCount(false);
+			
+			Hint_StopHint();
+			Hint_ShowHint_Hold("Hints", "HintMatchUse", false, 1.5f, true, 15.f);
+		}
+		
+		// Custom dialogue for story items - only right hand
+		if (aHand==eItemHandlerHand_Right)
+			Pregnancy_OnItemTakenOut(asItemType);
+	}
+
+	//---------------------------------------------------
+
+	/**
+	* Called when an item is put away
+	*/	
+	void OnStartPutAway(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity)
+	{		
+		if (asItemType=="Matchbook")
+		{
+			Voice_Play("Dialogue_MatchTutorial_BlowsOut");
+		}
+	}
+	
+	//---------------------------------------------------
+	
+	/**
+	* Called when an item is put away (after put away animation)
+	*/	
+	void OnPutAway(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity)
+	{
+		if (asItemType=="CurseMedallion")
+		{
+		}
+	}
+
+	//---------------------------------------------------
+
+	// TODO: Remove when FP body is working!
+	void OnLeftHandEquip(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity)
+	{
+	}
+
+	//---------------------------------------------------
+
+	// TODO: Remove when FP body is working!
+	void OnLeftHandUnequip(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity)
+	{
+	}
+
+	//---------------------------------------------------
+	
+	/////////////////////////////////////////
+	// General
+	/////////////////////////////////////////
+	
+	//---------------------------------------------------
+	
+	void DrinkFromItem(iScrItem@ apItem)
+	{
+		cLux_AddDebugMessage("Start drinking");
+		cScript_SetGlobalArgString(0,apItem.GetID());
+		cScript_RunGlobalFunc("State_Drinking","","_Global_SetupStateFromItem");
+
+		cLux_GetPlayer().ChangeState(ePlayerState_Custom_Drinking);
+	}
+
+	//---------------------------------------------------
+
+	void ApplyMedKit(iScrItem@ apItem)
+	{
+		Player_AddHealth(0.6f);
+		Item_KillHeldItem(apItem.GetType().GetEquipHand());
+		Item_RemoveFromInventory(apItem.GetID());
+	}
+
+	//---------------------------------------------------
+
+	void ApplyBandage(iScrItem@ apItem)
+	{
+		Player_AddHealth(0.2f);
+		Item_KillHeldItem(apItem.GetType().GetEquipHand());
+		Item_RemoveFromInventory(apItem.GetID());
+	}
+	
+	//---------------------------------------------------
+}
+
+//---------------------------------------------------

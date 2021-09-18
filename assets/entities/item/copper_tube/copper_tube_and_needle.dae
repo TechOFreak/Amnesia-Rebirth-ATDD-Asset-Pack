@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/work_static_objects/entities/coppertube/copper_tube.mb</source_data>
+    </contributor>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/redist/entities/item/copper_tube/copper_tube.dae</source_data>
+    </contributor>
+    <contributor>
+      <author>Thomas</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=1;removeStaticCurves=0;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=0;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=0;exportPhysics=0;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///H:/Lux/redist/entities/item/copper_tube/copper_tube.dae</source_data>
+    </contributor>
+    <created>2009-06-01T14:02:53Z</created>
+    <modified>2010-03-16T20:31:18Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///E:/lux/redist/entities/item/copper_tube/copper_tube.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file2" name="file2">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/hollow_needle/hollow_needle.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file3" name="file3">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/hollow_needle/hollow_needle_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx" />
+    </material>
+    <material id="hollow_needle_material" name="hollow_needle_material">
+      <instance_effect url="#hollow_needle_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="hollow_needle_material-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file3-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pPipeShape1" name="pPipeShape1">
+      <mesh>
+        <source id="pPipeShape1-positions" name="position">
+          <float_array id="pPipeShape1-positions-array" count="144">14.2095 5.40099 0 14.2095 4.67735 -2.70049 14.2095 2.70049 -4.67735 14.2095 0 -5.40099 14.2095 -2.70049 -4.67735 14.2095 -4.67735 -2.70049 14.2095 -5.40099 0 14.2095 -4.67735 2.70049 14.2095 -2.70049 4.67735 14.2095 0 5.40099 14.2095 2.70049 4.67735 14.2095 4.67735 2.70049 -14.2095 5.40099 0 -14.2095 4.67735 -2.70049 -14.2095 2.70049 -4.67735 -14.2095 0 -5.40099 -14.2095 -2.70049 -4.67735 -14.2095 -4.67735 -2.70049 -14.2095 -5.40099 0 -14.2095 -4.67735 2.70049 -14.2095 -2.70049 4.67735 -14.2095 0 5.40099 -14.2095 2.70049 4.67735 -14.2095 4.67735 2.70049 -14.2095 6.13749 0 -14.2095 5.31521 -3.06874 -14.2095 3.06874 -5.31521 -14.2095 0 -6.13749 -14.2095 -3.06874 -5.31521 -14.2095 -5.31521 -3.06874 -14.2095 -6.13749 0 -14.2095 -5.31521 3.06874 -14.2095 -3.06874 5.31521 -14.2095 0 6.13749 -14.2095 3.06874 5.31521 -14.2095 5.31521 3.06874 14.2095 6.13749 0 14.2095 5.31521 -3.06874 14.2095 3.06874 -5.31521 14.2095 0 -6.13749 14.2095 -3.06874 -5.31521 14.2095 -5.31521 -3.06874 14.2095 -6.13749 0 14.2095 -5.31521 3.06874 14.2095 -3.06874 5.31521 14.2095 0 6.13749 14.2095 3.06874 5.31521 14.2095 5.31521 3.06874</float_array>
+          <technique_common>
+            <accessor source="#pPipeShape1-positions-array" count="48" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPipeShape1-normals" name="normal">
+          <float_array id="pPipeShape1-normals-array" count="288">0 -0.818108 0.575065 0 -0.996035 0.088967 0 -0.907069 0.420982 0 -0.996035 -0.088967 0 -0.420982 0.907069 0 -0.575065 0.818108 0 0.088967 0.996035 0 -0.088967 0.996035 0 0.575065 0.818108 0 0.420982 0.907069 0 0.907069 0.420982 0 0.818108 0.575065 0 0.996035 -0.088967 0 0.996035 0.088967 0 0.818108 -0.575065 0 0.907069 -0.420982 0 0.420982 -0.907069 0 0.575065 -0.818108 0 -0.088967 -0.996035 0 0.088967 -0.996035 0 -0.575065 -0.818108 0 -0.420982 -0.907069 0 -0.907069 -0.420982 0 -0.818108 -0.575065 -1 -0.000000 0 -1 -0.000001 0 -1 -0.000000 0 -1 -0.000000 0 -1 0 0 -1 0.000000 0 -1 0 0 -1 -0.000000 0 -1 0 0 -1 0 0 -1 0.000000 0 -1 0.000000 0 -1 0.000000 0 -1 0.000000 0 -1 0.000001 0 -1 0.000000 0 -1 0 0 -1 -0.000000 0 -1 0 0 -1 0.000000 0 -1 0 0 -1 0 0 -1 -0.000000 0 -1 -0.000000 0 0 0.81811 -0.575062 0 0.996035 -0.088963 0 0.907072 -0.420976 0 0.996035 0.088963 0 0.420976 -0.907072 0 0.575062 -0.81811 0 -0.088963 -0.996035 0 0.088963 -0.996035 0 -0.575062 -0.81811 0 -0.420976 -0.907072 0 -0.907072 -0.420976 0 -0.81811 -0.575062 0 -0.996035 0.088963 0 -0.996035 -0.088963 0 -0.81811 0.575062 0 -0.907072 0.420976 0 -0.420976 0.907072 0 -0.575062 0.81811 0 0.088963 0.996035 0 -0.088963 0.996035 0 0.575062 0.81811 0 0.420976 0.907072 0 0.907072 0.420976 0 0.81811 0.575062 1 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 -0.000001 0 1 -0.000000 0 1 -0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000001 0 1 0.000001 0 1 0.000000 0 1 0.000001 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 -0.000001 0 1 -0.000001 0</float_array>
+          <technique_common>
+            <accessor source="#pPipeShape1-normals-array" count="96" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPipeShape1-map1" name="map1">
+          <float_array id="pPipeShape1-map1-array" count="200">0.83639 0 0.752431 0 0.752431 1 0.83639 1 0.920348 0 0 0 0 1 0.080764 0 0.080764 1 0.164723 0 0.164723 1 0.248681 0 0.248681 1 0.332639 0 0.332639 1 0.416598 0 0.416598 1 0.500556 0 0.500556 1 0.584515 0 0.584515 1 0.668473 0 0.668473 1 0.16361 0 0.247569 0 0.247569 1 0.16361 1 1 0 1 1 0.919236 0 0.919236 1 0.835277 0 0.835277 1 0.751319 0 0.751319 1 0.667361 0 0.667361 1 0.583402 0 0.583402 1 0.499444 0 0.499444 1 0.415485 0 0.415485 1 0.331527 0 0.331527 1 1 0 0.920348 1 1 1 0 0 0.079652 0 0.079652 1 0 1 0.39512 0.41638 0.451728 0.431548 0.451728 0.446987 0.387401 0.429751 0.508335 0.41638 0.516055 0.429751 0.35368 0.374941 0.34031 0.38266 0.549775 0.374941 0.563145 0.38266 0.338513 0.318333 0.323074 0.318333 0.564943 0.318333 0.580382 0.318333 0.35368 0.261726 0.34031 0.254006 0.549775 0.261726 0.563145 0.254006 0.39512 0.220286 0.387401 0.206916 0.508335 0.220286 0.516055 0.206916 0.451728 0.205118 0.451728 0.189679 0.517307 0.791221 0.45298 0.808458 0.45298 0.793019 0.509587 0.777851 0.388653 0.791221 0.396372 0.777851 0.564397 0.74413 0.551027 0.736411 0.341562 0.74413 0.354932 0.736411 0.581633 0.679804 0.566195 0.679804 0.324326 0.679804 0.339764 0.679804 0.564397 0.615477 0.551027 0.623196 0.341562 0.615477 0.354932 0.623196 0.517307 0.568386 0.509587 0.581756 0.388653 0.568386 0.396372 0.581756 0.45298 0.55115 0.45298 0.566589</float_array>
+          <technique_common>
+            <accessor source="#pPipeShape1-map1-array" count="100" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPipeShape1-vertices">
+          <input semantic="POSITION" source="#pPipeShape1-positions" />
+        </vertices>
+        <triangles material="lambert2SG" count="96">
+          <input semantic="VERTEX" source="#pPipeShape1-vertices" offset="0" />
+          <input semantic="NORMAL" source="#pPipeShape1-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#pPipeShape1-map1" offset="2" set="0" />
+          <p>1 0 0 0 1 1 13 2 3 0 1 1 12 3 2 13 2 3 2 4 4 1 0 0 14 5 46 1 0 0 13 2 3 14 5 46 3 6 45 2 4 4 15 7 47 2 4 4 14 5 46 15 7 47 4 8 7 3 6 5 16 9 8 3 6 5 15 7 6 16 9 8 5 10 9 4 8 7 17 11 10 4 8 7 16 9 8 17 11 10 6 12 11 5 10 9 18 13 12 5 10 9 17 11 10 18 13 12 7 14 13 6 12 11 19 15 14 6 12 11 18 13 12 19 15 14 8 16 15 7 14 13 20 17 16 7 14 13 19 15 14 20 17 16 9 18 17 8 16 15 21 19 18 8 16 15 20 17 16 21 19 18 10 20 19 9 18 17 22 21 20 9 18 17 21 19 18 22 21 20 11 22 21 10 20 19 23 23 22 10 20 19 22 21 20 23 23 22 0 1 1 11 22 21 12 3 2 11 22 21 23 23 22 12 3 2 24 24 54 25 25 55 12 26 53 13 27 52 12 26 53 25 25 55 25 25 55 26 28 59 13 27 52 14 29 58 13 27 52 26 28 59 26 28 59 27 30 63 14 29 58 15 31 62 14 29 58 27 30 63 27 30 63 28 32 67 15 31 62 16 33 66 15 31 62 28 32 67 28 32 67 29 34 71 16 33 66 17 35 70 16 33 66 29 34 71 29 34 71 30 36 75 17 35 70 18 37 74 17 35 70 30 36 75 30 36 75 31 38 73 18 37 74 19 39 72 18 37 74 31 38 73 31 38 73 32 40 69 19 39 72 20 41 68 19 39 72 32 40 69 32 40 69 33 42 65 20 41 68 21 43 64 20 41 68 33 42 65 33 42 65 34 44 61 21 43 64 22 45 60 21 43 64 34 44 61 34 44 61 35 46 57 22 45 60 23 47 56 22 45 60 35 46 57 35 46 57 24 24 54 23 47 56 12 26 53 23 47 56 24 24 54 25 48 23 24 49 24 37 50 26 24 49 24 36 51 25 37 50 26 26 52 49 25 48 23 38 53 50 25 48 23 37 50 26 38 53 50 27 54 48 26 52 49 39 55 51 26 52 49 38 53 50 39 55 51 28 56 29 27 54 27 40 57 30 27 54 27 39 55 28 40 57 30 29 58 31 28 56 29 41 59 32 28 56 29 40 57 30 41 59 32 30 60 33 29 58 31 42 61 34 29 58 31 41 59 32 42 61 34 31 62 35 30 60 33 43 63 36 30 60 33 42 61 34 43 63 36 32 64 37 31 62 35 44 65 38 31 62 35 43 63 36 44 65 38 33 66 39 32 64 37 45 67 40 32 64 37 44 65 38 45 67 40 34 68 41 33 66 39 46 69 42 33 66 39 45 67 40 46 69 42 35 70 43 34 68 41 47 71 44 34 68 41 46 69 42 47 71 44 24 49 24 35 70 43 36 51 25 35 70 43 47 71 44 36 51 25 37 72 76 36 73 77 1 74 79 36 73 77 0 75 78 1 74 79 38 76 82 37 72 76 2 77 83 37 72 76 1 74 79 2 77 83 39 78 86 38 76 82 3 79 87 38 76 82 2 77 83 3 79 87 40 80 90 39 78 86 4 81 91 39 78 86 3 79 87 4 81 91 41 82 94 40 80 90 5 83 95 40 80 90 4 81 91 5 83 95 42 84 98 41 82 94 6 85 99 41 82 94 5 83 95 6 85 99 43 86 96 42 84 98 7 87 97 42 84 98 6 85 99 7 87 97 44 88 92 43 86 96 8 89 93 43 86 96 7 87 97 8 89 93 45 90 88 44 88 92 9 91 89 44 88 92 8 89 93 9 91 89 46 92 84 45 90 88 10 93 85 45 90 88 9 91 89 10 93 85 47 94 80 46 92 84 11 95 81 46 92 84 10 93 85 11 95 81 36 73 77 47 94 80 0 75 78 47 94 80 11 95 81 0 75 78</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="hollow_needleShape" name="hollow_needleShape">
+      <mesh>
+        <source id="hollow_needleShape-positions" name="position">
+          <float_array id="hollow_needleShape-positions-array" count="228">-0.8138 -0.4545 -5.6618 0 -0.3662 -10 -0.6845 -0.8524 -5.6618 0.8138 -0.4545 -5.6618 0.6845 -0.8524 -5.6618 1.3597 -0.2326 -2.0726 0.7407 -0.3551 -5.6618 -0.7407 -0.3551 -5.6618 -1.3597 -0.2326 -2.0726 -1.4314 -0.3481 -2.0894 -1.1841 -1.1093 -2.0894 -0.2614 -1.1598 -5.6618 -0.4523 -1.641 -2.0894 0.2614 -1.1598 -5.6618 0.4523 -1.641 -2.0894 1.1841 -1.1093 -2.0894 1.4314 -0.3481 -2.0894 1.2996 0.6082 1.5129 0.4964 1.1918 1.5129 0.5743 1.8638 9.866 1.5036 1.1886 9.866 -0.4964 1.1918 1.5129 -0.5743 1.8638 9.866 -1.2996 0.6082 1.5129 -1.5036 1.1886 9.866 -1.6064 -0.336 1.5129 -1.8586 0.0961 9.866 -1.2996 -1.2802 1.5129 -1.5036 -0.9963 9.866 -0.4964 -1.8638 1.5129 -0.5743 -1.6715 9.866 0.4964 -1.8638 1.5129 0.5743 -1.6715 9.866 1.2996 -1.2802 1.5129 1.5036 -0.9963 9.866 1.6064 -0.336 1.5129 1.8586 0.0961 9.866 -0.4541 1.1878 -0.5226 -1.4645 -0.2274 -1.9843 0.4541 1.1878 -0.5226 0.527 1.7181 10 1.3797 1.0985 10 -0.527 1.7181 10 -1.3797 1.0985 10 -1.7054 0.0961 10 -1.3797 -0.9062 10 -0.527 -1.5258 10 0.527 -1.5258 10 1.3797 -0.9062 10 1.7054 0.0961 10 1.2557 1.0085 9.866 0.4796 1.5723 9.866 0.7174 0.6579 1.5129 -0.4796 1.5723 9.866 -0.7174 0.6579 1.5129 -1.2557 1.0085 9.866 -1.5522 0.0961 9.866 -1.1608 -0.7066 1.5129 -1.2557 -0.8162 9.866 -0.4796 -1.38 9.866 0 -1.42 1.5129 0.4796 -1.38 9.866 1.2557 -0.8162 9.866 1.1608 -0.7066 1.5129 1.5522 0.0961 9.866 0.4275 1.1349 -0.6604 0.8782 0.0705 -1.7594 0.3015 0.8875 -0.9159 -0.7545 -0.0675 -1.9021 -0.8782 0.0705 -1.7594 -0.3015 0.8875 -0.9159 0 0.9658 -0.835 0.7545 -0.0675 -1.9021 -0.4275 1.1349 -0.6604 1.4661 -0.2274 -1.9848 0 -0.3551 -9.4051</float_array>
+          <technique_common>
+            <accessor source="#hollow_needleShape-positions-array" count="76" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hollow_needleShape-normals" name="normal">
+          <float_array id="hollow_needleShape-normals-array" count="228">-0.937135 0.305333 -0.168968 0 -0.793227 -0.608925 -0.758251 -0.630391 -0.166322 0.952035 0.254976 -0.169164 0.758251 -0.630391 -0.166322 0.280493 0.783014 -0.555169 0.454786 0.884758 -0.101845 -0.446496 0.889419 -0.097851 -0.291248 0.818942 -0.494478 -0.968838 0.029859 -0.245891 -0.839609 -0.530863 -0.115073 -0.304655 -0.937854 -0.16618 -0.350858 -0.930156 -0.10821 0.24324 -0.956567 -0.160667 0.350901 -0.931328 -0.097452 0.839609 -0.530863 -0.115073 0.961982 0.134377 -0.23777 0.82907 0.556305 -0.056281 0.308665 0.950249 -0.041853 0.267337 0.884456 0.382452 0.733737 0.556561 0.389704 -0.308624 0.94956 -0.055561 -0.226217 0.851598 0.472871 -0.829114 0.556228 -0.0564 -0.68311 0.618822 0.387841 -0.997416 -0.064867 -0.030895 -0.91074 0.098563 0.401047 -0.81372 -0.580524 -0.029166 -0.789314 -0.452396 0.415116 -0.246668 -0.968625 -0.030333 -0.319233 -0.872766 0.369283 0.246679 -0.969016 -0.012537 0.297385 -0.854129 0.426645 0.81298 -0.581547 -0.029444 0.74629 -0.518781 0.417034 0.997421 -0.064868 -0.03071 0.91503 0.018973 0.402939 -0.283194 0.939576 -0.19235 -0.859347 0.408678 -0.307418 0.396029 0.898065 -0.191418 -0.089631 0.029258 0.995545 -0.055391 0.076306 0.995545 -0.089722 -0.028974 0.995545 -0.055499 -0.076246 0.995543 -0.000031 -0.094319 0.995542 0.055391 -0.076301 0.995545 0.08963 -0.029259 0.995545 0.089723 0.028974 0.995545 0.055498 0.076241 0.995544 0.000036 0.09432 0.995542 -0.661037 -0.537778 0.523282 -0.217946 -0.819991 0.529259 -0.544162 -0.836967 0.058084 0.25658 -0.847969 0.463805 0.618363 -0.78444 0.047761 0.71572 -0.462599 0.523209 0.895646 -0.018396 0.444387 0.937739 0.333968 0.095453 0.669979 0.544972 0.504116 0.284452 0.85998 0.4237 0 0.987415 0.15815 -0.358222 0.832735 0.422173 -0.725325 0.468879 0.504039 -0.937739 0.333968 0.095453 -0.89163 -0.096359 0.442393 0.114444 0.81411 -0.569323 -0.497846 0.64343 -0.581505 -0.823609 -0.14915 -0.547194 0.332637 0.930759 -0.151788 0.497845 0.64343 -0.581505 0.823609 -0.14915 -0.547195 0 -0.314069 -0.9494 -0.27639 0.922254 -0.270288 -0.131551 0.791623 -0.596681 0.858862 0.407634 -0.310147 0 0.996397 -0.084814</float_array>
+          <technique_common>
+            <accessor source="#hollow_needleShape-normals-array" count="76" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hollow_needleShape-map1" name="map1">
+          <float_array id="hollow_needleShape-map1-array" count="210">0.441276 0.713799 0.502656 0.90358 0.401901 0.716688 0.604404 0.716885 0.642259 0.72139 0.661906 0.562143 0.590053 0.717366 0.456034 0.714457 0.412948 0.55758 0.396193 0.556348 0.32848 0.562651 0.355935 0.722687 0.252692 0.572107 0.312965 0.731168 0.177534 0.583698 0.685212 0.73021 0.746268 0.570042 0.820481 0.582981 0.679405 0.561233 0.676403 0.395906 0.590292 0.389968 0.598796 0.024787 0.694508 0.030165 0.502915 0.3888 0.50248 0.023627 0.41638 0.392399 0.406313 0.026756 0.337537 0.400091 0.310862 0.033221 0.257288 0.408115 0.215968 0.041288 0.174889 0.416182 0.120608 0.049299 0.090639 0.424146 0.022267 0.05436 0.917431 0.424087 0.833906 0.415556 0.88445 0.047819 0.982662 0.053596 0.754171 0.4056 0.789376 0.038625 0.507529 0.474013 0.398791 0.551672 0.577947 0.475149 0.599517 0.01601 0.695897 0.021255 0.502284 0.014854 0.40528 0.017867 0.309335 0.024137 0.214664 0.032056 0.121108 0.039937 0.028117 0.043621 0.884047 0.03839 0.976963 0.042769 0.790699 0.029472 0.633481 0.958612 0.579672 0.946713 0.813662 0.719802 0.526882 0.933959 0.735098 0.700769 0.478932 0.939232 0.42557 0.951279 0.241059 0.71318 0.37124 0.962534 0.161568 0.730244 0.315875 0.972668 0.260104 0.981753 0.082696 0.74218 0.20408 0.990132 0.799762 0.988392 0.743908 0.979406 0.893537 0.736251 0.972826 0.747582 0.688231 0.969584 0.578913 0.479378 0.616873 0.544857 0.56777 0.493564 0.471027 0.55071 0.460203 0.542113 0.194407 0.641513 0.21358 0.63927 0.933471 0.636727 0.857136 0.647738 0.117677 0.631196 0.1043 0.629067 0.012823 0.63427 0.83764 0.645693 0.506445 0.478144 0.542169 0.488527 0.946641 0.634324 0.677422 0.555928 0.516032 0.49264 0.505794 0.879033 0.604925 0.553066 0.600447 0.007425 0.697791 0.012624 0.792878 0.020711 0.884812 0.029353 0.97228 0.03329 0.033029 0.034188 0.120576 0.030922 0.212603 0.023241 0.307286 0.015417 0.40394 0.009231 0.502029 0.006264</float_array>
+          <technique_common>
+            <accessor source="#hollow_needleShape-map1-array" count="105" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="hollow_needleShape-vertices">
+          <input semantic="POSITION" source="#hollow_needleShape-positions" />
+          <input semantic="NORMAL" source="#hollow_needleShape-normals" />
+        </vertices>
+        <triangles material="hollow_needle_materialSG" count="152">
+          <input semantic="VERTEX" source="#hollow_needleShape-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#hollow_needleShape-map1" offset="1" set="0" />
+          <p>0 0 1 1 2 2 1 1 3 3 4 4 5 5 6 6 8 8 8 8 6 6 7 7 9 9 0 0 10 10 10 10 0 0 2 2 11 11 12 12 2 2 2 2 12 12 10 10 11 11 13 13 12 12 12 12 13 13 14 14 13 15 4 4 14 17 14 17 4 4 15 16 4 4 3 3 15 16 15 16 3 3 16 18 17 19 18 20 20 22 20 22 18 20 19 21 18 20 21 23 19 21 19 21 21 23 22 24 23 25 24 26 21 23 21 23 24 26 22 24 25 27 26 28 23 25 23 25 26 28 24 26 27 29 28 30 25 27 25 27 28 30 26 28 29 31 30 32 27 29 27 29 30 32 28 30 29 31 31 33 30 32 30 32 31 33 32 34 31 35 33 36 32 38 32 38 33 36 34 37 33 36 35 39 34 37 34 37 35 39 36 40 35 39 17 19 36 40 36 40 17 19 20 22 37 41 38 42 23 25 39 43 37 41 18 20 18 20 37 41 21 23 15 16 16 18 33 36 15 16 33 36 14 17 14 17 33 36 31 35 12 12 14 14 29 31 29 31 14 14 31 33 10 10 12 12 27 29 27 29 12 12 29 31 20 22 19 21 41 45 41 45 19 21 40 44 19 21 22 24 40 44 40 44 22 24 42 46 22 24 24 26 42 46 42 46 24 26 43 47 24 26 26 28 43 47 43 47 26 28 44 48 26 28 28 30 44 48 44 48 28 30 45 49 28 30 30 32 45 49 45 49 30 32 46 50 30 32 32 34 46 50 46 50 32 34 47 51 32 38 34 37 47 53 47 53 34 37 48 52 34 37 36 40 48 52 48 52 36 40 49 54 36 40 20 22 49 54 49 54 20 22 41 45 50 55 51 56 52 57 51 56 53 58 52 57 52 57 53 58 54 59 53 60 55 61 54 62 55 61 56 63 54 62 54 62 56 63 57 64 56 63 58 65 57 64 58 65 59 66 57 64 57 64 59 66 60 67 59 66 61 68 60 67 62 70 63 71 61 69 61 69 63 71 60 72 62 70 64 73 63 71 50 55 52 57 64 73 64 73 52 57 63 71 5 5 66 75 65 74 65 74 66 75 67 76 68 77 8 8 69 78 54 62 70 79 71 80 66 81 63 71 67 82 67 82 63 71 52 57 69 83 57 64 68 84 68 84 57 64 60 67 68 84 60 67 72 85 54 59 71 86 52 57 52 57 71 86 67 82 73 87 65 74 71 88 69 83 70 79 57 64 57 64 70 79 54 62 60 72 63 71 72 89 72 89 63 71 66 81 1 1 4 4 13 15 1 1 13 13 11 11 1 1 11 11 2 2 17 19 39 43 18 20 74 90 17 19 35 39 8 8 73 87 69 78 69 78 73 87 70 91 9 9 27 29 38 42 38 42 27 29 25 27 38 42 25 27 23 25 6 6 75 92 7 7 1 1 0 0 75 92 75 92 0 0 7 7 1 1 75 92 3 3 3 3 75 92 6 6 3 3 6 6 16 18 16 18 6 6 5 5 7 7 0 0 8 8 8 8 0 0 9 9 5 5 74 90 16 18 8 8 9 9 38 42 73 87 71 88 70 91 65 74 67 76 71 88 37 41 73 87 38 42 38 42 73 87 8 8 73 87 37 41 65 74 65 74 37 41 39 43 39 43 74 90 65 74 65 74 74 90 5 5 68 77 72 93 8 8 8 8 72 93 5 5 5 5 72 93 66 75 74 90 39 43 17 19 37 41 23 25 21 23 16 18 74 90 33 36 33 36 74 90 35 39 27 29 9 9 10 10 41 45 40 44 50 95 50 95 40 44 51 94 49 54 41 45 64 96 64 96 41 45 50 95 48 52 49 54 62 97 62 97 49 54 64 96 47 53 48 52 61 98 61 98 48 52 62 97 46 50 47 51 59 100 59 100 47 51 61 99 45 49 46 50 58 101 58 101 46 50 59 100 44 48 45 49 56 102 56 102 45 49 58 101 43 47 44 48 55 103 55 103 44 48 56 102 42 46 43 47 53 104 53 104 43 47 55 103 40 44 42 46 51 94 51 94 42 46 53 104</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="copper_tube">
+      <node id="pPipe1" name="pPipe1" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1.1 0.3 0.3</scale>
+        <instance_geometry url="#pPipeShape1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2SG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="hollow_needle" name="hollow_needle" type="NODE">
+        <translate sid="translate">-25.6528 -0.105757 0.016142</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 90</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1.08506 1.08506 1.08506</scale>
+        <instance_geometry url="#hollow_needleShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="hollow_needle_materialSG" target="#hollow_needle_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

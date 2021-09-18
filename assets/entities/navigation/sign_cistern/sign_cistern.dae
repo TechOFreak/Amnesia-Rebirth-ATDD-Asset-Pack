@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=1;
+curveConstrainSampling=1;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=1;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=0;exportPhysics=0;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/Projects/3d/work/amnesia%20game/arbetsmapp//</source_data>
+    </contributor>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=1;removeStaticCurves=0;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=0;
+exportAnimations=0;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=0;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/Projects/3d/work/amnesia%20game/arbetsmapp/</source_data>
+    </contributor>
+    <created>2010-01-31T22:26:12Z</created>
+    <modified>2010-07-22T08:19:10Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_images>
+    <image id="file42" name="file42">
+      <init_from>file:///E:/Projects/3d/work/amnesia%20game/SVN/redist/entities/navigation/sign_cistern/sign_cistern.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file43" name="file43">
+      <init_from>file:///E:/Projects/3d/work/amnesia%20game/SVN/redist/entities/navigation/sign_cistern/sign_cistern_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file44" name="file44">
+      <init_from>file:///E:/Projects/3d/work/amnesia%20game/SVN/redist/entities/navigation/sign_cistern/sign_cistern_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="oil_drainage_sign" name="oil_drainage_sign">
+      <instance_effect url="#oil_drainage_sign-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="oil_drainage_sign-fx">
+      <profile_COMMON>
+        <newparam sid="file42-surface">
+          <surface type="2D">
+            <init_from>file42</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file42-sampler">
+          <sampler2D>
+            <source>file42-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file43-surface">
+          <surface type="2D">
+            <init_from>file43</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file43-sampler">
+          <sampler2D>
+            <source>file43-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file44-surface">
+          <surface type="2D">
+            <init_from>file44</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file44-sampler">
+          <sampler2D>
+            <source>file44-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file42-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file44-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file43-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="oil_drainageShape" name="oil_drainageShape">
+      <mesh>
+        <source id="oil_drainageShape-positions" name="position">
+          <float_array id="oil_drainageShape-positions-array" count="96">0.015184 0.277029 0.628078 0 -0.277029 0.619506 0 -0.255916 0.64062 0.015184 0.255916 0.64919 0.057534 -0.255916 0.640619 0.072718 0.255916 0.64919 0.069649 -0.255916 -0.628079 0.073353 0.255916 -0.617703 0.093831 0.255916 0.628078 0.078647 -0.255916 0.619506 -0.008998 -0.277029 -0.628079 0.048535 -0.277029 -0.628079 0.057534 -0.277029 0.619506 0.072718 0.277029 0.628078 0.05224 0.277029 -0.617703 -0.005293 0.277029 -0.617703 -0.005293 0.255916 -0.638816 0.05224 0.255916 -0.638816 0.048535 -0.255916 -0.649192 -0.008998 -0.255916 -0.649192 0.03809 -0.222971 -0.600809 0.041794 0.224903 -0.590434 0.062272 0.222971 0.600808 0.047088 -0.224903 0.592237 0.116329 -0.255916 -0.247493 0.057285 0.255916 0.263446 0.037681 -0.277029 -0.267685 0.095215 -0.277029 -0.268332 -0.021362 0.277029 0.285407 0.036172 0.277029 0.28476 0.025725 0.223565 0.231507 0.08477 -0.223592 -0.214871</float_array>
+          <technique_common>
+            <accessor source="#oil_drainageShape-positions-array" count="32" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="oil_drainageShape-normals" name="normal">
+          <float_array id="oil_drainageShape-normals-array" count="114">-0.261244 0.368303 0.892247 -0.716711 0.633148 0.292318 -0.725246 -0.587859 0.358386 -0.47672 -0.331651 0.814092 0.24287 -0.389215 0.888553 0.455742 0.275191 0.846504 0.992749 -0.005429 -0.120083 0.997302 0.053318 -0.050448 0.99779 0.063948 -0.018028 -0.811494 -0.584065 0.018592 0.387096 -0.921888 -0.016715 0.363294 -0.85329 0.374052 -0.744898 0.58267 -0.324996 -0.847123 0.531238 0.013031 0.377563 0.92585 -0.015711 0.368572 0.85537 -0.364003 -0.473891 0.347998 -0.808903 0.243211 0.386532 -0.88963 -0.262408 -0.35865 -0.89583 0.454532 -0.284335 -0.844129 0.966671 -0.156221 -0.202833 0.999123 0.014014 -0.039442 0.295013 -0.831112 -0.471402 0.941188 -0.153288 0.301112 0.978361 0.174907 0.110535 0.289453 0.850262 0.439626 0.998861 0.02229 -0.042182 0.94985 0.133731 -0.282668 -0.743402 -0.633012 -0.215985 0.789256 -0.421847 0.446229 0.805569 0.429247 0.408418 0.730154 -0.682567 -0.031266 0.694843 0.718734 -0.024784 0.804918 0.411514 -0.427509 0.796911 -0.376926 -0.472081 0.998422 0.055111 -0.010799 0.999305 0.026647 -0.026051 0.994629 -0.031835 -0.098482</float_array>
+          <technique_common>
+            <accessor source="#oil_drainageShape-normals-array" count="38" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="oil_drainageShape-map1" name="map1">
+          <float_array id="oil_drainageShape-map1-array" count="140">0.979142 0.422877 0.979142 0.009963 0.990774 0.021596 0.990775 0.411244 0.96314 0.912787 0.963133 0.955031 0.573489 0.955023 0.573486 0.912779 0.069776 0.843138 0.978721 0.843244 0.069777 0.843244 0.978721 0.843138 0.069777 0.900041 0.069777 0.859589 0.978721 0.859589 0.978721 0.90004 0.069777 0.900041 0.069777 0.859695 0.978721 0.859695 0.978721 0.900041 0.136778 0.994604 0.136781 0.95027 0.526434 0.950281 0.526431 0.994612 0.979593 0.912791 0.979581 0.955035 0.963137 0.971482 0.573486 0.971474 0.557032 0.912782 0.557042 0.955026 0.120323 0.994601 0.120334 0.950269 0.136774 0.933819 0.526414 0.933831 0.542882 0.994613 0.542883 0.950281 0.977382 0.96325 0.559241 0.963244 0.122533 0.942047 0.540669 0.94201 0.058565 0.021596 0.070197 0.009963 0.070197 0.422877 0.058565 0.411244 0.159255 0.913618 0.963137 0.971482 0.0848 0.822048 0.573486 0.971474 0.978555 0.437876 0.963697 0.823112 0.069943 0.819134 0.963698 0.823006 0.069943 0.436727 0.502869 0.913629 0.591637 0.986498 0.978554 0.820283 0.94605 0.986505 0.0848 0.821942 0.345165 0.843138 0.333621 0.843244 0.330555 0.900041 0.330975 0.009963 0.330086 0.859589 0.317731 0.900041 0.731188 0.422877 0.318199 0.859695 0.349193 0.819487 0.354918 0.822375 0.686725 0.437507 0.367087 0.822284</float_array>
+          <technique_common>
+            <accessor source="#oil_drainageShape-map1-array" count="70" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="oil_drainageShape-vertices">
+          <input semantic="POSITION" source="#oil_drainageShape-positions" />
+        </vertices>
+        <triangles material="oil_drainage_signSG" count="60">
+          <input semantic="VERTEX" source="#oil_drainageShape-vertices" offset="0" />
+          <input semantic="NORMAL" source="#oil_drainageShape-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#oil_drainageShape-map1" offset="2" set="0" />
+          <p>3 0 3 0 1 0 2 3 2 2 3 2 0 1 0 1 2 1 2 3 4 4 4 5 3 0 7 3 0 7 4 4 5 5 5 6 20 6 48 21 7 55 31 8 68 1 2 15 26 9 60 12 11 14 12 11 14 26 9 60 27 10 62 28 13 63 29 14 65 15 12 19 15 12 19 29 14 65 14 15 18 16 16 20 17 17 21 19 18 23 19 18 23 17 17 21 18 19 22 2 3 4 1 2 24 4 4 5 4 4 5 1 2 24 12 11 25 24 21 58 27 10 62 6 20 8 6 20 8 27 10 62 11 22 13 4 4 5 9 23 26 5 5 6 5 5 6 9 23 26 8 24 47 0 1 28 3 0 7 13 25 29 13 25 29 3 0 7 5 5 6 29 14 65 25 26 59 14 15 18 14 15 18 25 26 59 7 27 9 16 16 20 15 12 30 17 17 21 17 17 21 15 12 30 14 15 31 17 17 21 7 27 32 18 19 22 18 19 22 7 27 32 6 20 33 10 28 34 19 18 23 11 22 35 11 22 35 19 18 23 18 19 22 12 11 36 9 23 26 4 4 5 8 24 47 13 25 37 5 5 6 7 27 32 17 17 21 14 15 38 6 20 33 11 22 39 18 19 22 19 18 40 10 28 41 16 16 43 16 16 43 10 28 41 15 12 42 0 1 0 28 13 64 1 2 1 6 20 33 7 27 32 20 30 53 20 30 53 7 27 32 21 29 44 21 29 49 7 27 9 30 31 67 30 31 67 7 27 9 25 26 59 6 20 8 20 30 57 24 21 58 24 21 58 20 30 57 31 32 69 23 33 56 22 34 54 9 23 45 9 23 45 22 34 54 8 24 27 31 8 68 30 35 66 23 36 52 27 10 62 26 9 60 11 22 13 11 22 13 26 9 60 10 28 12 28 13 63 0 1 16 29 14 65 29 14 65 0 1 16 13 25 17 27 10 62 24 21 58 12 11 14 12 11 14 24 21 58 9 23 11 25 26 59 29 14 65 8 24 10 8 24 10 29 14 65 13 25 17 26 9 61 15 12 42 10 28 41 30 31 67 25 26 59 22 34 46 22 34 46 25 26 59 8 24 10 24 21 58 31 32 69 9 23 11 9 23 11 31 32 69 23 33 51 31 8 68 21 7 55 30 35 66 23 36 52 30 35 66 22 37 50 1 2 1 28 13 64 26 9 61 26 9 61 28 13 64 15 12 42</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="sign_cistern">
+      <node id="oil_drainage" name="oil_drainage" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#oil_drainageShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="oil_drainage_signSG" target="#oil_drainage_sign">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

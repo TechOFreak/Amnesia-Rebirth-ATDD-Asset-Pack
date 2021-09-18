@@ -1,0 +1,75 @@
+﻿<Entity>
+    <ModelData>
+        <Entities>
+            <PointLight Active="true" CastShadows="false" DiffuseColor="1 0.7 0.45 0.7" FalloffMap="" FlickerActive="true" FlickerFade="true" FlickerOffColor="0.8 0.75 0.5 0.7" FlickerOffFadeMaxLength="1" FlickerOffFadeMinLength="0.5" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="4" FlickerOffSound="" FlickerOnFadeMaxLength="1" FlickerOnFadeMinLength="0.5" FlickerOnMaxLength="1" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" ID="7" Name="PointLight_1" Radius="4.2" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-0.001442 -2.30842 -0.000376" />
+            <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_fire_candle_large.ps" ID="8" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="0.001508 -1.79777 0.000524" />
+            <Billboard Active="true" BillboardColor="0.3 0.22 0.08 1" BillboardOffset="0" BillboardSize="2 2" BillboardType="Point" ConnectLight="" HaloSourceSize="0.4 0.4 0.4" ID="9" IsHalo="true" MaterialFile="billboards/halo_torch.mat" Name="Billboard_1" Rotation="0 0 0" Tag="" WorldPos="0.000461 -1.79929 0.000524" />
+        </Entities>
+        <Mesh Filename="entities/lamp/hanging_lantern/hanging_lantern_ceiling_chain.dae">
+            <SubMesh Active="true" ID="18" Material="" Name="Cylinder_003" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="70" />
+            <SubMesh Active="true" ID="19" Material="" Name="polySurface152_002" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 -0.967106 0" TriCount="380" />
+            <SubMesh Active="true" ID="20" Material="" Name="polySurface153_001" Rotation="0 0 0" Scale="1 1 1" SubMeshID="2" Tag="" WorldPos="0 -0.967106 0" TriCount="82" />
+            <SubMesh Active="true" ID="21" Material="" Name="polySurface40" Rotation="0 0 0" Scale="1 1 1" SubMeshID="3" Tag="" WorldPos="8.8e-005 -0.01561 9.9e-005" TriCount="8" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="11" Name="Shape_2" RelativeRotation="0 0 0" RelativeScale="0.01 0.1 0.01" RelativeTranslation="-3.83022e-012 -3.45767e-010 3.8594e-012" Rotation="0 0 0" Scale="0.06 1.2 0.06" ShapeType="Box" Tag="" WorldPos="0.001182 -0.639224 0.000777" />
+            <BodyShape Active="true" ID="12" Name="Shape_3" RelativeRotation="0 0 0" RelativeScale="0.04 0.01 0.04" RelativeTranslation="-8.67092e-012 -3.68446e-011 7.7188e-012" Rotation="0 0 0" Scale="0.12 0.05 0.12" ShapeType="Cylinder" Tag="" WorldPos="0.000592 -0.012363 0.000777" />
+            <BodyShape Active="true" ID="22" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="0.16 0.5 0.16" RelativeTranslation="0 -0.218617 0" Rotation="0 0 0" Scale="0.16 0.5 0.16" ShapeType="Cylinder" Tag="" WorldPos="0 -1.92611 0" />
+            <BodyShape Active="true" ID="23" Name="Shape_4" RelativeRotation="0 0 0" RelativeScale="0.1 0.4 0.1" RelativeTranslation="0 0.218617 0" Rotation="0 0 0" Scale="0.1 0.4 0.1" ShapeType="Cylinder" Tag="" WorldPos="0 -1.48887 0" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.25" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="16" LinearDamping="0.25" Mass="1" Material="Metal" MaxAngularSpeed="4" MaxLinearSpeed="4" Name="Body_2" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="6 12 6" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.001182 -0.639224 0.000777">
+                <Children>
+                    <Child ID="21" />
+                </Children>
+                <Shape ID="11" />
+            </Body>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="17" LinearDamping="0" Mass="0" Material="Default" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_3" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="3 5 3" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000592 -0.012363 0.000777">
+                <Children>
+                    <Child ID="18" />
+                </Children>
+                <Shape ID="12" />
+            </Body>
+            <Body Active="true" AngularDamping="0.25" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="24" LinearDamping="0.25" Mass="4" Material="Glass" MaxAngularSpeed="4" MaxLinearSpeed="4" Name="Body_1" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0 -1.70749 0">
+                <Children>
+                    <Child ID="19" />
+                    <Child ID="20" />
+                    <Child ID="9" />
+                    <Child ID="7" />
+                    <Child ID="8" />
+                </Children>
+                <Shape ID="23" />
+                <Shape ID="22" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointBall Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="false" ConnectedChildBodyID="16" ConnectedParentBodyID="17" ID="13" LimitStepCount="0" MaxConeAngle="45" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveSpeed="2" MaxMoveVolume="0.8" MaxTwistAngle="30" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveSpeed="0.1" MinMoveVolume="0.01" MoveSound="" MoveType="Linear" Name="BallJoint_1" PinDir="0 1 0" Rotation="0 0 0" Scale="1 1 1" StickyMaxLimit="false" StickyMinLimit="false" Stiffness="0" Tag="" WorldPos="0.001527 -0.038764 0.001037" />
+            <JointBall Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="false" ConnectedChildBodyID="24" ConnectedParentBodyID="16" ID="14" LimitStepCount="0" MaxConeAngle="25" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveSpeed="2" MaxMoveVolume="0.8" MaxTwistAngle="30" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveSpeed="0.1" MinMoveVolume="0.01" MoveSound="" MoveType="Linear" Name="BallJoint_2" PinDir="0 1 0" Rotation="0 0 0" Scale="1 1 1" StickyMaxLimit="false" StickyMinLimit="false" Stiffness="0" Tag="" WorldPos="0.001451 -1.21753 0.001037" />
+        </Joints>
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Lamp">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="CanBeLitByPlayer" Value="true" />
+        <Var Name="CanBeGrabbed" Value="true" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

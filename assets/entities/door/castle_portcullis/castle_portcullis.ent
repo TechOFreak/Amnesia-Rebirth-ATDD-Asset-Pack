@@ -1,0 +1,96 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/door/castle_portcullis/castle_portcullis.dae">
+            <SubMesh ID="0" Name="portcullis" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="178" Material="" Static="true" />
+            <SubMesh ID="1" Name="polySurface27" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="2" Name="polySurface26" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="3" Name="polySurface25" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="4" Name="polySurface24" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="5" Name="polySurface22" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="6" Name="polySurface21" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="7" Name="polySurface19" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="8" Name="polySurface18" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="9" Name="polySurface17" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="10" Name="polySurface15" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="11" Name="polySurface14" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="12" Name="polySurface13" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="13" Name="polySurface12" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="14" Name="polySurface11" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="15" Name="polySurface10" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="16" Name="polySurface9" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="17" Name="polySurface8" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3" Material="" Static="true" />
+            <SubMesh ID="18" Name="polySurface23" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+            <SubMesh ID="19" Name="polySurface20" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="4" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="20" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="0 1.47004 0" Rotation="0 0 0" Scale="1.7 2.7 0.25" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="21" Name="Body_1" CreStamp="0" ModStamp="0" WorldPos="0 1.47004 0" Rotation="0 0 0" Scale="1 1 1" Material="Metal" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="true" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="20" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_MoveObject">
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="move_gate.snt" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="100" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="4" />
+        <Var ObjectId="4294967295" Name="MoveObjectType" Value="Linear" />
+        <Var ObjectId="4294967295" Name="OpenAmount" Value="0.9" />
+        <Var ObjectId="4294967295" Name="MoveAxis" Value="Y" />
+        <Var ObjectId="4294967295" Name="LocalAxis" Value="false" />
+        <Var ObjectId="4294967295" Name="OpenAcc" Value="1" />
+        <Var ObjectId="4294967295" Name="OpenSpeed" Value="0.5" />
+        <Var ObjectId="4294967295" Name="CloseAcc" Value="1" />
+        <Var ObjectId="4294967295" Name="CloseSpeed" Value="0.9" />
+        <Var ObjectId="4294967295" Name="AutoMove" Value="false" />
+        <Var ObjectId="4294967295" Name="AutoMoveStateGoal" Value="0.0" />
+        <Var ObjectId="4294967295" Name="AutoMoveAcc" Value="9.0" />
+        <Var ObjectId="4294967295" Name="AutoMoveSpeed" Value="5.0" />
+        <Var ObjectId="4294967295" Name="AutoMoveSlowdownDist" Value="0.1" />
+    </UserDefinedVariables>
+</Entity>

@@ -1,0 +1,57 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/special/control_room_piston/control_room_piston_piston.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="control_room_piston_piston" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="226" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.320000 3.850000 0.320000" RelativeTranslation="0.000000 0.145248 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.320000 3.850000 0.320000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="10" WorldPos="0.001891 0.136937 0.001698" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.570000 6.050000 0.570000" RelativeTranslation="0.000000 4.978325 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.570000 6.050000 0.570000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="10" WorldPos="0.001891 4.970014 0.001698" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.240000 6.300000 1.240000" RelativeTranslation="0.000000 -4.853325 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.240000 6.300000 1.240000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="10" WorldPos="0.001891 -4.861637 0.001698" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="4" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.001891 -0.008311 0.001698">
+                <Shape ID="2" />
+                <Shape ID="1" />
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_MoveObject">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveObjectType" Value="Linear" />
+        <Var Name="OpenAmount" Value="1.0" />
+        <Var Name="MoveAxis" Value="Y" />
+        <Var Name="OpenAcc" Value="2.0" />
+        <Var Name="OpenSpeed" Value="1.0" />
+        <Var Name="CloseAcc" Value="2.0" />
+        <Var Name="CloseSpeed" Value="1.0" />
+        <Var Name="AutoMove" Value="false" />
+        <Var Name="AutoMoveStateGoal" Value="0.0" />
+        <Var Name="AutoMoveAcc" Value="9.0" />
+        <Var Name="AutoMoveSpeed" Value="5.0" />
+        <Var Name="AutoMoveSlowdownDist" Value="0.1" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

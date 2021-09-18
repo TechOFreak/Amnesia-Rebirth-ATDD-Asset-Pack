@@ -1,0 +1,147 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/_temp/TDD_ents/ptest/enemy_suitor/enemy_suitor.dae">
+            <SubMesh ID="0" Name="Suitor" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="9183" Material="" />
+        </Mesh>
+        <Bones>
+            <Bone ID="1" Name="servant_grunt_A_CenterRoot" />
+            <Bone ID="2" Name="servant_grunt_A_CenterSpine" />
+            <Bone ID="3" Name="servant_grunt_A_CenterNeck" />
+            <Bone ID="4" Name="servant_grunt_A_CenterHead" />
+            <Bone ID="5" Name="servant_grunt_A_joint21" />
+            <Bone ID="6" Name="servant_grunt_A_RightCollar" />
+            <Bone ID="7" Name="servant_grunt_A_RightShoulder" />
+            <Bone ID="8" Name="servant_grunt_A_RightElbow" />
+            <Bone ID="9" Name="servant_grunt_A_joint23" />
+            <Bone ID="10" Name="servant_grunt_A_RightHand" />
+            <Bone ID="11" Name="servant_grunt_A_RightHand_servant_grunt_A_RightThumb" />
+            <Bone ID="12" Name="servant_grunt_A_RightHand_servant_grunt_A_RightThumb_servant_grunt_A_RightThumb" />
+            <Bone ID="13" Name="servant_grunt_A_RightIndexFinger01" />
+            <Bone ID="14" Name="servant_grunt_A_RightIndexFinger02" />
+            <Bone ID="15" Name="servant_grunt_A_RightIndexFinger03" />
+            <Bone ID="16" Name="servant_grunt_A_RightPinkyFinger01" />
+            <Bone ID="17" Name="servant_grunt_A_RightPinkyFinger02" />
+            <Bone ID="18" Name="servant_grunt_A_RightPinkyFinger03" />
+            <Bone ID="19" Name="servant_grunt_A_LeftCollar" />
+            <Bone ID="20" Name="servant_grunt_A_LeftShoulder" />
+            <Bone ID="21" Name="servant_grunt_A_LeftElbow" />
+            <Bone ID="22" Name="servant_grunt_A_joint22" />
+            <Bone ID="23" Name="servant_grunt_A_LeftHand" />
+            <Bone ID="24" Name="servant_grunt_A_LeftHandEnd" />
+            <Bone ID="25" Name="servant_grunt_A_LeftHip" />
+            <Bone ID="26" Name="servant_grunt_A_joint10" />
+            <Bone ID="27" Name="servant_grunt_A_joint11" />
+            <Bone ID="28" Name="servant_grunt_A_joint26" />
+            <Bone ID="29" Name="servant_grunt_A_joint27" />
+            <Bone ID="30" Name="servant_grunt_A_joint28" />
+            <Bone ID="31" Name="servant_grunt_A_RightHip" />
+            <Bone ID="32" Name="servant_grunt_A_joint5" />
+            <Bone ID="33" Name="servant_grunt_A_joint6" />
+            <Bone ID="34" Name="servant_grunt_A_joint7" />
+            <Bone ID="35" Name="servant_grunt_A_joint8" />
+            <Bone ID="36" Name="servant_grunt_A_joint25" />
+            <Bone ID="37" Name="Suitor" />
+        </Bones>
+        <Shapes />
+        <Bodies />
+        <Joints />
+        <Animations>
+            <Animation Name="Idle" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/idle.dae_anim" Layer="Default" Speed="0.75" />
+            <Animation Name="Run" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/run.dae_anim" Layer="Default" Speed="0.2">
+                <Event Name="Unnamed event" Time="0.2" Type="PlaySound" DestSocket="" Value="suitor/metal_run" />
+                <Event Name="Unnamed event" Time="0.02" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_run_soft" />
+            </Animation>
+            <Animation Name="Walk" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/walk.dae_anim" Layer="Default" Speed="1">
+                <Event Name="Unnamed event" Time="0.5" Type="Step" DestSocket="" Value="" />
+                <Event Name="Unnamed event" Time="0.4" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_walk_soft" />
+                <Event Name="Unnamed event" Time="0.5" Type="PlaySound" DestSocket="" Value="suitor/metal_walk" />
+                <Event Name="Unnamed event" Time="1.2" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_walk_soft" />
+                <Event Name="Unnamed event" Time="1.3" Type="PlaySound" DestSocket="" Value="suitor/metal_walk" />
+                <Event Name="Unnamed event" Time="1.5" Type="Step" DestSocket="" Value="" />
+            </Animation>
+            <Animation Name="SwingClaws01" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/attack_short1.dae_anim" Layer="Default" Speed="1.1">
+                <Event Name="" Time="0.65" Type="Message" DestSocket="" Value="" />
+                <Event Name="Unnamed event" Time="0.1" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+                <Event Name="Unnamed event" Time="0.6" Type="PlaySound" DestSocket="" Value="suitor/alois_attack_claw" />
+                <Event Name="Unnamed event" Time="0.6" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_run_soft" />
+            </Animation>
+            <Animation Name="SwingClaws02" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/attack_short2.dae_anim" Layer="Default" Speed="1.1">
+                <Event Name="" Time="0.5" Type="Message" DestSocket="" Value="" />
+                <Event Name="Unnamed event" Time="0.2" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+                <Event Name="Unnamed event" Time="0.4" Type="PlaySound" DestSocket="" Value="suitor/alois_attack_claw" />
+                <Event Name="Unnamed event" Time="0.4" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_run_soft" />
+            </Animation>
+            <Animation Name="SwingLaunch" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/attack_run.dae_anim" Layer="Default" Speed="1">
+                <Event Name="" Time="0.45" Type="Message" DestSocket="" Value="" />
+                <Event Name="Unnamed event" Time="0.1" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+                <Event Name="Unnamed event" Time="0.2" Type="PlaySound" DestSocket="" Value="suitor/alois_attack_launch" />
+                <Event Name="Unnamed event" Time="0.2" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_run_soft" />
+                <Event Name="Unnamed event" Time="0.3" Type="Step" DestSocket="" Value="" />
+                <Event Name="Unnamed event" Time="1" Type="Step" DestSocket="" Value="" />
+            </Animation>
+            <Animation Name="BreakDoor" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/break_door.dae_anim" Layer="Default" Speed="1">
+                <Event Name="" Time="0.5" Type="Message" DestSocket="" Value="" />
+                <Event Name="Unnamed event" Time="0.2" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+                <Event Name="Unnamed event" Time="0.5" Type="PlaySound" DestSocket="" Value="suitor/alois_attack_launch" />
+                <Event Name="Unnamed event" Time="0.5" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_run_soft" />
+            </Animation>
+            <Animation Name="Flinch" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/flinch.dae_anim" Layer="Default" Speed="1">
+                <Event Name="Unnamed event" Time="0.02" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+                <Event Name="Unnamed event" Time="0.1" Type="PlaySound" DestSocket="" Value="suitor/alois_amb_alert" />
+            </Animation>
+            <Animation Name="IdleExtra1" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/idle_extra1.dae_anim" Layer="Default" Speed="1">
+                <Event Name="Unnamed event" Time="0.3" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+                <Event Name="Unnamed event" Time="0.4" Type="PlaySound" DestSocket="" Value="suitor/alois_amb_idle_scratch" />
+                <Event Name="Unnamed event" Time="1" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+            </Animation>
+            <Animation Name="IdleExtra2" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/idle_extra2.dae_anim" Layer="Default" Speed="1">
+                <Event Name="Unnamed event" Time="0.1" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+                <Event Name="Unnamed event" Time="0.2" Type="PlaySound" DestSocket="" Value="suitor/alois_amb_idle_whimp" />
+                <Event Name="Unnamed event" Time="0.8" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+            </Animation>
+            <Animation Name="Notice1" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/notice1.dae_anim" Layer="Default" Speed="1">
+                <Event Name="Unnamed event" Time="0.1" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_walk_soft" />
+                <Event Name="Unnamed event" Time="0.01" Type="PlaySound" DestSocket="" Value="suitor/alois_notice" />
+            </Animation>
+            <Animation Name="hears_player" File="entities/_temp/TDD_ents/ptest/enemy_suitor/animations/notice2.dae_anim" Layer="Default" Speed="1">
+                <Event Name="Unnamed event" Time="0.1" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_walk_soft" />
+                <Event Name="Unnamed event" Time="0.01" Type="PlaySound" DestSocket="" Value="suitor/alois_notice_long" />
+                <Event Name="Unnamed event" Time="1.2" Type="PlaySound" DestSocket="" Value="suitor/chains_monster_man_sneak_soft" />
+            </Animation>
+        </Animations>
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Agent_Infected_Robot">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="EventTag" Value="" />
+        <Var Name="VoiceSourceBone" Value="" />
+        <Var Name="CastShadows" Value="true" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="CharBodySize" Value="1.5 1.85 1.5" />
+        <Var Name="MeshPositionOffset" Value="0 0 0" />
+        <Var Name="MeshRotationOffset" Value="0 0 0" />
+        <Var Name="MeshScaleOffset" Value="1 1 1" />
+        <Var Name="CharBodyPosBone" Value="Hip" />
+        <Var Name="CharBodyBoneIsFeet" Value="false" />
+        <Var Name="CharBodyBoneYOffset" Value="0" />
+        <Var Name="CustomScriptFile" Value="" />
+        <Var Name="CustomScriptClass" Value="" />
+        <Var Name="CharMover_IdleAnim" Value="Idle" />
+        <Var Name="CharMover_WalkAnim" Value="Walk" />
+        <Var Name="CharMover_RunAnim" Value="Run" />
+        <Var Name="CharMover_BackwardAnim" Value="" />
+        <Var Name="CharMover_IdleExtraAnim" Value="IdleExtra" />
+        <Var Name="CharMover_IdleExtraMinWait" Value="4" />
+        <Var Name="CharMover_IdleExtraMaxWait" Value="10" />
+        <Var Name="CharMover_IdleExtraPauseProcedural" Value="true" />
+        <Var Name="HeadTracker_Bones" Value="" />
+        <Var Name="HeadTracker_BoneMuls" Value="" />
+        <Var Name="HeadTracker_ChestBone" Value="" />
+        <Var Name="HeadTracker_SpeedMul" Value="1" />
+        <Var Name="HeadTracker_MaxSpeed" Value="1" />
+        <Var Name="HeadTracker_MaxAngle" Value="45" />
+    </UserDefinedVariables>
+</Entity>

@@ -1,0 +1,121 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/statues/armour_nice/armour_nice_complete.dae">
+            <SubMesh ID="0" Name="Box02" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="418" Material="" Static="true" />
+            <SubMesh ID="1" Name="podium" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="42" Material="" Static="true" />
+            <SubMesh ID="2" Name="right_glove" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="204" Material="" Static="true" />
+            <SubMesh ID="3" Name="head" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="248" Material="" Static="true" />
+            <SubMesh ID="4" Name="right_boot" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="214" Material="" Static="true" />
+            <SubMesh ID="5" Name="breastplate" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="362" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="6" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="0.0057296 1.12986 0.000154075" Rotation="0 0 0" Scale="0.732522 1.8 0.366747" RelativeTranslation="0.00279382 0.0891316 -0.0115929" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="8" Name="Shape_3" CreStamp="0" ModStamp="0" WorldPos="0.00812341 2.37679 -0.0110851" Rotation="0 0 0" Scale="0.205 0.205 0.205" RelativeTranslation="0.0006574 0.117195 -0.0042136" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Sphere" />
+            <Shape ID="10" Name="Shape_5" CreStamp="0" ModStamp="0" WorldPos="0.0057296 0.113487 0.0579045" Rotation="0 0 0" Scale="0.566803 0.25 0.438377" RelativeTranslation="0.00279382 -0.927241 0.0461575" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="14" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="0.000141963 1.96797 -0.0344106" Rotation="0 0 1.5708" Scale="0.204 0.623623 0.204" RelativeTranslation="-0.00279382 0.927242 -0.0461575" RelativeRotation="0 -0 1.5708" RelativeScale="0.800441 1.24931 1" ShapeType="Cylinder" />
+            <Shape ID="15" Name="Shape_4" CreStamp="0" ModStamp="0" WorldPos="0.00680861 2.1424 0.116405" Rotation="0.648307 0 0" Scale="0.337413 0.05 0.193513" RelativeTranslation="-0.0006574 -0.117195 0.123277" RelativeRotation="0.648307 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="16" Name="Shape_6" CreStamp="0" ModStamp="0" WorldPos="0.00680861 2.2013 -0.130148" Rotation="-0.705588 0 0" Scale="0.337413 0.067609 0.222719" RelativeTranslation="-0.0006574 -0.058295 -0.123277" RelativeRotation="-0.705588 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="17" Name="Shape_7" CreStamp="0" ModStamp="0" WorldPos="0.00680861 2.22731 -0.0198293" Rotation="0.164146 0 0" Scale="0.385711 0.10995 0.193513" RelativeTranslation="-0.0006574 -0.032285 -0.0129578" RelativeRotation="0.164146 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="19" Name="Body_2" CreStamp="0" ModStamp="1616028699" WorldPos="0.00293578 1.04073 0.011747" Rotation="0 0 0" Scale="0.800441 1 0.700004" Material="metal_roman_helmet" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="5" />
+                    <Child ID="2" />
+                    <Child ID="0" />
+                    <Child ID="4" />
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="6" />
+                <Shape ID="10" />
+                <Shape ID="14" />
+            </Body>
+            <Body ID="21" Name="Body_1" CreStamp="0" ModStamp="1616028709" WorldPos="0.00746601 2.25959 -0.0068715" Rotation="0 0 0" Scale="1 1 1" Material="metal_roman_helmet" Mass="3" AngularDamping="0.4" LinearDamping="0.1" MaxAngularSpeed="20" MaxLinearSpeed="20" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="3" />
+                </Children>
+                <Shape ID="15" />
+                <Shape ID="17" />
+                <Shape ID="8" />
+                <Shape ID="16" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Grab">
+        <Var ObjectId="4294967295" Name="Health" Value="40" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="10" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="3" />
+        <Var ObjectId="4294967295" Name="Grab_UseCustomOffset" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_CustomPositionOffset" Value="0" />
+        <Var ObjectId="4294967295" Name="Grab_CustomRotationOffset" Value="0" />
+        <Var ObjectId="4294967295" Name="Grab_UseCustomDepth" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_CustomDepth" Value="1" />
+        <Var ObjectId="4294967295" Name="Grab_MassMul" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Grab_MinDepth" Value="1.0" />
+        <Var ObjectId="4294967295" Name="Grab_MaxDepth" Value="2.2" />
+        <Var ObjectId="4294967295" Name="Grab_ForceMul" Value="1" />
+        <Var ObjectId="4294967295" Name="Grab_TorqueMul" Value="1" />
+        <Var ObjectId="4294967295" Name="Grab_ThrowImpulse" Value="7" />
+        <Var ObjectId="4294967295" Name="Grab_IsHeavy" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_CollisionWithPlayer" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_InteractOnlyWithMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="Grab_CanInteractWithNoMass" Value="true" />
+        <Var ObjectId="4294967295" Name="Grab_LowerMass" Value="true" />
+        <Var ObjectId="4294967295" Name="ScaryObject_BaseFearRate" Value="0.1" />
+        <Var ObjectId="4294967295" Name="ScaryObject_SurpriseFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="ScaryObject_LookAtFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationDelay" Value="0.2" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationLightLevel" Value="0.1" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationDistance" Value="3.5" />
+        <Var ObjectId="4294967295" Name="ScaryObject_DeactivationDistance" Value="3.5" />
+        <Var ObjectId="4294967295" Name="ScaryObject_InteractFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_BaseFearRate" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Threat_SurpriseFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_LookAtFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_ActivationDelay" Value="0.2" />
+        <Var ObjectId="4294967295" Name="Threat_ActivationLightLevel" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Threat_MaxFearDistance" Value="2.0" />
+        <Var ObjectId="4294967295" Name="Threat_MinFearDistance" Value="6.0" />
+    </UserDefinedVariables>
+</Entity>

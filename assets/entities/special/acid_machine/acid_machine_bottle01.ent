@@ -1,0 +1,54 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/SVN/lux/redist/entities/special/acid_machine/acid_machine_bottle01.dae">
+            <SubMesh Active="true" GroupID="0" ID="5" Name="acid_machine_bottle01" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="0.000000 -0.255261 0.598108" TriCount="110" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.116116 0.116116 0.116116" RelativeTranslation="0.000000 -0.103473 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.116116 0.116116 0.116116" ShapeType="Sphere" ShapeTypeID="3" Tag="" Type="9" WorldPos="-0.003595 0.111732 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.030000 0.210000 0.030000" RelativeTranslation="-0.001677 0.114590 0.000740" Rotation="0.000000 0.000000 0.000000" Scale="0.030000 0.210000 0.030000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="9" WorldPos="-0.005273 0.329795 0.000740" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="4" LinearDamping="0.000000" Mass="0.000000" Material="Glass" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.003595 0.215206 0.000000">
+                <Shape ID="2" />
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="5" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="false" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="100" />
+        <Var Name="BreakEntity" Value="" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

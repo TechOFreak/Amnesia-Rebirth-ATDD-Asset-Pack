@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-04-28T08:52:13Z</created>
+    <modified>2009-04-28T08:52:13Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file9" name="file9">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/static_objects/mansionbase/ceiling/mansionbase_concave.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file10" name="file10">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/static_objects/mansionbase/ceiling/mansionbase_concave_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file11" name="file11">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/static_objects/mansionbase/ceiling/mansionbase_concave_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="concave_material" name="concave_material">
+      <instance_effect url="#concave_material-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="concave_material-fx">
+      <profile_COMMON>
+        <newparam sid="file9-surface">
+          <surface type="2D">
+            <init_from>file9</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file9-sampler">
+          <sampler2D>
+            <source>file9-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file10-surface">
+          <surface type="2D">
+            <init_from>file10</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file10-sampler">
+          <sampler2D>
+            <source>file10-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file11-surface">
+          <surface type="2D">
+            <init_from>file11</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file11-sampler">
+          <sampler2D>
+            <source>file11-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file9-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file11-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file10-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="corner_concave_shortShape" name="corner_concave_shortShape">
+      <mesh>
+        <source id="corner_concave_shortShape-positions" name="position">
+          <float_array id="corner_concave_shortShape-positions-array" count="273">2 5.8685 0.12742 2 5.79773 0.139199 2 5.75598 0.120611 2 5.74718 0.111814 2 5.74037 0 2 5.72859 0.070065 1 4.30732 0.046506 2 4.30732 0.046506 2 4.30732 0 1 4.30732 0 2 4.28026 0.062374 0.978133 4.28026 0.062374 0.720146 4.30732 0.046506 0.720146 4.30732 0.000000 0.742013 4.28026 0.062374 2 4.18479 0.062374 1 5.0074 0 2 5.0074 0 2 5.0074 0.046506 1 5.0074 0.046506 2 5.03446 0.062374 0.978133 5.03446 0.062374 0.720146 5.0074 0.046506 0.742013 5.03446 0.062374 0.720146 5.0074 0.000000 2 5.8685 2 2 5.16929 0 2 5.16929 0.046506 2 5.14224 0.062374 2 4.18479 0.171368 2 4.15623 0.228163 2 4.10151 0.251817 2 4.01763 0.251818 2 4 0.234192 2 4 0.20112 0.125498 5.8685 0.125653 0.137278 5.79773 0.137432 0.118689 5.75598 0.118844 0.109893 5.74718 0.110047 -0.001921 5.74037 -0.001766 0.068143 5.72859 0.068298 0.044585 4.30732 0.04474 -0.001921 4.30732 -0.001766 0.060453 4.28026 0.060607 0.044585 5.0074 0.04474 0.060453 5.03446 0.060607 -0.001921 5.0074 -0.001766 -0.001921 5.16929 -0.001766 0.044585 5.16929 0.044739 0.060453 5.14224 0.060607 0.169447 4.18479 0.169601 0.060453 4.18479 0.060607 0.226242 4.15623 0.226396 0.249896 4.10151 0.25005 0.249896 4.01763 0.250051 0.232271 4 0.232425 0.199199 4 0.199353 0.12742 5.8685 2 0.139199 5.79773 2 0.120611 5.75598 2 0.111814 5.74718 2 0.000000 5.74037 2 0.070064 5.72859 2 0.000000 4.30732 0.720146 0.046506 4.30732 0.720146 0.062374 4.28026 0.742013 0.046506 4.30732 2 0.046506 4.30732 1 0.000000 4.30732 1 0.000000 4.30732 2 0.062374 4.28026 0.978133 0.062374 4.28026 2 0.062374 5.03446 0.742013 0.046506 5.0074 0.720146 0.000000 5.0074 0.720146 0.046506 5.0074 1 0.062374 5.03446 0.978133 0.062374 5.03446 2 0.046506 5.0074 2 0.000000 5.0074 2 0 5.0074 1 0.000000 5.16929 2 0.046506 5.16929 2 0.062374 5.14224 2 0.062374 4.18479 2 0.171368 4.18479 2 0.228163 4.15623 2 0.251817 4.10151 2 0.251817 4.01763 2 0.234192 4 2 0.20112 4 2</float_array>
+          <technique_common>
+            <accessor source="#corner_concave_shortShape-positions-array" count="91" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="corner_concave_shortShape-normals" name="normal">
+          <float_array id="corner_concave_shortShape-normals-array" count="579">-0.000937 -0.126589 0.991955 -0.000932 0.164111 0.986441 0.688306 0.229235 0.688248 0.695873 -0.177774 0.695814 -0.000118 -0.992047 0.125867 -0.000528 -0.824004 0.566583 0.308969 -0.899498 0.308935 0.063129 -0.996007 0.063119 0 1 0 0 1 0 0 1 0 0 1 0 0 0.505908 0.862587 0 0.505908 0.862587 0 0.505908 0.862587 0 0.505908 0.862587 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.505908 0.862587 0 -0.505908 0.862587 0 -0.505908 0.862587 0 -0.505908 0.862587 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.587323 0 0.809353 -0.587323 0 0.809353 -0.587323 0 0.809353 -0.587323 0 0.809353 0.587312 0 0.809361 0.587312 0 0.809361 0.587312 0 0.809361 0.587312 0 0.809361 0.000001 0 1 0.000001 0 1 0.000001 0 1 0.000001 0 1 -0.000546 0.131804 0.991276 -0.000673 0.003926 0.999992 0.000000 -0.000007 1 -0.000000 0 1 0.000001 0.000017 1 0.000001 0.000017 1 0.000001 0.000017 1 1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 -0.000882 0 1 -0.000882 0 1 0.707134 0 0.707079 0.707134 0 0.707079 0.506956 -0.697165 0.506909 -0.000775 -0.56623 0.824247 -0.08344 -0.993014 -0.083432 0.000148 -0.986147 -0.165872 0 1 0.000000 0 1 0.000000 0 1 0 0 1 0 0.544453 0.638216 0.54429 0.544453 0.638216 0.54429 -0.002247 0.50474 0.863269 -0.002247 0.50474 0.863269 0.544455 -0.63821 0.544295 0.544455 -0.63821 0.544295 -0.002247 -0.504728 0.863276 -0.002247 -0.504728 0.863276 0 -1 -0.000000 0 -1 -0.000000 0 -1 0 0 -1 0 0 1 0 0.265305 0.926952 0.26528 -0.000451 0.867681 0.497121 0 1 0 0.658663 0.36389 0.658594 0 1 0 0.116945 0.986231 0.11693 -0.000226 0.972963 0.23096 0 1 0 0.423855 0.800457 0.42381 -0.000724 0.686201 0.727412 0.678655 0.280962 0.678593 -0.000985 0.202511 0.97928 0.610055 -0.505704 0.609997 -0.00093 -0.382564 0.923928 0.198641 -0.959736 0.198619 -0.000384 -0.923833 0.382795 -0.000004 -1 -0.000006 -0.000000 -1 -0.000013 0.707099 0.011629 0.707019 0.707085 -0.013129 0.707007 0.707085 -0.013129 0.707007 -0.001348 -0.008882 0.99996 -0.001348 -0.008882 0.99996 0.707183 0 0.707031 0.707183 0 0.707031 -0.002447 0 0.999997 -0.002447 0 0.999997 0.125876 -0.992046 -0.000128 -0.165875 -0.986147 0.000161 0.566599 -0.823993 -0.000574 0 1 0.000000 0 1 0.000000 0 1 0 0 1 0 0 1 0 0 1 0 0.862589 0.505905 0 0.862589 0.505905 0 0.862589 0.505905 0 0.862589 0.505905 0 0.863331 -0.504633 -0.002445 0.863331 -0.504633 -0.002445 0.862588 -0.505908 -0.000000 0.862588 -0.505908 -0.000000 0.862588 -0.505908 -0.000000 0.862588 -0.505908 -0.000000 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0.000000 0.497132 0.867675 -0.00049 0.991253 0.131975 -0.000594 1 0 0 1 0 0 0 1 -0.000000 0.230971 0.972961 -0.000246 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0.809357 0 0.587317 0.809357 0 0.587317 0.809357 0 0.587317 0.809357 0 0.587317 0.809357 0 -0.587317 0.809357 0 -0.587317 0.809357 0 -0.587317 0.809357 0 -0.587317 1 -0.000000 0.000000 1 -0.000000 0.000000 1 -0.000000 0.000000 1 -0.000000 0.000000 -0.000002 -0.000000 1 -0.000002 -0.000000 1 -0.000002 -0.000000 1 -0.000002 -0.000000 1 0.999991 0.004278 -0.000733 1 0.000012 0.000000 1 0.000012 0.000000 1 0.000012 0.000000 1 0 -0.000000 1 0 -0.000000 1 0 -0.000000 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0 -0.000959 1 0 -0.000959 0.986442 0.164105 -0.001014 0.991955 -0.126586 -0.001019 0.824256 -0.566217 -0.000843 0.86333 0.504634 -0.002444 0.86333 0.504634 -0.002444 0 -1 -0.000000 0 -1 -0.000000 0.727425 0.686186 -0.000787 0.979281 0.202502 -0.001071 0.923931 -0.382557 -0.001012 0.382804 -0.923829 -0.000418 -0.000009 -1 -0.000000 0.999952 -0.00966 -0.001466 0.999952 -0.00966 -0.001466 0.999997 0 -0.002661 0.999997 0 -0.002661</float_array>
+          <technique_common>
+            <accessor source="#corner_concave_shortShape-normals-array" count="193" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="corner_concave_shortShape-map1" name="map1">
+          <float_array id="corner_concave_shortShape-map1-array" count="324">0.996797 0.102549 0.996797 0.043393 0.996797 0.022507 0.996797 0.013897 0.004234 0.102549 0.004234 0.043393 0.004234 0.022507 0.765376 0.139326 0.970431 0.139186 0.970436 0.148741 0.765384 0.148842 0.970426 0.132743 0.760888 0.132909 0.634427 0.138731 0.634429 0.148266 0.638909 0.132303 0.743363 0.126247 0.996797 0.102549 0.996797 0.126247 0.76544 0.292389 0.970497 0.292314 0.970497 0.301871 0.765443 0.301904 0.970497 0.308313 0.760959 0.308325 0.634473 0.301354 0.638959 0.307782 0.634469 0.291824 0.00435 0.9628 0.00435 0.530293 0.996797 0.347746 0.996797 0.359264 0.996797 0.34001 0.996797 0.075578 0.996797 0.059648 0.996797 0.043393 0.996797 0.022507 0.996797 0.016234 0.996797 0.007991 0.643955 0.148262 0.644014 0.291819 0.649487 0.142711 0.649561 0.297363 0.750361 0.297946 0.750312 0.143294 0.755853 0.14884 0.7559 0.292396 0.684758 0.313256 0.684758 0.126247 0.743363 0.313256 0.996797 0.313256 0.997121 0.370528 0.997121 0.52581 0.530227 0.102549 0.469034 0.530293 0.53315 0.043393 0.528537 0.022507 0.526354 0.013897 0.474677 0.022507 0.502423 0.102549 0.498828 0.52581 0.485037 0.043393 0.494718 0.138766 0.485185 0.148304 0.497971 0.132334 0.514104 0.126247 0.494765 0.301394 0.49802 0.307824 0.514104 0.313256 0.485225 0.29186 0.498828 0.370528 0.498609 0.359264 0.510149 0.347746 0.514086 0.34001 0.541132 0.075578 0.514086 0.102549 0.555225 0.059648 0.561095 0.043393 0.561095 0.022507 0.556721 0.016234 0.548515 0.007991 0.996797 0.043393 0.996797 0.102549 0.500592 0.102549 0.517978 0.043393 0.528338 0.022507 0.996797 0.022507 0.339093 0.148341 0.339089 0.138806 0.477158 0.138771 0.486698 0.148304 0.030982 0.138778 0.236037 0.138745 0.236041 0.14826 0.030982 0.148334 0.240521 0.132324 0.030982 0.132336 0.334653 0.307872 0.339136 0.301438 0.477205 0.301399 0.473953 0.307831 0.236099 0.301317 0.240588 0.307733 0.03105 0.307914 0.031044 0.30147 0.03104 0.291911 0.236091 0.291805 0.00435 0.530293 0.469034 0.530293 0.00435 0.9628 0.004234 0.359264 0.004234 0.347746 0.488899 0.347746 0.500439 0.359264 0.004234 0.34001 0.004234 0.313256 0.25769 0.313256 0.004234 0.102549 0.004234 0.075578 0.457916 0.075578 0.484962 0.102549 0.329605 0.2919 0.329549 0.148344 0.339132 0.291895 0.245614 0.291808 0.245589 0.148252 0.251133 0.142703 0.251151 0.297355 0.324003 0.297451 0.324003 0.142799 0.25769 0.126247 0.316294 0.126247 0.316294 0.313256 0.004234 0.126247 0.00435 0.370528 0.500659 0.370528 0.500659 0.52581 0.00435 0.52581 0.465898 0.043393 0.468821 0.102549 0.004234 0.102549 0.004234 0.043393 0.470511 0.022507 0.004234 0.022507 0.472694 0.013897 0.004234 0.013897 0.473903 0.132339 0.334604 0.13237 0.486738 0.29186 0.484962 0.34001 0.443823 0.059648 0.004234 0.059648 0.437953 0.043393 0.004234 0.043393 0.437953 0.022507 0.004234 0.022507 0.442327 0.016234 0.004234 0.016234 0.450533 0.007991 0.004234 0.007991 0.484962 0.313256 0.484962 0.126247</float_array>
+          <technique_common>
+            <accessor source="#corner_concave_shortShape-map1-array" count="162" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="corner_concave_shortShape-vertices">
+          <input semantic="POSITION" source="#corner_concave_shortShape-positions"/>
+        </vertices>
+        <triangles material="blinn5SG" count="134">
+          <input semantic="VERTEX" source="#corner_concave_shortShape-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#corner_concave_shortShape-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#corner_concave_shortShape-map1" offset="2" set="0"/>
+          <p>1 0 1 0 1 0 36 3 55 36 3 55 0 1 0 35 2 53 3 5 6 38 6 58 5 4 5 5 4 5 38 6 58 40 7 61 6 8 7 7 9 8 9 11 10 9 11 10 7 9 8 8 10 9 7 13 8 6 14 7 10 12 11 10 12 11 6 14 7 11 15 12 11 16 16 15 17 17 10 18 18 16 19 19 17 20 20 19 22 22 19 22 22 17 20 20 18 21 21 18 23 21 20 24 23 19 26 22 19 26 22 20 24 23 21 25 24 0 27 29 25 28 28 35 29 54 24 30 27 13 31 14 22 33 40 22 33 40 13 31 14 12 32 39 22 34 40 12 35 39 23 37 42 23 37 42 12 35 39 14 36 41 21 38 43 11 39 44 19 41 46 19 41 46 11 39 44 6 40 45 23 42 47 14 43 48 21 45 49 21 45 49 14 43 48 11 44 16 28 46 32 23 47 47 21 48 49 28 46 32 21 48 49 20 49 50 14 50 48 15 51 17 11 52 16 16 53 19 19 54 46 9 56 10 9 56 10 19 54 46 6 55 45 17 57 20 16 58 19 8 60 9 8 60 9 16 58 19 9 59 10 26 61 51 4 62 52 47 64 70 47 64 70 4 62 52 39 63 60 37 65 56 2 66 2 36 3 55 36 3 55 2 66 2 1 0 1 38 6 57 3 5 3 37 65 56 37 65 56 3 5 3 2 66 2 39 67 59 4 68 4 40 7 61 40 7 61 4 68 4 5 4 5 42 69 63 41 70 62 13 72 14 13 72 14 41 70 62 12 71 13 41 73 62 43 74 64 12 76 13 12 76 13 43 74 64 14 75 15 44 78 66 22 79 25 45 77 67 45 77 67 22 79 25 23 80 26 46 82 69 24 83 27 44 81 66 44 81 66 24 83 27 22 84 25 47 85 71 48 86 72 26 88 31 26 88 31 48 86 72 27 87 30 48 86 72 49 89 73 27 87 30 27 87 30 49 89 73 28 46 32 51 90 75 50 91 74 15 93 17 15 93 17 50 91 74 29 92 33 50 91 74 52 94 76 29 92 33 29 92 33 52 94 76 30 95 34 52 94 76 53 96 77 30 95 34 30 95 34 53 96 77 31 97 35 53 96 77 54 98 78 31 97 35 31 97 35 54 98 78 32 99 36 55 100 79 33 101 37 54 98 78 54 98 78 33 101 37 32 99 36 56 102 80 34 103 38 55 100 79 55 100 79 34 103 38 33 101 37 45 104 68 23 47 47 49 89 73 49 89 73 23 47 47 28 46 32 43 105 65 51 106 75 14 108 48 14 108 48 51 106 75 15 107 17 46 109 69 42 110 63 24 112 27 24 112 27 42 110 63 13 111 14 62 113 81 61 114 82 40 7 84 40 7 84 61 114 82 39 67 83 40 7 84 38 6 85 62 113 81 62 113 81 38 6 85 60 115 86 64 117 88 41 70 89 63 116 87 63 116 87 41 70 89 42 69 90 66 118 91 67 119 92 69 121 94 69 121 94 67 119 92 68 120 93 70 122 95 67 123 92 71 125 96 71 125 96 67 123 92 66 124 91 72 126 97 73 127 98 45 77 100 45 77 100 73 127 98 44 78 99 76 129 102 77 130 103 75 128 101 75 128 101 77 130 103 78 131 104 79 132 105 80 133 106 78 135 104 78 135 104 80 133 106 75 134 101 57 136 107 35 29 108 25 28 109 82 138 111 48 86 112 81 137 110 81 137 110 48 86 112 47 85 113 83 139 114 77 140 115 76 141 116 85 143 118 50 91 119 84 142 117 84 142 117 50 91 119 51 90 120 73 144 121 64 145 122 74 147 123 74 147 123 64 145 122 63 146 87 75 148 124 67 149 125 76 151 127 76 151 127 67 149 125 70 150 126 72 152 128 65 153 129 73 155 121 73 155 121 65 153 129 64 154 122 76 156 116 70 157 130 72 159 132 72 159 132 70 157 130 65 158 131 68 160 93 67 161 125 80 163 106 80 163 106 67 161 125 75 162 124 83 139 114 76 141 116 72 164 132 65 165 131 70 166 130 84 167 117 84 168 117 70 169 130 71 170 133 80 171 106 79 172 105 68 174 93 68 174 93 79 172 105 69 173 94 81 175 134 47 64 135 61 176 137 61 176 137 47 64 135 39 63 136 35 2 139 57 177 140 36 3 138 36 3 138 57 177 140 58 178 141 37 65 142 36 3 138 59 179 143 59 179 143 36 3 138 58 178 141 38 6 144 37 65 142 60 115 145 60 115 145 37 65 142 59 179 143 41 73 89 64 180 88 43 74 146 43 74 146 64 180 88 65 181 147 46 82 148 44 81 99 74 183 123 74 183 123 44 81 99 73 182 98 48 86 112 82 138 111 49 89 149 49 89 149 82 138 111 83 139 114 50 91 119 85 143 118 52 94 150 52 94 150 85 143 118 86 184 151 52 94 150 86 184 151 53 96 152 53 96 152 86 184 151 87 185 153 54 98 154 53 96 152 88 186 155 88 186 155 53 96 152 87 185 153 55 100 156 54 98 154 89 187 157 89 187 157 54 98 154 88 186 155 56 102 158 55 100 156 90 188 159 90 188 159 55 100 156 89 187 157 45 104 160 49 89 149 72 164 132 72 164 132 49 89 149 83 139 114 43 105 161 65 189 131 51 106 120 51 106 120 65 189 131 84 190 117 42 110 90 46 109 148 63 192 87 63 192 87 46 109 148 74 191 123</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="Ceiling_concave">
+      <node id="corner_concave_short" name="corner_concave_short" type="NODE">
+        <translate sid="translate">0 -4 0</translate>
+        <translate sid="rotatePivot">0 4 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <translate sid="rotatePivotInverse">0 -4 0</translate>
+        <translate sid="scalePivot">0 4 0</translate>
+        <translate sid="scalePivotInverse">0 -4 0</translate>
+        <instance_geometry url="#corner_concave_shortShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn5SG" target="#concave_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene"/>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

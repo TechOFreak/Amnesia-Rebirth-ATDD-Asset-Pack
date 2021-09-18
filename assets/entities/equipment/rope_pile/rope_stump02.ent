@@ -1,0 +1,22 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/equipment/rope_pile/rope_stump02.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="rope02" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.159778 0.027781 0.068452" TriCount="146" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.450000 0.060000 0.250000" RelativeTranslation="-0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.450000 0.060000 0.250000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.001746 0.030000 -0.037819" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="true" CollideCharacter="false" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="2" LinearDamping="0.000000" Mass="0.000000" Material="Default Soft" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.001746 0.030000 -0.037819">
+                <Shape ID="1" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Skywolf</author>
+      <authoring_tool>Maya2008 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=0;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=1;
+exportTexTangents=1;exportConstraints=1;exportPhysics=0;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Users/Skywolf/Documents/maya/projects/frictional/scenes/pile_of_saw_dust_small.mb</source_data>
+    </contributor>
+    <created>2009-09-25T08:29:38Z</created>
+    <modified>2009-09-25T08:29:38Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///C:/Users/Skywolf/Desktop/FrictionalGames09-2008/frictionalSVN/lux/redist/static_objects/decals/pile_of_saw_dust_small.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <texture texture="file1-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pPlaneShape1" name="pPlaneShape1">
+      <mesh>
+        <source id="pPlaneShape1-positions" name="position">
+          <float_array id="pPlaneShape1-positions-array" count="108">-0.492391 0.000203 0.495696 0.492391 0.000203 0.495696 -0.492391 0.000203 -0.495696 0.492391 0.000203 -0.495696 -0.120665 0.000722 0.495781 -0.492391 0.000203 -0.104012 0.492391 0.000203 -0.104012 -0.120654 0.000203 -0.495696 -0.065059 0.060504 -0.066737 -0.300298 0.000477 0.49572 0.308603 0.000203 0.495696 -0.492391 0.000203 0.306094 -0.492391 0.000203 -0.297774 0.492391 0.000203 0.306094 0.492391 0.000203 -0.297774 -0.300282 0.000203 -0.495696 0.308603 0.000203 -0.495696 -0.062892 0.034126 0.198844 0.185191 0.02029 -0.067443 -0.071026 0.013366 -0.194405 -0.179877 0.030303 -0.066418 0.18388 0.021208 0.198649 0.184168 0.017894 -0.192702 -0.176982 0.017284 -0.192653 -0.177461 0.024014 0.198643 0.084871 0.000203 0.495696 0.084871 0.000203 -0.495696 0.061049 0.057443 -0.069312 0.059584 0.030213 0.198559 0.053555 0.025578 -0.196432 -0.492391 0.000203 0.110009 0.492391 0.000203 0.110009 -0.062132 0.059075 0.06892 0.185164 0.021852 0.072213 -0.179184 0.031629 0.068451 0.062688 0.060105 0.069239</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-positions-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlaneShape1-normals" name="normal">
+          <float_array id="pPlaneShape1-normals-array" count="108">-0.0393 0.99849 0.038369 0.035173 0.998799 0.034095 -0.028 0.999238 -0.027177 0.02998 0.999163 -0.027839 -0.010791 0.995337 0.095852 -0.081742 0.996402 -0.022378 0.063641 0.997955 -0.006044 -0.011959 0.998225 -0.058345 -0.098999 0.986236 -0.132432 -0.037224 0.997407 0.061588 0.030476 0.997932 0.056589 -0.060663 0.997676 0.031035 -0.046788 0.99832 -0.034174 0.051887 0.998487 0.018185 0.044749 0.99884 -0.017765 -0.007318 0.999153 -0.040497 0.026155 0.998566 -0.046708 -0.042498 0.990477 0.130958 0.149568 0.987863 -0.041895 -0.04565 0.985957 -0.160639 -0.13137 0.989023 -0.067646 0.078944 0.995135 0.058943 0.071833 0.995609 -0.06002 -0.049579 0.9949 -0.087837 -0.079065 0.994571 0.067648 0.01966 0.995475 0.092969 -0.007481 0.997906 -0.064239 0.110526 0.987186 -0.115097 0.059227 0.989918 0.128663 0.030105 0.989502 -0.141347 -0.089947 0.995896 0.010051 0.068176 0.997673 -0.001068 -0.096211 0.991882 0.083149 0.154508 0.987663 0.025475 -0.145567 0.988662 0.036851 0.125822 0.98903 0.077384</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-normals-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlaneShape1-geotangent" name="geotangent">
+          <float_array id="pPlaneShape1-geotangent-array" count="108">0.999226 0.039329 0 0 0.034116 -0.999418 0 0.027188 0.99963 -0.99955 0.029991 0 0.000204 0.09586 -0.995395 0.996652 0.081762 0 -0.997973 0.063642 0.000000 0 0.058349 0.998296 0.99287 0.08902 -0.079274 0.000039 0.061632 -0.998099 0 0.056615 -0.998396 0.998156 0.060693 -0.000000 0.998904 0.046815 0 -0.998652 0.051896 0 -0.998998 0.044756 0 0 0.040498 0.99918 0 0.046724 0.998908 -0.001882 -0.131156 0.99136 0.002253 -0.042712 -0.999085 -0.997531 -0.0364 0.060064 0.124144 -0.051287 -0.990938 0.996776 -0.079649 0.009715 0.024846 -0.061943 -0.99777 -0.998527 -0.051314 -0.017603 0.004202 -0.067528 0.997708 -0.000176 0.09299 -0.995667 0 0.064241 0.997934 0.019071 0.113679 0.993334 -0.010011 -0.128294 0.991686 -0.002249 -0.141344 -0.989958 0.995946 0.089952 0.000000 -0.997673 0.068176 -0.000000 -0.995234 -0.094527 -0.023976 0.987974 -0.154606 0.001918 0.989278 0.1459 -0.006517 0.992053 -0.125477 -0.009328</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-geotangent-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlaneShape1-geobinormal" name="geobinormal">
+          <float_array id="pPlaneShape1-geobinormal-array" count="108">-0.001509 0.03834 -0.999264 -0.999381 0.035153 0.0012 0.999608 0.027989 -0.000761 0.000834 0.027826 0.999613 -0.999942 -0.010722 -0.001237 0.001829 -0.022303 -0.99975 0.000385 0.006032 0.999982 0.999929 0.011939 -0.000697 -0.066394 -0.139336 -0.988017 -0.999307 -0.037151 -0.002333 -0.999536 0.030427 0.001725 -0.001884 0.030978 -0.999518 0.001599 -0.034136 -0.999416 -0.000943 -0.018161 0.999835 0.000795 0.017748 0.999842 0.999973 0.007312 -0.000296 0.999658 -0.026127 0.001222 0.999095 0.041885 0.007438 -0.988749 0.149337 -0.008615 0.053373 0.162984 0.985184 -0.983529 -0.138578 -0.116044 0.014363 0.057985 -0.998214 -0.997107 0.070181 -0.029187 -0.02202 0.086835 0.995979 0.996861 0.079168 0.001159 -0.999807 0.019558 0.002004 0.999972 0.007466 -0.00048 0.99369 -0.111985 -0.006262 0.998194 -0.060022 0.002312 -0.999544 0.03012 -0.002029 -0.000903 0.01001 -0.99995 0.000072 0.001066 0.999999 -0.015921 -0.085059 0.996249 0.005833 0.024872 -0.999674 -0.011819 0.035507 -0.9993 0.000483 0.077943 -0.996958</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-geobinormal-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlaneShape1-map1" name="map1">
+          <float_array id="pPlaneShape1-map1-array" count="72">0.811256 0.000085 0.996624 0.000085 0.996624 0.191317 0.685461 0.299686 0.996624 0.389088 0.686756 0.427208 0.686783 0.568066 0.561574 0.569951 0.563228 0.430208 0.436567 0.299489 0.378298 0 0.585601 0.000085 0.560097 0.299777 0.996624 0.800376 0.996624 1 0.811256 1 0.685751 0.694402 0.585601 1 0.554016 0.698163 0.428363 0.696119 0.434381 0.567354 0.996624 0.604949 0.197137 1 0.003375 1 0.003375 0.800376 0.321496 0.694352 0.003375 0.604949 0.318577 0.567032 0.378309 1 0.003375 0.191317 0.003375 0.000085 0.197121 0.00006 0.321013 0.299693 0.437334 0.43053 0.319276 0.431003 0.003375 0.389088</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-map1-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlaneShape1-map1-tangents">
+          <float_array id="pPlaneShape1-map1-tangents-array" count="108">-0.999381 0.035153 0.0012 -0.998653 0.051892 0.000224 -0.999534 0.030481 0.000767 -0.996872 0.078999 0.001393 -0.997673 0.068176 0.000001 -0.987981 0.154552 0.000225 -0.993678 0.111292 0.000331 -0.991893 0.126482 -0.003782 -0.988704 0.149789 0.002205 -0.99993 -0.011008 0.001737 -0.9998 0.019806 -0.000649 -0.998994 -0.043107 0.001837 -0.998102 0.060113 -0.003051 -0.99955 0.029968 -0.000835 -0.999657 0.026159 -0.000544 -0.998998 0.044752 -0.000197 -0.99739 0.072003 0.000694 -0.999965 -0.007505 -0.000134 -0.999488 0.029568 -0.005883 -0.998761 -0.046737 -0.003032 -0.994797 -0.100469 -0.00454 -0.997973 0.063642 0 -0.999608 -0.027989 0.000761 -0.998904 -0.046797 0.000518 -0.999973 -0.007335 -0.000255 -0.998761 -0.049524 0.002801 -0.996652 -0.081763 -0.000028 -0.991265 -0.131666 0.000028 -0.999928 -0.011898 0.0014 -0.999227 -0.039273 -0.001454 -0.999305 -0.037228 -0.001078 -0.998157 -0.060677 -0.000505 -0.996857 -0.079189 -0.000835 -0.995298 -0.096359 -0.002192 -0.989328 -0.145679 0.000374 -0.995946 -0.089952 -0.000008</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-map1-tangents-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlaneShape1-map1-binormals">
+          <float_array id="pPlaneShape1-map1-binormals-array" count="108">0 -0.034116 0.999418 -0.000719 -0.018172 0.999835 -0.000958 -0.056586 0.998397 -0.003269 -0.058868 0.99826 0.000074 0.001065 0.999999 -0.003714 -0.025203 0.999675 0.013137 0.114346 0.993354 -0.013529 -0.076286 0.996994 0.008454 0.041092 0.99912 0.002784 -0.095827 0.995394 -0.002487 -0.092938 0.995669 0.007465 -0.130758 0.991386 -0.010756 -0.128249 0.991684 0 0.027851 0.999612 0.000678 0.046707 0.998908 0.000597 0.017756 0.999842 0.005013 0.059814 0.998197 -0.000616 0.064236 0.997935 -0.001642 0.14146 0.989943 -0.010499 0.160324 0.987009 -0.017785 0.131311 0.991182 0.000384 0.006032 0.999982 0 0.027188 0.99963 -0.001081 0.034161 0.999416 -0.000552 0.040494 0.99918 -0.001562 0.087868 0.996131 -0.001858 0.022301 0.99975 -0.008879 0.067061 0.997709 0.000703 0.058358 0.998295 0.000054 -0.038397 0.999263 0.001217 -0.061585 0.998101 0.001378 -0.031009 0.999518 0.004525 -0.067502 0.997709 0.005837 -0.082973 0.996535 0.005738 -0.036403 0.999321 0.000895 -0.010011 0.99995</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-map1-binormals-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPlaneShape1-vertices">
+          <input semantic="POSITION" source="#pPlaneShape1-positions"/>
+          <input semantic="NORMAL" source="#pPlaneShape1-normals"/>
+          <input semantic="TANGENT" source="#pPlaneShape1-geotangent"/>
+          <input semantic="BINORMAL" source="#pPlaneShape1-geobinormal"/>
+        </vertices>
+        <triangles material="initialShadingGroup" count="50">
+          <input semantic="VERTEX" source="#pPlaneShape1-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#pPlaneShape1-map1" offset="1" set="0"/>
+          <input semantic="TEXTANGENT" source="#pPlaneShape1-map1-tangents" offset="2" set="0"/>
+          <input semantic="TEXBINORMAL" source="#pPlaneShape1-map1-binormals" offset="3" set="0"/>
+          <p>1 1 0 0 13 2 1 1 10 0 2 2 10 0 2 2 13 2 1 1 21 3 3 3 13 2 1 1 31 4 4 4 21 3 3 3 21 3 3 3 31 4 4 4 33 5 5 5 27 7 6 6 35 8 7 7 18 6 8 8 18 6 8 8 35 8 7 7 33 5 5 5 4 10 9 9 25 11 10 10 17 9 11 11 17 9 11 11 25 11 10 10 28 12 12 12 3 14 13 13 16 15 14 14 14 13 15 15 14 13 15 15 16 15 14 14 22 16 16 16 16 15 14 14 26 17 17 17 22 16 16 16 22 16 16 16 26 17 17 17 29 18 18 18 19 19 19 19 8 20 20 20 29 18 18 18 29 18 18 18 8 20 20 20 27 7 6 6 18 6 8 8 6 21 21 21 22 16 16 16 22 16 16 16 6 21 21 21 14 13 15 15 2 23 22 22 12 24 23 23 15 22 24 24 15 22 24 24 12 24 23 23 23 25 25 25 12 24 23 23 5 26 26 26 23 25 25 25 23 25 25 25 5 26 26 26 20 27 27 27 8 20 20 20 19 19 19 19 20 27 27 27 20 27 27 27 19 19 19 19 23 25 25 25 19 19 19 19 7 28 28 28 23 25 25 25 23 25 25 25 7 28 28 28 15 22 24 24 0 30 29 29 9 31 30 30 11 29 31 31 11 29 31 31 9 31 30 30 24 32 32 32 9 31 30 30 4 10 9 9 24 32 32 32 24 32 32 32 4 10 9 9 17 9 11 11 32 33 33 33 34 34 34 34 17 9 11 11 17 9 11 11 34 34 34 34 24 32 32 32 20 27 27 27 5 26 26 26 34 34 34 34 34 34 34 34 5 26 26 26 30 35 35 35 35 8 7 7 32 33 33 33 28 12 12 12 28 12 12 12 32 33 33 33 17 9 11 11 28 12 12 12 25 11 10 10 21 3 3 3 21 3 3 3 25 11 10 10 10 0 2 2 29 18 18 18 26 17 17 17 19 19 19 19 19 19 19 19 26 17 17 17 7 28 28 28 29 18 18 18 27 7 6 6 22 16 16 16 22 16 16 16 27 7 6 6 18 6 8 8 31 4 4 4 6 21 21 21 33 5 5 5 33 5 5 5 6 21 21 21 18 6 8 8 35 8 7 7 28 12 12 12 33 5 5 5 33 5 5 5 28 12 12 12 21 3 3 3 32 33 33 33 8 20 20 20 34 34 34 34 34 34 34 34 8 20 20 20 20 27 27 27 34 34 34 34 30 35 35 35 24 32 32 32 24 32 32 32 30 35 35 35 11 29 31 31 35 8 7 7 27 7 6 6 32 33 33 33 32 33 33 33 27 7 6 6 8 20 20 20</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>0</double_sided>
+          <dynamic_attributes>
+            <miShadingSamplesOverride short_name="mso" type="bool">0</miShadingSamplesOverride>
+            <miShadingSamples short_name="msh" type="float">0</miShadingSamples>
+            <miMaxDisplaceOverride short_name="mdo" type="bool">0</miMaxDisplaceOverride>
+            <miMaxDisplace short_name="mmd" type="float">0</miMaxDisplace>
+          </dynamic_attributes>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="pile_of_saw_dust_small">
+      <node id="pPlane1" name="pPlane1" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#pPlaneShape1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="initialShadingGroup" target="#lambert1">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

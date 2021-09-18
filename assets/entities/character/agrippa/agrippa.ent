@@ -1,0 +1,108 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/agrippa/agrippa.dae">
+            <SubMesh ID="0" Name="agrippa" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="6250" Material="" Static="true" />
+            <SubMesh ID="1" Name="agrippa1" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="320" Material="" Static="true" />
+        </Mesh>
+        <Bones>
+            <Bone ID="2" Name="CenterRoot" />
+            <Bone ID="3" Name="CenterSpine" />
+            <Bone ID="4" Name="CenterNeck" />
+            <Bone ID="5" Name="CenterNeck_CenterHead" />
+            <Bone ID="6" Name="CenterNeck_CenterHead_CenterHead" />
+            <Bone ID="7" Name="RightHead" />
+            <Bone ID="8" Name="LeftHead" />
+            <Bone ID="9" Name="RightCollar" />
+            <Bone ID="10" Name="RightShoulder" />
+            <Bone ID="11" Name="RightElbow" />
+            <Bone ID="12" Name="RightHand" />
+            <Bone ID="13" Name="RightHand_RightIndexFinger" />
+            <Bone ID="14" Name="RightHand_RightIndexFinger_RightIndexFinger" />
+            <Bone ID="15" Name="RightHand_RightThumb" />
+            <Bone ID="16" Name="RightHand_RightThumb_RightThumb" />
+            <Bone ID="17" Name="RightHand_RightThumb_RightThumb_RightThumb" />
+            <Bone ID="18" Name="RightHand_RightPinkyFinger" />
+            <Bone ID="19" Name="RightHand_RightPinkyFinger_RightPinkyFinger" />
+            <Bone ID="20" Name="LeftCollar" />
+            <Bone ID="21" Name="LeftShoulder" />
+            <Bone ID="22" Name="LeftElbow" />
+            <Bone ID="23" Name="LeftHand" />
+            <Bone ID="24" Name="LeftHand_LeftIndexFinger" />
+            <Bone ID="25" Name="LeftHand_LeftIndexFinger_LeftIndexFinger" />
+            <Bone ID="26" Name="LeftHand_LeftThumb" />
+            <Bone ID="27" Name="LeftHand_LeftThumb_LeftThumb" />
+            <Bone ID="28" Name="LeftHand_LeftPinkyFinger" />
+            <Bone ID="29" Name="LeftHand_LeftPinkyFinger_LeftPinkyFinger" />
+            <Bone ID="30" Name="RightHip" />
+            <Bone ID="31" Name="RightKnee" />
+            <Bone ID="32" Name="RightFoot" />
+            <Bone ID="33" Name="LeftHip" />
+            <Bone ID="34" Name="LeftKnee" />
+            <Bone ID="35" Name="LeftFoot" />
+            <Bone ID="36" Name="chain_elbow_right01" />
+            <Bone ID="37" Name="chain_elbow_right02" />
+            <Bone ID="38" Name="chain_hand_right01" />
+            <Bone ID="39" Name="chain_hand_right02" />
+            <Bone ID="40" Name="chain_elbow_left01" />
+            <Bone ID="41" Name="chain_elbow_left02" />
+            <Bone ID="42" Name="chain_hand_left01" />
+            <Bone ID="43" Name="chain_hand_left02" />
+            <Bone ID="44" Name="agrippa" />
+            <Bone ID="45" Name="agrippa1" />
+        </Bones>
+        <Shapes />
+        <Bodies />
+        <Joints />
+        <Animations>
+            <Animation Name="Idle" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/agrippa/animations/idle.dae_anim" Layer="Default" Speed="1" />
+            <Animation Name="SleepIdle" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/agrippa/animations/hanging.dae_anim" Layer="Default" Speed="1" />
+            <Animation Name="Awake" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/agrippa/animations/look_up.dae_anim" Layer="Default" Speed="1" />
+            <Animation Name="Sleep" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/agrippa/animations/look_up.dae_anim" Layer="Default" Speed="1" />
+        </Animations>
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Agent_Humanoid_NPC">
+        <Var ObjectId="4294967295" Name="Note" Value="" />
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="VoiceSourceBone" Value="" />
+        <Var ObjectId="4294967295" Name="CastShadows" Value="true" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="CutsceneEndAlignmentBone" Value="" />
+        <Var ObjectId="4294967295" Name="CharBodySize" Value="1 1 1" />
+        <Var ObjectId="4294967295" Name="MeshPositionOffset" Value="0 0 0" />
+        <Var ObjectId="4294967295" Name="MeshRotationOffset" Value="0 0 0" />
+        <Var ObjectId="4294967295" Name="MeshScaleOffset" Value="1 1 1" />
+        <Var ObjectId="4294967295" Name="CharBodyPosBone" Value="Hip" />
+        <Var ObjectId="4294967295" Name="CharBodyBoneIsFeet" Value="false" />
+        <Var ObjectId="4294967295" Name="CharBodyBoneYOffset" Value="0" />
+        <Var ObjectId="4294967295" Name="CharBodyMaterial" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="Movement_ForwadSpeed" Value="1" />
+        <Var ObjectId="4294967295" Name="Movement_BackwardSpeed" Value="1" />
+        <Var ObjectId="4294967295" Name="Movement_SidewaysSpeed" Value="1" />
+        <Var ObjectId="4294967295" Name="Movement_Acc" Value="1" />
+        <Var ObjectId="4294967295" Name="Movement_Deacc" Value="1" />
+        <Var ObjectId="4294967295" Name="HeadBone" Value="Head" />
+        <Var ObjectId="4294967295" Name="UsePathfinding" Value="true" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_WalkAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_RunAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_BackwardAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraMinWait" Value="4" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraMaxWait" Value="10" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraPauseProcedural" Value="true" />
+        <Var ObjectId="4294967295" Name="HeadTracker_Bones" Value="CenterNeck CenterNeck_CenterHead" />
+        <Var ObjectId="4294967295" Name="HeadTracker_BoneMuls" Value="0.5 0.5" />
+        <Var ObjectId="4294967295" Name="HeadTracker_ChestBone" Value="" />
+        <Var ObjectId="4294967295" Name="HeadTracker_SpeedMul" Value="1" />
+        <Var ObjectId="4294967295" Name="HeadTracker_MaxSpeed" Value="1" />
+        <Var ObjectId="4294967295" Name="HeadTracker_MaxAngle" Value="80" />
+    </UserDefinedVariables>
+</Entity>

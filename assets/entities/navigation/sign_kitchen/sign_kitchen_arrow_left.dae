@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Bulgur</author>
+      <authoring_tool>COLLADAMax</authoring_tool>
+      <source_data>C://\Users\Bulgur\Documents\3dsmax\scenes\sign_metal%20arrow%20L.max</source_data>
+    </contributor>
+    <created>2010-06-07T21:54:59Z</created>
+    <modified>2010-06-07T21:54:59Z</modified>
+    <up_axis>Z_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_effects>
+    <effect id="ColorEffectR0G0B0">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent>
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_1_-_Default">
+      <profile_COMMON>
+        <newparam sid="sign_kitchen_arrow_left_dds-surface">
+          <surface type="2D">
+            <init_from>sign_kitchen_arrow_left_dds</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="sign_kitchen_arrow_left_dds-sampler">
+          <sampler2D>
+            <source>sign_kitchen_arrow_left_dds-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="sign_kitchen_arrow_left_dds-sampler" texcoord="CHANNEL1" />
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="3dsMAX">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lexture_lock>1</ambient_diffuse_lexture_lock>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="ColorEffectR0G0B0-material" name="ColorEffectR0G0B0-material">
+      <instance_effect url="#ColorEffectR0G0B0" />
+    </material>
+    <material id="_1_-_Default-material" name="_1_-_Default-material">
+      <instance_effect url="#_1_-_Default" />
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="geom-Box02" name="Box02">
+      <mesh>
+        <source id="geom-Box02-positions">
+          <float_array id="geom-Box02-positions-array" count="72">0.309851 -0.0168279 0.00700002 0.309851 0.0190703 1.3234e-008 0.309851 -0.0168279 0.296756 0.316851 0.0190703 0.296756 0.31281 -0.0138693 0.00404147 0.31281 -0.0138693 0.299714 0.316851 0.0190703 0.00700001 0.309851 0.0190703 0.303756 0.316851 -0.00982788 0.00700002 0.309851 -0.00982788 1.57603e-008 0.309851 -0.00982788 0.303756 0.316851 -0.00982789 0.296756 -0.108165 -0.00982791 1.57603e-008 -0.108165 0.0190703 1.3234e-008 -0.118162 -0.0168279 0.00700002 -0.279847 -0.0168279 0.139737 -0.286847 -0.0098279 0.141619 -0.286847 0.0190703 0.141619 -0.108243 0.0190703 0.303756 -0.108243 -0.00982791 0.303756 -0.11824 -0.0168279 0.296756 -0.286847 -0.0098279 0.162192 -0.279847 -0.0168279 0.164074 -0.286847 0.0190703 0.162192</float_array>
+          <technique_common>
+            <accessor source="#geom-Box02-positions-array" count="24" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Box02-normals">
+          <float_array id="geom-Box02-normals-array" count="72">0.717284 0.630263 0.297108 0.899387 -0.307658 0.310562 0.899387 -0.307658 -0.310562 0.717284 0.630262 -0.297109 -0.356424 -0.74538 -0.563357 -0.243623 -0.327272 -0.912985 0.310562 -0.307658 -0.899387 0.537582 -0.649624 -0.537582 0.300194 -0.90541 -0.300194 0.537582 -0.649624 0.537582 0.300194 -0.90541 0.300194 0.310562 -0.307658 0.899387 0.297109 0.630262 -0.717284 0.297109 0.630262 0.717283 -0.25268 0.640034 -0.725609 -0.705669 0.621013 -0.341137 -0.705671 0.621015 0.341128 -0.25269 0.640032 0.725608 -0.243632 -0.327272 0.912982 -0.356442 -0.745374 0.563353 -0.515315 -0.76894 0.378394 -0.515306 -0.76894 -0.378405 -0.880007 -0.27921 0.384227 -0.880001 -0.279214 -0.384236</float_array>
+          <technique_common>
+            <accessor source="#geom-Box02-normals-array" count="24" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Box02-map-channel1">
+          <float_array id="geom-Box02-map-channel1-array" count="132">0.965414 0.0267733 0 0.96492 0.0202361 0 0.980529 0.0017142 0 0.964902 0.489119 0 0.96593 0.496676 0 0.960813 0.0316144 0 0.960816 0.484998 0 0.301823 0.516723 0 0.293931 0.524615 0 0.997508 0.0316141 0 0.971766 0.0327485 0 0.972132 0.484272 0 0.997511 0.484997 0 0.293934 0.851281 0 0.301825 0.859172 0 0.979164 0.516734 0 0.304786 0.0200496 0 0.300444 0.00171912 0 0.773087 0.51672 0 0.291097 0.0316193 0 0.0381083 0.22657 0 0.026801 0.230504 0 0.00597818 0.230466 0 0.975684 0.672277 0 0.298951 0.516739 0 0.773179 0.859169 0 0.304482 0.49668 0 0.290977 0.485002 0 0.0267991 0.272969 0 0.0381091 0.276954 0 0.00597878 0.273058 0 0.973273 0.703671 0 0.974201 0.462999 0 0.999008 0.462999 0 0.999008 0.0837719 0 0.974201 0.0837719 0 0.968192 0.448136 0 0.968192 0.104999 0 0.973036 0.0828545 0 0.967027 0.0977176 0 0.967027 0.441023 0 0.973036 0.462249 0 0.997842 0.0828545 0 0.997842 0.462249 0</float_array>
+          <technique_common>
+            <accessor source="#geom-Box02-map-channel1-array" count="44" stride="3">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+              <param name="P" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-Box02-vertices">
+          <input semantic="POSITION" source="#geom-Box02-positions" />
+        </vertices>
+        <triangles material="_1_-_Default_1" count="44">
+          <input semantic="VERTEX" source="#geom-Box02-vertices" offset="0" />
+          <input semantic="NORMAL" source="#geom-Box02-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#geom-Box02-map-channel1" offset="2" set="1" />
+          <p>11 1 11 8 2 10 6 3 9 6 3 9 3 0 12 11 1 11 12 5 16 9 6 1 4 7 0 12 5 16 4 7 0 0 8 5 14 4 19 12 5 16 0 8 5 11 1 11 5 9 3 2 10 6 2 10 6 0 8 5 4 7 0 11 1 11 2 10 6 4 7 0 8 2 10 11 1 11 4 7 0 8 2 10 4 7 0 9 6 1 10 11 4 5 9 3 11 1 11 6 3 9 8 2 10 9 6 1 9 6 1 1 12 2 6 3 9 11 1 11 3 0 12 7 13 15 7 13 15 10 11 4 11 1 11 13 14 17 1 12 2 9 6 1 9 6 1 12 5 16 13 14 17 1 12 7 13 14 18 17 15 23 17 15 23 23 16 31 18 17 25 1 12 7 17 15 23 18 17 25 18 17 25 7 13 14 3 0 13 1 12 7 18 17 25 3 0 13 6 3 8 1 12 7 3 0 13 19 18 26 10 11 4 7 13 15 7 13 15 18 17 24 19 18 26 22 20 29 15 21 20 14 4 19 14 4 19 0 8 5 2 10 6 22 20 29 14 4 19 2 10 6 20 19 27 22 20 29 2 10 6 23 16 30 17 15 22 16 23 21 16 23 21 21 22 28 23 16 30 19 18 26 20 19 27 2 10 6 19 18 26 2 10 6 5 9 3 10 11 4 19 18 26 5 9 3 21 22 28 16 23 21 15 21 20 15 21 20 22 20 29 21 22 28 14 4 40 15 21 39 16 23 38 16 23 38 12 5 41 14 4 40 13 14 43 12 5 41 16 23 38 16 23 38 17 15 42 13 14 43 19 18 35 18 17 34 23 16 33 23 16 33 21 22 32 19 18 35 20 19 37 19 18 35 21 22 32 21 22 32 22 20 36 20 19 37</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_images>
+    <image id="sign_kitchen_arrow_left_dds">
+      <init_from>file:///F:\test\signs\metal\sign_kitchen_arrow_left.dds</init_from>
+    </image>
+  </library_images>
+  <library_visual_scenes>
+    <visual_scene id="MaxScene">
+      <node id="node-Scene_Root" name="Scene_Root">
+        <node id="node-Box02" name="Box02">
+          <translate>0.017252 -0.00379395 0</translate>
+          <instance_geometry url="#geom-Box02">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="_1_-_Default_1" target="#_1_-_Default-material" />
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#MaxScene" />
+  </scene>
+</COLLADA>

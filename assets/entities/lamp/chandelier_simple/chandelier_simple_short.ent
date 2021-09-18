@@ -1,0 +1,90 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities>
+            <PointLight Active="true" CastShadows="true" DiffuseColor="0.800000 0.750000 0.500000 0.800000" FalloffMap="" FlickerActive="true" FlickerFade="true" FlickerOffColor="0.750000 0.700000 0.450000 0.700000" FlickerOffFadeMaxLength="2.000000" FlickerOffFadeMinLength="0.100000" FlickerOffMaxLength="0.000000" FlickerOffMinLength="0.000000" FlickerOffPS="" FlickerOffRadius="5.000000" FlickerOffSound="" FlickerOnFadeMaxLength="2.000000" FlickerOnFadeMinLength="0.100000" FlickerOnMaxLength="0.000000" FlickerOnMinLength="0.000000" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0.000000" GoboAnimMode="None" GroupID="0" ID="8" Name="PointLight_1" Radius="5.100000" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" SubType="1" Tag="" Type="1" WorldPos="0.016142 -1.779571 -0.028718" />
+            <ParticleSystem Active="true" Color="1.000000 1.000000 1.000000 1.000000" FadeAtDistance="false" File="ps_fire_candle_large.ps" GroupID="0" ID="11" MaxFadeDistanceEnd="0.000000" MaxFadeDistanceStart="0.000000" MinFadeDistanceEnd="0.000000" MinFadeDistanceStart="0.000000" Name="ParticleSystem_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="5" WorldPos="-0.489654 -1.843011 0.023964" />
+            <ParticleSystem Active="true" Color="1.000000 1.000000 1.000000 1.000000" FadeAtDistance="false" File="ps_fire_candle_large.ps" GroupID="0" ID="12" MaxFadeDistanceEnd="0.000000" MaxFadeDistanceStart="0.000000" MinFadeDistanceEnd="0.000000" MinFadeDistanceStart="0.000000" Name="ParticleSystem_1_clone_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="5" WorldPos="-0.002108 -1.820886 -0.505621" />
+            <ParticleSystem Active="true" Color="1.000000 1.000000 1.000000 1.000000" FadeAtDistance="false" File="ps_fire_candle_large.ps" GroupID="0" ID="13" MaxFadeDistanceEnd="0.000000" MaxFadeDistanceStart="0.000000" MinFadeDistanceEnd="0.000000" MinFadeDistanceStart="0.000000" Name="ParticleSystem_1_clone_1_clone_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="5" WorldPos="0.520724 -1.790785 -0.002962" />
+            <ParticleSystem Active="true" Color="1.000000 1.000000 1.000000 1.000000" FadeAtDistance="false" File="ps_fire_candle_large.ps" GroupID="0" ID="14" MaxFadeDistanceEnd="0.000000" MaxFadeDistanceStart="0.000000" MinFadeDistanceEnd="0.000000" MinFadeDistanceStart="0.000000" Name="ParticleSystem_1_clone_1_clone_1_clone_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="5" WorldPos="0.004022 -1.831963 0.505280" />
+            <Billboard Active="true" Axis="0.000000 1.000000 0.000000" BillboardColor="0.800000 0.800000 0.800000 1.000000" BillboardOffset="0.000000" BillboardSize="0.800000 0.800000" BillboardType="Point" ConnectLight="PointLight_1" GroupID="0" HaloSourceSize="0.200000 0.200000 0.200000" ID="35" IsHalo="true" MaterialFile="billboards/halo_torch.mat" Name="Billboard_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" WorldPos="-0.498059 -1.821933 0.000000" />
+            <Billboard Active="true" Axis="0.000000 1.000000 0.000000" BillboardColor="0.800000 0.800000 0.800000 1.000000" BillboardOffset="0.000000" BillboardSize="0.800000 0.800000" BillboardType="Point" ConnectLight="PointLight_1" GroupID="0" HaloSourceSize="0.200000 0.200000 0.200000" ID="36" IsHalo="true" MaterialFile="billboards/halo_torch.mat" Name="Billboard_2" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" WorldPos="-0.004011 -1.821933 0.511085" />
+            <Billboard Active="true" Axis="0.000000 1.000000 0.000000" BillboardColor="0.800000 0.800000 0.800000 1.000000" BillboardOffset="0.000000" BillboardSize="0.800000 0.800000" BillboardType="Point" ConnectLight="PointLight_1" GroupID="0" HaloSourceSize="0.200000 0.200000 0.200000" ID="37" IsHalo="true" MaterialFile="billboards/halo_torch.mat" Name="Billboard_3" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" WorldPos="0.512753 -1.821933 -0.005679" />
+            <Billboard Active="true" Axis="0.000000 1.000000 0.000000" BillboardColor="0.800000 0.800000 0.800000 1.000000" BillboardOffset="0.000000" BillboardSize="0.800000 0.800000" BillboardType="Point" ConnectLight="PointLight_1" GroupID="0" HaloSourceSize="0.200000 0.200000 0.200000" ID="38" IsHalo="true" MaterialFile="billboards/halo_torch.mat" Name="Billboard_4" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" WorldPos="-0.004011 -1.821933 -0.505406" />
+        </Entities>
+        <Mesh Filename="entities/lamp/chandelier_simple/chandelier_simple_short.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface3" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="14" />
+            <SubMesh Active="true" GroupID="0" ID="1" Name="polySurface40" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="1" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="8" />
+            <SubMesh Active="true" GroupID="0" ID="2" Name="polySurface41" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="2" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="472" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="4" Name="BodyShape_2_clone_1_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.180000 0.300000 0.180000" RelativeTranslation="0.509494 0.084229 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.180000 0.300000 0.180000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.509494 -1.971379 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="BodyShape_2_clone_1_clone_1_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.180000 0.300000 0.180000" RelativeTranslation="-0.509494 0.084229 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.180000 0.300000 0.180000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.509494 -1.971379 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="6" Name="BodyShape_2_clone_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.100000 3.250000 0.100000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.100000 1.462500 0.100000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.000000 -0.892254 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="20" Name="BodyShape_2_clone_2_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.262767 0.112767 0.262767" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.262767 0.112767 0.262767" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.000000 -0.053332 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="21" Name="BodyShape_2_clone_1_clone_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.343030 0.213029 0.343030" RelativeTranslation="0.000000 0.037258 -0.012851" Rotation="0.000000 0.000000 0.000000" Scale="0.343030 0.213029 0.343030" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.000000 -2.018350 -0.012851" />
+            <BodyShape Active="true" GroupID="0" ID="32" Name="BodyShape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.180000 0.300000 0.180000" RelativeTranslation="0.000000 0.084229 -0.509494" Rotation="0.000000 0.000000 0.000000" Scale="0.180000 0.300000 0.180000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.000000 -1.971379 -0.509494" />
+            <BodyShape Active="true" GroupID="0" ID="33" Name="BodyShape_2_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.180000 0.300000 0.180000" RelativeTranslation="0.000000 0.084229 0.509494" Rotation="0.000000 0.000000 0.000000" Scale="0.180000 0.300000 0.180000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.000000 -1.971379 0.509494" />
+            <BodyShape Active="true" GroupID="0" ID="34" Name="BodyShape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.500000 0.170000 0.500000" RelativeTranslation="0.000000 -0.149228 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.500000 0.170000 0.500000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="10" WorldPos="0.000000 -2.204836 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.030000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="false" GroupID="0" HasGravity="true" ID="22" LinearDamping="0.030000" Mass="5.000000" Material="Metal" MaxAngularSpeed="20.000000" MaxLinearSpeed="20.000000" Name="Body_1" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 0.450000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 -0.892254 0.000000">
+                <Shape ID="6" />
+                <Children>
+                    <Child ID="1" />
+                </Children>
+            </Body>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="false" GroupID="0" HasGravity="true" ID="23" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_2" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 -0.053332 0.000000">
+                <Shape ID="20" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+            <Body Active="true" AngularDamping="0.030000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="false" GroupID="0" HasGravity="true" ID="24" LinearDamping="0.030000" Mass="10.000000" Material="Metal" MaxAngularSpeed="20.000000" MaxLinearSpeed="20.000000" Name="Body_3" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 -2.055608 0.000000">
+                <Shape ID="34" />
+                <Shape ID="32" />
+                <Shape ID="33" />
+                <Shape ID="4" />
+                <Shape ID="5" />
+                <Shape ID="21" />
+                <Children>
+                    <Child ID="2" />
+                    <Child ID="8" />
+                    <Child ID="11" />
+                    <Child ID="12" />
+                    <Child ID="13" />
+                    <Child ID="14" />
+                    <Child ID="35" />
+                    <Child ID="36" />
+                    <Child ID="37" />
+                    <Child ID="38" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointBall Active="true" BreakForce="0.000000" BreakSound="" Breakable="false" CollideBodies="false" ConnectedChildBodyID="22" ConnectedParentBodyID="23" GroupID="0" ID="28" LimitStepCount="0" MaxConeAngle="45.000000" MaxLimitMaxSpeed="0.000000" MaxLimitMinSpeed="0.000000" MaxLimitSound="" MaxMoveFreq="1.100000" MaxMoveFreqSpeed="0.700000" MaxMoveSpeed="2.000000" MaxMoveVolume="0.800000" MaxTwistAngle="45.000000" MiddleMoveSpeed="0.500000" MiddleMoveVolume="0.500000" MinLimitMaxSpeed="0.000000" MinLimitMinSpeed="0.000000" MinLimitSound="" MinMoveFreq="0.950000" MinMoveFreqSpeed="0.200000" MinMoveSpeed="0.100000" MinMoveVolume="0.010000" MoveSound="" MoveType="Linear" Name="BallJoint_1" PinDir="0.000000 1.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" StickyMaxLimit="false" StickyMinLimit="false" SubType="0" Tag="" Type="12" WorldPos="0.002882 -0.123244 -0.002602" />
+            <JointBall Active="true" BreakForce="0.000000" BreakSound="" Breakable="false" CollideBodies="false" ConnectedChildBodyID="24" ConnectedParentBodyID="22" GroupID="0" ID="29" LimitStepCount="0" MaxConeAngle="45.000000" MaxLimitMaxSpeed="0.000000" MaxLimitMinSpeed="0.000000" MaxLimitSound="" MaxMoveFreq="1.100000" MaxMoveFreqSpeed="0.700000" MaxMoveSpeed="2.000000" MaxMoveVolume="0.800000" MaxTwistAngle="45.000000" MiddleMoveSpeed="2.000000" MiddleMoveVolume="0.800000" MinLimitMaxSpeed="0.000000" MinLimitMinSpeed="0.000000" MinLimitSound="" MinMoveFreq="1.100000" MinMoveFreqSpeed="0.700000" MinMoveSpeed="2.000000" MinMoveVolume="0.800000" MoveSound="" MoveType="Linear" Name="BallJoint_1_clone_1" PinDir="0.000000 1.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" StickyMaxLimit="false" StickyMinLimit="false" SubType="0" Tag="" Type="12" WorldPos="0.002882 -1.708634 -0.002602" />
+        </Joints>
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Lamp">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="CanBeLitByPlayer" Value="false" />
+        <Var Name="CanBeGrabbed" Value="false" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

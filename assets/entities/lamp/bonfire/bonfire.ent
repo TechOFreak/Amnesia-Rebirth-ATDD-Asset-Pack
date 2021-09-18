@@ -1,0 +1,59 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities>
+            <ParticleSystem Active="true" Color="1.000000 1.000000 1.000000 1.000000" FadeAtDistance="false" File="ps_fire_smoke_stove_small.ps" GroupID="0" ID="1" MaxFadeDistanceEnd="110.000000" MaxFadeDistanceStart="100.000000" MinFadeDistanceEnd="1.000000" MinFadeDistanceStart="2.000000" Name="ParticleSystem_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="5" WorldPos="-0.073594 0.368392 -0.021359" />
+            <PointLight Active="true" CastShadows="false" DiffuseColor="0.800000 0.700000 0.600000 0.700000" FalloffMap="" FlickerActive="true" FlickerFade="true" FlickerOffColor="0.750000 0.600000 0.400000 0.500000" FlickerOffFadeMaxLength="2.000000" FlickerOffFadeMinLength="0.100000" FlickerOffMaxLength="0.000000" FlickerOffMinLength="0.000000" FlickerOffPS="" FlickerOffRadius="1.100000" FlickerOffSound="" FlickerOnFadeMaxLength="2.000000" FlickerOnFadeMinLength="0.100000" FlickerOnMaxLength="0.000000" FlickerOnMinLength="0.000000" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0.000000" GoboAnimMode="None" GroupID="0" ID="11" Name="PointLight_1" Radius="1.200000" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" SubType="1" Tag="" Type="1" WorldPos="0.028483 0.561034 -0.001537" />
+            <Sound Active="true" GroupID="0" ID="12" MaxDistance="7.000000" MinDistance="2.000000" Name="Sound_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SoundEntityFile="general_fire_burning_low.snt" Tag="" Type="4" UseDefault="true" Volume="0.100000" WorldPos="-0.028140 0.506002 -0.047974" />
+            <SpotLight Active="true" Aspect="1.000000" CastShadows="true" DiffuseColor="0.800000 0.700000 0.600000 0.700000" FOV="1.570796" FalloffMap="lights/light_falloff_short_fade.tga" FlickerActive="true" FlickerFade="true" FlickerOffColor="0.750000 0.600000 0.400000 0.600000" FlickerOffFadeMaxLength="2.000000" FlickerOffFadeMinLength="0.100000" FlickerOffMaxLength="0.000000" FlickerOffMinLength="0.000000" FlickerOffPS="" FlickerOffRadius="3.400000" FlickerOffSound="" FlickerOnFadeMaxLength="2.000000" FlickerOnFadeMinLength="0.100000" FlickerOnMaxLength="0.000000" FlickerOnMinLength="0.000000" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0.000000" GoboAnimMode="None" GroupID="0" ID="14" Name="SpotLight_1" NearClipPlane="0.100000" Radius="3.500000" Rotation="-0.523599 -1.047198 0.000000" Scale="1.000000 1.000000 1.000000" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" SpotFalloffMap="" SubType="2" Tag="" Type="1" WorldPos="0.223852 0.659942 -0.141616" />
+            <Billboard Active="true" Axis="0.000000 1.000000 0.000000" BillboardColor="1.000000 1.000000 1.000000 1.000000" BillboardOffset="0.000000" BillboardSize="1.000000 1.500000" BillboardType="Point" ConnectLight="PointLight_1" GroupID="0" HaloSourceSize="0.500000 0.600000 0.500000" ID="15" IsHalo="true" MaterialFile="billboards/bb_torch_static01.mat" Name="Billboard_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" WorldPos="-0.066572 0.477672 -0.038737" />
+        </Entities>
+        <Mesh Filename="entities/lamp/bonfire/bonfire.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="bonfire_mesh" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="128" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_1" RelativeRotation="0.000000 0.575959 0.000000" RelativeScale="0.550000 0.200000 0.400000" RelativeTranslation="-0.028962 -0.095033 -0.025216" Rotation="0.000000 0.575959 0.000000" Scale="0.550000 0.200000 0.400000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.036647 0.100000 -0.042590" />
+            <BodyShape Active="true" GroupID="0" ID="4" Name="Shape_2" RelativeRotation="0.000000 0.120431 0.000000" RelativeScale="0.500000 0.110000 0.097783" RelativeTranslation="0.206489 -0.140033 -0.050582" Rotation="0.000000 0.120431 0.000000" Scale="0.500000 0.110000 0.097783" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.198804 0.055000 -0.067956" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="Shape_3" RelativeRotation="0.141961 0.136642 0.610216" RelativeScale="0.415000 0.110000 0.090000" RelativeTranslation="-0.253133 -0.038042 0.175830" Rotation="0.141961 0.136642 0.610216" Scale="0.415000 0.110000 0.090000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.260818 0.156991 0.158456" />
+            <BodyShape Active="true" GroupID="0" ID="6" Name="Shape_4" RelativeRotation="0.000000 0.325561 0.000000" RelativeScale="0.300000 0.200000 0.100000" RelativeTranslation="0.029898 -0.095033 0.247376" Rotation="0.000000 0.325561 0.000000" Scale="0.300000 0.200000 0.100000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.022213 0.100000 0.230002" />
+            <BodyShape Active="true" GroupID="0" ID="8" Name="Shape_5" RelativeRotation="0.000000 0.575959 0.000000" RelativeScale="0.269414 0.200000 0.200000" RelativeTranslation="0.006261 0.102809 -0.075079" Rotation="0.000000 0.575959 0.000000" Scale="0.269414 0.200000 0.200000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.001424 0.297842 -0.092453" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="10" LinearDamping="0.000000" Mass="0.000000" Material="Wood" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.007685 0.195033 -0.017374">
+                <Shape ID="4" />
+                <Shape ID="6" />
+                <Shape ID="8" />
+                <Shape ID="5" />
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="1" />
+                    <Child ID="11" />
+                    <Child ID="12" />
+                    <Child ID="14" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Lamp">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="CanBeLitByPlayer" Value="true" />
+        <Var Name="CanBeGrabbed" Value="false" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

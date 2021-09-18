@@ -1,0 +1,36 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/furniture/stove_corner/stove_corner.dae">
+            <SubMesh ID="8" Name="stove_corner_mesh" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="322" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="1" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="0.006231 0.198446 0.0148" Rotation="0 0 0" Scale="1.25 0.4 1.4" RelativeTranslation="0.008718 -1.12575 0.0413985" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="2" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="-0.453459 0.919977 0.001904" Rotation="0 0 0" Scale="0.25 1 1" RelativeTranslation="-0.450972 -0.404219 0.0285025" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="3" Name="Shape_3" CreStamp="0" ModStamp="0" WorldPos="0.448485 0.919977 0.001904" Rotation="0 0 0" Scale="0.25 1 1" RelativeTranslation="0.450972 -0.404219 0.0285025" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="4" Name="Shape_4" CreStamp="0" ModStamp="0" WorldPos="-0.006114 1.27842 0.394095" Rotation="0 0 0" Scale="0.6 0.25 0.25" RelativeTranslation="-0.003627 -0.045778 0.420694" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="5" Name="Shape_5" CreStamp="0" ModStamp="0" WorldPos="-0.018873 0.919977 -0.447292" Rotation="0 1.5708 0" Scale="0.25 1 0.5" RelativeTranslation="-0.016386 -0.404219 -0.420694" RelativeRotation="0 1.5708 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="6" Name="Shape_6" CreStamp="0" ModStamp="0" WorldPos="-0.024926 2.44995 -0.199796" Rotation="0 0 0" Scale="0.65 2 0.65" RelativeTranslation="-0.022439 1.12575 -0.173198" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Cylinder" />
+        </Shapes>
+        <Bodies>
+            <Body ID="7" Name="Body" CreStamp="0" ModStamp="0" WorldPos="-0.002487 1.3242 -0.0265985" Rotation="0 0 0" Scale="1 1 1" Material="Rock" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="8" />
+                </Children>
+                <Shape ID="1" />
+                <Shape ID="2" />
+                <Shape ID="3" />
+                <Shape ID="4" />
+                <Shape ID="5" />
+                <Shape ID="6" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

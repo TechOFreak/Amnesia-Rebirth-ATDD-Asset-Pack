@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/work_static_objects/entities/lab/test_tube.mb</source_data>
+    </contributor>
+    <created>2009-04-30T11:49:54Z</created>
+    <modified>2009-04-30T11:49:54Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///E:/lux/redist/entities/lab/test_tube/test_tube.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pPipeShape1" name="pPipeShape1">
+      <mesh>
+        <source id="pPipeShape1-positions" name="position">
+          <float_array id="pPipeShape1-positions-array" count="174">0.022707 0.026046 0 0.016056 0.026046 -0.016056 0 0.026046 -0.022707 -0.016056 0.026046 -0.016056 -0.022707 0.026046 0 -0.016056 0.026046 0.016056 0 0.026046 0.022707 0.016056 0.026046 0.016056 0.022707 0.2 0 0.016056 0.2 -0.016056 0 0.2 -0.022707 -0.016056 0.2 -0.016056 -0.022707 0.2 0 -0.016056 0.2 0.016056 0 0.2 0.022707 0.016056 0.2 0.016056 0.027932 0.200943 0 0.019751 0.200943 -0.019751 0 0.200943 -0.027932 -0.019751 0.200943 -0.019751 -0.027932 0.200943 0 -0.019751 0.200943 0.019751 0 0.200943 0.027932 0.019751 0.200943 0.019751 0.026885 0.018449 0 0.01901 0.018449 -0.01901 0 0.018449 -0.026885 -0.01901 0.018449 -0.01901 -0.026885 0.018449 0 -0.01901 0.018449 0.01901 0 0.018449 0.026885 0.01901 0.018449 0.01901 0 0.008682 0 0.012994 0.004341 0 0.009188 0.004341 -0.009188 0.009188 0.004341 0.009188 0 0.004341 0.012994 -0.009188 0.004341 0.009188 -0.012994 0.004341 0 -0.009188 0.004341 -0.009188 0 0.004341 -0.012994 0 0 0 0.01901 0.19519 0.01901 0.026885 0.19519 0 0.01901 0.19519 -0.01901 0 0.19519 -0.026885 -0.01901 0.19519 -0.01901 -0.026885 0.19519 0 -0.01901 0.19519 0.01901 0 0.19519 0.026885 0 0.196891 0.030011 0.021221 0.196891 0.021221 0.030011 0.196891 0 0.021221 0.196891 -0.021221 0 0.196891 -0.030011 -0.021221 0.196891 -0.021221 -0.030011 0.196891 0 -0.021221 0.196891 0.021221</float_array>
+          <technique_common>
+            <accessor source="#pPipeShape1-positions-array" count="58" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPipeShape1-normals" name="normal">
+          <float_array id="pPipeShape1-normals-array" count="222">-0.630129 0.453737 0.630127 -0.891136 0.453737 0 -0.746475 0.665414 0 -0.527838 0.665414 0.527837 0.000000 0.453737 0.891135 0.000000 0.665414 0.746474 0.630129 0.453737 0.630127 0.527838 0.665414 0.527836 0.891136 0.453737 0 0.746475 0.665413 -0.000000 0.630129 0.453737 -0.630127 0.527838 0.665413 -0.527837 0.000000 0.453737 -0.891135 0.000000 0.665413 -0.746475 -0.630129 0.453737 -0.630127 -0.527837 0.665414 -0.527837 0.422814 0.906216 0.000000 0.298975 0.906216 -0.298975 0 0.906216 -0.422815 -0.298973 0.906217 -0.298974 -0.42281 0.906218 -0.000000 -0.298973 0.906217 0.298974 0.000000 0.906217 0.422814 0.298975 0.906216 0.298974 0.889758 0.456432 0.000000 0.629155 0.456431 -0.629154 -0.000000 0.456431 -0.889759 -0.629152 0.456435 -0.629154 -0.889755 0.456439 -0.000000 -0.629152 0.456435 0.629154 0 0.456431 0.889759 0.629155 0.456431 0.629154 0.000000 1 0 -0.000000 -1 0 0.525934 -0.850525 0 0.371891 -0.850525 0.371892 0.652256 -0.386164 -0.652258 0.92243 -0.386164 0 0.371891 -0.850525 -0.371892 0.652256 -0.386164 0.652258 -0.000000 -0.386164 0.92243 0 -0.850525 0.525935 -0.652256 -0.386164 0.652257 -0.371892 -0.850525 0.371892 -0.92243 -0.386164 0 -0.525935 -0.850525 0 -0.652256 -0.386164 -0.652257 -0.371892 -0.850525 -0.371892 -0.000000 -0.386164 -0.92243 0 -0.850525 -0.525935 1 0 0 0.707106 0 0.707108 0.707106 0 -0.707108 -0.000000 0 -1 -0.707106 0 -0.707108 -1 0 0 -0.707106 0 0.707108 -0.000000 0 1 0.337881 -0.878449 0.337882 -0.000000 -0.878449 0.477837 -0.000000 -0.878449 0.477837 0.337881 -0.878449 0.337882 0.477836 -0.878449 -0.000000 0.477836 -0.878449 -0.000000 0.337881 -0.878449 -0.337883 0.337881 -0.878449 -0.337883 -0.000000 -0.878449 -0.477837 -0.000000 -0.878449 -0.477837 -0.337881 -0.878449 -0.337881 -0.337881 -0.878449 -0.337881 -0.477836 -0.878449 0.000000 -0.477836 -0.878449 0.000000 -0.337881 -0.878449 0.337882 -0.337881 -0.878449 0.337882</float_array>
+          <technique_common>
+            <accessor source="#pPipeShape1-normals-array" count="74" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPipeShape1-map1" name="map1">
+          <float_array id="pPipeShape1-map1-array" count="178">0.441792 0.224083 0.380119 0.224083 0.380119 0.987426 0.010085 0.224083 0.010085 0.987426 0.071757 0.224083 0.071757 0.987426 0.13343 0.224083 0.13343 0.987426 0.195102 0.224083 0.195102 0.987426 0.256775 0.224083 0.256775 0.987426 0.318447 0.224083 0.318447 0.987426 0.981113 0.933973 0.981113 0.223008 0.867092 0.972785 0.867092 0.991621 0.525029 0.972785 0.525029 0.991621 0.582039 0.972785 0.582039 0.991621 0.63905 0.972785 0.63905 0.991621 0.69606 0.972785 0.69606 0.991621 0.753071 0.972785 0.753071 0.991621 0.810081 0.972785 0.810081 0.991621 0.867092 0.953199 0.525029 0.953199 0.582039 0.953199 0.63905 0.953199 0.69606 0.953199 0.753071 0.953199 0.810081 0.953199 0.867092 0.933973 0.810081 0.933973 0.810081 0.223008 0.867092 0.223008 0.924102 0.933973 0.924102 0.223008 0.525029 0.933973 0.525029 0.223008 0.582039 0.933973 0.582039 0.223008 0.63905 0.933973 0.63905 0.223008 0.69606 0.933973 0.69606 0.223008 0.753071 0.933973 0.753071 0.223008 0.981113 0.972785 0.924102 0.972785 0.981113 0.991621 0.924102 0.991621 0.924102 0.953199 0.981113 0.953199 0.503464 0.224083 0.441792 0.987426 0.503464 0.987426 0.272447 0.111808 0.321423 0.132472 0.292467 0.161051 0.321689 0.091788 0.373776 0.15456 0.313867 0.21369 0.251783 0.160784 0.374328 0.070387 0.29311 0.062831 0.229694 0.213138 0.223204 0.131828 0.315199 0.010478 0.252427 0.062565 0.170565 0.153229 0.223471 0.091144 0.231026 0.009926 0.171117 0.069055 0.603545 0.068823 0.704058 0.114796 0.600477 0.153362 0.665492 0.011215 0.658085 0.215309 0.75003 0.014283 0.742623 0.218377 0.807638 0.07623 0.80457 0.160769</float_array>
+          <technique_common>
+            <accessor source="#pPipeShape1-map1-array" count="89" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPipeShape1-vertices">
+          <input semantic="POSITION" source="#pPipeShape1-positions" />
+        </vertices>
+        <triangles material="lambert2SG" count="112">
+          <input semantic="VERTEX" source="#pPipeShape1-vertices" offset="0" />
+          <input semantic="NORMAL" source="#pPipeShape1-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#pPipeShape1-map1" offset="2" set="0" />
+          <p>1 0 0 0 1 1 9 3 61 0 1 1 8 2 2 9 3 61 2 4 60 1 0 0 10 5 62 1 0 0 9 3 61 10 5 62 3 6 5 2 4 3 11 7 6 2 4 3 10 5 4 11 7 6 4 8 7 3 6 5 12 9 8 3 6 5 11 7 6 12 9 8 5 10 9 4 8 7 13 11 10 4 8 7 12 9 8 13 11 10 6 12 11 5 10 9 14 13 12 5 10 9 13 11 10 14 13 12 7 14 13 6 12 11 15 15 14 6 12 11 14 13 12 15 15 14 0 1 1 7 14 13 8 2 2 7 14 13 15 15 14 8 2 2 16 16 18 17 17 57 8 2 17 9 3 55 8 2 17 17 17 57 17 17 57 18 18 56 9 3 55 10 5 54 9 3 55 18 18 56 18 18 20 19 19 22 10 5 19 11 7 21 10 5 19 19 19 22 19 19 22 20 20 24 11 7 21 12 9 23 11 7 21 20 20 24 20 20 24 21 21 26 12 9 23 13 11 25 12 9 23 21 21 26 21 21 26 22 22 28 13 11 25 14 13 27 13 11 25 22 22 28 22 22 28 23 23 30 14 13 27 15 15 29 14 13 27 23 23 30 23 23 30 16 16 18 15 15 29 8 2 17 15 15 29 16 16 18 52 24 31 53 25 58 16 16 18 17 17 57 16 16 18 53 25 58 53 25 58 54 26 59 17 17 57 18 18 56 17 17 57 54 26 59 54 26 32 55 27 33 18 18 20 19 19 22 18 18 20 55 27 33 55 27 33 56 28 34 19 19 22 20 20 24 19 19 22 56 28 34 56 28 34 57 29 35 20 20 24 21 21 26 20 20 24 57 29 35 57 29 35 50 30 36 21 21 26 22 22 28 21 21 26 50 30 36 50 30 36 51 31 37 22 22 28 23 23 30 22 22 28 51 31 37 51 31 37 52 24 31 23 23 30 16 16 18 23 23 30 52 24 31 4 8 80 32 32 81 3 6 82 5 10 83 32 32 81 4 8 80 32 32 81 6 12 85 7 14 87 2 4 84 32 32 81 1 0 86 32 32 81 7 14 87 0 1 88 5 10 83 6 12 85 32 32 81 3 6 82 32 32 81 2 4 84 1 0 86 32 32 81 0 1 88 41 33 63 33 34 64 35 35 65 25 36 70 24 37 67 34 38 66 24 37 67 33 34 64 34 38 66 24 37 67 31 39 68 33 34 64 31 39 68 35 35 65 33 34 64 31 39 68 30 40 72 35 35 65 30 40 72 36 41 69 35 35 65 30 40 72 29 42 76 36 41 69 29 42 76 37 43 73 36 41 69 29 42 76 28 44 79 37 43 73 28 44 79 38 45 77 37 43 73 28 44 79 27 46 78 38 45 77 27 46 78 39 47 75 38 45 77 27 46 78 26 48 74 39 47 75 26 48 74 40 49 71 39 47 75 26 48 74 25 36 70 40 49 71 25 36 70 34 38 66 40 49 71 41 33 63 36 41 69 37 43 73 39 47 75 41 33 63 38 45 77 34 38 66 33 34 64 41 33 63 41 33 63 35 35 65 36 41 69 34 38 66 41 33 63 40 49 71 40 49 71 41 33 63 39 47 75 41 33 63 37 43 73 38 45 77 43 50 38 42 51 39 24 37 41 42 51 39 31 39 40 24 37 41 44 52 42 43 50 38 25 36 43 43 50 38 24 37 41 25 36 43 45 53 15 44 52 42 26 48 16 44 52 42 25 36 43 26 48 16 46 54 46 45 53 44 27 46 47 45 53 44 26 48 45 27 46 47 47 55 48 46 54 46 28 44 49 46 54 46 27 46 47 28 44 49 48 56 50 47 55 48 29 42 51 47 55 48 28 44 49 29 42 51 49 57 52 48 56 50 30 40 53 48 56 50 29 42 51 30 40 53 42 51 39 49 57 52 31 39 40 49 57 52 30 40 53 31 39 40 51 58 37 50 59 36 42 61 39 50 59 36 49 60 52 42 61 39 52 62 31 51 58 37 43 63 38 51 58 37 42 61 39 43 63 38 53 64 58 52 62 31 44 65 42 52 62 31 43 63 38 44 65 42 54 66 59 53 64 58 45 67 15 53 64 58 44 65 42 45 67 15 55 68 33 54 66 32 46 69 46 54 66 32 45 67 44 46 69 46 56 70 34 55 68 33 47 71 48 55 68 33 46 69 46 47 71 48 57 72 35 56 70 34 48 73 50 56 70 34 47 71 48 48 73 50 50 59 36 57 72 35 49 60 52 57 72 35 48 73 50 49 60 52</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="test_tube">
+      <node id="pPipe1" name="pPipe1" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#pPipeShape1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2SG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

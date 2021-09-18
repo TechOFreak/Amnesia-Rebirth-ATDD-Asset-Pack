@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/work_static_objects/entities/elevator_door_unhinged.mb</source_data>
+    </contributor>
+    <created>2009-12-21T15:29:09Z</created>
+    <modified>2009-12-21T15:29:09Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///E:/lux/redist/entities/door/elevator_door/elevator_door.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx" />
+    </material>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 0.8</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="elevrightShape" name="elevrightShape">
+      <mesh>
+        <source id="elevrightShape-positions" name="position">
+          <float_array id="elevrightShape-positions-array" count="96">1.20727 0 0.04305 1.20727 0 -0.04305 0 0 -0.04305 0.409808 2.47805 -0.04305 0.409808 2.47805 0.04305 0.409808 2.0905 0.04305 0.409808 2.0905 -0.04305 0.93821 2.47805 -0.04305 0.93821 2.47805 0.04305 0.654243 2.29512 -0.04305 0.93821 2.29512 -0.04305 1.20727 2.29512 -0.04305 1.20727 2.29512 0.04305 0.93821 2.29512 0.04305 0.654243 2.29512 0.04305 0.164052 2.78896 0.04305 0.164052 2.78896 -0.04305 0 3.051 0.04305 0 3.051 -0.04305 0.164052 0.178677 0.04305 0.164052 0.178677 -0.04305 0.93821 0.178677 -0.04305 0.93821 0.178677 0.04305 0 0 0.04305 0.93821 0.178677 -0.013093 0.164052 0.178677 -0.013093 0.93821 2.47805 -0.013093 0.164052 2.78896 -0.013093 0.93821 0.178677 0.013108 0.164052 0.178677 0.013108 0.93821 2.47805 0.013108 0.164052 2.78896 0.013108</float_array>
+          <technique_common>
+            <accessor source="#elevrightShape-positions-array" count="32" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="elevrightShape-normals" name="normal">
+          <float_array id="elevrightShape-normals-array" count="300">0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.562238 0.826976 -0.000000 0.562238 0.826976 -0.000000 0.562238 0.826976 -0.000000 0.562238 0.826976 -0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0.6419 -0.766789 0.000000 0.6419 -0.766789 0.000000 0.6419 -0.766789 0.000000 0.6419 -0.766789 0.000000 0 -1 0.000000 0 -1 0.000000 0 -1 0.000000 0 -1 0.000000 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0.000000 1 0 0.000000 1 0 0.000000 1 0 0.000000 0.847596 0.530642 0 0.847596 0.530642 0 0.847596 0.530642 0 0.847596 0.530642 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#elevrightShape-normals-array" count="100" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="elevrightShape-map1" name="map1">
+          <float_array id="elevrightShape-map1-array" count="140">0.249864 0.010418 0.212772 0.054756 0.06343 0.054756 0.011519 0.010418 0.257099 0.012506 0.495445 0.012506 0.443533 0.056844 0.294191 0.056844 0.144848 0.479397 0.144848 0.241978 0.186746 0.241978 0.186746 0.479397 0.117963 0.579946 0.168423 0.529169 0.168423 0.625339 0.06343 0.625339 0.06343 0.579946 0.011519 0.579946 0.33854 0.627427 0.389001 0.582034 0.443533 0.582034 0.443533 0.627427 0.33854 0.531257 0.294191 0.704578 0.257099 0.769602 0.249864 0.767514 0.212772 0.70249 0.598529 0.579946 0.598529 0.010418 0.64059 0.010418 0.64059 0.579946 0.495445 0.582034 0.598529 0.64553 0.64059 0.64553 0.12151 0.444867 0.12151 0.549859 0.079449 0.549859 0.079449 0.444867 0.12151 0.348697 0.079449 0.348697 0.12151 0.267125 0.079449 0.267125 0.12151 0.212593 0.079449 0.212593 0.430977 0.075272 0.430977 0.567103 0.391587 0.567103 0.391587 0.075272 0.143752 0.223014 0.143752 0.073672 0.185813 0.073672 0.185813 0.223014 0.551544 0.661738 0.551544 0.014004 0.593605 0.014004 0.593605 0.661738 0.551544 0.744069 0.593605 0.744069 0.544668 0.010418 0.544668 0.767514 0.502607 0.767514 0.502607 0.010418 0.011115 0.794691 0.011115 0.993346 0.872732 0.993346 0.770105 0.794691 0.011115 0.794691 0.770105 0.794691 0.872732 0.993346 0.011115 0.993346</float_array>
+          <technique_common>
+            <accessor source="#elevrightShape-map1-array" count="70" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="elevrightShape-vertices">
+          <input semantic="POSITION" source="#elevrightShape-positions" />
+        </vertices>
+        <triangles material="lambert2SG" count="48">
+          <input semantic="VERTEX" source="#elevrightShape-vertices" offset="0" />
+          <input semantic="NORMAL" source="#elevrightShape-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#elevrightShape-map1" offset="2" set="0" />
+          <p>1 3 3 2 0 0 21 2 2 2 0 0 20 1 1 21 2 2 0 5 5 22 6 6 23 4 4 23 4 4 22 6 6 19 7 7 2 8 8 1 9 9 23 11 11 1 9 9 0 10 10 23 11 11 9 12 12 6 13 13 3 14 14 3 18 14 7 15 15 9 17 12 7 15 15 10 16 16 9 17 12 11 19 17 10 20 16 7 21 15 4 22 18 14 23 19 8 25 21 14 23 19 13 24 20 8 25 21 4 26 18 5 27 22 14 28 19 17 32 24 23 29 4 15 31 23 23 29 4 19 30 7 15 31 23 18 35 25 16 36 26 2 34 0 20 33 1 2 34 0 16 36 26 1 37 3 21 38 2 11 40 17 21 38 2 10 39 16 11 40 17 12 41 27 0 42 28 11 44 30 0 42 28 1 43 29 11 44 30 0 46 5 12 47 31 22 45 6 22 45 6 12 47 31 13 48 20 8 49 21 13 50 20 12 51 31 8 52 32 12 53 27 7 55 33 12 53 27 11 54 30 7 55 33 4 56 34 8 57 35 3 59 37 8 57 35 7 58 36 3 59 37 5 60 38 4 61 34 6 63 39 4 61 34 3 62 37 6 63 39 14 64 40 5 65 38 9 67 41 5 65 38 6 66 39 9 67 41 13 68 42 14 69 40 10 71 43 14 69 40 9 70 41 10 71 43 22 72 44 13 73 45 21 75 47 13 73 45 10 74 46 21 75 47 19 76 48 22 77 49 20 79 51 22 77 49 21 78 50 20 79 51 15 80 52 19 81 53 16 83 55 19 81 53 20 82 54 16 83 55 17 84 56 15 85 52 18 87 57 15 85 52 16 86 55 18 87 57 23 88 58 17 89 59 2 91 61 17 89 59 18 90 60 2 91 61 27 94 64 26 95 65 25 93 63 24 92 62 25 93 63 26 95 65 31 98 68 29 99 69 30 97 67 28 96 66 30 97 67 29 99 69</p>
+        </triangles>
+        <polylist material="initialShadingGroup" count="0">
+          <input semantic="VERTEX" source="#elevrightShape-vertices" offset="0" />
+          <input semantic="NORMAL" source="#elevrightShape-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#elevrightShape-map1" offset="2" set="0" />
+          <vcount />
+          <p />
+        </polylist>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="hinge_rightShape" name="hinge_rightShape">
+      <mesh>
+        <source id="hinge_rightShape-positions" name="position">
+          <float_array id="hinge_rightShape-positions-array" count="132">1.28254 0.511581 -0.053151 1.23835 0.511581 -0.053536 1.20683 0.511581 -0.022561 1.20644 0.511581 0.02163 1.23742 0.511581 0.053151 1.28161 0.511581 0.053536 1.31313 0.511581 0.022561 1.31351 0.511581 -0.02163 1.28254 0.827615 -0.053151 1.23835 0.827615 -0.053536 1.20683 0.827615 -0.022561 1.20644 0.827615 0.02163 1.23742 0.827615 0.053151 1.28161 0.827615 0.053536 1.31313 0.827615 0.022561 1.31351 0.827615 -0.02163 1.25998 0.511581 0 1.25998 0.827615 0 1.67842 0.511581 0.025748 1.67881 0.511581 -0.018442 1.67881 0.827615 -0.018442 1.67842 0.827615 0.025748 1.28254 1.59432 -0.053151 1.23835 1.59432 -0.053536 1.20683 1.59432 -0.022561 1.20644 1.59432 0.02163 1.23742 1.59432 0.053151 1.28161 1.59432 0.053536 1.31313 1.59432 0.022561 1.31351 1.59432 -0.02163 1.28254 1.91035 -0.053151 1.23835 1.91035 -0.053536 1.20683 1.91035 -0.022561 1.20644 1.91035 0.02163 1.23742 1.91035 0.053151 1.28161 1.91035 0.053536 1.31313 1.91035 0.022561 1.31351 1.91035 -0.02163 1.25998 1.59432 0 1.25998 1.91035 0 1.67842 1.59432 0.025748 1.67881 1.59432 -0.018442 1.67881 1.91035 -0.018442 1.67842 1.91035 0.025748</float_array>
+          <technique_common>
+            <accessor source="#hinge_rightShape-positions-array" count="44" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hinge_rightShape-normals" name="normal">
+          <float_array id="hinge_rightShape-normals-array" count="372">0.008726 0 -0.999962 0.008726 0 -0.999962 0.008726 0 -0.999962 0.008726 0 -0.999962 -0.700909 0 -0.713251 -0.700909 0 -0.713251 -0.700909 0 -0.713251 -0.700909 0 -0.713251 -0.999962 0 -0.008725 -0.999962 0 -0.008725 -0.999962 0 -0.008725 -0.999962 0 -0.008725 -0.713251 0 0.700909 -0.713251 0 0.700909 -0.713251 0 0.700909 -0.713251 0 0.700909 -0.008726 0 0.999962 -0.008726 0 0.999962 -0.008726 0 0.999962 -0.008726 0 0.999962 0.700909 0 0.713251 0.700909 0 0.713251 0.700909 0 0.713251 0.700909 0 0.713251 0.999962 0 0.008728 0.999962 0 0.008728 0.999962 0 0.008728 0.999962 0 0.008728 0.713251 0 -0.700908 0.713251 0 -0.700908 0.713251 0 -0.700908 0.713251 0 -0.700908 0 -1 -0.000000 0 -1 0 0 -1 -0.000000 0 -1 -0.000001 0 -1 -0.000000 0 -1 0.000000 0 -1 0.000000 0.000000 -1 0.000000 0.000000 -1 0 0 1 0 0 1 -0.000000 0 1 0 0 1 0 0 1 -0.000000 0 1 -0.000000 0 1 0.000000 -0.000000 1 0.000000 -0.000000 1 0.000000 0.000000 -1 0.000000 0.000000 -1 0.000000 0.008725 0 -0.999962 0.008725 0 -0.999962 0.008725 0 -0.999962 0.008725 0 -0.999962 -0.000000 1 0.000000 -0.000000 1 0.000000 -0.008725 0 0.999962 -0.008725 0 0.999962 -0.008725 0 0.999962 -0.008725 0 0.999962 0.008726 0 -0.999962 0.008726 0 -0.999962 0.008726 0 -0.999962 0.008726 0 -0.999962 -0.700909 0 -0.713251 -0.700909 0 -0.713251 -0.700909 0 -0.713251 -0.700909 0 -0.713251 -0.999962 0 -0.008725 -0.999962 0 -0.008725 -0.999962 0 -0.008725 -0.999962 0 -0.008725 -0.713251 0 0.700909 -0.713251 0 0.700909 -0.713251 0 0.700909 -0.713251 0 0.700909 -0.008726 0 0.999962 -0.008726 0 0.999962 -0.008726 0 0.999962 -0.008726 0 0.999962 0.700909 0 0.713251 0.700909 0 0.713251 0.700909 0 0.713251 0.700909 0 0.713251 0.999962 0 0.008728 0.999962 0 0.008728 0.999962 0 0.008728 0.999962 0 0.008728 0.713251 0 -0.700908 0.713251 0 -0.700908 0.713251 0 -0.700908 0.713251 0 -0.700908 0 -1 0.000000 0 -1 0.000000 0 -1 -0.000000 0 -1 0 0 -1 0.000000 0 -1 -0.000000 0 -1 -0.000001 0.000000 -1 -0.000000 0.000000 -1 -0.000000 0 1 -0.000000 0 1 0.000001 0 1 0 0 1 0.000001 0 1 0.000001 0 1 0.000000 0 1 -0.000000 -0.000000 1 -0.000000 -0.000000 1 -0.000001 0.000000 -1 -0.000000 0.000000 -1 -0.000000 0.008725 0 -0.999962 0.008725 0 -0.999962 0.008725 0 -0.999962 0.008725 0 -0.999962 -0.000000 1 -0.000001 -0.000000 1 -0.000001 -0.008725 0 0.999962 -0.008725 0 0.999962 -0.008725 0 0.999962 -0.008725 0 0.999962</float_array>
+          <technique_common>
+            <accessor source="#hinge_rightShape-normals-array" count="124" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hinge_rightShape-map1" name="map1">
+          <float_array id="hinge_rightShape-map1-array" count="216">0.67056 0.553287 0.682834 0.553287 0.682834 0.667294 0.67056 0.667294 0.695109 0.553287 0.695109 0.667294 0.707382 0.553287 0.707382 0.667294 0.719657 0.553287 0.719657 0.667294 0.731931 0.553287 0.731931 0.667294 0.744205 0.553287 0.744205 0.667294 0.702552 0.257079 0.717881 0.257079 0.717881 0.405736 0.702552 0.405736 0.658286 0.553287 0.658286 0.667294 0.683022 0.671537 0.710941 0.671781 0.696687 0.70536 0.663108 0.691106 0.662864 0.719025 0.682434 0.738939 0.710352 0.739183 0.730266 0.719614 0.73051 0.691695 0.710352 0.739183 0.682434 0.738939 0.696687 0.70536 0.662864 0.719025 0.663108 0.691107 0.683022 0.671537 0.710941 0.671781 0.73051 0.691695 0.730267 0.719614 0.698564 0.38332 0.683234 0.383186 0.68434 0.256468 0.69967 0.256602 0.653829 0.541233 0.653829 0.435185 0.744226 0.435185 0.744226 0.541233 0.68155 0.383186 0.66622 0.38332 0.665115 0.256602 0.680444 0.256469 0.653829 0.541233 0.653829 0.435185 0.744226 0.435185 0.744226 0.541233 0.67056 0.553287 0.682834 0.553287 0.682834 0.667294 0.67056 0.667294 0.695109 0.553287 0.695109 0.667294 0.707382 0.553287 0.707382 0.667294 0.719657 0.553287 0.719657 0.667294 0.731931 0.553287 0.731931 0.667294 0.744205 0.553287 0.744205 0.667294 0.702552 0.257079 0.717881 0.257079 0.717881 0.405736 0.702552 0.405736 0.658286 0.553287 0.658286 0.667294 0.683022 0.671537 0.710941 0.671781 0.696687 0.70536 0.663108 0.691106 0.662864 0.719025 0.682434 0.738939 0.710352 0.739183 0.730266 0.719614 0.73051 0.691695 0.710352 0.739183 0.682434 0.738939 0.696687 0.70536 0.662864 0.719025 0.663108 0.691107 0.683022 0.671537 0.710941 0.671781 0.73051 0.691695 0.730267 0.719614 0.698564 0.38332 0.683234 0.383186 0.68434 0.256468 0.69967 0.256602 0.653829 0.541233 0.653829 0.435185 0.744226 0.435185 0.744226 0.541233 0.68155 0.383186 0.66622 0.38332 0.665115 0.256602 0.680444 0.256469 0.653829 0.541233 0.653829 0.435185 0.744226 0.435185 0.744226 0.541233</float_array>
+          <technique_common>
+            <accessor source="#hinge_rightShape-map1-array" count="108" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="hinge_rightShape-vertices">
+          <input semantic="POSITION" source="#hinge_rightShape-positions" />
+        </vertices>
+        <triangles material="lambert2SG" count="80">
+          <input semantic="VERTEX" source="#hinge_rightShape-vertices" offset="0" />
+          <input semantic="NORMAL" source="#hinge_rightShape-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#hinge_rightShape-map1" offset="2" set="0" />
+          <p>0 0 0 1 1 1 8 3 3 1 1 1 9 2 2 8 3 3 1 4 1 2 5 4 9 7 2 2 5 4 10 6 5 9 7 2 2 8 4 3 9 6 10 11 5 3 9 6 11 10 7 10 11 5 3 12 6 4 13 8 11 15 7 4 13 8 12 14 9 11 15 7 4 16 8 5 17 10 12 19 9 5 17 10 13 18 11 12 19 9 5 20 10 6 21 12 13 23 11 6 21 12 14 22 13 13 23 11 18 24 14 19 25 15 21 27 17 19 25 15 20 26 16 21 27 17 7 28 18 0 29 0 15 31 19 0 29 0 8 30 3 15 31 19 1 32 20 0 33 21 16 34 22 2 35 23 1 32 20 16 34 22 3 36 24 2 35 23 16 34 22 4 37 25 3 36 24 16 34 22 5 38 26 4 37 25 16 34 22 6 39 27 5 38 26 16 34 22 7 40 28 6 39 27 16 34 22 0 33 21 7 40 28 16 34 22 8 41 29 9 42 30 17 43 31 9 42 30 10 44 32 17 43 31 10 44 32 11 45 33 17 43 31 11 45 33 12 46 34 17 43 31 12 46 34 13 47 35 17 43 31 13 47 35 14 48 36 17 43 31 14 48 36 15 49 37 17 43 31 15 49 37 8 41 29 17 43 31 6 39 38 7 40 39 18 51 41 7 40 39 19 50 40 18 51 41 7 52 42 15 53 43 19 55 45 15 53 43 20 54 44 19 55 45 15 49 46 14 48 47 20 57 49 14 48 47 21 56 48 20 57 49 14 58 50 6 59 51 21 61 53 6 59 51 18 60 52 21 61 53 22 62 54 23 63 55 30 65 57 23 63 55 31 64 56 30 65 57 23 66 55 24 67 58 31 69 56 24 67 58 32 68 59 31 69 56 24 70 58 25 71 60 32 73 59 25 71 60 33 72 61 32 73 59 25 74 60 26 75 62 33 77 61 26 75 62 34 76 63 33 77 61 26 78 62 27 79 64 34 81 63 27 79 64 35 80 65 34 81 63 27 82 64 28 83 66 35 85 65 28 83 66 36 84 67 35 85 65 40 86 68 41 87 69 43 89 71 41 87 69 42 88 70 43 89 71 29 90 72 22 91 54 37 93 73 22 91 54 30 92 57 37 93 73 23 94 74 22 95 75 38 96 76 24 97 77 23 94 74 38 96 76 25 98 78 24 97 77 38 96 76 26 99 79 25 98 78 38 96 76 27 100 80 26 99 79 38 96 76 28 101 81 27 100 80 38 96 76 29 102 82 28 101 81 38 96 76 22 95 75 29 102 82 38 96 76 30 103 83 31 104 84 39 105 85 31 104 84 32 106 86 39 105 85 32 106 86 33 107 87 39 105 85 33 107 87 34 108 88 39 105 85 34 108 88 35 109 89 39 105 85 35 109 89 36 110 90 39 105 85 36 110 90 37 111 91 39 105 85 37 111 91 30 103 83 39 105 85 28 101 92 29 102 93 40 113 95 29 102 93 41 112 94 40 113 95 29 114 96 37 115 97 41 117 99 37 115 97 42 116 98 41 117 99 37 111 100 36 110 101 42 119 103 36 110 101 43 118 102 42 119 103 36 120 104 28 121 105 43 123 107 28 121 105 40 122 106 43 123 107</p>
+        </triangles>
+        <polylist material="initialShadingGroup" count="0">
+          <input semantic="VERTEX" source="#hinge_rightShape-vertices" offset="0" />
+          <input semantic="NORMAL" source="#hinge_rightShape-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#hinge_rightShape-map1" offset="2" set="0" />
+          <vcount />
+          <p />
+        </polylist>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="elevator_door_unhinged">
+      <node id="elevright" name="elevright" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#elevrightShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2SG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+              <instance_material symbol="initialShadingGroup" target="#lambert1" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="hinge_right" name="hinge_right" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#hinge_rightShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2SG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+              <instance_material symbol="initialShadingGroup" target="#lambert1" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

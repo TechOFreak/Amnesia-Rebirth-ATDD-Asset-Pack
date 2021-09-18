@@ -1,0 +1,72 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/ptest/roof_spike/roof_spike.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="pCube1" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="74" />
+            <SubMesh Active="true" ID="1" Material="" Name="polySurface9" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 -0.0262568 -7.69166" TriCount="580" />
+            <SubMesh Active="true" ID="2" Material="" Name="polySurface10" Rotation="0 0 0" Scale="1 1 1" SubMeshID="2" Tag="" WorldPos="0 -0.253227 -7.69166" TriCount="580" />
+            <SubMesh Active="true" ID="3" Material="" Name="polySurface8" Rotation="0 0 0" Scale="1 1 1" SubMeshID="3" Tag="" WorldPos="0 -0.111497 -7.69166" TriCount="234" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="4" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="1 0.55 0.35" RelativeTranslation="-0.0025945 -0.0754325 -0.242357" Rotation="0 0 0" Scale="1 0.55 0.35" ShapeType="Box" Tag="" WorldPos="0.0033825 -0.273399 -0.243332" />
+            <BodyShape Active="true" ID="5" Name="Shape_2" RelativeRotation="0 0 0" RelativeScale="1 0.55 0.35" RelativeTranslation="-0.0025945 -0.0754325 0.242357" Rotation="0 0 0" Scale="1 0.55 0.35" ShapeType="Box" Tag="" WorldPos="0.0033825 -0.273399 0.241382" />
+            <BodyShape Active="true" ID="6" Name="Shape_3" RelativeRotation="0 0 0" RelativeScale="0.25 0.25 0.15" RelativeTranslation="0.379478 0.0754325 -0.00287632" Rotation="0 0 0" Scale="0.25 0.25 0.15" ShapeType="Box" Tag="" WorldPos="0.385455 -0.122534 -0.00385132" />
+            <BodyShape Active="true" ID="7" Name="Shape_4" RelativeRotation="0 0 0" RelativeScale="0.25 0.25 0.15" RelativeTranslation="-0.379478 0.0754325 -0.00287632" Rotation="0 0 0" Scale="0.25 0.25 0.15" ShapeType="Box" Tag="" WorldPos="-0.373501 -0.122534 -0.00385132" />
+            <BodyShape Active="true" ID="13" Name="Shape_8" RelativeRotation="1.5708 0 0" RelativeScale="0.13 0.12 0.13" RelativeTranslation="0 0 0" Rotation="1.5708 0 0" Scale="0.13 0.12 0.13" ShapeType="Cylinder" Tag="" WorldPos="-0.200882 -0.42436 -0.00384521" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="14" LinearDamping="0" Mass="0" Material="Rock" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_2" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.005977 -0.197967 -0.000974998">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="6" />
+                <Shape ID="4" />
+                <Shape ID="5" />
+                <Shape ID="7" />
+            </Body>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="15" LinearDamping="0" Mass="5" Material="Metal" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_3" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.200882 -0.42436 -0.00384521">
+                <Children>
+                    <Child ID="2" />
+                </Children>
+                <Shape ID="13" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="false" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="100" />
+        <Var Name="BreakEntity" Value="" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

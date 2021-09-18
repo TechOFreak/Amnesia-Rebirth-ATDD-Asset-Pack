@@ -1,0 +1,30 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/item/glass_container/glass_container_string.dae">
+            <SubMesh ID="0" Name="polySurface19" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="224" Material="" Static="true" />
+            <SubMesh ID="1" Name="polySurface20" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="238" Material="" Static="true" />
+            <SubMesh ID="2" Name="headusOBJexport" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="328" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="3" Name="BodyShape_1" CreStamp="0" ModStamp="0" WorldPos="0 0.24 0" Rotation="0 0 0" Scale="0.21 0.48 0.21" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Cylinder" />
+        </Shapes>
+        <Bodies>
+            <Body ID="4" Name="Body_1" CreStamp="0" ModStamp="0" WorldPos="0 0.24 0" Rotation="0 0 0" Scale="1 1 1" Material="Glass" Mass="0" AngularDamping="0.5" LinearDamping="0.5" MaxAngularSpeed="1" MaxLinearSpeed="1" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="2" />
+                    <Child ID="1" />
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="3" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

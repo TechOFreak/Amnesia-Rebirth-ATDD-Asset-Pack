@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///G:/Projects/3d/work/amnesia%20game/arbetsmapp/decals/Floor%20decals%20batch%20</source_data>
+    </contributor>
+    <contributor>
+      <author>Marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///G:/amnesia/redist/static_objects/decals/organ_parts02.dae</source_data>
+    </contributor>
+    <created>2009-10-30T12:50:10Z</created>
+    <modified>2010-07-16T09:27:09Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file7" name="file7">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/decals/organ_parts.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="file7-surface">
+          <surface type="2D">
+            <init_from>file7</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file7-sampler">
+          <sampler2D>
+            <source>file7-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file7-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="organ_parts_0Shape2" name="organ_parts_0Shape2">
+      <mesh>
+        <source id="organ_parts_0Shape2-positions" name="position">
+          <float_array id="organ_parts_0Shape2-positions-array" count="45">0.03584 0.023232 -0.057476 -0.12666 0 0.023774 0.03584 0 0.101247 -0.030197 0 0.102782 -0.12666 0 -0.046002 -0.096136 0 -0.079617 -0.037241 0 -0.102782 0.03584 0 -0.088452 0.087525 0 -0.057476 0.11415 0 0.03906 0.12666 0 0.011839 -0.039813 0.023232 -0.057476 -0.002887 0.035504 0.004291 0.03584 0.02428 0.049071 -0.037031 0.025285 0.046152</float_array>
+          <technique_common>
+            <accessor source="#organ_parts_0Shape2-positions-array" count="15" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="organ_parts_0Shape2-normals" name="normal">
+          <float_array id="organ_parts_0Shape2-normals-array" count="45">0.223638 0.933571 -0.280055 -0.314319 0.924916 0.213853 0.165777 0.894096 0.416066 -0.113466 0.89967 0.421568 -0.272817 0.957865 -0.089804 -0.232022 0.904217 -0.358548 -0.046106 0.887821 -0.457874 0.144257 0.825265 -0.54601 0.375392 0.835146 -0.40201 0.316583 0.908223 0.273692 0.325733 0.944943 -0.031332 -0.137986 0.945967 -0.293438 -0.001751 0.999978 0.006443 0.173312 0.956665 0.234 -0.201272 0.963042 0.178997</float_array>
+          <technique_common>
+            <accessor source="#organ_parts_0Shape2-normals-array" count="15" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="organ_parts_0Shape2-map1" name="map1">
+          <float_array id="organ_parts_0Shape2-map1-array" count="30">0.625 0.6875 0.5625 0.625 0.625 0.565406 0.599601 0.564225 0.5625 0.678674 0.57424 0.704532 0.596892 0.722351 0.625 0.711327 0.644879 0.6875 0.655119 0.613242 0.659931 0.634181 0.595903 0.6875 0.610105 0.639986 0.625 0.60554 0.596972 0.607786</float_array>
+          <technique_common>
+            <accessor source="#organ_parts_0Shape2-map1-array" count="15" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="organ_parts_0Shape2-vertices">
+          <input semantic="POSITION" source="#organ_parts_0Shape2-positions"/>
+          <input semantic="NORMAL" source="#organ_parts_0Shape2-normals"/>
+        </vertices>
+        <triangles material="organ_parts_matSG" count="18">
+          <input semantic="VERTEX" source="#organ_parts_0Shape2-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#organ_parts_0Shape2-map1" offset="1" set="0"/>
+          <p>13 13 2 2 9 9 14 14 3 3 13 13 13 13 3 3 2 2 0 0 12 12 13 13 6 6 11 11 7 7 7 7 11 11 0 0 8 8 7 7 0 0 5 5 11 11 6 6 1 1 3 3 14 14 11 11 12 12 0 0 13 13 10 10 0 0 0 0 10 10 8 8 5 5 4 4 11 11 11 11 14 14 12 12 12 12 14 14 13 13 14 14 4 4 1 1 11 11 4 4 14 14 10 10 13 13 9 9</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="organ_parts02">
+      <node id="organ_parts_02" name="organ_parts_02" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#organ_parts_0Shape2">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="organ_parts_matSG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene"/>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

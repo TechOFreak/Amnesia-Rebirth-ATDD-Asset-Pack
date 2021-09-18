@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=0;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=0;exportAnimations=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/mansioncellarwall/mansioncellarwall.mb</source_data>
+    </contributor>
+    <created>2011-01-21T17:01:19</created>
+    <modified>2011-01-21T17:01:19</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="cellman_mat" name="cellman_mat">
+      <instance_effect url="#cellman_mat-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="cellman_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file10-surface">
+          <surface type="2D">
+            <init_from>file10</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file10-sampler">
+          <sampler2D>
+            <source>file10-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file10-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.3471 0.3471 0.3471 1</color>
+            </specular>
+            <shininess>
+              <float>0.1157</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="OpenCOLLADAMaya">
+              <bump>
+                <texture texture="file10-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="OpenCOLLADA3dsMax">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                    <technique profile="OpenCOLLADAMaya">
+                      <blend_mode>NONE</blend_mode>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <fast>0</fast>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <rotateFrame>0</rotateFrame>
+                      <rotateUV>0</rotateUV>
+                      <stagger>0</stagger>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file10" name="file10">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/mansioncellarwall/cellman.psd</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file10</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="cellman_beamShape" name="cellman_beamShape">
+      <mesh>
+        <source id="cellman_beamShape-positions" name="cellman_beamShape-positions">
+          <float_array id="cellman_beamShape-positions-array" count="72">0.220694 0.04640503 -3.326693 0.220694 0.453811 -3.326693 0.220694 0.453811 3.326691 0.220694 0.04640503 3.326691 0.2037041 0.453811 3.343679 -0.203703 0.453811 3.343679 -0.203703 0.04640503 3.343679 0.2037041 0.04640503 3.343679 -0.203703 0.04640503 -3.343683 -0.203703 0.453811 -3.343683 0.203705 0.453811 -3.343683 0.203705 0.04640503 -3.343683 0.203705 0.4708011 -3.326693 -0.203703 0.4708011 -3.326693 -0.203703 0.4708011 3.326691 0.203705 0.4708011 3.326691 0.203705 0.02941711 3.326691 -0.203703 0.02941711 3.326691 0.203705 0.02941711 -3.326693 -0.203703 0.02941711 -3.326693 -0.220692 0.453811 3.326691 -0.220692 0.04640503 3.326691 -0.220692 0.453811 -3.326693 -0.220692 0.04640503 -3.326693</float_array>
+          <technique_common>
+            <accessor source="#cellman_beamShape-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="cellman_beamShape-normals" name="cellman_beamShape-normals">
+          <float_array id="cellman_beamShape-normals-array" count="288">1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -0.7071068 0.7071068 0 -0.7071068 0.7071068 0 -0.7071068 0.7071068 0 -0.7071068 0.7071068 0.7070844 -0.7071291 0 0.7070844 -0.7071291 0 0.7070844 -0.7071291 0 0.7070844 -0.7071291 0 0.7070664 0 0.7071472 0.7070664 0 0.7071472 0.7070664 0 0.7071472 0.7070664 0 0.7071472 0 -0.7071449 -0.7070687 0 -0.7071449 -0.7070687 0 -0.7071449 -0.7070687 0 -0.7071449 -0.7070687 0.7071254 0 -0.7070882 0.7071254 0 -0.7070882 0.7071254 0 -0.7070882 0.7071254 0 -0.7070882 0 0.7070623 0.7071512 0 0.7070623 0.7071512 0 0.7070623 0.7071512 0 0.7070623 0.7071512 0.7071289 0.7070847 0 0.7071289 0.7070847 0 0.7071289 0.7070847 0 0.7071289 0.7070847 0 0 0.7071002 -0.7071134 0 0.7071002 -0.7071134 0 0.7071002 -0.7071134 0 0.7071002 -0.7071134 -0.7070855 0 0.7071281 -0.7070855 0 0.7071281 -0.7070855 0 0.7071281 -0.7070855 0 0.7071281 -0.7071289 0.7070847 0 -0.7071289 0.7070847 0 -0.7071289 0.7070847 0 -0.7071289 0.7070847 0 -0.7071254 0 -0.7070882 -0.7071254 0 -0.7070882 -0.7071254 0 -0.7070882 -0.7071254 0 -0.7070882 0.5773117 -0.5773544 0.5773848 0.5773117 -0.5773544 0.5773848 0.5773117 -0.5773544 0.5773848 0.5773505 -0.5773811 -0.5773193 0.5773505 -0.5773811 -0.5773193 0.5773505 -0.5773811 -0.5773193 0.577336 0.5773055 0.5774093 0.577336 0.5773055 0.5774093 0.577336 0.5773055 0.5774093 0.5773747 0.577332 -0.5773442 0.5773747 0.577332 -0.5773442 0.5773747 0.577332 -0.5773442 -0.5773462 0.5773157 0.5773889 -0.5773462 0.5773157 0.5773889 -0.5773462 0.5773157 0.5773889 -0.5773747 0.577332 -0.5773442 -0.5773747 0.577332 -0.5773442 -0.5773747 0.577332 -0.5773442 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.7070844 -0.7071291 0 -0.7070844 -0.7071291 0 -0.7070844 -0.7071291 0 -0.7070844 -0.7071291 0 -0.5773221 -0.5773647 0.577364 -0.5773221 -0.5773647 0.577364 -0.5773221 -0.5773647 0.577364 -0.5773505 -0.5773811 -0.5773193 -0.5773505 -0.5773811 -0.5773193 -0.5773505 -0.5773811 -0.5773193</float_array>
+          <technique_common>
+            <accessor source="#cellman_beamShape-normals-array" count="96" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="cellman_beamShape-map1" name="cellman_beamShape-map1">
+          <float_array id="cellman_beamShape-map1-array" count="100">0.2001475 0.05749935 0.2001402 0.009109131 0.9912812 0.009109131 0.9912874 0.05749935 0.4806933 0.9869325 0.9945358 0.1630977 0.9941586 0.111866 0.4806933 0.938886 0.05332352 0.938886 0.1973484 0.1599125 0.004882172 0.9869325 0.004825309 0.938886 0.2002184 0.211553 0.2002027 0.1631062 0.9913423 0.1631067 0.991358 0.2115526 0.9912919 0.06048048 0.994148 0.06048048 0.9941665 0.1087172 0.9913082 0.1087172 0.2001509 0.06048048 0.9941444 0.05749935 0.9941384 0.009109131 0.1972892 0.06048048 0.20017 0.1087172 0.197314 0.1087172 0.1972916 0.05749935 0.1972786 0.009109131 0.4315892 0.9869325 0.9945518 0.2115471 0.9912789 0.006233153 0.200139 0.006233153 0.1973602 0.211553 0.1973444 0.1631062 0.9913449 0.1599125 0.9913133 0.111866 0.2002004 0.1599125 0.2001722 0.111866 0.9937637 0.05890014 0.1976739 0.05901702 0.9937543 0.007656374 0.1976632 0.007665842 0.9938185 0.1614314 0.1977262 0.1616759 0.9937851 0.110131 0.1976953 0.1103766 0.9942233 0.1599125 0.4315245 0.938886 0.1973011 0.111866 0.05332352 0.9869325</float_array>
+          <technique_common>
+            <accessor source="#cellman_beamShape-map1-array" count="50" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="cellman_beamShape-vertices" name="cellman_beamShape-vertices">
+          <input semantic="POSITION" source="#cellman_beamShape-positions"/>
+        </vertices>
+        <triangles material="baked_occlusion__initialShadingGroup_cellmanSG" count="44">
+          <input semantic="VERTEX" source="#cellman_beamShape-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#cellman_beamShape-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#cellman_beamShape-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 3 3 3 3 3 3 1 1 1 2 2 2 4 4 4 5 5 28 7 7 7 7 7 7 5 5 28 6 6 47 8 8 8 9 9 49 11 11 11 11 11 11 9 9 49 10 10 10 12 12 12 13 13 13 15 15 15 15 15 15 13 13 13 14 14 14 16 16 16 7 17 17 17 19 19 17 19 19 7 17 17 6 18 18 3 20 3 16 21 16 0 23 0 0 23 0 16 21 16 18 22 20 7 24 21 3 25 3 4 27 22 4 27 22 3 25 3 2 26 2 11 28 23 18 29 20 8 31 25 8 31 25 18 29 20 19 30 24 0 32 0 11 33 26 1 35 1 1 35 1 11 33 26 10 34 27 4 36 29 15 37 15 5 39 5 5 39 5 15 37 15 14 38 14 15 40 30 2 41 2 12 43 31 12 43 31 2 41 2 1 42 1 12 44 12 10 45 32 13 47 13 13 47 13 10 45 32 9 46 33 5 48 46 20 49 34 6 51 6 6 51 6 20 49 34 21 50 35 20 52 34 14 53 14 22 55 36 22 55 36 14 53 14 13 54 13 22 56 36 9 57 9 23 59 37 23 59 37 9 57 9 8 58 48 7 60 38 16 61 16 3 62 3 18 63 20 11 64 39 0 65 0 15 66 30 4 67 40 2 68 2 10 69 41 12 70 31 1 71 1 20 72 34 5 73 42 14 74 14 9 75 43 22 76 36 13 77 13 16 78 16 17 79 19 18 81 20 18 81 20 17 79 19 19 80 24 22 82 36 23 83 37 20 85 34 20 85 34 23 83 37 21 84 35 19 86 24 17 87 19 23 89 37 23 89 37 17 87 19 21 88 35 6 90 44 21 91 35 17 92 19 23 93 37 8 94 45 19 95 24</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>cellman_beamShape</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="mansioncellarwall">
+      <node id="cellman_beam" name="cellman_beam" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#cellman_beamShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="baked_occlusion__initialShadingGroup_cellmanSG" target="#cellman_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>cellman_beam</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

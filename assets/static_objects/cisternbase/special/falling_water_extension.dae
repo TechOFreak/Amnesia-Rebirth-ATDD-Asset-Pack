@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=1;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=1;removeStaticCurves=0;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=0;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///G:/amnesia/work_static_objects/water/falling_water_extension.mb</source_data>
+    </contributor>
+    <created>2010-07-30T09:09:05Z</created>
+    <modified>2010-07-30T09:09:05Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>../../../textures/water/water_sewer_streaming.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx"/>
+    </material>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <texture texture="file1-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 0.8</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="polySurfaceShape3" name="polySurfaceShape3">
+      <mesh>
+        <source id="polySurfaceShape3-positions" name="position">
+          <float_array id="polySurfaceShape3-positions-array" count="39">-0.175105 -4 0 0.175105 -4 0 -0.001456 -4 0 0.088913 -4 0.03054 -0.091331 -4 0.03054 -0.175105 0 0 -0.091331 0 0.03054 -0.091331 0 0.03054 -0.001456 0 0 -0.001456 0 0 0.088913 0 0.03054 0.088913 0 0.03054 0.175105 0 0</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape3-positions-array" count="13" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape3-normals" name="normal">
+          <float_array id="polySurfaceShape3-normals-array" count="48">-0.342504 0 0.939516 -0.342504 0 0.939516 -0.342504 0 0.939516 -0.342504 0 0.939516 0.321738 0 0.946829 0.321738 0 0.946829 0.321738 0 0.946829 0.321738 0 0.946829 -0.320156 0 0.947365 -0.320156 0 0.947365 -0.320156 0 0.947365 -0.320156 0 0.947365 0.333983 0 0.942579 0.333983 0 0.942579 0.333983 0 0.942579 0.333983 0 0.942579</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape3-normals-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape3-map1" name="map1">
+          <float_array id="polySurfaceShape3-map1-array" count="26">0.084805 0 0.151477 0 0.152525 2 0.086164 2 0.223007 0 0.223674 2 0.152525 2 0.294928 0 0.295975 2 0.223674 2 0.363526 0 0.364572 2 0.295975 2</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape3-map1-array" count="13" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="polySurfaceShape3-vertices">
+          <input semantic="POSITION" source="#polySurfaceShape3-positions"/>
+        </vertices>
+        <triangles material="lambert2SG" count="8">
+          <input semantic="VERTEX" source="#polySurfaceShape3-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#polySurfaceShape3-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#polySurfaceShape3-map1" offset="2" set="0"/>
+          <p>0 0 0 4 1 1 5 3 3 4 1 1 7 2 2 5 3 3 4 4 1 2 5 4 6 7 6 2 5 4 9 6 5 6 7 6 2 8 4 3 9 7 8 11 9 3 9 7 11 10 8 8 11 9 3 12 7 1 13 10 10 15 12 1 13 10 12 14 11 10 15 12</p>
+        </triangles>
+        <polylist material="initialShadingGroup" count="0">
+          <input semantic="VERTEX" source="#polySurfaceShape3-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#polySurfaceShape3-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#polySurfaceShape3-map1" offset="2" set="0"/>
+          <vcount/>
+          <p/>
+        </polylist>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="polySurfaceShape4" name="polySurfaceShape3">
+      <mesh>
+        <source id="polySurfaceShape4-positions" name="position">
+          <float_array id="polySurfaceShape4-positions-array" count="39">-0.175105 -4 0 0.175105 -4 0 -0.001456 -4 0 0.088913 -4 0.03054 -0.091331 -4 0.03054 -0.175105 0 0 -0.091331 0 0.03054 -0.091331 0 0.03054 -0.001456 0 0 -0.001456 0 0 0.088913 0 0.03054 0.088913 0 0.03054 0.175105 0 0</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape4-positions-array" count="13" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape4-normals" name="normal">
+          <float_array id="polySurfaceShape4-normals-array" count="48">0.342504 0 -0.939516 0.342504 0 -0.939516 0.342504 0 -0.939516 0.342504 0 -0.939516 -0.321738 0 -0.946829 -0.321738 0 -0.946829 -0.321738 0 -0.946829 -0.321738 0 -0.946829 0.320156 0 -0.947365 0.320156 0 -0.947365 0.320156 0 -0.947365 0.320156 0 -0.947365 -0.333983 0 -0.942579 -0.333983 0 -0.942579 -0.333983 0 -0.942579 -0.333983 0 -0.942579</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape4-normals-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape4-map1" name="map1">
+          <float_array id="polySurfaceShape4-map1-array" count="26">0.084805 0 0.151477 0 0.152525 2 0.086164 2 0.223007 0 0.223674 2 0.152525 2 0.294928 0 0.295975 2 0.223674 2 0.363526 0 0.364572 2 0.295975 2</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape4-map1-array" count="13" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="polySurfaceShape4-vertices">
+          <input semantic="POSITION" source="#polySurfaceShape4-positions"/>
+        </vertices>
+        <triangles material="lambert2SG" count="8">
+          <input semantic="VERTEX" source="#polySurfaceShape4-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#polySurfaceShape4-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#polySurfaceShape4-map1" offset="2" set="0"/>
+          <p>0 0 0 5 1 3 4 3 1 5 1 3 7 2 2 4 3 1 4 4 1 6 5 6 2 7 4 6 5 6 9 6 5 2 7 4 2 8 4 8 9 9 3 11 7 8 9 9 11 10 8 3 11 7 3 12 7 10 13 12 1 15 10 10 13 12 12 14 11 1 15 10</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="falling_water_extension">
+      <node id="polySurface2" name="polySurface2" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#polySurfaceShape3">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2SG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="initialShadingGroup" target="#lambert1"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <node id="polySurface3" name="polySurface3" type="NODE">
+          <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+          <instance_geometry url="#polySurfaceShape4">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert2SG" target="#lambert2">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene"/>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

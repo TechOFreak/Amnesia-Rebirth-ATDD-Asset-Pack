@@ -1,0 +1,30 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/Users/Skywolf/Desktop/FrictionalGames09-2008/frictionalSVN/lux/redist/entities/furniture/table_metal/table_metal.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface35" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" TriCount="464" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="5" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.300000 0.060000 2.300000" RelativeTranslation="0.000000 0.507727 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.300000 0.060000 2.300000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.003523 1.043455 -0.010936" />
+            <BodyShape Active="true" GroupID="0" ID="7" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.100000 1.015000 0.100000" RelativeTranslation="0.518670 -0.030227 1.018287" Rotation="0.000000 0.000000 0.000000" Scale="0.100000 1.015000 0.100000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.522193 0.505501 1.007351" />
+            <BodyShape Active="true" GroupID="0" ID="8" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.100000 1.015000 0.100000" RelativeTranslation="-0.525874 -0.030227 1.016402" Rotation="0.000000 0.000000 0.000000" Scale="0.100000 1.015000 0.100000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="-0.522351 0.505501 1.005466" />
+            <BodyShape Active="true" GroupID="0" ID="9" Name="Shape_4" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.100000 1.015000 0.100000" RelativeTranslation="0.518670 -0.030227 -1.018247" Rotation="0.000000 0.000000 0.000000" Scale="0.100000 1.015000 0.100000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.522193 0.505501 -1.029183" />
+            <BodyShape Active="true" GroupID="0" ID="10" Name="Shape_5" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.100000 1.015000 0.100000" RelativeTranslation="-0.525874 -0.030227 -1.020131" Rotation="0.000000 0.000000 0.000000" Scale="0.100000 1.015000 0.100000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="-0.522351 0.505501 -1.031067" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="11" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="0.003523 0.535728 -0.010936">
+                <Shape ID="5" />
+                <Shape ID="7" />
+                <Shape ID="8" />
+                <Shape ID="10" />
+                <Shape ID="9" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

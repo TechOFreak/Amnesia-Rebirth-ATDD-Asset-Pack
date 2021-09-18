@@ -1,0 +1,69 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="E:/lux/redist/entities/special/cog_wheels_machinery/cog_wheels_machinery.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="pCylinder6" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="11" WorldPos="0.000000 0.000000 0.000000" TriCount="60" />
+            <SubMesh Active="true" GroupID="0" ID="1" Name="pCylinder8" Rotation="0.000000 0.000000 1.570796" Scale="1.000000 1.000000 1.000000" SubMeshID="1" Tag="" Type="11" WorldPos="1.438050 6.120300 0.000000" TriCount="28" />
+            <SubMesh Active="true" GroupID="0" ID="2" Name="polySurface13" Rotation="0.000000 0.000000 1.570796" Scale="1.000000 1.000000 1.000000" SubMeshID="2" Tag="" Type="11" WorldPos="1.438050 6.120300 0.000000" TriCount="368" />
+            <SubMesh Active="true" GroupID="0" ID="3" Name="pCylinder9" Rotation="0.000000 0.000000 1.570796" Scale="1.000000 1.000000 1.000000" SubMeshID="3" Tag="" Type="11" WorldPos="1.438050 6.120300 0.000000" TriCount="28" />
+            <SubMesh Active="true" GroupID="0" ID="4" Name="polySurface17" Rotation="0.000000 0.000000 1.570796" Scale="1.000000 1.000000 1.000000" SubMeshID="4" Tag="" Type="11" WorldPos="1.438050 6.120300 0.000000" TriCount="368" />
+            <SubMesh Active="true" GroupID="0" ID="5" Name="polySurface16" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="5" Tag="" Type="11" WorldPos="0.000000 0.000000 0.000000" TriCount="470" />
+        </Mesh>
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="6" Name="Shape_1" RelativeRotation="0.000000 0.000000 1.570796" RelativeScale="0.850000 0.200000 0.850000" RelativeTranslation="0.000000 -0.000000 0.000000" Rotation="0.000000 0.000000 1.570796" Scale="0.850000 0.200000 0.850000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="8" WorldPos="1.425148 0.890619 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="7" Name="Shape_2" RelativeRotation="0.000000 0.000000 1.570796" RelativeScale="0.750000 0.200000 0.750000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 1.570796" Scale="0.750000 0.200000 0.750000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="8" WorldPos="1.425148 2.337286 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="8" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.500000 0.350000 1.500000" RelativeTranslation="-0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.500000 0.350000 1.500000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="8" WorldPos="0.006569 -0.015156 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="9" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="9" UseSurfaceEffects="true" Volatile="false" WorldPos="0.006569 -0.015156 0.000000">
+                <Shape ID="8" />
+                <Children>
+                    <Child ID="5" />
+                </Children>
+            </Body>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="10" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_2" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="9" UseSurfaceEffects="true" Volatile="false" WorldPos="1.425148 0.890619 0.000000">
+                <Shape ID="6" />
+                <Children>
+                    <Child ID="2" />
+                </Children>
+            </Body>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="11" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_3" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="9" UseSurfaceEffects="true" Volatile="false" WorldPos="1.425148 2.337286 0.000000">
+                <Shape ID="7" />
+                <Children>
+                    <Child ID="4" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="BreakActive" Value="false" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="100" />
+        <Var Name="BreakEntity" Value="" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

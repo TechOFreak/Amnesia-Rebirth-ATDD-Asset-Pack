@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Bulgur</author>
+      <authoring_tool>COLLADAMax</authoring_tool>
+      <source_data>C://\Users\Bulgur\Documents\3dsmax\scenes\sign_map_05.max</source_data>
+    </contributor>
+    <created>2010-05-24T12:46:51Z</created>
+    <modified>2010-05-24T12:46:51Z</modified>
+    <up_axis>Z_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_effects>
+    <effect id="ColorEffectR0G0B0">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent>
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_1_-_Default">
+      <profile_COMMON>
+        <newparam sid="map_05_winecellar_dds-surface">
+          <surface type="2D">
+            <init_from>map_05_winecellar_dds</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="map_05_winecellar_dds-sampler">
+          <sampler2D>
+            <source>map_05_winecellar_dds-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="map_05_winecellar_dds-sampler" texcoord="CHANNEL1" />
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="3dsMAX">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lexture_lock>1</ambient_diffuse_lexture_lock>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="ColorEffectR0G0B0-material" name="ColorEffectR0G0B0-material">
+      <instance_effect url="#ColorEffectR0G0B0" />
+    </material>
+    <material id="_1_-_Default-material" name="_1_-_Default-material">
+      <instance_effect url="#_1_-_Default" />
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="geom-Box02" name="Box02">
+      <mesh>
+        <source id="geom-Box02-positions">
+          <float_array id="geom-Box02-positions-array" count="99">-0.309851 0.368587 0.00700001 0.286847 0.375587 0.00700002 -0.309851 0.392039 1.49012e-008 0.279847 0.392039 1.49012e-008 -0.309851 0.368587 0.381011 0.286847 0.375587 0.381011 -0.316851 0.392039 0.381011 0.286847 0.392039 0.381011 -0.31281 0.371546 0.00404147 0.279847 0.368587 0.00700001 -0.31281 0.371546 0.383969 0.279847 0.368587 0.381011 0.282805 0.371546 0.00404147 0.279847 0.375587 1.49012e-008 -0.316851 0.392039 0.00700002 0.286847 0.392039 0.00700002 0.279847 0.375587 0.388011 0.282805 0.371546 0.383969 -0.309851 0.392039 0.388011 0.279847 0.392039 0.388011 -0.316851 0.375587 0.00700002 -0.309851 0.375587 1.49012e-008 -0.309851 0.375587 0.388011 -0.316851 0.375587 0.381011 0.273269 0.365709 0.0156538 0.273269 0.365709 0.372357 -0.303274 0.365709 0.372357 -0.303274 0.365709 0.0156538 -0.0150023 0.365709 0.464091 -0.0150023 0.368587 0.472745 -0.0150023 0.375587 0.479745 -0.0150023 0.375587 0.479745 -0.0150023 0.392039 0.479745</float_array>
+          <technique_common>
+            <accessor source="#geom-Box02-positions-array" count="33" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Box02-normals">
+          <float_array id="geom-Box02-normals-array" count="141">-0.310562 -0.307658 -0.899387 -0.382683 0 -0.923879 0.382684 0 -0.92388 0.310562 -0.307658 -0.899388 0.456885 -0.259908 0.850708 0.517147 0 0.855897 -9.93491e-009 0 1 0 0 1 0.899387 -0.307658 -0.310562 0.92388 0 -0.382683 0.92388 0 0.382684 0.899387 -0.307658 0.310562 -8.35655e-009 1 -7.79324e-008 -5.05383e-008 1 -5.05383e-008 -4.97314e-008 1 -6.85212e-008 7.96831e-008 1 -7.96831e-008 -1.32927e-008 1 -8.75373e-008 -5.15075e-008 1 -1.57468e-007 0 1 0 -3.98294e-008 1 -7.23869e-008 7.96831e-008 1 -7.96831e-008 -0.92388 0 -0.382683 -0.899387 -0.307658 -0.310562 -0.899387 -0.307658 0.310562 -0.92388 0 0.382683 0.537582 -0.649624 -0.537582 0.343961 -0.872155 -0.347903 -0.343961 -0.872155 -0.347904 -0.537581 -0.649624 -0.537583 -0.597852 -0.623124 0.504271 -0.407682 -0.873737 0.26529 -1.06441e-007 -0.831624 0.555339 -0.456885 -0.259908 0.850708 -3.36772e-008 -0.707105 0.707108 0.597852 -0.623124 0.504271 0.407683 -0.873737 0.26529 -0.517147 0 0.855897 0.266754 -0.956758 0.116 0.21863 -0.963528 -0.154322 -0.266754 -0.956758 0.116 2.33166e-007 -0.948882 0.315632 -0.218629 -0.963528 -0.154322 -3.78783e-008 -1 -5.98577e-008 -5.16915e-008 -1 -8.35493e-008 -7.54105e-008 -1 -4.52121e-008 -6.78009e-008 -1 -2.28734e-008 2.65872e-008 -1 -8.35493e-008</float_array>
+          <technique_common>
+            <accessor source="#geom-Box02-normals-array" count="47" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Box02-map-channel1">
+          <float_array id="geom-Box02-map-channel1-array" count="195">0.0207645 0.0533674 0 0.592294 0.0600025 0 0.0162041 0.0600431 0 0.0232308 0.0338575 0 0.023408 0.791455 0 0.592258 0.77211 0 0.0204787 0.779445 0 0.591971 0.785937 0 0.585302 0.0338656 0 0.587801 0.0534245 0 0.0232282 0.772584 0 0.304263 0.947482 0 0.607657 0.0595343 0 0.618789 0.984041 0 0.613273 0.973011 0 0.613275 0.0438098 0 0.618791 0.03278 0 0.000875004 0.0595253 0 0.0143845 0.0490112 0 0.304443 0.966352 0 0.591974 0.0461894 0 0.585301 0.0595335 0 0.0232307 0.0595256 0 0.588063 0.779175 0 0.913494 0.0327819 0 0.0232308 0.00249171 0 0.304443 0.966352 0 0.585478 0.966356 0 0.0232308 0.0338575 0 0.585184 0.772362 0 0.579029 0.756094 0 0.579032 0.076032 0 0.0232282 0.772584 0 0.0165552 0.785929 0 0.585478 0.997722 0 0.919009 0.0438119 0 0.607655 0.772593 0 0.607657 0.0461901 0 0.607654 0.785938 0 0.0165553 0.772584 0 0.000872447 0.772584 0 0.0232282 0.772584 0 0.0204104 0.0538862 0 0.0232307 0.0595256 0 0.000874882 0.0461815 0 0.000872325 0.785928 0 0.0165552 0.785929 0 0.991291 0.508413 0 0.919008 0.973014 0 0.913492 0.984044 0 0.029498 0.756086 0 0.304263 0.930983 0 0.0295005 0.076024 0 0.304443 0.997718 0 0.0234073 0.997714 0 0.0234074 0.966348 0 0.304443 0.966352 0 0.585302 0.00249984 0 0.585302 0.0338656 0 0.587248 0.790389 0 0.304443 0.966352 0 0.304263 0.947482 0 0.304443 0.966352 0 0.304443 0.966352 0 0.304443 0.997718 0</float_array>
+          <technique_common>
+            <accessor source="#geom-Box02-map-channel1-array" count="65" stride="3">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+              <param name="P" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-Box02-vertices">
+          <input semantic="POSITION" source="#geom-Box02-positions" />
+        </vertices>
+        <triangles material="_1_-_Default_1" count="62">
+          <input semantic="VERTEX" source="#geom-Box02-vertices" offset="0" />
+          <input semantic="NORMAL" source="#geom-Box02-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#geom-Box02-map-channel1" offset="2" set="1" />
+          <p>21 0 3 2 1 25 3 2 57 3 2 57 13 3 58 21 0 3 16 4 27 19 5 34 32 6 53 32 6 53 31 7 26 16 4 27 1 8 1 15 9 12 7 10 36 7 10 36 5 11 5 1 8 1 3 12 14 2 13 15 14 14 16 14 14 16 6 15 24 18 16 35 3 12 14 14 14 16 18 16 35 32 17 47 19 18 48 7 19 49 18 16 35 32 17 47 7 19 49 3 12 14 18 16 35 7 19 49 15 20 13 3 12 14 7 19 49 14 21 17 20 22 2 23 23 39 23 23 39 6 24 40 14 21 17 12 25 9 9 26 21 0 27 22 0 27 22 8 28 0 21 0 28 12 25 9 0 27 22 21 0 28 13 3 8 12 25 9 21 0 28 10 29 6 4 30 10 29 31 61 22 32 4 10 29 6 29 31 61 22 32 4 29 31 61 30 33 62 9 26 21 12 25 9 1 8 1 1 8 1 5 11 5 17 34 23 9 26 21 1 8 1 17 34 23 9 26 21 17 34 23 11 35 29 4 30 41 10 29 6 23 23 39 23 23 39 20 22 2 8 28 42 4 30 41 23 23 39 8 28 42 4 30 41 8 28 42 0 27 43 1 8 1 12 25 9 13 3 20 5 11 5 16 4 7 17 34 23 8 28 0 20 22 2 21 0 18 10 29 6 22 32 4 23 23 33 21 0 18 20 22 2 14 21 17 14 21 17 2 1 44 21 0 18 3 2 37 15 9 12 1 8 1 1 8 1 13 3 20 3 2 37 16 4 7 5 11 5 7 10 36 7 10 36 19 5 38 16 4 7 18 36 45 6 24 40 23 23 39 23 23 39 22 32 46 18 36 45 9 26 21 11 35 29 25 37 30 25 37 30 24 38 31 9 26 21 29 31 11 4 30 32 26 39 50 26 39 50 28 40 51 29 31 11 4 30 32 0 27 22 27 41 52 27 41 52 26 39 50 4 30 32 0 27 22 9 26 21 24 38 31 24 38 31 27 41 52 0 27 22 27 42 52 24 43 31 25 44 30 27 42 52 25 44 30 28 45 51 26 46 50 27 42 52 28 45 51 25 37 30 11 35 29 29 31 11 29 31 11 28 40 51 25 37 30 29 31 11 11 35 29 17 34 23 29 31 11 17 34 23 16 4 59 16 4 59 31 7 60 30 33 19 29 31 11 16 4 59 30 33 19 32 6 64 18 36 54 22 32 55 22 32 55 30 33 56 31 7 63 32 6 64 22 32 55 31 7 63</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_images>
+    <image id="map_05_winecellar_dds">
+      <init_from>file:///F:\test\signs\map_05_winecellar.dds</init_from>
+    </image>
+  </library_images>
+  <library_visual_scenes>
+    <visual_scene id="MaxScene">
+      <node id="node-Scene_Root" name="Scene_Root">
+        <node id="node-Box02" name="Box02">
+          <translate>0.017252 -0.389209 0</translate>
+          <instance_geometry url="#geom-Box02">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="_1_-_Default_1" target="#_1_-_Default-material" />
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#MaxScene" />
+  </scene>
+</COLLADA>

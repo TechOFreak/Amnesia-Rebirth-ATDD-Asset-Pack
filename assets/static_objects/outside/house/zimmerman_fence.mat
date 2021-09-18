@@ -1,0 +1,15 @@
+<Material>
+    <Main DepthTest="True" PhysicsMaterial="Wood" Type="SolidDiffuse" />
+    <TextureUnits>
+        <Diffuse AnimFrameTime="" AnimMode="" File="zimmerman_fence.dds" Mipmaps="true" Type="2D" Wrap="Repeat" />
+        <NMap AnimFrameTime="" AnimMode="" File="zimmerman_fence_nrm.dds" Mipmaps="true" Type="2D" Wrap="Repeat" />
+        <Specular AnimFrameTime="" AnimMode="" File="zimmerman_fence_spec.dds" Mipmaps="true" Type="2D" Wrap="Repeat" />
+    </TextureUnits>
+    <SpecificVariables>
+        <Var Name="HeightMapScale" Value="0.05" />
+        <Var Name="HeightMapBias" Value="0" />
+        <Var Name="FrenselBias" Value="0.2" />
+        <Var Name="FrenselPow" Value="8" />
+        <Var Name="AlphaDissolveFilter" Value="false" />
+    </SpecificVariables>
+</Material>

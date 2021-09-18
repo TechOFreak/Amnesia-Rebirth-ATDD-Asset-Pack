@@ -1,0 +1,85 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/insan_visions/hanging_prisoner/hanging_prisoner.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="hanging_prisoner" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="3160" />
+            <SubMesh Active="true" ID="1" Material="" Name="bagged_head" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 0 0" TriCount="925" />
+            <SubMesh Active="true" ID="2" Material="" Name="foot_rope" Rotation="0 0 0" Scale="1 1 1" SubMeshID="2" Tag="" WorldPos="0 0 0" TriCount="320" />
+            <SubMesh Active="true" ID="3" Material="" Name="rope" Rotation="0 0 0" Scale="1 1 1" SubMeshID="3" Tag="" WorldPos="0 0 0" TriCount="16" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="4" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="0.19 0.3 0.257" RelativeTranslation="0.00207743 -0.857978 -0.0875197" Rotation="0 0 0" Scale="0.19 0.3 0.257" ShapeType="Box" Tag="" WorldPos="0.00436538 0.153275 0" />
+            <BodyShape Active="true" ID="5" Name="Shape_2" RelativeRotation="0 0 0" RelativeScale="0.489874 0.3 0.207445" RelativeTranslation="0.00207743 -0.572532 -0.0663573" Rotation="0 0 0" Scale="0.489874 0.3 0.207445" ShapeType="Box" Tag="" WorldPos="0.00436538 0.438721 0.0211624" />
+            <BodyShape Active="true" ID="6" Name="Shape_3" RelativeRotation="0.349162 -0.108824 0.582009" RelativeScale="0.489874 0.3 0.10836" RelativeTranslation="-0.098946 -0.388481 0.0305413" Rotation="0.349162 -0.108824 0.582009" Scale="0.489874 0.3 0.10836" ShapeType="Box" Tag="" WorldPos="-0.0966581 0.622772 0.118061" />
+            <BodyShape Active="true" ID="7" Name="Shape_4" RelativeRotation="-0.261067 -0.258154 2.67101" RelativeScale="0.489874 0.3 0.108361" RelativeTranslation="0.098946 -0.388481 0.0305413" Rotation="-0.261067 -0.258154 2.67101" Scale="0.489874 0.3 0.108361" ShapeType="Box" Tag="" WorldPos="0.101234 0.622772 0.118061" />
+            <BodyShape Active="true" ID="8" Name="Shape_5" RelativeRotation="0.542606 0 0" RelativeScale="0.15 0.15 0.15" RelativeTranslation="-0.00228795 -0.142253 0.131697" Rotation="0.542606 0 0" Scale="0.15 0.15 0.15" ShapeType="Box" Tag="" WorldPos="0 0.869 0.219217" />
+            <BodyShape Active="true" ID="9" Name="Shape_6" RelativeRotation="-0.166379 0 0" RelativeScale="0.393025 0.780462 0.207445" RelativeTranslation="0.00207743 -0.101759 -0.0997322" Rotation="-0.166379 0 0" Scale="0.393025 0.780462 0.207445" ShapeType="Box" Tag="" WorldPos="0.00436538 0.909494 -0.0122125" />
+            <BodyShape Active="true" ID="10" Name="Shape_7" RelativeRotation="0.125413 0 0" RelativeScale="0.28 0.6 0.15" RelativeTranslation="0.00207743 0.551127 -0.0997322" Rotation="0.125413 0 0" Scale="0.28 0.6 0.15" ShapeType="Box" Tag="" WorldPos="0.00436538 1.56238 -0.0122125" />
+            <BodyShape Active="true" ID="11" Name="Shape_8" RelativeRotation="0.600398 0 0" RelativeScale="0.24 0.06 0.3" RelativeTranslation="0.012654 0.857978 -0.131697" Rotation="0.600398 0 0" Scale="0.24 0.06 0.3" ShapeType="Box" Tag="" WorldPos="0.0149419 1.86923 -0.0441777" />
+            <BodyShape Active="true" ID="12" Name="Shape_9" RelativeRotation="0 0 0" RelativeScale="0.04 1.3 0.04" RelativeTranslation="0 0 0" Rotation="0 0 0" Scale="0.04 1.3 0.04" ShapeType="Box" Tag="" WorldPos="0.00669551 2.65863 0.00417414" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.1" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="13" LinearDamping="0.1" Mass="1" Material="Default Soft" MaxAngularSpeed="1" MaxLinearSpeed="1" Name="Body_rope" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.00669551 2.65863 0.00417414">
+                <Children>
+                    <Child ID="3" />
+                </Children>
+                <Shape ID="12" />
+            </Body>
+            <Body Active="true" AngularDamping="0.1" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="14" LinearDamping="0.1" Mass="10" Material="Default Soft" MaxAngularSpeed="1" MaxLinearSpeed="1" Name="Body_prisoner" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.00228795 1.01125 0.0875197">
+                <Children>
+                    <Child ID="0" />
+                    <Child ID="1" />
+                    <Child ID="2" />
+                </Children>
+                <Shape ID="11" />
+                <Shape ID="10" />
+                <Shape ID="9" />
+                <Shape ID="6" />
+                <Shape ID="7" />
+                <Shape ID="8" />
+                <Shape ID="4" />
+                <Shape ID="5" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointBall Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="14" ConnectedParentBodyID="13" ID="15" LimitStepCount="0" MaxConeAngle="0" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveSpeed="2" MaxMoveVolume="0.8" MaxTwistAngle="0" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveSpeed="0.1" MinMoveVolume="0.01" MoveSound="" MoveType="Linear" Name="JointBall_bottom" PinDir="0 1 0" Rotation="0 0 0" Scale="1 1 1" StickyMaxLimit="false" StickyMinLimit="false" Stiffness="0" Tag="" WorldPos="0.00469348 1.9497 0" />
+            <JointBall Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="13" ConnectedParentBodyID="-1" ID="16" LimitStepCount="0" MaxConeAngle="0" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveSpeed="2" MaxMoveVolume="0.8" MaxTwistAngle="0" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveSpeed="0.1" MinMoveVolume="0.01" MoveSound="" MoveType="Linear" Name="JointBall_top" PinDir="0 1 0" Rotation="0 0 0" Scale="1 1 1" StickyMaxLimit="false" StickyMinLimit="false" Stiffness="0" Tag="" WorldPos="0.00469348 3.39011 0" />
+        </Joints>
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="false" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="100" />
+        <Var Name="BreakEntity" Value="" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-03-22T18:39:25Z</created>
+    <modified>2009-03-22T18:39:25Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/static_objects/debris/rock/stones_small_med_large.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file2" name="file2">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/static_objects/debris/rock/stones_small_med_large_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file3" name="file3">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/static_objects/debris/rock/stones_small_med_large_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="stones_small_med_large_spec_material" name="stones_small_med_large_spec_material">
+      <instance_effect url="#stones_small_med_large_spec_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="stones_small_med_large_spec_material-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file3-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file2-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="stone_large02_meshShape" name="stone_large02_meshShape">
+      <mesh>
+        <source id="stone_large02_meshShape-positions" name="position">
+          <float_array id="stone_large02_meshShape-positions-array" count="294">-0.386479 0.828083 0.677831 -0.396333 1.00627 0.443065 -0.674664 0.780522 0.406054 -0.68884 0.711469 0.585395 0.617645 1.20691 -0.043269 0.373271 1.18876 -0.12758 0.262253 1.24775 0.166937 0.429948 1.10241 0.220878 0.153476 0.716585 -0.836039 -0.088535 0.901319 -0.827868 0.200318 0.981482 -0.673046 0.377973 0.83137 -0.774272 -0.833726 0.397142 -0.114513 -0.758015 0.644603 -0.25058 -0.628658 0.641774 -0.619989 -0.620565 0.388378 -0.501796 0.259975 0.195325 0.634727 0.063157 0.451975 0.854429 -0.222686 0.252733 0.766111 -0.036786 0.123442 0.499775 -0.285562 0.969056 -0.557261 -0.368133 0.77229 -0.860943 -0.474203 0.794385 -0.624432 -0.486243 0.567952 0.782357 -0.774779 0.38743 0.630319 -0.56902 0.21998 0.676324 -0.344083 0.440103 0.896833 -0.067048 0.587867 0.895012 0.346355 0.561436 0.774944 0.128054 0.70297 0.835927 0.028923 0.788142 0.771288 0.267941 0.89996 0.564059 0.247843 1.11417 0.4437 -0.049862 0.952444 0.618228 0.558629 0.983255 0.273392 0.404893 0.72094 0.636165 0.632726 0.751852 0.469238 0.805076 0.790596 0.173644 0.697455 0.573144 0.317078 0.863508 0.535705 -0.052082 0.902991 0.679521 -0.104182 0.827373 0.954691 -0.216808 0.738689 0.760153 -0.47354 0.569986 0.954871 -0.558648 0.639841 1.1095 -0.346725 0.613394 0.682469 -0.648584 0.916963 0.652839 -0.38298 0.774818 0.457246 -0.521425 0.509653 0.295493 -0.526744 0.564807 0.10828 -0.343969 0.330242 0.086703 -0.376315 0.242535 0.086056 -0.60795 0.086343 0.264497 -0.773811 -0.211424 0.160364 -0.696712 -0.409844 0.443881 -0.826368 -0.09083 0.562072 -0.896833 -0.509894 0.139686 -0.411818 -0.027887 0.0668 -0.537523 -0.25824 0.001998 -0.310931 -0.511034 0.007952 0.040176 -0.200626 0.021846 0.124021 -0.399249 0.065592 0.413817 -0.658407 0.048328 0.346637 -0.834259 0.203498 0.305977 -0.824588 0.512148 0.440914 -0.916963 0.422997 0.210266 0.114723 0.021101 0.209082 -0.019803 0.05131 -0.160361 0.240049 0.012047 -0.132049 0.536522 0.049319 -0.066767 0.763217 0.351164 -0.286659 0.66643 0.277319 -0.017407 0.603396 0.306477 0.325457 0.582109 0.619553 0.562678 0.417022 0.444195 0.595042 -0.626911 0.815009 -0.331414 -0.849734 0.597953 0.08554 -0.605007 0.887328 0.071594 -0.351899 0.960892 0.09967 -0.074765 1.14033 0.373883 -0.008983 1.13879 0.15202 0.074841 1.20909 -0.158562 0.469416 1.18371 -0.389299 0.11623 1.13126 -0.563435 -0.831013 0.645995 0.317497 -0.270676 0.684695 0.832403 0.192523 1.13882 0.385069 0.749118 0.961472 0.043418 0.409577 1.11066 -0.665047 0.395717 0.436767 -0.753248 -0.437644 0.636961 -0.788485 -0.715805 0.135408 -0.064465 -0.421762 0.13219 0.619487 0.367515 0.111519 0.263391 -0.278811 0.924218 -0.276584 0.461791 0.642882 0.687328 0.907488 0.494798 -0.28986 0.07411 0.036299 -0.43211</float_array>
+          <technique_common>
+            <accessor source="#stone_large02_meshShape-positions-array" count="98" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="stone_large02_meshShape-normals" name="normal">
+          <float_array id="stone_large02_meshShape-normals-array" count="294">-0.319764 0.683692 0.655985 -0.433073 0.870637 0.233321 -0.66372 0.722622 0.193114 -0.644235 0.515501 0.564996 0.47608 0.862967 0.16922 0.061592 0.997798 -0.024625 0.075155 0.977174 0.198702 0.460268 0.762711 0.45434 0.22236 0.128241 -0.966494 -0.096944 0.630502 -0.77011 0.053549 0.656786 -0.752173 0.387292 0.288407 -0.875686 -0.917513 -0.21086 -0.337207 -0.896274 0.336955 -0.288365 -0.83442 0.192919 -0.516261 -0.78032 -0.335724 -0.527626 0.379359 -0.711239 0.591799 0.268693 -0.41298 0.870202 0.045495 -0.69834 0.714319 0.097459 -0.900714 0.423339 -0.400198 0.869132 -0.290605 -0.401723 0.38916 -0.828959 -0.616511 0.700312 -0.359831 -0.496651 0.243446 0.83311 -0.76263 -0.15913 0.626956 -0.39037 -0.622146 0.678636 -0.220083 -0.238509 0.945874 0.025481 0.124105 0.991942 0.52362 -0.095046 0.846633 0.271984 0.448362 0.851467 0.115664 0.63241 0.765951 0.39845 0.623874 0.672323 0.299209 0.7294 0.615182 -0.029851 0.729361 0.683478 0.558012 0.606105 0.566798 0.443928 0.573864 0.688192 0.670186 0.434785 0.601508 0.888636 0.197919 0.413707 0.85475 -0.267099 0.445041 0.902989 -0.341383 0.2609 0.981837 0.147032 0.11991 0.860813 0.483014 -0.160306 0.739213 0.344481 -0.578703 0.598652 0.433687 -0.673447 0.629438 0.714303 -0.305905 0.570092 0.029591 -0.821048 0.933613 -0.000876 -0.358282 0.683681 -0.354443 -0.637926 0.515518 -0.57278 -0.63731 0.542799 -0.780263 -0.310738 0.196557 -0.948543 -0.248256 0.277037 -0.796627 -0.537248 0.169482 -0.493784 -0.852908 -0.236147 -0.708191 -0.665357 -0.462098 -0.334641 -0.821268 -0.016457 -0.120665 -0.992557 -0.521612 -0.735405 -0.432552 -0.006423 -0.946684 -0.322101 -0.115748 -0.978227 -0.172262 -0.224931 -0.973325 -0.045209 0.019094 -0.995373 0.094174 -0.005699 -0.949205 0.314606 -0.364553 -0.89509 0.25674 -0.830796 -0.539608 0.136386 -0.893753 0.252592 0.370678 -0.999841 -0.017801 0.001109 0.078127 -0.980844 0.178438 0.042279 -0.998167 -0.043302 0.079094 -0.995665 -0.048931 0.494652 -0.86423 0.091798 0.773417 -0.611068 -0.168588 0.781432 -0.585725 0.215149 0.732751 -0.52699 0.430531 0.767892 -0.111377 0.630822 0.647475 -0.457163 0.609736 -0.587016 0.790914 -0.17282 -0.885877 0.461058 -0.051452 -0.585524 0.808209 -0.062934 -0.433302 0.895803 -0.098923 -0.23215 0.917924 0.32175 -0.335538 0.941713 -0.024294 -0.308688 0.947936 -0.078285 0.18507 0.925724 -0.329824 -0.204806 0.920505 -0.332754 -0.848883 0.505206 0.155448 -0.209221 0.510951 0.83376 0.052447 0.909716 0.411905 0.751994 0.574868 0.322539 0.30387 0.661293 -0.685824 0.404393 -0.278121 -0.871272 -0.639646 0.063543 -0.766039 -0.686812 -0.679294 -0.258554 -0.064776 -0.835225 0.54608 0.436017 -0.829423 0.349209 -0.442793 0.891593 -0.094853 0.612823 0.204579 0.76328 0.897094 -0.44116 -0.024517 0.083595 -0.991406 -0.100626</float_array>
+          <technique_common>
+            <accessor source="#stone_large02_meshShape-normals-array" count="98" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="stone_large02_meshShape-map1" name="map1">
+          <float_array id="stone_large02_meshShape-map1-array" count="222">0.397814 0.384129 0.363246 0.418551 0.322858 0.362581 0.341185 0.346493 0.337753 0.625698 0.320166 0.593162 0.366425 0.556629 0.389482 0.583307 0.154073 0.586453 0.178189 0.542851 0.206309 0.587357 0.181548 0.621139 0.197558 0.342692 0.205184 0.389747 0.160492 0.440825 0.136591 0.408372 0.507585 0.250455 0.485417 0.326493 0.421756 0.279009 0.44268 0.219371 0.214211 0.496537 0.159123 0.501639 0.180911 0.467253 0.389325 0.332373 0.324443 0.292572 0.350599 0.265016 0.414285 0.318536 0.46914 0.360512 0.547276 0.335352 0.508453 0.406415 0.474404 0.431773 0.457165 0.517815 0.414756 0.52814 0.430466 0.45147 0.405716 0.605562 0.495231 0.548086 0.455868 0.624425 0.384338 0.681305 0.43132 0.699988 0.323743 0.751976 0.312044 0.728476 0.299224 0.683203 0.226402 0.697695 0.229051 0.654166 0.28186 0.647992 0.180244 0.670528 0.23567 0.731072 0.16303 0.714979 0.090625 0.672601 0.054376 0.703546 0.014484 0.630858 0.039683 0.59502 0.072162 0.565248 0.062273 0.485598 0.117475 0.481515 0.124194 0.544575 0.100181 0.388457 0.021985 0.510571 0.048296 0.379614 0.324468 0.131688 0.393177 0.14404 0.355051 0.206759 0.27377 0.217965 0.252213 0.265685 0.299023 0.3124 0.250712 0.307613 0.465755 0.156588 0.434722 0.082131 0.491833 0.08742 0.554292 0.103903 0.570877 0.049609 0.638329 0.07611 0.604105 0.127773 0.584209 0.200241 0.636636 0.222862 0.609235 0.288242 0.561125 0.276854 0.213052 0.425497 0.247602 0.344986 0.282653 0.40779 0.314672 0.454638 0.380336 0.481994 0.349845 0.508845 0.304252 0.546241 0.278302 0.622657 0.232901 0.570086 0.287893 0.33763 0.432615 0.368378 0.403206 0.526167 0.359381 0.662174 0.229249 0.617191 0.11395 0.634447 0.146325 0.482659 0.167636 0.308548 0.368836 0.244875 0.524663 0.173234 0.257967 0.487354 0.579141 0.331782 0.582044 0.361705 0.507455 0.583573 0.485289 0.627978 0.23129 0.758816 0.145237 0.755098 0.004065 0.560287 0.433506 0.004065 0.455753 0.025728 0.38323 0.052481 0.142482 0.271554 0.514507 0.036549 0.680664 0.085649 0.670597 0.137496</float_array>
+          <technique_common>
+            <accessor source="#stone_large02_meshShape-map1-array" count="111" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="stone_large02_meshShape-vertices">
+          <input semantic="POSITION" source="#stone_large02_meshShape-positions" />
+          <input semantic="NORMAL" source="#stone_large02_meshShape-normals" />
+        </vertices>
+        <triangles material="blinn1SG" count="192">
+          <input semantic="VERTEX" source="#stone_large02_meshShape-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#stone_large02_meshShape-map1" offset="1" set="0" />
+          <p>1 1 2 2 0 0 0 0 2 2 3 3 4 4 5 5 7 7 7 7 5 5 6 6 9 9 10 10 8 8 8 8 10 10 11 11 12 12 13 13 15 15 15 15 13 13 14 14 16 16 17 17 19 19 19 19 17 17 18 18 9 9 21 21 20 20 20 20 21 21 22 22 24 24 25 25 23 23 23 23 25 25 26 26 27 27 17 17 29 29 29 29 17 17 28 28 30 30 31 31 33 33 33 33 31 31 32 32 34 34 31 31 36 36 36 36 31 31 35 35 38 38 39 39 37 37 37 37 39 39 40 40 41 41 42 42 44 44 44 44 42 42 43 43 45 45 42 42 47 47 47 47 42 42 46 46 49 49 50 50 48 48 48 48 50 50 51 51 52 52 53 53 55 55 55 55 53 53 54 54 56 56 53 53 58 58 58 58 53 53 57 57 60 60 61 61 59 59 59 59 61 61 62 62 24 24 64 64 63 63 63 63 64 64 65 65 60 60 67 67 66 66 66 66 67 67 68 68 69 69 49 70 71 72 71 72 49 70 70 71 38 74 73 75 72 73 72 73 73 75 74 76 75 77 13 13 77 79 77 79 13 13 76 78 1 1 79 81 78 80 78 80 79 81 80 82 5 5 82 84 81 83 81 83 82 84 83 85 84 86 64 64 2 2 2 2 64 64 3 3 64 64 24 24 3 3 3 3 24 24 23 23 85 87 0 0 23 23 23 23 0 0 3 3 6 6 86 88 7 7 7 7 86 88 32 32 31 31 34 34 32 32 32 32 34 34 7 7 34 34 87 89 7 7 7 7 87 89 4 4 10 10 88 90 11 11 11 11 88 90 43 43 42 42 45 45 43 43 43 43 45 45 11 11 45 45 89 91 11 11 11 11 89 91 8 8 90 92 54 54 14 14 14 14 54 54 15 15 54 54 53 53 15 15 15 15 53 53 56 56 91 93 12 12 56 56 56 56 12 12 15 15 18 18 92 94 19 19 19 19 92 94 61 61 61 61 60 60 19 19 19 19 60 60 66 66 66 66 93 95 19 19 19 19 93 95 16 16 21 21 90 92 22 22 22 22 90 92 14 14 13 13 75 77 14 14 14 14 75 77 22 22 75 77 94 96 22 22 22 22 94 96 20 20 92 94 18 18 25 25 25 25 18 18 26 26 17 17 27 27 18 18 18 18 27 27 26 26 27 27 85 87 26 26 26 26 85 87 23 23 95 97 35 98 28 28 28 28 35 98 29 29 35 35 31 31 29 29 29 29 31 31 30 30 85 87 27 27 30 30 30 30 27 27 29 29 86 88 79 81 32 32 32 32 79 81 33 33 79 81 1 1 33 33 33 33 1 1 0 0 0 0 85 87 33 33 33 33 85 87 30 30 95 99 73 100 35 35 35 35 73 100 36 36 73 100 38 38 36 36 36 36 38 38 37 37 87 89 34 34 37 37 37 37 34 34 36 36 39 39 96 101 40 40 40 40 96 101 46 46 42 42 41 41 46 46 46 46 41 41 40 40 41 41 87 89 40 40 40 40 87 89 37 37 88 90 82 84 43 43 43 43 82 84 44 44 82 84 5 5 44 44 44 44 5 5 4 4 87 89 41 41 4 4 4 4 41 41 44 44 46 46 96 101 47 47 47 47 96 101 70 102 49 49 48 48 70 102 70 102 48 48 47 47 89 91 45 45 48 48 48 48 45 45 47 47 50 50 97 103 51 51 51 51 97 103 57 57 53 53 52 52 57 57 57 57 52 52 51 51 52 52 89 91 51 51 51 51 89 91 48 48 90 92 21 21 54 54 54 54 21 21 55 55 21 21 9 9 55 55 55 55 9 9 8 8 89 91 52 52 8 8 8 8 52 52 55 55 57 104 97 105 58 106 58 106 97 105 67 67 67 67 60 60 58 106 58 106 60 60 59 59 91 93 56 56 59 107 59 107 56 56 58 58 92 94 25 25 61 61 61 61 25 25 62 62 24 24 63 63 25 25 25 25 63 63 62 62 63 63 91 93 62 62 62 62 91 93 59 107 64 64 84 86 65 65 65 65 84 86 76 78 13 13 12 12 76 78 76 78 12 12 65 65 12 12 91 93 65 65 65 65 91 93 63 63 67 67 97 105 68 68 68 68 97 105 50 108 49 70 69 69 50 108 50 108 69 69 68 68 69 69 93 95 68 68 68 68 93 95 66 66 96 109 39 110 70 71 70 71 39 110 71 72 39 110 38 74 71 72 71 72 38 74 72 73 72 73 93 95 71 72 71 72 93 95 69 69 73 75 95 97 74 76 74 76 95 97 28 28 17 17 16 16 28 28 28 28 16 16 74 76 16 16 93 95 74 76 74 76 93 95 72 73 84 86 2 2 76 78 76 78 2 2 77 79 2 2 1 1 77 79 77 79 1 1 78 80 78 80 94 96 77 79 77 79 94 96 75 77 79 81 86 88 80 82 80 82 86 88 6 6 5 5 81 83 6 6 6 6 81 83 80 82 81 83 94 96 80 82 80 82 94 96 78 80 82 84 88 90 83 85 83 85 88 90 10 10 10 10 9 9 83 85 83 85 9 9 20 20 20 20 94 96 83 85 83 85 94 96 81 83</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="stones01-05">
+      <node id="stone_large02_mesh" name="stone_large02_mesh" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#stone_large02_meshShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#stones_small_med_large_spec_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

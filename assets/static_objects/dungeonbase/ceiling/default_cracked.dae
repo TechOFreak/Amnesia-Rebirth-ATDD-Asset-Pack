@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/work_static_objects/dungeonbase/roof.mb</source_data>
+    </contributor>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/redist/static_objects/dungeonbase/ceiling/ceiling_default.dae</source_data>
+    </contributor>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=1;
+curveConstrainSampling=1;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=1;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=0;exportPhysics=0;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/Projects/3d/work/amnesia%20game/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-06-22T08:34:21Z</created>
+    <modified>2010-02-05T10:52:29Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="file13" name="file13">
+      <init_from>file:///E:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/tunnelbase/special/tunnel.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file14" name="file14">
+      <init_from>file:///E:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/debris/rock/stones_small_med_large_brown.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file16" name="file16">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/static_objects/debris/rock/stones_small_med_large_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file15" name="file15">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/static_objects/debris/rock/stones_small_med_large_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file6" name="file6">
+      <init_from>file:///E:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/dungeonbase/dungeonbase.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="tunnelbase_mat" name="tunnelbase_mat">
+      <instance_effect url="#tunnelbase_mat-fx"/>
+    </material>
+    <material id="stones_small_med_large_spec_mat" name="stones_small_med_large_spec_mat">
+      <instance_effect url="#stones_small_med_large_spec_mat-fx"/>
+    </material>
+    <material id="dungeon_ceiling_mat" name="dungeon_ceiling_mat">
+      <instance_effect url="#dungeon_ceiling_mat-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="tunnelbase_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file13-surface">
+          <surface type="2D">
+            <init_from>file13</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file13-sampler">
+          <sampler2D>
+            <source>file13-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file13-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="stones_small_med_large_spec_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file14-surface">
+          <surface type="2D">
+            <init_from>file14</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file14-sampler">
+          <sampler2D>
+            <source>file14-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file16-surface">
+          <surface type="2D">
+            <init_from>file16</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file16-sampler">
+          <sampler2D>
+            <source>file16-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file15-surface">
+          <surface type="2D">
+            <init_from>file15</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file15-sampler">
+          <sampler2D>
+            <source>file15-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file14-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file15-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file16-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="dungeon_ceiling_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file6-surface">
+          <surface type="2D">
+            <init_from>file6</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file6-sampler">
+          <sampler2D>
+            <source>file6-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file6-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="dungeonbase_ceiling_default_cracked_tunneldirtShape" name="dungeonbase_ceiling_default_cracked_tunneldirtShape">
+      <mesh>
+        <source id="dungeonbase_ceiling_default_cracked_tunneldirtShape-positions" name="position">
+          <float_array id="dungeonbase_ceiling_default_cracked_tunneldirtShape-positions-array" count="216">0.652241 0.021491 -0.613024 0.39816 0.021491 -1.29631 0.025204 0.021491 -1.63363 -0.384352 0.021491 -1.60698 -0.789522 0.021491 -1.06988 -0.95358 0.13383 -0.158757 -0.763103 0.021491 0.83545 -0.341962 0.021491 1.3339 0.058814 0.021491 1.31611 0.376512 0.021491 1.00149 0.62295 0.021491 0.387625 0.671026 0.041444 -0.158757 0.602474 1.52829 -0.493051 0.425849 1.52829 -0.901511 0.009005 1.52829 -1.20088 -0.383646 1.52829 -1.17932 -0.774977 1.52829 -0.775477 -0.951769 1.772 0 -0.788663 1.52829 0.740357 -0.461845 1.52829 1.11243 0.105386 1.52829 1.20088 0.402946 1.52829 0.921103 0.650838 1.52829 0.368936 0.669215 1.60202 0 0.534399 2.82393 -0.311777 0.29731 2.82393 -0.84165 0.047666 2.82393 -1.07225 -0.304234 2.82393 -1.0907 -0.657887 2.82393 -0.742973 -1.01778 2.95965 -0.001117 -0.669823 2.82393 0.708379 -0.343704 2.82393 1.05281 0.018618 2.82393 1.07001 0.266651 2.82393 0.867117 0.536429 2.82393 0.30404 0.543125 3.10342 -0.001117 0.352087 4.016 -0.326404 0.244981 4.016 -0.721598 -0.033887 4.016 -1.00559 -0.337182 4.016 -0.93813 -0.528484 4.016 -0.688677 -0.651092 4.40927 -0.001117 -0.505562 4.016 0.764664 -0.203348 4.016 0.848931 -0.047867 4.016 1.00335 0.191152 4.016 0.780594 0.368118 4.016 0.269463 0.368538 4.25571 0.000677 0.269786 4.99472 -0.299272 0.175941 4.99472 -0.670508 -0.037044 4.99472 -0.926815 -0.248555 4.99472 -0.934873 -0.482173 4.99472 -0.564344 -0.565538 5.18116 -0.001462 -0.457472 4.99472 0.654735 -0.352284 4.99472 0.877004 -0.085879 4.99472 0.923889 0.132972 4.99472 0.721693 0.266778 4.99472 0.30771 0.191717 4.83909 -0.001462 0.03255 5.79971 -0.28649 0.028978 5.79971 -0.661893 -0.161401 5.79971 -0.702931 -0.247586 5.79971 -0.898292 -0.342444 5.79971 -0.602711 -0.196713 5.91629 -0.001176 -0.359343 5.79971 0.511179 -0.132052 5.79971 0.835467 -0.075996 5.79971 1.02738 0.145069 5.79971 0.665012 -0.023296 5.79971 0.338481 0.131656 5.88262 -0.001176</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_cracked_tunneldirtShape-positions-array" count="72" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dungeonbase_ceiling_default_cracked_tunneldirtShape-normals" name="normal">
+          <float_array id="dungeonbase_ceiling_default_cracked_tunneldirtShape-normals-array" count="216">-0.983322 -0.036268 0.178219 -0.79701 -0.144682 0.586381 -0.19251 -0.271951 0.942859 0.558271 -0.211629 0.802213 0.935725 -0.067779 0.346157 0.997284 0.001873 -0.073633 0.858181 -0.019984 -0.512959 0.314505 -0.08682 -0.945277 -0.506468 -0.047704 -0.860938 -0.83308 -0.014885 -0.552952 -0.956085 0.008617 -0.292964 -0.999489 0.005272 -0.031528 -0.948312 -0.079707 0.307166 -0.754824 -0.115104 0.645749 -0.310951 -0.163117 0.936324 0.409446 -0.176548 0.895089 0.854324 -0.11332 0.507237 0.992938 -0.007542 0.118394 0.913742 -0.021978 -0.405701 0.579261 -0.076793 -0.811517 -0.261945 -0.096286 -0.960267 -0.832667 -0.053408 -0.551193 -0.977692 -0.032268 -0.207549 -0.998074 -0.053866 0.030764 -0.962767 -0.106062 0.248657 -0.814087 -0.099146 0.572217 -0.429567 -0.085898 0.89894 0.278023 -0.090533 0.956298 0.824311 -0.07549 0.561081 0.994748 -0.101673 0.011803 0.832757 -0.115574 -0.541441 0.401852 -0.116405 -0.908276 -0.395439 -0.095351 -0.913529 -0.799627 -0.111509 -0.590053 -0.961426 -0.118109 -0.248417 -0.991829 -0.12312 0.033416 -0.973977 -0.122846 0.190468 -0.892774 -0.099454 0.43939 -0.39761 -0.093448 0.912783 0.47998 -0.081542 0.873481 0.880609 -0.121492 0.458004 0.988254 -0.139051 -0.0634 0.758175 -0.08852 -0.646014 0.438361 -0.062685 -0.89661 -0.127237 -0.114186 -0.985278 -0.831063 -0.086478 -0.549415 -0.9687 -0.144416 -0.2019 -0.976984 -0.183296 -0.109109 -0.981926 -0.167998 0.087162 -0.8922 -0.143715 0.428165 -0.291789 -0.154511 0.94392 0.485979 -0.121066 0.865544 0.947811 -0.176841 0.265294 0.965034 -0.257551 0.048753 0.92803 -0.14965 -0.341124 0.534062 -0.07319 -0.842271 0.147471 -0.007312 -0.989039 -0.889702 -0.068842 -0.451322 -0.975806 -0.162694 -0.146063 -0.983905 -0.162104 -0.075191 -0.945948 -0.244852 0.212674 -0.754456 -0.239031 0.611277 -0.437113 -0.220447 0.871972 0.052437 -0.045396 0.997592 0.968516 -0.109782 0.22344 0.928743 -0.360645 0.08586 0.937074 -0.280705 -0.207601 0.773777 -0.14656 -0.616271 -0.347501 0.062696 -0.935581 -0.999272 0.012477 -0.036062 -0.97292 -0.20506 -0.106659 -0.98358 -0.178893 -0.023816</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_cracked_tunneldirtShape-normals-array" count="72" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dungeonbase_ceiling_default_cracked_tunneldirtShape-map1" name="map1">
+          <float_array id="dungeonbase_ceiling_default_cracked_tunneldirtShape-map1-array" count="156">0 0.03414 0.083333 0.03414 0.166667 0.03414 0.25 0.03414 0.333333 0.03414 0.416667 0.03414 0.5 0.03414 0.583333 0.03414 0.666667 0.03414 0.75 0.03414 0.833333 0.03414 0.916667 0.03414 1 0.03414 0 0.147808 0.083333 0.147808 0.166667 0.147808 0.25 0.147808 0.333333 0.147808 0.416667 0.147808 0.5 0.147808 0.583333 0.147808 0.666667 0.147808 0.75 0.147808 0.833333 0.147808 0.916667 0.147808 1 0.147808 0 0.261476 0.083333 0.261476 0.166667 0.261476 0.25 0.261476 0.333333 0.261476 0.416667 0.261476 0.5 0.261476 0.583333 0.261476 0.666667 0.261476 0.75 0.261476 0.833333 0.261476 0.916667 0.261476 1 0.261476 0 0.375144 0.083333 0.375144 0.166667 0.375144 0.25 0.375144 0.333333 0.375144 0.416667 0.375144 0.5 0.375144 0.583333 0.375144 0.666667 0.375144 0.75 0.375144 0.833333 0.375144 0.916667 0.375144 1 0.375144 0 0.488812 0.083333 0.488812 0.166667 0.488812 0.25 0.488812 0.333333 0.488812 0.416667 0.488812 0.5 0.488812 0.583333 0.488812 0.666667 0.488812 0.75 0.488812 0.833333 0.488812 0.916667 0.488812 1 0.488812 0 0.602479 0.083333 0.602479 0.166667 0.602479 0.25 0.602479 0.333333 0.602479 0.416667 0.602479 0.5 0.602479 0.583333 0.602479 0.666667 0.602479 0.75 0.602479 0.833333 0.602479 0.916667 0.602479 1 0.602479</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_cracked_tunneldirtShape-map1-array" count="78" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="dungeonbase_ceiling_default_cracked_tunneldirtShape-vertices">
+          <input semantic="POSITION" source="#dungeonbase_ceiling_default_cracked_tunneldirtShape-positions"/>
+          <input semantic="NORMAL" source="#dungeonbase_ceiling_default_cracked_tunneldirtShape-normals"/>
+        </vertices>
+        <triangles material="lambert10SG" count="120">
+          <input semantic="VERTEX" source="#dungeonbase_ceiling_default_cracked_tunneldirtShape-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#dungeonbase_ceiling_default_cracked_tunneldirtShape-map1" offset="1" set="0"/>
+          <p>0 0 12 13 1 1 12 13 13 14 1 1 13 14 14 15 1 1 1 1 14 15 2 2 3 3 2 2 15 16 2 2 14 15 15 16 4 4 3 3 16 17 3 3 15 16 16 17 16 17 17 18 4 4 4 4 17 18 5 5 6 6 5 5 18 19 5 5 17 18 18 19 7 7 6 6 19 20 6 6 18 19 19 20 19 20 20 21 7 7 7 7 20 21 8 8 20 21 21 22 8 8 8 8 21 22 9 9 22 23 10 10 21 22 9 9 21 22 10 10 10 10 22 23 11 11 22 23 23 24 11 11 12 25 0 12 23 24 11 11 23 24 0 12 24 26 25 27 12 13 12 13 25 27 13 14 14 15 13 14 26 28 13 14 25 27 26 28 26 28 27 29 14 15 14 15 27 29 15 16 27 29 28 30 15 16 15 16 28 30 16 17 29 31 17 18 28 30 16 17 28 30 17 18 30 32 18 19 29 31 17 18 29 31 18 19 31 33 19 20 30 32 18 19 30 32 19 20 19 20 31 33 20 21 31 33 32 34 20 21 21 22 20 21 33 35 20 21 32 34 33 35 33 35 34 36 21 22 21 22 34 36 22 23 35 37 23 24 34 36 22 23 34 36 23 24 12 25 23 24 24 38 23 24 35 37 24 38 25 27 24 26 37 40 24 26 36 39 37 40 37 40 38 41 25 27 25 27 38 41 26 28 39 42 27 29 38 41 26 28 38 41 27 29 27 29 39 42 28 30 39 42 40 43 28 30 41 44 29 31 40 43 28 30 40 43 29 31 42 45 30 32 41 44 29 31 41 44 30 32 30 32 42 45 31 33 42 45 43 46 31 33 32 34 31 33 44 47 31 33 43 46 44 47 44 47 45 48 32 34 32 34 45 48 33 35 34 36 33 35 46 49 33 35 45 48 46 49 35 37 34 36 47 50 34 36 46 49 47 50 47 50 36 51 35 37 35 37 36 51 24 38 49 53 37 40 48 52 36 39 48 52 37 40 37 40 49 53 38 41 49 53 50 54 38 41 38 41 50 54 39 42 50 54 51 55 39 42 52 56 40 43 51 55 39 42 51 55 40 43 40 43 52 56 41 44 52 56 53 57 41 44 42 45 41 44 54 58 41 44 53 57 54 58 43 46 42 45 55 59 42 45 54 58 55 59 55 59 56 60 43 46 43 46 56 60 44 47 56 60 57 61 44 47 44 47 57 61 45 48 46 49 45 48 58 62 45 48 57 61 58 62 58 62 59 63 46 49 46 49 59 63 47 50 36 51 47 50 48 64 47 50 59 63 48 64 61 66 49 53 60 65 48 52 60 65 49 53 49 53 61 66 50 54 61 66 62 67 50 54 63 68 51 55 62 67 50 54 62 67 51 55 52 56 51 55 64 69 51 55 63 68 64 69 64 69 65 70 52 56 52 56 65 70 53 57 54 58 53 57 66 71 53 57 65 70 66 71 66 71 67 72 54 58 54 58 67 72 55 59 55 59 67 72 56 60 67 72 68 73 56 60 56 60 68 73 57 61 68 73 69 74 57 61 58 62 57 61 70 75 57 61 69 74 70 75 59 63 58 62 71 76 58 62 70 75 71 76 59 63 71 76 48 64 71 76 60 77 48 64</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="dungeonbase_ceiling_default_cracked_stonesShape" name="dungeonbase_ceiling_default_cracked_stonesShape">
+      <mesh>
+        <source id="dungeonbase_ceiling_default_cracked_stonesShape-positions" name="position">
+          <float_array id="dungeonbase_ceiling_default_cracked_stonesShape-positions-array" count="606">0.663637 1.33858 0.133024 0.727404 1.10955 0.048356 0.672453 1.06873 -0.189712 0.645559 1.18108 -0.403763 0.650439 1.32018 -0.590151 0.58061 1.61998 -0.675518 0.529595 1.4812 -0.487878 0.518661 1.71662 -0.460687 0.591841 1.95887 -0.599886 0.644083 2.0933 -0.424647 0.632325 2.02552 -0.097631 0.729208 1.70412 0.310763 0.580415 1.83584 0.080583 0.496318 1.98449 -0.31895 0.532085 1.76976 -0.26131 0.552009 1.53183 -0.215821 0.573874 1.27764 -0.155125 0.544409 1.59083 0.086073 0.483202 1.88779 -0.483814 0.325697 2.9148 -0.434578 0.353833 2.63863 -0.551043 0.653956 2.72954 -0.265797 0.516346 3.02732 -0.190396 0.48216 2.35655 -0.663378 0.206083 2.59601 -0.803369 0.297438 2.49422 -0.922766 0.108804 2.73372 -1.0395 -0.032515 3.09969 -1.09833 -0.019916 3.38052 -1.06583 0.160528 3.82045 -1.07182 0.286301 3.73728 -0.724438 0.548718 3.70158 -0.499713 0.486247 3.34403 -0.257993 0.245757 3.51307 -0.47053 0.021492 3.69964 -0.898944 0.067933 3.44096 -0.843415 0.121804 3.15581 -0.796041 0.119603 2.85103 -0.731822 0.156142 3.22361 -0.449384 -0.056953 3.58697 -1.08164 -0.042968 2.01851 -1.15821 -0.147608 1.892 -1.27126 -0.607447 2.14811 -0.88958 -0.616236 2.0817 -0.914677 -0.38227 2.04864 -0.94083 -0.419156 2.16101 -0.86512 -0.58494 1.95663 -1.05083 -0.108267 2.26882 -1.19569 -0.212081 2.38533 -1.21795 -0.152637 2.21863 -1.03546 -0.279799 2.24091 -0.989734 -0.260114 2.14956 -0.895914 -0.08197 2.13047 -0.994455 -0.364468 2.27353 -0.904974 -0.225854 2.3689 -1.03228 -0.432627 2.4236 -1.01622 -0.33353 2.50364 -1.11831 -0.017942 2.16069 -1.17401 -0.239932 2.07708 -0.871727 -0.56252 2.32428 -0.907437 -0.226765 2.44061 -1.12508 -0.173282 1.99307 -0.942133 -0.32216 1.96351 -0.955141 -0.826893 1.98846 0.07328 -0.858061 1.85622 0.162654 -0.875775 1.82996 -0.084868 -0.76434 1.98998 -0.12001 -0.990377 1.73884 -0.08237 -0.978297 1.71261 0.213337 -0.891784 1.89171 0.329565 -0.928517 2.01995 0.436231 -0.939431 2.37829 0.506566 -0.873067 2.24353 0.44401 -0.834229 2.3914 0.372351 -1.06947 2.68793 0.253551 -0.907166 2.58063 0.374182 -0.884283 2.62218 0.222038 -0.912594 2.60416 -0.073641 -0.78867 2.49708 0.048057 -0.84714 2.41888 -0.135483 -1.10951 2.64335 -0.133272 -1.00258 2.42291 -0.317128 -0.862766 2.11768 -0.23241 -0.892125 1.96377 -0.199507 -0.753585 2.17991 -0.141597 -0.862615 2.21835 -0.249587 -0.715602 2.3314 0.004013 -0.76571 2.53263 0.22781 -0.80749 2.37584 0.236993 -0.722153 2.20775 0.263607 -0.825513 2.02512 0.284694 -1.05639 2.70405 0.03267 -0.890195 1.83531 -0.216391 -0.744572 2.17164 0.071824 -0.808749 2.51108 0.353432 -0.87933 2.34632 -0.254642 0.299225 3.09345 0.391255 0.455054 2.95098 0.443175 0.322585 2.9494 0.421758 0.390966 2.82945 0.619077 0.420897 2.85047 0.571702 0.286262 2.9785 0.53183 0.301553 2.87708 0.782317 0.236947 2.96778 0.66523 0.220466 3.16447 0.623875 0.187249 3.07563 0.750401 0.142678 3.22799 0.734693 0.260499 3.29259 0.5313 0.308645 3.40254 0.540033 0.392406 3.41477 0.472428 0.263286 3.26746 0.413794 0.394109 3.49286 0.614694 0.221923 3.38262 0.666791 0.291981 3.46666 0.764784 0.21655 3.40112 0.858573 0.241746 3.26078 0.8887 0.254026 3.10608 0.914401 0.269777 2.94072 0.949241 0.188112 3.10825 0.492875 0.423644 3.39787 0.401827 0.173992 3.33999 0.759456 0.452049 3.28134 0.348182 0.073245 5.06277 -0.20888 0.216702 4.8627 -0.327967 0.15054 5.04274 0.00315 0.053854 5.10199 -0.032079 0.225596 5.10372 0.159799 0.233883 4.97211 0.085301 0.290168 5.31463 0.241335 0.150925 5.26358 0.068195 0.137487 5.13755 0.086846 0.256947 5.20156 0.24255 0.042524 5.20934 -0.192841 0.167779 5.38197 0.008517 0.127844 5.38314 -0.152986 0.132211 5.33019 -0.312173 0.250785 5.41381 -0.291006 0.281511 5.36221 -0.423296 0.173228 5.25051 -0.480282 0.217298 5.10568 -0.431457 0.319463 4.93381 -0.55673 0.155161 4.99321 -0.384274 0.235776 5.45275 -0.205863 0.269404 4.86439 -0.483434 0.147317 5.09191 0.087761 0.330599 4.82498 -0.314327 0.224208 5.46028 -0.085605 -0.178204 1.19062 1.16819 -0.128156 1.06272 1.28018 -0.375915 1.07923 1.25541 -0.362808 1.21919 1.11577 0.216367 1.39507 1.27538 0.178666 1.54462 1.21243 0.068035 1.80129 1.19695 -0.226556 1.8353 1.17221 -0.109114 1.68933 1.02676 -0.310843 1.65306 1.14966 -0.46341 1.37896 1.17037 -0.461543 1.22617 1.20913 -0.346691 1.40478 1.07164 -0.459362 1.47695 1.13927 -0.171298 1.5219 1.06524 0.075455 1.69144 1.097 0.052294 1.54134 1.14101 0.044796 1.37652 1.18469 0.029564 1.19807 1.23953 -0.133495 1.3542 1.0647 0.186583 1.65892 1.16549 -0.668632 4.89224 -0.491957 -0.729093 4.83629 -0.401438 -0.309882 5.0439 0.071117 -0.414521 4.91739 -0.071431 -0.299846 4.9869 -0.066272 -0.519641 5.24196 -0.449783 -0.504875 5.14517 -0.460496 -0.555464 5.0542 -0.468618 -0.404285 5.03551 -0.270843 -0.407767 4.99508 -0.226859 -0.493412 4.90954 -0.373646 -0.341732 5.09324 -0.101202 -0.43134 5.22505 -0.320573 -0.374058 5.20573 -0.182701 -0.37518 5.2942 0.004141 -0.416418 5.33832 -0.138181 -0.478994 5.41071 -0.018124 -0.41955 5.24401 0.164368 -0.495884 5.26629 0.254701 -0.527027 5.17495 0.303916 -0.348884 5.15586 0.205375 -0.631381 5.29891 0.294857 -0.492767 5.39428 0.167555 -0.568197 5.41458 -0.196749 -0.548032 5.35605 -0.354772 -0.715013 4.85951 -0.207003 -0.512802 4.87981 -0.241692 -0.527606 4.86586 -0.140472 -0.436248 4.88991 -0.187433 -0.284855 5.18607 0.025816 -0.513552 5.10247 0.328104 -0.493677 5.46599 0.080617 -0.440195 5.01845 0.257697 -0.589073 4.9889 0.244689</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_cracked_stonesShape-positions-array" count="202" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dungeonbase_ceiling_default_cracked_stonesShape-normals" name="normal">
+          <float_array id="dungeonbase_ceiling_default_cracked_stonesShape-normals-array" count="606">-0.827487 -0.312865 0.466241 -0.858436 -0.408333 0.310406 -0.895252 -0.436911 0.087367 -0.894032 -0.408046 -0.184948 -0.836635 -0.373204 -0.40095 -0.929958 -0.080167 -0.358819 -0.960169 -0.219164 -0.173325 -0.979643 -0.080581 -0.183866 -0.849146 0.189292 -0.493071 -0.663641 0.73249 -0.151784 -0.755353 0.526153 0.390648 -0.681968 0.225031 0.695903 -0.851015 0.356109 0.385954 -0.902318 0.403505 0.151675 -0.988099 0.001241 0.153817 -0.996101 -0.072017 0.050957 -0.942452 -0.310902 0.122979 -0.949429 -0.07963 0.303715 -0.951275 0.175444 -0.253565 -0.664578 -0.368695 0.649924 -0.666164 -0.427868 0.610864 -0.562581 -0.440687 0.699498 -0.618967 -0.224182 0.752743 -0.655287 -0.60786 0.448448 -0.796532 -0.548221 0.254931 -0.729862 -0.683173 0.024004 -0.888372 -0.449372 0.094123 -0.928748 -0.084702 0.360906 -0.905964 -0.08469 0.414798 -0.562573 0.818103 0.119247 -0.580721 0.592829 0.557957 -0.339862 0.651233 0.67852 -0.466268 0.317509 0.825701 -0.627332 0.493991 0.60202 -0.760683 0.471068 0.446604 -0.901711 0.058955 0.4283 -0.951196 -0.032298 0.306894 -0.891328 -0.248091 0.379453 -0.836882 -0.028579 0.546637 -0.946833 0.178475 0.267682 0.823831 -0.43599 0.362235 0.250655 -0.929704 0.269858 -0.120939 -0.106112 0.986972 -0.038444 -0.556465 0.829981 -0.178049 -0.429956 0.885119 0.031028 -0.134272 0.990459 -0.140147 -0.759113 0.635694 0.760474 0.580571 0.290889 0.902934 0.417034 0.103886 0.582322 0.570471 0.579193 0.563194 0.381988 0.732733 0.402132 0.333222 0.852791 0.769208 0.19226 0.609389 0.365786 0.429002 0.825928 0.677898 0.448759 0.582297 0.24982 0.649447 0.718198 0.361658 0.530304 0.766799 0.819474 0.430155 0.37872 0.037393 -0.161342 0.98619 0.028322 0.369627 0.928748 0.620249 0.550308 0.558974 0.613009 -0.474722 0.631553 -0.107319 -0.732149 0.672637 0.924483 -0.361575 0.120806 0.867655 -0.49036 0.08199 0.844249 -0.523164 -0.116372 0.868872 -0.366924 -0.332308 0.666477 -0.74383 -0.050259 0.779601 -0.61893 0.095642 0.846507 -0.386317 0.366313 0.810276 -0.219818 0.543262 0.763842 0.188805 0.61717 0.779291 -0.087256 0.620558 0.803629 0.157637 0.573874 0.357337 0.913735 0.193387 0.555112 0.566667 0.608884 0.544286 0.834788 0.082959 0.589452 0.700697 -0.401959 0.876102 0.445872 -0.18342 0.774887 0.382545 -0.503199 0.317041 0.786396 -0.530157 0.558964 0.581197 -0.591413 0.635744 -0.17399 -0.752035 0.763676 -0.280487 -0.581486 0.8721 0.020334 -0.488904 0.809721 0.098331 -0.578518 0.976752 0.198375 -0.081261 0.942147 0.321907 0.093457 0.984563 0.080696 0.155316 0.959053 0.040832 0.280268 0.890785 -0.332658 0.309583 0.396721 0.906446 -0.144805 0.900378 -0.419425 -0.115769 0.982542 -0.1742 0.065314 0.811218 0.294506 0.505165 0.820766 0.361827 -0.442069 -0.449342 -0.24489 -0.859139 0.117276 -0.441103 -0.889761 -0.455295 -0.639145 -0.619839 -0.623711 -0.692917 -0.361733 -0.38267 -0.808205 -0.447625 -0.70821 -0.609697 -0.355961 -0.820663 -0.571247 -0.013726 -0.867725 -0.476913 -0.140028 -0.968803 0.012832 -0.2475 -0.954953 -0.295831 0.023405 -0.999709 0.015283 0.018669 -0.870958 0.389413 -0.29965 -0.638054 0.591573 -0.492878 -0.664782 0.513945 -0.542148 -0.68061 0.381405 -0.62554 -0.538148 0.780199 -0.318884 -0.805123 0.476421 -0.353271 -0.681115 0.718009 -0.143335 -0.920508 0.34574 0.182014 -0.867167 0.025085 0.497385 -0.893687 -0.068805 0.443385 -0.940988 -0.264582 0.211042 -0.955249 -0.11482 -0.27261 -0.917326 -0.041312 -0.395989 -0.915935 0.387836 0.103182 -0.435573 0.090431 -0.8956 -0.904832 -0.382746 -0.186508 -0.660297 -0.751003 0.001731 -0.697997 -0.663875 0.26846 -0.901898 -0.258354 0.34617 -0.642933 -0.301877 0.703923 -0.710523 -0.593313 0.378333 -0.784095 0.304476 0.540822 -0.857722 0.277129 0.433028 -0.809729 -0.165716 0.562918 -0.788296 0.023488 0.614848 -0.975019 0.164306 -0.149474 -0.829583 0.458339 0.318931 -0.780867 0.623218 -0.042979 -0.790076 0.474984 -0.387518 -0.543526 0.752581 -0.371754 -0.489377 0.752547 -0.440662 -0.903898 0.25666 -0.342191 -0.861377 -0.014184 -0.507769 -0.728927 -0.030647 -0.683906 -0.84796 -0.172006 -0.501375 -0.610704 0.746801 -0.263304 -0.695412 -0.602228 -0.392076 -0.798115 -0.355715 0.48629 -0.462665 -0.876553 0.13265 -0.63933 0.768141 0.034877 0.169203 -0.614469 -0.770583 0.160597 -0.613864 -0.772904 -0.168512 -0.668631 -0.724248 -0.323712 -0.432121 -0.841713 0.472781 -0.266666 -0.839862 0.47463 -0.282516 -0.833613 0.320433 0.677832 -0.661714 -0.213914 0.597764 -0.772606 0.003805 0.228268 -0.973591 -0.414652 0.251903 -0.874419 -0.636733 -0.178925 -0.750038 -0.652326 -0.368639 -0.662251 -0.339424 0.01289 -0.940545 -0.487141 0.056266 -0.871509 -0.034614 0.013784 -0.999306 0.452405 0.177412 -0.873988 0.423794 -0.249752 -0.870645 0.510629 -0.260486 -0.819393 0.40744 -0.436103 -0.802376 0.266111 -0.273815 -0.924235 0.537117 -0.034768 -0.842791 0.474996 -0.633439 -0.610847 0.253566 -0.95797 -0.134155 0.902757 -0.365268 0.227177 0.497251 -0.854474 0.150385 0.906962 -0.366113 -0.208281 0.789538 0.367582 -0.49144 0.835279 -0.055982 -0.546968 0.702827 -0.233541 -0.671932 0.890086 -0.157971 -0.427542 0.832112 -0.425234 -0.356042 0.676245 -0.60591 -0.419005 0.947896 -0.015014 -0.318226 0.853245 0.290246 -0.433279 0.918615 0.230574 -0.320907 0.814296 0.575933 0.072277 0.744711 0.624513 -0.235349 0.79375 0.608104 -0.01305 0.713466 0.484654 0.50604 0.580878 0.341194 0.739031 0.602225 0.295007 0.74182 0.755726 0.214108 0.618899 0.350773 0.438257 0.82758 0.795769 0.44752 0.408015 0.507879 0.827797 -0.238352 0.668592 0.649062 -0.36291 0.042076 -0.99466 0.094235 0.367885 -0.910158 -0.190457 0.155235 -0.981333 0.113524 0.598315 -0.7691 -0.224731 0.951462 0.306458 0.028356 0.556187 -0.191981 0.808579 0.989988 0.113802 0.08351 0.583221 -0.476581 0.657817 0.093548 -0.89079 0.444682</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_cracked_stonesShape-normals-array" count="202" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dungeonbase_ceiling_default_cracked_stonesShape-map1" name="map1">
+          <float_array id="dungeonbase_ceiling_default_cracked_stonesShape-map1-array" count="428">0.508076 0.865766 0.526092 0.888723 0.557624 0.883902 0.579014 0.861348 0.593095 0.835768 0.586028 0.790117 0.575346 0.817102 0.557361 0.792295 0.550971 0.75533 0.520835 0.753151 0.49428 0.779275 0.469542 0.836849 0.4899 0.809062 0.525501 0.774055 0.532943 0.797721 0.542541 0.825671 0.545929 0.857768 0.505943 0.83285 0.546892 0.773206 0.526092 0.888723 0.479192 0.895332 0.508076 0.865766 0.474204 0.864041 0.557624 0.883902 0.534744 0.917804 0.567434 0.895861 0.579014 0.861348 0.575346 0.817102 0.557361 0.792295 0.520835 0.753151 0.49428 0.779275 0.458788 0.794756 0.469542 0.836849 0.4899 0.809062 0.532943 0.797721 0.525501 0.774055 0.542541 0.825671 0.545929 0.857768 0.505943 0.83285 0.546892 0.773206 0.626695 0.785271 0.660732 0.824762 0.456212 0.71024 0.448263 0.701919 0.512759 0.703958 0.517169 0.682927 0.262529 0.822751 0.279509 0.861716 0.586028 0.790117 0.557361 0.792295 0.559142 0.730478 0.561275 0.712215 0.578466 0.754312 0.597412 0.750665 0.550971 0.75533 0.522752 0.722201 0.520835 0.753151 0.525501 0.774055 0.606305 0.791089 0.572573 0.702059 0.47451 0.735132 0.546892 0.773206 0.622176 0.729073 0.224899 0.963835 0.217152 0.881295 0.185931 0.896595 0.182927 0.867894 0.215179 0.84814 0.526092 0.888723 0.479192 0.895332 0.508076 0.865766 0.474204 0.864041 0.477732 0.917883 0.557624 0.883902 0.534744 0.917804 0.579014 0.861348 0.586028 0.790117 0.575346 0.817102 0.557361 0.792295 0.550971 0.75533 0.522752 0.722201 0.520835 0.753151 0.463804 0.762764 0.49428 0.779275 0.458788 0.794756 0.433885 0.747155 0.414651 0.797302 0.448067 0.848066 0.454061 0.873301 0.469542 0.836849 0.446586 0.831762 0.4899 0.809062 0.532943 0.797721 0.525501 0.774055 0.542541 0.825671 0.545929 0.857768 0.47451 0.735132 0.458525 0.890389 0.505943 0.83285 0.546892 0.773206 0.4388 0.811024 0.626695 0.785271 0.660732 0.824762 0.637787 0.824319 0.614436 0.874837 0.624486 0.873304 0.618597 0.828047 0.593095 0.835768 0.579014 0.861348 0.586028 0.790117 0.575346 0.817102 0.557361 0.792295 0.559142 0.730478 0.561275 0.712215 0.578466 0.754312 0.597412 0.750665 0.550971 0.75533 0.522752 0.722201 0.520835 0.753151 0.532943 0.797721 0.525501 0.774055 0.542541 0.825671 0.545929 0.857768 0.606305 0.791089 0.572573 0.702059 0.546892 0.773206 0.622176 0.729073 0.379774 0.930256 0.353662 0.832926 0.38513 0.871576 0.371928 0.828433 0.320272 0.808371 0.325701 0.844727 0.433885 0.747155 0.396411 0.786414 0.414568 0.742223 0.371713 0.786389 0.396598 0.850743 0.423047 0.82773 0.414651 0.797302 0.448067 0.848066 0.454061 0.873301 0.426857 0.860829 0.437082 0.896813 0.450494 0.95844 0.421633 0.911917 0.403764 0.91832 0.446586 0.831762 0.421968 0.965641 0.35628 0.795567 0.361207 0.941496 0.4388 0.811024 0.385816 0.746944 0.526092 0.888723 0.479192 0.895332 0.508076 0.865766 0.474204 0.864041 0.575346 0.817102 0.557361 0.792295 0.520835 0.753151 0.463804 0.762764 0.49428 0.779275 0.458788 0.794756 0.448067 0.848066 0.454061 0.873301 0.469542 0.836849 0.446586 0.831762 0.4899 0.809062 0.532943 0.797721 0.525501 0.774055 0.542541 0.825671 0.545929 0.857768 0.505943 0.83285 0.546892 0.773206 0.548473 0.954388 0.552774 0.97612 0.626695 0.785271 0.660732 0.824762 0.637787 0.824319 0.557624 0.883902 0.567434 0.895861 0.566909 0.911887 0.614436 0.874837 0.598022 0.920194 0.624486 0.873304 0.618597 0.828047 0.593095 0.835768 0.579014 0.861348 0.586028 0.790117 0.575346 0.817102 0.557361 0.792295 0.559142 0.730478 0.561275 0.712215 0.578466 0.754312 0.597412 0.750665 0.550971 0.75533 0.522752 0.722201 0.542541 0.825671 0.545929 0.857768 0.329925 0.98537 0.266331 0.983799 0.302206 0.950243 0.257154 0.962988 0.645134 0.877115 0.606305 0.791089 0.572573 0.702059 0.621989 0.924638 0.546892 0.773206 0.622176 0.729073 0.236783 0.988679 0.224899 0.963835 0.217152 0.881295 0.185931 0.896595 0.182927 0.867894</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_cracked_stonesShape-map1-array" count="214" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="dungeonbase_ceiling_default_cracked_stonesShape-vertices">
+          <input semantic="POSITION" source="#dungeonbase_ceiling_default_cracked_stonesShape-positions"/>
+          <input semantic="NORMAL" source="#dungeonbase_ceiling_default_cracked_stonesShape-normals"/>
+        </vertices>
+        <triangles material="stones_small_med_large_spec_material1SG" count="284">
+          <input semantic="VERTEX" source="#dungeonbase_ceiling_default_cracked_stonesShape-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#dungeonbase_ceiling_default_cracked_stonesShape-map1" offset="1" set="0"/>
+          <p>5 5 6 6 7 7 12 12 10 10 14 14 14 14 10 10 13 13 15 15 6 6 16 16 16 16 6 6 3 3 3 3 6 6 4 4 4 4 6 6 5 5 18 18 8 8 7 7 7 7 8 8 5 5 8 8 18 18 9 9 9 9 18 18 13 13 13 13 10 10 9 9 12 12 17 17 11 11 13 13 18 18 14 14 14 14 18 18 7 7 6 6 15 15 7 7 7 7 15 15 14 14 15 15 17 17 14 14 14 14 17 17 12 12 3 3 2 2 16 16 2 2 1 1 16 16 16 16 1 1 0 0 0 0 17 17 16 16 16 16 17 17 15 15 20 19 21 20 19 21 19 21 21 20 22 22 20 19 24 23 23 24 23 24 24 23 25 25 33 33 30 30 35 34 35 34 30 30 34 35 36 36 27 27 37 37 37 37 27 27 26 26 32 32 38 38 22 22 22 22 38 38 19 21 24 23 26 26 25 25 29 29 39 39 34 35 34 35 30 30 29 29 30 30 33 33 31 31 31 31 33 33 32 32 33 33 38 38 32 32 34 35 39 39 35 34 35 34 39 39 28 28 27 27 36 36 28 28 28 28 36 36 35 34 36 36 38 38 35 34 35 34 38 38 33 33 26 26 24 23 37 37 24 23 20 19 37 37 37 37 20 19 19 21 19 21 38 38 37 37 37 37 38 38 36 36 42 42 43 43 45 44 45 44 43 43 44 45 50 50 51 51 49 52 49 52 51 51 52 53 50 50 54 54 53 55 53 55 54 54 55 56 58 59 51 51 44 45 44 45 51 51 45 44 50 50 53 55 51 51 51 51 53 55 45 44 53 55 59 60 45 44 45 44 59 60 42 42 60 61 54 54 48 49 48 49 54 54 47 48 50 50 49 52 54 54 54 54 49 52 47 48 49 52 57 58 47 48 58 59 61 62 51 51 51 51 61 62 52 53 61 62 40 40 52 53 40 40 57 58 52 53 52 53 57 58 49 52 54 54 60 61 55 56 55 56 60 61 56 57 55 56 59 60 53 55 46 47 41 63 62 64 62 64 41 63 61 65 61 65 58 66 62 64 62 64 58 66 44 67 43 46 46 47 44 67 44 67 46 47 62 64 61 62 41 41 40 40 64 68 65 69 63 70 63 70 65 69 66 71 64 68 69 73 68 74 71 76 72 77 73 78 74 80 75 79 76 81 77 82 78 83 79 84 84 89 82 87 85 90 86 91 78 83 88 92 88 92 78 83 87 93 89 94 72 77 90 95 90 95 72 77 70 75 92 97 83 88 65 69 65 69 83 88 66 71 83 88 82 87 66 71 66 71 82 87 84 89 84 89 93 98 66 71 66 71 93 98 63 70 67 72 92 97 65 69 65 69 64 68 67 72 67 72 64 68 68 74 94 99 75 79 73 78 73 78 75 79 71 76 75 79 94 99 76 81 76 81 94 99 87 93 87 93 78 83 76 81 76 81 78 83 77 82 77 82 91 96 76 81 76 81 91 96 74 80 95 100 81 86 79 84 79 84 81 86 77 82 81 86 80 85 77 82 80 85 91 96 77 82 95 100 79 84 85 90 85 90 79 84 84 89 78 83 86 91 79 84 79 84 86 91 84 89 86 91 93 98 84 89 87 93 94 99 88 92 88 92 94 99 73 78 72 77 89 94 73 78 73 78 89 94 88 92 89 94 93 98 88 92 88 92 93 98 86 91 70 75 69 73 90 95 69 73 64 68 90 95 90 95 64 68 63 70 63 70 93 98 90 95 90 95 93 98 89 94 96 101 97 102 98 103 101 106 99 104 103 107 103 107 99 104 102 108 104 109 105 110 106 111 108 112 109 113 107 114 107 114 109 113 110 115 108 112 112 116 111 117 111 117 112 116 113 118 116 121 105 110 117 122 117 122 105 110 102 108 97 102 100 105 98 103 99 104 101 106 100 105 100 105 101 106 98 103 118 123 96 101 101 106 101 106 96 101 98 103 108 112 111 117 109 113 102 108 105 110 103 107 103 107 105 110 104 109 104 109 118 123 103 107 103 107 118 123 101 106 120 125 112 116 106 111 106 111 112 116 104 109 108 112 107 114 112 116 112 116 107 114 104 109 107 114 118 123 104 109 119 124 121 126 109 113 109 113 121 126 110 115 121 126 96 101 110 115 96 101 118 123 110 115 110 115 118 123 107 114 112 116 120 125 113 118 113 118 120 125 114 120 114 120 120 125 115 119 115 119 120 125 106 111 105 110 116 121 106 111 106 111 116 121 115 119 121 126 97 102 96 101 123 127 124 128 122 129 122 129 124 128 125 130 128 133 129 134 131 135 131 135 129 134 130 136 132 137 129 134 134 138 134 138 129 134 133 139 136 140 137 141 135 142 135 142 137 141 138 143 139 145 140 144 141 146 144 149 130 136 124 128 124 128 130 136 125 130 130 136 129 134 125 130 125 130 129 134 132 137 132 137 122 129 125 130 126 131 144 149 127 132 127 132 144 149 124 128 127 132 124 128 145 150 145 150 124 128 123 127 129 134 128 133 133 139 144 149 126 152 130 136 130 136 126 152 131 135 133 139 146 151 134 138 134 138 146 151 142 147 142 147 136 140 134 138 134 138 136 140 135 142 135 142 132 137 134 138 132 137 135 142 139 145 139 145 135 142 138 143 140 144 143 148 141 146 141 146 143 148 123 127 123 127 122 129 141 146 132 137 139 145 122 129 122 129 139 145 141 146 123 127 143 148 145 150 148 153 149 154 147 155 147 155 149 154 150 156 154 160 155 161 156 162 159 165 157 163 160 166 161 167 155 161 163 168 163 168 155 161 162 169 164 170 151 157 165 171 149 154 158 164 150 156 158 164 157 163 150 156 150 156 157 163 159 165 159 165 166 172 150 156 150 156 166 172 147 155 153 159 167 173 162 169 162 169 155 161 153 159 153 159 155 161 154 160 160 166 156 162 159 165 155 161 161 167 156 162 156 162 161 167 159 165 161 167 166 172 159 165 162 169 167 173 163 168 163 168 167 173 152 158 151 157 164 170 152 158 152 158 164 170 163 168 164 170 166 172 163 168 163 168 166 172 161 167 165 171 148 153 147 155 147 155 166 172 165 171 165 171 166 172 164 170 170 176 171 177 172 178 175 181 176 182 178 183 178 183 176 182 177 184 179 185 176 182 181 186 181 186 176 182 180 187 182 188 183 189 184 190 186 191 187 192 185 193 185 193 187 192 188 194 186 191 190 195 189 196 191 197 183 189 192 198 192 198 183 189 180 187 169 199 194 200 193 201 193 201 194 200 195 202 196 203 177 184 171 177 171 177 177 184 172 178 176 182 179 185 177 184 177 184 179 185 172 178 197 204 170 176 179 185 179 185 170 176 172 178 186 191 189 196 187 192 173 179 180 187 174 180 180 187 176 182 174 180 174 180 176 182 175 181 196 203 194 206 177 184 177 184 194 206 178 183 194 206 169 175 178 183 178 183 169 175 168 174 168 174 175 181 178 183 180 187 183 189 181 186 181 186 183 189 182 188 182 188 197 204 181 186 181 186 197 204 179 185 199 207 190 195 184 190 184 190 190 195 182 188 186 191 185 193 190 195 190 195 185 193 182 188 185 193 197 204 182 188 198 205 200 208 187 192 187 192 200 208 188 194 200 208 170 176 188 194 170 176 197 204 188 194 188 194 197 204 185 193 183 189 191 197 184 190 180 187 173 179 192 198 194 200 196 209 195 202 195 202 196 209 171 210 195 202 171 210 201 211 201 211 171 210 200 212 201 211 193 201 195 202 200 212 198 213 201 211 200 208 171 177 170 176 23 24 21 20 20 19 11 11 10 10 12 12 0 0 11 11 17 17</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="dungeonbase_ceiling_default_crackedShape" name="dungeonbase_ceiling_default_crackedShape">
+      <mesh>
+        <source id="dungeonbase_ceiling_default_crackedShape-positions" name="position">
+          <float_array id="dungeonbase_ceiling_default_crackedShape-positions-array" count="213">-0.16718 -0.034115 0.113044 -0.121554 -0.093901 -0.443826 -0.988002 -0.018836 -0.721314 -0.991873 -0.062711 0.253651 -2 0 1.75 2 0 1.75 -2 0 -1.75 2 0 -1.75 2 -0.25 -2 -2 -0.25 -2 -2 -0.25 -1.75 2 -0.25 -1.75 -2 -0.25 1.75 2 -0.25 1.75 -2 -0.25 2 2 -0.25 2 0.020108 -0.032057 0.87958 -0.010385 -0.0486 0.264304 0.092995 -0.075351 -0.743436 -0.016644 0 1.14452 -0.003859 0 -1.47983 0.016378 -0.093901 -0.256716 0.011115 -0.060201 0.698122 0.004286 -0.083349 0.560339 0.11517 -0.084725 0.621437 0.470832 -0.036898 0.654119 0.312275 -0.054582 0.566134 0.251785 -0.060329 0.585988 0.275716 -0.063651 0.553824 0.178226 -0.071605 0.561122 0.231608 -0.069241 0.525627 0.229766 -0.069241 0.557264 -0.220656 -0.036665 0.719084 -0.380776 0 0.766997 -0.227733 -0.036665 0.640841 -0.11662 -0.05245 0.200612 -0.104202 -0.05245 0.137669 -0.023696 -0.075351 -0.846979 -0.026593 0.008124 0.87958 0.011115 0.023378 0.698122 0.003952 0.054262 -1.27986 -0.008997 0.008228 -0.846979 0.005535 -0.010321 -0.256716 0.082152 0.008228 -0.743436 -0.021229 0.03498 0.264304 0.128598 0.013024 0.652901 -0.017016 0.000231 0.581348 0.188061 0.012426 0.579188 0.279926 0.024059 0.568649 0.415943 0.046682 0.630912 0.213955 0.014338 0.546958 0.219934 0.013887 0.568905 -0.203318 0.046914 0.686359 -0.027127 0.08358 1.06066 -0.342398 0.08358 0.74762 -0.204475 0.046914 0.673567 -0.102805 0.03113 0.178234 -0.150623 0.049465 0.128584 -0.093917 0.03113 0.160047 -0.106855 -0.010321 -0.443826 0.481087 -0.071903 -0.606552 0.514266 -0.058706 -0.965793 0.459897 -0.097149 -0.603598 0.456607 -0.059003 0.625609 0.458357 -0.104408 -0.021299 -1.00737 0 1.14739 -1.97333 -0.000496 -1.72289 -0.52974 -0.015286 0.641861 -0.528748 -0.057264 0.177341 -0.502953 -0.027865 -0.228266 -0.521849 -0.034787 0.173514</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_crackedShape-positions-array" count="71" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dungeonbase_ceiling_default_crackedShape-normals" name="normal">
+          <float_array id="dungeonbase_ceiling_default_crackedShape-normals-array" count="225">-0.059003 -0.997465 0.039781 0.236257 -0.966792 0.097446 -0.064847 -0.994129 0.086616 0.957049 -0.287914 0.034112 0.606106 -0.794712 0.032678 0.353508 -0.934793 0.034562 0 -1 0 0 -1 0 0 -0.707107 0.707107 0 -0.707107 0.707107 0 -0.707107 -0.707107 0 -0.707107 -0.707107 0 -1 0 0 -1 0 0.019767 -0.98416 0.176179 -0.024889 -0.982607 0.18402 -0.003205 -0.949006 -0.315243 -0.003068 -0.988486 -0.151282 0.046109 -0.992768 0.110837 0.184553 -0.916635 0.35457 -0.427606 -0.702708 0.568643 -0.208247 -0.767904 0.605769 0.110563 -0.960506 0.255351 0.257169 -0.956676 0.136508 -0.653063 -0.754046 -0.070173 0.003541 -0.999622 -0.027271 0.200509 -0.978751 -0.042921 0.008197 -0.999794 0.018548 -0.158823 -0.987245 -0.011039 -0.063509 -0.99672 0.050149 -0.285063 -0.957988 0.031595 0.147476 -0.782691 0.604686 -0.04482 -0.998512 0.031074 0.71821 -0.665199 -0.204168 0.55885 -0.677978 0.477528 0.175058 -0.772887 -0.609918 0.207062 -0.853206 -0.478711 -0.387281 -0.921945 0.005461 -0.420053 -0.059419 -0.905552 -0.245174 -0.952981 -0.178095 0.250455 -0.812492 0.52643 -0.477431 -0.748871 0.459622 0.577063 -0.816615 0.011756 0.412407 -0.910922 -0.011918 -0.453815 -0.890635 -0.028661 0.639614 -0.76837 0.022375 -0.366688 -0.923655 0.111361 -0.898551 -0.438837 -0.005318 -0.699408 0.122268 -0.704187 0.024396 -0.944871 0.326532 0.977737 -0.173231 0.118412 -0.986766 -0.128015 -0.099522 -0.986884 -0.159967 -0.021699 -0.9871 -0.159349 -0.015516 -0.397306 0.330184 -0.856228 -0.670358 -0.289115 0.683398 0.353086 -0.197292 0.914552 -0.930316 -0.347949 0.115945 -0.264537 -0.959815 -0.09368 -0.35395 -0.341102 0.870844 -0.639819 -0.226642 0.734347 0.339198 -0.317146 -0.885643 -0.229509 -0.727233 -0.646883 0.298225 -0.933417 -0.199483 0.783633 -0.25679 0.565665 0.953698 -0.215515 -0.209794 0.628157 -0.564296 0.535714 0.50811 -0.258847 0.821475 0.981677 -0.158468 0.105825 0.564752 -0.824858 0.025762 -0.279478 -0.959665 0.030585 0.409173 -0.909346 0.075284 -0.649176 -0.759476 0.042034 0.011922 -0.999773 0.017675 0.033894 -0.997523 0.061641</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_crackedShape-normals-array" count="75" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dungeonbase_ceiling_default_crackedShape-map1" name="map1">
+          <float_array id="dungeonbase_ceiling_default_crackedShape-map1-array" count="250">0.842498 0.860689 0.836255 0.813298 0.913035 0.789683 0.909423 0.872656 0.913035 0.789683 0.498807 0.576861 0.000325 0.576861 0.00058 0.610351 0.498606 0.610351 0.498807 0.538149 0.000325 0.538149 0.000325 0.576861 0.498807 0.576861 0.00058 0.640777 0.496251 0.640777 0.498807 0.502374 0.000325 0.502374 0.803535 0.895802 0.799728 0.898201 0.803836 0.898494 0.796525 0.899249 0.784062 0.90431 0.782835 0.906737 0.820275 0.7878 0.825995 0.72513 0.651318 0.702138 0.782951 0.768877 1 1 0.913472 0.948716 0.826602 0.948446 1 0.702138 0.997708 0.704445 0.913035 0.789683 0.842498 0.860689 0.836255 0.813298 0.836934 0.862785 0.858851 0.916343 0.838033 0.86816 0.845687 0.905588 0.844894 0.912266 0.801999 0.900939 0.823808 0.910516 0.814389 0.904771 0.823959 0.873562 0.808443 0.898822 0.823934 0.898756 0.651318 1 0.782055 0.799449 0.783879 0.800807 0.822054 0.829222 0.82653 0.948408 0.827725 0.778988 0.823986 0.925943 0.795596 0.926468 0.811203 0.932029 0.800013 0.921147 0.84295 0.774436 0.840532 0.707853 0.833029 0.728201 0.834097 0.773804 0.851151 0.796864 0.854975 0.739686 0.864741 0.74055 0.860894 0.797854 0.851059 0.883629 0.859955 0.861217 0.840794 0.890356 0.851981 0.830291 0.861699 0.831479 0.85056 0.89122 0.825842 0.898501 0.820461 0.89857 0.852963 0.795308 0.863257 0.794656 0.848615 0.77529 0.857929 0.771535 0.807286 0.895139 0.810258 0.888188 0.847664 0.754508 0.849909 0.733429 0.859588 0.740378 0.856987 0.757752 0.79301 0.882174 0.801108 0.879468 0.845962 0.76824 0.856133 0.767272 0.846579 0.764536 0.846715 0.759069 0.856401 0.764752 0.846867 0.860856 0.853985 0.806264 0.864577 0.805832 0.858748 0.853789 0.85143 0.786559 0.862226 0.787835 0.851356 0.921469 0.83903 0.909429 0.843623 0.922046 0.830741 0.867758 0.835914 0.859852 0.829042 0.862079 0.839945 0.885527 0.838546 0.878352 0.829708 0.880541 0.831103 0.887441 0.844179 0.817703 0.835313 0.817374 0.826879 0.947988 0.826667 0.937604 0.807735 0.935963 0.783965 0.849256 0.786403 0.800454 0.783933 0.800679 0.782927 0.768849 0.786233 0.906737 0.784104 0.904313 0.783926 0.849212 0.909423 0.872656 0.871179 0.905694 0.873102 0.866161 0.873102 0.866161 0.871352 0.831643 0.871352 0.831643 0.87128 0.865836 0.87128 0.865836</float_array>
+          <technique_common>
+            <accessor source="#dungeonbase_ceiling_default_crackedShape-map1-array" count="125" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="dungeonbase_ceiling_default_crackedShape-vertices">
+          <input semantic="POSITION" source="#dungeonbase_ceiling_default_crackedShape-positions"/>
+        </vertices>
+        <triangles material="lambert2SG1" count="109">
+          <input semantic="VERTEX" source="#dungeonbase_ceiling_default_crackedShape-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#dungeonbase_ceiling_default_crackedShape-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#dungeonbase_ceiling_default_crackedShape-map1" offset="2" set="0"/>
+          <p>69 0 121 1 1 1 0 2 0 70 3 123 68 4 119 69 5 122 9 6 5 8 7 6 10 9 8 10 9 8 8 7 6 11 8 7 12 10 9 13 11 10 14 13 12 14 13 12 13 11 10 15 12 11 7 14 13 6 15 14 11 8 7 11 8 7 6 15 14 10 9 8 4 16 15 5 17 16 12 10 9 12 10 9 5 17 16 13 11 10 30 18 17 28 19 18 31 20 19 26 21 20 63 22 21 25 23 22 18 24 23 20 25 24 61 26 26 61 26 26 20 25 24 7 14 25 4 16 27 65 27 28 19 28 29 4 16 27 6 15 30 65 27 28 6 15 30 66 29 31 65 27 28 66 29 31 2 30 32 65 27 28 0 2 33 1 1 34 36 31 35 20 25 24 6 15 30 7 14 25 33 32 36 0 2 33 34 34 38 34 34 38 0 2 33 35 33 37 19 28 29 33 32 36 32 35 39 27 36 40 22 37 41 24 38 42 25 23 22 22 37 41 27 36 40 17 39 43 30 18 17 29 40 44 17 39 43 29 40 44 23 41 45 17 39 43 28 19 18 30 18 17 17 39 43 26 21 20 28 19 18 25 23 22 7 14 25 5 17 46 25 23 22 60 42 47 7 14 25 61 26 26 62 43 48 18 24 23 18 24 23 62 43 48 21 44 49 5 17 46 4 16 27 19 28 50 6 15 30 37 45 51 1 1 34 16 46 52 22 37 41 5 17 46 20 25 24 37 45 51 6 15 30 19 28 50 16 46 52 5 17 46 5 17 46 22 37 41 25 23 22 22 37 53 38 47 54 39 48 55 20 25 57 40 49 58 37 45 56 37 45 56 40 49 58 41 50 59 21 44 61 42 51 62 18 24 60 18 24 60 42 51 62 43 52 63 20 25 64 18 24 60 40 49 65 40 49 65 18 24 60 43 52 63 21 44 66 17 39 67 42 51 69 42 51 69 17 39 67 44 53 68 24 38 42 39 48 70 45 54 71 17 39 67 23 41 72 44 53 68 44 53 68 23 41 72 46 55 73 29 40 74 47 56 75 23 41 72 23 41 72 47 56 75 46 55 73 27 36 76 24 38 42 48 57 77 25 23 79 49 58 80 26 21 78 26 21 78 49 58 80 48 57 81 25 23 82 27 36 76 49 58 83 49 58 83 27 36 76 48 57 77 30 18 84 50 59 85 29 40 74 29 40 74 50 59 85 47 56 75 31 20 86 28 19 87 51 60 88 51 60 88 28 19 87 48 57 81 30 18 84 31 20 86 50 59 85 50 59 85 31 20 86 51 60 88 19 28 89 32 35 90 53 62 92 53 62 92 32 35 90 52 61 91 33 32 93 54 63 94 32 35 90 32 35 90 54 63 94 52 61 91 33 32 95 34 34 38 54 63 97 54 63 97 34 34 38 55 64 96 35 33 37 56 65 98 34 34 38 34 34 38 56 65 98 55 64 96 35 33 37 0 2 99 56 65 98 56 65 98 0 2 99 57 66 100 36 31 102 58 67 103 0 2 101 0 2 101 58 67 103 57 66 104 1 1 105 59 68 106 36 31 102 36 31 102 59 68 106 58 67 103 1 1 105 37 45 56 59 68 106 59 68 106 37 45 56 41 50 59 28 19 87 26 21 78 48 57 81 38 47 54 19 28 107 53 62 108 22 37 53 16 46 109 38 47 54 16 46 109 19 28 107 38 47 54 48 57 77 24 38 42 45 54 71 24 38 42 22 37 41 39 48 70 63 22 21 21 44 49 64 69 110 60 42 47 61 26 26 7 14 25 60 42 111 62 43 112 61 26 113 25 23 114 63 22 115 64 69 116 63 22 21 26 21 20 21 44 49 17 39 43 21 44 49 26 21 20 64 69 110 21 44 49 62 43 48 60 42 111 64 69 116 62 43 112 25 23 114 64 69 116 60 42 111 3 70 117 67 71 118 65 72 28 68 4 120 70 3 124 67 71 118 2 30 32 3 70 117 65 72 28 6 15 30 1 1 34 66 29 31 1 1 34 2 30 32 66 29 31 19 28 29 65 27 28 33 32 36 3 70 117 68 4 120 67 71 118 68 4 119 3 70 3 69 5 122 69 5 122 3 70 3 2 30 2 0 2 0 70 73 123 69 0 122 67 74 118 70 73 124 33 32 36 33 32 36 70 73 124 0 2 33 65 27 28 67 74 118 33 32 36 2 30 4 1 1 1 69 5 121</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="dungeon_special">
+      <node id="dungeonbase_ceiling_default_cracked_tunneldirt" name="dungeonbase_ceiling_default_cracked_tunneldirt" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#dungeonbase_ceiling_default_cracked_tunneldirtShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert10SG" target="#tunnelbase_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="dungeonbase_ceiling_default_cracked_stones" name="dungeonbase_ceiling_default_cracked_stones" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#dungeonbase_ceiling_default_cracked_stonesShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="stones_small_med_large_spec_material1SG" target="#stones_small_med_large_spec_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="dungeonbase_ceiling_default_cracked" name="dungeonbase_ceiling_default_cracked" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#dungeonbase_ceiling_default_crackedShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2SG1" target="#dungeon_ceiling_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

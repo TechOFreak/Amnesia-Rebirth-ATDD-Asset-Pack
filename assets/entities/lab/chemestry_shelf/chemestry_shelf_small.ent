@@ -1,0 +1,38 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/SVN/lux/redist/entities/lab/chemestry_shelf/chemestry_shelf_small.dae">
+            <SubMesh Active="true" GroupID="0" ID="11" Name="polySurface8" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="-3.026770 0.000000 0.000000" TriCount="455" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.035000 0.819000 0.370000" RelativeTranslation="0.624900 0.000000 -0.003740" Rotation="0.000000 0.000000 0.000000" Scale="0.035000 0.819000 0.370000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.624900 0.409500 -0.003700" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.035000 0.819000 0.370000" RelativeTranslation="-0.624900 0.000000 -0.003740" Rotation="0.000000 0.000000 0.000000" Scale="0.035000 0.819000 0.370000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="-0.624900 0.409500 -0.003700" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.300000 0.035000 0.380000" RelativeTranslation="0.000000 -0.391690 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.300000 0.035000 0.380000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.017810 0.000040" />
+            <BodyShape Active="true" GroupID="0" ID="4" Name="Shape_4" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.300000 0.035000 0.380000" RelativeTranslation="0.000000 0.391700 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.300000 0.035000 0.380000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.801200 0.000040" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="Shape_5" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.220000 0.035000 0.320000" RelativeTranslation="0.000000 0.001593 0.009321" Rotation="0.000000 0.000000 0.000000" Scale="1.220000 0.035000 0.320000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.411093 0.009361" />
+            <BodyShape Active="true" GroupID="0" ID="6" Name="Shape_6" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.220000 0.770000 0.036000" RelativeTranslation="0.000000 -0.000192 -0.162305" Rotation="0.000000 0.000000 0.000000" Scale="1.220000 0.770000 0.036000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.409308 -0.162265" />
+            <BodyShape Active="true" GroupID="0" ID="7" Name="Shape_7" RelativeRotation="0.000000 -0.017453 0.000000" RelativeScale="0.939010 0.300000 0.109698" RelativeTranslation="0.003227 0.196453 0.025846" Rotation="0.000000 -0.017453 0.000000" Scale="0.939010 0.300000 0.109698" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="-0.008077 0.577896 0.026760" />
+            <BodyShape Active="true" GroupID="0" ID="8" Name="Shape_8" RelativeRotation="0.000000 0.034907 0.000000" RelativeScale="0.960000 0.300000 0.109698" RelativeTranslation="-0.000000 -0.196453 -0.017313" Rotation="0.000000 0.034907 0.000000" Scale="0.960000 0.300000 0.109698" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="-0.011304 0.184990 -0.016399" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="9" LinearDamping="0.000000" Mass="0.000000" Material="Wood" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 0.409500 0.000040">
+                <Shape ID="1" />
+                <Shape ID="6" />
+                <Shape ID="4" />
+                <Shape ID="5" />
+                <Shape ID="3" />
+                <Shape ID="2" />
+                <Children>
+                    <Child ID="11" />
+                </Children>
+            </Body>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="10" LinearDamping="0.000000" Mass="0.000000" Material="Glass" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.011304 0.381443 0.000914">
+                <Shape ID="7" />
+                <Shape ID="8" />
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/work_static_objects/castlebase/pillars/tall_stone.mb</source_data>
+    </contributor>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/redist/static_objects/dungeonbase/pillar/stone_round.dae</source_data>
+    </contributor>
+    <contributor>
+      <author>marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=1;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///E:/lux/redist/static_objects/dungeonbase/pillar/stone_round.dae</source_data>
+    </contributor>
+    <created>2009-12-21T14:02:58Z</created>
+    <modified>2010-04-01T14:07:57Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file4" name="file4">
+      <init_from>file:///E:/lux/redist/static_objects/dungeonbase/pillar/stone_round.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert5" name="lambert5">
+      <instance_effect url="#lambert5-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert5-fx">
+      <profile_COMMON>
+        <newparam sid="file4-surface">
+          <surface type="2D">
+            <init_from>file4</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file4-sampler">
+          <sampler2D>
+            <source>file4-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file4-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pCylinderShape9" name="pCylinderShape9">
+      <mesh>
+        <source id="pCylinderShape9-positions" name="position">
+          <float_array id="pCylinderShape9-positions-array" count="144">0.194312 1.58782 0.480939 -0.202676 1.58782 0.477475 -0.480939 1.58782 0.194312 -0.477475 1.58782 -0.202676 -0.194312 1.58782 -0.480939 0.202676 1.58782 -0.477475 0.480939 1.58782 -0.194312 0.477475 1.58782 0.202676 0.194312 6.5 0.480939 -0.202676 6.5 0.477475 -0.480939 6.5 0.194312 -0.477475 6.5 -0.202676 -0.194312 6.5 -0.480939 0.202676 6.5 -0.477475 0.480939 6.5 -0.194312 0.477475 6.5 0.202676 -0.289954 1.33999 0.683087 -0.688044 1.33999 0.277988 -0.683087 1.33999 -0.289953 -0.277987 1.33999 -0.688044 0.289954 1.33999 -0.683088 0.688044 1.33999 -0.277988 0.683088 1.33999 0.289953 0.277988 1.33999 0.688044 -0.289954 0 0.683087 -0.688044 0 0.277988 -0.683087 0 -0.289953 -0.277987 0 -0.688044 0.289954 0 -0.683088 0.688044 0 -0.277988 0.683088 0 0.289953 0.277988 0 0.688044 0.277745 6.75 0.687442 -0.2897 6.75 0.68249 0.682491 6.75 0.2897 0.687442 6.75 -0.277745 0.2897 6.75 -0.68249 -0.277744 6.75 -0.687442 -0.68249 6.75 -0.2897 -0.687442 6.75 0.277745 0.277745 8 0.687442 -0.2897 8 0.68249 0.682491 8 0.2897 0.687442 8 -0.277745 0.2897 8 -0.68249 -0.277744 8 -0.687442 -0.68249 8 -0.2897 -0.687442 8 0.277745</float_array>
+          <technique_common>
+            <accessor source="#pCylinderShape9-positions-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCylinderShape9-normals" name="normal">
+          <float_array id="pCylinderShape9-normals-array" count="240">-0.379264 0.364626 0.850416 0.333155 0.364626 0.869514 -0.348968 -0.361804 0.864476 0.364519 -0.361804 0.858035 -0.869514 0.364626 0.333156 -0.858035 -0.361804 0.364519 -0.850416 0.364626 -0.379264 -0.864476 -0.361804 -0.348968 -0.333156 0.364626 -0.869515 -0.364519 -0.361803 -0.858035 0.379263 0.364627 -0.850416 0.348968 -0.361804 -0.864476 0.869514 0.364626 -0.333155 0.858035 -0.361804 -0.364519 0.850416 0.364626 0.379263 0.864476 -0.361805 0.348968 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 0.000000 0 1 0.000001 -0.72335 0.666005 0.182214 -0.382641 0.666005 0.640331 -0.640331 0.666004 -0.382642 -0.182215 0.666005 -0.72335 0.382641 0.666006 -0.64033 0.72335 0.666006 -0.182214 0.64033 0.666005 0.382641 0.182214 0.666005 0.72335 -0.261159 0 0.965296 -0.867234 0 0.4979 -0.51296 0 0.858412 -0.969707 0 0.244271 -0.965296 0 -0.261159 -0.858413 0 -0.51296 -0.497901 0 -0.867234 -0.244272 0 -0.969707 0.261158 0 -0.965296 0.51296 0 -0.858412 0.867234 0 -0.4979 0.969707 0 -0.244272 0.965296 0 0.261158 0.858413 0 0.51296 0.4979 0 0.867234 0.244271 0 0.969707 0.373315 -0.661688 0.650234 -0.195811 -0.661687 0.72376 0.723758 -0.661689 0.195811 0.650234 -0.661688 -0.373315 0.195811 -0.661688 -0.723759 -0.373316 -0.661688 -0.650234 -0.723759 -0.661688 -0.195811 -0.650234 -0.661688 0.373315 -0.51296 0 0.858413 0.244272 0 0.969707 -0.261158 0 0.965296 0.4979 0 0.867235 0.858413 0 0.51296 0.965296 0 0.261157 0.969706 0 -0.244273 0.867234 0 -0.497901 0.51296 0 -0.858413 0.261158 0 -0.965296 -0.244271 0 -0.969707 -0.4979 0 -0.867235 -0.858412 0 -0.512961 -0.965296 0 -0.261159 -0.969707 0 0.244272 -0.867234 0 0.497901</float_array>
+          <technique_common>
+            <accessor source="#pCylinderShape9-normals-array" count="80" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCylinderShape9-map1" name="map1">
+          <float_array id="pCylinderShape9-map1-array" count="176">0.625951 0.007345 0.696888 0.007345 0.696888 0.98662 0.625951 0.98662 0.553593 0.007345 0.553593 0.98662 0.483779 0.007345 0.483779 0.98662 0.411936 0.007345 0.411936 0.98662 0.908751 0.98662 0.839037 0.007345 0.839037 0.98662 0.768969 0.007345 0.768969 0.98662 0.908751 0.007345 0.980811 0.007345 0.980811 0.98662 0.348144 0.24575 0.348145 0.294884 0.262052 0.294884 0.262052 0.24575 0.348144 0.344018 0.262052 0.344018 0.348144 0.393152 0.262052 0.393152 0.347856 0.5286 0.347856 0.573587 0.262687 0.573587 0.262687 0.5286 0.347855 0.618574 0.262687 0.618574 0.347855 0.66356 0.262687 0.663561 0.348144 0.098348 0.262052 0.098348 0.348145 0.147482 0.262052 0.147482 0.348144 0.196616 0.262052 0.196616 0.014809 0.294884 0.014809 0.24575 0.014809 0.344018 0.014809 0.393152 0.014809 0.098348 0.014809 0.147482 0.014809 0.196616 0.348144 0.002322 0.348145 0.049214 0.262052 0.002322 0.262052 0.049214 0.014809 0.049214 0.014809 0.002322 0.336027 0.925994 0.27486 0.986103 0.155383 0.985355 0.082563 0.924188 0.083312 0.838432 0.15719 0.778323 0.276667 0.779071 0.336776 0.840239 0.347855 0.708547 0.262687 0.708547 0.347855 0.39364 0.262687 0.39364 0.347855 0.438627 0.262687 0.438627 0.347856 0.483613 0.262687 0.483613 0.014623 0.573587 0.014623 0.5286 0.014624 0.618574 0.014624 0.663561 0.014623 0.708547 0.014624 0.39364 0.014623 0.438626 0.014623 0.483613 0.347856 0.753534 0.262687 0.753534 0.014623 0.753534 0.082819 0.925664 0.082076 0.8406 0.154411 0.779927 0.273195 0.779184 0.333869 0.838808 0.334611 0.923871 0.274988 0.984545 0.156203 0.985287</float_array>
+          <technique_common>
+            <accessor source="#pCylinderShape9-map1-array" count="88" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCylinderShape9-vertices">
+          <input semantic="POSITION" source="#pCylinderShape9-positions"/>
+        </vertices>
+        <triangles material="lambert5SG" count="92">
+          <input semantic="VERTEX" source="#pCylinderShape9-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pCylinderShape9-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pCylinderShape9-map1" offset="2" set="0"/>
+          <p>1 0 0 0 1 1 9 2 3 0 1 1 8 3 2 9 2 3 2 4 4 1 0 0 10 5 5 1 0 0 9 2 3 10 5 5 3 6 6 2 4 4 11 7 7 2 4 4 10 5 5 11 7 7 4 8 8 3 6 6 12 9 9 3 6 6 11 7 7 12 9 9 5 10 15 4 8 16 13 11 10 4 8 16 12 9 17 13 11 10 6 12 11 5 10 15 14 13 12 5 10 15 13 11 10 14 13 12 7 14 13 6 12 11 15 15 14 6 12 11 14 13 12 15 15 14 0 1 1 7 14 13 8 3 2 7 14 13 15 15 14 8 3 2 24 16 53 25 17 54 31 18 60 25 17 54 26 19 55 31 18 60 26 19 55 27 20 56 31 18 60 27 20 56 28 21 57 31 18 60 28 21 57 29 22 58 31 18 60 29 22 58 30 23 59 31 18 60 41 24 80 40 25 81 47 26 87 40 25 81 42 27 82 47 26 87 42 27 82 43 28 83 47 26 87 43 28 83 44 29 84 47 26 87 44 29 84 45 30 85 47 26 87 45 30 85 46 31 86 47 26 87 17 32 20 16 33 21 2 4 19 1 0 18 2 4 19 16 33 21 18 34 23 17 32 20 3 6 22 2 4 19 3 6 22 17 32 20 19 35 25 18 34 23 4 8 24 3 6 22 4 8 24 18 34 23 20 36 50 19 35 49 5 10 48 4 8 47 5 10 48 19 35 49 21 37 35 20 36 50 6 12 34 5 10 48 6 12 34 20 36 50 22 38 37 21 37 35 7 14 36 6 12 34 7 14 36 21 37 35 23 39 39 22 38 37 0 1 38 7 14 36 0 1 38 22 38 37 16 33 21 23 39 39 1 0 18 0 1 38 1 0 18 23 39 39 16 40 21 17 41 20 24 42 41 17 41 20 25 43 40 24 42 41 17 41 20 18 44 23 25 43 40 18 44 23 26 45 42 25 43 40 18 44 23 19 46 25 26 45 42 19 46 25 27 47 43 26 45 42 19 46 49 20 48 50 27 47 52 20 48 50 28 49 51 27 47 52 20 48 50 21 50 35 28 49 51 21 50 35 29 51 44 28 49 51 21 50 35 22 52 37 29 51 44 22 52 37 30 53 45 29 51 44 22 52 37 23 54 39 30 53 45 23 54 39 31 55 46 30 53 45 23 54 39 16 40 21 31 55 46 16 40 21 24 42 41 31 55 46 32 56 28 33 57 29 8 3 27 9 2 26 8 3 27 33 57 29 34 58 31 32 56 28 15 15 30 8 3 27 15 15 30 32 56 28 35 59 33 34 58 31 14 13 32 15 15 30 14 13 32 34 58 31 36 60 62 35 59 33 13 11 61 14 13 32 13 11 61 35 59 33 37 61 78 36 60 62 12 9 77 13 11 61 12 9 77 36 60 62 38 62 66 37 61 64 11 7 65 12 9 63 11 7 65 37 61 64 39 63 68 38 62 66 10 5 67 11 7 65 10 5 67 38 62 66 33 57 29 39 63 68 9 2 26 10 5 67 9 2 26 39 63 68 33 64 29 32 65 28 41 66 70 32 65 28 40 67 69 41 66 70 32 65 28 34 68 31 40 67 69 34 68 31 42 69 71 40 67 69 34 68 31 35 70 33 42 69 71 35 70 33 43 71 72 42 69 71 35 70 33 36 72 62 43 71 72 36 72 62 44 73 73 43 71 72 36 72 62 37 74 78 44 73 73 37 74 78 45 75 79 44 73 73 37 74 64 38 76 66 45 75 74 38 76 66 46 77 75 45 75 74 38 76 66 39 78 68 46 77 75 39 78 68 47 79 76 46 77 75 39 78 68 33 64 29 47 79 76 33 64 29 41 66 70 47 79 76</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="_collider_cylinder_Shape1" name="_collider_cylinder_Shape1">
+      <mesh>
+        <source id="_collider_cylinder_Shape1-positions" name="position">
+          <float_array id="_collider_cylinder_Shape1-positions-array" count="126">0.951057 -1 -0.309017 0.809017 -1 -0.587786 0.587785 -1 -0.809017 0.309017 -1 -0.951057 0 -1 -1 -0.309017 -1 -0.951057 -0.587785 -1 -0.809017 -0.809017 -1 -0.587785 -0.951057 -1 -0.309017 -1 -1 0 -0.951057 -1 0.309017 -0.809017 -1 0.587785 -0.587785 -1 0.809017 -0.309017 -1 0.951057 0 -1 1 0.309017 -1 0.951057 0.587785 -1 0.809017 0.809017 -1 0.587785 0.951056 -1 0.309017 1 -1 0 0.951057 1 -0.309017 0.809017 1 -0.587786 0.587785 1 -0.809017 0.309017 1 -0.951057 0 1 -1 -0.309017 1 -0.951057 -0.587785 1 -0.809017 -0.809017 1 -0.587785 -0.951057 1 -0.309017 -1 1 0 -0.951057 1 0.309017 -0.809017 1 0.587785 -0.587785 1 0.809017 -0.309017 1 0.951057 0 1 1 0.309017 1 0.951057 0.587785 1 0.809017 0.809017 1 0.587785 0.951056 1 0.309017 1 1 0 0 -1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#_collider_cylinder_Shape1-positions-array" count="42" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_cylinder_Shape1-normals" name="normal">
+          <float_array id="_collider_cylinder_Shape1-normals-array" count="246">0.951057 0 -0.309016 0.809017 0 -0.587785 0.809017 0 -0.587785 0.951057 0 -0.309016 0.587785 0 -0.809017 0.587785 0 -0.809017 0.309017 0 -0.951056 0.309017 0 -0.951056 0 0 -1 0 0 -1 -0.309017 0 -0.951056 -0.309017 0 -0.951056 -0.587785 0 -0.809017 -0.587785 0 -0.809017 -0.809017 0 -0.587785 -0.809017 0 -0.587785 -0.951057 0 -0.309017 -0.951057 0 -0.309017 -1 0 0 -1 0 0 -0.951056 0 0.309017 -0.951056 0 0.309017 -0.809017 0 0.587785 -0.809017 0 0.587785 -0.587785 0 0.809017 -0.587785 0 0.809017 -0.309017 0 0.951056 -0.309017 0 0.951056 0 0 1 0 0 1 0.309017 0 0.951056 0.309017 0 0.951056 0.587785 0 0.809017 0.587785 0 0.809017 0.809017 0 0.587785 0.809017 0 0.587785 0.951057 0 0.309017 0.951057 0 0.309017 1 0 0.000000 1 0 0.000000 0 -1 0 0 -1 0.000000 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 -0.000000 0 -1 -0.000000 0 -1 0 0 -1 0 0 -1 -0.000000 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0.000000 0 1 0.000000 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#_collider_cylinder_Shape1-normals-array" count="82" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_cylinder_Shape1-map1" name="map1">
+          <float_array id="_collider_cylinder_Shape1-map1-array" count="88">0.5 0 0 0.159155 0.05 0.159155 0.1 0.159155 0.15 0.159155 0.2 0.159155 0.25 0.159155 0.3 0.159155 0.35 0.159155 0.4 0.159155 0.45 0.159155 0.5 0.159155 0.55 0.159155 0.6 0.159155 0.65 0.159155 0.7 0.159155 0.75 0.159155 0.8 0.159155 0.85 0.159155 0.9 0.159155 0.95 0.159155 1 0.159155 0 0.477465 0.05 0.477465 0.1 0.477465 0.15 0.477465 0.2 0.477465 0.25 0.477465 0.3 0.477465 0.35 0.477465 0.4 0.477465 0.45 0.477465 0.5 0.477465 0.55 0.477465 0.6 0.477465 0.65 0.477465 0.7 0.477465 0.75 0.477465 0.8 0.477465 0.85 0.477465 0.9 0.477465 0.95 0.477465 1 0.477465 0.5 0.63662</float_array>
+          <technique_common>
+            <accessor source="#_collider_cylinder_Shape1-map1-array" count="44" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_cylinder_Shape1-vertices">
+          <input semantic="POSITION" source="#_collider_cylinder_Shape1-positions"/>
+        </vertices>
+        <triangles material="lambert5SG" count="80">
+          <input semantic="VERTEX" source="#_collider_cylinder_Shape1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#_collider_cylinder_Shape1-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#_collider_cylinder_Shape1-map1" offset="2" set="0"/>
+          <p>0 0 1 1 1 2 20 3 22 1 1 2 21 2 23 20 3 22 1 1 2 2 4 3 21 2 23 2 4 3 22 5 24 21 2 23 2 4 3 3 6 4 22 5 24 3 6 4 23 7 25 22 5 24 3 6 4 4 8 5 23 7 25 4 8 5 24 9 26 23 7 25 4 8 5 5 10 6 24 9 26 5 10 6 25 11 27 24 9 26 5 10 6 6 12 7 25 11 27 6 12 7 26 13 28 25 11 27 6 12 7 7 14 8 26 13 28 7 14 8 27 15 29 26 13 28 7 14 8 8 16 9 27 15 29 8 16 9 28 17 30 27 15 29 8 16 9 9 18 10 28 17 30 9 18 10 29 19 31 28 17 30 9 18 10 10 20 11 29 19 31 10 20 11 30 21 32 29 19 31 10 20 11 11 22 12 30 21 32 11 22 12 31 23 33 30 21 32 11 22 12 12 24 13 31 23 33 12 24 13 32 25 34 31 23 33 12 24 13 13 26 14 32 25 34 13 26 14 33 27 35 32 25 34 13 26 14 14 28 15 33 27 35 14 28 15 34 29 36 33 27 35 14 28 15 15 30 16 34 29 36 15 30 16 35 31 37 34 29 36 15 30 16 16 32 17 35 31 37 16 32 17 36 33 38 35 31 37 16 32 17 17 34 18 36 33 38 17 34 18 37 35 39 36 33 38 17 34 18 18 36 19 37 35 39 18 36 19 38 37 40 37 35 39 18 36 19 19 38 20 38 37 40 19 38 20 39 39 41 38 37 40 19 38 20 0 0 21 39 39 41 0 0 21 20 3 42 39 39 41 1 40 2 0 41 1 40 42 0 2 43 3 1 40 2 40 42 0 3 44 4 2 43 3 40 42 0 4 45 5 3 44 4 40 42 0 5 46 6 4 45 5 40 42 0 6 47 7 5 46 6 40 42 0 7 48 8 6 47 7 40 42 0 8 49 9 7 48 8 40 42 0 9 50 10 8 49 9 40 42 0 10 51 11 9 50 10 40 42 0 11 52 12 10 51 11 40 42 0 12 53 13 11 52 12 40 42 0 13 54 14 12 53 13 40 42 0 14 55 15 13 54 14 40 42 0 15 56 16 14 55 15 40 42 0 16 57 17 15 56 16 40 42 0 17 58 18 16 57 17 40 42 0 18 59 19 17 58 18 40 42 0 19 60 20 18 59 19 40 42 0 0 41 21 19 60 20 40 42 0 20 61 22 21 62 23 41 63 43 21 62 23 22 64 24 41 63 43 22 64 24 23 65 25 41 63 43 23 65 25 24 66 26 41 63 43 24 66 26 25 67 27 41 63 43 25 67 27 26 68 28 41 63 43 26 68 28 27 69 29 41 63 43 27 69 29 28 70 30 41 63 43 28 70 30 29 71 31 41 63 43 29 71 31 30 72 32 41 63 43 30 72 32 31 73 33 41 63 43 31 73 33 32 74 34 41 63 43 32 74 34 33 75 35 41 63 43 33 75 35 34 76 36 41 63 43 34 76 36 35 77 37 41 63 43 35 77 37 36 78 38 41 63 43 36 78 38 37 79 39 41 63 43 37 79 39 38 80 40 41 63 43 38 80 40 39 81 41 41 63 43 39 81 41 20 61 42 41 63 43</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="stone_round">
+      <node id="pCylinder9" name="pCylinder9" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#pCylinderShape9">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert5SG" target="#lambert5">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="_collider_cylinder_1" name="_collider_cylinder_1" type="NODE">
+        <translate sid="translate">0 4.02947 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">0.642701 3.95801 0.642701</scale>
+        <instance_geometry url="#_collider_cylinder_Shape1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert5SG" target="#lambert5">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene"/>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+      <authoring_tool>Blender v:249 - Illusoft Collada Exporter v:0.3.161</authoring_tool>
+      <source_data>file://C/SVN/lux/redist/_temp/jens/blender/acid_machine.blend</source_data>
+    </contributor>
+    <contributor>
+      <author>Marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=0;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=0;
+dereferenceXRefs=1;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///G:/amnesia/redist/entities/special/acid_machine/acid_machine_bottle_empty01.dae</source_data>
+    </contributor>
+    <created>2010-07-12T07:14:00Z</created>
+    <modified>2010-07-12T07:14:23Z</modified>
+    <up_axis>Z_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="acid_machine_bottles__img" name="acid_machine_bottles__img">
+      <init_from>./acid_machine_bottles_empty.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="acid_machine_bott" name="acid_machine_bott">
+      <instance_effect url="#acid_machine_bott-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="acid_machine_bott-fx">
+      <profile_COMMON>
+        <newparam sid="acid_machine_bottles__img-surface">
+          <surface type="2D">
+            <init_from>acid_machine_bottles__img</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="acid_machine_bottles__img-sampler">
+          <sampler2D>
+            <source>acid_machine_bottles__img-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.4 0.4 0.4 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="acid_machine_bottles__img-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0.25</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0.28206 0.28206 0.28206 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>4</float>
+            </index_of_refraction>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="acid_machine_bott_007" name="acid_machine_bott_003">
+      <mesh>
+        <source id="acid_machine_bott_007-Position" name="position">
+          <float_array id="acid_machine_bott_007-Position-array" count="165">-0.03864 -0.57224 0.25977 -0.03864 -0.62459 0.25977 -0.07501 -0.64559 0.29267 -0.07501 -0.55125 0.29267 0.00669 -0.65077 0.25977 0.00669 -0.69276 0.29267 0.05204 -0.62459 0.25977 0.0884 -0.64559 0.29267 0.05204 -0.57224 0.25977 0.0884 -0.55125 0.29267 0.00669 -0.54606 0.25977 0.00669 -0.50408 0.29267 -0.09518 -0.65724 0.34022 -0.09518 -0.5396 0.34022 0.00669 -0.71606 0.34022 0.10858 -0.65724 0.34022 0.10858 -0.5396 0.34022 0.00669 -0.48078 0.34022 -0.09518 -0.65724 0.39299 -0.09518 -0.5396 0.39299 0.00669 -0.71606 0.39299 0.10858 -0.65724 0.39299 0.10858 -0.5396 0.39299 0.00669 -0.48078 0.39299 -0.07501 -0.64559 0.44054 -0.07501 -0.55125 0.44054 0.00669 -0.69276 0.44054 0.0884 -0.64559 0.44054 0.0884 -0.55125 0.44054 0.00669 -0.50408 0.44054 -0.03864 -0.62459 0.47903 -0.03864 -0.57224 0.47903 0.00669 -0.65077 0.47903 0.05204 -0.62459 0.47903 0.05204 -0.57224 0.47903 0.00669 -0.54606 0.47903 0.00669 -0.59842 0.24957 -0.02015 -0.58292 0.6909 -0.02015 -0.61392 0.6909 0.00669 -0.62942 0.6909 0.03355 -0.61392 0.6909 0.03355 -0.58292 0.6909 0.00669 -0.56741 0.6909 -0.02015 -0.61392 0.51922 -0.02015 -0.58292 0.51922 0.00669 -0.62942 0.51922 0.03355 -0.61392 0.51922 0.03355 -0.58292 0.51922 0.00669 -0.56741 0.51922 -0.01554 -0.61126 0.60068 -0.01554 -0.58558 0.60068 0.00669 -0.6241 0.60068 0.02894 -0.61126 0.60068 0.02894 -0.58558 0.60068 0.00669 -0.57274 0.60068</float_array>
+          <technique_common>
+            <accessor source="#acid_machine_bott_007-Position-array" count="55" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="acid_machine_bott_007-Normals" name="normal">
+          <float_array id="acid_machine_bott_007-Normals-array" count="165">-0.355827 0.287898 -0.889102 -0.427204 -0.164148 -0.88913 -0.680694 -0.366036 -0.634565 -0.657349 0.406452 -0.634578 -0.071447 -0.452043 -0.88913 -0.02335 -0.772503 -0.634581 0.355779 -0.287897 -0.889122 0.657338 -0.406455 -0.634588 0.42723 0.164196 -0.889109 0.680663 0.366087 -0.634569 0.071389 0.452121 -0.889095 0.023278 0.772527 -0.634555 -0.846951 -0.480019 -0.228596 -0.839212 0.493436 -0.22857 -0.007793 -0.97348 -0.228641 0.839168 -0.493472 -0.228654 0.846921 0.480046 -0.228651 0.007712 0.973483 -0.228628 -0.839212 -0.493436 0.22857 -0.846951 0.480019 0.228595 0.007711 -0.973483 0.228628 0.846921 -0.480046 0.228651 0.839168 0.493472 0.228655 -0.007793 0.97348 0.228641 -0.681971 -0.414571 0.602534 -0.700066 0.383324 0.60247 0.018013 -0.797884 0.602542 0.700006 -0.383323 0.60254 0.681973 0.414601 0.602511 -0.018072 0.797936 0.602471 -0.691203 -0.379574 0.614949 -0.674376 0.408697 0.614967 -0.016926 -0.788387 0.614946 0.674333 -0.408825 0.614929 0.691188 0.379634 0.614929 0.016802 0.788399 0.614935 -0.000032 -0.000011 -1 -0.899863 0.31161 0.305198 -0.514295 -0.445297 0.732947 0.179795 -0.935147 0.305243 0.642768 -0.222705 0.732975 0.719828 0.623451 0.305215 -0.128682 0.667979 0.73297 -0.836716 -0.472944 0.276096 -0.828039 0.487953 0.27614 -0.00886 -0.961094 0.276078 0.82791 -0.488192 0.276105 0.83669 0.472972 0.276129 0.00857 0.961066 0.276187 -0.866075 -0.499903 0.003154 -0.86607 0.499913 0.003149 -0.000211 -0.999995 0.003158 0.865955 -0.500112 0.003167 0.866007 0.500022 0.003179 -0.000155 0.999995 0.003168</float_array>
+          <technique_common>
+            <accessor source="#acid_machine_bott_007-Normals-array" count="55" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="acid_machine_bott_007-map1" name="map1">
+          <float_array id="acid_machine_bott_007-map1-array" count="636">0.31876 0.54647 0.27037 0.58522 0.21308 0.55958 0.23048 0.51061 0.31876 0.54647 0.21308 0.55958 0.23048 0.51061 0.21308 0.55958 0.14045 0.55101 0.13547 0.49934 0.23048 0.51061 0.14045 0.55101 0.13547 0.49934 0.14045 0.55101 0.0836 0.56345 0.04137 0.51549 0.13547 0.49934 0.0836 0.56345 0.31876 0.54647 0.27037 0.58522 0.21308 0.55958 0.23048 0.51061 0.31876 0.54647 0.21308 0.55958 0.23048 0.51061 0.21308 0.55958 0.14045 0.55101 0.13547 0.49934 0.23048 0.51061 0.14045 0.55101 0.14045 0.55101 0.0836 0.56345 0.13547 0.49934 0.13547 0.49934 0.0836 0.56345 0.04137 0.51549 0.35724 0.48717 0.31876 0.54647 0.23048 0.51061 0.24438 0.46492 0.35724 0.48717 0.23048 0.51061 0.24438 0.46492 0.23048 0.51061 0.13547 0.49934 0.13277 0.4523 0.24438 0.46492 0.13547 0.49934 0.13277 0.4523 0.13547 0.49934 0.04137 0.51549 0.01697 0.44918 0.13277 0.4523 0.04137 0.51549 0.35724 0.48717 0.31876 0.54647 0.23048 0.51061 0.24438 0.46492 0.35724 0.48717 0.23048 0.51061 0.24438 0.46492 0.23048 0.51061 0.13547 0.49934 0.13277 0.4523 0.24438 0.46492 0.13547 0.49934 0.13277 0.4523 0.13547 0.49934 0.04137 0.51549 0.01697 0.44918 0.13277 0.4523 0.04137 0.51549 0.36423 0.41427 0.35724 0.48717 0.24438 0.46492 0.24936 0.41945 0.36423 0.41427 0.24438 0.46492 0.24936 0.41945 0.24438 0.46492 0.13277 0.4523 0.13795 0.4069 0.24936 0.41945 0.13277 0.4523 0.13795 0.4069 0.13277 0.4523 0.01697 0.44918 0.02631 0.37624 0.13795 0.4069 0.01697 0.44918 0.36423 0.41427 0.35724 0.48717 0.24438 0.46492 0.24936 0.41945 0.36423 0.41427 0.24438 0.46492 0.24936 0.41945 0.24438 0.46492 0.13277 0.4523 0.13795 0.4069 0.24936 0.41945 0.13277 0.4523 0.13795 0.4069 0.13277 0.4523 0.01697 0.44918 0.02631 0.37624 0.13795 0.4069 0.01697 0.44918 0.33658 0.34785 0.36423 0.41427 0.24936 0.41945 0.24556 0.37183 0.33658 0.34785 0.24936 0.41945 0.24556 0.37183 0.24936 0.41945 0.13795 0.4069 0.15225 0.36132 0.24556 0.37183 0.13795 0.4069 0.15225 0.36132 0.13795 0.4069 0.02631 0.37624 0.06816 0.31746 0.15225 0.36132 0.02631 0.37624 0.33658 0.34785 0.36423 0.41427 0.24936 0.41945 0.24556 0.37183 0.33658 0.34785 0.24936 0.41945 0.24556 0.37183 0.24936 0.41945 0.13795 0.4069 0.15225 0.36132 0.24556 0.37183 0.13795 0.4069 0.15225 0.36132 0.13795 0.4069 0.02631 0.37624 0.06816 0.31746 0.15225 0.36132 0.02631 0.37624 0.28871 0.2987 0.33658 0.34785 0.24556 0.37183 0.23509 0.31613 0.28871 0.2987 0.24556 0.37183 0.23509 0.31613 0.24556 0.37183 0.15225 0.36132 0.17486 0.30934 0.23509 0.31613 0.15225 0.36132 0.17486 0.30934 0.15225 0.36132 0.06816 0.31746 0.1259 0.28015 0.17486 0.30934 0.06816 0.31746 0.28871 0.2987 0.33658 0.34785 0.24556 0.37183 0.23509 0.31613 0.28871 0.2987 0.24556 0.37183 0.23509 0.31613 0.24556 0.37183 0.15225 0.36132 0.17486 0.30934 0.23509 0.31613 0.15225 0.36132 0.17486 0.30934 0.15225 0.36132 0.06816 0.31746 0.1259 0.28015 0.17486 0.30934 0.06816 0.31746 0.06899 0.61539 0.0836 0.56345 0.12202 0.60273 0.12202 0.60273 0.10584 0.65472 0.06899 0.61539 0.12202 0.60273 0.15848 0.64317 0.10584 0.65472 0.12202 0.60273 0.17549 0.59204 0.15848 0.64317 0.12202 0.60273 0.14045 0.55101 0.17549 0.59204 0.12202 0.60273 0.0836 0.56345 0.14045 0.55101 0.23511 0.05641 0.25513 0.03179 0.28645 0.03682 0.28645 0.03682 0.29776 0.06646 0.27765 0.09103 0.23511 0.05641 0.28645 0.03682 0.27765 0.09103 0.23511 0.05641 0.27765 0.09103 0.24652 0.08603 0.26046 0.26216 0.28871 0.2987 0.23509 0.31613 0.22793 0.26714 0.26046 0.26216 0.23509 0.31613 0.22793 0.26714 0.23509 0.31613 0.17486 0.30934 0.19275 0.26318 0.22793 0.26714 0.17486 0.30934 0.19275 0.26318 0.17486 0.30934 0.1259 0.28015 0.16173 0.25081 0.19275 0.26318 0.1259 0.28015 0.26046 0.26216 0.28871 0.2987 0.23509 0.31613 0.22793 0.26714 0.26046 0.26216 0.23509 0.31613 0.22793 0.26714 0.23509 0.31613 0.17486 0.30934 0.19275 0.26318 0.22793 0.26714 0.17486 0.30934 0.19275 0.26318 0.17486 0.30934 0.1259 0.28015 0.16173 0.25081 0.19275 0.26318 0.1259 0.28015 0.25887 0.18179 0.26046 0.26216 0.22793 0.26714 0.23292 0.1801 0.25887 0.18179 0.22793 0.26714 0.23292 0.1801 0.22793 0.26714 0.19275 0.26318 0.20727 0.17721 0.23292 0.1801 0.19275 0.26318 0.20727 0.17721 0.19275 0.26318 0.16173 0.25081 0.18167 0.17282 0.20727 0.17721 0.16173 0.25081 0.25887 0.18179 0.26046 0.26216 0.22793 0.26714 0.23298 0.17979 0.25887 0.18179 0.22793 0.26714 0.23298 0.17979 0.22793 0.26714 0.19275 0.26318 0.20734 0.17682 0.23298 0.17979 0.19275 0.26318 0.20734 0.17682 0.19275 0.26318 0.16173 0.25081 0.18167 0.17282 0.20734 0.17682 0.16173 0.25081 0.27765 0.09103 0.25887 0.18179 0.23298 0.17979 0.24652 0.08603 0.27765 0.09103 0.23298 0.17979 0.21574 0.08243 0.20727 0.17721 0.18167 0.17282 0.18449 0.08011 0.21574 0.08243 0.18167 0.17282 0.24652 0.08603 0.23292 0.1801 0.20727 0.17721 0.21574 0.08243 0.24652 0.08603 0.20727 0.17721 0.27765 0.09103 0.25887 0.18179 0.23292 0.1801 0.24652 0.08603 0.27765 0.09103 0.23292 0.1801 0.21574 0.08243 0.20734 0.17682 0.18167 0.17282 0.18449 0.08011 0.21574 0.08243 0.18167 0.17282 0.24652 0.08603 0.23298 0.17979 0.20734 0.17682 0.21574 0.08243 0.24652 0.08603 0.20734 0.17682</float_array>
+          <technique_common>
+            <accessor source="#acid_machine_bott_007-map1-array" count="318" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="acid_machine_bott_007-vertices">
+          <input semantic="POSITION" source="#acid_machine_bott_007-Position" />
+          <input semantic="NORMAL" source="#acid_machine_bott_007-Normals" />
+        </vertices>
+        <triangles material="acid_machine_bottSG" count="106">
+          <input semantic="VERTEX" source="#acid_machine_bott_007-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#acid_machine_bott_007-map1" offset="1" set="0" />
+          <p>3 0 0 1 1 2 2 3 3 4 1 5 2 6 1 7 4 8 5 9 2 10 4 11 5 12 4 13 6 14 7 15 5 16 6 17 7 18 6 19 8 20 9 21 7 22 8 23 9 24 8 25 10 26 11 27 9 28 10 29 10 30 0 31 11 32 11 33 0 34 3 35 13 36 3 37 2 38 12 39 13 40 2 41 12 42 2 43 5 44 14 45 12 46 5 47 14 48 5 49 7 50 15 51 14 52 7 53 15 54 7 55 9 56 16 57 15 58 9 59 16 60 9 61 11 62 17 63 16 64 11 65 17 66 11 67 3 68 13 69 17 70 3 71 19 72 13 73 12 74 18 75 19 76 12 77 18 78 12 79 14 80 20 81 18 82 14 83 20 84 14 85 15 86 21 87 20 88 15 89 21 90 15 91 16 92 22 93 21 94 16 95 22 96 16 97 17 98 23 99 22 100 17 101 23 102 17 103 13 104 19 105 23 106 13 107 25 108 19 109 18 110 24 111 25 112 18 113 24 114 18 115 20 116 26 117 24 118 20 119 26 120 20 121 21 122 27 123 26 124 21 125 27 126 21 127 22 128 28 129 27 130 22 131 28 132 22 133 23 134 29 135 28 136 23 137 29 138 23 139 19 140 25 141 29 142 19 143 31 144 25 145 24 146 30 147 31 148 24 149 30 150 24 151 26 152 32 153 30 154 26 155 32 156 26 157 27 158 33 159 32 160 27 161 33 162 27 163 28 164 34 165 33 166 28 167 34 168 28 169 29 170 35 171 34 172 29 173 35 174 29 175 25 176 31 177 35 178 25 179 1 180 0 181 36 182 36 183 4 184 1 185 36 186 6 187 4 188 36 189 8 190 6 191 36 192 10 193 8 194 36 195 0 196 10 197 42 198 37 199 38 200 38 201 39 202 40 203 42 204 38 205 40 206 42 207 40 208 41 209 44 210 31 211 30 212 43 213 44 214 30 215 43 216 30 217 32 218 45 219 43 220 32 221 45 222 32 223 33 224 46 225 45 226 33 227 46 228 33 229 34 230 47 231 46 232 34 233 47 234 34 235 35 236 48 237 47 238 35 239 48 240 35 241 31 242 44 243 48 244 31 245 50 246 44 247 43 248 49 249 50 250 43 251 49 252 43 253 45 254 51 255 49 256 45 257 51 258 45 259 46 260 52 261 51 262 46 263 52 264 46 265 47 266 53 267 52 268 47 269 53 270 47 271 48 272 54 273 53 274 48 275 54 276 48 277 44 278 50 279 54 280 44 281 40 282 52 283 53 284 41 285 40 286 53 287 39 288 51 289 52 290 40 291 39 292 52 293 38 294 49 295 51 296 39 297 38 298 51 299 37 300 50 301 49 302 38 303 37 304 49 305 42 306 54 307 50 308 37 309 42 310 50 311 41 312 53 313 54 314 42 315 41 316 54 317</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="acid_machine_bottle_empty01">
+      <node id="acid_machine_bott_003" name="acid_machine_bott_003" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#acid_machine_bott_007">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="acid_machine_bottSG" target="#acid_machine_bott">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

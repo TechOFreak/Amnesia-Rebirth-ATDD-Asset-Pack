@@ -1,0 +1,36 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/door/elevator_door/elevator_door_unhinged.dae">
+            <SubMesh ID="0" Name="elevright" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="48" Material="" Static="true" />
+            <SubMesh ID="1" Name="hinge_right" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="80" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="3" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="0.584643 1.23852 0" Rotation="0 0 0" Scale="1.15 2.5 0.1" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="4" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="1.48602 1.23852 0" Rotation="0 0 0" Scale="0.4 1.5 0.1" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="5" Name="Body_1" CreStamp="0" ModStamp="0" WorldPos="0.584643 1.23852 0" Rotation="0 0 0" Scale="1 1 1" Material="Metal" Mass="25" AngularDamping="1" LinearDamping="1" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="3" />
+            </Body>
+            <Body ID="6" Name="Body_2" CreStamp="0" ModStamp="0" WorldPos="1.48602 1.23852 0" Rotation="0 0 0" Scale="1 1 1" Material="Metal" Mass="8" AngularDamping="1" LinearDamping="1" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="4" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge ID="7" Name="HingeJoint_1" CreStamp="0" ModStamp="0" WorldPos="1.24551 1.12712 0" Rotation="0 0 0" Scale="1 1 1" LimitStepCount="0" Stiffness="0" MinMoveSpeed="0.1" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveVolume="0.01" MaxMoveSpeed="2" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveVolume="0.8" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitSound="" MinLimitMinSpeed="0" MinLimitMaxSpeed="0" MaxLimitSound="" MaxLimitMinSpeed="0" MaxLimitMaxSpeed="0" Breakable="false" BreakForce="0" BreakSound="" CollideBodies="true" StickyMinLimit="false" StickyMaxLimit="false" MoveSound="" MoveType="Linear" MinAngle="-90" MaxAngle="90" ConnectedParentBodyID="5" ConnectedChildBodyID="6" />
+        </Joints>
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

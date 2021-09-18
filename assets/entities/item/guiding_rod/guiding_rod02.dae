@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=0;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=0;exportVertexColorsAnimation=1;exportTangents=0;
+exportTexTangents=0;exportConstraints=0;exportPhysics=0;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=0</comments>
+      <source_data>file:///G:/Projects/3d/work/amnesia%20game/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-10-14T14:59:55Z</created>
+    <modified>2009-10-14T14:59:55Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_images>
+    <image id="file8" name="file8">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/entities/item/guiding_rod/guiding_rod02.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file12" name="file12">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/entities/item/guiding_rod/guiding_rod01-03_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file13" name="file13">
+      <init_from>file:///G:/Projects/3d/work/amnesia%20game/SVN/redist/entities/item/guiding_rod/guiding_rod01-03_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="guiding_rods_material" name="guiding_rods_material">
+      <instance_effect url="#guiding_rods_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="guiding_rods_material-fx">
+      <profile_COMMON>
+        <newparam sid="file8-surface">
+          <surface type="2D">
+            <init_from>file8</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file8-sampler">
+          <sampler2D>
+            <source>file8-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file12-surface">
+          <surface type="2D">
+            <init_from>file12</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file12-sampler">
+          <sampler2D>
+            <source>file12-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file13-surface">
+          <surface type="2D">
+            <init_from>file13</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file13-sampler">
+          <sampler2D>
+            <source>file13-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file8-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file13-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file12-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="guiding_rod0Shape2" name="guiding_rod0Shape2">
+      <mesh>
+        <source id="guiding_rod0Shape2-positions" name="position">
+          <float_array id="guiding_rod0Shape2-positions-array" count="192">0.017539 0.017615 0.099176 -0.000075 0.024911 0.099176 -0.000075 0.024911 0.247246 0.017539 0.017615 0.247246 -0.01769 0.017615 0.099176 -0.01769 0.017615 0.247246 -0.024986 0.000000 0.099176 -0.024986 0.000000 0.247246 -0.01769 -0.017614 0.099176 -0.01769 -0.017614 0.247246 -0.000075 -0.024911 0.099176 -0.000075 -0.024911 0.247246 0.017539 -0.017614 0.099176 0.017539 -0.017614 0.247246 0.024835 0.000000 0.099176 0.024835 0.000000 0.247246 -0.000075 0.02193 0.25 -0.015582 0.015507 0.25 0.021854 0.000000 0.25 0.01543 0.015507 0.25 -0.022005 0.000000 0.25 -0.015582 -0.015507 0.25 -0.000075 -0.02193 0.25 0.01543 -0.015507 0.25 0.029976 0.021835 -0.245753 0.011402 0.035329 -0.245753 0.011402 0.035329 0.094929 0.029976 0.021835 0.094929 -0.011556 0.035329 -0.245753 -0.011556 0.035329 0.094929 -0.03013 0.021835 -0.245753 -0.03013 0.021835 0.094929 -0.037225 0 -0.245753 -0.037225 0 0.094929 -0.03013 -0.021835 -0.245753 -0.03013 -0.021835 0.094929 -0.011556 -0.035329 -0.245753 -0.011556 -0.035329 0.094929 0.011402 -0.035329 -0.245753 0.011402 -0.035329 0.094929 0.029976 -0.021835 -0.245753 0.029976 -0.021835 0.094929 0.037071 0 -0.245753 0.037071 0 0.094929 -0.026695 0.019339 0.099176 0.026541 0.019339 0.099176 0.01009 0.031291 0.099176 -0.010244 0.031291 0.099176 0.032606 0 -0.25 -0.03276 0 -0.25 -0.026518 0.01921 -0.25 0.026364 0.01921 -0.25 0.010023 0.031083 -0.25 -0.010177 0.031083 -0.25 -0.026518 -0.01921 -0.25 -0.010177 -0.031083 -0.25 0.010023 -0.031083 -0.25 0.026364 -0.01921 -0.25 0.032824 0 0.099176 0.026541 -0.019339 0.099176 0.01009 -0.031291 0.099176 -0.010244 -0.031291 0.099176 -0.026695 -0.019339 0.099176 -0.032978 0 0.099176</float_array>
+          <technique_common>
+            <accessor source="#guiding_rod0Shape2-positions-array" count="64" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="guiding_rod0Shape2-normals" name="normal">
+          <float_array id="guiding_rod0Shape2-normals-array" count="192">0.707111 0.707103 0 0 1 0 0 0.912486 0.409109 0.64522 0.64522 0.409125 -0.707111 0.707103 0 -0.64522 0.645219 0.409125 -1 -0.000000 0 -0.912472 -0.000000 0.409139 -0.70711 -0.707103 0 -0.64522 -0.64522 0.409125 0 -1 0 0 -0.912485 0.40911 0.70711 -0.707103 0 0.64522 -0.64522 0.409125 1 -0.000000 0 0.912472 -0.000000 0.409139 0 0.475959 0.879467 -0.252711 0.252715 0.933955 0.357376 0 0.933961 0.336539 0.336543 0.879477 -0.357376 0 0.933961 -0.336539 -0.336543 0.879478 0 -0.475958 0.879468 0.252711 -0.252714 0.933955 0.741722 0.538895 -0.3993 0.283313 0.871948 -0.3993 0.284892 0.876812 0.387347 0.74586 0.541901 0.387345 -0.283313 0.871948 -0.3993 -0.284892 0.876812 0.387347 -0.741721 0.538895 -0.399301 -0.74586 0.541901 0.387345 -0.916818 0 -0.399306 -0.921935 0 0.387345 -0.741721 -0.538895 -0.399301 -0.74586 -0.541901 0.387345 -0.283313 -0.871948 -0.3993 -0.284892 -0.876812 0.387347 0.283313 -0.871948 -0.3993 0.284892 -0.876812 0.387347 0.741722 -0.538895 -0.3993 0.74586 -0.541901 0.387344 0.916818 0 -0.399305 0.921935 0 0.387345 -0.305622 0.222047 0.9259 0.305622 0.222047 0.9259 0.154949 0.476889 0.865198 -0.154949 0.476889 0.865198 0.366523 0 -0.930409 -0.366522 0 -0.930409 -0.296525 0.215439 -0.930408 0.296526 0.215439 -0.930407 0.150395 0.462867 -0.873576 -0.150395 0.462867 -0.873576 -0.296525 -0.215439 -0.930408 -0.150395 -0.462867 -0.873576 0.150395 -0.462867 -0.873576 0.296526 -0.215439 -0.930407 0.377771 0 0.925899 0.305622 -0.222047 0.9259 0.154949 -0.476889 0.865198 -0.154949 -0.476889 0.865198 -0.305622 -0.222047 0.9259 -0.377771 0 0.925899</float_array>
+          <technique_common>
+            <accessor source="#guiding_rod0Shape2-normals-array" count="64" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="guiding_rod0Shape2-map1" name="map1">
+          <float_array id="guiding_rod0Shape2-map1-array" count="228">0.993127 0.7192 0.993229 0.765074 0.815182 0.766603 0.81508 0.720765 0.993325 0.810957 0.815277 0.812433 0.993417 0.856838 0.815368 0.858268 0.993507 0.90272 0.815458 0.904102 0.993594 0.948591 0.815544 0.949944 0.992796 0.581513 0.99291 0.627392 0.814863 0.629115 0.814746 0.583275 0.993022 0.673304 0.814973 0.674936 0.810497 0.763918 0.796295 0.792598 0.796069 0.695149 0.810405 0.723553 0.81039 0.718084 0.810296 0.677718 0.810505 0.769373 0.810588 0.809738 0.8106 0.815204 0.810679 0.855571 0.81069 0.861039 0.81077 0.901406 0.810781 0.906876 0.810855 0.947241 0.810069 0.58606 0.810173 0.626425 0.810186 0.63189 0.810282 0.672256 0.776112 0.792788 0.775889 0.695338 0.761776 0.764378 0.761684 0.724012 0.089732 0.011232 0.117457 0.01147 0.115598 0.830786 0.088064 0.830549 0.145181 0.011735 0.14313 0.831049 0.172905 0.012026 0.170661 0.831339 0.200594 0.012346 0.19821 0.831657 0.228283 0.012673 0.225762 0.831983 0.255957 0.013029 0.253328 0.832337 0.28357 0.013387 0.280929 0.832697 0.006718 0.010653 0.034332 0.010834 0.032964 0.830154 0.005363 0.829975 0.062005 0.011019 0.060529 0.830338 0.692495 0.884509 0.633455 0.884423 0.651708 0.857943 0.674259 0.857971 0.679251 0.669621 0.757707 0.66962 0.750181 0.715011 0.686779 0.715011 0.680941 0.723756 0.671947 0.669621 0.706416 0.742868 0.704215 0.75676 0.730543 0.742868 0.732743 0.75676 0.756018 0.723755 0.765012 0.66962 0.765012 0.66962 0.750181 0.624229 0.756018 0.615484 0.730543 0.596372 0.732743 0.582479 0.706414 0.596372 0.704214 0.582479 0.686778 0.624231 0.680941 0.615486 0.671947 0.669621 0.089575 0.844654 0.114027 0.844865 0.086496 0.84463 0.062045 0.844443 0.05895 0.844421 0.034499 0.844257 0.031369 0.844235 0.006917 0.84408 0.279307 0.84677 0.254856 0.846448 0.251724 0.846408 0.227273 0.846094 0.224169 0.846057 0.199718 0.845767 0.196619 0.845732 0.172168 0.845448 0.169084 0.845415 0.144632 0.845158 0.141556 0.845128 0.117104 0.844894 0.699445 0.927424 0.62647 0.927294 0.692457 0.970314 0.633417 0.970189 0.651647 0.996736 0.674198 0.996788</float_array>
+          <technique_common>
+            <accessor source="#guiding_rod0Shape2-map1-array" count="114" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="guiding_rod0Shape2-vertices">
+          <input semantic="POSITION" source="#guiding_rod0Shape2-positions" />
+          <input semantic="NORMAL" source="#guiding_rod0Shape2-normals" />
+        </vertices>
+        <triangles material="blinn2SG" count="114">
+          <input semantic="VERTEX" source="#guiding_rod0Shape2-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#guiding_rod0Shape2-map1" offset="1" set="0" />
+          <p>0 0 1 1 3 3 3 3 1 1 2 2 1 1 4 4 2 2 2 2 4 4 5 5 4 4 6 6 5 5 5 5 6 6 7 7 6 6 8 8 7 7 7 7 8 8 9 9 8 8 10 10 9 9 9 9 10 10 11 11 10 12 12 13 11 15 11 15 12 13 13 14 12 13 14 16 13 14 13 14 14 16 15 17 14 16 0 0 15 17 15 17 0 0 3 3 16 18 17 19 19 21 19 21 17 19 18 20 19 21 3 3 16 18 16 18 3 3 2 2 3 3 19 22 15 17 15 17 19 22 18 23 16 24 2 2 17 25 17 25 2 2 5 5 17 26 5 5 20 27 20 27 5 5 7 7 20 28 7 7 21 29 21 29 7 7 9 9 21 30 9 9 22 31 22 31 9 9 11 11 22 32 11 15 23 33 23 33 11 15 13 14 23 34 13 14 18 35 18 35 13 14 15 17 18 20 17 19 23 37 23 37 17 19 20 36 23 37 20 36 22 39 22 39 20 36 21 38 24 40 25 41 27 43 27 43 25 41 26 42 25 41 28 44 26 42 26 42 28 44 29 45 28 44 30 46 29 45 29 45 30 46 31 47 30 46 32 48 31 47 31 47 32 48 33 49 32 48 34 50 33 49 33 49 34 50 35 51 34 50 36 52 35 51 35 51 36 52 37 53 36 52 38 54 37 53 37 53 38 54 39 55 38 56 40 57 39 59 39 59 40 57 41 58 40 57 42 60 41 58 41 58 42 60 43 61 42 60 24 40 43 61 43 61 24 40 27 43 44 62 45 63 47 65 47 65 45 63 46 64 48 66 49 67 51 69 51 69 49 67 50 68 51 69 24 70 48 66 48 66 24 70 42 71 24 70 51 69 25 73 25 73 51 69 52 72 25 73 52 72 28 75 28 75 52 72 53 74 28 75 53 74 30 76 30 76 53 74 50 68 30 76 50 68 32 77 32 77 50 68 49 67 32 78 49 67 34 80 34 80 49 67 54 79 34 80 54 79 36 82 36 82 54 79 55 81 36 82 55 81 38 84 38 84 55 81 56 83 38 84 56 83 40 86 40 86 56 83 57 85 40 86 57 85 42 87 42 87 57 85 48 66 45 88 27 43 46 89 46 89 27 43 26 42 27 43 45 90 43 61 43 61 45 90 58 91 43 61 58 92 41 58 41 58 58 92 59 93 41 58 59 94 39 59 39 59 59 94 60 95 39 55 60 96 37 53 37 53 60 96 61 97 37 53 61 98 35 51 35 51 61 98 62 99 35 51 62 100 33 49 33 49 62 100 63 101 33 49 63 102 31 47 31 47 63 102 44 103 31 47 44 104 29 45 29 45 44 104 47 105 29 45 47 106 26 42 26 42 47 106 46 107 63 108 58 109 44 62 44 62 58 109 45 63 62 110 59 111 63 108 63 108 59 111 58 109 60 112 59 111 61 113 61 113 59 111 62 110 51 69 50 68 52 72 52 72 50 68 53 74 54 79 57 85 55 81 55 81 57 85 56 83 48 66 57 85 49 67 49 67 57 85 54 79</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="guiding_rods01-03">
+      <node id="guiding_rod02" name="guiding_rod02" type="NODE">
+        <translate sid="rotatePivot">-0.000076 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <translate sid="rotatePivotInverse">0.000076 0 0</translate>
+        <translate sid="scalePivot">-0.000076 0 0</translate>
+        <translate sid="scalePivotInverse">0.000076 0 0</translate>
+        <instance_geometry url="#guiding_rod0Shape2">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn2SG" target="#guiding_rods_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

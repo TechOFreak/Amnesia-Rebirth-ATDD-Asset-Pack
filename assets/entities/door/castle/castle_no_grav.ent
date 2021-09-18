@@ -1,0 +1,108 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/door/castle/castle.dae">
+            <SubMesh ID="0" Name="Scene_Root" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="84" Material="" Static="true" />
+            <SubMesh ID="1" Name="polySurface6" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="484" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="2" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="0.0156023 1.36185 0" Rotation="0 0 0" Scale="1.62 2.7 0.232021" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="3" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="0.912381 1.34634 0" Rotation="0 0 0" Scale="0.05 2.7 0.3" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="4" Name="Body_1" CreStamp="0" ModStamp="0" WorldPos="0.912381 1.34634 0" Rotation="0 0 0" Scale="1 0.9 1" Material="Metal" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Shape ID="3" />
+            </Body>
+            <Body ID="7" Name="Body_2" CreStamp="0" ModStamp="0" WorldPos="0.0156023 1.36185 0" Rotation="0 0 0" Scale="1 1 1" Material="Default" Mass="8" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="false" BlocksLight="true">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="2" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge ID="6" Name="HingeJoint_1" CreStamp="0" ModStamp="0" WorldPos="0.886095 0 -0.113233" Rotation="0 0 0" Scale="1 1 1" LimitStepCount="0" Stiffness="0" MinMoveSpeed="0.1" MinMoveFreq="0.9" MinMoveFreqSpeed="0.75" MinMoveVolume="0.2" MaxMoveSpeed="6" MaxMoveFreq="1.1" MaxMoveFreqSpeed="3" MaxMoveVolume="0.7" MiddleMoveSpeed="1.5" MiddleMoveVolume="0.5" MinLimitSound="" MinLimitMinSpeed="0" MinLimitMaxSpeed="0" MaxLimitSound="" MaxLimitMinSpeed="0" MaxLimitMaxSpeed="0" Breakable="false" BreakForce="0" BreakSound="" CollideBodies="false" StickyMinLimit="false" StickyMaxLimit="false" MoveSound="joint_door_move.snt" MoveType="Angular" MinAngle="0" MaxAngle="90" ConnectedParentBodyID="-1" ConnectedChildBodyID="7" />
+        </Joints>
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_SwingDoor">
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="100" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="break_wood_metal.snt" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="4" />
+        <Var ObjectId="4294967295" Name="CanInteractWithStaticBody" Value="true" />
+        <Var ObjectId="4294967295" Name="HandleBody" Value="" />
+        <Var ObjectId="4294967295" Name="LockBody" Value="" />
+        <Var ObjectId="4294967295" Name="AgentDoor" Value="true" />
+        <Var ObjectId="4294967295" Name="AutoClose" Value="false" />
+        <Var ObjectId="4294967295" Name="BlockedMaxAngle" Value="2.0" />
+        <Var ObjectId="4294967295" Name="MoveMaxSpeed" Value="13.5" />
+        <Var ObjectId="4294967295" Name="MoveSlowDownFactor" Value="3.0" />
+        <Var ObjectId="4294967295" Name="MoveSpeedFactor" Value="1.0" />
+        <Var ObjectId="4294967295" Name="CloseOnSound" Value="close_door.snt" />
+        <Var ObjectId="4294967295" Name="CloseOffSound" Value="open_door.snt" />
+        <Var ObjectId="4294967295" Name="LockOnSound" Value="lock_door.snt" />
+        <Var ObjectId="4294967295" Name="LockOffSound" Value="unlock_door.snt" />
+        <Var ObjectId="4294967295" Name="InteractLockedSound" Value="locked_door.snt" />
+        <Var ObjectId="4294967295" Name="BlockOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="BlockOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="InteractBlockedSound" Value="" />
+        <Var ObjectId="4294967295" Name="MoveSound" Value="" />
+        <Var ObjectId="4294967295" Name="MinMoveSoundSpeed" Value="-1" />
+        <Var ObjectId="4294967295" Name="MaxOpenSound" Value="" />
+        <Var ObjectId="4294967295" Name="MaxOpenSoundMinSpeed" Value="0" />
+        <Var ObjectId="4294967295" Name="Breakable" Value="true" />
+        <Var ObjectId="4294967295" Name="DamageTint" Value="false" />
+        <Var ObjectId="4294967295" Name="DamageMesh1" Value="F:/Amnesia/redist/entities/door/castle/castle_damage1.dae" />
+        <Var ObjectId="4294967295" Name="DamageMesh2" Value="castle_damage2.dae" />
+        <Var ObjectId="4294967295" Name="BrokenEntity" Value="castle_broken.dae" />
+        <Var ObjectId="4294967295" Name="HealthDamage1" Value="66" />
+        <Var ObjectId="4294967295" Name="HealthDamage2" Value="33" />
+        <Var ObjectId="4294967295" Name="DamageSound" Value="hit_wood.snt" />
+        <Var ObjectId="4294967295" Name="DamagePS" Value="ps_door_damage_wood" />
+        <Var ObjectId="4294967295" Name="BreakPS" Value="ps_break_wood.ps" />
+        <Var ObjectId="4294967295" Name="HandleUpAnimation" Value="" />
+        <Var ObjectId="4294967295" Name="HandleDownAnimation" Value="" />
+        <Var ObjectId="4294967295" Name="HandleLockedAnimation" Value="" />
+        <Var ObjectId="4294967295" Name="HandleMovingAnimation" Value="" />
+        <Var ObjectId="4294967295" Name="HandleMovingRepetitionMin" Value="0.25" />
+        <Var ObjectId="4294967295" Name="HandleMovingRepetitionMax" Value="0.5" />
+    </UserDefinedVariables>
+</Entity>

@@ -1,0 +1,53 @@
+﻿<Entity>
+    <ModelData>
+        <Entities>
+            <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_slime_drops.ps" ID="4" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-0.0069676 -0.193365 0.0151389" />
+        </Entities>
+        <Mesh Filename="entities/item/fresh_meat/fresh_meat_remains.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="polySurface1" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="-5.58663e-005 0.0163111 0" TriCount="185" />
+            <SubMesh Active="true" ID="1" Material="" Name="slime" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0.000344435 0.0162471 0" TriCount="476" />
+            <SubMesh Active="true" ID="5" Material="" Name="polySurface4" Rotation="0 0 0" Scale="1 1 1" SubMeshID="2" Tag="" WorldPos="0 0 0" TriCount="424" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="2" Name="Shape_1" RelativeRotation="0 0.0374117 2.68694e-010" RelativeScale="0.349965 0.05 0.07" RelativeTranslation="6.30446e-009 -3.63862e-011 0" Rotation="0 0.0325515 -1.59221" Scale="0.402195 0.05 0.0700119" ShapeType="Box" Tag="" WorldPos="-0.000206 -0.145213 0.003442" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="3" LinearDamping="0" Mass="0" Material="Organic Fresh" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_1" PushedByCharacterGravity="true" Rotation="0 0 -1.59221" Scale="1.14939 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.000206 -0.145213 0.003442">
+                <Children>
+                    <Child ID="4" />
+                    <Child ID="1" />
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="2" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="SubItemTypeName" Value="fresh_meat_remains" />
+        <Var Name="ImageFile" Value="fresh_meat_remains.tga" />
+        <Var Name="PickSound" Value="Meat.snt" />
+        <Var Name="TempVar" Value="0" />
+        <Var Name="MaxInteractDistance" Value="3" />
+    </UserDefinedVariables>
+</Entity>

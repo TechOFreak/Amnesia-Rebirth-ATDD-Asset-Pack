@@ -1,0 +1,53 @@
+#include "interfaces/Map_Interface.hps"
+#include "helpers/helper_imgui.hps"
+#include "helpers/helper_map.hps"
+#include "helpers/helper_game.hps"
+#include "helpers/helper_audio.hps"
+#include "helpers/helper_effects.hps"
+#include "helpers/helper_player.hps"
+#include "inputhandler_types.hps"
+#include "helpers/helper_imgui_options.hps"
+#include "custom/helpers/helper_menu.hps"
+ 
+class cScrMap : iScrMap
+{
+	void Setup()
+	{
+        
+	}
+		
+	void PreloadData()
+	{
+		
+	}
+    
+	void OnStart()
+	{
+		if(cLux_ScriptDebugOn())
+		{
+		}
+	}
+    
+	void OnEnter()
+	{	
+		Player_ShowCrossHairIcons(false);
+        MainMenu_Show(true);
+        Music_Play("amb1.ogg", 1.0f, true, eMusicPrio_BgAmb);
+	}
+    
+	void OnLeave()
+	{
+        Player_ShowCrossHairIcons(true);
+        Music_Stop(3.0f, eMusicPrio_BgAmb);
+	}
+    
+	void OnAction(int alAction, bool abPressed) 
+	{
+		if(abPressed==false) return;
+		
+		if(alAction == eAction_Test1)
+		{
+		}
+	}
+ 
+}

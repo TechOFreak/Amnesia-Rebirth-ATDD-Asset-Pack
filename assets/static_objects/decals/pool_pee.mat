@@ -1,0 +1,18 @@
+<Material>
+    <Main BlendMode="Mul" DepthTest="true" PhysicsMaterial="Rock_Water" Type="translucent" UseAlpha="false" />
+    <TextureUnits>
+        <Diffuse AnimFrameTime="0.000000" AnimMode="None" Compress="true" File="E:/Projects/3d/work/amnesia game/SVN/redist/static_objects/decals/pool_pee.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <NMap AnimFrameTime="0.000000" AnimMode="None" Compress="false" File="E:/Projects/3d/work/amnesia game/SVN/redist/textures/water/water_castlebase_fountain_stalewater_nrm.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <CubeMap AnimFrameTime="0.000000" AnimMode="None" Compress="false" File="E:/Projects/3d/work/amnesia game/SVN/redist/textures/envmaps/water_dungeon_cubemap.dds" MipMaps="true" Type="Cube" Wrap="Repeat" />
+    </TextureUnits>
+    <SpecificVariables>
+        <Var Name="Refraction" Value="true" />
+        <Var Name="RefractionEdgeCheck" Value="false" />
+        <Var Name="RefractionNormals" Value="false" />
+        <Var Name="RefractionScale" Value="0.01" />
+        <Var Name="FrenselBias" Value="0.4" />
+        <Var Name="FrenselPow" Value="2" />
+        <Var Name="RimLightMul" Value="0" />
+        <Var Name="RimLightPow" Value="8" />
+    </SpecificVariables>
+</Material>

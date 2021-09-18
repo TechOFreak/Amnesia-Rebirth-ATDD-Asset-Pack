@@ -1,0 +1,37 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Shapes>
+            <BodyShape GroupID="0" ID="1" Name="BodyShape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.598905 0.406171 0.030037" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.598905 0.406171 0.030037" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="0.000156 0.199701 0.003383" />
+            <BodyShape GroupID="0" ID="4" Name="BodyShape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.100000 0.100000 0.100000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.100000 0.100000 0.100000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="0.009170 0.374900 -0.088269" />
+        </Shapes>
+        <Bodies>
+            <Body AngularDamping="1.000000" BlocksSound="false" ContinuousCollision="true" GroupID="0" ID="2" LinearDamping="1.000000" Mass="3.000000" Material="Default Hard" MaxAngularSpeed="8.000000" MaxLinearSpeed="8.000000" Name="Body_1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" WorldPos="0.000156 0.199701 0.003383">
+                <Shape ID="1" />
+            </Body>
+            <Body AngularDamping="0.000000" BlocksSound="false" ContinuousCollision="false" GroupID="0" ID="5" LinearDamping="0.000000" Mass="0.000000" Material="Default Hard" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_2" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" WorldPos="0.009170 0.374900 -0.088269">
+                <Shape ID="4" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointBall BreakForce="35.000000" BreakSound="joint_break_metal" Breakable="true" CollideBodies="false" ConnectedChildBodyID="5" ConnectedParentBodyID="2" GroupID="0" ID="3" JointType="0" LimitStepCount="0" MaxConeAngle="45.000000" MaxMoveFreq="0.000000" MaxMoveFreqSpeed="0.000000" MaxMoveSpeed="0.000000" MaxMoveVolume="0.000000" MaxTwistAngle="45.000000" MiddleMoveSpeed="0.000000" MiddleMoveVolume="0.000000" MinMoveFreq="0.000000" MinMoveFreqSpeed="0.000000" MinMoveSpeed="0.000000" MinMoveVolume="0.000000" Name="BallJoint_1" PinDir="0.000000 -0.065013 0.997884" Rotation="1.635855 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" StickyMaxDistance="0.000000" StickyMinDistance="0.000000" Tag="" Type="4" WorldPos="0.014195 0.385417 -0.041238" />
+        </Joints>
+        <Mesh Filename="painting01.dae">
+            <SubMesh ConnectedBodyID="2" GroupID="0" ID="0" Name="Painting01_PIVOT" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="5" WorldPos="0.000000 0.000000 0.000000" TriCount="20" />
+        </Mesh>
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Grab">
+        <Var Name="Active" Value="true" />
+        <Var Name="Grab_CustomDepth" Value="1.5" />
+        <Var Name="Grab_MinDepth" Value="1.0" />
+        <Var Name="GrabDepthInc" Value="0.15" />
+        <Var Name="Grab_MaxDepth" Value="2.2" />
+        <Var Name="Grab_CustomPositionOffset" Value="0" />
+        <Var Name="GrabMinPushBackDepth" Value="0.2" />
+        <Var Name="GrabPushBackDepthStep" Value="0.05" />
+        <Var Name="Grab_CustomRotationOffset" Value="0" />
+        <Var Name="Grab_ThrowImpulse" Value="10" />
+        <Var Name="Grab_ForceMul" Value="1" />
+        <Var Name="MaxInteractDistance" Value="2" />
+        <Var Name="Grab_TorqueMul" Value="1" />
+    </UserDefinedVariables>
+</Entity>

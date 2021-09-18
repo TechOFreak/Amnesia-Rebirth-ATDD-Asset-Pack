@@ -1,0 +1,58 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/ptest/bottle_lithium_bromide/bottle_lithium_bromide_broken.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="polySurface19" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="200" />
+            <SubMesh Active="true" ID="1" Material="" Name="polySurface20" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 0 0" TriCount="196" />
+            <SubMesh Active="true" ID="2" Material="" Name="polySurface21" Rotation="0 0 0" Scale="1 1 1" SubMeshID="2" Tag="" WorldPos="0 0 0" TriCount="120" />
+            <SubMesh Active="true" ID="3" Material="" Name="polySurface22" Rotation="0 0 0" Scale="1 1 1" SubMeshID="3" Tag="" WorldPos="0 0 0" TriCount="316" />
+            <SubMesh Active="true" ID="4" Material="" Name="polySurface18" Rotation="0 0 0" Scale="1 1 1" SubMeshID="4" Tag="" WorldPos="0 0 0" TriCount="270" />
+            <SubMesh Active="true" ID="5" Material="" Name="polySurface17" Rotation="0 0 0" Scale="1 1 1" SubMeshID="5" Tag="" WorldPos="0 0 0" TriCount="60" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="6" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="0.02 0.08 0.02" RelativeTranslation="0 0 0" Rotation="0 0 0" Scale="0.02 0.08 0.02" ShapeType="Cylinder" Tag="" WorldPos="-6.28322e-005 0.178586 0.000758499" />
+            <BodyShape Active="true" ID="8" Name="Shape_3" RelativeRotation="0 -0.352077 0" RelativeScale="0.025 0.04 0.002" RelativeTranslation="0.0209465 0.0163138 -0.0114654" Rotation="0 -0.352077 0" Scale="0.025 0.04 0.002" ShapeType="Box" Tag="" WorldPos="0.0130348 0.105903 -0.0261269" />
+            <BodyShape Active="true" ID="9" Name="Shape_4" RelativeRotation="0 0.426255 0" RelativeScale="0.025 0.06 0.002" RelativeTranslation="-0.00510273 -0.0118025 -0.0117498" Rotation="0 0.426255 0" Scale="0.025 0.06 0.002" ShapeType="Box" Tag="" WorldPos="-0.0130144 0.0777865 -0.0264112" />
+            <BodyShape Active="true" ID="10" Name="Shape_5" RelativeRotation="0 1.37873 0" RelativeScale="0.03 0.05 0.002" RelativeTranslation="-0.0209465 -0.0163138 0.0117498" Rotation="0 1.37873 0" Scale="0.03 0.05 0.002" ShapeType="Box" Tag="" WorldPos="-0.0288582 0.0732753 -0.0029117" />
+            <BodyShape Active="true" ID="12" Name="Shape_6" RelativeRotation="0 1.37873 0" RelativeScale="0.03 0.03 0.002" RelativeTranslation="-0.0273831 0.00408716 -0.0154792" Rotation="0 1.37873 0" Scale="0.03 0.03 0.002" ShapeType="Box" Tag="" WorldPos="-0.0288582 0.115377 -0.0029117" />
+            <BodyShape Active="true" ID="13" Name="Shape_7" RelativeRotation="-3.14159 0.676595 -3.14159" RelativeScale="0.03 0.05 0.002" RelativeTranslation="-0.0158768 -0.00460999 0.0107018" Rotation="-3.14159 0.676595 -3.14159" Scale="0.03 0.05 0.002" ShapeType="Box" Tag="" WorldPos="-0.0173519 0.10668 0.0232693" />
+            <BodyShape Active="true" ID="14" Name="Shape_8" RelativeRotation="-3.14159 -0.449352 -3.14159" RelativeScale="0.03 0.05 0.002" RelativeTranslation="0.0133378 -0.00460999 0.0154792" Rotation="-3.14159 -0.449352 -3.14159" Scale="0.03 0.05 0.002" ShapeType="Box" Tag="" WorldPos="0.0118627 0.10668 0.0280468" />
+            <BodyShape Active="true" ID="15" Name="Shape_9" RelativeRotation="-0.000211239 -1.56914 0.000211239" RelativeScale="0.035 0.03 0.002" RelativeTranslation="0.0273831 0.00460999 -0.0137271" Rotation="-0.000211239 -1.56914 0.000211239" Scale="0.035 0.03 0.002" ShapeType="Box" Tag="" WorldPos="0.0259081 0.1159 -0.00115957" />
+            <BodyShape Active="true" ID="17" Name="Shape_2" RelativeRotation="0 0 0" RelativeScale="0.032 0.02 0.032" RelativeTranslation="0 0 0" Rotation="0 0 0" Scale="0.032 0.02 0.032" ShapeType="Cylinder" Tag="" WorldPos="-6.28322e-005 0.0107622 0.000758499" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.1" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="16" LinearDamping="0.1" Mass="0.5" Material="Glass" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_1" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.00147506 0.11129 0.0125675">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="15" />
+                <Shape ID="14" />
+                <Shape ID="13" />
+                <Shape ID="12" />
+            </Body>
+            <Body Active="true" AngularDamping="0.1" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="18" LinearDamping="0.1" Mass="0.5" Material="Glass" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_2" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.0079117 0.0895891 -0.0146615">
+                <Shape ID="8" />
+                <Shape ID="9" />
+                <Shape ID="10" />
+            </Body>
+            <Body Active="true" AngularDamping="0.1" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="19" LinearDamping="0.1" Mass="0.5" Material="Glass" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_3" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-6.28322e-005 0.0107622 0.000758499">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="17" />
+            </Body>
+            <Body Active="true" AngularDamping="0.1" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="20" LinearDamping="0.1" Mass="0.5" Material="Glass" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_4" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-6.28322e-005 0.178586 0.000758499">
+                <Children>
+                    <Child ID="3" />
+                    <Child ID="4" />
+                    <Child ID="5" />
+                </Children>
+                <Shape ID="6" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

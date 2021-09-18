@@ -1,0 +1,82 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/ptest/roof_spike/roof_spike.dae">
+            <SubMesh ID="0" Name="pCube1" CreStamp="0" ModStamp="0" WorldPos="1.85131 0.158338 -7.02263" Rotation="0 0 0" Scale="1 1 1" TriCount="74" Material="" Static="true" />
+            <SubMesh ID="1" Name="polySurface9" CreStamp="0" ModStamp="0" WorldPos="1.76418 0.0925779 -7.02263" Rotation="0 0 0" Scale="1 1 1" TriCount="580" Material="" Static="true" />
+            <SubMesh ID="2" Name="polySurface10" CreStamp="0" ModStamp="0" WorldPos="1.76418 0.0925779 -7.02263" Rotation="0 0 0" Scale="1 1 1" TriCount="580" Material="" Static="true" />
+            <SubMesh ID="3" Name="polySurface8" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="234" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="8" Name="Shape_5" CreStamp="0" ModStamp="0" WorldPos="0.00184105 -0.841341 -0.00385132" Rotation="0 0 0" Scale="0.25 0.5 0.25" RelativeTranslation="0 -1.92139 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="9" Name="Shape_6" CreStamp="0" ModStamp="0" WorldPos="0.00184105 3.00143 -0.00385132" Rotation="0 0 0" Scale="0.12 7.75 0.12" RelativeTranslation="0 1.92139 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="10" Name="Body_1" CreStamp="0" ModStamp="0" WorldPos="0.00184105 1.08004 -0.00385132" Rotation="0 0 0" Scale="1 1 1" Material="Metal" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="3" />
+                </Children>
+                <Shape ID="8" />
+                <Shape ID="9" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_MoveObject">
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="100" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="4" />
+        <Var ObjectId="4294967295" Name="MoveObjectType" Value="Linear" />
+        <Var ObjectId="4294967295" Name="OpenAmount" Value="1.0" />
+        <Var ObjectId="4294967295" Name="MoveAxis" Value="Y" />
+        <Var ObjectId="4294967295" Name="LocalAxis" Value="false" />
+        <Var ObjectId="4294967295" Name="OpenAcc" Value="1" />
+        <Var ObjectId="4294967295" Name="OpenSpeed" Value="0.3" />
+        <Var ObjectId="4294967295" Name="CloseAcc" Value="1" />
+        <Var ObjectId="4294967295" Name="CloseSpeed" Value="0.3" />
+        <Var ObjectId="4294967295" Name="AutoMove" Value="false" />
+        <Var ObjectId="4294967295" Name="AutoMoveStateGoal" Value="0.0" />
+        <Var ObjectId="4294967295" Name="AutoMoveAcc" Value="9.0" />
+        <Var ObjectId="4294967295" Name="AutoMoveSpeed" Value="5.0" />
+        <Var ObjectId="4294967295" Name="AutoMoveSlowdownDist" Value="0.1" />
+    </UserDefinedVariables>
+</Entity>

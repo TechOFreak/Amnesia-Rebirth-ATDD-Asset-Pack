@@ -1,0 +1,26 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/ornament/sketch_castle/sketch_roll_row01.dae">
+            <SubMesh Active="true" GroupID="0" ID="5" Name="Cylinder_004_002" Rotation="0.000000 0.000000 -1.570796" Scale="0.600000 0.600000 0.600000" SubMeshID="0" Tag="" Type="13" WorldPos="0.415000 0.201031 -0.567482" TriCount="2500" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.447208 0.150000 1.000000" RelativeTranslation="0.000000 -0.128201 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.868325 0.090000 0.600000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.430378 0.178290 -0.365062" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.447208 0.150000 0.650003" RelativeTranslation="0.000000 -0.034675 0.014635" Rotation="0.000000 0.000000 0.000000" Scale="0.868325 0.090000 0.390002" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.430378 0.271816 -0.350427" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.447208 0.300000 0.350007" RelativeTranslation="0.000000 0.083201 0.014681" Rotation="0.000000 0.000000 0.000000" Scale="0.868325 0.180000 0.210004" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.430378 0.389692 -0.350381" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="4" LinearDamping="0.000000" Mass="0.000000" Material="Paper" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="0.600000 0.600000 0.600000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.430378 0.306491 -0.365062">
+                <Shape ID="1" />
+                <Shape ID="2" />
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="5" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

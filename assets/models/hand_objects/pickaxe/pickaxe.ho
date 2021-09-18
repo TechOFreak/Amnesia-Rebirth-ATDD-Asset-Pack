@@ -1,0 +1,42 @@
+<HandObject>
+	<Main
+		Model = "pickaxe.ent"
+		Type= "Melee"
+	
+	/>
+
+	<Settings
+		OffsetRotation = "0 90 0"
+		OffsetPosition = "0 0 0"
+	
+		HandsAnim_Idle = "Melee_Idle"
+		HandsAnim_Draw = "Melee_Draw"
+		HandsAnim_Holster = "Melee_Holster"
+		
+		HandsAnim_Charge = "Melee_Charge"	
+		HandsAnim_Swing = "Melee_Swing"	
+		HandsAnim_SwingCharge = "Melee_SwingCharge"	
+		SwingSound = "pickaxe_swing"
+		SwingChargeSound = "pickaxe_swing"
+		ChargeSound = "pickaxe_charge"
+		ChargeDoneSound = "pickaxe_charge_done"
+		HitSound = "pickaxe_hit"
+		ColliderSize = "0.8 0.5 1.8"
+		ColliderOffset = "0 0 -0.9"
+		
+		ChargeTime = "1.2"
+		ChargePlayerSpeedMul = "0.7"
+		RelativeDamageTime = "0.25"
+		
+		AttackForce = "20"
+		MaxAttackForce = "5"
+		
+		AttackMinDamage = "50"
+		AttackMaxDamage = "60"
+		
+		AttackHitSpeed = "4"
+		
+		AttackStrength = "1"
+	/>
+
+</HandObject>

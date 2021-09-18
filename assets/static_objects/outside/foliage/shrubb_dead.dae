@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Bulgur</author>
+      <authoring_tool>COLLADAMax</authoring_tool>
+      <source_data>file://</source_data>
+    </contributor>
+    <created>2010-06-02T14:21:41Z</created>
+    <modified>2010-06-02T14:21:41Z</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="ColorEffectR0G0B0">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent>
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_1_-_Default">
+      <profile_COMMON>
+        <newparam sid="shrubb_dead_dds-surface">
+          <surface type="2D">
+            <init_from>shrubb_dead_dds</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="shrubb_dead_dds-sampler">
+          <sampler2D>
+            <source>shrubb_dead_dds-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="shrubb_dead_dds-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="3dsMAX">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lexture_lock>1</ambient_diffuse_lexture_lock>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="ColorEffectR0G0B0-material" name="ColorEffectR0G0B0-material">
+      <instance_effect url="#ColorEffectR0G0B0"/>
+    </material>
+    <material id="_1_-_Default-material" name="_1_-_Default-material">
+      <instance_effect url="#_1_-_Default"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="geom-Scene_Root" name="Scene_Root">
+      <mesh>
+        <source id="geom-Scene_Root-positions">
+          <float_array id="geom-Scene_Root-positions-array" count="72">0.922558 0.936882 -0.0347237 -0.200601 -0.667168 -0.0347152 0.922565 0.936885 1.46451 -0.200595 -0.667165 1.46452 0.984468 -0.857623 -0.0347201 -0.274232 0.642428 -0.0347177 0.984475 -0.857619 1.46451 -0.274226 0.642431 1.46451 -0.890466 0.00778533 -0.0347137 1.06771 0.00779286 -0.0347223 -0.89046 0.0077887 1.46452 1.06772 0.00779623 1.46451 0.870686 0.936886 1.46451 0.870679 0.936883 -0.0347235 -0.252483 -0.667171 -0.034715 -0.252476 -0.667167 1.46452 -0.890462 0.026088 1.46452 -0.890469 0.0260846 -0.0347137 1.06771 0.026089 -0.0347223 1.06772 0.0260928 1.46451 0.953178 -0.857618 1.46451 0.953171 -0.857622 -0.0347199 -0.305529 0.642428 -0.0347176 -0.305522 0.642432 1.46452</float_array>
+          <technique_common>
+            <accessor source="#geom-Scene_Root-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Scene_Root-normals">
+          <float_array id="geom-Scene_Root-normals-array" count="108">-0.819154 0.573574 2.30537e-006 -0.819154 0.573574 2.30537e-006 -0.819154 0.573574 2.30537e-006 -0.819154 0.573574 2.24023e-006 -0.819154 0.573574 2.24023e-006 -0.819154 0.573574 2.24023e-006 0.766042 0.64279 -4.72027e-006 0.766042 0.64279 -4.72027e-006 0.766042 0.64279 -4.72027e-006 0.766042 0.64279 -4.83229e-006 0.766042 0.64279 -4.83229e-006 0.766042 0.64279 -4.83229e-006 3.84387e-006 -1 2.24779e-006 3.84387e-006 -1 2.24779e-006 3.84387e-006 -1 2.24779e-006 3.84363e-006 -1 2.2481e-006 3.84363e-006 -1 2.2481e-006 3.84363e-006 -1 2.2481e-006 0.819154 -0.573574 -2.25976e-006 0.819154 -0.573574 -2.25976e-006 0.819154 -0.573574 -2.25976e-006 0.819154 -0.573574 -2.30537e-006 0.819154 -0.573574 -2.30537e-006 0.819154 -0.573574 -2.30537e-006 -2.43892e-006 1 -2.24749e-006 -2.43892e-006 1 -2.24749e-006 -2.43892e-006 1 -2.24749e-006 -2.23726e-006 1 -2.51088e-006 -2.23726e-006 1 -2.51088e-006 -2.23726e-006 1 -2.51088e-006 -0.766042 -0.64279 4.78118e-006 -0.766042 -0.64279 4.78118e-006 -0.766042 -0.64279 4.78118e-006 -0.766042 -0.64279 4.83229e-006 -0.766042 -0.64279 4.83229e-006 -0.766042 -0.64279 4.83229e-006</float_array>
+          <technique_common>
+            <accessor source="#geom-Scene_Root-normals-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Scene_Root-map-channel1">
+          <float_array id="geom-Scene_Root-map-channel1-array" count="72">0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 1 0 0 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 1 1 0 0 1 0 0 0 0 1 0 0 1 1 0 0 1 0 0 0 0 1 0 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#geom-Scene_Root-map-channel1-array" count="24" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-Scene_Root-vertices">
+          <input semantic="POSITION" source="#geom-Scene_Root-positions"/>
+        </vertices>
+        <triangles material="_1_-_Default_1" count="12">
+          <input semantic="VERTEX" source="#geom-Scene_Root-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Scene_Root-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Scene_Root-map-channel1" offset="2" set="1"/>
+          <p>0 0 0 1 1 1 3 2 3 3 3 3 2 4 2 0 5 0 4 6 4 5 7 5 7 8 7 7 9 7 6 10 6 4 11 4 8 12 8 9 13 9 11 14 11 11 15 11 10 16 10 8 17 8 13 18 13 12 19 12 15 20 15 15 21 15 14 22 14 13 23 13 17 24 17 16 25 16 19 26 19 19 27 19 18 28 18 17 29 17 21 30 21 20 31 20 23 32 23 23 33 23 22 34 22 21 35 21</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_images>
+    <image id="shrubb_dead_dds">
+      <init_from>file:///F:\work\redist\static_objects\outside\foliage\shrubb_dead.dds</init_from>
+    </image>
+  </library_images>
+  <library_visual_scenes>
+    <visual_scene id="MaxScene">
+      <node id="node-Scene_Root_1" name="Scene_Root">
+        <node id="node-Scene_Root" name="Scene_Root">
+          <instance_geometry url="#geom-Scene_Root">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="_1_-_Default_1" target="#_1_-_Default-material"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#MaxScene"/>
+  </scene>
+</COLLADA>

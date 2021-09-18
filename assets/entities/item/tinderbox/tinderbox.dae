@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-05-15T10:45:45Z</created>
+    <modified>2009-05-15T10:45:45Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/tinderbox/tinderbox.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file2" name="file2">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/tinderbox/tinderbox_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file3" name="file3">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/tinderbox/tinderbox_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="tinderbox_material" name="tinderbox_material">
+      <instance_effect url="#tinderbox_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="tinderbox_material-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file3-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file2-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="tinderbox_meshShape" name="tinderbox_meshShape">
+      <mesh>
+        <source id="tinderbox_meshShape-positions" name="position">
+          <float_array id="tinderbox_meshShape-positions-array" count="183">0.041981 0.007022 -0.024237 0.024237 0.007022 -0.041981 0.024237 0.160139 -0.041981 0.041981 0.160139 -0.024237 0 0.007022 -0.048475 0 0.160139 -0.048475 -0.024237 0.007022 -0.041981 -0.024237 0.160139 -0.041981 -0.041981 0.007022 -0.024237 -0.041981 0.160139 -0.024237 -0.048475 0.007022 0 -0.048475 0.160139 0 -0.041981 0.007022 0.024237 -0.041981 0.160139 0.024237 -0.024237 0.007022 0.041981 -0.024237 0.160139 0.041981 0 0.007022 0.048475 0 0.160139 0.048475 0.024237 0.007022 0.041981 0.024237 0.160139 0.041981 0.041981 0.007022 0.024237 0.041981 0.160139 0.024237 0.048475 0.007022 0 0.048475 0.160139 0 0 0.181349 -0.051713 0.025856 0.181349 -0.044785 0.044785 0.181349 -0.025856 0.051713 0.181349 0 0.044785 0.181349 0.025856 0.025856 0.181349 0.044785 0 0.181349 0.051713 -0.025856 0.181349 0.044785 -0.044785 0.181349 0.025856 -0.051713 0.181349 0 -0.044785 0.181349 -0.025856 -0.025856 0.181349 -0.044785 0.042815 0.183705 -0.024719 0.024719 0.183705 0.042815 0.042815 0.183705 0.024719 0.049439 0.183705 0 0.024719 0.183705 -0.042815 0 0.183705 -0.049439 -0.024719 0.183705 -0.042815 -0.042815 0.183705 -0.024719 -0.049439 0.183705 0 -0.042815 0.183705 0.024719 -0.024719 0.183705 0.042815 0 0.183705 0.049439 0.035684 0 -0.020602 0.041205 0 0 0.020602 0 -0.035684 0 0 -0.041205 -0.020602 0 -0.035684 -0.035684 0 -0.020602 -0.041205 0 0 -0.035684 0 0.020602 -0.020602 0 0.035684 0 0 0.041205 0.020602 0 0.035684 0.035684 0 0.020602 0 0.011749 0</float_array>
+          <technique_common>
+            <accessor source="#tinderbox_meshShape-positions-array" count="61" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="tinderbox_meshShape-normals" name="normal">
+          <float_array id="tinderbox_meshShape-normals-array" count="183">0.795929 -0.394117 -0.45953 0.45953 -0.394117 -0.79593 0.498565 -0.075705 -0.86354 0.86354 -0.075705 -0.498565 0.000000 -0.394117 -0.91906 0.000000 -0.075705 -0.99713 -0.45953 -0.394117 -0.79593 -0.498565 -0.075705 -0.86354 -0.79593 -0.394117 -0.45953 -0.86354 -0.075705 -0.498565 -0.91906 -0.394117 0 -0.99713 -0.075705 0 -0.79593 -0.394117 0.45953 -0.86354 -0.075705 0.498565 -0.45953 -0.394117 0.79593 -0.498565 -0.075705 0.86354 0 -0.394117 0.91906 0 -0.075705 0.99713 0.45953 -0.394117 0.79593 0.498565 -0.075705 0.86354 0.795929 -0.394117 0.45953 0.86354 -0.075705 0.498565 0.91906 -0.394117 -0.000000 0.99713 -0.075705 -0.000000 0 0.306931 -0.951732 0.475865 0.306932 -0.824224 0.824224 0.306932 -0.475866 0.951731 0.306932 -0.000000 0.824224 0.306933 0.475865 0.475865 0.306933 0.824224 -0.000000 0.306931 0.951732 -0.475865 0.306932 0.824224 -0.824224 0.306932 0.475865 -0.951731 0.306932 0.000000 -0.824224 0.306933 -0.475865 -0.475865 0.306932 -0.824224 0.335396 0.921961 -0.193641 0.19364 0.921962 0.335396 0.444345 0.858338 0.256542 0.513087 0.858337 -0.000000 0.193641 0.921961 -0.335396 0 0.921961 -0.387283 -0.193641 0.921961 -0.335396 -0.444345 0.858338 -0.256542 -0.513087 0.858337 0.000000 -0.335396 0.921961 0.193641 -0.193641 0.921961 0.335396 0 0.921961 0.387283 0.206705 -0.971098 -0.119341 0.238682 -0.971098 -0.000000 0.119341 -0.971098 -0.206705 0.000000 -0.971098 -0.238683 -0.119341 -0.971098 -0.206705 -0.206705 -0.971098 -0.119341 -0.238683 -0.971097 0 -0.206706 -0.971097 0.119341 -0.119341 -0.971098 0.206705 0 -0.971098 0.238683 0.119341 -0.971098 0.206705 0.206705 -0.971098 0.119341 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#tinderbox_meshShape-normals-array" count="61" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="tinderbox_meshShape-map1" name="map1">
+          <float_array id="tinderbox_meshShape-map1-array" count="224">0.340552 0.065964 0.416292 0.067165 0.410783 0.549551 0.330568 0.548277 0.492085 0.067674 0.491045 0.55009 0.567879 0.06749 0.57131 0.549896 0.643624 0.066614 0.65153 0.548965 0.719274 0.065047 0.731657 0.54729 0.794813 0.062799 0.811639 0.544806 0.870518 0.059783 0.891371 0.541249 0.947806 0.05414 0.970639 0.537258 0.036429 0.052182 0.113693 0.058158 0.09076 0.53953 0.011511 0.535195 0.189382 0.0615 0.170477 0.54343 0.26491 0.064073 0.250448 0.546257 0.629793 0.605351 0.695557 0.566828 0.729653 0.621833 0.661105 0.662006 0.565229 0.698924 0.602878 0.632655 0.659937 0.663212 0.620686 0.732291 0.556109 0.812198 0.555567 0.735984 0.620262 0.733907 0.620818 0.813355 0.605456 0.915089 0.566378 0.849653 0.621156 0.815057 0.661782 0.883336 0.698534 0.979215 0.632253 0.941586 0.662793 0.884515 0.731882 0.923749 0.811721 0.988316 0.735506 0.988859 0.733429 0.924163 0.812878 0.923608 0.914269 0.93966 0.848502 0.978179 0.814411 0.923172 0.88296 0.883003 0.978785 0.846162 0.941102 0.912412 0.884067 0.88183 0.923336 0.812761 0.987919 0.732948 0.988396 0.809162 0.923712 0.811184 0.923198 0.731735 0.939214 0.63031 0.977738 0.696074 0.922731 0.73017 0.88256 0.661623 0.845719 0.56577 0.911961 0.603465 0.88137 0.660493 0.812307 0.621214 0.73245 0.556638 0.808665 0.556151 0.810697 0.620833 0.731247 0.62136 0.629957 0.735573 0.735129 0.914466 0.669109 0.876962 0.630485 0.811557 0.667502 0.669498 0.733047 0.631048 0.809028 0.630508 0.875078 0.668034 0.913509 0.733551 0.914035 0.809499 0.876534 0.875527 0.811047 0.913942 0.341191 0.034618 0.26584 0.03275 0.416646 0.035813 0.492153 0.036319 0.56766 0.036137 0.64312 0.035266 0.718479 0.033719 0.793624 0.031577 0.867898 0.028896 0.937978 0.022364 0.046395 0.020447 0.116445 0.027281 0.190706 0.030282 0.538497 0.676661 0.538539 0.756978 0.388644 0.716897 0.498415 0.826556 0.428879 0.866749 0.348561 0.866791 0.278984 0.826666 0.23879 0.757131 0.238751 0.676813 0.278873 0.607237 0.348409 0.567043 0.428725 0.567002 0.498303 0.607125</float_array>
+          <technique_common>
+            <accessor source="#tinderbox_meshShape-map1-array" count="112" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="tinderbox_meshShape-vertices">
+          <input semantic="POSITION" source="#tinderbox_meshShape-positions" />
+          <input semantic="NORMAL" source="#tinderbox_meshShape-normals" />
+        </vertices>
+        <triangles material="blinn1SG" count="118">
+          <input semantic="VERTEX" source="#tinderbox_meshShape-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#tinderbox_meshShape-map1" offset="1" set="0" />
+          <p>0 0 1 1 3 3 3 3 1 1 2 2 1 1 4 4 2 2 2 2 4 4 5 5 4 4 6 6 5 5 5 5 6 6 7 7 6 6 8 8 7 7 7 7 8 8 9 9 8 8 10 10 9 9 9 9 10 10 11 11 10 10 12 12 11 11 11 11 12 12 13 13 12 12 14 14 13 13 13 13 14 14 15 15 14 14 16 16 15 15 15 15 16 16 17 17 16 18 18 19 17 21 17 21 18 19 19 20 18 19 20 22 19 20 19 20 20 22 21 23 20 22 22 24 21 23 21 23 22 24 23 25 22 24 0 0 23 25 23 25 0 0 3 3 2 26 5 27 25 29 25 29 5 27 24 28 3 30 2 31 26 33 26 33 2 31 25 32 23 34 3 35 27 37 27 37 3 35 26 36 21 38 23 39 28 41 28 41 23 39 27 40 19 42 21 43 29 45 29 45 21 43 28 44 17 46 19 47 30 49 30 49 19 47 29 48 15 50 17 51 31 53 31 53 17 51 30 52 13 54 15 55 32 57 32 57 15 55 31 56 11 58 13 59 33 61 33 61 13 59 32 60 9 62 11 63 34 65 34 65 11 63 33 64 7 66 9 67 35 69 35 69 9 67 34 68 5 70 7 71 24 73 24 73 7 71 35 72 36 74 37 75 39 77 39 77 37 75 38 76 36 74 26 33 40 78 40 78 26 33 25 32 26 36 36 74 27 37 27 37 36 74 39 77 40 78 25 29 41 79 41 79 25 29 24 28 41 79 24 73 42 80 42 80 24 73 35 72 42 80 35 69 43 81 43 81 35 69 34 68 43 81 34 65 44 82 44 82 34 65 33 64 44 82 33 61 45 83 45 83 33 61 32 60 45 83 32 57 46 84 46 84 32 57 31 56 46 84 31 53 47 85 47 85 31 53 30 52 47 85 30 49 37 75 37 75 30 49 29 48 37 75 29 45 38 76 38 76 29 45 28 44 38 76 28 41 39 77 39 77 28 41 27 40 48 86 0 0 49 87 49 87 0 0 22 24 0 0 48 86 1 1 1 1 48 86 50 88 1 1 50 88 4 4 4 4 50 88 51 89 4 4 51 89 6 6 6 6 51 89 52 90 6 6 52 90 8 8 8 8 52 90 53 91 8 8 53 91 10 10 10 10 53 91 54 92 10 10 54 92 12 12 12 12 54 92 55 93 12 12 55 93 14 14 14 14 55 93 56 94 14 14 56 94 16 16 16 16 56 94 57 95 16 18 57 96 18 19 18 19 57 96 58 97 18 19 58 97 20 22 20 22 58 97 59 98 20 22 59 98 22 24 22 24 59 98 49 87 49 99 59 100 60 101 59 100 58 102 60 101 58 102 57 103 60 101 57 103 56 104 60 101 56 104 55 105 60 101 55 105 54 106 60 101 54 106 53 107 60 101 53 107 52 108 60 101 52 108 51 109 60 101 51 109 50 110 60 101 50 110 48 111 60 101 48 111 49 99 60 101 45 83 42 80 44 82 44 82 42 80 43 81 46 84 41 79 45 83 45 83 41 79 42 80 40 78 41 79 47 85 47 85 41 79 46 84 40 78 47 85 36 74 36 74 47 85 37 75</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="tinderbox">
+      <node id="tinderbox_mesh" name="tinderbox_mesh" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#tinderbox_meshShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#tinderbox_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

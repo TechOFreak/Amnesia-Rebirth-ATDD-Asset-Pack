@@ -1,0 +1,34 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/organic/corpse_pile/corpse_pile1.dae">
+            <SubMesh ID="0" Name="polySurface1" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="2984" Material="" Static="true" />
+            <SubMesh ID="1" Name="polySurface2" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3392" Material="" Static="true" />
+            <SubMesh ID="2" Name="polySurface3" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="2632" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="3" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="0.0507937 0.167817 -0.152283" Rotation="0 -0.785398 0" Scale="1.28118 0.320296 1.28118" RelativeTranslation="0 0 0" RelativeRotation="0 -0.785398 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="5" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="0.0507937 0.424281 -0.152283" Rotation="0 -0.785398 0" Scale="0.723964 0.180991 0.723964" RelativeTranslation="0 0 -5.39395e-09" RelativeRotation="0 -0.785398 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="4" Name="Body_1" CreStamp="0" ModStamp="1616012088" WorldPos="0.0507937 0.167817 -0.152283" Rotation="0 0 0" Scale="1.28118 1.28118 1.28118" Material="Organic Fresh" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Shape ID="3" />
+            </Body>
+            <Body ID="6" Name="Body_2" CreStamp="1616012093" ModStamp="1616012106" WorldPos="0.0507937 0.424281 -0.152283" Rotation="0 0 0" Scale="0.723964 0.723964 0.723964" Material="Organic Fresh" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                    <Child ID="1" />
+                    <Child ID="2" />
+                </Children>
+                <Shape ID="5" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

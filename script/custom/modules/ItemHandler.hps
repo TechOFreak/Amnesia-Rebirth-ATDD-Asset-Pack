@@ -1,0 +1,3632 @@
+//----------------------------------------------------------------------------------------
+
+#include "interfaces/UserModule_Interface.hps"
+#include "custom/modules/ModuleInterfaces_Custom.hps"
+#include "base/Player_Types.hps"
+#include "base/InputHandler_Types.hps"
+#include "helpers/helper_modules.hps"
+#include "helpers/helper_map.hps"
+#include "helpers/helper_props.hps"
+#include "helpers/helper_imgui.hps"
+#include "custom/player/PlayerTypes_Custom.hps"
+#include "custom/helpers/helper_items.hps"
+
+//----------------------------------------------------------------------------------------
+
+enum eHeldItemState
+{
+	eHeldItemState_None,
+	eHeldItemState_TakingOut,
+	eHeldItemState_PuttingAway,
+	eHeldItemState_Held
+}
+
+//----------------------------------------------------------------------------------------
+
+const float gfThrowImpulseDefault=5.0f;
+const float gfFastItemSwitchSpeed=5.0f;
+const float gfToggleItemTimeMin=0.5f;
+
+const float gfMatchCountDisplayTime = 4.0f;
+const float gfMatchCountFadeInTime = 0.3f;
+const float gfMatchCountFadeOutTime = 1.0f;
+
+const float gfMatchUnequipDelay = 0.6f; //How far into the equip animation (relative time) you're allowed to unequip the match
+const float gfMatchEquipDelay = 0.25f; //How far into an unequip animation (relative time) you're allowed to equip a match
+
+const cVector3f gvItemHandlerGuiPos = cVector3f(0.87,0.825,1);
+
+const float gfItemHandlerGuiSizeX = 0.052;
+
+//----------------------------------------------------------------------------------------
+
+const int glBodyRenderLayer = 0;
+
+//----------------------------------------------------------------------------------------
+
+interface iScrItemCallbacks
+{
+	bool OnItemsCombined(const tString& in asItemTypeA, iScrItem@ pItemA, const tString& in asItemTypeB, iScrItem@ pItemB);
+	bool CanUseOnSelf(const tString& in asItemType, iScrItem@ pItem);
+	bool CanUseOnWorld(const tString& in asItemType, iScrItem@ pItem, const tString& in asPickedEntity);
+	bool UseOnSelf(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity, float afTimeElapsed, float afTimeStep);
+	bool UseOnWorld(const tString& in asItemType, iScrItem@ pItem, const tString& in asTargetEntity, const tString& in asItemEntity, float afTimeElapsed, float afTimeStep);
+	void OnStoppedUsing(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity);
+	void OnPickUp(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity);
+	void OnTakeOut(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity, eItemHandlerHand aHand);
+	void OnStartPutAway(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity);
+	void OnPutAway(const tString& in asItemType, iScrItem@ pItem, const tString& in asItemEntity);		
+}
+
+#include "custom/player/ItemCallbacks.hps"
+
+//----------------------------------------------------------------------------------------
+
+class cItemType : iScrItemType
+{
+	cXmlElement@ mXML;
+	cXmlElement@ mInventoryXML;
+	cXmlElement@ mBulkXML;
+	cXmlElement@ mUseXML;
+	cXmlElement@ mHandsXML;
+	int mlAmountMax = 1;
+	
+	cItemType()
+	{
+		
+	}
+	
+	cItemType(cXmlElement@ aXML)
+	{
+		SetXML(aXML);
+	}
+	
+	tString GetInventoryIcon()
+	{
+		if (mInventoryXML is null)
+			return "";
+		return mInventoryXML.GetAttributeString("Icon","");	
+	}
+	
+	tString GetAltInventoryIcon()
+	{
+		if (mInventoryXML is null)
+			return "";
+		return mInventoryXML.GetAttributeString("AltIcon","");	
+	}
+	
+	tString GetPickupIcon()
+	{
+		if (mInventoryXML is null)
+			return "";
+		return mInventoryXML.GetAttributeString("PickupIcon","");	
+	}
+
+	bool GetUsesArmAnimation()
+	{
+		if (mHandsXML is null)
+			return false;
+		return mHandsXML.GetAttributeBool("UsesArmAnimation",false);
+	}
+	
+	bool GetUsesInspectAnimation()
+	{
+		if (mHandsXML is null)
+			return false;
+		return mHandsXML.GetAttributeBool("UsesInspectAnimation",false);
+	}
+	
+	tString GetEntityInspectAnimation()
+	{
+		if (mHandsXML is null)
+			return "";
+		return mHandsXML.GetAttributeString("EntityInspectAnimation","");
+	}
+	
+	tString GetPlayerInspectAnimation()
+	{
+		if (mHandsXML is null)
+			return "";
+		return mHandsXML.GetAttributeString("PlayerInspectAnimation","");
+	}
+	
+	bool GetUseArmAnimationYaw()
+	{
+		if (mHandsXML is null)
+			return false;
+		return mHandsXML.GetAttributeBool("UseArmAnimationYaw",true);
+	}
+	
+	bool GetUseArmAnimationPitch()
+	{
+		if (mHandsXML is null)
+			return false;
+		return mHandsXML.GetAttributeBool("UseArmAnimationPitch",true);
+	}
+
+	bool IsLeftHand()
+	{
+		if (mHandsXML is null)
+			return false;
+		return mHandsXML.GetAttributeBool("LeftHand",false);
+	}
+	
+	eItemHandlerHand GetEquipHand()
+	{
+		if (CanUseOnWorld()==false)
+			return eItemHandlerHand_LastEnum;
+			
+		if (mHandsXML is null)
+			return eItemHandlerHand_Right;
+			
+		return IsLeftHand()?eItemHandlerHand_Left:eItemHandlerHand_Right;
+	}
+	
+	tString GetHandEntityFile()
+	{
+		if (mHandsXML is null)
+			return "";		
+		return mHandsXML.GetAttributeString("EntityFile","");
+	}
+	
+	tString GetAccessoryEntityFile()
+	{
+		if (mHandsXML is null)
+			return "";		
+		return mHandsXML.GetAttributeString("AccessoryEntityFile","");
+	}
+	
+	bool IsAccessory()
+	{
+		if (mHandsXML is null)
+			return false;
+		return (mHandsXML.GetAttributeString("AccessoryEntityFile","") != "");
+	}
+	
+	tString GetAccessorySocket()
+	{
+		if (mHandsXML is null)
+			return "";
+		return mHandsXML.GetAttributeString("AccessorySocket","");
+	}
+	
+	float GetAccessoryEntityScale()
+	{
+		if (mHandsXML is null)
+			return 1.f;
+		return mHandsXML.GetAttributeFloat("AccessoryEntityScale",1.f);
+	}
+	
+	bool UseParentBoneRotation()
+	{
+		if (mHandsXML is null)
+			return false;
+		return mHandsXML.GetAttributeBool("UseParentBoneRotation", false);
+	}
+
+	bool IsLightSource()
+	{
+		if (mHandsXML is null)
+			return false;
+		return mHandsXML.GetAttributeBool("LightSource",false);	
+	}
+	
+	float GetEntityScale()
+	{
+		if (mHandsXML is null)
+			return 1.f;
+		return mHandsXML.GetAttributeFloat("EntityScale",1.f);	
+	}
+	
+	float GetEquipToggleDelay()
+	{
+		if (mHandsXML is null)
+			return gfToggleItemTimeMin;
+		return mHandsXML.GetAttributeFloat("EquipToggleDelay",gfToggleItemTimeMin);	
+	}
+	
+	float GetUnequipToggleDelay()
+	{
+		if (mHandsXML is null)
+			return gfToggleItemTimeMin;
+		return mHandsXML.GetAttributeFloat("UnequipToggleDelay",gfToggleItemTimeMin);	
+	}
+	
+	tString GetNameID()
+	{
+		return mXML.GetAttributeString("NameID",GetID());
+	}
+	
+	tString GetDescID()
+	{
+		return mXML.GetAttributeString("DescID",GetNameID()+"_Desc");
+	}
+	
+	tString GetID()
+	{
+		return mXML.GetAttributeString("ID","");
+	}
+	
+	void SetXML(cXmlElement@ aXML)
+	{
+		@mXML = aXML;
+		@mInventoryXML = mXML.GetFirstElement("Inventory");
+		@mBulkXML = mXML.GetFirstElement("Bulk");
+		@mUseXML = mXML.GetFirstElement("Use");
+		@mHandsXML = mXML.GetFirstElement("Hands");
+		
+		if (mBulkXML is null)
+		{
+			mlAmountMax = 1;
+		}
+		else
+		{
+			mlAmountMax = mBulkXML.GetAttributeInt("MaxAmount",1);
+			
+			//////////////////////////////////
+			// Containers can have zero amount.
+			if (IsContainer()==false && mlAmountMax==0)
+			{
+				Error("[ItemHandler] Item type '"+GetID()+"' can't have an amount of 0!");
+				return;
+			}
+		}
+	}
+	
+	bool CanCombine()
+	{
+		if (AllowsStacking())
+			return true;
+			
+		tString sCombine = mXML.GetAttributeString("Combine","");
+		if (sCombine=="")
+			return false;
+			
+		return true;
+	}
+	
+	bool PrioritizeCombineOverStacking()
+	{
+		return mXML.GetAttributeString("Combine","") != "" && GetAmountMax() > 1;
+	}
+	
+	tString GetCombineType()
+	{
+		return mXML.GetAttributeString("Combine","");
+	}
+	
+	bool CanCombineWith(iScrItemType@ apOtherType)
+	{ 
+        /////////
+        // Stacks
+		if (AllowsStacking())
+		{
+            ////////////////////
+            // Lantern specifics
+            if ((GetID()=="Lantern" && apOtherType.GetContainerContentType()=="Oil") || 
+            (GetContainerContentType()=="Oil" && apOtherType.GetID()=="Lantern"))
+                return true;
+				
+			if ((GetID()=="ATDDLantern" && apOtherType.GetContainerContentType()=="Oil") || 
+            (GetContainerContentType()=="Oil" && apOtherType.GetID()=="ATDDLantern"))
+                return true;
+			
+			////////////////////
+            // Shadow flesh injector specifics
+            if ((GetID()=="ShadowFleshCanister" && apOtherType.GetContainerContentType()=="ShadowFleshPowder") || 
+            (GetContainerContentType()=="ShadowFleshPowder" && apOtherType.GetID()=="ShadowFleshCanister"))
+                return true;
+                
+			if (IsContainer() && apOtherType.GetContainerContentType()==GetContainerContentType())
+				return true;
+			if (IsContainer()==false && apOtherType.GetID() == GetID())
+				return true;
+			return false;
+		}
+        
+		tString sCombine = mXML.GetAttributeString("Combine","");
+		if (sCombine=="")
+			return false;
+		
+		if (sCombine == apOtherType.GetCombineType())
+		{
+			if (GetID() == apOtherType.GetID())
+				return false;
+			return true;
+		}
+			
+		array<tString> sItems;
+		cString_GetStringVec(sCombine, sItems,", ");
+		for (uint i=0; i<sItems.size(); ++i)
+		{
+			if (sItems[i]==apOtherType.GetID())
+				return true;
+		}
+		
+		return false;
+	}
+	
+	int GetAmountMax()
+	{
+		if (mBulkXML is null)
+			return 1;
+		return mlAmountMax;
+	}
+	
+	bool AllowsStacking()
+	{
+		if (mBulkXML is null)
+			return false;
+		return ((mlAmountMax==-1)||(mlAmountMax>1));
+	}
+	
+	bool IsContainer()
+	{
+		if (mBulkXML is null)
+			return false;
+		return mBulkXML.GetAttributeBool("Container", false);
+	}
+	
+	tString GetContainerContentType()
+	{
+		if (mBulkXML is null)
+			return "";
+		return mBulkXML.GetAttributeString("ContentType","");
+	}
+	
+	int GenerateInitAmount()
+	{
+		if (mBulkXML is null)
+			return 1;
+		cVector2f vRange = mBulkXML.GetAttributeVector2f("InitAmountRange", cVector2f_One);
+		int lOut = cMath_RandRectl(int(vRange.x), int(vRange.y));
+		return lOut;		
+	}
+	
+	bool CanUseOnSelf()
+	{
+		if (mUseXML is null)
+			return false;
+		return mUseXML.GetAttributeBool("OnSelf",false);
+	}
+	
+	bool CanUseOnWorld()
+	{
+		if (mUseXML is null)
+			return false;
+		return mUseXML.GetAttributeBool("OnWorld",false);
+	}
+	
+	tString GetCanUseOnSelfMapCallback()
+	{
+		if (mUseXML is null)
+			return "";
+		return mUseXML.GetAttributeString("CanUseOnSelfMapCallback",""); 
+	}
+	
+	tString GetCanUseOnWorldMapCallback()
+	{
+		if (mUseXML is null)
+			return "";
+		return mUseXML.GetAttributeString("CanUseOnWorldMapCallback","");
+	}
+	
+	tString GetUseOnSelfMapCallback()
+	{
+		if (mUseXML is null)
+			return "";
+		return mUseXML.GetAttributeString("UseOnSelfMapCallback","");
+	}
+	
+	tString GetUseOnWorldMapCallback()
+	{
+		if (mUseXML is null)
+			return "";
+		return mUseXML.GetAttributeString("UseOnWorldMapCallback","");
+	}
+
+	bool GetUseCanMove()
+	{
+		if (mUseXML is null)
+			return false;
+		return mUseXML.GetAttributeBool("CanMove",false);
+	}
+	
+	int GetUsingState()
+	{
+		if (mUseXML is null)
+			return -1;
+		return mUseXML.GetAttributeInt("UsingState", -1);
+	}	
+}
+
+//----------------------------------------------------------------------------------------
+
+class cItemEntry : iScrItem
+{
+	tString msID;
+	tString msType;
+	tString msContentType;
+	tString msInventoryIcon;
+	tString msPickupIcon;
+	int mlAmount=1;
+	int mlPreviousAmount=0;
+	bool mbDisableUseOnSelf = false;
+	bool mbUseAltInventoryIcon = false;
+	bool mbHidden = false;
+	tString msInternalEntity = "";
+	tString msAnimationName = "";
+	[volatile] iScrItemType@ mType = null;
+	
+	cItemEntry()
+	{
+		msID="";
+		msType="";
+		mlAmount=1;
+		mlPreviousAmount=0;
+		msContentType="";
+		mbDisableUseOnSelf = false;
+		msInventoryIcon = "";
+		mbUseAltInventoryIcon = false;
+		mbHidden = false;
+	}
+	
+	cItemEntry(const tString& in asID, const tString& in asType)
+	{
+		msID = asID;
+		msType = asType;
+		mlAmount = 1;
+		mlPreviousAmount=0;
+		mbDisableUseOnSelf = false;
+		mbUseAltInventoryIcon = false;
+		mbHidden = false;
+		
+		////////////////
+		//Init From Type
+		iScrItemType@ pType = GetType();
+		mlAmount=pType.GenerateInitAmount();
+		msInventoryIcon = pType.GetInventoryIcon();
+		msPickupIcon = pType.GetPickupIcon();
+		//if (pType.IsContainer())
+			msContentType = pType.GetContainerContentType();
+	}
+
+	tString GetID()		{return msID;}
+	tString GetTypeID()	{return msType;}
+	iScrItemType@ GetType()
+	{
+		if (mType is null)
+		{
+			iScrItemHandler_Interface @pHandler = cast<iScrItemHandler_Interface>( cLux_GetUserModuleFromID(eModuleType_Custom_ItemHandler) );
+			@mType = pHandler.FindType(msType);
+			if (mType is null)
+			{
+				Error("[ItemHandler] Can't find item type:"+msType+"!");
+				return null;
+			}
+		}
+		return mType;
+	}
+	
+	const tString& GetCrossHairGfx()
+	{
+		return msInventoryIcon;
+	}
+	
+	int GetMaxAmount()
+	{
+		return GetType().GetAmountMax();
+	}
+	
+	bool IsAmountMaxed()
+	{
+		int lMax = GetType().GetAmountMax();
+		if (lMax==-1) //Infinite
+			return false;
+		return (mlAmount>=lMax);
+	}
+	
+	int GetAmount()
+	{
+		return mlAmount;
+	}
+	
+	int GetPreviousAmount()
+	{
+		return mlPreviousAmount;
+	}
+	
+	void SetAmount(int alAmount)
+	{
+		mlPreviousAmount = mlAmount;
+		int lMax = GetType().GetAmountMax();
+		if (lMax<0)
+		{
+			mlAmount = alAmount;
+			return;
+		}
+		
+		if (lMax==1 && GetType().GetID() != "ShadowFleshCanister") // allow stacking of 1 for the shadow flesh injector
+		{
+			Error("[ItemHandler] Trying to change the amount of:'"+GetID()+"' but you can only have one.");
+			return;
+		}
+		
+		if (alAmount>lMax)
+		{
+			Error("[ItemHandler] Trying to set the amount for item:'"+GetID()+"' to "+alAmount+" beyond max of "+lMax);
+		}
+		
+		int lMin = 1;
+		if (IsContainer())
+			lMin = 0;
+		else if (alAmount<1)
+            Error("[ItemHandler] Trying to set the amount for item:'"+GetID()+"' to "+alAmount+" which is below 1");
+			
+		mlAmount = cMath_Clamp(alAmount, lMin, lMax);
+		
+		/////////////////////////////////////////
+		// Pass the value to the item held if any.
+		iScrItemHandler_Interface @pHandler = cast<iScrItemHandler_Interface>( cLux_GetUserModuleFromID(eModuleType_Custom_ItemHandler) );
+		for (int i = 0; i < int(eItemHandlerHand_LastEnum); i++)
+		{
+			eItemHandlerHand hand = eItemHandlerHand(i);
+			if ((pHandler.GetHeldItem(hand)==GetID()) && (pHandler.GetHeldEntity(hand)!=""))
+				pHandler.CopyItemDataToEntity(this, pHandler.GetHeldEntity(hand));
+		}
+	}
+	
+	bool CanCombine()
+	{
+		if (!GetType().CanCombine())
+			return false;
+			
+		if (IsContainer()&&(GetAmount()==0))
+			return false;
+		
+		return true;
+	}
+	
+	bool CanCombineWith(iScrItem@ apOtherItem)
+	{
+		if (GetID() == apOtherItem.GetID()) return false;
+		if (GetType().CanCombineWith(apOtherItem.GetType())==false) return false;
+			
+		if (GetType().AllowsStacking())
+		{
+			if (apOtherItem.IsAmountMaxed()) return false;
+            
+            ////////////////////
+            // Lantern specifics
+            if (((GetTypeID()=="Lantern" && IsAmountMaxed()==false) && apOtherItem.GetContentType()=="Oil") || 
+            (GetContentType()=="Oil" && apOtherItem.GetTypeID()=="Lantern"))
+                return true;
+				
+			if (((GetTypeID()=="ATDDLantern" && IsAmountMaxed()==false) && apOtherItem.GetContentType()=="Oil") || 
+            (GetContentType()=="Oil" && apOtherItem.GetTypeID()=="ATDDLantern"))
+                return true;
+			
+			////////////////////
+            // Shadow flesh injector specifics
+            if (((GetTypeID()=="ShadowFleshCanister" && IsAmountMaxed()==false) && apOtherItem.GetContentType()=="ShadowFleshPowder") || 
+            (GetContentType()=="ShadowFleshPowder" && apOtherItem.GetTypeID()=="ShadowFleshCanister"))
+                return true;
+						
+			if (GetType().IsContainer())
+			{					
+				if (apOtherItem.IsContainer()==false) return false;
+				if (apOtherItem.GetContentType()!=GetContentType()) return false;
+				if (GetAmount()==0) return false;
+			}
+			else if (apOtherItem.GetTypeID()!=msType)
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	bool IsContainer()
+	{
+		return GetType().IsContainer();
+	}
+	
+	float GetFullness()
+	{
+		return float(mlAmount)/float(GetType().GetAmountMax());
+	}
+	
+	void SetFullness(float afFullness)
+	{
+		mlAmount = int(afFullness*GetType().GetAmountMax());
+	}
+	
+	tString GetContentType()
+	{
+		return msContentType;
+	}
+	
+	void SetContentType(const tString& in asContentType)
+	{
+		msContentType = asContentType;
+	}
+
+	//TODO: Remove if no longer needed
+	bool CanAddSubType(const tString& in asType, const tString& in asSubType)
+	{
+		if (!IsContainer())
+			return false;
+
+		// Same subtype? Go for it!
+		if (msContentType == asSubType)
+			return true;
+
+		// Does the top-level type match?
+		if (GetType().GetContainerContentType()!=asType)
+			return false;
+
+		// Is it empty?
+		if (GetAmount()>0)
+			return false;
+
+		return true;
+	}
+	
+	void SetDisableUseOnSelf(bool abX)
+	{
+		mbDisableUseOnSelf = abX;
+		
+		/////////////////////////////////////////
+		// Pass the value to the item held if any.
+		iScrItemHandler_Interface @pHandler = cast<iScrItemHandler_Interface>( cLux_GetUserModuleFromID(eModuleType_Custom_ItemHandler) );
+		for (int i = 0; i < int(eItemHandlerHand_LastEnum); i++)
+		{
+			eItemHandlerHand hand = eItemHandlerHand(i);
+			if ((pHandler.GetHeldItem(hand)==GetID()) && (pHandler.GetHeldEntity(hand)!=""))
+			{
+				pHandler.CopyItemDataToEntity(this, pHandler.GetHeldEntity(hand));
+			}
+		}
+	}
+	
+	bool GetUseOnSelfDisabled()
+	{
+		return mbDisableUseOnSelf;
+	}
+	
+	tString GetInternalEntity()
+	{
+		if (msInternalEntity == "" || Entity_Exists(msInternalEntity) == false)
+		{
+			iScrItemHandler_Interface@ pHandler = cast<iScrItemHandler_Interface>( cLux_GetUserModuleFromID(eModuleType_Custom_ItemHandler) );
+			
+			msInternalEntity = pHandler.SpawnTypeAsEntity(GetTypeID(), cMatrixf_Identity, msID + "_Internal");
+			if (msInternalEntity != "")
+				Entity_SetActive(msInternalEntity,false);
+				
+			iLuxEntity@ pEntity = Map_GetEntity(msInternalEntity);
+			if (pEntity !is null)
+				pEntity.SetIsInteractedWith(true);
+		}
+		
+		return msInternalEntity;
+	}
+	
+	tString GetActiveInventoryIcon()
+	{
+		return msInventoryIcon;
+	}
+	
+	tString GetPickupIcon()
+	{
+		return msPickupIcon == "" ? GetActiveInventoryIcon() : msPickupIcon;
+	}
+	
+	bool GetUseAltInventoryIcon()
+	{
+		return mbUseAltInventoryIcon;
+	}
+	
+	void SetUseAltInventoryIcon(bool abX, bool abWhenSketchbookClosed = true)
+	{
+		mbUseAltInventoryIcon = abX;
+		
+		if (abWhenSketchbookClosed == false || Sketchbook_IsOpen() == false)
+			msInventoryIcon = abX ? GetType().GetAltInventoryIcon() : GetType().GetInventoryIcon();
+	}
+	
+	void SetHidden(bool abX)
+	{
+		mbHidden = abX;
+	}
+	
+	bool GetHidden()
+	{
+		return mbHidden;
+	}
+	
+	void DestroyInternalEntity()
+	{
+		if (msInternalEntity!="")
+		{
+			Entity_Destroy(msInternalEntity);
+			msInternalEntity="";
+		}
+	}
+	
+	void Destroy()
+	{
+		DestroyInternalEntity();
+	}
+}
+
+//----------------------------------------------------------------------------------------
+
+class cScrItemHandlerHand
+{
+	tString msHeldItem = "";
+	tString msHeldItemLast = "";
+	tString msHeldEntity = "";
+	tString msHeldItemNext = "";
+	bool mbHeldItemPutAway = false;
+	bool mbHeldItemNextPutAway = false;
+	eHeldItemState mHeldItemState = eHeldItemState_None;
+	tString msUseItem="";
+	tString msUseEntity="";
+	tString msUseTarget="";
+	float mfUseTime;
+}
+
+//----------------------------------------------------------------------------------------
+
+class cPickupGui
+{
+	tString msID;
+	tString msIconFile;
+	cVector3f mvGoalDest;
+	float mfIconSmallSize;
+	float mfIconLargeSize;
+	float mfAnimationTime;
+	float mfFadeInTime;
+	float mfFadeOutTime;
+	float mfTimePassed;
+	float mfAlpha;
+	float mfSize;
+	cVector3f mvPos;
+	bool mbShouldFadeOut;
+	bool mbReversed;
+	
+	cPickupGui(const tString&in asID, const tString&in asIconFile, const bool abReversed=false)
+	{
+		msID = asID;
+		msIconFile = asIconFile!="" ? asIconFile : "_temp_inventory_item";
+		
+		mfIconSmallSize = 0.083f;
+		mfIconLargeSize = abReversed ? 0.12f : 0.15f;
+		
+		mbReversed = abReversed;
+		const cVector3f vScreenCenter = cVector3f(0.5, 0.5, 1);
+		mvPos = abReversed ? gvItemHandlerGuiPos : vScreenCenter;
+		mvGoalDest = abReversed ? vScreenCenter : gvItemHandlerGuiPos;
+		mfSize = abReversed ? mfIconSmallSize : mfIconLargeSize;
+		
+		mfAnimationTime = abReversed ? 0.5f : 1.f;
+		mfFadeInTime = 0.1f;
+		mfFadeOutTime = abReversed? 0.25f : 0.5f;
+		mfTimePassed = 0.f;
+		mfAlpha = 0.f;
+		
+		mbShouldFadeOut = false;
+	}
+	
+	void AddToTime(const float afDelay)
+	{
+		mfAnimationTime+=afDelay;
+		mfFadeInTime+=afDelay;
+		mfFadeOutTime+=afDelay;
+		//mfTimePassed+=afDelay;
+	}
+	
+	bool IsAnimating()
+	{
+		float fTotalTime = mfAnimationTime;
+		if (mbReversed==false) fTotalTime += mfFadeOutTime;
+		return mfTimePassed < fTotalTime;
+	}
+	
+	void OnPickupGui(float afTimeStep)
+	{
+		mfTimePassed += afTimeStep;
+		
+		//////////
+		// Animate
+		mvPos.x = cMath_InterpolateLinear(mvPos.x, mvGoalDest.x, (1/mfAnimationTime) * afTimeStep * 5.f);
+		mvPos.y = cMath_InterpolateLinear(mvPos.y, mvGoalDest.y, (1/mfAnimationTime) * afTimeStep * 5.f);
+		
+		//////////////////
+		// Fade In & Scale
+		if (mbShouldFadeOut==false)
+		{
+			const float fAlphaFadeStep = (1.f / mfFadeInTime) * afTimeStep;
+			mfAlpha = cMath_Min(mfAlpha + fAlphaFadeStep, 1.f);
+			
+			float fGoalSize = mbReversed ? mfIconLargeSize : mfIconSmallSize;
+			float fSizeStep = (1/mfAnimationTime) * afTimeStep * 5.f;
+			if (mbReversed) fSizeStep*=0.5f;
+			mfSize = cMath_InterpolateLinear(mfSize, fGoalSize, fSizeStep);
+			
+			if (mfTimePassed >= mfAnimationTime)
+				mbShouldFadeOut = true;
+		}
+		
+		///////////
+		// Fade Out
+		else
+		{
+			const float fAlphaFadeStep = (1.f / mfFadeOutTime) * afTimeStep;
+			mfAlpha = cMath_Max(mfAlpha - fAlphaFadeStep, 0.f);
+		}
+		
+		//////////////////
+		// Draw pickup img
+		if (mbReversed && Item_IsHeld(eItemHandlerHand_Right)==false) return;
+		
+		cImGuiGfx GuiIcon(msIconFile, eImGuiGfx_TextureTemporary);
+		GuiIcon.mColor = mbReversed ? cColor(0.4, 0.4, 0.4, mfAlpha) : cColor(1.0, 1.0, 1.0, mfAlpha);
+		
+		eImGuiAlign eCurrAlignment = mbReversed ? eImGuiAlign_CenterCenter : eImGuiAlign_TopLeft;
+		ImGui_SetAlignment(eCurrAlignment);
+		
+		ImGui_DoImageCorrectAspect(GuiIcon, ImGui_NrmPosGroup(mvPos), ImGui_NrmSizeGroupKeepRatio(mfSize));
+		
+		ImGui_SetAlignment(eImGuiAlign_TopLeft);
+	}
+}
+
+//----------------------------------------------------------------------------------------
+
+class cScrItemHandler : iScrUserModule, iScrUserModule_Interface, iScrItemHandler_Interface
+{
+	//------------------------------------------------------------
+	
+	[volatile] iXmlDocument@ mInventoryDoc;
+	[volatile] cXmlElement@ mItemTypes;
+	[volatile] cXmlElement@ mContentTypes;
+	[volatile] cXmlElement@ mStartup;
+	[nosave] uint mlInventoryMaxLimit = 0; 
+	array<cItemEntry> mvInventory;
+	int mlLastItemID;
+	int mlLastSpawnedItemID=0;
+	cScrItemCallbacks mCallbacks;
+
+	array<cScrItemHandlerHand> mHands;
+	
+	bool mbPickingUp = false;
+	bool mbPickedUpItem = false;
+	bool mbAddedStartupItems = false;
+	
+	float mfMatchCountDisplayTimer = 0;
+	float mfMatchCountAlpha = 0;
+	int mlMatchDisplayCount = 0;
+	float mfItemCountDisplay_FlashTimer = 0;
+	int mlItemCountDisplay_FlashCount = 0;
+	bool mbMatchCountGreyscale = false;
+	float mfMatchInterpPosX = 0;
+	float mfInspectItemTime = 0;
+	tString msItemCountDisplay_ImageColor = "";
+	tString msItemCountDisplay_ImageGreyscale = "";
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// INIT
+	/////////////////////////////////////////
+	
+	//------------------------------------------------------------
+	bool mbInited = false;
+	void Init()
+	{
+		mbInited=true;
+		LoadConfig("Inventory.cfg");
+		mvInventory.resize(0);
+		mHands.resize(2);
+		mlLastItemID=0;
+		mfMatchInterpPosX = gvItemHandlerGuiPos.x;
+	}
+	
+	//------------------------------------------------------------
+	
+	void Reset()
+	{
+	}
+		
+	//------------------------------------------------------------
+	
+	void LoadUserConfig()
+	{	
+	}
+	
+	//------------------------------------------------------------
+	
+	void SaveUserConfig()
+	{
+	}
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// INTERFACE
+	/////////////////////////////////////////
+	
+	//------------------------------------------------------------	
+	
+	void ClearInventory()
+	{
+		mvInventory.resize(0);
+	}
+	
+	//------------------------------------------------------------	
+	
+	tString AddToInventory(const tString& in asType, bool abDrawGuiAnimation = false)
+	{
+		if (WillItemTypeFit(asType)==false)
+			return "";
+		
+		tString sID = asType+"_"+mlLastItemID;
+		cItemEntry@ pItem = cItemEntry(sID,asType);
+		mlLastItemID++;
+		mvInventory.push_back(pItem);
+				
+		if (GetItemCount()>0 && pItem.GetType().AllowsStacking())
+		{
+			for (uint i=0; i<=mvInventory.size()-1; i++)
+			{
+				// Can't combine with itself
+				if (mvInventory[i].msID==sID) 
+					continue;
+				
+				// Can't auto-combine with lantern on pickup
+				if (pItem.GetType().IsContainer())
+				{
+					if (mvInventory[i].msType=="Lantern" || pItem.GetType().GetID()=="Lantern")
+						continue;
+					if (mvInventory[i].msType=="ATDDLantern" || pItem.GetType().GetID()=="ATDDLantern")
+						continue;
+//					if (mvInventory[i].msType=="ShadowFleshCanister" || pItem.GetContentType()=="ShadowFleshPowder")
+//						continue;
+				}
+				else
+				{
+					if (mvInventory[i].msType!=asType)
+						continue;
+				}
+				
+				if (Combine(sID, mvInventory[i].msID))
+					sID = mvInventory[i].msID;
+			}
+		}
+		
+		if (abDrawGuiAnimation)
+			StartPickUpGuiAnimation(pItem.GetPickupIcon());
+		
+		return sID;
+	}
+	
+	//------------------------------------------------------------	
+	
+	bool WillItemTypeFit(const tString& in asType)
+	{
+		iScrItemType@ pType = FindType(asType);
+		if (pType is null)
+		{
+			Error("[ItemHandler] Unknown item type:'"+asType+"'");
+			return false;
+		}
+		
+		bool bInventoryFull = GetItemCount() >= mlInventoryMaxLimit;
+		tString sItemWontFitError = "[ItemHandler] Didn't add item type '"+asType+"' - it wouldn't fit.";
+		
+		if (GetItemCount()>0 && pType.AllowsStacking())
+		{
+			for (uint i=0; i<GetItemCount(); i++)
+			{
+				if (pType.IsContainer())
+				{
+					tString sInventoryItemContentType = mvInventory[i].GetType().GetContainerContentType();
+					tString sPickupItemContentType = pType.GetContainerContentType();
+					
+					if (sInventoryItemContentType != sPickupItemContentType)
+						continue;
+						
+					if (sInventoryItemContentType=="Oil")
+					{
+						// Make sure we can still pickup oils when the lantern is full.
+						if (mvInventory[i].GetType().GetID()=="Lantern" || mvInventory[i].GetType().GetID()=="ATDDLantern")
+							continue;
+						
+						//Make sure we can stil pickup the lantern even though the oil container is full.
+						if (mvInventory[i].IsAmountMaxed() && pType.GetID()=="Lantern" && bInventoryFull==false)
+							return true;
+						if (mvInventory[i].IsAmountMaxed() && pType.GetID()=="ATDDLantern" && bInventoryFull==false)
+							return true;
+					}
+				}
+				else
+				{
+					if (mvInventory[i].msType!=asType)
+						continue;
+				}
+				
+				if (mvInventory[i].IsAmountMaxed())
+				{
+					Error(sItemWontFitError);
+					return false;
+				}
+					
+			}
+		
+			if (bInventoryFull)
+			{
+				Error(sItemWontFitError);
+				return false;
+			}
+		}
+
+		return true;
+	}
+	
+	//------------------------------------------------------------	
+	
+	void AddManyToInventory(const tString& in asType, int alCount)
+	{
+		for (int i=0;i<alCount;i++)
+		{
+			AddToInventory(asType);
+		}
+	}
+	
+	//------------------------------------------------------------	
+	
+	void RemoveFromInventory(const tString& in asItemID, bool abWholeBulk=false, bool abSkipUnequip=false)
+	{
+		for (uint i=0;i<mvInventory.size();++i)
+		{
+			if (mvInventory[i].msID==asItemID)
+			{
+				if (!abWholeBulk)
+				{
+					int lCurrent = mvInventory[i].GetAmount();
+					if (lCurrent>1)
+					{
+						mvInventory[i].SetAmount(lCurrent-1);
+						return;
+					}
+				}
+				
+				eItemHandlerHand hand = GetHandHoldingItem(asItemID);
+
+				if (abSkipUnequip == false && hand!=eItemHandlerHand_LastEnum)
+				{
+					StopUsingItem(hand);
+					Hands_SwitchToDropping(hand);
+				}
+				
+				mvInventory[i].Destroy();
+				tString sType = mvInventory[i].msType;
+				mvInventory.removeAt(i);
+				cLux_AddDebugMessage("[ItemHandler] Removed "+asItemID+" from inventory.");
+				return;
+			}
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	bool Combine(const tString& in asItemAID, const tString& in asItemBID)
+	{
+		uint lCount=mvInventory.size();
+		bool bAltered = false;
+
+		iScrItem@ pItemA = GetByID(asItemAID);
+		if (pItemA is null)
+		{
+			Error("[Items] Can't find item:"+asItemAID+" for combine.");
+			return false;
+		}
+        
+		iScrItem@ pItemB = GetByID(asItemBID);
+		if (pItemB is null)
+		{
+			Error("[Items] Can't find item:"+asItemBID+" for combine.");
+			return false;
+		}
+		
+		/////////////////////////
+		// Shadow Flesh Specifics
+		if (pItemA.GetTypeID()=="ShadowFleshCanister" || pItemB.GetTypeID()=="ShadowFleshCanister")
+		{
+			iScrItem @pInjector = pItemA.GetTypeID()=="ShadowFleshCanister" ? pItemA : pItemB;
+			iScrItem @pVial = pItemA.GetTypeID()=="ShadowFleshCanister" ? pItemB : pItemA;
+			if (pInjector is null || pVial is null) return false;
+			if (pVial.GetContentType() != "ShadowFleshPowder") return false;
+			
+			int lInjectorAmount = pInjector.GetAmount();
+			int lInjectorFreeSpace = pInjector.GetType().GetAmountMax() - lInjectorAmount;
+			if (lInjectorFreeSpace <= 0) return false;
+			
+			int lVialsToAdd = cMath_Min(lInjectorFreeSpace, 1);
+			int lNewInjectorAmount = lInjectorAmount + lVialsToAdd;
+			pInjector.SetAmount(lNewInjectorAmount);
+			
+			// show full icon
+			pInjector.SetUseAltInventoryIcon(lNewInjectorAmount > 0, false);
+									
+			///////////////////////
+			// Handle the remainder
+			int lRemainder = pVial.GetAmount() - lVialsToAdd;
+			if (lRemainder > 0) pVial.SetAmount(lRemainder);
+			else RemoveFromInventory(pVial.GetID(), true);
+			
+			Sound_PlayGui("special_fx/notepad/notebook_item_combine", 1);
+			return true;
+		}
+		
+		if(pItemA.GetType().AllowsStacking() && pItemB.GetType().AllowsStacking() && pItemA.GetType().PrioritizeCombineOverStacking()==false)
+		{
+            ////////////////////
+            // Lantern Specifics
+            if (pItemA.GetTypeID()=="Lantern" || pItemB.GetTypeID()=="Lantern")
+            {
+				iScrItem @pLantern = pItemA.GetTypeID()=="Lantern" ? pItemA : pItemB;
+				iScrItem @pOil = pItemA.GetTypeID()!="Lantern" && pItemA.GetType().GetContainerContentType()=="Oil" ? pItemA : pItemB;
+				
+				if (pLantern is null || pOil is null) return false;
+                
+				////////////////
+				// Amount to add
+				int lOilCanisterAmount = 0;
+				if (pOil.GetTypeID()=="ModernOil")
+					lOilCanisterAmount = 2;
+				if (pOil.GetTypeID()=="HerbertOil")
+					lOilCanisterAmount = 3;
+				if (pOil.GetTypeID()=="AlchemistOil")
+					lOilCanisterAmount = 5;
+				
+				int lLanternAmount = pLantern.GetAmount();
+				int lLanternFreeSpace = pLantern.GetType().GetAmountMax() - lLanternAmount;
+				
+				if (lLanternFreeSpace <= 0) return false;
+				
+				int lOilToAdd = cMath_Min(lLanternFreeSpace, lOilCanisterAmount);
+				cLux_AddDebugMessage("lOilToAdd "+lOilToAdd);
+				
+				Lantern_SetAmount(lLanternAmount + lOilToAdd);
+				
+				///////////////////////
+				// Handle the remainder
+				int lRemainder = pOil.GetAmount() - 1;
+				
+				if (lRemainder > 0)
+				{
+					pOil.SetAmount(lRemainder);
+				}
+				else
+				{
+					///////////////////////////////
+					// Don't throw the lantern away
+					if (pItemA.GetTypeID()=="Lantern")
+						RemoveFromInventory(asItemBID, true);
+					else
+						RemoveFromInventory(asItemAID, true);
+				}
+				
+				//Sound_PlayGui("player/tools/lantern/lantern_refill", 1);
+				//Temp until above sound is fixed.
+				Sound_PlayGui("player/foley/action/pickup/oil_pickup", 1);
+				return true;
+            }
+			
+			if (pItemA.GetTypeID()=="ATDDLantern" || pItemB.GetTypeID()=="ATDDLantern")
+            {
+				iScrItem @pLantern = pItemA.GetTypeID()=="ATDDLantern" ? pItemA : pItemB;
+				iScrItem @pOil = pItemA.GetTypeID()!="ATDDLantern" && pItemA.GetType().GetContainerContentType()=="Oil" ? pItemA : pItemB;
+				
+				if (pLantern is null || pOil is null) return false;
+                
+				////////////////
+				// Amount to add
+				int lOilCanisterAmount = 0;
+				if (pOil.GetTypeID()=="ModernOil")
+					lOilCanisterAmount = 2;
+				if (pOil.GetTypeID()=="HerbertOil")
+					lOilCanisterAmount = 3;
+				if (pOil.GetTypeID()=="AlchemistOil")
+					lOilCanisterAmount = 5;
+				
+				int lLanternAmount = pLantern.GetAmount();
+				int lLanternFreeSpace = pLantern.GetType().GetAmountMax() - lLanternAmount;
+				
+				if (lLanternFreeSpace <= 0) return false;
+				
+				int lOilToAdd = cMath_Min(lLanternFreeSpace, lOilCanisterAmount);
+				cLux_AddDebugMessage("lOilToAdd "+lOilToAdd);
+				
+				Lantern_SetAmount(lLanternAmount + lOilToAdd);
+				
+				///////////////////////
+				// Handle the remainder
+				int lRemainder = pOil.GetAmount() - 1;
+				
+				if (lRemainder > 0)
+				{
+					pOil.SetAmount(lRemainder);
+				}
+				else
+				{
+					///////////////////////////////
+					// Don't throw the lantern away
+					if (pItemA.GetTypeID()=="Lantern" || pItemA.GetTypeID()=="ATDDLantern")
+						RemoveFromInventory(asItemBID, true);
+					else
+						RemoveFromInventory(asItemAID, true);
+				}
+				
+				//Sound_PlayGui("player/tools/lantern/lantern_refill", 1);
+				//Temp until above sound is fixed.
+				Sound_PlayGui("player/foley/action/pickup/oil_pickup", 1);
+				return true;
+            }
+			
+			///////////////////////////
+            // Cancel if item B is Full
+            if (pItemB.IsAmountMaxed())
+			{
+				cLux_AddDebugMessage("[Items] Item "+asItemBID+" is full, can't add any more to it.");
+				return false;
+			}
+            
+			///////////////////
+			// Containers logic
+            int lContainersCount=0;
+			bool bItemsAreContainers = pItemA.IsContainer() && pItemB.IsContainer();
+			if (bItemsAreContainers)
+			{
+				if (pItemA.GetType().GetContainerContentType()!=pItemB.GetType().GetContainerContentType()) return false;
+				
+				////////////////////////
+				// Count container items
+				for (uint i=0; i<=mvInventory.size()-1; i++)
+				{
+					if (mvInventory[i].GetType().GetContainerContentType() != pItemA.GetType().GetContainerContentType()) continue;
+					if (mvInventory[i].GetType().GetID()=="Lantern") continue;
+					if (mvInventory[i].GetType().GetID()=="ATDDLantern") continue;
+					lContainersCount+=1;
+				}
+			}
+			///////////////////////
+			// Non-Containers Logic
+			else
+			{
+                if (pItemA.GetTypeID()!=pItemB.GetTypeID()) return false;
+			}
+			
+			///////////////////
+			// Infinite Amount
+			if (pItemB.GetType().GetAmountMax()==-1)
+			{
+				pItemB.SetAmount(pItemB.GetAmount() + pItemA.GetAmount());
+				RemoveFromInventory(asItemAID,true);
+				Sound_PlayGui("special_fx/notepad/notebook_item_combine", 1);
+				return true;
+			}
+			
+			//////////
+			// Combine
+			int lNumInB = pItemB.GetAmount();
+			int lBMax = pItemB.GetType().GetAmountMax();
+			int lNumInA = pItemA.GetAmount();
+			int lFreeSpaceInB = lBMax - lNumInB;
+			int lNumAdding = cMath_Min(lFreeSpaceInB, lNumInA);
+			pItemB.SetAmount(lNumInB + lNumAdding);
+			
+			///////////////
+			// Remove items
+            // Only one bulk per type should
+			if (bItemsAreContainers==false)
+			{
+				RemoveFromInventory(asItemAID, true);
+				Sound_PlayGui("special_fx/notepad/notebook_item_combine", 1);
+				return true;
+			}
+            // Only one container per type
+			else if (lContainersCount>1)
+			{
+				RemoveFromInventory(asItemAID, true);
+				Sound_PlayGui("special_fx/notepad/notebook_item_combine", 1);
+				return true;
+			}
+			
+			////////////////////
+			// Handle remainders
+			int lRemainder = lNumInA - lNumAdding;
+			pItemA.SetAmount(lRemainder);
+            
+			return false;
+		}
+		
+		// Try map callback first
+		cLuxMap @pMap = cLux_GetCurrentMap();
+		tString sMethod = "bool OnItemsCombined(const tString& in asItemTypeA, const tString& in asItemIDA, const tString& in asItemTypeB, const tString& in asItemIDB)";
+		if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+		{
+			tString sTypeAID = pItemA.GetType().GetID();
+			tString sItemAID = pItemA.GetID();
+			tString sTypeBID = pItemB.GetType().GetID();
+			tString sItemBID = pItemB.GetID();
+			pMap.SetArgString(0, sTypeAID);
+			pMap.SetArgString(1, sItemAID);
+			pMap.SetArgString(2, sTypeBID);
+			pMap.SetArgString(3, sItemBID);
+			if (pMap.ScriptExecute())
+				bAltered = pMap.GetReturnBool();
+		}
+		
+		// Map callback failed or returned false, take some action via game callback
+		if (bAltered==false)
+			bAltered = mCallbacks.OnItemsCombined(pItemA.GetTypeID(), pItemA, pItemB.GetTypeID(), pItemB);
+
+		if (!bAltered)
+		{
+			// Sanity check.
+			if (lCount!=mvInventory.size())
+				bAltered=true;	// It did alter, you liar!
+		}
+		
+		if (bAltered)
+			Sound_PlayGui("special_fx/notepad/notebook_item_combine", 1);
+			
+		return bAltered;
+	}
+	
+	//------------------------------------------------------------
+	
+	iScrItem@ GetByID(const tString& in asItemID)
+	{
+		for (int i=mvInventory.size()-1;i>=0;--i)
+		{
+			if (mvInventory[i].msID==asItemID)
+			{
+				return mvInventory[i];
+			}
+		}
+		return null;
+	}
+	
+	//------------------------------------------------------------
+	// Types
+	//------------------------------------------------------------
+	
+	void RemoveTypeFromInventory(const tString& in asType, int alCount=-1)
+	{
+		if (alCount==0)
+			return;
+			
+		for (int i=mvInventory.size()-1;i>=0;--i)
+		{
+			if (mvInventory[i].msType==asType)
+			{
+				for(int lCurrent = mvInventory[i].GetAmount(); lCurrent>1; lCurrent = mvInventory[i].GetAmount())
+				{
+					mvInventory[i].SetAmount(lCurrent-1);
+					alCount--;
+					if (alCount==0)
+						return;
+				}
+				
+				cLux_AddDebugMessage("[ItemHandler] Removed "+mvInventory[i].msID+" from inventory.");
+				mvInventory[i].Destroy();
+				mvInventory.removeAt(i);
+				alCount--;
+				if (alCount==0)
+					return;
+			}
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	bool IsTypeInInventory(const tString& in asType)
+	{
+		for (int i=mvInventory.size()-1;i>=0;--i)
+		{
+			if (mvInventory[i].msType==asType)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	//------------------------------------------------------------
+	
+	int GetTypeCountInInventory(const tString& in asType)
+	{
+		int lCount=0;
+		for (int i=mvInventory.size()-1;i>=0;--i)
+		{
+			if (mvInventory[i].msType==asType)
+				lCount+=mvInventory[i].GetAmount();
+		}
+		return lCount;
+	}
+	
+	//------------------------------------------------------------
+	
+	int GetContentTypeCountInInventory(const tString& in asContentType)
+	{
+		int lCount=0;
+		for (int i=mvInventory.size()-1;i>=0;--i)
+		{
+			if (mvInventory[i].msContentType==asContentType)
+				lCount+=mvInventory[i].GetAmount();
+		}
+		return lCount;
+	}
+	
+	//------------------------------------------------------------
+	
+	tString GetFirstOfTypeInInventory(const tString& in asType)
+	{
+		for (int i=mvInventory.size()-1;i>=0;--i)
+		{
+			if (mvInventory[i].msType==asType)
+			{
+				return mvInventory[i].msID;
+			}
+		}
+		return "";
+	}
+	
+	//------------------------------------------------------------
+	
+	tString PickUpEntity(const tString& in asEntityName, bool abMakeHeld=false, bool abThenPutAway=true)
+	{
+		iLuxEntity@ pEntity = cLux_GetCurrentMap().GetEntityByName(asEntityName);
+		if (pEntity is null)
+		{
+			Error("[ItemHandler] Trying to pick up unknown entity "+asEntityName);
+			return "";
+		}
+		
+		tString sItemType = GetEntityItemType(asEntityName);
+		
+		if (sItemType=="")
+		{
+			Error("[ItemHandler] Trying to pick up an entity "+asEntityName+" which has no specified item type.");
+			return "";
+		}
+				
+		mbPickingUp = true;
+		
+		if (pEntity.IsActive()==false)
+			cLux_AddDebugMessage("[ItemHandler] Picking up inactive entity "+asEntityName+" - is this right?");
+		
+		cLux_AddDebugMessage("[ItemHandler] Picked up entity:"+asEntityName);
+		
+		tString sID = AddToInventory(sItemType);
+		iScrItem@ pItem = FindByID(sID);
+		
+		CopyEntityToItemData(asEntityName, pItem);
+		
+		mCallbacks.OnPickUp(sItemType, pItem, asEntityName);			
+		pEntity.SetEffectsActive(false, false);
+		cLux_GetCurrentMap().DestroyEntity(pEntity);
+		
+		///////////////////////
+		// Draw pickup item Gui
+		if (sItemType == "Matchbook")
+		{
+			int lContentLevel = (GetEntityItemContentLevel(asEntityName) <= 0) ? 1 : GetEntityItemContentLevel(asEntityName);
+			for (int i = 1; i <= lContentLevel; i++)
+			{
+				float fDelay = i/8.0f;
+				StartPickUpGuiAnimation(pItem.GetPickupIcon(),fDelay);
+			}
+		}
+		else
+		{
+			StartPickUpGuiAnimation(pItem.GetPickupIcon());
+		}
+
+		/////////////
+		// Equip Item
+		if (abMakeHeld)
+			TakeOut(sID, abThenPutAway);
+		else
+			mbPickingUp=false;
+			
+		return sID;
+	}
+	
+	//------------------------------------------------------------
+	
+	tString SpawnAsEntity(const tString& in asItemID, const cMatrixf& in aTransform, const tString& in asName="", float afScale=1.0f, eItemSpawn aSpawn=eItemSpawn_World, bool abIsAccessory=false)
+	{
+		cItemEntry@ pItem = FindByID(asItemID);		
+		if (pItem is null)
+		{
+			Error("[ItemHandler] Can't find item of ID:"+asItemID+" to spawn.");
+			return "";
+		}
+		
+		tString sEntityName = SpawnTypeAsEntity(pItem.msType, aTransform, asName, afScale, aSpawn, abIsAccessory);
+		
+		///////////////////
+		// Copy props across
+		CopyItemDataToEntity(pItem, sEntityName);
+
+		return sEntityName;
+	}
+
+	//------------------------------------------------------------
+	
+	tString SpawnTypeAsEntity(const tString& in asType, const cMatrixf& in aTransform, const tString& in asName="", float afScale=1.0f, eItemSpawn aSpawn=eItemSpawn_World, bool abIsAccessory=false)
+	{
+		iScrItemType@ pType = FindType(asType);
+		if (pType is null)
+		{
+			Error("[ItemHandler] Invalid item type!? "+asType);
+			return "";
+		}
+		
+		if (pType.CanUseOnWorld()==false)// || pType.GetUsesArmAnimation()==false)
+			return "";
+		
+		tString sEntityFile = abIsAccessory ? pType.GetAccessoryEntityFile() : pType.GetHandEntityFile();
+		if (sEntityFile=="")
+		{
+			Error("[ItemHandler] Can't spawn item of type '"+asType+"' as there's no Spawn EntityFile set in Inventory.cfg");
+			return "";
+		}
+		
+		cLux_AddDebugMessage("Spawning "+sEntityFile + ", Name: " + asName);
+		iLuxEntity@ pEntity;
+		tString sEntityName = asName;
+		if (sEntityName=="")
+		{
+			sEntityName=asType+"_Spawn_"+mlLastSpawnedItemID;
+			mlLastSpawnedItemID++;
+		}
+		
+		if (Entity_Exists(sEntityName))
+			Entity_Destroy(sEntityName);
+		
+		float fScale = afScale;
+		if (fScale == 1.f)
+			fScale = abIsAccessory ? pType.GetAccessoryEntityScale() : pType.GetEntityScale();
+				
+		cLux_GetCurrentMap().CreateEntity(sEntityName, sEntityFile, aTransform, cVector3f(fScale));
+		@pEntity = cLux_GetCurrentMap().GetLatestEntity();
+		
+		if ((pEntity is null) or (pEntity.GetName()!=sEntityName))
+		{
+			Error("[ItemHandler] Something went wrong creating entity:"+sEntityName);
+			return "";
+		}
+		
+		pEntity.SetActive(true);
+		pEntity.WakeUp();
+		pEntity.SetScriptableIsSaved(true);
+		pEntity.SetSaveDataIsUpdated(true);
+		pEntity.SetFullGameSave(false);
+		
+		SetEntityItemType(sEntityName, asType);
+		
+		////////////
+		// Init props
+		if (pType.IsContainer())
+			SetEntityContent(sEntityName, pType.GetContainerContentType(), pType.GenerateInitAmount());
+		
+		return pEntity.GetName();
+	}
+	
+	//------------------------------------------------------------
+	
+	iScrItemType@ FindType(const tString& in asType)
+	{
+		cXmlElement@ pElem = FindTypeElem(asType);
+		if (pElem is null)
+			return null;
+		// Wrap and return
+		return cItemType(pElem);
+	}
+
+	//------------------------------------------------------------
+	// UI Handling
+	//------------------------------------------------------------
+	
+	uint GetItemCount()
+	{
+		return mvInventory.size();
+	}
+	
+	//------------------------------------------------------------
+	
+	iScrItem@ GetItem(int i)
+	{
+		return mvInventory[i];
+	}
+	
+	//------------------------------------------------------------
+	// Content types
+	//------------------------------------------------------------
+	
+	void GetContentTypes(array<tString>& out avContentTypes)
+	{
+		avContentTypes.resize(0);
+		cXmlNodeListIterator @it = mContentTypes.GetChildIterator();
+		while(it.HasNext())
+		{
+			cXmlElement @pTypeElem = it.Next().ToElement();
+			tString sID = pTypeElem.GetAttributeString("ID","");
+			if (sID=="")
+				continue;
+			avContentTypes.push_back(sID);
+		}
+	}
+
+	//------------------------------------------------------------
+	// Player Hands
+	//------------------------------------------------------------
+	
+	void TakeOut(const tString& in asItem, bool abThenPutAway=false)
+	{
+		cLux_AddDebugMessage("Take Out Called");
+		iScrItem@ pItem = GetByID(asItem);
+		if (pItem is null)
+		{
+			cLux_AddDebugMessage("[ItemHandler] Can't take out "+asItem+" because it doesn't exist.");
+			return;
+		}
+		
+		bool bSpawnEntity = true;		
+		eItemHandlerHand hand = pItem.GetType().GetEquipHand();
+			
+		if (mHands[hand].mHeldItemState != eHeldItemState_None)
+		{
+			if (mHands[hand].msHeldItem == asItem)
+			{
+				if (mHands[hand].mHeldItemState==eHeldItemState_Held) return;
+				
+				mHands[hand].mbHeldItemPutAway=abThenPutAway;
+				Hands_SwitchToTakingOut(hand, pItem.GetType().GetUseArmAnimationYaw(), pItem.GetType().GetUseArmAnimationPitch());
+				
+				mHands[hand].msHeldItemNext="";
+				mHands[hand].mbHeldItemNextPutAway = false;
+				
+				bSpawnEntity = false;
+			}
+			else
+			{
+				if (mHands[hand].mHeldItemState!=eHeldItemState_PuttingAway)
+					Hands_SwitchToPuttingAway(hand);
+					
+				mHands[hand].msHeldItemNext = asItem;
+				mHands[hand].mbHeldItemNextPutAway = abThenPutAway;
+				return;
+			}
+		}
+		
+		if (bSpawnEntity)
+		{
+			PlayerHands_SetUseCustomPosition(false);
+			PlayerHands_SetUseCustomRotation(false);
+			
+			mHands[hand].msHeldItemNext="";
+			mHands[hand].mbHeldItemNextPutAway = false;
+			
+			mHands[hand].mbHeldItemPutAway=abThenPutAway;
+			mHands[hand].msHeldItem=asItem;
+			
+			if (ShouldPlayHandEquipAnimation(hand))
+			{
+				PlayerHands_SetActive(true);
+				
+				tString sEntityName = SpawnAsEntity(asItem, cLux_GetPlayer().GetCamera().GetMatrix(), asItem+"_Held", 1.f, eItemSpawn_Hand);
+				
+				mHands[hand].msHeldEntity = sEntityName;
+				Entity_SetCollideCharacter(sEntityName,false);
+				Entity_SetCollide(sEntityName,false);
+				Prop_SetRenderLayer(sEntityName, glBodyRenderLayer);
+				Prop_SetStaticPhysics(sEntityName,true);
+				Prop_ClearVelocity(sEntityName);
+				Entity_SetInteractionDisabled(sEntityName,true);
+				Prop_SetAllowMapTransfer(sEntityName,true);
+				Entity_SetActive(sEntityName, true);
+				
+				iLuxEntity@ pEntity = Map_GetEntity(sEntityName);
+				pEntity.SetIsInteractedWith(true);
+				cLux_AddDebugMessage("[ItemHandler] Taking out:"+asItem+" as "+sEntityName);
+			}
+		}		
+		
+		NotifyItemTakenOut(asItem, mHands[hand].msHeldEntity);
+		mCallbacks.OnTakeOut(pItem.GetTypeID(), pItem, mHands[hand].msHeldEntity, hand);
+		
+		cLuxMap@ pMap = cLux_GetCurrentMap();
+		tString sMethod = "void OnTakeOutItem(const tString &in asItemType, const tString &in asItemID)";
+		if (pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod))
+		{
+			tString sTypeID = pItem.GetType().GetID();
+			tString sItemID = pItem.GetID();
+			pMap.SetArgString(0, sTypeID);
+			pMap.SetArgString(1, sItemID);
+			pMap.ScriptExecute();
+		}
+
+		Hands_SwitchToTakingOut(hand, pItem.GetType().GetUseArmAnimationYaw(), pItem.GetType().GetUseArmAnimationPitch());
+	}
+	
+	//------------------------------------------------------------
+	
+	void PutAway(eItemHandlerHand aHand)
+	{
+		if (mHands[aHand].mHeldItemState == eHeldItemState_None ||
+			mHands[aHand].mHeldItemState == eHeldItemState_PuttingAway)
+			return;
+            
+        SetLastItem(aHand);
+		iScrItem@ pItem = GetByID(mHands[aHand].msHeldItem);
+		if (pItem !is null)
+			mCallbacks.OnStartPutAway(pItem.GetTypeID(),pItem,mHands[aHand].msHeldEntity);
+		Hands_SwitchToPuttingAway(aHand);
+	}
+    
+    //------------------------------------------------------------
+
+	void Equip(const tString& in asItem)
+	{
+		iScrItem@ pItem = GetByID(asItem);
+		if (pItem is null)
+		{
+			cLux_AddDebugMessage("[ItemHandler] Can't equip "+asItem+" because it doesn't exist.");
+			return;
+		}
+	
+		eItemHandlerHand lCurrentHand = pItem.GetType().IsLeftHand()?eItemHandlerHand_Left:eItemHandlerHand_Right;
+
+		if (Item_GetHeld(lCurrentHand)==asItem)
+			CancelPuttingAway(lCurrentHand); 
+		else
+			TakeOut(asItem);
+	}
+	
+	//------------------------------------------------------------
+	
+	void Unequip(const tString& in asItem, bool abInstant=false)
+	{
+		eItemHandlerHand hand = GetHandHoldingItem(asItem);
+		if (hand == eItemHandlerHand_LastEnum) return;
+
+		if (abInstant)
+		{
+            SetLastItem(hand);
+			KillHeldItem(hand);
+		}
+		else
+		{
+			PutAway(hand);
+		}
+	}
+	
+	//------------------------------------------------------------
+    
+    void SetLastItem(eItemHandlerHand aHand)
+    {
+        tString sLast=mHands[aHand].msHeldItem;
+        mHands[aHand].msHeldItemLast=sLast;
+    }
+    
+	//------------------------------------------------------------
+	
+	bool IsItemHeld(eItemHandlerHand aHand)
+	{
+		return (mHands[aHand].mHeldItemState==eHeldItemState_Held ||
+				mHands[aHand].mHeldItemState==eHeldItemState_TakingOut);
+	}
+
+	//------------------------------------------------------------
+	
+	tString GetHeldItem(eItemHandlerHand aHand)
+	{
+		int lHeldState = mHands[aHand].mHeldItemState;
+		return lHeldState == eHeldItemState_None || lHeldState == eHeldItemState_PuttingAway ? "" : mHands[aHand].msHeldItem;
+	}
+	
+	int GetHeldItemState(eItemHandlerHand aHand)
+	{
+		return mHands[aHand].mHeldItemState;
+	}
+
+	//------------------------------------------------------------
+
+	tString GetHeldEntity(eItemHandlerHand aHand)
+	{
+		if (mHands.length()==0 || mHands[aHand].mHeldItemState == eHeldItemState_None)
+			return "";
+		return mHands[aHand].msHeldEntity;
+	}
+
+	//------------------------------------------------------------
+	
+	bool CanUseHeldItemOnSelf(eItemHandlerHand aHand)
+	{
+		if (mbPickingUp)
+			return false;
+			
+		if (mHands[aHand].mHeldItemState==eHeldItemState_None)
+			return false;
+
+		return CanUseItemOnSelf(mHands[aHand].msHeldItem);
+	}
+
+	//------------------------------------------------------------
+
+	bool CanUseItemOnSelf(const tString& in asItem)
+	{	
+		iScrItem@ pItem = GetByID(asItem);
+	
+		if (!pItem.GetType().CanUseOnSelf())
+			return false;
+		if (pItem.GetUseOnSelfDisabled())
+			return false;
+			
+		cLuxMap @pMap = cLux_GetCurrentMap();
+		tString sMethod;
+
+		// Try map callback if specified
+		tString sMapCallback = pItem.GetType().GetCanUseOnSelfMapCallback();
+		if (sMapCallback!="")
+		{	
+			sMethod = "bool "+sMapCallback+"(const tString& in asItemType, const tString& in asItemID)";
+			if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+			{
+				tString sTypeID = pItem.GetType().GetID();
+				tString sItemID = pItem.GetID();
+				pMap.SetArgString(0, sTypeID);
+				pMap.SetArgString(1, sItemID);
+				if (pMap.ScriptExecute())
+				{
+					return pMap.GetReturnBool();
+				}
+			}
+		}	
+
+		// Try default map callback
+		sMethod = "bool CanUseHeldItemOnSelf(const tString& in asItemType, const tString& in asItemID)";
+		if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+		{
+			tString sTypeID = pItem.GetType().GetID();
+			tString sItemID = pItem.GetID();
+			pMap.SetArgString(0, sTypeID);
+			pMap.SetArgString(1, sItemID);
+			if (pMap.ScriptExecute())
+			{
+				return pMap.GetReturnBool();
+			}
+		}
+				
+		// Default ItemCallbacks callback
+		if (!mCallbacks.CanUseOnSelf(pItem.GetType().GetID(), pItem))
+			return false;
+			
+		return true;
+	}
+		
+	//------------------------------------------------------------
+		
+	bool CanUseHeldItemOnWorld(eItemHandlerHand aHand, const tString&in asPickedEntity)
+	{
+		if (mbPickingUp)
+			return false;
+			
+		if (mHands[aHand].mHeldItemState==eHeldItemState_None)
+			return false;
+			
+		iScrItem@ pItem = GetByID(mHands[aHand].msHeldItem);
+
+		if (!pItem.GetType().CanUseOnWorld())
+			return false;
+		
+		cLuxMap @pMap = cLux_GetCurrentMap();
+		tString sMethod;
+
+		// Try map callback if specified
+		tString sMapCallback = pItem.GetType().GetCanUseOnWorldMapCallback();
+		if (sMapCallback!="")
+		{	
+			sMethod = "bool "+sMapCallback+"(const tString& in asItemType, const tString& in asItemID, const tString& in asTargetEntity)";
+			if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+			{
+				tString sTypeID = pItem.GetType().GetID();
+				tString sItemID = pItem.GetID();
+				tString sEntity = asPickedEntity; // Need to pass as a copy or the callback will get an empty string.
+				pMap.SetArgString(0, sTypeID);
+				pMap.SetArgString(1, sItemID);
+				pMap.SetArgString(2, sEntity);
+				if (pMap.ScriptExecute())
+				{
+					return pMap.GetReturnBool();
+				}
+			}
+		}
+
+		// Try default map callback
+		sMethod = "bool CanUseHeldItemOnWorld(const tString& in asItemType, const tString& in asItemID, const tString& in asTargetEntity)";
+		if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+		{
+			tString sTypeID = pItem.GetType().GetID();
+			tString sItemID = pItem.GetID();
+			tString sEntity = asPickedEntity; // Need to pass as a copy or the callback will get an empty string.
+			pMap.SetArgString(0, sTypeID);
+			pMap.SetArgString(1, sItemID);
+			pMap.SetArgString(2, sEntity);
+			if (pMap.ScriptExecute())
+			{
+				return pMap.GetReturnBool();
+			}
+		}
+		
+		// Default ItemCallbacks callback
+		if (!mCallbacks.CanUseOnWorld(pItem.GetType().GetID(), pItem, asPickedEntity))
+			return false;
+		
+		return true;
+	}
+	
+	//------------------------------------------------------------
+	
+	void UseHeldItemOnSelf(eItemHandlerHand aHand)
+	{
+		if (!CanUseHeldItemOnSelf(aHand))
+			return;
+
+		UseItemOnSelf(aHand);
+	}
+
+	//------------------------------------------------------------
+
+	void UseItemOnSelf(eItemHandlerHand aHand)
+	{	
+		tString sItem = mHands[aHand].msHeldItem;
+		tString sEntity = mHands[aHand].msHeldEntity;
+		
+		mHands[aHand].msUseItem = sItem;
+		mHands[aHand].msUseEntity = sEntity;
+		mHands[aHand].mfUseTime = 0.0f;
+		mHands[aHand].msUseTarget="";
+
+		UpdateUseItemOnSelf(aHand,0);
+		if (mHands[aHand].msUseItem=="")
+			return;
+
+		int nState=GetByID(mHands[aHand].msUseItem).GetType().GetUsingState();
+		if (nState==-1)
+			nState=ePlayerState_Custom_UsingItem;
+		cLux_GetPlayer().ChangeState(nState);
+		
+		if (!GetByID(mHands[aHand].msUseItem).GetType().GetUseCanMove())
+			cLux_GetPlayer().GetCharacterBody().StopMovement();
+	}
+
+	//------------------------------------------------------------
+
+	void UpdateUseItemOnSelf(eItemHandlerHand aHand, float afTimeStep)
+	{
+		tString sItem = mHands[aHand].msUseItem;
+		tString sEntity = mHands[aHand].msUseEntity;
+		float fTimeElapsed = mHands[aHand].mfUseTime;
+		
+		iScrItem@ pItem = GetByID(sItem);
+		
+		cLuxMap @pMap = cLux_GetCurrentMap();
+		tString sMethod;
+
+		// Try map callback if specified
+		tString sMapCallback = pItem.GetType().GetUseOnSelfMapCallback();
+		if (sMapCallback!="")
+		{		
+			sMethod = "bool "+sMapCallback+"(const tString& in asItemType, const tString& in asItemID, const tString& in asEntity, float afTimeElapsed, float afTimeStep)";
+			if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+			{
+				tString sTypeID = pItem.GetType().GetID();
+				tString sItemID = pItem.GetID();
+				pMap.SetArgString(0, sTypeID);
+				pMap.SetArgString(1, sItemID);
+				pMap.SetArgString(2, sEntity);
+				pMap.SetArgFloat(3, fTimeElapsed);
+				pMap.SetArgFloat(4, afTimeStep);
+				if (pMap.ScriptExecute())
+				{
+					if (pMap.GetReturnBool())
+						return;
+				}
+			}
+		}
+
+		// Try default map callback
+		sMethod = "bool OnUseHeldItemOnSelf(const tString& in asItemType, const tString& in asItemID, const tString& in asEntity, float afTimeElapsed, float afTimeStep)";
+		if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+		{
+			tString sTypeID = pItem.GetType().GetID();
+			tString sItemID = pItem.GetID();
+			pMap.SetArgString(0, sTypeID);
+			pMap.SetArgString(1, sItemID);
+			pMap.SetArgString(2, sEntity);
+			pMap.SetArgFloat(3, fTimeElapsed);
+			pMap.SetArgFloat(4, afTimeStep);
+			if (pMap.ScriptExecute())
+			{
+				if (pMap.GetReturnBool())
+					return;
+			}
+		}
+		
+		// Default ItemCallbacks callback
+		if (!mCallbacks.UseOnSelf(pItem.GetType().GetID(), pItem, sEntity, fTimeElapsed, afTimeStep))
+			StopUsingItem(aHand);
+	}
+
+	
+	//------------------------------------------------------------
+
+	void StopUsingItem(eItemHandlerHand aHand)
+	{
+		if (aHand == eItemHandlerHand_LastEnum) return;
+		
+		if (mHands[aHand].msUseItem!="")
+		{
+			iScrItem@ pItem = GetByID(mHands[aHand].msUseItem);
+			mCallbacks.OnStoppedUsing(pItem.GetType().GetID(), pItem, mHands[aHand].msUseEntity);
+		}
+		mHands[aHand].msUseItem="";
+	}
+	
+	//------------------------------------------------------------
+	
+	void UseHeldItemOnWorld(eItemHandlerHand aHand, const tString& in asEntity)
+	{	
+		mHands[aHand].msUseItem = mHands[aHand].msHeldItem;
+		mHands[aHand].msUseEntity = mHands[aHand].msHeldEntity;
+		mHands[aHand].msUseTarget = asEntity;
+		mHands[aHand].mfUseTime = 0.0f;
+
+		UpdateUseHeldItemOnWorld(aHand,asEntity,0,0);
+		if (mHands[aHand].msUseItem=="")
+			return;
+
+		int nState=GetByID(mHands[aHand].msUseItem).GetType().GetUsingState();
+		if (nState==-1)
+			nState=ePlayerState_Custom_UsingItem;
+		cLux_GetPlayer().ChangeState(nState);
+		
+		if (!GetByID(mHands[aHand].msUseItem).GetType().GetUseCanMove())
+			cLux_GetPlayer().GetCharacterBody().StopMovement();
+	}
+
+	//------------------------------------------------------------
+
+	void UpdateUseHeldItemOnWorld(eItemHandlerHand aHand, const tString& in asEntity, float afTimeElapsed, float afTimeStep)
+	{
+		iScrItem@ pItem = GetByID(mHands[aHand].msHeldItem);
+		
+		if (CanUseHeldItemOnWorld(aHand, asEntity)==false)
+		{
+			StopUsingItem(aHand);
+			return;
+		}
+		
+		cLuxMap @pMap = cLux_GetCurrentMap();
+		tString sMethod;
+
+		// Try map callback if specified
+		tString sMapCallback = pItem.GetType().GetUseOnWorldMapCallback();
+		if (sMapCallback!="")
+		{	
+			sMethod = "bool "+sMapCallback+"(const tString& in asItemType, const tString& in asItemID, const tString& in asTargetEntity, const tString& in asItemEntity, float afTimeElapsed, float afTimeStep)";
+			if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+			{
+				tString sTypeID = pItem.GetType().GetID();
+				tString sItemID = pItem.GetID();
+				tString sEntity = asEntity; 	// Need to pass as a copy or the callback will get an empty string.
+				tString sItemEnt = mHands[aHand].msHeldEntity;
+				pMap.SetArgString(0, sTypeID);
+				pMap.SetArgString(1, sItemID);
+				pMap.SetArgString(2, sEntity);
+				pMap.SetArgString(3, sItemEnt);
+				pMap.SetArgFloat(4,afTimeElapsed);
+				pMap.SetArgFloat(5,afTimeStep);
+				if (pMap.ScriptExecute())
+				{
+					if (pMap.GetReturnBool())
+						return;
+				}
+			}
+		}	
+
+		// Try default map callback
+		sMethod = "bool OnUseHeldItemOnWorld(const tString& in asItemType, const tString& in asItemID, const tString& in asTargetEntity, const tString& in asItemEntity, float afTimeElapsed, float afTimeStep)";
+		if ( pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod) )
+		{
+			tString sTypeID = pItem.GetType().GetID();
+			tString sItemID = pItem.GetID();
+			tString sEntity = asEntity; 	// Need to pass as a copy or the callback will get an empty string.
+			tString sItemEnt = mHands[aHand].msHeldEntity;
+			pMap.SetArgString(0, sTypeID);
+			pMap.SetArgString(1, sItemID);
+			pMap.SetArgString(2, sEntity);
+			pMap.SetArgString(3, sItemEnt);
+			pMap.SetArgFloat(4,afTimeElapsed);
+			pMap.SetArgFloat(5,afTimeStep);
+			if (pMap.ScriptExecute())
+			{
+				if (pMap.GetReturnBool())
+					return;
+			}
+		}
+		
+		// Default ItemCallbacks callback
+		if (!mCallbacks.UseOnWorld(pItem.GetType().GetID(), pItem, asEntity, mHands[aHand].msHeldEntity, afTimeElapsed, afTimeStep))
+			StopUsingItem(aHand);
+	}
+
+	//------------------------------------------------------------
+
+	tString GetLastHeldItem(eItemHandlerHand aHand)
+	{
+		return mHands[aHand].msHeldItemLast;
+	}
+	
+	//-------------------------------------------------------------------
+	// Equip left hand
+	//
+	// THIS SHOULD BE REMOVED ONCE FIRST PERSON BODY WORKS AS INTENDED!
+	//-------------------------------------------------------------------
+	
+	void EquipLeftHand(const tString& in asItem)
+	{
+		UnequipLeftHand();
+		
+		if (mHands[eItemHandlerHand_Right].msHeldItem == asItem && mbPickingUp)
+		{
+			KillHeldItem(eItemHandlerHand_Right);
+		}
+
+		// Spawn
+		tString sEntityName = SpawnAsEntity(asItem, cLux_GetPlayer().GetCamera().GetMatrix(), asItem+"_HeldLeft", 1.f, eItemSpawn_LeftHand);
+		Entity_SetCollideCharacter(sEntityName,false);
+		Entity_SetCollide(sEntityName,false);
+		Prop_SetStaticPhysics(sEntityName,true);
+		Prop_SetAllowMapTransfer(sEntityName,true);
+		Prop_SetRenderLayer(sEntityName,glBodyRenderLayer);
+		Entity_SetInteractionDisabled(sEntityName,true);
+		Entity_SetReflectionVisibility(sEntityName,false,true);
+
+		cLux_AddDebugMessage("[ItemHandler] Left hand equip:"+asItem+" as "+sEntityName);
+		
+		mHands[eItemHandlerHand_Left].msHeldItem = asItem;
+		mHands[eItemHandlerHand_Left].msHeldEntity = sEntityName;
+
+		NotifyItemTakenOut(asItem, sEntityName);
+		
+		iLuxEntity@ pEntity = Map_GetEntity(sEntityName);
+		pEntity.SetIsInteractedWith(false);
+
+		iScrItem@ pItem = GetByID(mHands[eItemHandlerHand_Left].msHeldItem);
+		mCallbacks.OnLeftHandEquip(pItem.GetTypeID(),pItem,mHands[eItemHandlerHand_Left].msHeldEntity);
+		
+		mHands[eItemHandlerHand_Left].mHeldItemState = eHeldItemState_TakingOut;
+		
+		bool bBoneRot = GetItemUseParentBoneRotation(mHands[eItemHandlerHand_Left].msHeldItem);
+		PlayerHands_PlayAnimation("tool_generic_draw_larm", false, false, 0.f, mHands[eItemHandlerHand_Left].msHeldEntity, false, 1, -1, false, bBoneRot);
+
+		UpdateLeftHand();
+	}
+
+	//------------------------------------------------------------
+
+	void UpdateLeftHand()
+	{
+		iLuxEntity@ pEntity = Map_GetEntity(mHands[eItemHandlerHand_Left].msHeldEntity);
+		if (pEntity is null) return;
+		
+		if (GetByID(mHands[eItemHandlerHand_Left].msHeldItem).GetTypeID() != "Radio")
+		{
+			cVector3f vPos = cLux_GetPlayer().GetCamera().GetMatrix().GetTranslation();
+			vPos+=cLux_GetPlayer().GetCamera().GetForward()*0.5f;
+			vPos-=cLux_GetPlayer().GetCamera().GetRight()*0.5f;
+			vPos-=cLux_GetPlayer().GetCamera().GetUp()*0.1f;
+			cMatrixf mat = cLux_GetPlayer().GetCamera().GetMatrix();
+			mat.SetTranslation(vPos);
+			pEntity.SetMatrix(mat);
+		}
+		else
+		{
+			switch (mHands[eItemHandlerHand_Left].mHeldItemState)
+			{
+				case eHeldItemState_TakingOut:
+				
+					if (PlayerHands_GetAnimationPlaying() == false)
+					{
+						mHands[eItemHandlerHand_Left].mHeldItemState = eHeldItemState_Held;
+					}
+						
+					cLux_DrawDebugText("STATE: " + "TAKING OUT", 400);
+						
+					break;
+				case eHeldItemState_Held:
+					
+					PlayerHands_PlayAnimation("tool_generic_idle_larm", true, false, 0.f, mHands[eItemHandlerHand_Left].msHeldEntity, true, 1, -1, false, GetItemUseParentBoneRotation(mHands[eItemHandlerHand_Left].msHeldItem));
+					
+					cLux_DrawDebugText("STATE: " + "HELD", 400);
+					break;
+				case eHeldItemState_PuttingAway:
+
+					if (PlayerHands_GetAnimationPlaying() == false)
+						mHands[eItemHandlerHand_Left].mHeldItemState = eHeldItemState_None;
+						
+						cLux_DrawDebugText("STATE: " + "PUTTING AWAY", 400);
+					
+					break;
+				case eHeldItemState_None:
+				
+				cLux_DrawDebugText("STATE: " + "NONE", 400);
+				
+					break;
+			}
+			
+		}
+		
+	}
+
+	//------------------------------------------------------------
+
+	void UnequipLeftHand(bool abInstant=false)
+	{
+		if (mHands[eItemHandlerHand_Left].msHeldItem != "")
+		{
+			iScrItem@ pItem = GetByID(mHands[eItemHandlerHand_Left].msHeldItem);
+			mCallbacks.OnLeftHandUnequip(pItem.GetTypeID(),pItem,mHands[eItemHandlerHand_Left].msHeldEntity);
+			
+			CopyEntityToItemData(mHands[eItemHandlerHand_Left].msHeldEntity, pItem);
+
+			NotifyItemPutAway(mHands[eItemHandlerHand_Left].msHeldItem, mHands[eItemHandlerHand_Left].msHeldEntity);
+
+			Entity_SetActive(mHands[eItemHandlerHand_Left].msHeldEntity,false);
+			Entity_Destroy(mHands[eItemHandlerHand_Left].msHeldEntity);
+			
+			bool bBoneRot = GetItemUseParentBoneRotation(mHands[eItemHandlerHand_Left].msHeldItem);
+			
+			mHands[eItemHandlerHand_Left].msHeldEntity="";
+			mHands[eItemHandlerHand_Left].msHeldItem="";
+			
+			mHands[eItemHandlerHand_Left].mHeldItemState = eHeldItemState_PuttingAway;
+			PlayerHands_PlayAnimation("tool_generic_holster_larm", false, false, 0.f, mHands[eItemHandlerHand_Left].msHeldEntity, true, 1, -1, false, bBoneRot);
+
+		}
+	}
+
+	//------------------------------------------------------------
+	// Entities
+	//------------------------------------------------------------
+	
+	void SetEntityItemType(const tString& in asEntity, const tString& in asTypeID)
+	{
+		Entity_SetVarString(asEntity, "Item_Type", asTypeID);
+	}
+	
+	//------------------------------------------------------------
+	
+	tString GetEntityItemType(const tString& in asEntity)
+	{
+		return Entity_GetVarString(asEntity, "Item_Type");
+	}
+	
+	//------------------------------------------------------------
+	
+	int GetEntityItemContentLevel(const tString& in asEntity)
+	{
+		return Entity_GetVarInt(asEntity, "Item_Content_Level");
+	}
+
+	//------------------------------------------------------------
+	
+	void CopyItemEntityInfo(const tString& in asSource, const tString& in asDest)
+	{
+		Entity_SetVarString(asDest, "Item_Content_SubType", Entity_GetVarString(asSource,"Item_Content_SubType"));
+		Entity_SetVarInt(asDest, "Item_Content_Level", Entity_GetVarInt(asSource,"Item_Content_Level"));
+		
+		cScript_SetGlobalArgString(0, asDest);
+		cScript_RunGlobalFunc(asSource, "", "_Global_CopyFromItemEntity_Base");
+
+		cScript_SetGlobalArgString(0, asDest);
+		cScript_RunGlobalFunc(asSource, "", "_Global_CopyFromItemEntity");
+	}
+	
+	//------------------------------------------------------------
+	
+	void CopyItemDataToEntity(iScrItem@ apItem, const tString& in asEntity)
+	{
+		tString sItem = apItem.GetType().IsAccessory() ? GetAccessoryEntityByID(apItem.GetID()) : apItem.GetInternalEntity();
+		if (sItem != "")
+			CopyItemEntityInfo(sItem, asEntity);
+		
+		Entity_SetVarBool(asEntity, "Item_DisableUseOnSelf", apItem.GetUseOnSelfDisabled());
+		
+		if (apItem.IsContainer()==false)
+			return;
+		Entity_SetVarString(asEntity, "Item_Content_SubType", apItem.GetType().GetContainerContentType());
+		Entity_SetVarInt(asEntity, "Item_Content_Level", apItem.GetAmount());
+	}
+	
+	//------------------------------------------------------------
+	
+	void CopyEntityToItemData(const tString& in asEntity, iScrItem@ apItem)
+	{
+		tString sItem = apItem.GetType().IsAccessory() ? GetAccessoryEntityByID(apItem.GetID()) : apItem.GetInternalEntity();
+		if (sItem != "")
+			CopyItemEntityInfo(asEntity, sItem);
+		
+		apItem.SetDisableUseOnSelf(Entity_GetVarBool(asEntity, "Item_DisableUseOnSelf"));
+		
+		///////////////////
+		// If lEntityAmount is < 0 a value based on InitAmountRange in inventory.cfg will be generated instead.
+        // Exluding oil because it stacks now.
+		int lEntityAmount = Entity_GetVarInt(asEntity, "Item_Content_Level");
+		if (lEntityAmount >= 0 && apItem.GetType().GetAmountMax()>1 && mbPickingUp && apItem.GetType().GetContainerContentType()!="Oil")
+            apItem.SetAmount(apItem.GetPreviousAmount() + lEntityAmount);
+		
+		///////////////////
+		// If sEntityContentType is "" the ContentType defined in inventory.cfg will be used instead.
+        if (apItem.IsContainer())
+        {
+            tString sEntityContentType = Entity_GetVarString(asEntity, "Item_Content_SubType");
+            if (sEntityContentType!="")
+                apItem.SetContentType(Entity_GetVarString(asEntity, "Item_Content_SubType"));
+        }
+	}
+	
+	//------------------------------------------------------------
+	
+	void SetEntityContent(const tString& in asEntity, const tString& in asSubType, int alLevel)
+	{
+		Entity_SetVarString(asEntity, "Item_Content_SubType", asSubType);
+		Entity_SetVarInt(asEntity, "Item_Content_Level", alLevel);
+	}
+
+	//------------------------------------------------------------
+	
+	void NotifyItemTakenOut(const tString& in sItem, const tString& in asEntity)
+	{
+		cScript_SetGlobalArgString(0,sItem);
+		cScript_RunGlobalFunc(asEntity, "", "_Global_OnItemTakenOut");
+	}
+	
+	//------------------------------------------------------------
+	
+	void NotifyItemStartPutAway(const tString& in sItem, const tString& in asEntity)
+	{
+		cScript_SetGlobalArgString(0,sItem);
+		cScript_RunGlobalFunc(asEntity, "", "_Global_OnItemStartPutAway");
+	}
+	
+	//------------------------------------------------------------
+	
+	void NotifyItemPutAway(const tString& in sItem, const tString& in asEntity)
+	{
+		cScript_SetGlobalArgString(0,sItem);
+		cScript_RunGlobalFunc(asEntity, "", "_Global_OnItemPutAway");
+	}
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// GENERAL
+	/////////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	tString GetHandAnimation(const tString& in asItem, const tString& in asState, eItemHandlerHand aHand)
+	{
+		cItemEntry@ pItem = FindByID(asItem);
+		if (pItem is null) return "generic";
+		
+		tString sItem = pItem.GetInternalEntity();
+		if (mHands[aHand].msHeldItem == asItem)
+			sItem = mHands[aHand].msHeldEntity;
+				
+		tString sAnimName = Item_GetAnimationNameSpecific(sItem, asState);
+		
+		if (sAnimName != "")
+			return sAnimName;
+		
+		sAnimName = Item_GetAnimationName(sItem);
+		
+		if (sAnimName == "") 
+			sAnimName = "generic";
+		
+		sAnimName = "tool_"+sAnimName+"_"+asState;
+		
+		if (aHand == eItemHandlerHand_Left) 
+			sAnimName += "_larm";
+		
+		cAnimationState@ pAnim = PlayerBody_GetAnimationState(sAnimName);
+		if (pAnim is null)
+		{
+			Error("Could not find playerbody animation "+sAnimName+". Reverting to generic animation.");
+			sAnimName = "tool_generic_"+asState;
+			
+			if (aHand == eItemHandlerHand_Left) 
+				sAnimName += "_larm";
+		}
+		return sAnimName;
+	}
+	
+	//------------------------------------------------------------
+	
+	bool GetItemUseParentBoneRotation(const tString &in asItem)
+	{
+		bool bRet = false;
+		
+		cItemEntry@ pItem = FindByID(asItem);
+		if (pItem !is null)
+			bRet = pItem.GetType().UseParentBoneRotation();
+		
+		return bRet;
+	}
+	
+	//------------------------------------------------------------
+	
+	void Hands_SwitchToHeld(eItemHandlerHand aHand)
+	{
+		cLux_AddDebugMessage("[ItemHandler] Switch to held", true);
+		
+		///////////////////////
+		// Player hands
+		mHands[aHand].mHeldItemState = eHeldItemState_Held;
+		if (ShouldPlayHandEquipAnimation(aHand)==false)
+			return;
+
+		tString sAnimName = GetHandAnimation(mHands[aHand].msHeldItem, "idle", aHand);
+		bool bBoneRot = GetItemUseParentBoneRotation(mHands[aHand].msHeldItem);
+		PlayerHands_PlayAnimation(sAnimName, true,false,0.2f,mHands[aHand].msHeldEntity, false, 1, -1, aHand == eItemHandlerHand_Right, bBoneRot);
+		
+		///////////////////////
+		// Play anim on entity?
+		iLuxEntity@ pEnt = Map_GetEntity(mHands[aHand].msHeldEntity, eLuxEntityType_Prop);			
+		if (pEnt !is null)
+		{
+			tString sAnim = "idle";				
+			cAnimationState@ pAnim = pEnt.GetMeshEntity().GetAnimationStateFromName(sAnim);
+				
+			if (pAnim !is null)
+				pEnt.PlayAnimation(sAnim, 0.2f, true);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void Hands_SwitchToTakingOut(eItemHandlerHand aHand, bool abUseArmYaw = true, bool abUseArmPitch = true)
+	{
+		cLux_AddDebugMessage("[ItemHandler] Switch to taking out", true);
+		
+		iScrItem@ pItem = GetByID(mHands[aHand].msHeldItem);
+		
+		////////////
+		// Hand anim
+		if (ShouldPlayHandEquipAnimation(aHand))
+		{
+			///////////////////////
+			// Deactivate accessory
+			if (pItem.GetType().IsAccessory())	
+			{
+				Entity_SetActive(GetAccessoryEntityByID(pItem.GetID()), false);
+			}
+			
+			///////////////////////
+			// Player hands
+			tString sAnimName = GetHandAnimation(mHands[aHand].msHeldItem, "draw", aHand);
+			bool bBoneRot = GetItemUseParentBoneRotation(mHands[aHand].msHeldItem);
+
+			PlayerHands_PlayAnimation(sAnimName, false,false,0.25f,mHands[aHand].msHeldEntity, false, 1, -1, aHand == eItemHandlerHand_Right, bBoneRot);
+			PlayerBody_SetArmAnimationYaw(abUseArmYaw, aHand==eItemHandlerHand_Right, aHand==eItemHandlerHand_Left);
+			PlayerBody_SetArmAnimationPitch(abUseArmPitch, aHand==eItemHandlerHand_Right, aHand==eItemHandlerHand_Left);
+			
+			///////////////////////
+			// Play anim on entity?
+			iLuxEntity@ pEnt = Map_GetEntity(mHands[aHand].msHeldEntity, eLuxEntityType_Prop);			
+			if (pEnt !is null)
+			{
+				tString sAnim = ShouldPlayInspectAnimation(aHand) ? "inspect_draw" : "draw";				
+				cAnimationState@ pAnim = pEnt.GetMeshEntity().GetAnimationStateFromName(sAnim);
+				
+				if (pAnim !is null)
+					pEnt.PlayAnimation(sAnim, 0.25f, false);
+			}
+		}
+		
+		///////////
+		// Gui anim
+		else if (pItem !is null)
+		{
+			@mTakeOutGui = cPickupGui("TakeOutGui", pItem.GetActiveInventoryIcon(), true);
+		}
+		
+		mHands[aHand].mHeldItemState = eHeldItemState_TakingOut;
+	}
+	
+	//------------------------------------------------------------
+	
+	void Hands_SwitchToPuttingAway(eItemHandlerHand aHand, float afSpeed=1.0f)
+	{
+		cLux_AddDebugMessage("[ItemHandler] Switch to putting away");
+		
+		mHands[aHand].mHeldItemState = eHeldItemState_PuttingAway;
+		
+		////////////
+		// Hand anim
+		if (ShouldPlayHandEquipAnimation(aHand))
+		{
+			///////////////////////
+			// Player hands
+			tString sAnimName = GetHandAnimation(mHands[aHand].msHeldItem, "holster", aHand);
+			bool bBoneRot = GetItemUseParentBoneRotation(mHands[aHand].msHeldItem);
+			PlayerHands_PlayAnimation(sAnimName, false,false,0.5f,mHands[aHand].msHeldEntity, true, afSpeed, -1, aHand == eItemHandlerHand_Right, bBoneRot);
+			PlayerBody_SetArmAnimationYaw(true, aHand==eItemHandlerHand_Right, aHand==eItemHandlerHand_Left);
+			PlayerBody_SetArmAnimationPitch(true, aHand==eItemHandlerHand_Right, aHand==eItemHandlerHand_Left);
+			
+			///////////////////////
+			// Play anim on entity?
+			iLuxEntity@ pEnt = Map_GetEntity(mHands[aHand].msHeldEntity, eLuxEntityType_Prop);			
+			if (pEnt !is null)
+			{
+				tString sAnim = ShouldPlayInspectAnimation(aHand) ? "inspect_holster" : "holster";				
+				cAnimationState@ pAnim = pEnt.GetMeshEntity().GetAnimationStateFromName(sAnim);
+				
+				if (pAnim !is null)
+					pEnt.PlayAnimation(sAnim, 0.5f, false);
+			}
+		}
+		
+		NotifyItemStartPutAway(mHands[aHand].msHeldItem, mHands[aHand].msHeldEntity);
+	}
+	
+	//------------------------------------------------------------
+	
+	void Hands_SwitchToDropping(eItemHandlerHand aHand)
+	{
+		cLux_AddDebugMessage("[ItemHandler] Switch to dropping");
+		
+		mHands[aHand].mHeldItemState = eHeldItemState_PuttingAway;
+		
+		if (ShouldPlayHandEquipAnimation(aHand)!=false)
+        {
+            tString sAnimName = GetHandAnimation(mHands[aHand].msHeldItem, "holster", aHand);
+			bool bBoneRot = GetItemUseParentBoneRotation(mHands[aHand].msHeldItem);
+			
+            PlayerHands_PlayAnimation(sAnimName, false,false,0.2f,mHands[aHand].msHeldEntity, true, 1, -1, aHand == eItemHandlerHand_Right, bBoneRot);
+            PlayerBody_SetArmAnimationYaw(false, aHand==eItemHandlerHand_Right, aHand==eItemHandlerHand_Left);
+            PlayerBody_SetArmAnimationPitch(false, aHand==eItemHandlerHand_Right, aHand==eItemHandlerHand_Left);
+        }
+        
+        if (mHands[aHand].msHeldEntity!="")
+		{
+			CopyEntityToItemData(mHands[aHand].msHeldEntity, GetByID(mHands[aHand].msHeldItem));
+
+			Entity_SetActive(mHands[aHand].msHeldEntity,false);
+			Entity_Destroy(mHands[aHand].msHeldEntity);
+			mHands[aHand].msHeldItem="";
+			mHands[aHand].msHeldEntity="";
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void Hands_SwitchToNone(eItemHandlerHand aHand)
+	{
+		cLux_AddDebugMessage("[ItemHandler] Switch to none");
+		
+		iScrItem@ pItem = GetByID(mHands[aHand].msHeldItem);
+		mHands[aHand].mHeldItemState = eHeldItemState_None;
+		
+		if (pItem !is null)
+		{
+			///////////
+			// Gui Anim
+			if (ShouldPlayHandEquipAnimation(aHand)==false)
+				StartPickUpGuiAnimation(pItem.GetActiveInventoryIcon());
+			
+			/////////////////
+			// Put Item away
+			if (mHands[aHand].msHeldEntity!="")
+			{						
+				NotifyItemPutAway(mHands[aHand].msHeldItem, mHands[aHand].msHeldEntity);
+				CopyEntityToItemData(mHands[aHand].msHeldEntity, pItem);
+				
+				Entity_SetActive(mHands[aHand].msHeldEntity,false);
+				Entity_Destroy(mHands[aHand].msHeldEntity);
+			}
+			
+			// Special case hack for matches to prevent an extra match staying in the inventory
+			if (pItem.GetTypeID() == "Match")
+			{
+				RemoveFromInventory(mHands[aHand].msHeldItem, false, true);
+			}
+			
+			///////////
+			// Arm Anim
+			if (PlayerBody_IsActive())
+			{
+				if (ShouldPlayHandEquipAnimation(aHand))
+				{
+					tString sAnimName = GetHandAnimation(mHands[aHand].msHeldItem, "holster", aHand);
+					bool bBoneRot = GetItemUseParentBoneRotation(mHands[aHand].msHeldItem);
+					PlayerHands_PlayAnimation(sAnimName, false,false,0.2f,"", true, 1, -1, aHand == eItemHandlerHand_Right, bBoneRot);
+					
+					////////////////////////
+					// Activate accessory
+					if (pItem.GetType().IsAccessory())
+					{
+						Entity_SetActive(GetAccessoryEntityByID(pItem.GetID()), true);
+					}
+				}
+				
+				PlayerBody_SetArmAnimationYaw(false, aHand==eItemHandlerHand_Right, aHand==eItemHandlerHand_Left);
+				PlayerBody_SetArmAnimationPitch(false, aHand==eItemHandlerHand_Right, aHand==eItemHandlerHand_Left);
+			}
+		}
+		
+		mHands[aHand].msHeldItem="";
+		mHands[aHand].msHeldEntity="";
+		
+		PlayerHands_SetActive(false);
+	}
+
+	//------------------------------------------------------------
+	
+	eItemHandlerHand GetHandHoldingItem(const tString &in asItem)
+	{
+		if (mHands[eItemHandlerHand_Right].msHeldItem==asItem)
+			return eItemHandlerHand_Right;
+			
+		if (mHands[eItemHandlerHand_Left].msHeldItem==asItem)
+			return eItemHandlerHand_Left;
+			
+		return eItemHandlerHand_LastEnum;
+	}
+
+	//------------------------------------------------------------
+
+	void KillHeldItem(eItemHandlerHand aHand)
+	{
+		Hands_SwitchToNone(aHand);
+	}
+	
+	//------------------------------------------------------------
+	
+	bool IsPickingUpItem()
+	{
+		return mbPickingUp;
+	}
+	
+	//------------------------------------------------------------
+	
+	void CancelPuttingAway(eItemHandlerHand aHand)
+	{
+		if (mbPickingUp==false) return;
+			
+		mHands[aHand].mbHeldItemPutAway = false;
+		
+		if (mHands[aHand].mHeldItemState == eHeldItemState_PuttingAway)
+			TakeOut(mHands[aHand].msHeldItem);
+	}
+	
+	//------------------------------------------------------------
+	
+	[nosave]float mfToggleItemDelay = 0.5f;
+	
+	void ToggleHeldItem(const tString&in asItemType, eItemHandlerHand aHand)
+	{
+		if (mfToggleItemDelay > 0) return;
+		
+		tString sHeldItem = GetHeldItem(aHand);
+		iScrItem@ pHeldItem = GetByID(sHeldItem);
+		tString sHeldItemType = pHeldItem is null ? "" : pHeldItem.GetTypeID();
+		
+		iScrItemType@ pType = FindType(asItemType);
+		
+		///////////
+		// Put Away
+		if (sHeldItemType == asItemType)
+		{
+			PutAway(aHand);
+			mfToggleItemDelay=pType.GetUnequipToggleDelay();
+			return;
+		}
+		
+		///////////
+		// Take Out
+		if (IsTypeInInventory(asItemType))
+		{
+			TakeOut(GetFirstOfTypeInInventory(asItemType));
+			mfToggleItemDelay=pType.GetEquipToggleDelay();
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void ToggleMatch()
+	{
+		if (mfToggleItemDelay > 0) return;
+		tString sHeldItem = GetHeldItem(eItemHandlerHand_Left);
+		iScrItem@ pHeldItem = GetByID(sHeldItem);
+		tString sHeldItemType = pHeldItem==null ? "" : pHeldItem.GetTypeID();
+		
+		iScrItemType@ pType = FindType("Match");
+		
+		///////////
+		// Put Away
+		if (sHeldItemType == "Match")
+		{
+			// Prevent unequipping it while it's getting equipped
+			if (mHands[eItemHandlerHand_Left].mHeldItemState==eHeldItemState_TakingOut)
+			{
+				tString sAnim = GetHandAnimation(sHeldItem, "draw", eItemHandlerHand_Left);
+				cAnimationState @pState = PlayerBody_GetAnimationState(sAnim);
+				if (pState !is null && pState.GetRelativeTimePosition() < gfMatchUnequipDelay)
+					return;
+			}
+			else if (mHands[eItemHandlerHand_Left].mHeldItemState!=eHeldItemState_Held)
+				return;
+				
+			PutAway(eItemHandlerHand_Left);
+			mfToggleItemDelay=pType.GetUnequipToggleDelay();
+			return;
+		}
+		
+		///////////
+		// Take Out
+		if (Matches_GetCount() < 1)
+			return;
+			
+		iScrItem@ pNextItem = GetByID(mHands[eItemHandlerHand_Left].msHeldItemNext);
+		if (pNextItem !is null && pNextItem.GetTypeID() == "Match")
+			return;
+			
+		if (mHands[eItemHandlerHand_Left].mHeldItemState==eHeldItemState_PuttingAway)
+		{
+			tString sAnim = GetHandAnimation(mHands[eItemHandlerHand_Left].msHeldItemLast, "holster", eItemHandlerHand_Left);
+			cAnimationState @pState = PlayerBody_GetAnimationState(sAnim);
+			if (pState !is null && pState.GetRelativeTimePosition() < gfMatchEquipDelay)
+				return;
+		}
+		
+		Sketchbook_IncreaseUsedMatchesCounter();
+		
+		tString sNewMatch = AddToInventory("Match", false);
+		TakeOut(sNewMatch);
+		mfToggleItemDelay=pType.GetEquipToggleDelay();
+	}
+	
+	//------------------------------------------------------------
+	
+	void UpdateHeldItems(float afTimeStep)
+	{
+		//////////////////
+		// Toggle delay
+		if (mfToggleItemDelay > 0)
+			mfToggleItemDelay-=afTimeStep;
+		
+		//////////////////
+		// Player in custom state?
+		int lState = cLux_GetPlayer().GetCurrentStateId();
+		bool bPlayerInCustomState = lState == ePlayerState_Custom_UsingItem ||
+									lState == ePlayerState_Custom_Struggle ||
+									lState == ePlayerState_InteractiveCameraAnimation ||
+									lState == ePlayerState_CutsceneAnimation ||
+									lState == ePlayerState_InteractiveCutsceneAnimation ||
+									lState == ePlayerState_ZoomArea;
+		
+		//////////////////
+		// Update held item state
+		for (int i = 0; i < eItemHandlerHand_LastEnum; i++)
+		{
+			eItemHandlerHand hand = eItemHandlerHand(i);
+			
+			if (mHands[hand].mHeldItemState == eHeldItemState_None)
+				continue;
+			
+			switch (mHands[hand].mHeldItemState)
+			{
+				case eHeldItemState_TakingOut:
+				{
+					bool bAnimPlaying = false;
+					
+					if (bPlayerInCustomState)
+						break;
+					
+					if (ShouldPlayHandEquipAnimation(hand))
+					{
+						tString sAnim = GetHandAnimation(mHands[hand].msHeldItem, "draw", hand);
+						cAnimationState @pState = PlayerBody_GetAnimationState(sAnim);
+						bAnimPlaying = (pState !is null && pState.IsOver()==false);
+					}
+					
+					if (bAnimPlaying==false)
+					{
+						if (mHands[hand].mbHeldItemPutAway)
+						{
+							mHands[hand].mbHeldItemPutAway = false;
+							if (Player_IsThrowing())
+								Hands_SwitchToHeld(hand);
+							else
+								Hands_SwitchToPuttingAway(hand);
+						}
+						else
+						{
+							if (ShouldPlayInspectAnimation(hand))
+							{
+								mfInspectItemTime = 5.0f;
+							}
+							mbPickingUp = false;
+							Hands_SwitchToHeld(hand);
+						}
+					}
+					break;
+				}
+				case eHeldItemState_PuttingAway:
+				{
+					bool bAnimPlaying = false;
+										
+					if (ShouldPlayHandEquipAnimation(hand))
+					{
+						tString sAnim = GetHandAnimation(mHands[hand].msHeldItem, "holster", hand);
+						cAnimationState @pState = PlayerBody_GetAnimationState(sAnim);
+						bAnimPlaying = (pState !is null && pState.IsOver()==false);
+					}
+						
+					if (bAnimPlaying==false)
+					{
+						if (mHands[hand].msHeldItem!="")
+						{
+							iScrItem@ pItem = GetByID(mHands[hand].msHeldItem);
+							if (pItem!=null)
+							{
+								mCallbacks.OnPutAway(pItem.GetTypeID(), pItem, mHands[hand].msHeldEntity);
+								
+								cLuxMap@ pMap = cLux_GetCurrentMap();
+								tString sMethod = "void OnPutAwayItem(const tString &in asItemType, const tString &in asItemID)";
+								if (pMap.ScriptMethodExists(sMethod) && pMap.ScriptPrepare(sMethod))
+								{
+									tString sTypeID = pItem.GetType().GetID();
+									tString sItemID = pItem.GetID();
+									pMap.SetArgString(0, sTypeID);
+									pMap.SetArgString(1, sItemID);
+									pMap.ScriptExecute();
+								}
+							}							
+						}
+						
+						mbPickingUp = false;
+						Hands_SwitchToNone(hand);
+						
+						if (mHands[hand].msHeldItemNext!="")
+						{
+							TakeOut(mHands[hand].msHeldItemNext, mHands[hand].mbHeldItemNextPutAway);
+							mHands[hand].msHeldItemNext="";
+							mHands[hand].mbHeldItemNextPutAway = false;
+						}
+					}
+					break;
+				}
+				case eHeldItemState_Held:
+				{						
+					if (bPlayerInCustomState)
+						break;						
+					if (ShouldPlayHandEquipAnimation(hand)==false)
+						break;
+					
+					tString sAnim = GetHandAnimation(mHands[hand].msHeldItem, "idle", hand);
+					cAnimationState @pState = PlayerBody_GetAnimationState(sAnim);
+					bool bAnimPlaying = (pState !is null && pState.IsOver()==false);
+					
+					if (bAnimPlaying == false)
+						Hands_SwitchToHeld(hand);
+						
+					if (ShouldPlayInspectAnimation(hand))
+					{
+						mfInspectItemTime -= afTimeStep;
+						if (mfInspectItemTime <= 0)
+						{
+							Hands_SwitchToPuttingAway(hand);
+						}
+					}
+					break;
+				}
+			}
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	bool ShouldPlayInspectAnimation(eItemHandlerHand aHand)
+	{
+		iScrItem@ pItem = GetByID(mHands[aHand].msHeldItem);
+		if (pItem==null)
+			return false;
+		return (pItem.GetType().GetUsesInspectAnimation());
+	}
+	
+	//------------------------------------------------------------
+	
+	bool ShouldPlayHandEquipAnimation(eItemHandlerHand aHand)
+	{
+		iScrItem@ pItem = GetByID(mHands[aHand].msHeldItem);
+		if (pItem==null)
+			return false;
+		return pItem.GetType().GetUsesArmAnimation();
+	}
+	
+	//------------------------------------------------------------
+	
+	void LoadConfig(const tString& in asXMLFile)
+	{
+		@mInventoryDoc = cResources_LoadXmlDocument(asXMLFile);
+		if (mInventoryDoc is null)
+		{
+			Error("[ItemHandler] Couldn't load inventory config!");
+			return;
+		}
+		@mItemTypes = mInventoryDoc.GetFirstElement("ItemTypes");
+		mlInventoryMaxLimit = mItemTypes.GetAttributeInt("InventoryMaxLimit",0);
+		@mContentTypes = mInventoryDoc.GetFirstElement("ContentTypes");
+		@mStartup = mInventoryDoc.GetFirstElement("Startup");
+	}
+	
+	//------------------------------------------------------------
+	
+	cXmlElement@ FindTypeElem(const tString& in asType)
+	{
+		cXmlNodeListIterator @it = mItemTypes.GetChildIterator();
+		while(it.HasNext())
+		{
+			cXmlElement @pTypeElem = it.Next().ToElement();
+			if (pTypeElem.GetAttributeString("ID","")==asType)
+				return pTypeElem;
+		}
+		return null;
+	}
+	
+	//------------------------------------------------------------
+	
+	cItemEntry@ FindByID(const tString& in asItemID)
+	{
+		for (int i=mvInventory.size()-1;i>=0;--i)
+		{
+			if (mvInventory[i].msID==asItemID)
+			{
+				return @mvInventory[i];
+			}
+		}
+		return null;
+	}
+	
+	//------------------------------------------------------------
+	
+	void PreloadItemTypes()
+	{
+		cItemType type;
+		cXmlNodeListIterator @it = mItemTypes.GetChildIterator();
+		while(it.HasNext())
+		{
+			cXmlElement @pTypeElem = it.Next().ToElement();
+			type.SetXML(pTypeElem);
+			
+			tString sEntityFile = type.GetHandEntityFile();
+			if (sEntityFile!="")
+			{
+				Entity_Preload(sEntityFile);
+			}
+			
+			tString sAccessoryEntityFile = type.GetAccessoryEntityFile();
+			if (sAccessoryEntityFile!="")
+			{
+				Entity_Preload(sAccessoryEntityFile);
+			}
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void UpdateInventoryIcons()
+	{
+		//////////////////////////////////////
+		// Update icon to use for each item
+		cItemEntry@ pItem = null;
+		for (int i  = 0; i < mvInventory.size(); i++)
+		{
+			@pItem = mvInventory[i];
+			pItem.SetUseAltInventoryIcon(pItem.GetUseAltInventoryIcon(), false);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void SetupAccessoryItems()
+	{
+		/////////////////////
+		// Setup vars
+		cLuxMap@ pMap = cLux_GetCurrentMap();
+		
+		for (uint i = 0; i < mvInventory.size(); ++i)
+		{
+			cItemEntry@ pItem = mvInventory[i];
+			tString sSocket = pItem.GetType().GetAccessorySocket();
+			
+			/////////////////////
+			// Create the item
+			if (sSocket != "")
+			{
+				tString sEnt = SpawnAsEntity(pItem.GetID(), cMatrixf_Identity, pItem.GetID() + "_Accessory", 1.f, eItemSpawn_World, true);
+				cLuxProp@ pProp = cLux_ToProp(pMap.GetEntityByName(sEnt, eLuxEntityType_Prop));
+				
+				if (pProp is null)
+					continue;
+				
+				Entity_SetCollide(sEnt, false);
+				Entity_SetCollideCharacter(sEnt, false);
+				Prop_ClearVelocity(sEnt);
+				pProp.SetRenderLayer(glBodyRenderLayer);
+				pProp.SetStaticPhysics(true);
+				pProp.SetInteractionDisabled(true);
+				pProp.SetActive(true);
+				
+				cMeshEntity@ pMeshEnt = pProp.GetMeshEntity();
+				if (pMeshEnt !is null) pMeshEnt.SetRenderFlagBit(eRenderableFlag_VisibleInReflection, false);
+				
+				PlayerBody_AttachProp(sEnt, sSocket);
+				
+				/////////////////////
+				// Copy over data from internal item
+				CopyItemEntityInfo(pItem.GetInternalEntity(), sEnt);
+			}
+		}
+		
+		/////////////////////
+		// Amulet bracelet (shoud always be there, except for during the intro)
+		tString sBraceletSocket = "AmuletSocket";
+		if (cScript_GetGlobalVarBool("HideAmuletBracelet") == false && PlayerBody_GetSocket(sBraceletSocket) !is null)
+		{
+			pMap.CreateEntity("Amulet_Bracelet", "bracelet_beads.ent", cMatrixf_Identity, cVector3f(1.f));
+			cLuxProp@ pBracelet = cLux_ToProp(pMap.GetLatestEntity());
+					
+			if(pBracelet !is null)
+			{
+				pBracelet.SetActive(true);
+				pBracelet.SetScriptableIsSaved(true);
+				pBracelet.SetSaveDataIsUpdated(true);
+				pBracelet.SetFullGameSave(false);
+				pBracelet.SetRenderLayer(glBodyRenderLayer);
+				pBracelet.GetMeshEntity().SetRenderFlagBit(eRenderableFlag_VisibleInReflection, false);
+						
+				PlayerBody_AttachProp(pBracelet.GetName(), sBraceletSocket, false, false);
+			}
+		}
+		
+		/////////////////////
+		// Salim's ring
+		tString sRingSocket = "RingSocket";
+		if (PlayerBody_GetSocket(sRingSocket) !is null)
+		{
+			pMap.CreateEntity("SalimsRing_Accessory", "salim_ring_accessory.ent", cMatrixf_Identity, cVector3f(1.f));
+			cLuxProp@ pRing = cLux_ToProp(pMap.GetLatestEntity());
+					
+			if(pRing !is null)
+			{
+				pRing.SetActive(true);
+				pRing.SetScriptableIsSaved(true);
+				pRing.SetSaveDataIsUpdated(true);
+				pRing.SetFullGameSave(false);
+				pRing.SetRenderLayer(glBodyRenderLayer);
+				pRing.SetMeshScaleMul(0.825f);
+				pRing.GetMeshEntity().SetVisible(cScript_GetGlobalVarBool("SalimsRingVisible"));
+				pRing.GetMeshEntity().SetRenderFlagBit(eRenderableFlag_VisibleInReflection, false);
+						
+				PlayerBody_AttachProp(pRing.GetName(), sRingSocket, false, false);
+			}
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	tString GetAccessoryEntityByID(const tString &in asItemID)
+	{
+		tString sEnt = "";
+		for (int i = 0; i < mvInventory.size(); ++i)
+		{
+			cItemEntry@ pItem = mvInventory[i];
+			tString sID = pItem.GetID();
+			
+			if (pItem.GetType().IsAccessory() == false || 
+				GetHeldItem(pItem.GetType().GetEquipHand()) == sID)
+				continue;
+			
+			if (sID == asItemID)
+			{
+				tString sEntityName = pItem.GetID() + "_Accessory";
+				if (Entity_Exists(sEntityName))		sEnt = sEntityName;
+				else								sEnt = pItem.GetInternalEntity();
+				break;
+			}
+		}
+		
+		return sEnt;
+	}
+	
+	//------------------------------------------------------------
+	
+	void ShowMatchCount(bool abEmpty, bool abRemainOnScreen = true)
+	{
+		if (Sketchbook_GetPopupIconsEnabled()==false) return;
+		
+		mlMatchDisplayCount = Matches_GetCount();
+		mfMatchCountDisplayTimer = abRemainOnScreen ? gfMatchCountDisplayTime : gfMatchCountFadeOutTime;
+		mbMatchCountGreyscale = abEmpty;
+		
+		msItemCountDisplay_ImageColor = "inventory_item_matches";
+		msItemCountDisplay_ImageGreyscale = "inventory_item_matches_greyscale";
+	}
+	
+	//------------------------------------------------------------
+	
+	void ShowShadowFleshVialCount(bool abEmpty, bool abRemainOnScreen = true)
+	{
+		mlMatchDisplayCount = ShadowFleshVials_GetCount();
+		mfMatchCountDisplayTimer = abRemainOnScreen ? gfMatchCountDisplayTime : gfMatchCountFadeOutTime;
+		mbMatchCountGreyscale = abEmpty;
+		
+		msItemCountDisplay_ImageColor = "inventory_item_shadow_flesh_vials";
+		msItemCountDisplay_ImageGreyscale = "inventory_item_shadow_flesh_vials";
+	}
+	
+	//------------------------------------------------------------
+	
+	void FlashItemCount(int alFlashCount = 1)
+	{
+		if (mfMatchCountDisplayTimer <= 0) return;
+		mfMatchCountDisplayTimer = gfMatchCountDisplayTime;
+		mfItemCountDisplay_FlashTimer = 1.0f;
+		mlItemCountDisplay_FlashCount = alFlashCount;
+	}
+	
+	//------------------------------------------------------------
+	
+	void GiveAllItems()
+	{
+		cXmlNodeListIterator @it = mItemTypes.GetChildIterator();
+		while(it.HasNext())
+		{
+			cXmlElement @pTypeElem = it.Next().ToElement();
+			tString sType = pTypeElem.GetAttributeString("ID","");
+			AddToInventory(sType, true);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// MAP LOADING
+	/////////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	tString msLastLevelHeldItem="";
+	tString msLastLevelLeftHandItem="";
+	bool mbPostMapLoadEquipDone = false;
+	
+	void OnMapEnter(cLuxMap @apMap)
+	{
+		mbPostMapLoadEquipDone = false;
+		
+		/////////////////////////
+		// Startup items
+		if (mbAddedStartupItems == false)
+		{
+			cXmlNodeListIterator @it = mStartup.GetChildIterator();
+			while(it.HasNext())
+			{
+				cXmlElement @pItemElem = it.Next().ToElement();
+				tString sType = pItemElem.GetAttributeString("Type","");
+				if (sType=="")
+					continue;
+				AddToInventory(sType);
+			}
+			
+			mbAddedStartupItems = true;
+		}
+	}
+
+	//------------------------------------------------------------
+
+	void OnMapLeave(cLuxMap @apMap)
+	{        
+		msLastLevelHeldItem = GetHeldItem(eItemHandlerHand_Right);
+		msLastLevelLeftHandItem = GetHeldItem(eItemHandlerHand_Left);
+		
+		KillHeldItem(eItemHandlerHand_Left);
+		KillHeldItem(eItemHandlerHand_Right);
+
+		for (int i=mvInventory.size()-1;i>=0;--i)
+		{
+			mvInventory[i].DestroyInternalEntity();
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void PreloadData(cLuxMap @apMap)
+	{
+		PreloadItemTypes();
+	}
+	
+	//------------------------------------------------------------
+
+	void CreateWorldEntities(cLuxMap @apMap)
+	{
+	
+	}
+	
+	//------------------------------------------------------------
+	
+	void DestroyWorldEntities(cLuxMap @apMap)
+	{
+	
+	}
+	
+	//------------------------------------------------------------
+	
+	void OnEnterContainer(const tString&in asOldContainer)
+	{
+	
+	}
+	
+	//------------------------------------------------------------
+	
+	void OnLeaveContainer(const tString&in asNewContainer)
+	{
+	
+	}
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// PER-FRAME
+	/////////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	void Update(float afTimeStep)
+	{
+		//////////////////////////////////////////////////////////////
+		// Temp workaround for not having to F5 after AS compile for the inventory to work. ALWAYS keep this on top!
+		// TODO: Remove this once done working with the inventory.
+		if (mInventoryDoc==null || mItemTypes==null || mContentTypes==null || mStartup==null)
+			LoadConfig("Inventory.cfg"); 
+			
+		/////////////
+		// Map load setup
+		// (Do this here to make sure the PlayerBody has initialized)
+		if (mbPostMapLoadEquipDone==false)
+		{
+			if (PlayerBody_IsActive())
+				SetupAccessoryItems();
+			
+			if (msLastLevelLeftHandItem!="")
+			{
+				//TODO: Remove when FP body is working
+				if (PlayerBody_IsActive())
+					Equip(msLastLevelLeftHandItem);
+				else
+					EquipLeftHand(msLastLevelLeftHandItem);
+			}
+			if (msLastLevelHeldItem!="")
+			{
+				Equip(msLastLevelHeldItem);
+			}
+			mbPostMapLoadEquipDone = true;
+		}
+		
+		/////////////
+		// Held Item
+		UpdateHeldItems(afTimeStep);
+
+		////////////
+		// Using Item
+		// Only supports using item in one hand at any one time.
+		if (cLux_GetPlayer().GetCurrentStateId()==ePlayerState_Custom_UsingItem)
+		{
+			eItemHandlerHand hand = eItemHandlerHand_LastEnum;
+			if (mHands[eItemHandlerHand_Right].msUseItem!="")
+				hand = eItemHandlerHand_Right;
+			if (mHands[eItemHandlerHand_Left].msUseItem!="")
+				hand = eItemHandlerHand_Left;
+				
+			if (hand==eItemHandlerHand_LastEnum || (cInput_IsTriggered(eAction_Interact)==false) )
+			{
+				StopUsingItem(hand);
+				cLux_GetPlayer().ChangeState(ePlayerState_Normal);
+				return;
+			}
+
+			mHands[hand].mfUseTime+=afTimeStep;
+			if (mHands[hand].msUseTarget!="")
+				UpdateUseHeldItemOnWorld(hand, mHands[hand].msUseTarget, mHands[hand].mfUseTime, afTimeStep);
+			else
+				UpdateUseItemOnSelf(hand,afTimeStep);
+		}
+		else
+		{
+			if (mHands[eItemHandlerHand_Left].msUseItem=="")
+				StopUsingItem(eItemHandlerHand_Left);
+			if (mHands[eItemHandlerHand_Right].msUseItem=="")
+				StopUsingItem(eItemHandlerHand_Right);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void VariableUpdate(float afDeltaTime)
+	{
+
+	}
+	
+	//------------------------------------------------------------
+	
+	void PostUpdate(float afTimeStep)
+	{
+	}
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// ACTIONS
+	/////////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	void OnAction(int alAction, bool abPressed)
+	{
+	}
+	
+	//------------------------------------------------------------
+
+	void OnAnalogInput(int alAnalogId, const cVector3f &in avAmount)
+	{
+	
+	}
+	
+	//------------------------------------------------------------
+	
+	void OnExitPressed()
+	{
+	
+	}
+	
+	//------------------------------------------------------------
+	
+	void AppGotInputFocus()
+	{
+	
+	}
+	void AppLostInputFocus()
+	{
+	
+	}
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// GUI
+	/////////////////////////////////////////
+	
+	//------------------------------------------------------------
+
+	[volatile] array<cPickupGui@> mvPickupGui;
+	[nosave] int mlPickupGuiIDSuffix=0; 
+	[volatile] cPickupGui@ mTakeOutGui;
+	
+	//------------------------------------------------------------
+
+	void StartPickUpGuiAnimation(const tString &in asIcon, float afDelay=0.f)
+	{
+		if (Sketchbook_GetPopupIconsEnabled() == false) return;
+		////////////////////////
+		// Create new pickup gui
+		cPickupGui@ pPickupGui = cPickupGui("PickupGui_"+mlPickupGuiIDSuffix, asIcon);
+		if (pPickupGui==null) return;
+		
+		mlPickupGuiIDSuffix++;
+		pPickupGui.AddToTime(afDelay);
+		
+		pPickupGui.mvGoalDest = GetPickupGuiDestPos(mvPickupGui.size());
+		mvPickupGui.push_back(pPickupGui);
+	}
+	
+	//------------------------------------------------------------
+	
+	cVector3f GetPickupGuiDestPos(const int alElementCount)
+	{
+		////////////////////////////
+		// Set pickup gui pos offset
+		cVector3f vPickupGuiDestPos = gvItemHandlerGuiPos;
+		
+		if (Sketchbook_NotifyIdeasStateActive())
+			vPickupGuiDestPos.x -= gfItemHandlerGuiSizeX;
+			
+		if (mfMatchCountDisplayTimer>0)
+			vPickupGuiDestPos.x -= gfItemHandlerGuiSizeX;
+		
+		if (alElementCount>0)
+		{
+			float fPrevGuiDestPosX = mvPickupGui[alElementCount-1].mvGoalDest.x;
+			vPickupGuiDestPos.x = fPrevGuiDestPosX - gfItemHandlerGuiSizeX;
+		}
+		
+		return vPickupGuiDestPos;
+	}
+	
+	//------------------------------------------------------------
+	
+	bool GetIsPickupGuiAnimating()
+	{
+		if (mTakeOutGui==null) return false;
+		return mTakeOutGui.IsAnimating();
+	}
+	
+	//------------------------------------------------------------
+	
+	void OnGui(float afTimeStep)
+	{
+		const cVector3f vGroupPos(cLux_GetHudVirtualOffset() * -1.f);	
+		const cVector2f vSize(ImGui_GetSize());
+		
+		ImGui_GroupBegin(vGroupPos, vSize);
+		
+		//////////////////
+		// Pickup Item gui
+		for (int i=0; i<mvPickupGui.size(); ++i)
+		{
+			cPickupGui@ pPickupGui = mvPickupGui[i];
+			if (pPickupGui==null) continue;
+			
+			const float fInterpSpeed = 0.1f;
+			pPickupGui.mvGoalDest.x = cMath_InterpolateLinear(pPickupGui.mvGoalDest.x, GetPickupGuiDestPos(i).x, (1/fInterpSpeed) * afTimeStep);
+			
+			pPickupGui.OnPickupGui(afTimeStep);
+			
+			if (pPickupGui.IsAnimating()==false)
+			{
+				mvPickupGui.removeAt(i);
+				@pPickupGui = null;
+			}
+		}
+		
+		////////////////////
+		// Take out item gui
+		if (mTakeOutGui!=null)
+		{
+			mTakeOutGui.OnPickupGui(afTimeStep);
+			if (mTakeOutGui.IsAnimating()==false)
+				@mTakeOutGui = null;
+		}
+		
+		/////////////////////
+		// Match equip gui
+		if (mfMatchCountDisplayTimer > 0.0f)
+		{
+			////////////////
+			// Fade In & Out
+			if (mfMatchCountDisplayTimer >= gfMatchCountFadeOutTime)
+			{
+				mfMatchCountAlpha += (1/gfMatchCountFadeInTime)*afTimeStep;
+				if (mfMatchCountAlpha > 1.0f) mfMatchCountAlpha = 1.0f;
+			}
+			else
+			{
+				mfMatchCountAlpha -= (1/gfMatchCountFadeOutTime)*afTimeStep;
+				if (mfMatchCountAlpha < 0.0f) mfMatchCountAlpha = 0.0f;
+			}
+			
+			// flash item counter
+			float fImageBrightnessMul = 1.0f;
+			if (mfItemCountDisplay_FlashTimer > 0)
+			{
+				mfItemCountDisplay_FlashTimer -= afTimeStep * 2.0f;
+				if (mfItemCountDisplay_FlashTimer <= 0)
+				{
+					--mlItemCountDisplay_FlashCount;
+					if (mlItemCountDisplay_FlashCount > 0) mfItemCountDisplay_FlashTimer = 1.0f;
+				}
+				
+				float fAddBrightness = 0.5f;
+				if (mfItemCountDisplay_FlashTimer > 0.5) fImageBrightnessMul = 1.0f + fAddBrightness * (1.0f - ((mfItemCountDisplay_FlashTimer - 0.5f) / 0.5f));
+				else fImageBrightnessMul = 1.0f + fAddBrightness * (mfItemCountDisplay_FlashTimer / 0.5f);
+			}
+				
+			mfMatchCountDisplayTimer -= afTimeStep;
+			
+			/////////////
+			// Interp Pos
+			cVector3f vIconPos = gvItemHandlerGuiPos;
+			float fGoalPosX = Sketchbook_NotifyIdeasStateActive() ? (gvItemHandlerGuiPos.x - gfItemHandlerGuiSizeX) : gvItemHandlerGuiPos.x;
+			if (mfMatchInterpPosX != fGoalPosX)
+				mfMatchInterpPosX = cMath_IncreaseTo(mfMatchInterpPosX, afTimeStep, fGoalPosX);
+			vIconPos.x = mfMatchInterpPosX;
+			
+			////////////////////////////////
+			// Show display count going down
+			int lDisplayCount = mlMatchDisplayCount;
+/*			if (mlMatchDisplayCount > 0 && mfMatchCountDisplayTimer < gfMatchCountDisplayTime-0.5f)
+				lDisplayCount--;*/
+			
+			////////////////////
+			// Do img and labels
+			cVector3f vMatchPos = ImGui_NrmPosGroup(vIconPos);
+			cImGuiLabelData labelData;
+			labelData.mColorBase = cColor(1.0f,1.0f,1.0f, mfMatchCountAlpha) * fImageBrightnessMul;
+			labelData.mFontAlign = eFontAlign_Center;
+			labelData.mFont.mvSize = cVector2f(28);
+			labelData.mFont.SetFile("architect_56.fnt");
+			cVector3f vStackPos = vMatchPos+ImGui_NrmPosGroup(0.033f,0.0675f,0.6f);
+			cVector3f vTextPos = vStackPos+ImGui_NrmPosGroup(0.0075,0,0);
+			cVector2f vOffs = ImGui_NrmSizeGroup(0.1,0.02f);
+			vTextPos.y-=vOffs.y;
+			vTextPos.x-=vOffs.x;
+			vTextPos.z+=0.1f;
+			
+			ImGui_SetModColorMul(cColor(1, mfMatchCountAlpha) * fImageBrightnessMul);
+			tString sImage = mbMatchCountGreyscale ? msItemCountDisplay_ImageGreyscale : msItemCountDisplay_ImageColor;
+			ImGui_DoImageCorrectAspect(cImGuiGfx(sImage, eImGuiGfx_Texture), vMatchPos, ImGui_NrmSizeGroupKeepRatio(0.083));
+			ImGui_ResetModifiers();
+			
+			ImGui_SetTransCategory("");
+			tWString sStack = cResources_Translate("InventoryUI", "Stack");
+			tWString sOut = cString_ReplaceStringToW(sStack, tWString("%n"), cString_ToStringW(lDisplayCount,0));
+			
+			ImGui_SetTextOverride(sOut);
+			cLux_GetCurrentImGui().DoLabel(_ImGui_GetTextString(""), labelData, vTextPos, cVector2f(vOffs.x*2.0f,-1.0f), 1.0f);
+			ImGui_SetModColorMul(cColor(0, 1));
+			cLux_GetCurrentImGui().DoLabel(_ImGui_GetTextString(""), labelData, vTextPos+cVector3f(1.0f,1.0f,-1.0f), cVector2f(vOffs.x*2.0f,-1.0f), 1.0f);
+			ImGui_ResetModifiers();
+		}
+		
+		ImGui_GroupEnd();
+	}
+	
+	//------------------------------------------------------------
+	
+	void OnDraw(float afFrameTime)
+	{
+
+	}
+	
+	//------------------------------------------------------------
+	
+	void OnPostRender(float afFrameTime)
+	{
+	}
+	
+	//------------------------------------------------------------
+	
+}

@@ -1,0 +1,28 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/cloth/cloth_pile/cloth_pile.dae">
+            <SubMesh ID="0" Name="polySurface2" CreStamp="0" ModStamp="0" WorldPos="0 0.005 0" Rotation="0 0 0" Scale="1 1 1" TriCount="56" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="1" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="2.3e-05 0.10575 -0.031253" Rotation="0 0 0" Scale="0.4 0.3 0.4" RelativeTranslation="0 0.0251015 -0.028612" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="2" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="2.3e-05 0.055547 0.025971" Rotation="0 0 0" Scale="0.9 0.1 0.9" RelativeTranslation="0 -0.0251015 0.028612" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="3" Name="Body" CreStamp="0" ModStamp="1615937629" WorldPos="2.3e-05 0.0806485 -0.002641" Rotation="0 0 0" Scale="1 1 1" Material="carpet" Mass="0" AngularDamping="0.5" LinearDamping="0.1" MaxAngularSpeed="20" MaxLinearSpeed="20" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="1" />
+                <Shape ID="2" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

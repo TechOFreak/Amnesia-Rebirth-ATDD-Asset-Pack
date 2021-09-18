@@ -1,0 +1,34 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/prison/torture_cradle/torture_cradle.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="base" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.256980 0.000000 -0.253421" TriCount="166" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="8" Name="Shape_1" RelativeRotation="0.777761 0.122964 0.661494" RelativeScale="0.300000 0.300000 0.300000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.777761 0.122964 0.661494" Scale="0.405000 0.405000 0.405000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.082353 1.413455 0.111863" />
+            <BodyShape Active="true" GroupID="0" ID="9" Name="Shape_2" RelativeRotation="0.152226 0.024104 -0.155828" RelativeScale="0.080000 1.000000 0.080000" RelativeTranslation="-0.169807 0.001498 -0.178473" Rotation="0.152226 0.024104 -0.155828" Scale="0.108000 1.350000 0.108000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.313673 0.653228 -0.148571" />
+            <BodyShape Active="true" GroupID="0" ID="11" Name="Shape_3" RelativeRotation="1.126203 1.417235 1.262746" RelativeScale="0.080000 1.000000 0.080000" RelativeTranslation="0.176727 -0.001483 -0.178473" Rotation="1.126203 1.417235 1.262746" Scale="0.108000 1.350000 0.108000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.154148 0.649203 -0.148571" />
+            <BodyShape Active="true" GroupID="0" ID="12" Name="Shape_4" RelativeRotation="-0.164140 0.024104 -0.155828" RelativeScale="0.080000 1.000000 0.080000" RelativeTranslation="-0.169807 0.001498 0.172667" Rotation="-0.164140 0.024104 -0.155828" Scale="0.108000 1.350000 0.108000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.313673 0.653228 0.325468" />
+            <BodyShape Active="true" GroupID="0" ID="13" Name="Shape_5" RelativeRotation="-0.151865 0.067002 0.112054" RelativeScale="0.080000 1.000000 0.080000" RelativeTranslation="0.173362 0.001498 0.172667" Rotation="-0.151865 0.067002 0.112054" Scale="0.108000 1.350000 0.108000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.149605 0.653228 0.325468" />
+            <BodyShape Active="true" GroupID="0" ID="14" Name="Shape_6" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.350000 0.500000 0.350000" RelativeTranslation="0.005380 0.232444 -0.002591" Rotation="0.000000 0.000000 0.000000" Scale="0.472500 0.675000 0.472500" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.077170 0.965005 0.088869" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="16" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.350000 1.350000 1.350000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.082353 1.413455 0.111863">
+                <Shape ID="8" />
+            </Body>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="17" LinearDamping="0.000000" Mass="0.000000" Material="Wood Robust" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.350000 1.350000 1.350000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.084433 0.651205 0.092367">
+                <Shape ID="14" />
+                <Shape ID="9" />
+                <Shape ID="11" />
+                <Shape ID="13" />
+                <Shape ID="12" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

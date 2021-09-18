@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=1;exportAnimations=1;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/wall_corner_concave_large_broken02.mb</source_data>
+    </contributor>
+    <created>2011-03-07T09:47:29</created>
+    <modified>2011-03-07T09:47:29</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_materials>
+    <material id="dungeonbase_mat" name="dungeonbase_mat">
+      <instance_effect url="#dungeonbase_mat-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="dungeonbase_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/dungeonbase/dungeonbase.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file1</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="dungeon_wall_broken_stone0Shape3" name="dungeon_wall_broken_stone0Shape3">
+      <mesh>
+        <source id="dungeon_wall_broken_stone0Shape3-positions" name="dungeon_wall_broken_stone0Shape3-positions">
+          <float_array id="dungeon_wall_broken_stone0Shape3-positions-array" count="225">0.2104284 0.07528677 -0.1346609 -0.2322247 0.05796996 -0.1355841 -0.1711696 0.05434486 -0.2333792 0.158483 0.07039344 -0.224142 0.1918981 0.07142447 -0.2095428 0.2397691 0.07718489 -0.07320219 0.2400023 0.07972709 0.1023897 -0.1841145 0.06743063 0.1343974 0.1808303 0.08609229 0.2090584 -0.1561201 0.07047141 0.2158168 -0.08642151 0.07288268 0.2433423 0.07365919 0.07776259 0.2689593 0.1476451 0.08196859 0.2546081 -0.1808688 0.06501342 0.07140213 0.2073119 -1.8187e-4 -0.06114302 0.2026631 0.00319838 0.08538681 0.1804769 0.01703743 0.1823088 0.1289785 0.02787669 0.2111355 0.06551743 0.02408294 0.2199954 -0.06759627 0.02704868 0.1961721 -0.1281493 0.01063343 0.1793449 -0.1572319 0.00191588 0.1099585 -0.1468924 -8.7382e-4 0.05865905 -0.1845889 0.003749 -0.1137895 -0.1367836 0.00989714 -0.1950666 0.1382064 0.01788158 -0.197552 0.1681491 0.01684065 -0.1818533 0.1813255 0.00982187 -0.1136244 0.1939378 0.2058622 -0.1302757 0.224065 0.2092629 -0.07240128 0.1886186 0.2031967 -0.2089819 0.1511197 0.1996711 -0.2224844 -0.1679008 0.1874207 -0.2197516 -0.2342944 0.191005 -0.1338016 -0.1769568 0.1974215 0.06436049 -0.1887975 0.1990066 0.125462 -0.159181 0.2021644 0.2048439 -0.09058197 0.2054864 0.2349251 0.06692853 0.2096978 0.2512182 0.1362609 0.2100158 0.2325177 0.1946776 0.2134954 0.2050023 0.2286463 0.2150717 0.09401992 0.169903 0.2979883 -0.1238019 0.190065 0.2985871 -0.06975614 0.1605831 0.2968056 -0.1926584 0.131103 0.2933168 -0.2072859 -0.1588676 0.2884288 -0.2149465 -0.2131422 0.2893236 -0.127411 -0.1658356 0.2945041 0.05349883 -0.1740754 0.2963933 0.1090781 -0.1472015 0.2994028 0.1822873 -0.08583571 0.3047079 0.2119874 0.05578964 0.3047306 0.222742 0.121642 0.3060602 0.2150918 0.1774061 0.3135767 0.1861485 0.2035525 0.3153991 0.08049344 0.1449908 0.3537777 -0.1088704 0.1618625 0.3478907 -0.06043562 0.1327325 0.3250679 -0.1657063 0.1073112 0.3181142 -0.1794383 -0.1306171 0.3097286 -0.1778326 -0.1782229 0.338745 -0.1084787 -0.140032 0.3419225 0.04946731 -0.1453077 0.3342374 0.09673751 -0.120948 0.3205132 0.1615718 -0.07125214 0.3256814 0.1819621 0.04408477 0.3354066 0.2035304 0.09905151 0.3322168 0.1938051 0.1428586 0.3553462 0.1635869 0.1569975 0.3481558 0.07248717 -0.0116529 0.3139214 -0.1955439 -0.01388231 0.2908728 -0.2280247 -0.00839056 0.1935459 -0.252707 -0.00634329 0.06236915 -0.2603496 7.1138e-4 0.01388937 -0.2278984</float_array>
+          <technique_common>
+            <accessor source="#dungeon_wall_broken_stone0Shape3-positions-array" count="75" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dungeon_wall_broken_stone0Shape3-normals" name="dungeon_wall_broken_stone0Shape3-normals">
+          <float_array id="dungeon_wall_broken_stone0Shape3-normals-array" count="225">0.9284944 -0.1859075 -0.3214602 -0.9259611 -0.3503835 -0.1408097 -0.5037311 -0.3616742 -0.7845041 0.2974046 -0.2582767 -0.9191536 0.7554299 -0.2629226 -0.6001645 0.9582806 -0.1697111 -0.229992 0.9647844 -0.1675516 0.2027742 -0.9620844 -0.2433871 0.1231112 0.7832419 -0.192399 0.5911977 -0.6603437 -0.3223637 0.6782535 -0.216603 -0.329299 0.9190458 0.03671656 -0.3105472 0.9498485 0.428612 -0.2486169 0.8686088 -0.9672745 -0.2455802 0.0637994 0.5109088 -0.8496403 -0.130704 0.5400892 -0.8260239 0.1612085 0.3352382 -0.8577404 0.3897395 0.2544255 -0.726292 0.6385669 0.01569405 -0.7785451 0.6273925 -0.09292247 -0.7720942 0.6286779 -0.2590224 -0.8575042 0.4445154 -0.4953136 -0.8570567 0.1418395 -0.3989457 -0.9160374 0.04144447 -0.3913336 -0.9157829 -0.09055284 -0.1834407 -0.9205506 -0.3448712 0.2219773 -0.7620341 -0.608301 0.3723648 -0.8724005 -0.3166413 0.4888585 -0.8433278 -0.2231939 0.9393386 0.1964117 -0.2811857 0.9483176 0.206944 -0.2405576 0.7731547 0.1810678 -0.6078209 0.27131 0.1337202 -0.9531578 -0.5328296 0.1135077 -0.8385755 -0.9799861 0.1011338 -0.1714622 -0.9959338 0.06936029 0.05748866 -0.9924054 0.074271 0.09805701 -0.7276816 0.1327169 0.6729529 -0.261118 0.1624373 0.9515416 0.04451822 0.1927285 0.9802417 0.3650659 0.183676 0.9126828 0.7707529 0.1480543 0.6196933 0.9756046 0.1649534 0.144866 0.8653402 0.4240384 -0.2671663 0.8693063 0.4480132 -0.2087841 0.6378195 0.5487447 -0.540431 0.1957141 0.5419351 -0.8173141 -0.4303087 0.5506648 -0.715264 -0.8774837 0.4526031 -0.1586593 -0.9404036 0.3358625 0.05326778 -0.902806 0.4186862 0.0982001 -0.6251915 0.5582247 0.5454546 -0.2440467 0.5388459 0.8062792 0.02488621 0.4709585 0.8818042 0.2430338 0.4542567 0.8570795 0.6319183 0.5338188 0.5618868 0.8566004 0.5122373 0.06203833 0.4330887 0.8621744 -0.2628491 0.4316373 0.8974435 -0.09101936 0.3148724 0.8320711 -0.4566324 0.06378289 0.8401021 -0.5386652 -0.1980272 0.8661798 -0.458822 -0.3900836 0.9040672 -0.1746352 -0.4058084 0.9134484 0.03051981 -0.4497601 0.8844586 0.1242931 -0.2888846 0.9033937 0.3169 -0.1691211 0.8585981 0.4839498 -0.02907117 0.7988076 0.6008839 0.0912417 0.7907476 0.6053041 0.1341158 0.9486455 0.2865042 0.3595423 0.9330528 0.01190363 -0.01830502 0.8624992 -0.5057272 -0.003667631 0.5512303 -0.8343452 0.004381353 0.1250966 -0.9921349 0.02506045 -0.2777628 -0.9603227 0.0396506 -0.7951527 -0.6051116</float_array>
+          <technique_common>
+            <accessor source="#dungeon_wall_broken_stone0Shape3-normals-array" count="75" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dungeon_wall_broken_stone0Shape3-map1" name="dungeon_wall_broken_stone0Shape3-map1">
+          <float_array id="dungeon_wall_broken_stone0Shape3-map1-array" count="270">0.08861545 0.4350086 0.06062774 0.4338493 0.0419556 0.4318362 0.03040669 0.4338369 0.02456918 0.4341695 0.07661509 0.4353085 0.04532696 0.4357263 0.0299953 0.4372911 0.02384257 0.4367578 0.04476542 0.4373473 0.05713386 0.436201 0.08557081 0.4352583 0.0980826 0.4355023 0.08779686 0.459652 0.07641754 0.4594929 0.02383645 0.457499 0.03020545 0.4576331 0.04082982 0.4558606 0.05978945 0.457479 0.02977841 0.4613869 0.04471679 0.4606765 0.05770007 0.4605719 0.08592305 0.4595399 0.09848112 0.4589603 0.02612313 0.4601697 0.04655069 0.4603281 0.0879648 0.477265 0.07667179 0.4769545 0.02390924 0.4751953 0.03104779 0.4753606 0.03905796 0.4742185 0.05886316 0.4754096 0.03015049 0.4795724 0.04499749 0.4787041 0.05841322 0.4791096 0.08521722 0.477735 0.09823047 0.4770529 0.02745399 0.4787563 0.04825116 0.4792479 0.05871913 0.4769163 0.05898083 0.458533 0.06039941 0.4342821 0.04850365 0.4866608 0.03795747 0.4840843 0.03187803 0.4160194 0.06583156 0.4210448 0.02437249 0.4824341 0.02075168 0.4773078 0.01548238 0.4525342 0.01676263 0.4271808 0.07637183 0.4830843 0.0756853 0.4189574 0.09527993 0.4784341 0.09018906 0.4224914 0.09531368 0.4326209 0.1020284 0.4565483 0.1014931 0.4681516 0.0508578 0.4195248 0.08256854 0.4157287 0.07627168 0.4816229 0.06626172 0.4853827 0.0399368 0.4819974 0.09642334 0.4257456 0.08886155 0.4804515 0.02268209 0.4763095 0.04178958 0.4167655 0.1000042 0.4510754 0.09221313 0.4753335 0.02868672 0.4207962 0.01797931 0.4665264 0.01782905 0.4549879 0.02373349 0.4313416 0.02714721 0.4239369 0.04268442 0.4244642 0.01867546 0.4622315 0.01876951 0.4368206 0.01731537 0.4225723 0.05688115 0.4237228 0.01977917 0.4807163 0.08382387 0.4222019 0.01976436 0.4905518 0.09799419 0.4230206 0.110597 0.4221819 0.04687273 0.4202874 0.07536989 0.420027 0.0874309 0.4210802 0.1014528 0.4239493 0.03222082 0.4226066 0.05997058 0.4234596 0.08904795 0.424336 0.06318641 0.4209933 0.0985176 0.4352045 0.09678692 0.4605385 0.09718241 0.4208818 0.09340817 0.4787723 0.09288865 0.4886124 0.02824323 0.4883444 0.03086084 0.4884211 0.04818315 0.4853677 0.04339133 0.4857277 0.06138007 0.4856396 0.05797524 0.4863157 0.08445407 0.4845524 0.08273897 0.4842218 0.09726605 0.4843313 0.09460023 0.4837242 0.03023128 0.4891503 0.1073076 0.4876072 0.05090094 0.4892369 0.04704146 0.4896407 0.07496907 0.4871889 0.07708779 0.4875197 0.0259456 0.4837824 0.09742178 0.4842321 0.0346438 0.4828375 0.03134562 0.4834113 0.05894208 0.4842029 0.05651418 0.4839579 0.04193573 0.4829936 0.08079523 0.4860928 0.06335472 0.4862202 0.0575509 0.4866649 0.08649672 0.4884863 0.1094314 0.45879 0.1107623 0.4773765 0.087999 0.4598554 0.08622713 0.4782133 0.1013765 0.4587584 0.1014493 0.4764547 0.1071509 0.435378 0.08912478 0.4358311 0.1021092 0.4354289 0.02391279 0.4226899 0.04187876 0.4203411 0.02728876 0.4235616</float_array>
+          <technique_common>
+            <accessor source="#dungeon_wall_broken_stone0Shape3-map1-array" count="135" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="dungeon_wall_broken_stone0Shape3-vertices" name="dungeon_wall_broken_stone0Shape3-vertices">
+          <input semantic="POSITION" source="#dungeon_wall_broken_stone0Shape3-positions" />
+          <input semantic="NORMAL" source="#dungeon_wall_broken_stone0Shape3-normals" />
+        </vertices>
+        <triangles material="dungeonbase_matSG" count="146">
+          <input semantic="VERTEX" source="#dungeon_wall_broken_stone0Shape3-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#dungeon_wall_broken_stone0Shape3-map1" offset="1" set="0" />
+          <p>6 6 15 83 5 5 5 5 15 83 14 84 8 8 16 134 6 6 6 6 16 134 15 83 12 12 17 81 8 129 8 129 17 81 16 82 12 12 11 11 17 81 17 81 11 11 18 79 11 11 10 10 18 79 18 79 10 10 19 77 9 9 20 73 10 10 10 10 20 73 19 77 9 9 7 7 20 73 20 73 7 7 21 72 7 7 13 75 21 72 21 72 13 75 22 76 1 1 23 90 13 91 13 91 23 90 22 93 2 2 24 133 1 1 1 1 24 133 23 90 2 130 73 41 24 89 24 89 73 41 74 88 4 4 26 132 3 3 3 3 26 132 25 87 4 131 0 0 26 86 26 86 0 0 27 85 0 0 5 5 27 85 27 85 5 5 14 84 0 0 28 13 5 5 5 5 28 13 29 14 4 131 30 127 0 0 0 0 30 127 28 13 3 3 31 16 4 4 4 4 31 16 30 15 2 130 32 125 73 41 73 41 32 125 72 40 2 2 1 1 32 17 32 17 1 1 33 18 1 1 13 91 33 18 33 18 13 91 34 92 7 7 35 19 13 75 13 75 35 19 34 74 9 9 36 20 7 7 7 7 36 20 35 19 10 10 37 21 9 9 9 9 37 21 36 20 11 11 38 22 10 10 10 10 38 22 37 21 12 12 39 23 11 11 11 11 39 23 38 22 12 12 8 129 39 23 39 23 8 129 40 123 8 8 6 6 40 24 40 24 6 6 41 25 6 6 5 5 41 25 41 25 5 5 29 14 29 14 28 13 43 27 43 27 28 13 42 26 30 127 44 128 28 13 28 13 44 128 42 26 30 15 31 16 44 28 44 28 31 16 45 29 32 125 46 126 72 40 72 40 46 126 71 39 33 18 47 31 32 17 32 17 47 31 46 30 33 18 34 92 47 31 47 31 34 92 48 94 35 19 49 32 34 74 34 74 49 32 48 78 36 20 50 33 35 19 35 19 50 33 49 32 36 20 37 21 50 33 50 33 37 21 51 34 38 22 52 35 37 21 37 21 52 35 51 34 39 23 53 36 38 22 38 22 53 36 52 35 39 23 40 123 53 36 53 36 40 123 54 124 40 24 41 25 54 37 54 37 41 25 55 38 41 25 29 14 55 38 55 38 29 14 43 27 43 27 42 26 57 111 57 111 42 26 56 122 44 128 58 113 42 26 42 26 58 113 56 122 44 28 45 29 58 112 58 112 45 29 59 115 46 126 60 119 71 39 71 39 60 119 70 116 46 30 47 31 60 118 60 118 47 31 61 121 47 31 48 94 61 120 61 120 48 94 62 95 49 32 63 96 48 78 48 78 63 96 62 80 50 33 64 99 49 32 49 32 64 99 63 97 50 33 51 34 64 98 64 98 51 34 65 101 52 35 66 103 51 34 51 34 66 103 65 100 53 36 67 105 52 35 52 35 67 105 66 102 54 124 68 107 53 36 53 36 68 107 67 104 54 37 55 38 68 106 68 106 55 38 69 109 43 27 57 110 55 38 55 38 57 110 69 108 45 29 71 39 59 114 59 114 71 39 70 117 31 16 72 40 45 29 45 29 72 40 71 39 73 41 72 40 3 3 3 3 72 40 31 16 74 88 73 41 25 87 25 87 73 41 3 3 26 63 24 62 25 67 24 62 74 66 25 67 64 53 65 54 68 52 68 52 65 54 67 56 65 54 66 55 67 56 23 58 24 62 27 59 27 59 24 62 26 63 14 60 22 57 27 59 27 59 22 57 23 58 15 61 16 64 22 57 22 57 16 64 21 65 20 68 16 64 19 71 19 71 16 64 18 70 16 64 17 69 18 70 21 65 16 64 20 68 62 45 63 51 69 50 69 50 63 51 68 52 68 52 63 51 64 53 57 42 62 45 69 50 61 44 56 43 60 49 60 49 56 43 70 48 56 43 58 46 70 48 58 46 59 47 70 48 57 42 56 43 62 45 62 45 56 43 61 44 14 60 15 61 22 57</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>dungeon_wall_broken_stone0Shape3</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="wall_corner_concave_large_broken02">
+      <node id="dungeon_wall_broken_stone03" name="dungeon_wall_broken_stone03" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#dungeon_wall_broken_stone0Shape3">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="dungeonbase_matSG" target="#dungeonbase_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>dungeon_wall_broken_stone03</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

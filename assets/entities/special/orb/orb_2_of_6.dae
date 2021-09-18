@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Skywolf</author>
+      <authoring_tool>Maya2008 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=0;exportCameraAsLookat=0;
+exportLights=1;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=0;exportPhysics=0;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Users/Skywolf/Documents/maya/projects/frictional/scenes/orb_parts_allTogether.mb</source_data>
+    </contributor>
+    <created>2010-03-10T14:47:29Z</created>
+    <modified>2010-03-10T14:47:29Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///C:/Users/Skywolf/Desktop/FrictionalGames09-2008/frictionalSVN/lux/redist/entities/special/orb/orb.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="orbShape2" name="orbShape2">
+      <mesh>
+        <source id="orbShape2-positions" name="position">
+          <float_array id="orbShape2-positions-array" count="174">0.009598 0.00106 0.017202 -0.010854 0.155099 -0.011964 -0.159635 0.125868 -0.046269 -0.148743 0.090914 -0.054367 -0.135242 0.060277 -0.035515 -0.106762 0.035133 -0.024222 -0.077448 0.01645 -0.000468 -0.042192 0.004945 0.013511 -0.184133 0.195171 -0.075527 -0.180522 0.159094 -0.0571 -0.082176 0.163795 -0.179778 -0.13852 0.163795 -0.139072 -0.077194 0.125868 -0.169158 -0.130262 0.125868 -0.131061 -0.069233 0.090914 -0.152188 -0.116852 0.090914 -0.118052 -0.058525 0.060277 -0.129364 -0.098804 0.060277 -0.100545 -0.04563 0.035133 -0.101878 -0.076814 0.035133 -0.079213 -0.030791 0.01645 -0.070249 -0.051725 0.01645 -0.054875 -0.014579 0.004945 -0.035691 -0.024503 0.004945 -0.028467 -0.083766 0.193455 -0.183166 -0.141308 0.228921 -0.141776 -0.014677 0.163795 -0.196705 0.062139 0.163795 -0.187472 0.129576 0.163795 -0.149545 0.176333 0.163795 -0.091087 -0.013795 0.125868 -0.185234 0.058564 0.125868 -0.176536 0.122088 0.125868 -0.14081 0.173724 0.125868 -0.068974 -0.012363 0.090914 -0.166605 0.052758 0.090914 -0.158778 0.109929 0.090914 -0.126625 0.157245 0.090914 -0.0601 -0.010435 0.060277 -0.141536 0.044946 0.060277 -0.134879 0.093564 0.060277 -0.107536 0.113699 0.060277 -0.067331 -0.008087 0.035133 -0.110989 0.035425 0.035133 -0.105759 0.073625 0.035133 -0.084275 0.112399 0.035133 -0.021725 -0.005408 0.01645 -0.076138 0.024564 0.01645 -0.072535 0.050876 0.01645 -0.057737 0.07212 0.01645 -0.027986 -0.002501 0.004945 -0.038322 0.012778 0.004945 -0.036486 0.026192 0.004945 -0.028942 0.040809 0.004945 -0.005012 -0.014975 0.213518 -0.200578 0.063346 0.19483 -0.191164 0.132104 0.238275 -0.152494 0.16301 0.219702 -0.082755</float_array>
+          <technique_common>
+            <accessor source="#orbShape2-positions-array" count="58" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="orbShape2-normals" name="normal">
+          <float_array id="orbShape2-normals-array" count="255">-0.250629 0.154013 0.955754 -0.213058 -0.06003 0.975194 -0.284643 0.15223 0.946469 -0.308405 0.034525 0.950628 -0.347834 0.230584 0.908759 -0.379956 0.211757 0.90044 -0.390278 0.26067 0.883026 -0.178114 0.20062 0.963342 -0.056615 0.178481 0.982313 -0.101547 0.693017 0.713733 -0.223272 0.425561 0.876953 -0.066879 0.932604 0.354651 -0.423458 -0.08833 -0.901599 -0.415671 -0.192087 -0.889 -0.729786 -0.249272 -0.636613 -0.731276 -0.122535 -0.670985 -0.841218 -0.301686 -0.448707 -0.837784 -0.161861 -0.521458 -0.389346 -0.384763 -0.83688 -0.717694 -0.39282 -0.574986 -0.849811 -0.382047 -0.363128 -0.350143 -0.556661 -0.753345 -0.660587 -0.521076 -0.540466 -0.802274 -0.465548 -0.37366 -0.2976 -0.707138 -0.641396 -0.536005 -0.701527 -0.469637 -0.642001 -0.683629 -0.347112 -0.233202 -0.831505 -0.504199 -0.414885 -0.834552 -0.362483 -0.493048 -0.829168 -0.263407 -0.15904 -0.924553 -0.346277 -0.289026 -0.926294 -0.24175 -0.346775 -0.922694 -0.168473 -0.073877 -0.983935 -0.162524 -0.140685 -0.98368 -0.112166 -0.173501 -0.981812 -0.077086 0.001174 -0.998327 -0.057814 0.289207 0.92751 0.236822 0.170012 0.974575 0.14594 -0.062171 -0.095381 -0.993497 -0.061786 -0.194264 -0.979001 0.313965 -0.08487 -0.945634 0.307329 -0.188857 -0.932675 0.706621 0.010294 -0.707517 0.674246 -0.15555 -0.72194 0.85752 0.091887 -0.506178 0.825486 -0.122787 -0.550904 -0.058983 -0.38325 -0.921759 0.287071 -0.382803 -0.878096 0.608078 -0.395434 -0.688384 0.738538 -0.399256 -0.543282 -0.053321 -0.555617 -0.829727 0.258341 -0.555712 -0.790218 0.552684 -0.573711 -0.60448 0.675724 -0.578185 -0.457273 -0.04468 -0.706542 -0.70626 0.219685 -0.707238 -0.671977 0.488055 -0.713332 -0.50295 0.609388 -0.702544 -0.367528 -0.033332 -0.830773 -0.555613 0.172592 -0.831566 -0.52793 0.399705 -0.821968 -0.405715 0.514697 -0.798797 -0.311465 -0.021047 -0.923628 -0.382711 0.118876 -0.923931 -0.363622 0.2641 -0.922683 -0.280904 0.335358 -0.915986 -0.220236 -0.009023 -0.983469 -0.180854 0.057388 -0.983019 -0.174298 0.129174 -0.982186 -0.13647 0.165419 -0.98029 -0.108021 0.390695 -0.043925 0.919472 0.385855 0.146322 0.910882 0.371775 0.214754 0.903141 0.323646 0.282404 0.903051 0.219472 -0.148365 0.964272 0.50758 0.174006 0.843851 0.374002 0.313231 0.872931 0.239199 0.031006 0.970475 0.535087 0.22185 0.815147 0.546198 0.225287 0.806792 -0.004431 0.955193 0.295951 -0.181082 0.973334 0.140821 -0.375198 0.913235 0.158838 -0.204948 0.919409 0.335684</float_array>
+          <technique_common>
+            <accessor source="#orbShape2-normals-array" count="85" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="orbShape2-map1" name="map1">
+          <float_array id="orbShape2-map1-array" count="204">0.896447 0.021474 0.843729 0.021474 0.678304 0.274838 0.785527 0.021474 0.727326 0.021474 0.668893 0.022582 0.610922 0.021474 0.55272 0.021474 0.476733 0.06749 0.060775 0.660161 0.185233 0.963293 0.060775 0.988268 0.405332 0.636777 0.405332 0.681936 0.45049 0.681936 0.45049 0.636777 0.495648 0.681936 0.495648 0.636777 0.405332 0.727094 0.45049 0.727094 0.495648 0.727094 0.405332 0.772252 0.45049 0.772252 0.495648 0.772252 0.405332 0.817411 0.45049 0.817411 0.495648 0.817411 0.405332 0.862569 0.45049 0.862569 0.495648 0.862569 0.405332 0.907727 0.45049 0.907727 0.495648 0.907727 0.405332 0.952886 0.45049 0.952886 0.495648 0.952886 0.427911 0.994612 0.473069 0.994612 0.359569 0.785722 0.288444 0.892168 0.060775 0.660161 0.38778 0.660161 0.405332 0.636777 0.45049 0.636777 0.45049 0.681936 0.405332 0.681936 0.495648 0.636777 0.495648 0.681936 0.540807 0.636777 0.540807 0.681936 0.585965 0.636777 0.585965 0.681936 0.45049 0.727094 0.405332 0.727094 0.495648 0.727094 0.540807 0.727094 0.585965 0.727094 0.45049 0.772252 0.405332 0.772252 0.495648 0.772252 0.540807 0.772252 0.585965 0.772252 0.45049 0.817411 0.405332 0.817411 0.495648 0.817411 0.540807 0.817411 0.585965 0.817411 0.45049 0.862569 0.405332 0.862569 0.495648 0.862569 0.540807 0.862569 0.585965 0.862569 0.45049 0.907727 0.405332 0.907727 0.495648 0.907727 0.540807 0.907727 0.585965 0.907727 0.45049 0.952886 0.405332 0.952886 0.495648 0.952886 0.540807 0.952886 0.585965 0.952886 0.427911 0.994612 0.473069 0.994612 0.518227 0.994612 0.563386 0.994612 0.896447 0.021474 0.678304 0.274838 0.843729 0.021474 0.785527 0.021474 0.727326 0.021474 0.668893 0.022582 0.610922 0.021474 0.55272 0.021474 0.497744 0.021474 0.455721 0.116731 0.359569 0.785722 0.060775 0.660161 0.288444 0.892168 0.185233 0.963293 0.060775 0.988268 0.38778 0.660161</float_array>
+          <technique_common>
+            <accessor source="#orbShape2-map1-array" count="102" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="orbShape2-vertices">
+          <input semantic="POSITION" source="#orbShape2-positions" />
+        </vertices>
+        <triangles material="initialShadingGroup" count="112">
+          <input semantic="VERTEX" source="#orbShape2-vertices" offset="0" />
+          <input semantic="NORMAL" source="#orbShape2-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#orbShape2-map1" offset="2" set="0" />
+          <p>9 0 0 2 1 1 1 2 2 2 1 1 3 3 3 1 2 2 3 3 3 4 4 4 1 2 2 4 4 4 5 5 5 1 2 2 5 5 5 6 6 6 1 2 2 6 6 6 7 7 7 1 2 2 7 7 7 0 8 8 1 2 2 8 9 10 9 10 11 1 11 9 10 13 13 11 14 14 24 12 12 24 12 12 11 14 14 25 15 15 25 15 15 11 14 14 8 17 17 8 17 17 11 14 14 9 16 16 10 13 13 12 18 18 11 14 14 11 14 14 12 18 18 13 19 19 11 14 14 13 19 19 9 16 16 9 16 16 13 19 19 2 20 20 12 18 18 14 21 21 13 19 19 13 19 19 14 21 21 15 22 22 15 22 22 3 23 23 13 19 19 13 19 19 3 23 23 2 20 20 14 21 21 16 24 24 15 22 22 15 22 22 16 24 24 17 25 25 15 22 22 17 25 25 3 23 23 3 23 23 17 25 25 4 26 26 16 24 24 18 27 27 17 25 25 17 25 25 18 27 27 19 28 28 17 25 25 19 28 28 4 26 26 4 26 26 19 28 28 5 29 29 18 27 27 20 30 30 19 28 28 19 28 28 20 30 30 21 31 31 19 28 28 21 31 31 5 29 29 5 29 29 21 31 31 6 32 32 20 30 30 22 33 33 21 31 31 21 31 31 22 33 33 23 34 34 21 31 31 23 34 34 6 32 32 6 32 32 23 34 34 7 35 35 22 33 33 0 36 36 23 34 34 23 34 34 0 36 37 7 35 35 25 37 38 8 9 39 1 11 40 24 38 41 25 37 38 1 11 40 54 39 43 26 40 44 24 12 42 24 12 42 26 40 44 10 13 45 54 39 43 55 41 46 26 40 44 26 40 44 55 41 46 27 42 47 56 43 48 28 44 49 55 41 46 55 41 46 28 44 49 27 42 47 56 43 48 57 45 50 28 44 49 28 44 49 57 45 50 29 46 51 10 13 45 26 40 44 12 18 53 12 18 53 26 40 44 30 47 52 26 40 44 27 42 47 30 47 52 30 47 52 27 42 47 31 48 54 27 42 47 28 44 49 31 48 54 31 48 54 28 44 49 32 49 55 28 44 49 29 46 51 32 49 55 32 49 55 29 46 51 33 50 56 12 18 53 30 47 52 14 21 58 14 21 58 30 47 52 34 51 57 30 47 52 31 48 54 34 51 57 34 51 57 31 48 54 35 52 59 31 48 54 32 49 55 35 52 59 35 52 59 32 49 55 36 53 60 32 49 55 33 50 56 36 53 60 36 53 60 33 50 56 37 54 61 14 21 58 34 51 57 16 24 63 16 24 63 34 51 57 38 55 62 34 51 57 35 52 59 38 55 62 38 55 62 35 52 59 39 56 64 35 52 59 36 53 60 39 56 64 39 56 64 36 53 60 40 57 65 37 54 61 41 58 66 36 53 60 36 53 60 41 58 66 40 57 65 16 24 63 38 55 62 18 27 68 18 27 68 38 55 62 42 59 67 38 55 62 39 56 64 42 59 67 42 59 67 39 56 64 43 60 69 39 56 64 40 57 65 43 60 69 43 60 69 40 57 65 44 61 70 40 57 65 41 58 66 44 61 70 44 61 70 41 58 66 45 62 71 18 27 68 42 59 67 20 30 73 20 30 73 42 59 67 46 63 72 42 59 67 43 60 69 46 63 72 46 63 72 43 60 69 47 64 74 43 60 69 44 61 70 47 64 74 47 64 74 44 61 70 48 65 75 45 62 71 49 66 76 44 61 70 44 61 70 49 66 76 48 65 75 20 30 73 46 63 72 22 33 78 22 33 78 46 63 72 50 67 77 46 63 72 47 64 74 50 67 77 50 67 77 47 64 74 51 68 79 47 64 74 48 65 75 51 68 79 51 68 79 48 65 75 52 69 80 48 65 75 49 66 76 52 69 80 52 69 80 49 66 76 53 70 81 22 33 78 50 67 77 0 36 82 50 67 77 51 68 79 0 36 83 51 68 79 52 69 80 0 36 84 52 69 80 53 70 81 0 36 85 57 71 86 1 72 87 29 73 88 29 73 88 1 72 87 33 74 89 33 74 89 1 72 87 37 75 90 37 75 90 1 72 87 41 76 91 41 76 91 1 72 87 45 77 92 45 77 92 1 72 87 49 78 93 49 78 93 1 72 87 53 79 94 53 79 94 1 72 87 0 80 95 54 81 96 1 11 97 55 82 98 55 82 98 1 11 97 56 83 99 56 83 99 1 11 97 57 84 100 24 38 101 1 11 97 54 81 96</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>0</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="orb_parts_allTogether">
+      <node id="orb2" name="orb2" type="NODE">
+        <translate sid="rotatePivot">0.002165 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <translate sid="rotatePivotInverse">-0.002165 0 0</translate>
+        <translate sid="scalePivot">0.002165 0 0</translate>
+        <translate sid="scalePivotInverse">-0.002165 0 0</translate>
+        <instance_geometry url="#orbShape2">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="initialShadingGroup" target="#lambert1">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="MAYA">
+          <layer name="orb2_layer">orb2</layer>
+        </technique>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

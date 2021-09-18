@@ -1,0 +1,27 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/prison/stone_table/stone_table.DAE">
+            <SubMesh Active="true" ID="0" Material="" Name="Scene_Root" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" WorldPos="0.000000 0.000000 0.000000" TriCount="584" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.990000 0.397000 2.274000" RelativeTranslation="0.000000 0.299979 0.118153" Rotation="0.000000 0.000000 0.000000" Scale="0.990000 0.397000 2.274000" ShapeType="Box" Tag="" WorldPos="0.000000 0.799979 0.118153" />
+            <BodyShape Active="true" ID="2" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.815860 0.600000 0.551798" RelativeTranslation="0.000000 -0.196437 0.869319" Rotation="0.000000 0.000000 0.000000" Scale="0.815860 0.600000 0.551798" ShapeType="Box" Tag="" WorldPos="0.000000 0.303563 0.869319" />
+            <BodyShape Active="true" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.815860 0.600000 0.551798" RelativeTranslation="0.000000 -0.196437 -0.624353" Rotation="0.000000 0.000000 0.000000" Scale="0.815860 0.600000 0.551798" ShapeType="Box" Tag="" WorldPos="0.000000 0.303563 -0.624353" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="7" LinearDamping="0.000000" Mass="0.000000" Material="Rock" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 0.500000 0.000000">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="1" />
+                <Shape ID="3" />
+                <Shape ID="2" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

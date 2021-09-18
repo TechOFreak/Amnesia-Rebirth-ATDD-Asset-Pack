@@ -1,0 +1,70 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/door/prison/prison.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="door" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="668" />
+            <SubMesh Active="true" GroupID="0" ID="1" Name="hinges" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="1" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="96" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.500000 2.500000 0.300000" RelativeTranslation="-0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.500000 2.500000 0.300000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.009898 1.455219 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.025000 2.500000 0.300000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.025000 2.500000 0.300000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.887264 1.455219 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="1.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="4" LinearDamping="1.000000" Mass="0.000000" Material="Default" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.887264 1.455219 0.000000">
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="1" />
+                </Children>
+            </Body>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="5" LinearDamping="0.000000" Mass="10.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_2" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.009898 1.455219 0.000000">
+                <Shape ID="2" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge Active="true" BreakForce="0.000000" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="5" ConnectedParentBodyID="4" GroupID="0" ID="6" LimitStepCount="0" MaxAngle="120.000000" MaxLimitMaxSpeed="0.000000" MaxLimitMinSpeed="0.000000" MaxLimitSound="" MaxMoveFreq="1.100000" MaxMoveFreqSpeed="0.700000" MaxMoveSpeed="2.000000" MaxMoveVolume="0.800000" MiddleMoveSpeed="0.500000" MiddleMoveVolume="0.500000" MinAngle="0.000000" MinLimitMaxSpeed="0.000000" MinLimitMinSpeed="0.000000" MinLimitSound="" MinMoveFreq="0.950000" MinMoveFreqSpeed="0.200000" MinMoveSpeed="0.100000" MinMoveVolume="0.010000" MoveSound="" MoveType="Angular" Name="HingeJoint_1" PinDir="0.000000 1.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" StickyMaxLimit="false" StickyMinLimit="false" SubType="1" Tag="" Type="12" WorldPos="-0.855959 1.441336 0.195823" />
+        </Joints>
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_SwingDoor">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveMaxSpeed" Value="5.5" />
+        <Var Name="MoveSlowDownFactor" Value="3.0" />
+        <Var Name="MoveSpeedFactor" Value="0.5" />
+        <Var Name="MoveThrowImpulse" Value="3.0" />
+        <Var Name="CloseOnSound" Value="" />
+        <Var Name="CloseOffSound" Value="" />
+        <Var Name="LockOnSound" Value="" />
+        <Var Name="LockOffSound" Value="" />
+        <Var Name="InteractLockedSound" Value="" />
+        <Var Name="Breakable" Value="false" />
+        <Var Name="DamageMesh1" Value="" />
+        <Var Name="DamageMesh2" Value="" />
+        <Var Name="BrokenEntity" Value="" />
+        <Var Name="DamageSound" Value="" />
+        <Var Name="DamagePS" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakPS" Value="" />
+        <Var Name="BreakImpulse" Value="3" />
+        <Var Name="HealthDamage1" Value="66" />
+        <Var Name="HealthDamage2" Value="33" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

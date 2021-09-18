@@ -1,0 +1,23 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/statues/pedestal/pedestal.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="pCube1" Rotation="0 0 0" Scale="1.6 1.6 1.6" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="636" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="1" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="0.23 0.66 0.21" RelativeTranslation="-2.91038e-011 1.49012e-008 0" Rotation="0 0 0" Scale="0.268155 1.056 0.289191" ShapeType="Box" Tag="" WorldPos="-0.001095 0.528967 0" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="2" LinearDamping="0" Mass="0" Material="Rock" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_1" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1.6 1.6 1.6" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.001095 0.528967 0">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="1" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

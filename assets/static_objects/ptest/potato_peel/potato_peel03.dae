@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=1;exportAnimations=1;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/decals/potato_peel.mb</source_data>
+    </contributor>
+    <created>2011-03-23T17:02:19</created>
+    <modified>2011-03-23T17:02:19</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="potato_peel_mat" name="potato_peel_mat">
+      <instance_effect url="#potato_peel_mat-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="potato_peel_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file7-surface">
+          <surface type="2D">
+            <init_from>file7</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file7-sampler">
+          <sampler2D>
+            <source>file7-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file9-surface">
+          <surface type="2D">
+            <init_from>file9</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file9-sampler">
+          <sampler2D>
+            <source>file9-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file8-surface">
+          <surface type="2D">
+            <init_from>file8</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file8-sampler">
+          <sampler2D>
+            <source>file8-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file7-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file9-sampler" texcoord="TEX3">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <texture texture="file7-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="OpenCOLLADAMaya">
+              <bump>
+                <texture texture="file8-sampler" texcoord="TEX2">
+                  <extra>
+                    <technique profile="OpenCOLLADA3dsMax">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                    <technique profile="OpenCOLLADAMaya">
+                      <blend_mode>NONE</blend_mode>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <fast>0</fast>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <rotateFrame>0</rotateFrame>
+                      <rotateUV>0</rotateUV>
+                      <stagger>0</stagger>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file7" name="file7">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/ptest/potato_peel/potato_peel.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file7</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+    <image id="file8" name="file8">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/ptest/potato_peel/potato_peel_nrm.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file8</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+    <image id="file9" name="file9">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/ptest/potato_peel/potato_peel_spec.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file9</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="potato_peel0Shape3" name="potato_peel0Shape3">
+      <mesh>
+        <source id="potato_peel0Shape3-positions" name="potato_peel0Shape3-positions">
+          <float_array id="potato_peel0Shape3-positions-array" count="204">0.01203066 0.01032567 0.02498356 0.01244667 0.004296495 0.01942719 0.0138547 0.001666456 0.01208286 -0.01650522 0.007119627 -0.03524483 -0.01863488 0.01409292 -0.03835121 -0.01003891 0.01600108 -0.03528748 -0.005247175 0.01051331 -0.03166367 -0.002310055 0.006161652 -0.0245356 -4.75935e-4 0.002523212 -0.01615364 8.36964e-4 1.58685e-4 -0.007703552 6.79112e-4 -1.85019e-4 9.05571e-4 4.96534e-4 3.19762e-5 0.009488983 -6.31237e-5 0.003078884 0.01727959 4.97967e-5 0.008605287 0.02413708 -0.003132197 0.01590145 0.02810207 -0.01283739 0.02738917 0.02610912 -9.10673e-4 0.02533094 -0.02804321 0.004198287 0.01980645 -0.02548431 0.007865688 0.01445158 -0.0194894 0.01085733 0.008267533 -0.01285114 0.0123321 0.004462128 -0.004844284 0.01311468 0.002080473 0.003871384 0.008372751 0.01841427 0.02870522 -0.01259465 0.002093136 -0.01892315 -0.01261289 0.001844789 -0.01080318 -0.01283872 0.002414441 -0.002632141 -0.01333766 0.00451135 0.005944519 -0.01315129 0.007996333 0.0136644 -0.01380957 0.01313527 0.0198111 -0.01391949 0.003918426 -0.02752964 -0.01551607 0.01943998 0.02336864 -0.01609343 0.02252517 0.02365768 8.93174e-4 0.02679963 0.02917641 -0.005883405 0.0271894 0.02856697 0.01211522 0.01050524 0.02465534 0.01251344 0.004561273 0.01917431 0.0138963 0.001968405 0.01193233 -0.01659656 0.007351872 -0.03486839 -0.01873598 0.01422731 -0.03794086 -0.01013792 0.01606381 -0.03488911 -0.005337195 0.01065247 -0.03129726 -0.00237809 0.006361384 -0.02425381 -5.17135e-4 0.002773609 -0.01597641 8.23167e-4 4.41846e-4 -0.007633972 6.9414e-4 1.02648e-4 8.60405e-4 5.40218e-4 3.16247e-4 0.009329224 6.41823e-6 0.003319942 0.01701447 1.41228e-4 0.008768069 0.02378056 -0.003026616 0.01596176 0.02768379 -0.01273471 0.02733276 0.02569649 -9.94204e-4 0.02530336 -0.0277113 0.004119929 0.0198558 -0.02516911 0.007805123 0.01457557 -0.01924137 0.01081739 0.008477957 -0.01268097 0.01231821 0.00472563 -0.004775314 0.01312942 0.00236818 0.003827324 0.00847136 0.01848023 0.02831509 -0.01263427 0.002383404 -0.01875011 -0.01262531 0.002149722 -0.01073799 -0.01282398 0.002702148 -0.002676201 -0.01329423 0.00477808 0.005784912 -0.01308294 0.008213547 0.01340279 -0.01372111 0.01327985 0.01946548 -0.0139868 0.00419505 -0.02724686 -0.01541543 0.01949578 0.02296989 -0.01599186 0.02253754 0.02325302 9.94674e-4 0.02674906 0.02876877 -0.005775005 0.02713503 0.0281316</float_array>
+          <technique_common>
+            <accessor source="#potato_peel0Shape3-positions-array" count="68" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="potato_peel0Shape3-normals" name="potato_peel0Shape3-normals">
+          <float_array id="potato_peel0Shape3-normals-array" count="204">0.02078111 -0.5541651 0.8321473 0.01550148 -0.8140563 0.580579 0.07087619 -0.9728465 0.2203318 0.3969764 -0.4736089 -0.7861961 0.3767075 -0.2785114 -0.8834721 0.4592921 -0.1813354 -0.8695794 0.5295171 -0.3897516 -0.7534623 0.4877969 -0.7035207 -0.5168295 0.3198107 -0.8660575 -0.3842728 0.1575868 -0.9706237 -0.1818133 0.006350103 -0.9998682 -0.01494134 -0.130526 -0.9742954 0.1836063 -0.1632175 -0.8729247 0.4597417 -0.1753847 -0.6433697 0.745195 -0.2661102 -0.2826329 0.9215769 -0.3681406 -0.1518823 0.9172809 0.5586406 0.03893891 -0.8284953 0.6464552 -0.2333901 -0.7263778 0.6087968 -0.5006695 -0.6153833 0.4715404 -0.727259 -0.4987423 0.3407514 -0.9040568 -0.258011 0.1820999 -0.9777631 -0.1040148 0.005520596 -0.3264755 0.9451896 0.1399523 -0.9624825 -0.2324671 -0.05308814 -0.9956836 -0.07612948 -0.1864897 -0.9791493 0.08054993 -0.3123063 -0.9262328 0.2110869 -0.4068317 -0.788535 0.4611947 -0.4191575 -0.6096209 0.672807 0.3137319 -0.8445928 -0.4338607 -0.4201697 -0.3512034 0.836728 -0.3965991 -0.1708712 0.9019491 -0.06327197 -0.07473522 0.9951941 -0.2152038 -0.09249105 0.9721794 -0.01961058 0.5542136 -0.8321434 -0.01605651 0.8141559 -0.5804243 -0.07214593 0.9727353 -0.220411 -0.3929187 0.4749587 0.7874194 -0.3735901 0.2790663 0.88462 -0.4559115 0.1817565 0.8712687 -0.5252063 0.3908783 0.755892 -0.4835965 0.7046241 0.5192682 -0.3170268 0.8666447 0.3852547 -0.1562089 0.9707071 0.1825554 -0.006314475 0.9998668 0.0150474 0.1295546 0.9743488 -0.1840104 0.1619857 0.8729939 -0.4600461 0.1753028 0.6433529 -0.7452288 0.2660908 0.2829263 -0.9214925 0.3662418 0.1522472 -0.9179803 -0.5548369 -0.03893679 0.8310475 -0.6426506 0.2337474 0.7296317 -0.6056417 0.5010257 0.6182 -0.4697004 0.7272162 0.5005379 -0.3400851 0.9038906 0.2594686 -0.1827012 0.9775827 0.1046539 -0.003582798 0.3266839 -0.9451269 -0.1358804 0.9630527 0.232521 0.05533534 0.9955963 0.07566999 0.1871097 0.9790013 -0.08091119 0.3117954 0.9261608 -0.2121548 0.4056665 0.7886193 -0.4620761 0.4179429 0.6100076 -0.6732121 -0.3081731 0.8461127 0.4348823 0.4188451 0.3514944 -0.8372697 0.395474 0.1717935 -0.9022679 0.06641314 0.07531317 -0.9949458 0.2156681 0.09201095 -0.9721221</float_array>
+          <technique_common>
+            <accessor source="#potato_peel0Shape3-normals-array" count="68" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="potato_peel0Shape3-map1" name="potato_peel0Shape3-map1">
+          <float_array id="potato_peel0Shape3-map1-array" count="136">0.7466727 0.6005093 0.7466727 0.6505113 0.7466727 0.7005134 0.4971747 0.9505233 0.4971747 1.000525 0.5621438 1.000525 0.5805967 0.9505233 0.5990496 0.9005214 0.6175025 0.8505194 0.6359554 0.8005173 0.6478587 0.7505153 0.6597621 0.7005134 0.6652317 0.6505113 0.6707011 0.6005093 0.6516303 0.5505073 0.5892831 0.5005053 0.6424006 1.000525 0.6597793 0.9505233 0.677158 0.9005214 0.6945367 0.8505194 0.7119154 0.8005173 0.729294 0.7505153 0.7239369 0.5505073 0.5398932 0.8505194 0.551143 0.8005173 0.5623928 0.7505153 0.5719116 0.7005134 0.5814304 0.6505113 0.5813922 0.6005093 0.5185339 0.9005214 0.5711282 0.5505073 0.5672213 0.5314748 0.6771129 0.5005053 0.633198 0.5005053 0.7466727 0.1003528 0.7466727 0.1503548 0.6652317 0.1503548 0.6707011 0.1003528 0.7466727 0.2003568 0.6597621 0.2003568 0.5621438 0.5003684 0.4971747 0.5003684 0.4971747 0.4503668 0.5805967 0.4503667 0.5398932 0.3503629 0.551143 0.3003608 0.6359554 0.3003608 0.6175025 0.3503629 0.5623928 0.2503588 0.6478587 0.2503588 0.5719116 0.2003568 0.5814304 0.1503548 0.5813922 0.1003528 0.5711282 0.05035078 0.6516303 0.05035078 0.6424006 0.5003684 0.6597793 0.4503667 0.5990496 0.4003649 0.677158 0.4003649 0.6945367 0.3503629 0.7119154 0.3003608 0.729294 0.2503588 0.7239369 0.05035078 0.5672213 0.03131834 0.5892831 3.48829e-4 0.5185339 0.4003649 0.633198 3.48829e-4 0.6771129 3.48829e-4</float_array>
+          <technique_common>
+            <accessor source="#potato_peel0Shape3-map1-array" count="68" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="potato_peel0Shape3-vertices" name="potato_peel0Shape3-vertices">
+          <input semantic="POSITION" source="#potato_peel0Shape3-positions"/>
+          <input semantic="NORMAL" source="#potato_peel0Shape3-normals"/>
+        </vertices>
+        <triangles material="blinn2SG" count="82">
+          <input semantic="VERTEX" source="#potato_peel0Shape3-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#potato_peel0Shape3-map1" offset="1" set="0"/>
+          <p>0 0 13 13 1 1 1 1 13 13 12 12 1 1 12 12 2 2 2 2 12 12 11 11 6 6 3 3 5 5 5 5 3 3 4 4 23 23 8 8 24 24 24 24 8 8 9 9 24 24 9 9 25 25 25 25 9 9 10 10 25 25 10 10 26 26 26 26 10 10 11 11 26 26 11 11 27 27 27 27 11 11 12 12 12 12 13 13 27 27 27 27 13 13 28 28 13 13 14 14 28 28 28 28 14 14 30 30 17 17 6 6 16 16 16 16 6 6 5 5 6 6 17 17 7 7 7 7 17 17 18 18 7 7 18 18 8 8 8 8 18 18 19 19 8 8 19 19 9 9 9 9 19 19 20 20 21 21 10 10 20 20 20 20 10 10 9 9 2 2 11 11 21 21 21 21 11 11 10 10 14 14 13 13 22 22 22 22 13 13 0 0 15 15 31 31 14 14 31 31 30 30 14 14 29 29 7 7 23 23 23 23 7 7 8 8 3 3 6 6 29 29 29 29 6 6 7 7 33 33 14 14 32 32 14 14 22 22 32 32 15 15 14 14 33 33 34 34 35 35 47 37 47 37 35 35 46 36 35 35 36 38 46 36 46 36 36 38 45 39 38 41 37 42 39 40 39 40 37 42 40 43 57 44 58 45 42 47 42 47 58 45 43 46 58 45 59 48 43 46 43 46 59 48 44 49 59 48 60 50 44 49 44 49 60 50 45 39 60 50 61 51 45 39 45 39 61 51 46 36 62 52 47 37 61 51 61 51 47 37 46 36 64 53 48 54 62 52 62 52 48 54 47 37 39 40 40 43 50 55 50 55 40 43 51 56 40 43 41 57 51 56 51 56 41 57 52 58 41 57 42 47 52 58 52 58 42 47 53 59 42 47 43 46 53 59 53 59 43 46 54 60 55 61 54 60 44 49 44 49 54 60 43 46 36 38 55 61 45 39 45 39 55 61 44 49 34 34 47 37 56 62 56 62 47 37 48 54 49 64 48 54 65 63 65 63 48 54 64 53 63 65 57 44 41 57 41 57 57 44 42 47 37 42 63 65 40 43 40 43 63 65 41 57 49 64 67 66 48 54 48 54 66 67 56 62 67 66 66 67 48 54</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>potato_peel0Shape3</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="potato_peel">
+      <node id="potato_peel03" name="potato_peel03" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#potato_peel0Shape3">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn2SG" target="#potato_peel_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX3" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>potato_peel03</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

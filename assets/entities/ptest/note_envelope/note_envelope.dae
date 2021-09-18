@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=1;exportAnimations=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///C:/current%20project/models/untitled</source_data>
+    </contributor>
+    <created>2011-03-31T18:03:52</created>
+    <modified>2011-03-31T18:03:52</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <texture texture="file2-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file2" name="file2">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/entities/ptest/note_envelope/note_envelope.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file2</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="note_letter_meshShape" name="note_letter_meshShape">
+      <mesh>
+        <source id="note_letter_meshShape-positions" name="note_letter_meshShape-positions">
+          <float_array id="note_letter_meshShape-positions-array" count="90">0.051677 0.00686796 0.1872692 0.136515 0.01807401 0.1906754 0.136515 1.40676e-4 -0.1676009 0.051677 0.003844286 -0.1638202 -0.06826 1.72783e-4 -0.1680227 -0.136515 0.008201608 0.1908838 -0.06826 0.002813808 0.1909975 -0.136515 0.02175419 -0.1655655 0.051677 0.01018781 0.1871991 0.136515 0.02139386 0.1906054 0.136515 0.003460526 -0.167671 0.051677 0.007164136 -0.1638903 -0.06826 0.003492633 -0.1680927 -0.136515 0.01152146 0.1908138 -0.06826 0.006133657 0.1909275 -0.136515 0.02507404 -0.1656356 -0.09237041 0.00672885 0.01307883 -0.091336 0.006703315 0.02070901 -0.06826 0.005031267 0.04106883 0.02894765 0.0101033 0.1208262 -0.09148361 0.00660982 0.006415256 -0.06826 0.004626145 -0.0140034 -0.02748851 0.006195831 -0.04732354 -0.04687029 0.00544964 -0.03148395 -0.09095259 0.008079755 0.01222459 -0.08995286 0.008240844 0.01985634 -0.06772589 0.007543613 0.04054979 -0.06775364 0.006185213 -0.01441739 -0.09010218 0.00793964 0.005586554 -0.04662958 0.006151219 -0.03167991</float_array>
+          <technique_common>
+            <accessor source="#note_letter_meshShape-positions-array" count="30" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="note_letter_meshShape-normals" name="note_letter_meshShape-normals">
+          <float_array id="note_letter_meshShape-normals-array" count="132">0.03755368 -0.999122 0.01857253 0.04297046 -0.9986494 0.02920428 0.1288326 -0.9904264 0.04957528 -0.006471429 -0.9999419 0.008611763 -0.07999583 -0.9967899 -0.003262116 -0.1918809 -0.9813105 -0.01453877 -0.02238118 -0.9997225 0.007354157 -0.302464 -0.9524726 -0.03621402 -0.0265095 0.9995037 -0.01701634 -0.1288326 0.9904264 -0.04957529 -0.04297047 0.9986494 -0.02920429 8.54842e-4 0.9999439 -0.01055501 0.07767324 0.9969788 4.05777e-4 -0.0306094 0.9994535 -0.01248805 0.05480761 0.9982074 -0.02404299 0.05480761 0.9982074 -0.02404299 0.02443664 0.999404 -0.02438373 0.01164789 0.9996769 -0.02259468 0.05480761 0.9982074 -0.02404299 0.01715029 0.9998259 -0.00735492 -0.04446618 0.9989839 -0.007348728 0.1918809 0.9813106 0.01453877 0.302464 0.9524726 0.03621402 0.07870162 0.9968714 -0.007333186 0.0386626 0.9992385 -0.005267686 0.07870162 0.9968714 -0.007333187 0.07870162 0.9968714 -0.007333188 0.01858323 0.9998184 -0.004229862 -0.01464566 0.999795 -0.01397723 -0.01532577 0.9997149 -0.01831189 -0.7085575 0.7055671 -0.01102424 -0.6632201 0.6380267 0.39123 -0.6632201 0.6380267 0.39123 -0.7085575 0.7055671 -0.01102424 -0.5975327 0.3902928 0.7004472 -0.5975327 0.3902928 0.7004472 -0.6448665 0.05325283 -0.7624377 -0.7629942 0.4388347 -0.4746197 -0.7629942 0.4388347 -0.4746197 -0.6448665 0.05325283 -0.7624377 -0.6328211 8.47488e-4 -0.7742976 -0.6328073 5.22604e-4 -0.7743093 -0.6328073 5.22604e-4 -0.7743093 -0.6171719 0.2828941 0.7342138</float_array>
+          <technique_common>
+            <accessor source="#note_letter_meshShape-normals-array" count="44" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="note_letter_meshShape-map1" name="note_letter_meshShape-map1">
+          <float_array id="note_letter_meshShape-map1-array" count="60">0.175425 0.225216 0.175425 0.281048 0.973661 0.280979 0.973661 0.225146 0.973661 0.05765 0.175425 0.001888 0.175425 0.05772 0.973661 0.001818 0.678333 0.2818018 0.9774694 0.2818018 0.9774694 0.9940268 0.678333 0.9940268 0.2554383 0.9940268 0.3991975 0.7519124 0.1788102 0.6357217 0.1822878 0.6229739 0.2572372 0.5890152 0.2572372 0.6810455 0.1817915 0.6468596 0.2554383 0.6909761 0.3308578 0.7269576 0.01477307 0.2818018 0.01477307 0.9940268 0.1715785 0.6477607 0.2554383 0.2818018 0.1720989 0.6194052 0.1684517 0.6345386 0.2554383 0.5790917 0.5992416 0.4150048 0.3291493 0.7130859</float_array>
+          <technique_common>
+            <accessor source="#note_letter_meshShape-map1-array" count="30" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="note_letter_meshShape-vertices" name="note_letter_meshShape-vertices">
+          <input semantic="POSITION" source="#note_letter_meshShape-positions" />
+        </vertices>
+        <triangles material="lambert2SG" count="40">
+          <input semantic="VERTEX" source="#note_letter_meshShape-vertices" offset="0" />
+          <input semantic="NORMAL" source="#note_letter_meshShape-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#note_letter_meshShape-map1" offset="2" set="0" />
+          <p>0 0 0 2 1 2 1 2 1 3 3 3 0 0 0 4 4 4 5 5 5 4 4 4 6 6 6 0 0 0 6 6 6 4 4 4 5 5 5 7 7 7 4 4 4 0 0 0 3 3 3 2 1 2 8 8 8 9 9 9 10 10 10 11 11 11 12 12 12 22 13 13 26 16 16 27 17 17 25 15 15 25 15 15 27 17 17 24 14 14 24 14 14 27 17 17 28 18 18 21 19 19 23 20 20 12 12 12 22 13 13 12 12 12 23 20 20 13 21 21 12 12 12 15 22 22 8 8 8 10 10 10 11 11 11 20 23 23 21 19 19 12 12 12 12 12 12 13 21 21 20 23 23 20 23 23 13 21 21 16 26 26 16 26 26 13 21 21 17 25 25 13 21 21 14 24 24 17 25 25 17 25 25 14 24 24 18 27 27 8 8 8 19 28 28 14 24 24 14 24 24 19 28 28 18 27 27 19 28 28 22 13 13 29 29 29 11 11 11 22 13 13 19 28 28 11 11 11 19 28 28 8 8 8 19 28 28 27 17 17 26 16 16 19 28 28 29 29 29 27 17 17 17 31 25 25 32 15 16 30 26 16 30 26 25 32 15 24 33 14 17 31 25 18 34 27 25 32 15 25 32 15 18 34 27 26 35 16 20 37 23 28 38 18 21 36 19 21 36 19 28 38 18 27 39 17 16 30 26 24 33 14 20 37 23 20 37 23 24 33 14 28 38 18 22 40 13 23 41 20 29 42 29 18 34 27 19 43 28 26 35 16 21 36 19 27 39 17 23 41 20 23 41 20 27 39 17 29 42 29</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>note_letter_meshShape</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="untitled">
+      <node id="note_letter_mesh" name="note_letter_mesh" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#note_letter_meshShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2SG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>note_letter_mesh</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

@@ -1,0 +1,64 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/Skolarbeten och diverse projekt/3d/projekt/Frictional Games/SVN/redist/entities/gameplay/lever_small01/lever_small01.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="lever_small01_box_mesh" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" TriCount="78" />
+            <SubMesh Active="true" GroupID="0" ID="1" Name="lever_small01_handle_mesh" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="1" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" TriCount="196" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="3" Name="BodyShape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.200000 0.438000 0.061000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.200000 0.438000 0.061000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.000000 0.030462" />
+            <BodyShape Active="true" GroupID="0" ID="4" Name="BodyShape_2_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.078000 0.078000 0.178358" RelativeTranslation="0.000000 0.000000 -0.039135" Rotation="0.000000 0.000000 0.000000" Scale="0.078000 0.078000 0.178358" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.000000 0.151729" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="BodyShape_2_clone_1_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.260000 0.078000 0.078000" RelativeTranslation="0.000000 0.000000 0.089314" Rotation="0.000000 0.000000 0.000000" Scale="0.260000 0.078000 0.078000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.000000 0.280178" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="6" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 0.000000 0.030462">
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="7" LinearDamping="0.000000" Mass="1.000000" Material="Wood" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_2" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 0.000000 0.190864">
+                <Shape ID="4" />
+                <Shape ID="5" />
+                <Children>
+                    <Child ID="1" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge Active="true" BreakForce="0.000000" BreakSound="" Breakable="false" CollideBodies="false" ConnectedChildBodyID="7" ConnectedParentBodyID="6" GroupID="0" ID="9" LimitStepCount="0" MaxAngle="50.000000" MaxLimitMaxSpeed="0.000000" MaxLimitMinSpeed="0.000000" MaxLimitSound="" MaxMoveFreq="1.100000" MaxMoveFreqSpeed="4.000000" MaxMoveSpeed="6.000000" MaxMoveVolume="0.900000" MiddleMoveSpeed="0.500000" MiddleMoveVolume="0.600000" MinAngle="-50.000000" MinLimitMaxSpeed="0.000000" MinLimitMinSpeed="0.000000" MinLimitSound="" MinMoveFreq="0.900000" MinMoveFreqSpeed="0.400000" MinMoveSpeed="0.100000" MinMoveVolume="0.100000" MoveSound="lever_wood_move.snt" MoveType="Linear" Name="HingeJoint_2" PinDir="-1.000000 0.000000 0.000000" Rotation="0.000000 0.000000 1.570796" Scale="1.000000 1.000000 1.000000" StickyMaxLimit="false" StickyMinLimit="false" SubType="1" Tag="" Type="11" WorldPos="0.000000 0.000000 0.000000" />
+        </Joints>
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Lever">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveMaxSpeed" Value="13.5" />
+        <Var Name="MoveSlowDownFactor" Value="3.0" />
+        <Var Name="MoveSpeedFactor" Value="1.0" />
+        <Var Name="MoveThrowImpulse" Value="6.0" />
+        <Var Name="CanInteractWithStaticBody" Value="true" />
+        <Var Name="MinLimitRange" Value="5.0" />
+        <Var Name="MaxLimitRange" Value="5.0" />
+        <Var Name="MinLimitSound" Value="lever_wood_min.snt" />
+        <Var Name="MaxLimitSound" Value="lever_wood_max.snt" />
+        <Var Name="AutoMoveSpeedFactor" Value="2" />
+        <Var Name="AutoMoveMaxSpeed" Value="8" />
+        <Var Name="AutoMoveGoal" Value="Middle" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

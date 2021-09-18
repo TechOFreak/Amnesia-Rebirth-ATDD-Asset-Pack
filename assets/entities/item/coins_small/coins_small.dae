@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-05-13T13:33:45Z</created>
+    <modified>2009-05-13T13:33:45Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file3" name="file3">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/coins_small/coins_small.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file8" name="file8">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/coins_small/coins_small_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="coins_small_material" name="coins_small_material">
+      <instance_effect url="#coins_small_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="coins_small_material-fx">
+      <profile_COMMON>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file8-surface">
+          <surface type="2D">
+            <init_from>file8</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file8-sampler">
+          <sampler2D>
+            <source>file8-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file3-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file8-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="coins_smallShape" name="coins_smallShape">
+      <mesh>
+        <source id="coins_smallShape-positions" name="position">
+          <float_array id="coins_smallShape-positions-array" count="189">0.043861 0.050038 0.011144 0.027312 0.050038 0.022168 0.033225 0.015862 0.025111 0.046637 0.011839 0.011832 -0.031882 0.050038 0.023651 -0.046193 0.050038 0.011144 -0.042653 0.011839 0.011832 -0.033831 0.015862 0.025111 -0.000303 0.050038 -0.023944 0.031276 0.050038 -0.023651 0.033225 0.015862 -0.025111 -0.000303 0.015862 -0.030462 -0.000303 0.050038 0.028691 -0.000303 0.015862 0.030462 0.003068 0.086684 0.006449 0.009443 0.086515 0.000016 0.018568 0.095559 0.004366 0.004194 0.095412 0.008857 -0.012033 0.098116 0.009316 -0.007579 0.086341 0.004249 -0.018941 0.099024 0.003693 -0.031882 0.050038 -0.023651 -0.03162 0.015862 -0.025111 0.000636 0.099298 -0.010375 0.004044 0.086494 -0.006432 -0.007427 0.08617 -0.004685 -0.01117 0.096014 -0.00862 -0.030074 0.001174 0.0149 -0.000303 0 0.018429 0.032869 0.001174 0.0149 0.031384 0.001174 -0.0149 -0.000303 0 -0.018429 -0.032066 0.001174 -0.0149 0.046637 0.011839 -0.011832 0.046193 0.050038 -0.011144 0.018335 0.09966 -0.003693 0.007206 0.102085 -0.006126 -0.046637 0.011839 -0.011832 -0.046193 0.050038 -0.011144 -0.028612 0.071979 -0.011455 -0.029072 0.071987 0.011839 0.010679 0.073523 0.017835 0.035271 0.073523 0 0.010679 0.074644 -0.017835 -0.007477 0.080233 0.004441 -0.00743 0.080156 -0.004525 0.004203 0.080155 0.007128 0.01034 0.080996 -0.000017 0.004173 0.080529 -0.007324 -0.011005 0.098196 0.008634 -0.017393 0.099028 0.003387 0.004057 0.095408 0.007666 0.01707 0.095838 0.004003 0.016776 0.099611 -0.003384 0.006168 0.10212 -0.005442 0.000553 0.099279 -0.009509 -0.01027 0.096268 -0.007901 0.000486 0.08584 0.000001 -0.0096 0.083091 -0.005714 0.004898 0.083524 -0.00854 -0.009724 0.083245 0.005412 0.00431 0.08341 0.00845 0.012087 0.083827 0.00001</float_array>
+          <technique_common>
+            <accessor source="#coins_smallShape-positions-array" count="63" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="coins_smallShape-normals" name="normal">
+          <float_array id="coins_smallShape-normals-array" count="219">0.845704 0.28817 0.449157 0.400428 0.266036 0.876859 0.403243 -0.239962 0.88307 0.827307 -0.341969 0.445668 -0.440075 0.260871 0.859232 -0.871663 0.286203 0.397859 -0.834528 -0.386787 0.392377 -0.453112 -0.303105 0.838341 -0.023945 0.21736 -0.975798 0.346101 0.259821 -0.901503 0.384143 -0.265449 -0.884291 -0.002023 -0.253641 -0.967296 0.027309 0.241807 0.96994 0.007306 -0.281394 0.959564 0.159401 -0.452992 0.877149 0.723677 -0.689165 -0.036661 0.686881 0.43324 0.583521 0.220493 0.47479 0.852031 -0.219035 0.50829 0.832866 -0.545632 -0.582464 0.602513 -0.987387 0.149657 0.051674 -0.38277 0.263511 -0.885466 -0.377017 -0.253367 -0.890878 -0.028249 0.591919 -0.805502 0.360921 -0.286117 -0.887622 -0.634396 -0.575962 -0.515567 -0.526995 0.485806 -0.697329 -0.390597 -0.826625 0.405123 -0.002081 -0.893461 0.449136 0.367615 -0.828072 0.423269 0.357209 -0.832184 -0.424112 -0.001808 -0.892553 -0.450938 -0.372325 -0.827244 -0.420762 0.830401 -0.374963 -0.412113 0.887769 0.295103 -0.353242 0.830688 0.292844 -0.473498 0.254225 0.70146 -0.665825 -0.834491 -0.38561 -0.393611 -0.870613 0.305732 -0.385436 -0.454067 0.742463 -0.492515 -0.456253 0.750011 0.47887 0.156994 0.650338 0.743245 0.607149 0.792971 0.050668 0.122446 0.647969 -0.75176 -0.251883 0.921423 0.295862 -0.264407 0.920396 -0.288027 0.079446 0.873537 0.480231 0.294287 0.955359 0.026174 0.067933 0.893598 -0.443697 0.205605 0.938411 -0.277689 0.284949 0.952388 -0.108451 0.011262 0.934149 -0.356705 -0.203353 0.975483 0.084145 -0.123238 0.79734 0.590814 -0.279275 0.808308 0.518309 -0.370026 0.858293 0.355548 0.071888 0.973238 0.218264 -0.085218 0.976629 0.197314 -0.590214 -0.602242 -0.537543 -0.742258 0.019445 -0.669832 0.322214 0.078956 -0.943368 0.297569 -0.466616 -0.8329 -0.599262 -0.593947 0.536761 -0.755993 0.014533 0.654418 0.292607 -0.425669 0.856263 0.293986 0.092102 0.951362 0.879066 -0.476244 0.020823 0.988959 0.145672 0.0272 0.722176 0.691324 0.023102 0.250045 0.587718 -0.769458 0.217793 0.5695 0.792613 -0.604769 0.615367 0.505548 -0.582632 0.623833 -0.520934</float_array>
+          <technique_common>
+            <accessor source="#coins_smallShape-normals-array" count="73" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="coins_smallShape-map1" name="map1">
+          <float_array id="coins_smallShape-map1-array" count="200">0.509666 0.603489 0.456008 0.634469 0.428196 0.396518 0.490908 0.359088 0.287078 0.81293 0.236638 0.883812 0.177601 0.637062 0.229389 0.62032 0.715542 0.635916 0.622943 0.584224 0.633571 0.342539 0.744434 0.413472 0.376557 0.71088 0.325908 0.508936 0.129388 0.491326 0.152249 0.429922 0.19056 0.470121 0.156033 0.537468 0.124813 0.626699 0.093772 0.5556 0.101486 0.663238 0.810438 0.680769 0.841115 0.468988 0.182871 0.30028 0.143478 0.364615 0.120572 0.274781 0.155671 0.240191 0.200964 0.516574 0.292774 0.396688 0.396074 0.28878 0.465917 0.263004 0.668371 0.217982 0.768638 0.300594 0.87823 0.371415 0.580507 0.228463 0.566816 0.340988 0.571122 0.584529 0.205915 0.421645 0.199832 0.343492 0.89914 0.489775 0.861653 0.722173 0.811985 0.075124 0.903727 0.170913 0.700293 0.021731 0.09889 0.236495 0.132839 0.15325 0.971116 0.524903 0.917956 0.800242 0.989361 0.40287 0.790301 0.832712 0.834855 0.952777 0.330803 0.957837 0.450011 0.827544 0.553125 0.772634 0.659927 0.788014 0.753714 0.974565 0.733331 0.911725 0.456468 0.921285 0.407808 0.979253 0.500242 0.907634 0.668239 0.878598 0.621031 0.883154 0.128413 0.627498 0.106887 0.665266 0.159345 0.542538 0.193488 0.474889 0.209241 0.422206 0.202547 0.336832 0.18557 0.296604 0.159331 0.23818 0.138035 0.155796 0.219121 0.173292 0.243781 0.147388 0.288006 0.247178 0.295082 0.155457 0.34041 0.158139 0.359468 0.198705 0.348371 0.277539 0.334109 0.321002 0.302438 0.363172 0.259154 0.392471 0.363424 0.033835 0.369198 0.084563 0.185539 0.062999 0.188481 0.02334 0.468256 0.020158 0.477756 0.082789 0.048266 0.744094 0.024825 0.702407 0.013043 0.364938 0.033558 0.370276 0.02727 0.110516 0.048394 0.08791 0.059866 0.045874 0.072159 0.137474 0.187739 0.114991 0.06042 0.384395 0.069659 0.698851 0.360958 0.132075 0.46633 0.143702</float_array>
+          <technique_common>
+            <accessor source="#coins_smallShape-map1-array" count="100" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="coins_smallShape-vertices">
+          <input semantic="POSITION" source="#coins_smallShape-positions" />
+        </vertices>
+        <triangles material="blinn3SG" count="122">
+          <input semantic="VERTEX" source="#coins_smallShape-vertices" offset="0" />
+          <input semantic="NORMAL" source="#coins_smallShape-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#coins_smallShape-map1" offset="2" set="0" />
+          <p>1 1 1 2 2 2 0 0 0 0 0 0 2 2 2 3 3 3 4 4 4 5 5 5 7 7 7 7 7 7 5 5 5 6 6 6 8 8 8 9 9 9 11 11 11 11 11 11 9 9 9 10 10 10 12 12 12 13 13 13 1 1 1 1 1 1 13 13 13 2 2 2 14 14 14 15 15 15 17 17 17 17 17 17 15 15 15 16 16 16 14 14 14 17 17 17 19 19 19 19 19 19 17 17 17 18 18 18 18 18 18 20 20 20 19 19 19 12 12 12 4 4 4 13 13 13 13 13 13 4 4 4 7 7 7 21 21 21 8 8 8 22 22 22 22 22 22 8 8 8 11 11 11 24 24 24 25 25 25 23 23 23 23 23 23 25 25 25 26 26 26 27 27 27 7 7 7 6 6 6 28 28 28 13 13 13 27 27 27 27 27 27 13 13 13 7 7 7 29 29 29 2 2 2 28 28 28 28 28 28 2 2 2 13 13 13 3 3 3 2 2 2 29 29 30 30 30 31 31 31 32 10 10 10 10 10 10 31 31 32 11 11 11 11 11 11 31 31 32 22 22 22 22 22 22 31 31 32 32 32 33 30 30 34 10 10 10 33 33 35 9 9 9 34 34 36 10 10 10 10 10 10 34 34 36 33 33 35 35 35 37 24 24 24 36 36 38 37 37 39 38 38 40 22 22 22 22 22 22 38 38 40 21 21 21 37 37 39 22 22 22 32 32 33 28 28 41 27 27 42 31 31 32 31 31 32 27 27 42 32 32 33 29 29 43 28 28 41 30 30 31 30 30 31 28 28 41 31 31 32 3 3 3 29 29 30 33 33 35 33 33 35 29 29 30 30 30 34 0 0 0 3 3 3 34 34 36 34 34 36 3 3 3 33 33 35 16 16 16 15 15 15 35 35 37 25 25 25 19 19 44 20 20 45 6 6 46 5 5 47 37 37 39 37 37 39 5 5 47 38 38 40 37 37 39 32 32 33 6 6 46 6 6 46 32 32 33 27 27 48 21 21 21 38 38 40 39 39 49 38 38 40 5 5 47 39 39 49 39 39 49 5 5 47 40 40 50 40 40 51 5 5 5 4 4 4 4 4 4 12 12 12 40 40 51 40 40 51 12 12 12 41 41 52 41 41 52 12 12 12 1 1 1 0 0 0 42 42 53 1 1 1 1 1 1 42 42 53 41 41 52 42 42 53 0 0 0 34 34 36 43 43 54 42 42 53 9 9 9 9 9 9 42 42 53 34 34 36 9 9 9 8 8 8 43 43 54 43 43 54 8 8 8 39 39 49 39 39 49 8 8 8 21 21 21 40 40 50 44 44 55 39 39 49 39 39 49 44 44 55 45 45 56 40 40 51 41 41 52 44 44 58 44 44 58 41 41 52 46 46 57 42 42 53 47 47 59 41 41 52 41 41 52 47 47 59 46 46 57 48 48 60 47 47 61 43 43 54 43 43 54 47 47 61 42 42 53 48 48 60 43 43 54 45 45 56 45 45 56 43 43 54 39 39 49 20 20 20 18 18 18 50 50 63 50 50 63 18 18 18 49 49 62 18 18 18 17 17 17 49 49 62 49 49 62 17 17 17 51 51 64 16 16 16 52 52 65 17 17 17 17 17 17 52 52 65 51 51 64 16 16 16 35 35 37 52 52 65 52 52 65 35 35 37 53 53 66 35 35 37 36 36 38 53 53 66 53 53 66 36 36 38 54 54 67 36 36 38 23 23 23 54 54 67 54 54 67 23 23 23 55 55 68 26 26 26 56 56 69 23 23 23 23 23 23 56 56 69 55 55 68 56 56 69 26 26 26 50 50 70 50 50 70 26 26 26 20 20 45 50 50 71 49 49 72 57 57 73 57 57 73 49 49 72 51 51 74 51 51 74 52 52 75 57 57 73 57 57 73 52 52 75 53 53 76 53 53 76 54 54 77 57 57 73 54 54 77 55 55 78 57 57 73 55 55 78 56 56 79 57 57 73 57 57 73 56 56 79 50 50 80 24 24 24 23 23 23 36 36 38 58 59 82 59 60 83 45 58 81 45 58 81 59 60 83 48 61 84 58 59 82 45 58 81 60 63 86 60 63 86 45 58 81 44 62 85 60 63 87 44 62 88 61 65 90 61 65 90 44 62 88 46 64 89 46 64 89 47 66 91 61 65 90 61 65 90 47 66 91 62 67 92 62 67 92 47 66 93 59 60 83 59 60 83 47 66 93 48 61 84 62 67 92 59 60 83 15 68 94 15 68 94 59 60 83 24 69 95 14 70 96 61 65 90 15 68 94 15 68 94 61 65 90 62 67 92 60 63 87 61 65 90 19 71 97 19 71 97 61 65 90 14 70 96 25 72 98 58 59 82 19 71 99 19 71 99 58 59 82 60 63 86 58 59 82 25 72 98 59 60 83 59 60 83 25 72 98 24 69 95 35 35 37 15 15 15 24 24 24 25 25 25 20 20 45 26 26 26</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="coins">
+      <node id="coins_small" name="coins_small" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#coins_smallShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn3SG" target="#coins_small_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

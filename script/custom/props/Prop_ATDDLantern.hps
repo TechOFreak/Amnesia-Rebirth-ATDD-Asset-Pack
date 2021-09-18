@@ -1,0 +1,670 @@
+#include "custom/props/Prop_Pickup.hps"
+#include "custom/helpers/helper_player_custom.hps"
+#include "helpers/helper_player.hps"
+#include "helpers/helper_modules.hps"
+#include "custom/helpers/helper_modules_custom.hps"
+
+//------------------------------------------------------------
+
+const float gfOilBurnsForTime=13.f;
+const int glFlickerWhenLowerThan=1;
+
+//------------------------------------------------------------
+
+class cScrPropLantern : cScrPropPickup
+{			
+	//------------------------------------------------------------
+	
+	void _Global_CopyFromItemEntity() override
+	{
+		cScrPropPickup::_Global_CopyFromItemEntity();
+		
+		tString sSource = cScript_GetGlobalArgString(0);
+        cScript_SetGlobalArgFloat(0, mfOilBurnTime);
+		cScript_SetGlobalArgFloat(1, mfBrightnessMul);
+		cScript_SetGlobalArgFloat(2, mlActiveBillboard);
+		cScript_SetGlobalArgFloat(3, mfActiveBillboardBrightness);
+		cScript_SetGlobalArgColor(4, mvColor);
+		cScript_SetGlobalArgFloat(5, mfBrightnessForcedMul);
+		cScript_SetGlobalArgFloat(6, mfBrightnessMulFadeTarget);
+		cScript_RunGlobalFunc(sSource, "cScrPropLantern", "_Global_CopyValues");
+	}
+	
+	//------------------------------------------------------------
+	
+	// Called to transfer values from another of these entities
+	// e.g. when spawning something from the inventory
+	
+	void _Global_CopyValues()
+	{
+		if (Item_GetHeldEntity(eItemHandlerHand_Left)==mBaseObj.GetName()) return;
+		
+        mfOilBurnTime 				= cScript_GetGlobalArgFloat(0);
+		mfBrightnessMul 			= cScript_GetGlobalArgFloat(1);
+		mlActiveBillboard 			= cScript_GetGlobalArgInt(2);
+		mfActiveBillboardBrightness = cScript_GetGlobalArgFloat(3);
+		mvColor 					= cScript_GetGlobalArgColor(4);
+		mfBrightnessForcedMul 		= cScript_GetGlobalArgFloat(5);
+		mfBrightnessMulFadeTarget 	= cScript_GetGlobalArgFloat(6);
+	}
+	
+	//------------------------------------------------------------
+	
+	void _Global_OnItemTakenOut()
+	{
+		tString sItem = cScript_GetGlobalArgString(0);
+		
+		mvLastPos = mBaseObj.GetPosition();
+		
+		if (!cLux_GetGodModeActivated())
+			mBaseObj.SetEffectsActive(false,false);
+		else
+			mBaseObj.SetEffectsActive(true,false);
+		
+		mBaseObj.SetEffectBaseColor(mvColor * cColor(mfBrightnessMul, 1));
+
+		for (int i = 0; i < mBaseObj.GetLightNum(); i++)
+		{
+			iLight@ pLight = mBaseObj.GetLight(i);
+			if (pLight.GetName()!="PointLight_1")
+				Player_IgnoreLightInLightLevel(pLight.GetName());
+		}
+		
+		mbIsBeingLowered=false;
+		mMtxLastFrame = mBaseObj.GetMatrix();
+		
+		cMeshEntity@ pMeshEnt = mBaseObj.GetMeshEntity();
+		if (pMeshEnt !is null)
+		{
+			pMeshEnt.SetRenderFlagBit(eRenderableFlag_VisibleInReflection, false);
+			pMeshEnt.SetRenderFlagBit(eRenderableFlag_VisibleInNonReflection, true);
+			pMeshEnt.SetRenderFlagBit(eRenderableFlag_ShadowCaster, true);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void _Global_OnItemStartPutAway()
+	{
+		mbIsBeingLowered=true;
+		mBaseObj.SetEffectsActive(false,true);
+	}
+	
+	//------------------------------------------------------------
+	
+	void _Global_OnItemPutAway()
+	{
+		cScript_RunGlobalFunc("LuxPlayer","","_Global_LanternOff");
+		
+		for (int i = 0; i < mBaseObj.GetLightNum(); i++)
+		{
+			iLight@ pLight = mBaseObj.GetLight(i);
+			if (pLight.GetName()!="PointLight_1")
+				Player_UnignoreLightInLightLevel(pLight.GetName());
+		}
+		
+		mbIsBeingLowered=false;
+	}
+    
+	//------------------------------------------------------------
+	
+	void _Global_SetBrightnessMul()
+	{
+		mfBrightnessForcedMul = cScript_GetGlobalArgFloat(0);
+		FullnessEvent(Lantern_GetAmount(), false, cScript_GetGlobalArgBool(1));
+	}
+	
+	//------------------------------------------------------------
+	
+	void _Global_SetLightColor()
+	{
+		mvColor = cScript_GetGlobalArgColor(0);
+		mBaseObj.SetEffectBaseColor(mvColor);
+	}
+	
+	//------------------------------------------------------------
+	
+	void _Global_SetActiveBillboard()
+	{
+		mlActiveBillboard = cScript_GetGlobalArgInt(0);
+		mfActiveBillboardBrightness = cScript_GetGlobalArgFloat(1);
+	}
+	
+	//------------------------------------------------------------
+	
+	void _Global_GetCanBeHighlighted()
+	{
+		cScript_SetGlobalReturnBool(true);
+	}
+	
+	//------------------------------------------------------------
+
+	float mfBrightnessMulFadeTarget = 1.3f;
+	bool mbSkipFlicker = false;
+	
+	void _Global_FullnessEvent()
+	{
+		int lLevel = cScript_GetGlobalArgInt(0);
+		bool bSkipFlicker = cScript_GetGlobalArgBool(1);
+		FullnessEvent(lLevel, bSkipFlicker);
+	}
+	
+	void FullnessEvent(int alLevel, bool abSkipFlicker=false, bool abInstant=false)
+	{		
+		cLux_AddDebugMessage("EVENT - Level: "+alLevel+", Skip: "+abSkipFlicker);
+		if (alLevel >= 8)
+		{
+			mfBrightnessMulFadeTarget = 1.3f*mfBrightnessForcedMul;
+			if (abInstant) mfBrightnessMul = mfBrightnessMulFadeTarget;
+		}
+		else if (alLevel >= 4)
+		{
+			mfBrightnessMulFadeTarget = 1.f*mfBrightnessForcedMul;
+			if (abInstant) mfBrightnessMul = mfBrightnessMulFadeTarget;
+			
+			if (abSkipFlicker) return;
+			if (alLevel % 2 != 0)	ForceFlicker(cMath_RandRectf(0.8f,1.2f));
+		}
+		else
+		{
+			mfBrightnessMulFadeTarget = 0.8f*mfBrightnessForcedMul;
+			if (abInstant) mfBrightnessMul = mfBrightnessMulFadeTarget;
+			
+			if (abSkipFlicker) return;
+			ForceFlicker(cMath_RandRectf(3,4));
+		}
+	}
+	
+	void OnUpdate(float afTimeStep)
+	{
+		cScrPropPickup::OnUpdate(afTimeStep);
+		
+		//////////////////////////////
+		// Update shadow casting
+		iLight@ pSpot = mBaseObj.GetLightFromName("PointLight_1");
+		bool bShadowsActive = cLux_GetUserConfig().GetBool("Graphics", "LanternShadowsActive", true);
+		if (pSpot !is null)
+			pSpot.SetCastShadows(bShadowsActive);
+
+		// Update lit flag!
+		bool bEffectsActive = mBaseObj.GetEffectsActive();
+		if (bEffectsActive == false && mbPrevEffectsActive) 
+			cScript_RunGlobalFunc("LuxPlayer","","_Global_LanternOff");
+		else if (bEffectsActive && mbPrevEffectsActive == false)
+			cScript_RunGlobalFunc("LuxPlayer","","_Global_LanternOn");
+		
+		mbPrevEffectsActive = bEffectsActive;
+		
+		if (cLux_GetGodModeActivated()) return;
+		if (mbIsBeingLowered) return;
+		
+		//////////////////////////////
+		// Update state
+		if (Item_GetHeldEntity(eItemHandlerHand_Left)==mBaseObj.GetName())
+		{
+			tString sItem = Item_GetHeld(eItemHandlerHand_Left);
+			if (Sketchbook_IsOpen() == false && 
+				Sketchbook_IsFlashbackActive(true)==false && 
+				Player_GetCurrentStateName() != "State_Interact_Read" && 
+				Player_GetCurrentStateName() != "State_ReadMemoryCylinder") 
+			{
+				mfOilBurnTimePrev = mfOilBurnTime;
+				mfOilBurnTime += afTimeStep;
+			}
+			
+			int lLevel = Item_GetAmount(sItem);
+						
+			if (mfOilBurnTime >= gfOilBurnsForTime)
+			{
+				mfOilBurnTime = 0.f;				
+				Item_DecreaseAmount(sItem,1);
+				FullnessEvent(lLevel-1);
+			}
+			else if (mfOilBurnTime >= gfOilBurnsForTime/2 && mfOilBurnTimePrev < gfOilBurnsForTime/2)
+			{
+				float fRand = cMath_RandRectf(0,1);
+				if (lLevel < 7)
+				{
+					if (lLevel >= 5)
+					{
+						if (fRand > .8f) ForceFlicker(1,true);
+					}
+					else
+					{
+						if (fRand > .3f) ForceFlicker(1);
+					}
+				}
+			}
+
+			
+			bool bLit = (lLevel>0); 
+			bool bFlicker = (lLevel<=glFlickerWhenLowerThan);
+			
+			mfBrightnessMul = cMath_IncreaseTo(mfBrightnessMul,.01f,mfBrightnessMulFadeTarget);
+     
+			float fLightLevel = 1.0f;
+			if (lLevel<=glFlickerWhenLowerThan)
+			{
+				fLightLevel = (lLevel*1.0f)/glFlickerWhenLowerThan;
+			}
+			
+			if (bLit)
+			{
+				if (bFlicker || mbForceFlicker)
+				{
+					float fFlickerSpeed = 1.2f/mfBrightnessMulFadeTarget;
+					
+					if (mbForceFlicker && mbQuickFlicker)
+					{
+						mfFlickerMul = cMath_IncreaseTo(mfFlickerMul, 1.8f * afTimeStep, mfFlickerTarget);
+						if (mfFlickerMul == mfFlickerTarget)
+						{
+							mbFlickerState = !mbFlickerState;
+							if (mbFlickerState) mfFlickerTarget = cMath_RandRectf(0.1, 0.3);
+							else mfFlickerTarget = cMath_RandRectf(0.3, 0.5);
+						}
+					}
+					else
+					{
+						if (mbFlickerState == false)
+						{
+							mfFlickerTimer -= afTimeStep;
+							if (mfFlickerTimer <= 0.0f)
+							{
+								mbFlickerState = true;
+								mfFlickerTimer = (mbWeakFlicker) ? cMath_RandRectf(0.2f, 0.4f) : cMath_RandRectf(0.2f, 0.8f);
+								mfFlickerTarget = (mbWeakFlicker) ? cMath_RandRectf(0.7f, 0.9f) : cMath_RandRectf(0.4f, 0.7f);
+								mbWeakFlicker = false;
+							}
+							
+							mfFlickerMul = cMath_IncreaseTo(mfFlickerMul, fFlickerSpeed * afTimeStep / mfFlickerTarget, 1.0f);
+						}
+						else
+						{
+							mfFlickerMul = cMath_IncreaseTo(mfFlickerMul, fFlickerSpeed * afTimeStep / mfFlickerTarget, mfFlickerTarget);
+							if (mfFlickerMul == mfFlickerTarget)
+							{
+								mbFlickerState = false;
+							}
+						}
+					}
+					
+					if (mfForceFlickerTimer > 0.0f)
+						mfForceFlickerTimer -= afTimeStep;
+					else
+					{
+						mbForceFlicker = false;
+						mbQuickFlicker = false;
+					}
+				}
+				else
+				{
+					mfFlickerMul = cMath_IncreaseTo(mfFlickerMul, 1.2f * afTimeStep, 1.0f);
+				}
+			}
+			
+			mBaseObj.SetEffectsActive(bLit,true);
+			mBaseObj.SetEffectBaseColor(mvColor * cColor(mfBrightnessMul * mfFlickerMul, 1));
+		
+			cSoundEntity@ pBurnSound = mBaseObj.GetSoundEntityFromName("sound_lantern_burn");
+			if (pBurnSound !is null)
+			{
+				cVector3f vCurrentPos = mBaseObj.GetPosition();
+				float vVel = (mvLastPos-vCurrentPos).Length()/afTimeStep;
+				pBurnSound.SetParam("player_move_speed", vVel*0.1);
+				mvLastPos = vCurrentPos;
+			}
+            
+            /////////////////////////
+            // Update check shining on an NPC            
+            mfFlashLightUpdateShineOnAgentCount -= afTimeStep;
+            if(mfFlashLightUpdateShineOnAgentCount <= 0)
+            {
+                cLightSpot@ pLight = cast<cLightSpot>(mBaseObj.GetLightFromName("PointLight_1"));
+                //mfFlashLightUpdateShineOnAgentCount = cMath_RandRectf(0.45f, 0.55f);
+				mfFlashLightUpdateShineOnAgentCount = cMath_RandRectf(0.1f, 0.2f);
+
+                cLuxEntityComponentIterator @pIt = cLux_GetCurrentMap().GetEntityComponentIterator(eLuxEntityComponentType_LightSensor);
+                while (pIt.HasNext())
+                {
+                    iLuxEntityComponent @pComp = pIt.Next();
+                    cLuxLightSensor @pSensor = cast<cLuxLightSensor>(pComp);
+                    if (pSensor.IsSensoring() == false || pSensor.GetSensitivityLevel() <= 0.f) continue;
+
+                    iLuxEntity @pEnt = pComp.GetEntity();				
+                    iPhysicsBody @pBody = pEnt.GetMainBody();
+				
+                    eCollision coll = pLight.GetFrustum().CollideAABB(pBody.GetBoundingVolume().GetMin(), 
+                                                                      pBody.GetBoundingVolume().GetMax(), 6);
+                    
+                    if (coll == eCollision_Outside || pEnt.CheckIsOnScreen(true) == false) continue;
+					pEnt.BroadcastMessage(eCustomEntityMessage_HitByFlashlight, null, mBaseObj.GetPosition(), 0);
+                } 
+            }
+			
+			//////////////////////////////////////
+			// Update Agent sees gobo Rays
+			mfFlashlightCheckAgentSeesGoboCount-=afTimeStep;
+			if(mfFlashlightCheckAgentSeesGoboCount<=0)
+			{
+//				mfFlashlightCheckAgentSeesGoboCount = cMath_RandRectf(0.25f, 0.35f);
+				mfFlashlightCheckAgentSeesGoboCount = cMath_RandRectf(0.1f, 0.2f);
+				
+				cCamera@ pCam = cLux_GetPlayer().GetCamera();
+				cLightSpot@ pLight = cast<cLightSpot>(mBaseObj.GetLightFromName("PointLight_1"));
+							
+				///////////////////////////////
+				// Get the flashlight hit position
+				mvFlashlightGoboPositions.resize(0);
+				
+				///////////////////////////////
+				// Set 5 raycast offsets
+				if (mvFlashlightRaycastDirs.length() == 0)
+				{
+					float fAngle = pLight.GetFOV() * 0.5f * 0.5f;
+					mvFlashlightRaycastDirs.push_back(cVector3f(0, 0, 0));
+					mvFlashlightRaycastDirs.push_back(cVector3f(fAngle, 0, 0));
+					mvFlashlightRaycastDirs.push_back(cVector3f(-fAngle, 0, 0));
+					mvFlashlightRaycastDirs.push_back(cVector3f(0, fAngle, 0));
+					mvFlashlightRaycastDirs.push_back(cVector3f(0, -fAngle, 0));
+				}
+
+				for(int i = 0; i < mvFlashlightRaycastDirs.size(); ++i)
+				{
+					cVector3f vFwd = cVector3f(pCam.GetPitch(), pCam.GetYaw(), pCam.GetRoll());
+					cVector3f vRaycastDir = cMath_MatrixMul(cMath_MatrixRotateZXY(vFwd + mvFlashlightRaycastDirs[i]), cVector3f(0,0,-1));
+					
+					float fDistance=0;
+					cVector3f vSurfaceNormal;
+					if(cLux_GetClosestBody(pCam.GetPosition(), vRaycastDir, pLight.GetRadius()*0.8f, fDistance,vSurfaceNormal) !is null)
+					{
+						mbFlashlightCheckAgentSeesGoboRaysFired = true;
+						cVector3f vPos = pCam.GetPosition() + vRaycastDir * (fDistance- 0.3f);						
+						mvFlashlightGoboPositions.push_back(vPos);
+					}
+				}
+			}
+			
+			//////////////////////////////////////
+			// Update Agent see gobo LOS check
+			if(mbFlashlightCheckAgentSeesGoboRaysFired)
+			{
+				mbFlashlightCheckAgentSeesGoboRaysFired=false;
+				
+				///////////////////////////////
+				// Go through all light sensors!
+				cLuxEntityComponentIterator @pIt = cLux_GetCurrentMap().GetEntityComponentIterator(eLuxEntityComponentType_LightSensor);
+				while(pIt.HasNext())
+				{
+					iLuxEntityComponent @pComp = pIt.Next();
+					cLuxLightSensor @pSensor = cast<cLuxLightSensor>(pComp);
+					if(pSensor.IsSensoring()==false)
+						continue;
+					
+					iLuxEntity @pEnt = pComp.GetEntity();
+					if(pEnt.GetEntityType() != eLuxEntityType_Agent)
+						continue;
+					
+					cLuxAgent @pAgent = cLux_ToAgent(pEnt);
+					
+					cVector3f vEyePos = pAgent.GetEyePostion();
+					
+					for(int i=0; i<mvFlashlightGoboPositions.size(); ++i)
+					{
+						cVector3f vPos = mvFlashlightGoboPositions[i];
+						
+						/////////////////////
+						// Distance
+						if(cMath_Vector3Dist(vPos, pAgent.GetEyePostion())> pAgent.GetSightRange() *pAgent.GetSightRangeMul())
+						{
+							continue;
+						}
+						
+						/////////////////////
+						// FOV
+						if(pAgent.GetPointIsInFOV(vPos, pAgent.GetFOV()*pAgent.GetFOVMul(), pAgent.GetCharBody().GetForward())==false)
+						{
+							continue;
+						}
+						
+						/////////////////////
+						// Line of Sight
+						if(cLux_CheckLineOfSight(vEyePos, vPos, false, false))
+						{
+							pEnt.BroadcastMessage(eCustomEntityMessage_SeeFlashlightGobo, null, vPos, 0);
+							break;
+						}
+					}
+				}
+			}
+			
+		}
+        else
+		{
+			mBaseObj.SetEffectsActive(false,false);
+		}
+		
+		UpdateLanternFullnessAnimation();
+		UpdateBillboard();
+	}
+    
+    //-------------------------------------
+	
+	cVector3f mvCurrentVel = 0;
+	cMatrixf mMtxLastFrame = cMatrixf_Identity;
+	
+	float mfLastPitch = 0.f;
+	float mfPitch = 0.f;
+	
+	float mfLastAcc = 0.f;
+	float mfAcc = 0.f;
+	
+	void OnPostUpdate(float afTimeStep)
+	{	
+		// Change this to get the old version
+		if(true)
+		{
+			cCamera@ pCamera = cLux_GetPlayer().GetCamera();
+			cVector3f vOffsetRot = 0;
+			cVector3f vPos = mBaseObj.GetPosition();
+			
+			// Calc some rotational offsets from velocity
+			// Set to false to remove some of the movement
+			{
+				cVector3f vT = cVector3f(1.5f, 1.5f, 1.5f) * afTimeStep;
+				vT.x = cMath_Clamp(vT.x, 0.f, 1.f);
+				vT.y = cMath_Clamp(vT.y, 0.f, 1.f);
+				vT.z = cMath_Clamp(vT.z, 0.f, 1.f);
+				
+				cVector3f vVel = vPos - mMtxLastFrame.GetTranslation();
+				//if(vVel.SqrLength() < 0.00f)
+				//	return;
+				
+				// Smoothing
+				mvCurrentVel = (vVel * vT) + mvCurrentVel * (cVector3f_One - vT);
+				
+				// Do dot with prev frame mtx, this is a bit weird since right is forward and forward is right
+				vOffsetRot.z += cMath_Vector3Dot(mMtxLastFrame.GetRight(), 		mvCurrentVel) 	* -cMath_PiMul2 * .75f;
+				vOffsetRot.z += cMath_Vector3Dot(mMtxLastFrame.GetUp(), 		mvCurrentVel) 	* -cMath_PiMul2 * .5f;
+				vOffsetRot.x += cMath_Vector3Dot(mMtxLastFrame.GetForward(), 	mvCurrentVel) 	*  cMath_PiMul2 * .75f;
+			}
+			
+			/////////////////////////////////////////////////////////////////////////////
+			float fCurrentPitch = pCamera.GetPitch();
+			
+			float fCurrentAcc = fCurrentPitch - mfLastPitch;
+			float fAccDiff = fCurrentAcc - mfLastAcc;
+			mfAcc += fAccDiff;
+			
+			mfPitch += mfAcc;
+			
+			float fT = cMath_Clamp(afTimeStep * 5.f, 0.f, 1.f);
+			mfPitch = (0.f * fT) + mfPitch * (1.f - fT);
+
+			mfLastPitch = fCurrentPitch;
+			mfLastAcc = fCurrentAcc;
+			
+			cMatrixf mtxSocket = PlayerBody_GetSocket("L_Hand").GetWorldMatrix().GetTranspose();
+			
+			cVector3f vForward = mtxSocket.GetForward();
+			vForward.y = 0.f;
+			vForward.Normalize();
+			
+			cVector3f vUp = cVector3f_Up;
+			cVector3f vRight = cMath_Vector3Cross(vUp, vForward);
+
+			cMatrixf mtxOffset = cMath_MatrixRotateXYZ(vOffsetRot + cVector3f(0, 0, mfPitch + cMath_ToRad(40)));
+			cMatrixf mtxResult = cMath_MatrixMul(cMath_MatrixUnitVectors(vRight, vUp, vForward, mBaseObj.GetPosition()), mtxOffset);
+			
+			mBaseObj.SetMatrix(mtxResult);
+			//////////////////////////////////
+			// Needed for swing stuff
+			
+			// Need to rotate by ~40 deg because ent is a bit weird, this can be removed when ent is better!
+			// Only used to correct mtxLastFrame
+			// Save for next frame, otherwise it will be overwritten and orientations will not be correct when setting the offsets
+			{
+				float fRotationOffset = -40.f;
+				mtxOffset = cMath_MatrixRotateXYZ(cVector3f(0.f, 0.f, cMath_ToRad(fRotationOffset)));
+				mMtxLastFrame = cMath_MatrixMul(mBaseObj.GetMatrix(), mtxOffset);
+				mMtxLastFrame = mMtxLastFrame.GetTranspose();
+				mMtxLastFrame.SetTranslation(vPos);
+			}
+			
+			
+			// Orient spotlights with player camera
+			const array<tString> vSpotlightNames = 
+			{
+				"Spotlight_noshadows",
+				"PointLight_1"
+			};
+			
+			// Add rotation offset calculated from the "gravity" thigies above
+			
+			cVector3f vTimes = cVector3f(1.1f, 1.25f, 1.f) * 1.2f;
+			cMatrixf mtxOffsetRot = cMath_MatrixRotateXYZ(cVector3f(vOffsetRot.z, vOffsetRot.x, vOffsetRot.y) * (vTimes));
+			
+			for(uint i = 0; i < vSpotlightNames.size(); ++i)
+			{
+				iLight@ pSpotLight = mBaseObj.GetLightFromName(vSpotlightNames[i]);
+				if (pSpotLight is null) continue;
+				cMatrixf mtxLight = pSpotLight.GetWorldMatrix();
+				mtxLight.SetRotation(cMath_MatrixMul(cLux_GetPlayer().GetCamera().GetMatrix(), mtxOffsetRot));
+				pSpotLight.SetWorldMatrix(mtxLight);
+			}
+		}
+		else
+		{
+			//////////////////////////////////////////////////////////
+			// Make sure spot light is pointing where player is 
+			// looking to avoid frustration when lantern moves a lot
+			
+			iLight@ pSpotLight = mBaseObj.GetLightFromName("PointLight_1");
+			if (pSpotLight is null) return;
+			cMatrixf mtxLight = pSpotLight.GetWorldMatrix();
+			mtxLight.SetRotation(cLux_GetPlayer().GetCamera().GetMatrix());
+			pSpotLight.SetWorldMatrix(mtxLight);
+		}
+	}
+	
+	//-------------------------------------
+	
+	void UpdateLanternFullnessAnimation()
+	{
+		float fStepProgress = 1.0f-mfOilBurnTime/gfOilBurnsForTime;
+		
+		int numStates = mBaseObj.GetMeshEntity().GetAnimationStateNum();
+		if (numStates <= 0) return;
+		
+		tString sItem = Item_GetHeld(eItemHandlerHand_Left); 
+		int lContentLevel = Item_GetAmount(sItem);
+		int lContentMax = Item_GetAmountMax(sItem);
+		float fFullness = lContentLevel > 0 ? cMath_Clamp((lContentLevel-1+fStepProgress)/lContentMax,0.0f,1.0f) : 0.f;
+		
+		int lIdx = 0; 
+			
+		mBaseObj.GetMeshEntity().GetAnimationState(lIdx).SetPaused(true); 
+		mBaseObj.GetMeshEntity().GetAnimationState(lIdx).SetRelativeTimePosition(1.f - fFullness);
+		
+	}
+	
+	//------------------------------------------------------------
+	
+	int mlActiveBillboard = 0;
+	float mfActiveBillboardBrightness = 0.1f;
+	float mfDefaultBillboardBrightness = 0.1f;
+	
+	void UpdateBillboard()
+	{
+		for (int i = 0; i < mBaseObj.GetBillboardNum(); ++i)
+		{
+			float fBrightness = 0.0f;
+			if (mlActiveBillboard <= 0 && i == 0) fBrightness = mfDefaultBillboardBrightness;
+			else if (mlActiveBillboard == i) fBrightness = mfActiveBillboardBrightness;
+			mBaseObj.GetBillboard(i).SetBrightness(fBrightness);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	void _Global_ForceFlicker()
+	{
+		float fTime = cScript_GetGlobalArgFloat(0);
+		bool bWeak = cScript_GetGlobalArgBool(1);
+		bool bQuick = cScript_GetGlobalArgBool(2);
+		ForceFlicker(fTime, bWeak, bQuick);
+	}
+	
+	//------------------------------------------------------------
+	
+	void ForceFlicker(float afTime, bool abWeak=false, bool abQuick=false)
+	{
+		mbForceFlicker = true;
+		mfForceFlickerTimer = afTime;
+		mbWeakFlicker = abWeak;
+		mbQuickFlicker = abQuick;
+	}
+	
+	//------------------------------------------------------------
+	
+	void _Global_ResetBurnTime()
+	{
+		ResetBurnTime();
+	}
+	
+	//------------------------------------------------------------
+	
+	void ResetBurnTime()
+	{
+		mfOilBurnTime = 0;
+		mfOilBurnTimePrev = 0;
+	}
+	
+	//------------------------------------------------------------
+	// Properties
+	
+	cVector3f mvLastPos;
+	float mfOilBurnTime=0.0f;
+	float mfOilBurnTimePrev=0.0f;
+	float mfFlickerTimer=0.0f;
+	float mfForceFlickerTimer=0.0f;
+	bool mbWeakFlicker=false;
+	bool mbQuickFlicker=false;
+    float mfFlashLightUpdateShineOnAgentCount = 0.05f;
+	
+	float mfBrightnessMul = 1.0f;
+	float mfBrightnessForcedMul = 1.0f;
+	cColor mvColor = cColor_White;
+	
+	float mfFlickerMul = 1.0f;
+	float mfFlickerTarget = 1.0f;
+	bool mbFlickerState=false;
+	bool mbForceFlicker=false;
+	bool mbIsBeingLowered=false;
+	bool mbPrevEffectsActive = false;
+	
+	float mfFlashlightCheckAgentSeesGoboCount = 0.0f;
+	array<cVector3f> mvFlashlightGoboPositions;
+	bool mbFlashlightCheckAgentSeesGoboRaysFired = false;
+	array<cVector3f> mvFlashlightRaycastDirs;
+}

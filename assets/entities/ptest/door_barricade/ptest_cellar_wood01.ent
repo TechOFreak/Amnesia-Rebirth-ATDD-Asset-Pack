@@ -1,0 +1,74 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/door/cellar_wood01/cellar_wood01.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="Scene_Root" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="-0.011089 0 0" TriCount="696" />
+            <SubMesh Active="true" ID="1" Material="" Name="polySurface8" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 0 0" TriCount="24" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="2" Name="BodyShape_1" RelativeRotation="0 0 0" RelativeScale="1.85 3 0.35" RelativeTranslation="0 2.98023e-008 0" Rotation="0 0 0" Scale="1.48 2.4 0.28" ShapeType="Box" Tag="" WorldPos="0 1.37139 0" />
+            <BodyShape Active="true" ID="3" Name="BodyShape_1_clone_1" RelativeRotation="0 0 0" RelativeScale="0.05 3 0.35" RelativeTranslation="-1.29455e-007 1.0716e-007 6.23575e-010" Rotation="0 0 0" Scale="0.045 2.7 0.2275" ShapeType="Box" Tag="" WorldPos="-0.905653 1.39156 -0.00649206" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="1" BlocksSound="true" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="false" HasGravity="true" ID="5" LinearDamping="1" Mass="20" Material="Wood Robust" MaxAngularSpeed="5" MaxLinearSpeed="5" Name="Body_1" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="0.8 0.8 0.8" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0 1.37139 0">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="2" />
+            </Body>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="6" LinearDamping="0" Mass="0" Material="Metal" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_2" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="0.9 0.9 0.65" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.905653 1.39156 -0.00649206">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="3" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="5" ConnectedParentBodyID="6" ID="7" LimitStepCount="0" MaxAngle="90" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveSpeed="2" MaxMoveVolume="0.8" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinAngle="0" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveSpeed="0.1" MinMoveVolume="0.01" MoveSound="joint_metal_wood_move.snt" MoveType="Linear" Name="HingeJoint_1" PinDir="0 1 0" Rotation="0 0 0" Scale="1 1 1" StickyMaxLimit="false" StickyMinLimit="false" Stiffness="0" Tag="" WorldPos="-0.880778 1.62834 0.142986" />
+        </Joints>
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_SwingDoor">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveMaxSpeed" Value="8" />
+        <Var Name="MoveSlowDownFactor" Value="4" />
+        <Var Name="MoveSpeedFactor" Value="1" />
+        <Var Name="MoveThrowImpulse" Value="3" />
+        <Var Name="CanInteractWithStaticBody" Value="false" />
+        <Var Name="CloseOnSound" Value="close_door.snt" />
+        <Var Name="CloseOffSound" Value="open_door.snt" />
+        <Var Name="LockOnSound" Value="lock_door.snt" />
+        <Var Name="LockOffSound" Value="unlock_door.snt" />
+        <Var Name="InteractLockedSound" Value="locked_door.snt" />
+        <Var Name="Breakable" Value="true" />
+        <Var Name="DamageMesh1" Value="door/cellar_wood01/cellar_wood01_damage1.dae" />
+        <Var Name="DamageMesh2" Value="door/cellar_wood01/cellar_wood01_damage2.dae" />
+        <Var Name="BrokenEntity" Value="door/cellar_wood01/cellar_wood01_broken.ent" />
+        <Var Name="DamageSound" Value="hit_wood.snt" />
+        <Var Name="DamagePS" Value="F:/Amnesia/redist/particles/ps_door_damage_wood.ps" />
+        <Var Name="BreakSound" Value="break_wood_metal.snt" />
+        <Var Name="BreakPS" Value="F:/Amnesia/redist/particles/break/ps_break_wood.ps" />
+        <Var Name="BreakImpulse" Value="5" />
+        <Var Name="HealthDamage1" Value="66" />
+        <Var Name="HealthDamage2" Value="33" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

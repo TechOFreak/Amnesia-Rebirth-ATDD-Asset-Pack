@@ -1,0 +1,31 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/Skolarbeten och diverse projekt/3d/projekt/Frictional Games/SVN/redist/entities/furniture/table_nice02/table_nice02.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="table_nice02_mesh" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="5" WorldPos="0.000000 0.000000 0.000000" TriCount="712" />
+        </Mesh>
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="2" Name="BodyShape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.065000 0.786000 0.065000" RelativeTranslation="1.272489 -0.051861 0.497992" Rotation="0.000000 0.000000 0.000000" Scale="0.065000 0.786000 0.065000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="1.272489 0.392677 0.497992" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="BodyShape_2_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.065000 0.786000 0.065000" RelativeTranslation="1.272489 -0.051861 -0.497992" Rotation="0.000000 0.000000 0.000000" Scale="0.065000 0.786000 0.065000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="1.272489 0.392677 -0.497992" />
+            <BodyShape Active="true" GroupID="0" ID="4" Name="BodyShape_2_clone_1_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.065000 0.786000 0.065000" RelativeTranslation="-1.272489 -0.051861 -0.497992" Rotation="0.000000 0.000000 0.000000" Scale="0.065000 0.786000 0.065000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="-1.272489 0.392677 -0.497992" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="BodyShape_2_clone_1_clone_1_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.065000 0.786000 0.065000" RelativeTranslation="-1.272489 -0.051861 0.497992" Rotation="0.000000 0.000000 0.000000" Scale="0.065000 0.786000 0.065000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="-1.272489 0.392677 0.497992" />
+            <BodyShape Active="true" GroupID="0" ID="6" Name="BodyShape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="2.850000 0.130000 1.310000" RelativeTranslation="0.000000 0.379862 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="2.850000 0.130000 1.310000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="0.000000 0.824400 0.000000" />
+            <BodyShape Active="true" GroupID="0" ID="7" Name="BodyShape_3_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="2.648000 0.081500 1.100500" RelativeTranslation="0.000000 0.274227 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="2.648000 0.081500 1.100500" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="0.000000 0.718766 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="8" LinearDamping="0.000000" Mass="0.000000" Material="Wood Robust" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" Volatile="false" WorldPos="0.000000 0.444539 0.000000">
+                <Shape ID="6" />
+                <Shape ID="7" />
+                <Shape ID="2" />
+                <Shape ID="3" />
+                <Shape ID="4" />
+                <Shape ID="5" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

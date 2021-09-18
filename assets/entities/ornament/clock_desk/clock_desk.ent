@@ -1,0 +1,26 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/ornament/clock_desk/clock_desk.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="smallhand" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" TriCount="2" />
+            <SubMesh Active="true" GroupID="0" ID="1" Name="bighand" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="1" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" TriCount="2" />
+            <SubMesh Active="true" GroupID="0" ID="2" Name="polySurface37" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="2" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" TriCount="472" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.800000 0.450000 0.150000" RelativeTranslation="-0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.800000 0.450000 0.150000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="-0.003595 0.226720 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="5" LinearDamping="0.000000" Mass="0.000000" Material="Default Hard" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.003595 0.226720 0.000000">
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="2" />
+                    <Child ID="1" />
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

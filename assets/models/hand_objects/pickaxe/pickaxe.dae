@@ -1,0 +1,1590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Thomas</author>
+      <authoring_tool>Maya 7.0 | ColladaMaya v0.88</authoring_tool>
+      <comments>Collada Maya Export Options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;exportCameraAsLookat=0;relativePaths=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;exportVertexColors=1;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/penumbra/episode2_work/redist/models/characters/character_infected/weapon_pickaxe.dae</source_data>
+    </contributor>
+    <contributor>
+      <author>Thomas</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=0;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///H:/Lux/redist/models/hand_objects/pickaxe/pickaxe.dae</source_data>
+    </contributor>
+    <contributor>
+      <author>Thomas</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=0;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///H:/Lux/untitled</source_data>
+    </contributor>
+    <created>2007-10-11T07:44:58Z</created>
+    <modified>2009-02-10T09:06:56Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_cameras>
+    <camera id="perspShape2-lib" name="perspShape1">
+      <optics>
+        <technique_common>
+          <perspective>
+            <yfov>37.8491</yfov>
+            <aspect_ratio>1.5</aspect_ratio>
+            <znear>0.1</znear>
+            <zfar>1000</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="MAYA">
+          <vertical_aperture>2.4</vertical_aperture>
+          <horizontal_aperture>3.6</horizontal_aperture>
+          <lens_squeeze>1</lens_squeeze>
+          <film_fit>0</film_fit>
+          <film_fit_offset>0</film_fit_offset>
+          <film_offsetX>0</film_offsetX>
+          <film_offsetY>0</film_offsetY>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///C:/penumbra2/redist/models/items/pickaxe.jpg</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file2" name="file2">
+      <init_from>file:///C:/penumbra/lux/redist/entities/ornament/book01/book01.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file3" name="file3">
+      <init_from>file:///H:/Lux/redist/models/player/hands/hands.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert3" name="lambert3">
+      <instance_effect url="#lambert3-fx" />
+    </material>
+    <material id="eyebrows" name="eyebrows">
+      <instance_effect url="#eyebrows-fx" />
+    </material>
+    <material id="teeth" name="teeth">
+      <instance_effect url="#teeth-fx" />
+    </material>
+    <material id="head" name="head">
+      <instance_effect url="#head-fx" />
+    </material>
+    <material id="tongue" name="tongue">
+      <instance_effect url="#tongue-fx" />
+    </material>
+    <material id="iris" name="iris">
+      <instance_effect url="#iris-fx" />
+    </material>
+    <material id="body" name="body">
+      <instance_effect url="#body-fx" />
+    </material>
+    <material id="eyelashes" name="eyelashes">
+      <instance_effect url="#eyelashes-fx" />
+    </material>
+    <material id="eye" name="eye">
+      <instance_effect url="#eye-fx" />
+    </material>
+    <material id="bones" name="bones">
+      <instance_effect url="#bones-fx" />
+    </material>
+    <material id="eyebrows1" name="eyebrows1">
+      <instance_effect url="#eyebrows1-fx" />
+    </material>
+    <material id="teeth1" name="teeth1">
+      <instance_effect url="#teeth1-fx" />
+    </material>
+    <material id="head1" name="head1">
+      <instance_effect url="#head1-fx" />
+    </material>
+    <material id="tongue1" name="tongue1">
+      <instance_effect url="#tongue1-fx" />
+    </material>
+    <material id="iris1" name="iris1">
+      <instance_effect url="#iris1-fx" />
+    </material>
+    <material id="body1" name="body1">
+      <instance_effect url="#body1-fx" />
+    </material>
+    <material id="eyelashes1" name="eyelashes1">
+      <instance_effect url="#eyelashes1-fx" />
+    </material>
+    <material id="eye1" name="eye1">
+      <instance_effect url="#eye1-fx" />
+    </material>
+    <material id="bones1" name="bones1">
+      <instance_effect url="#bones1-fx" />
+    </material>
+    <material id="eyebrows2" name="eyebrows2">
+      <instance_effect url="#eyebrows2-fx" />
+    </material>
+    <material id="teeth2" name="teeth2">
+      <instance_effect url="#teeth2-fx" />
+    </material>
+    <material id="head2" name="head2">
+      <instance_effect url="#head2-fx" />
+    </material>
+    <material id="tongue2" name="tongue2">
+      <instance_effect url="#tongue2-fx" />
+    </material>
+    <material id="iris2" name="iris2">
+      <instance_effect url="#iris2-fx" />
+    </material>
+    <material id="body2" name="body2">
+      <instance_effect url="#body2-fx" />
+    </material>
+    <material id="eyelashes2" name="eyelashes2">
+      <instance_effect url="#eyelashes2-fx" />
+    </material>
+    <material id="eye2" name="eye2">
+      <instance_effect url="#eye2-fx" />
+    </material>
+    <material id="bones2" name="bones2">
+      <instance_effect url="#bones2-fx" />
+    </material>
+    <material id="blinn1" name="blinn1">
+      <instance_effect url="#blinn1-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert3-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eyebrows-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="teeth-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="head-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.901961 0.772549 0.694118 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="tongue-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="iris-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="body-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.901961 0.772549 0.694118 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eyelashes-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eye-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bones-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eyebrows1-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="teeth1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="head1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.901961 0.772549 0.694118 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="tongue1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="iris1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="body1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.901961 0.772549 0.694118 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eyelashes1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eye1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bones1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eyebrows2-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="teeth2-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="head2-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.901961 0.772549 0.694118 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="tongue2-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="iris2-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="body2-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.901961 0.772549 0.694118 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eyelashes2-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="eye2-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bones2-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 1 1 1</color>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>20</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="blinn1-fx">
+      <profile_COMMON>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file3-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="axeShape-lib" name="axeShape">
+      <mesh>
+        <source id="axeShape-lib-Position" name="position">
+          <float_array id="axeShape-lib-Position-array" count="192">0.00597 0.091499 0.001035 0.003853 0.091499 0.002869 0.00108 0.091499 0.003268 -0.001467 0.091499 0.002104 -0.002981 0.091499 -0.000251 -0.002981 0.091499 -0.003052 -0.001467 0.091499 -0.005408 0.00108 0.091499 -0.006572 0.003853 0.091499 -0.006173 0.00597 0.091499 -0.004339 0.006759 0.091499 -0.001652 0.00597 -0.058454 0.001035 0.003853 -0.058454 0.002869 0.00108 -0.058454 0.003268 -0.001467 -0.058454 0.002104 -0.002981 -0.058454 -0.000251 -0.002981 -0.058454 -0.003052 -0.001467 -0.058454 -0.005408 0.00108 -0.058454 -0.006572 0.003853 -0.058454 -0.006173 0.00597 -0.058454 -0.004339 0.006759 -0.058454 -0.001652 0.001788 0.091499 -0.001652 0.001788 -0.058454 -0.001652 -0.004667 0.07749 -0.013079 -0.004667 0.086459 -0.013079 0.008579 0.07749 -0.013079 0.008579 0.086459 -0.013079 0.008579 0.077482 0.009775 0.008579 0.08645 0.009775 -0.004667 0.077482 0.009775 -0.004667 0.08645 0.009775 -0.003297 0.077914 -0.023413 -0.001926 0.078331 -0.033747 -0.000556 0.078134 -0.044082 0.001188 0.075505 -0.054416 -0.003297 0.08524 -0.023413 -0.001926 0.08323 -0.033747 -0.000556 0.080525 -0.044082 0.001188 0.076205 -0.054416 0.007208 0.08524 -0.023413 0.005838 0.08323 -0.033747 0.004467 0.080525 -0.044082 0.002723 0.076205 -0.054416 0.007208 0.077914 -0.023413 0.005838 0.078331 -0.033747 0.004467 0.078134 -0.044082 0.002723 0.075505 -0.054416 0.008579 0.077557 0.019299 0.008579 0.076851 0.028823 0.008579 0.075803 0.038347 0.008579 0.073662 0.04787 0.008579 0.085232 0.019299 0.008579 0.081999 0.028823 0.008579 0.078692 0.038347 0.008579 0.074221 0.04787 -0.004667 0.085232 0.019299 -0.004667 0.081999 0.028823 -0.004667 0.078692 0.038347 -0.004667 0.074221 0.04787 -0.004667 0.077557 0.019299 -0.004667 0.076851 0.028823 -0.004667 0.075803 0.038347 -0.004667 0.073662 0.04787</float_array>
+          <technique_common>
+            <accessor source="#axeShape-lib-Position-array" count="64" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="axeShape-lib-Normal" name="normal">
+          <float_array id="axeShape-lib-Normal-array" count="402">0.889926 0 0.456104 0.502014 0 0.86486 0.784584 0 0.620023 0.32479 0 0.945786 -0.045249 0 0.998976 -0.238067 0 0.971249 -0.578127 0 0.815947 -0.725366 0 0.688363 -0.927488 0 0.373853 -0.982374 -0.000000 0.186926 -0.982374 -0.000000 -0.186927 -0.927488 0 -0.373853 -0.725365 0 -0.688364 -0.578127 0 -0.815947 -0.238067 0 -0.971249 -0.045251 0 -0.998976 0.32479 0 -0.945786 0.502014 0 -0.864859 0.784586 0 -0.62002 0.889927 0 -0.456102 0.995246 0 -0.097391 0.995246 0.000000 0.097393 0 1 -0.000000 0 1 0.000000 0 1 0.000000 0 1 -0.000000 0 1 0.000000 0 1 0.000001 0 1 0.000000 0 1 -0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 0.000000 -0.000000 -1 0.000000 0 -1 0 -0.000000 -1 0.000000 0 -1 0 0 -1 0 0 -1 0.000000 0 -1 0.000001 0 -1 0.000000 0 -1 0 0 -1 -0.000000 -0.000000 -1 -0.000000 -0.000000 -1 0.000000 0.000002 0 -1 0 0 -1 0 0 -1 -0.000002 0 -1 0.997827 0 -0.065883 1 0 0.000000 0.997827 0 -0.065883 1 0 0.000000 -0.000000 0 1 -0.000000 0 1 -0.000000 0 1 0 0 1 -1 0 0 -1 0.000000 -0.000000 -0.997827 0.000000 -0.065883 -0.997827 0.000001 -0.065883 -0.000000 0.998288 -0.058494 -0.000000 0.997966 0.063741 -0.000000 0.998288 -0.058494 -0.000000 0.997966 0.063741 0.000000 -0.999993 0.003783 0 -0.999786 -0.020682 0 -0.999993 0.003782 -0.000000 -0.999786 -0.020682 -0.991319 0.000000 -0.131481 -0.991318 0 -0.131483 -0.99132 0 -0.131475 -0.991321 0 -0.131465 -0.989703 0 -0.143134 -0.987947 0 -0.154793 -0.986053 0 -0.16643 -0.986053 0 -0.166429 -0.000000 0.989888 -0.141849 -0.000000 0.986054 -0.166426 -0.000000 0.977324 -0.211751 0 0.972589 -0.23253 0 0.954564 -0.298007 0.000001 0.939603 -0.342267 0.000003 0.92263 -0.385687 0.000001 0.92263 -0.385687 0.991319 0 -0.131482 0.991318 0 -0.131483 0.991319 0 -0.131482 0.991319 0 -0.131481 0.989701 0 -0.143149 0.987946 0 -0.1548 0.986054 0.000000 -0.166428 0.986054 0 -0.166428 0 -0.999167 -0.040804 0 -0.999176 -0.040581 0 -0.999789 -0.020539 -0.000000 -1 -0.000706 -0.000000 -0.995431 0.095481 -0.000000 -0.985144 0.171732 -0.000000 -0.969136 0.246527 -0.000000 -0.969136 0.246527 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -0.000000 0.981286 0.192557 0 0.966215 0.257736 0 0.946175 0.323655 0 0.945429 0.325829 0.000000 0.932656 0.360768 0.000000 0.919481 0.393134 0.000000 0.905202 0.424982 0 0.905202 0.424982 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0.000000 0 -1 0.000000 0 -0.000000 -0.999812 -0.019407 -0.000000 -0.998908 -0.046713 -0.000000 -0.996313 -0.085792 -0.000000 -0.995225 -0.09761 0 -0.989247 -0.146254 0 -0.983124 -0.182942 -0.000000 -0.975651 -0.219327 -0.000000 -0.975651 -0.219327</float_array>
+          <technique_common>
+            <accessor source="#axeShape-lib-Normal-array" count="134" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>false</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="axeShape-lib-map1" name="map1">
+          <float_array id="axeShape-lib-map1-array" count="264">0.939211 0.176345 0.024249 0.017671 0.054497 0.017671 0.084744 0.017671 0.114991 0.017671 0.145239 0.017671 0.175486 0.017671 0.205733 0.017671 0.235981 0.017671 0.266228 0.017671 0.296475 0.017671 0.326723 0.017671 0.35697 0.017671 0.024249 0.991281 0.054497 0.991281 0.084744 0.991281 0.114991 0.991281 0.145239 0.991281 0.175486 0.991281 0.205733 0.991281 0.235981 0.991281 0.266228 0.991281 0.296475 0.991281 0.326723 0.991281 0.35697 0.991281 0.905533 0.220766 0.856188 0.133011 0.946529 0.118166 0.925166 0.0647 0.881902 0.032923 0.830475 0.032923 0.787211 0.0647 0.765847 0.118166 0.773166 0.176345 0.806844 0.220766 0.856188 0.237325 0.905533 0.220766 0.939211 0.176345 0.856189 0.133011 0.94653 0.118166 0.925166 0.0647 0.881902 0.032923 0.830475 0.032923 0.787211 0.0647 0.765848 0.118166 0.773166 0.176345 0.806844 0.220766 0.856189 0.237325 0.393884 0.870761 0.393884 0.870761 0.393884 0.883048 0.393884 0.883048 0.734042 0.658262 0.734015 0.725175 0.595526 0.731367 0.595555 0.659157 0.957783 0.929917 0.957783 0.929917 0.957783 0.823892 0.957783 0.823892 0.716673 0.269747 0.781187 0.235943 0.840435 0.362596 0.780652 0.39392 0.621768 0.823892 0.747768 0.823892 0.747768 0.929917 0.621768 0.929917 0.586506 0.384557 0.586506 0.257026 0.46824 0.257026 0.46824 0.384557 0.863613 0.422379 0.816298 0.44717 0.880202 0.485614 0.848562 0.502192 0.892301 0.551202 0.876854 0.559295 0.894126 0.622557 0.8896 0.624928 0.564797 0.918948 0.564797 0.834861 0.507826 0.907978 0.507826 0.845831 0.450855 0.897008 0.450855 0.856801 0.797204 0.665089 0.797183 0.718048 0.860369 0.668131 0.860355 0.703546 0.923535 0.666728 0.923528 0.684018 0.987046 0.647748 0.987044 0.652812 0.57427 0.199362 0.480476 0.199362 0.562033 0.141699 0.492712 0.141699 0.549797 0.084036 0.504948 0.084036 0.534226 0.026372 0.52052 0.026372 0.537823 0.720878 0.537845 0.665395 0.480125 0.697481 0.48014 0.660265 0.422427 0.673551 0.422436 0.652663 0.364733 0.641204 0.364735 0.637163 0.800272 0.823892 0.800272 0.929917 0.852776 0.823892 0.852776 0.929917 0.90528 0.823892 0.90528 0.929917 0.695251 0.215259 0.744822 0.189285 0.663676 0.166091 0.696925 0.14867 0.629892 0.118081 0.648554 0.108304 0.589054 0.073769 0.592665 0.071877 0.46824 0.437699 0.586506 0.437699 0.46824 0.490841 0.586506 0.490841 0.46824 0.543983 0.586506 0.543982 0.46824 0.597124 0.586506 0.597124</float_array>
+          <technique_common>
+            <accessor source="#axeShape-lib-map1-array" count="132" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="axeShape-lib-vertices">
+          <input semantic="POSITION" source="#axeShape-lib-Position" />
+        </vertices>
+        <triangles material="lambert3SG" count="120">
+          <input semantic="VERTEX" source="#axeShape-lib-vertices" offset="0" />
+          <input semantic="NORMAL" source="#axeShape-lib-Normal" offset="1" />
+          <input semantic="TEXCOORD" source="#axeShape-lib-map1" offset="2" set="0" />
+          <p>0 0 1 1 1 2 11 2 13 1 1 2 12 3 14 11 2 13 1 1 2 2 4 3 12 3 14 2 4 3 13 5 15 12 3 14 2 4 3 3 6 4 13 5 15 3 6 4 14 7 16 13 5 15 3 6 4 4 8 5 14 7 16 4 8 5 15 9 17 14 7 16 4 8 5 5 10 6 15 9 17 5 10 6 16 11 18 15 9 17 5 10 6 6 12 7 16 11 18 6 12 7 17 13 19 16 11 18 6 12 7 7 14 8 17 13 19 7 14 8 18 15 20 17 13 19 7 14 8 8 16 9 18 15 20 8 16 9 19 17 21 18 15 20 8 16 9 9 18 10 19 17 21 9 18 10 20 19 22 19 17 21 9 18 10 10 20 11 20 19 22 10 20 11 21 21 23 20 19 22 10 20 11 0 0 12 21 21 23 0 0 12 11 2 24 21 21 23 1 22 0 0 23 25 22 24 26 2 25 27 1 22 0 22 24 26 3 26 28 2 25 27 22 24 26 4 27 29 3 26 28 22 24 26 5 28 30 4 27 29 22 24 26 6 29 31 5 28 30 22 24 26 7 30 32 6 29 31 22 24 26 8 31 33 7 30 32 22 24 26 9 32 34 8 31 33 22 24 26 10 33 35 9 32 34 22 24 26 0 23 25 10 33 35 22 24 26 11 34 36 12 35 37 23 36 38 12 35 37 13 37 39 23 36 38 13 37 39 14 38 40 23 36 38 14 38 40 15 39 41 23 36 38 15 39 41 16 40 42 23 36 38 16 40 42 17 41 43 23 36 38 17 41 43 18 42 44 23 36 38 18 42 44 19 43 45 23 36 38 19 43 45 20 44 46 23 36 38 20 44 46 21 45 47 23 36 38 21 45 47 11 34 36 23 36 38 35 46 48 39 47 49 47 48 51 39 47 49 43 49 50 47 48 51 27 50 53 29 51 54 26 52 52 26 52 52 29 51 54 28 53 55 51 54 56 55 55 57 63 56 59 55 55 57 59 57 58 63 56 59 30 58 60 31 59 61 24 60 63 31 59 61 25 61 62 24 60 63 25 62 64 31 63 65 27 64 67 31 63 65 29 65 66 27 64 67 30 66 68 24 67 69 28 68 71 24 67 69 26 69 70 28 68 71 25 61 62 36 70 72 24 60 63 24 60 63 36 70 72 32 71 73 36 70 72 37 72 74 32 71 73 32 71 73 37 72 74 33 73 75 37 72 74 38 74 76 33 73 75 33 73 75 38 74 76 34 75 77 35 76 79 34 75 77 39 77 78 34 75 77 38 74 76 39 77 78 25 62 64 27 64 67 36 78 81 27 64 67 40 79 80 36 78 81 36 78 81 40 79 80 37 80 83 40 79 80 41 81 82 37 80 83 37 80 83 41 81 82 38 82 85 41 81 82 42 83 84 38 82 85 43 84 50 39 85 49 42 83 84 38 82 85 42 83 84 39 85 49 27 50 53 26 52 52 40 86 87 26 52 52 44 87 86 40 86 87 40 86 87 44 87 86 41 88 89 44 87 86 45 89 88 41 88 89 41 88 89 45 89 88 42 90 91 45 89 88 46 91 90 42 90 91 47 92 92 43 93 93 46 91 90 42 90 91 46 91 90 43 93 93 26 69 70 24 67 69 44 94 95 24 67 69 32 95 94 44 94 95 44 94 95 32 95 94 45 96 97 32 95 94 33 97 96 45 96 97 45 96 97 33 97 96 46 98 99 33 97 96 34 99 98 46 98 99 35 100 100 47 101 101 34 99 98 46 98 99 34 99 98 47 101 101 29 51 54 52 102 102 28 53 55 28 53 55 52 102 102 48 103 103 52 102 102 53 104 104 48 103 103 48 103 103 53 104 104 49 105 105 53 104 104 54 106 106 49 105 105 49 105 105 54 106 106 50 107 107 51 108 109 50 107 107 55 109 108 50 107 107 54 106 106 55 109 108 29 65 66 31 63 65 52 110 111 31 63 65 56 111 110 52 110 111 52 110 111 56 111 110 53 112 113 56 111 110 57 113 112 53 112 113 53 112 113 57 113 112 54 114 115 57 113 112 58 115 114 54 114 115 54 114 115 58 115 114 55 116 57 58 115 114 59 117 58 55 116 57 31 59 61 30 58 60 56 118 117 30 58 60 60 119 116 56 118 117 56 118 117 60 119 116 57 120 119 60 119 116 61 121 118 57 120 119 57 120 119 61 121 118 58 122 121 61 121 118 62 123 120 58 122 121 63 124 122 59 125 123 62 123 120 58 122 121 62 123 120 59 125 123 30 66 68 28 68 71 60 126 125 28 68 71 48 127 124 60 126 125 60 126 125 48 127 124 61 128 127 48 127 124 49 129 126 61 128 127 61 128 127 49 129 126 62 130 129 49 129 126 50 131 128 62 130 129 62 130 129 50 131 128 63 132 131 50 131 128 51 133 130 63 132 131</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="untitled">
+      <node id="group3" name="group3" type="NODE">
+        <translate sid="translate">-0.23515 -0.00269 0.011424</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <translate sid="scalePivotTranslation">0.23515 0.00269 -0.011424</translate>
+        <translate sid="scalePivot">-0.23515 -0.00269 0.011424</translate>
+        <translate sid="scalePivotInverse">0.23515 0.00269 -0.011424</translate>
+        <node id="axe" name="axe" type="NODE">
+          <translate sid="rotatePivot">-0.000586 0.047294 -0.001652</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <translate sid="rotatePivotInverse">0.000586 -0.047294 0.001652</translate>
+          <translate sid="scalePivot">-0.000586 0.047294 -0.001652</translate>
+          <translate sid="scalePivotInverse">0.000586 -0.047294 0.001652</translate>
+          <instance_geometry url="#axeShape-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert3SG" target="#lambert3">
+                  <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <node id="persp1" name="persp1" type="NODE">
+        <translate sid="translate">-1.45183 0.335358 5.24806</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 -15.8</rotate>
+        <rotate sid="rotateX">1 0 0 -1.53835</rotate>
+        <instance_camera url="#perspShape2-lib" />
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

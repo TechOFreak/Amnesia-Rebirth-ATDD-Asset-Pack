@@ -1,0 +1,133 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/ritual_prisoner/ritual_prisoner.dae">
+            <SubMesh ID="0" Name="polySurfaceShape1" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3160" Material="" Static="true" />
+            <SubMesh ID="1" Name="polySurface4" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="695" Material="" Static="true" />
+        </Mesh>
+        <Bones>
+            <Bone ID="2" Name="CenterRoot" />
+            <Bone ID="3" Name="CenterSpine" />
+            <Bone ID="4" Name="CenterHead" />
+            <Bone ID="5" Name="CenterHead_parentConstraint1" />
+            <Bone ID="6" Name="RightShoulder" />
+            <Bone ID="7" Name="RightElbow" />
+            <Bone ID="8" Name="RightHand" />
+            <Bone ID="9" Name="RightHand_RightThumb" />
+            <Bone ID="10" Name="RightHand_RightThumb_RightThumb" />
+            <Bone ID="11" Name="RightHand_RightIndexFinger" />
+            <Bone ID="12" Name="RightHand_RightIndexFinger_RightIndexFinger" />
+            <Bone ID="13" Name="RightHand_RightIndexFinger_RightIndexFinger_RightIndexFinger" />
+            <Bone ID="14" Name="RightHand_RightMiddleFinger" />
+            <Bone ID="15" Name="RightHand_RightMiddleFinger_RightMiddleFinger" />
+            <Bone ID="16" Name="RightHand_RightMiddleFinger_RightMiddleFinger_RightMiddleFinger" />
+            <Bone ID="17" Name="RightHand_RightRingFinger" />
+            <Bone ID="18" Name="RightHand_RightRingFinger_RightRingFinger" />
+            <Bone ID="19" Name="RightHand_RightRingFinger_RightRingFinger_RightRingFinger" />
+            <Bone ID="20" Name="RightHand_RightPinkyFinger" />
+            <Bone ID="21" Name="RightHand_RightPinkyFinger_RightPinkyFinger" />
+            <Bone ID="22" Name="RightHand_RightPinkyFinger_RightPinkyFinger_RightPinkyFinger" />
+            <Bone ID="23" Name="RightHand_orientConstraint1" />
+            <Bone ID="24" Name="CenterChest" />
+            <Bone ID="25" Name="CenterChest_parentConstraint1" />
+            <Bone ID="26" Name="CenterSpine_parentConstraint1" />
+            <Bone ID="27" Name="LeftShoulder" />
+            <Bone ID="28" Name="LeftElbow" />
+            <Bone ID="29" Name="LeftHand" />
+            <Bone ID="30" Name="LeftHand_LeftPinkyFinger" />
+            <Bone ID="31" Name="LeftHand_LeftPinkyFinger_LeftPinkyFinger" />
+            <Bone ID="32" Name="LeftHand_LeftPinkyFinger_LeftPinkyFinger_LeftPinkyFinger" />
+            <Bone ID="33" Name="LeftHand_LeftRingFinger" />
+            <Bone ID="34" Name="LeftHand_LeftRingFinger_LeftRingFinger" />
+            <Bone ID="35" Name="LeftHand_LeftRingFinger_LeftRingFinger_LeftRingFinger" />
+            <Bone ID="36" Name="LeftHand_LeftMiddleFinger" />
+            <Bone ID="37" Name="LeftHand_LeftMiddleFinger_LeftMiddleFinger" />
+            <Bone ID="38" Name="LeftHand_LeftMiddleFinger_LeftMiddleFinger_LeftMiddleFinger" />
+            <Bone ID="39" Name="LeftHand_LeftIndexFinger" />
+            <Bone ID="40" Name="LeftHand_LeftIndexFinger_LeftIndexFinger" />
+            <Bone ID="41" Name="LeftHand_LeftIndexFinger_LeftIndexFinger_LeftIndexFinger" />
+            <Bone ID="42" Name="LeftHand_LeftThumb" />
+            <Bone ID="43" Name="LeftHand_LeftThumb_LeftThumb" />
+            <Bone ID="44" Name="LeftHand_orientConstraint1" />
+            <Bone ID="45" Name="RightHip" />
+            <Bone ID="46" Name="RightKnee" />
+            <Bone ID="47" Name="RightFoot" />
+            <Bone ID="48" Name="LeftHip" />
+            <Bone ID="49" Name="LeftKnee" />
+            <Bone ID="50" Name="LeftFoot" />
+            <Bone ID="51" Name="CenterRoot_parentConstraint1" />
+            <Bone ID="52" Name="polySurface1" />
+            <Bone ID="53" Name="polySurface4" />
+            <Bone ID="54" Name="polySurfaceShape2" />
+        </Bones>
+        <Shapes />
+        <Bodies />
+        <Joints />
+        <Animations>
+            <Animation Name="Idle" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/ritual_prisoner/animations/idle.dae_anim" Layer="Default" Speed="1">
+                <Event Name="" Time="2.20213e-33" Direction="" Type="Message" DestSocket="" Value="" />
+            </Animation>
+            <Animation Name="squirm" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/ritual_prisoner/animations/squirm.dae_anim" Layer="Default" Speed="1">
+                <Event Name="" Time="2.20213e-33" Direction="" Type="Message" DestSocket="" Value="" />
+            </Animation>
+        </Animations>
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="1" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="100" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="4" />
+        <Var ObjectId="4294967295" Name="InteractOnlyWithMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="ScaryObject_BaseFearRate" Value="0.1" />
+        <Var ObjectId="4294967295" Name="ScaryObject_SurpriseFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="ScaryObject_LookAtFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationDelay" Value="0.2" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationLightLevel" Value="0.1" />
+        <Var ObjectId="4294967295" Name="ScaryObject_ActivationDistance" Value="3.5" />
+        <Var ObjectId="4294967295" Name="ScaryObject_DeactivationDistance" Value="3.5" />
+        <Var ObjectId="4294967295" Name="ScaryObject_InteractFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_BaseFearRate" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Threat_SurpriseFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_LookAtFactor" Value="-1.0" />
+        <Var ObjectId="4294967295" Name="Threat_ActivationDelay" Value="0.2" />
+        <Var ObjectId="4294967295" Name="Threat_ActivationLightLevel" Value="0.1" />
+        <Var ObjectId="4294967295" Name="Threat_MaxFearDistance" Value="2.0" />
+        <Var ObjectId="4294967295" Name="Threat_MinFearDistance" Value="6.0" />
+    </UserDefinedVariables>
+</Entity>

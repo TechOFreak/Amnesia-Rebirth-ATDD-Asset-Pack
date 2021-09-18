@@ -1,0 +1,17 @@
+<Material>
+    <Main BlendMode="Add" DepthTest="true" PhysicsMaterial="Default" Type="soliddiffuse" UseAlpha="false" />
+    <TextureUnits>
+        <Diffuse AnimFrameTime="0" AnimMode="None" Compress="true" File="E:/lux/redist/entities/container/vase02/vase02.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <NMap AnimFrameTime="0" AnimMode="None" Compress="true" File="E:/lux/redist/entities/container/vase02/vase02_nrm.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <Specular AnimFrameTime="0" AnimMode="None" Compress="true" File="E:/lux/redist/entities/container/vase02/vase02_spec.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <CubeMap AnimFrameTime="0" AnimMode="None" Compress="false" File="E:/lux/redist/textures/envmaps/water_castlebase_cubemap.dds" MipMaps="true" Type="Cube" Wrap="Repeat" />
+        <CubeMapAlpha AnimFrameTime="0" AnimMode="None" Compress="false" File="E:/lux/redist/entities/container/vase02/vase02.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+    </TextureUnits>
+    <SpecificVariables>
+        <Var Name="HeightMapScale" Value="0.10000000149011612" />
+        <Var Name="HeightMapBias" Value="0" />
+        <Var Name="FrenselBias" Value="0.20000000298023224" />
+        <Var Name="FrenselPow" Value="8" />
+        <Var Name="AlphaDissolveFilter" Value="false" />
+    </SpecificVariables>
+</Material>

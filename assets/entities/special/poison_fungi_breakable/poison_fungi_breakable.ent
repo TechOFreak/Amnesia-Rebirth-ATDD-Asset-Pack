@@ -1,0 +1,58 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/special/poison_fungi_breakable/poison_fungi_breakable.dae">
+            <SubMesh Active="true" ID="3" Material="" Name="fungi" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="520" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="12" Name="Shape_1" RelativeRotation="-0.150865 0 -0.58916" RelativeScale="0.39996 0.372047 0.39996" RelativeTranslation="0.0548749 0.137912 0" Rotation="-0.150865 0 -0.58916" Scale="0.39996 0.372047 0.39996" ShapeType="Box" Tag="" WorldPos="0.0660661 0.436734 0.0293906" />
+            <BodyShape Active="true" ID="13" Name="Shape_2" RelativeRotation="0 0 0" RelativeScale="0.210558 0.232646 0.210558" RelativeTranslation="-0.0548749 -0.137912 0" Rotation="0 0 0" Scale="0.210558 0.232646 0.210558" ShapeType="Box" Tag="" WorldPos="-0.0436838 0.16091 0.0293906" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="14" LinearDamping="0" Mass="0" Material="Organic Fresh" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_1" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.0111912 0.298822 0.0293906">
+                <Children>
+                    <Child ID="3" />
+                </Children>
+                <Shape ID="12" />
+                <Shape ID="13" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var Name="Health" Value="10" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="true" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="5" />
+        <Var Name="BreakEntity" Value="C:/Users/Skywolf/Desktop/FrictionalGames09-2008/frictionalSVN/lux/redist/entities/special/poison_fungi_breakable/poison_fungi_breakable_broken.ent" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="G:/amnesia/redist/particles/ps_poison_fungi_break.ps" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="MaxInteractDistance" Value="3" />
+    </UserDefinedVariables>
+</Entity>

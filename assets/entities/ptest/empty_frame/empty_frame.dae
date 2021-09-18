@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+      <authoring_tool>Blender v:248 - Illusoft Collada Exporter v:0.3.160</authoring_tool>
+      <source_data>file://C/penumbra/lux/redist/_temp/jens/painting_large01.blend</source_data>
+    </contributor>
+    <contributor>
+      <author>Marc</author>
+      <authoring_tool>Maya7.0 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=0;exportCameraAsLookat=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=0;exportPhysics=0;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=0</comments>
+      <source_data>file:///G:/amnesia/redist/entities/ornament/paintings/painting_large01/painting_large01.dae</source_data>
+    </contributor>
+    <created>2011-04-08T13:28:17Z</created>
+    <modified>2011-04-08T13:52:06Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_images>
+    <image id="painting_frame02_04_d_img" name="painting_frame02_04_d_img">
+      <init_from>file:///G:/amnesia/redist/entities/ornament/paintings/painting_large01/frame_large.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="painting_frame02_04_d_img-surface">
+          <surface type="2D">
+            <init_from>painting_frame02_04_d_img</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="painting_frame02_04_d_img-sampler">
+          <sampler2D>
+            <source>painting_frame02_04_d_img-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.4 0.4 0.4 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="painting_frame02_04_d_img-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>4</float>
+            </index_of_refraction>
+          </lambert>
+          <extra>
+            <technique profile="FCOLLADA" />
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="painting_frame0Shape4" name="painting_frame0Shape4">
+      <mesh>
+        <source id="painting_frame0Shape4-Position" name="position">
+          <float_array id="painting_frame0Shape4-Position-array" count="72">0.06555 -0.85 0.5 0.06555 0.85 0.5 0 0.85 0.5 0 -0.85 0.5 0 0.85 -0.5 0 -0.85 -0.5 0.06555 0.85 -0.5 0.06555 -0.85 -0.5 0.07711 -0.83843 -0.48843 0.07711 0.83843 -0.48843 0.07711 -0.83843 0.48843 0.07711 0.83843 0.48843 0.03492 0.80625 0.45623 0.03492 0.80625 -0.45623 0.03492 -0.80625 0.45623 0.03492 -0.80625 -0.45623 0.02469 0.7589 0.40907 0.02469 0.7589 -0.40907 0.02469 -0.7589 -0.40907 0.02469 -0.7589 0.40907 0.01447 -0.7589 -0.40907 0.01447 -0.7589 0.40907 0.01447 0.7589 0.40907 0.01447 0.7589 -0.40907</float_array>
+          <technique_common>
+            <accessor source="#painting_frame0Shape4-Position-array" count="24" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="painting_frame0Shape4-Normals" name="normal">
+          <float_array id="painting_frame0Shape4-Normals-array" count="264">-0.000000 0 1 -0.000001 0 1 -0.000000 0 1 -0.000000 0 1 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0.000000 0 -1 0.000000 0 -1 0.000000 0 -1 0.000001 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0.707412 0 -0.706801 0.707413 0 -0.7068 0.707412 0 -0.706801 0.707411 0 -0.706802 0.707412 -0.706802 0 0.707412 -0.706801 0 0.707412 -0.706802 0 0.707412 -0.706802 0 0.707412 0.706802 0 0.707412 0.706802 0 0.707412 0.706802 0 0.707412 0.706802 0 0.707413 0 0.7068 0.707412 0 0.706801 0.707413 0 0.7068 0.707413 0 0.7068 0.606464 -0.795111 0 0.606464 -0.795111 0 0.606464 -0.795111 0 0.606464 -0.795111 0 0.606701 0 -0.79493 0.606701 0 -0.79493 0.606701 0 -0.79493 0.606701 0 -0.79493 0.606464 0.795111 0 0.606464 0.795111 0 0.606464 0.795111 0 0.606464 0.795111 0 0.606701 0 0.79493 0.606701 0 0.79493 0.606701 0 0.79493 0.606701 0 0.79493 0.977448 -0.211178 0 0.977448 -0.211178 0 0.977448 -0.211178 0 0.977448 -0.211178 0 0.977272 0 0.211991 0.977272 0 0.211991 0.977272 0 0.211991 0.977272 0 0.211991 0.977448 0.211178 0 0.977448 0.211178 0 0.977448 0.211178 0 0.977448 0.211178 0 0.977272 0 -0.211991 0.977272 0 -0.211991 0.977272 0 -0.211991 0.977272 0 -0.211991 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0.000002 0 -1 0 0 -1 -0.000002 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 1 0.000002 0 1 0 0 1 -0.000002 0 1 1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#painting_frame0Shape4-Normals-array" count="88" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="painting_frame0Shape4-map1" name="map1">
+          <float_array id="painting_frame0Shape4-map1-array" count="188">0.732104 0.903148 0.708289 0.903148 0.708531 0.062227 0.732376 0.062247 0.732104 0.903148 0.708531 0.062227 -0.027065 -0.021904 0.627157 -0.021904 0.627157 1.01978 -0.027065 1.01978 -0.027065 -0.021904 0.627157 1.01978 0.70864 0.062227 0.732499 0.062247 0.732342 0.903148 0.70854 0.903148 0.70864 0.062227 0.732342 0.903148 0.822706 0.946601 0.806006 0.946639 0.805656 0.4582 0.822376 0.458162 0.665872 0.858097 0.661979 0.107298 0.822605 0.012457 0.822935 0.500896 0.806235 0.500935 0.805885 0.012496 0.662178 0.858097 0.665872 0.858097 0.702622 0.897424 0.702665 0.067951 0.70864 0.062227 0.70854 0.903148 0.702622 0.897424 0.70864 0.062227 0.665729 0.107298 0.661979 0.107298 0.802085 0.495302 0.801695 0.018147 0.766526 0.902326 0.766136 0.502724 0.801846 0.941006 0.801476 0.463852 0.665606 0.858077 0.661884 0.107279 0.661913 0.858077 0.665606 0.858077 0.708531 0.062227 0.708289 0.903148 0.702399 0.897424 0.702528 0.067951 0.708531 0.062227 0.702399 0.897424 0.787946 0.479619 0.665635 0.107299 0.661884 0.107279 0.788316 0.925316 0.766764 0.456622 0.766364 0.057019 0.683204 0.08386 0.702528 0.067951 0.702399 0.897424 0.683133 0.881495 0.683204 0.08386 0.702399 0.897424 0.788165 0.033934 0.683133 0.881495 0.665635 0.107299 0.788565 0.479612 0.665606 0.858077 0.683133 0.881495 0.683342 0.08388 0.702665 0.067951 0.702622 0.897424 0.683356 0.881515 0.683342 0.08388 0.702622 0.897424 0.768756 0.502705 0.683204 0.08386 0.665635 0.107299 0.769126 0.902307 0.769364 0.456622 0.768974 0.057 0.665729 0.107298 0.683342 0.08388 0.683356 0.881515 0.665872 0.858097 0.665729 0.107298 0.683356 0.881515 0.569494 0.033074 0.569494 0.97136 0.030463 0.971361 0.030463 0.033074</float_array>
+          <technique_common>
+            <accessor source="#painting_frame0Shape4-map1-array" count="94" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="painting_frame0Shape4-vertices">
+          <input semantic="POSITION" source="#painting_frame0Shape4-Position" />
+        </vertices>
+        <triangles material="painting_frame02__001SG" count="44">
+          <input semantic="VERTEX" source="#painting_frame0Shape4-vertices" offset="0" />
+          <input semantic="NORMAL" source="#painting_frame0Shape4-Normals" offset="1" />
+          <input semantic="TEXCOORD" source="#painting_frame0Shape4-map1" offset="2" set="0" />
+          <p>3 0 0 0 1 1 1 2 2 2 3 3 3 0 4 1 2 5 5 4 6 3 5 7 2 6 8 4 7 9 5 4 10 2 6 11 7 8 12 5 9 13 4 10 14 6 11 15 7 8 16 4 10 17 2 12 18 1 13 19 6 14 20 4 15 21 2 12 18 6 14 20 3 16 24 5 17 25 7 18 26 0 19 27 3 16 24 7 18 26 9 20 30 8 21 31 7 22 32 6 23 33 9 20 34 7 22 35 0 24 27 7 25 26 8 26 38 10 27 39 0 24 27 8 26 38 11 28 42 9 29 43 6 30 20 1 31 19 11 28 42 6 30 20 1 32 48 0 33 49 10 34 50 11 35 51 1 32 52 10 34 53 13 36 54 9 37 43 11 38 42 12 39 57 13 36 54 11 38 42 12 40 60 11 41 61 10 42 62 14 43 63 12 40 64 10 42 65 14 44 66 10 45 39 8 46 38 15 47 69 14 44 66 8 46 38 15 48 72 8 49 73 9 50 74 13 51 75 15 48 76 9 50 77 17 52 78 13 53 54 12 54 57 16 55 81 17 52 78 12 54 57 18 56 84 15 57 85 13 58 86 17 59 87 18 56 88 13 58 89 19 60 83 14 61 66 15 62 69 18 63 82 19 60 83 15 62 69 16 64 80 12 65 79 14 66 71 19 67 70 16 64 68 14 66 67 21 68 59 19 69 83 18 70 82 20 71 58 21 68 59 18 70 82 22 72 56 16 73 55 19 74 47 21 75 46 22 72 45 19 74 44 23 76 41 17 77 78 16 78 81 22 79 40 23 76 41 16 78 81 20 80 37 18 81 36 17 82 29 23 83 28 20 80 23 17 82 22 22 84 90 21 85 91 23 87 93 21 85 91 20 86 92 23 87 93</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="painting_large01">
+      <node id="painting_frame04" name="painting_frame04" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">3.99419 4 4</scale>
+        <instance_geometry url="#painting_frame0Shape4">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="painting_frame02__001SG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

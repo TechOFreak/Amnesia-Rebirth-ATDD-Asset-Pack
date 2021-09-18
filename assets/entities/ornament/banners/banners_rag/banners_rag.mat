@@ -1,0 +1,16 @@
+﻿<Material>
+    <Main BlendMode="Add" DepthTest="true" PhysicsMaterial="Default Soft" Type="soliddiffuse" UseAlpha="false" />
+    <TextureUnits>
+        <Diffuse AnimFrameTime="1" AnimMode="None" Compress="true" File="E:/lux/redist/entities/ornament/banners/banners_rag/banners_rag.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <NMap AnimFrameTime="0" AnimMode="None" Compress="true" File="E:/lux/redist/entities/ornament/banners/banners02/banners02_nrm.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <Alpha AnimFrameTime="1" AnimMode="None" Compress="true" File="E:/lux/redist/entities/ornament/banners/banners02/banners02_broken.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <Specular AnimFrameTime="0" AnimMode="None" Compress="true" File="E:/lux/redist/entities/ornament/banners/banners02/banners02_spec.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+    </TextureUnits>
+    <SpecificVariables>
+        <Var Name="HeightMapScale" Value="0.1" />
+        <Var Name="HeightMapBias" Value="0" />
+        <Var Name="FrenselBias" Value="0.2" />
+        <Var Name="FrenselPow" Value="8" />
+        <Var Name="AlphaDissolveFilter" Value="false" />
+    </SpecificVariables>
+</Material>

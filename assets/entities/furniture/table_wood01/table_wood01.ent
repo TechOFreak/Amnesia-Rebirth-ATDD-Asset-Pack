@@ -1,0 +1,40 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/furniture/table_wood01/table_wood01.dae">
+            <SubMesh ID="0" Name="table_wood01_mesh" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="608" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="1" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="1e-05 0.943753 -0.000108" Rotation="0 0 0" Scale="2.1 0.12 1.1" RelativeTranslation="0.0024475 0.434712 -0.0002045" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="3" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="1e-05 0.074329 -0.000108" Rotation="0 0 0" Scale="1.9 0.12 0.05" RelativeTranslation="0.0024475 -0.434712 -0.0002045" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="4" Name="Shape_3" CreStamp="0" ModStamp="0" WorldPos="0.942721 0.074329 -0.000108" Rotation="0 1.5708 0" Scale="0.8 0.12 0.05" RelativeTranslation="0.945158 -0.434712 -0.0002045" RelativeRotation="0 1.5708 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="5" Name="Shape_4" CreStamp="0" ModStamp="0" WorldPos="-0.921257 0.074329 -0.000108" Rotation="0 1.5708 0" Scale="0.8 0.12 0.05" RelativeTranslation="-0.91882 -0.434712 -0.0002045" RelativeRotation="0 1.5708 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="6" Name="Shape_5" CreStamp="0" ModStamp="0" WorldPos="0.942721 0.450039 0.444938" Rotation="0 1.57031 0" Scale="0.15 0.9 0.15" RelativeTranslation="0.945158 -0.059002 0.444842" RelativeRotation="0 1.57031 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="7" Name="Shape_6" CreStamp="0" ModStamp="0" WorldPos="0.942721 0.450039 -0.444745" Rotation="0 1.57031 0" Scale="0.15 0.9 0.15" RelativeTranslation="0.945158 -0.059002 -0.444842" RelativeRotation="0 1.57031 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="9" Name="Shape_7" CreStamp="0" ModStamp="0" WorldPos="-0.947596 0.450039 -0.444745" Rotation="0 1.57031 0" Scale="0.15 0.9 0.15" RelativeTranslation="-0.945158 -0.059002 -0.444842" RelativeRotation="0 1.57031 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="10" Name="Shape_8" CreStamp="0" ModStamp="0" WorldPos="-0.947596 0.450039 0.444938" Rotation="0 1.57031 0" Scale="0.15 0.9 0.15" RelativeTranslation="-0.945158 -0.059002 0.444842" RelativeRotation="0 1.57031 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="11" Name="Body" CreStamp="0" ModStamp="1617401142" WorldPos="-0.0024375 0.509041 9.64999e-05" Rotation="0 0 0" Scale="1 1 1" Material="Wood" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="false" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="1" />
+                <Shape ID="3" />
+                <Shape ID="4" />
+                <Shape ID="5" />
+                <Shape ID="6" />
+                <Shape ID="7" />
+                <Shape ID="9" />
+                <Shape ID="10" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

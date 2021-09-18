@@ -1,0 +1,1222 @@
+//----------------------------------------------------------------------
+
+////////////////////////////////
+// SAND LURKER                //
+////////////////////////////////
+
+//----------------------------------------------------------------------
+
+#include "agents/Agent_Humanoid.hps"
+#include "helpers/helper_modules.hps"
+#include "helpers/helper_player.hps"
+#include "helpers/helper_audio.hps"
+#include "custom/player/PlayerTypes_Custom.hps"
+#include "custom/helpers/helper_player_custom.hps"
+#include "helper_modules_custom.hps"
+#include "base/Base_Types.hps"
+
+//----------------------------------------------------------------------
+
+enum eSandLurkerState
+{
+	eSandLurkerState_Idle,
+	eSandLurkerState_Wander,
+	eSandLurkerState_Hunt,
+	eSandLurkerState_Attack,
+	eSandLurkerState_AfterAttack,
+	eSandLurkerState_Search,
+	eSandLurkerState_LastEnum,
+    eSandLurkerState_Attract,
+}
+
+//----------------------------------------------------------------------
+
+enum eSandLurkerBarkState
+{
+	eSandLurkerBarkState_Silent,
+	eSandLurkerBarkState_Idle,
+	eSandLurkerBarkState_LastEnum
+}
+
+//----------------------------------------------------------------------
+
+enum eSandLurkerSpeed
+{
+	eSandLurkerSpeed_Wander,
+	eSandLurkerSpeed_SlowHunt,
+	eSandLurkerSpeed_FastHunt,
+	eSandLurkerSpeed_LastEnum,
+}
+
+//----------------------------------------------------------------------
+
+enum eSandLurkerProximity
+{
+	eSandLurkerProximity_Awareness,
+	eSandLurkerProximity_HuntRange,
+	eSandLurkerProximity_AttackRange,
+	eSandLurkerProximity_LastEnum,
+}
+
+//----------------------------------------------------------------------
+
+// Move to instance vars once tweaking is finished.
+float gfHuntRange = 90.0f; //Range at which it should hunt
+float gfMinWanderPlayerDist = 35.0f; //Max distance at which the lurker should wander
+
+//Attraction materials (the body material types that the water lurker will be attracted to)
+array<tString> gmAttractionMaterials = { "organic*", "Organic*", "temp meat"};
+
+//Attraction variables
+float gfattractionDistance = 10.0f;
+int glEatDistractionTime = 10; //Number of seconds he should be distracted
+
+//Music
+tString gmHuntMusic = "att_guardian.ogg";
+
+//Sounds
+tString gsMoveSound = "impact/impact_water_med.snt";
+tString gsHuntSound = "water_lurker/water_lurker_hunt.snt";
+tString gsAttackSound = "water_lurker/water_lurker_attack.snt";
+tString gsEatSound = "water_lurker/water_lurker_eat.snt";
+
+//Particles
+tString gpRunSplash = "enemy/waterlurker_run_splash.ps";
+tString gpWalkSplash = "enemy/waterlurker_walk_splash.ps";
+tString gpEatSplash = "enemy/waterlurker_eat_splash.ps";
+
+//----------------------------------------------------------------------
+
+class cScrAgentSandLurker : cScrAgentHumanoid
+{
+	//===========================================================
+
+	//////////////////////////////////////////
+	//=======================================
+	// MAIN FUNCTIONS
+	//=======================================
+	//{///////////////////////////////////////
+	//===========================================================
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// INIT
+	//{///////////////////////////////////////
+		
+	//------------------------------------------------------------
+		
+	void Init()
+	{
+		mBaseObj.SetUpdatePlayerDetection(true);
+	}
+		
+	//} END INIT
+	
+	//------------------------------------------------------------
+		
+	/////////////////////////////////////////
+	// LOADING
+	//{////////////////////////////////////////
+		
+	//------------------------------------------------------------
+		
+	void SetupCharBody()
+	{
+		cScrAgentHumanoid::SetupCharBody();
+		iCharacterBody@ pCharBody = mBaseObj.GetCharBody();
+		
+		pCharBody.SetMass(80);
+		pCharBody.SetMaxPositiveMoveSpeed(eCharDir_Forward,1.0f);
+		pCharBody.SetMoveSpeedMul(eCharDir_Forward,1);
+		pCharBody.SetMoveAcc(eCharDir_Forward,4);
+		pCharBody.SetMoveDeacc(eCharDir_Forward,8);
+		pCharBody.SetMaxPushMass(20);
+		pCharBody.SetMaxPushForce(300);
+		pCharBody.SetAccurateClimbing(true);
+		pCharBody.SetMaxNoSlideSlopeAngle(cMath_ToRad(76) );
+		pCharBody.SetGroundAngleMin(cMath_ToRad(80.0f)); //angle between (0, 1, 0) and ground normal to be considered on the ground
+	}
+	
+	//------------------------------------------------------------
+	
+	void SetupAfterLoad(cWorld @apWorld, cResourceVarsObject@ apVars, cResourceVarsObject@ apInstanceVars)
+	{
+		cScrAgentHumanoid::SetupAfterLoad(apWorld, apVars, apInstanceVars);
+		
+		//////////////////////
+		// General Setup
+		mBaseObj.SetAlignEntityWithGroundRay(false);
+		mBaseObj.SetFOV(cMath_ToRad(170.0f));
+		mBaseObj.SetSightRange(90.0f);
+		mBaseObj.SetSightRangeMul(1);
+		mBaseObj.SetRelativeEyeHeight(0.8f);
+		
+		
+		//mBaseObj.GetMeshEntity().SetVisible(false);
+		
+		////////////
+		// Pathfinder Setup
+		mpPathfinder.SetNodeContainerName("SandLurker");
+		mpPathfinder.SetMaxHeight(4.0f); 
+		
+		msHomePosEntity = apInstanceVars.GetVarString("HomeEntity", "");
+		
+		msHuntArea = apInstanceVars.GetVarString("HuntArea", "");
+		mfMaxDistFromHome = apInstanceVars.GetVarFloat("MaxWanderDist", 125);
+		mfHuntDist = gfHuntRange;//apInstanceVars.GetVarFloat("HuntRange", 90);
+		mfMinWanderPlayerDist = gfMinWanderPlayerDist;//apInstanceVars.GetVarFloat("MinWanderPlayerDist", 90);
+		
+		SetupComponents(apWorld, apVars, apInstanceVars);
+		
+		mBaseObj.SetEffectsActive(false, false);
+	}
+	
+	//------------------------------------------------------------
+	
+	void SetupComponents(cWorld @apWorld, cResourceVarsObject@ apVars, cResourceVarsObject@ apInstanceVars)
+	{
+		////////////
+		// State Machine
+		@mpStateMachine = cLux_CreateEntityComponent_StateMachine(mBaseObj);
+		
+		mpStateMachine.AddState("Idle", eSandLurkerState_Idle);
+		mpStateMachine.AddState("Wander", eSandLurkerState_Wander);
+		mpStateMachine.AddState("Hunt", eSandLurkerState_Hunt);
+		mpStateMachine.AddState("Attack", eSandLurkerState_Attack);
+		mpStateMachine.AddState("AfterAttack", eSandLurkerState_AfterAttack);
+		mpStateMachine.AddState("Search", eSandLurkerState_Search);
+        mpStateMachine.AddState("Attract", eSandLurkerState_Attract);
+		if (apInstanceVars.GetVarString("StartState", "Idle")=="Idle")
+			mpStateMachine.ChangeState(eSandLurkerState_Idle);
+		
+		////////////
+		// Bark Machine
+		@mpBarkMachine = cLux_CreateEntityComponent_BarkMachine(mBaseObj);
+		mpBarkMachine.AddState(eSandLurkerBarkState_Silent);
+		mpBarkMachine.AddState(eSandLurkerBarkState_Idle);
+		mpBarkMachine.SetState_SoundBark(gsMoveSound, 5, 20, true);
+		
+		////////////
+		// Listener
+		@mpSoundListener = cLux_CreateEntityComponent_SoundListener(mBaseObj);
+		mpSoundListener.LoadFromInstanceVariables(apInstanceVars);
+		mpSoundListener.SetHearRadius(80.0f); //Distance at which sounds can be heard
+		mpSoundListener.SetSoundRadiusMul(1.0f);
+		mpSoundListener.SetIgnoreSoundRadius(3);
+		
+		////////////
+		// Light Sensor
+		@mpLightSensor = cLux_CreateEntityComponent_LightSensor(mBaseObj);
+		
+		///////////////////////////////
+		//Proximity Sensor
+		@mpProximitySensor = cLux_CreateEntityComponent_ProximitySensor(mBaseObj);
+		mpProximitySensor.AddState(eSandLurkerProximity_HuntRange, mfHuntDist, mfHuntDist+4.0f, false, false);
+		mpProximitySensor.AddState(eSandLurkerProximity_AttackRange, 1.5, 1.7, false, false);
+		////////////
+		// Mover Setup
+		mpMover.SetupWallAvoidance(0.9f, 5.0f, 4);
+		mpMover.SetWallAvoidanceActive(true);
+		mpMover.SetupDynamicObjectAvoidance(1.7f, 10, 3);
+		
+		mpMover.SetVerticalMoveSpeedExtraAnimMul(0.5f);
+		
+		mpMover.SetMaxForwardSpeed(1);
+		mpMover.SetMaxBackwardSpeed(1);
+		
+		mpMover.SetRunToWalkSpeed(1.9);
+		mpMover.SetWalkToRunSpeed(2.0);
+		
+		/////////////////////////////////
+		// Speed States
+		
+		mpMover.AddSpeedState(eSandLurkerSpeed_Wander);
+		mpMover.SetSpeedState_Forward(1);
+		
+        //Slow hunt speed
+		mpMover.AddSpeedState(eSandLurkerSpeed_SlowHunt);
+		mpMover.SetSpeedState_Forward(2);
+		mpMover.SetSpeedState_ForwardAcc(2);
+		mpMover.SetSpeedState_TurnMaxSpeed(2);
+		mpMover.SetSpeedState_TurnSpeedMul(2);
+		mpMover.SetSpeedState_TurnBreakMul(0.2);
+		
+        //Fast hunt speed
+		mpMover.AddSpeedState(eSandLurkerSpeed_FastHunt);
+		mpMover.SetSpeedState_Forward(4);
+		mpMover.SetSpeedState_ForwardAcc(2.4);
+		mpMover.SetSpeedState_TurnMaxSpeed(2);
+		mpMover.SetSpeedState_TurnSpeedMul(4);
+		mpMover.SetSpeedState_TurnBreakMul(0.2);
+		/////////////////////////////////
+		// Attack Damage
+		@mpAttackDamage = cLux_CreateEntityComponent_AttackDamage(mBaseObj);
+		
+		mpAttackDamage.AddType(0,"Default");
+			mpAttackDamage.SetType_Damage(0.45, 0.55);
+			mpAttackDamage.SetType_Affects(false, false, true);
+			mpAttackDamage.SetType_AddShapeFromCenter(cVector3f(0,1,0), 1.6);
+	}
+	
+	//------------------------------------------------------------
+	
+	void OnAfterWorldLoad()
+	{
+		cScrAgentHumanoid::OnAfterWorldLoad();
+		
+		if (msHomePosEntity == "") mvHomePos = mBaseObj.GetPosition();
+	}
+	
+	//------------------------------------------------------------
+	
+	//} END Loading
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// GENERAL
+	//{///////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	bool mbAmbPlaying = false;
+	
+	float mfDustTimer = 1;
+	bool mbMoveSoundPlaying = false;
+	
+	bool mbMoveEffectsOn = true;
+	float mfMoveEffectToggleTimer = -1;
+	
+	void OnUpdate(float afTimeStep)
+	{
+		cScrAgentHumanoid::OnUpdate(afTimeStep);
+		if(mBaseObj.IsActive()==false) return;
+		
+		if (msHomePosEntity != "") 
+		{
+			iLuxEntity@ pEntity = Map_GetEntity(msHomePosEntity);
+			if (pEntity is null)
+			{
+				Error("Unable to find home pos entity '"+msHomePosEntity+"' for SandLurker "+mBaseObj.GetName());
+			}
+			else
+			{
+				mvHomePos = pEntity.GetPosition();
+			}
+		}
+		
+		mBaseObj.SetEffectsActive(mbMoveEffectsOn, true);
+		UpdateMoveEffects(afTimeStep);
+		
+		if (mbAmbPlaying == false && cMath_Vector3Dist(mvHomePos, mBaseObj.GetPlayerPos()) < mfMaxDistFromHome)
+		{
+			mbAmbPlaying = true;
+			//Music_PlayExt("22_amb.ogg", true, 1, 0.2, 0.25, 8, eMusicPrio_AgentAmb, true);
+		}
+		else if (mbAmbPlaying && cMath_Vector3Dist(mvHomePos, mBaseObj.GetPlayerPos()) > mfMaxDistFromHome+10)
+		{
+			mbAmbPlaying = false;
+			//Music_Stop(4, eMusicPrio_AgentAmb);
+			//Map_AddTimer("Timer_ResumeMusic", 4, "Timer_ResumeMusic");
+		}
+	}
+	
+	void UpdateMoveEffects(float afTimeStep)
+	{
+        //cLux_AddDebugMessage("UpdateMoveEffect");
+		mbMoveEffectsOn = Entity_GetCollide("Player", msHuntArea);
+		
+		float fVelMagnitude = mBaseObj.GetCharBody().GetVelocity(afTimeStep).Length();
+		mfBulgeSize = cMath_IncreaseTo(mfBulgeSize, afTimeStep*0.5, (fVelMagnitude <= 0.05f || mbMoveEffectsOn==false) ? -0.5 : 0);
+		
+        /*
+		if (fVelMagnitude <= 0.05f || mbMoveEffectsOn==false)
+		{
+			if (mbMoveSoundPlaying) Sound_Stop("Movement", 0.5);
+			mbMoveSoundPlaying=false;
+			return;
+		}
+         */
+        
+		float fParticleFreq = mpMover.GetMoveSpeed()/3; // Particles per meter
+		float fSoundFreq = mpMover.GetMoveSpeed()/3; // Sounds per meter
+		mfDustTimer-= afTimeStep*fVelMagnitude*fParticleFreq;
+		if (mfDustTimer<=0 && !isEating && !gbTravelling)
+		{
+			mfDustTimer+=1;
+			
+			float fParticleRotation = cMath_Pi + mBaseObj.GetCharBody().GetYaw();
+			
+			cParticleSystem@ pPS = mBaseObj.CreateParticleSystem("SandMonsterDust", gpRunSplash, true, false);
+			pPS.SetMatrix(cMath_MatrixRotateY(fParticleRotation));
+			pPS.SetPosition(mBaseObj.GetCharBody().GetFeetPosition()+cVector3f_Up*0.25);
+			cParticleSystem@ pPS2 = mBaseObj.CreateParticleSystem("SandMonsterDust", gpRunSplash, true, false);
+			pPS2.SetMatrix(cMath_MatrixRotateY(fParticleRotation));
+			pPS2.SetPosition(mBaseObj.GetCharBody().GetFeetPosition()+cVector3f_Up*0.25);
+            
+            if(mbMoveSoundPlaying){
+                mbMoveSoundPlaying = false;	
+            }else{
+                mbMoveSoundPlaying = true;		
+                cSoundEntity@ pSound = mBaseObj.PlaySound("Movement", gsMoveSound, true, true);
+                pSound.FadeIn(2.0f);
+            }
+            
+		}
+        /*
+		if (mbMoveSoundPlaying==false)
+		{
+			mbMoveSoundPlaying = true;		
+			cSoundEntity@ pSound = mBaseObj.PlaySound("Movement", gsMoveSound, true, true);
+			pSound.FadeIn(2.0f);
+		}
+        */
+	}
+	
+	
+	//////////////////////////////////////////////////////////////
+	// NOTE: This is all a hack to make the mesh align with the 
+	// sand. It should probably be implemented in C++ code, but 
+	// no time this sprint
+	array<cVector3f> mvGroundNormals;
+	cVector3f mvMeshMtxMul = cVector3f_Zero;
+	cVector3f mvPrevUp = cVector3f_Up;
+	void OnPostUpdate(float afTimeStep)
+	{
+		cMatrixf mtxMeshOrientation = mBaseObj.GetMeshEntity().GetLocalMatrix();
+		cMatrixf mtxMeshTranspose = mtxMeshOrientation.GetTranspose();
+		
+		if (mvMeshMtxMul == cVector3f_Zero)
+		{
+			mvMeshMtxMul = cVector3f(mtxMeshTranspose.GetRight().Length(),
+									 mtxMeshTranspose.GetUp().Length(),
+									 mtxMeshTranspose.GetForward().Length());
+		}
+		
+		mvGroundNormals.push_back(mBaseObj.GetCharBody().GetLastGroundNormal());
+		if (mvGroundNormals.length() > 6) mvGroundNormals.pop_front();
+		
+		cVector3f vGroundNrm = 0;
+		for (int i = 0; i < mvGroundNormals.length(); i++)
+		{
+			vGroundNrm += mvGroundNormals[i];
+		}
+		vGroundNrm /= mvGroundNormals.length();
+		
+		cVector3f vCurrentUp = mvPrevUp;
+		cVector3f vTargetUp = vGroundNrm;
+		float fT = afTimeStep*5.0f;
+
+		// This keeps the up vector from popping to its new position, since vGroundNrm can change suddenly when moving over uneven terrain.
+		cVector3f vUp = cVector3f(cMath_InterpolateLinear(vCurrentUp.x, vTargetUp.x, fT),
+								  cMath_InterpolateLinear(vCurrentUp.y, vTargetUp.y, fT),
+								  cMath_InterpolateLinear(vCurrentUp.z, vTargetUp.z, fT));
+		vUp = cMath_Vector3Normalize(vUp)*mvMeshMtxMul.y;
+		
+		cVector3f vRight = mtxMeshTranspose.GetRight();
+		cVector3f vForward = cMath_Vector3Normalize(cMath_Vector3Cross(vRight, vUp)) * mvMeshMtxMul.z; 
+		vRight = cMath_Vector3Normalize(cMath_Vector3Cross(vUp, vForward)) * mvMeshMtxMul.x;
+		
+		cMatrixf mtxTargetOrientation = cMath_MatrixUnitVectors(vRight, vUp, vForward, mtxMeshOrientation.GetTranslation()+cVector3f_Up*mfBulgeSize);
+		
+		mBaseObj.GetMeshEntity().SetMatrix(mtxTargetOrientation);
+		mvPrevUp = vUp;
+	}
+	
+	//------------------------------------------------------------
+	
+	void ResetProperties()
+	{
+		cScrAgentHumanoid::ResetProperties();
+	}
+	
+	//------------------------------------------------------------
+	
+	void OnSetActive(bool abX)
+	{
+		cScrAgentHumanoid::OnSetActive(abX);
+	}
+	
+	//------------------------------------------------------------
+	
+	//} END GENERAL
+	
+	//}END MAIN FUNCTIONS
+
+	//===========================================================
+	
+	//------------------------------------------------------------
+	
+	/////////////////////////////////////////
+	// HELPERS
+	//{//////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	bool HandleSoundHeard(int alPrio, cVector3f avNewGoal)
+	{
+		if (cMath_Vector3Dist(mvHomePos, mBaseObj.GetPlayerPos()) > mfMaxDistFromHome){	// Only care if player is in the hunting zone
+            cLux_AddDebugMessage("Player not in hunting zone");
+			return false;
+        }
+		// Sound from player feet, check if hunt should commence
+		if (cMath_Vector3Dist(avNewGoal, mBaseObj.GetPlayerFeetPos()) < 1)
+		{
+            cLux_AddDebugMessage("Hunt Area: " + msHuntArea);
+            if (Entity_GetCollide("Player", msHuntArea)) cLux_AddDebugMessage("Player in area");
+            if (FearHandler_GetIsPermaFailing()) return false;
+            
+			if (Entity_GetCollide("Player", msHuntArea) &&														// Is player dead?
+				cMath_Vector3Dist(mvHomePos, mBaseObj.GetPlayerPos()) < (mfMaxDistFromHome+10) && // Player distance to home pos
+				mpProximitySensor.GetPlayerInsideState(eSandLurkerProximity_HuntRange))		// Player distance to monster
+			{
+                cLux_AddDebugMessage("Player in hunting zone");
+				float fMinHuntDist = 35;
+				float fMaxHuntDist = 50;
+				
+				//cAINode@ pNode = mpPathfinder.GetNodeAtPos(mBaseObj.GetPlayerPos(), fMinHuntDist, fMaxHuntDist, false, false, false,  null);
+				//mBaseObj.GetCharBody().SetFeetPosition(pNode.GetPosition(), false);
+				
+				mpStateMachine.ChangeState(eSandLurkerState_Hunt);
+			}
+			return false;
+		}
+			
+        mpStateMachine.ChangeState(eSandLurkerState_Wander);
+        /* Old Sand Lurker Code. The water lurker does not follow sound.
+		int currentState = mpStateMachine.GetCurrentState();
+		
+		if(Map_TimeHasPassed(mBaseObj.GetName()+"_DoNoticeSound", 3)) mBaseObj.PlaySound("NoticeVocal", gsHuntSound, true, true);
+		
+		mvSearchPos = avNewGoal;
+		mpStateMachine.ChangeState(eSandLurkerState_Search);
+		mpMover.SetSpeedState(eSandLurkerSpeed_SlowHunt);
+        */
+		return true;
+	}
+	
+	//------------------------------------------------------------
+	
+	//} END HELPERS
+	
+	//------------------------------------------------------------
+		
+	/////////////////////////////////////////
+	// DEBUG
+	//{///////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+/*	void OnRenderSolid(cRendererCallbackFunctions@ apFunctions)
+	{
+	}*/
+	
+	//} END DEBUG
+	
+	//------------------------------------------------------------
+
+	/////////////////////////////////////////
+	// GLOBAL FUNCS
+	//{//////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	void _Global_Wander()
+	{
+		mpStateMachine.ChangeState(eSandLurkerState_Wander);
+	}
+	
+	void _Global_ForceIdle()
+	{
+		mpStateMachine.ChangeState(eSandLurkerState_Idle);
+	}
+	
+	//------------------------------------------------------------
+	
+	//} END GLOBAL
+	
+	//===========================================================
+	
+	/////////////////////////////////////////
+	//=======================================
+	// STATES
+	//=======================================
+	//{//////////////////////////////////////
+	
+	//===========================================================
+	
+	//------------------------------------------------------------
+	
+	///////////////////////////////////
+	// STATE: DEFAULT
+	//{////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	bool State_Default_Message(int alMessageId) 
+	{
+		if (alMessageId==eLuxEntityMessage_PlayerDead)
+		{
+			mpStateMachine.ChangeState(eSandLurkerState_Wander);
+		}
+		return false; 
+	}
+	
+	//}END STATE: DEFAULT
+	
+	//------------------------------------------------------------
+	
+	///////////////////////////////////
+	// STATE: IDLE
+	//{////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	void State_Idle_Enter()
+	{
+        cLux_AddDebugMessage("Enter Idle");
+		mbMoveEffectsOn = false;
+		mpBarkMachine.ChangeState(eSandLurkerBarkState_Silent);
+		mpPathfinder.Stop();
+        mpStateMachine.ChangeState(eSandLurkerState_Wander);
+	}
+	
+	
+	bool State_Idle_Message(int alMessageId) 
+	{
+		return true;
+	}
+	
+	//}END STATE: IDLE
+	
+	//------------------------------------------------------------
+	
+	///////////////////////////////////
+	// STATE: WANDER
+	//{////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	tString msHomePosEntity;
+	cVector3f mvHomePos;
+	float mfMinWanderPlayerDist;
+	
+	//------------------------------------------------------------
+	
+	void State_Wander_Enter() 
+	{
+        cLux_AddDebugMessage("Wander Enter");
+		mpMover.SetSpeedState(eSandLurkerSpeed_Wander);
+		mpStateMachine.AddTimer("ProximityCheck", 1);
+		
+		cAINode@ pNode = GetWanderNode();
+		if (pNode != null) mpPathfinder.MoveTo(pNode.GetPosition(), 1, true);
+		else mpStateMachine.AddTimer("MoveToNewPos", cMath_RandRectf(0.5, 2.5));
+		
+		mbMoveEffectsOn = false;
+		//mpStateMachine.AddTimer("MovementEffectToggle", cMath_RandRectf(1, 2));
+		mpStateMachine.AddTimer("MovementSign", cMath_RandRectf(10, 15));
+		
+		mpBarkMachine.ChangeState(eSandLurkerBarkState_Idle);
+	}
+	
+	//------------------------------------------------------------
+	
+	bool State_Wander_Message(int alMessageId) 
+	{ 
+		if(alMessageId == eLuxEntityMessage_EndOfPath)
+		{
+			float fMinStay = 0.5;
+			float fMaxStay = 2.5;
+			mpStateMachine.AddTimer("MoveToNewPos", cMath_RandRectf(fMinStay, fMaxStay));
+			return true;
+		}
+		if(alMessageId == eLuxEntityMessage_SoundHeard)
+		{
+			int lPrio = mpStateMachine.GetCurrentMessageData().mlX;
+			cVector3f vNewGoal = mpStateMachine.GetCurrentMessageData().mvX;
+			HandleSoundHeard(lPrio, vNewGoal);
+			return true;
+		}
+		return false;
+	}
+	
+	//------------------------------------------------------------
+	
+	void State_Wander_TimerUp(uint64 alId) 
+	{
+        if(AttractionNearby()){
+            mpStateMachine.ChangeState(eSandLurkerState_Attract);
+            return;
+        }
+        
+		if (alId == H64("MoveToNewPos"))
+		{			
+			cAINode@ pNode = GetWanderNode();
+			if (pNode != null) mpPathfinder.MoveTo(pNode.GetPosition(), 1, true);
+			else mpStateMachine.AddTimer("MoveToNewPos", cMath_RandRectf(0.5, 2.5));
+		}
+		
+		if (alId == H64("MovementSign"))
+		{	
+			if (mBaseObj.GetDistanceToPlayer()>40)
+			{
+				cParticleSystem@ pPS;
+				if (cMath_RandRectl(1, 2) == 1) @pPS = mBaseObj.CreateParticleSystem("SandMonsterDust", gpWalkSplash, true, false);
+				else							@pPS = mBaseObj.CreateParticleSystem("SandMonsterDust", gpWalkSplash, true, false);
+				pPS.SetPosition(mBaseObj.GetCharBody().GetFeetPosition()+cVector3f_Up*0.25);
+				
+				mpStateMachine.AddTimer("MovementSign", cMath_RandRectf(10, 15));
+			}
+			else
+			{
+				mpStateMachine.AddTimer("MovementSign", 5);
+			}
+			
+		}
+		
+		if (alId == H64("MovementEffectToggle"))
+		{
+			mbMoveEffectsOn=!mbMoveEffectsOn;
+			
+			float fToggleMin = mbMoveEffectsOn ? 1 : 3;
+			float fToggleMax = mbMoveEffectsOn ? 3 : 8;
+			mpStateMachine.AddTimer("MovementEffectToggle", cMath_RandRectf(fToggleMin, fToggleMax));
+		}
+		
+		if (alId == H64("ProximityCheck"))
+		{
+			//cLux_AddDebugMessage("Dist: "+cMath_Vector3Dist(mvHomePos, mBaseObj.GetPlayerPos()));
+			//cLux_AddDebugMessage("Max Dist: "+(mfMaxDistFromHome+10));
+			if (Player_GetHealth() > 0 &&														// Is player dead?
+				cMath_Vector3Dist(mvHomePos, mBaseObj.GetPlayerPos()) < (mfMaxDistFromHome+10) && // Player distance to home pos
+				Entity_GetCollide("Player", msHuntArea))										// Player on sand
+			{
+				Music_PlayExt(gmHuntMusic, true, 0.6, 0.4, 4, 0, eMusicPrio_AgentHunt, true);
+				mpStateMachine.AddTimer("HuntDelay", 3);
+				mpStateMachine.AddTimer("ProximityCheck", 1);
+				
+			}
+			else
+			{
+				Music_Stop(8, eMusicPrio_AgentHunt);
+				mpStateMachine.StopTimer("HuntDelay");
+				mpStateMachine.AddTimer("ProximityCheck", 1);
+			}
+		}
+		
+		if (alId == H64("HuntDelay"))
+		{
+			float fMinHuntDist = 35;
+			float fMaxHuntDist = 50;
+			
+			cAINode@ pNode = mpPathfinder.GetNodeAtPos(mBaseObj.GetPlayerPos(), fMinHuntDist, fMaxHuntDist, false, false, false,  null);
+			mBaseObj.GetCharBody().SetFeetPosition(pNode.GetPosition(),false);
+	
+			mpStateMachine.ChangeState(eSandLurkerState_Hunt);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	cAINode@ GetWanderNode()
+	{
+		cVector3f vCenter=mvHomePos;
+		float fMaxDist=mfMaxDistFromHome;
+		float fMinDist=0;
+		
+		// Player is in the lurker's hunting grounds, pick a position relatively near the player
+		if (cMath_Vector3Dist(mvHomePos, mBaseObj.GetPlayerPos()) < mfMaxDistFromHome)
+		{
+			vCenter=mBaseObj.GetPlayerPos();
+			fMaxDist=mfHuntDist+10;
+			fMinDist=cMath_Min(mfMinWanderPlayerDist, mfHuntDist-10.0f);
+		}
+		return mpPathfinder.GetNodeAtPos(vCenter, fMinDist, fMaxDist, false, false, true,  null);
+	}
+	
+	//------------------------------------------------------------
+	//}END STATE: WANDER
+	
+	//------------------------------------------------------------
+	
+	///////////////////////////////////
+	// STATE: HUNT
+	//{////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	bool mbSpeedUp = false;
+    tString closestEntity;
+	
+	//------------------------------------------------------------
+	
+	void State_Hunt_Enter() 
+	{
+        cLux_AddDebugMessage("Enter Hunt");
+		if(Map_TimeHasPassed(mBaseObj.GetName()+"_DoNoticeSound", 3)) mBaseObj.PlaySound("NoticeVocal", gsHuntSound, true, true);
+		
+		mpMover.SetSpeedState(eSandLurkerSpeed_FastHunt);
+		mpStateMachine.AddTimer("ProximityCheck", 1);
+		mpStateMachine.AddTimer("Pursuit",0.5f);
+		
+		mbMoveEffectsOn = true;
+		
+		mpBarkMachine.ChangeState(eSandLurkerBarkState_Silent);
+			
+		//Music_PlayExt("A2_Proto_SandMonsterAttack.ogg", true, 1, 1, 6, 0, eMusicPrio_AgentHunt, true);
+		Music_PlayExt(gmHuntMusic, true, 0.6, 0.4, 4, 0, eMusicPrio_AgentHunt, true);
+		Sound_Fade("DarkWorldLoop", 0.2, 4);
+		float fTimeToSpeedUp = 17;
+		mpStateMachine.AddTimer("SpeedUp", fTimeToSpeedUp);
+	}
+	
+	void State_Hunt_Leave()
+	{
+		Music_Stop(8, eMusicPrio_AgentHunt);
+		mbSpeedUp = false;
+		Sound_Fade("DarkWorldLoop", 1, 8);
+	}
+		
+	bool State_Hunt_Message(int alMessageId) 
+	{ 
+		if(alMessageId == eLuxEntityMessage_EndOfPath)
+		{
+			//mpPathfinder.MoveTo(mBaseObj.GetPlayerFeetPos(),1,false,"",false);
+            mpPathfinder.MoveTo(mvHomePos,1,false,"",false);
+		}
+		
+		if(alMessageId == eLuxEntityMessage_EnterProximity)
+		{
+			int lProximityState = mpStateMachine.GetCurrentMessageData().mlX;
+			if (lProximityState <= eSandLurkerProximity_AttackRange && Entity_GetCollide("Player", msHuntArea))
+			{
+				cLux_AddDebugMessage("[MistLurker] Do attack");
+				mpStateMachine.ChangeState(eSandLurkerState_Attack);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	void State_Hunt_TimerUp(uint64 alId) 
+	{
+        if(AttractionNearby()){
+            mpStateMachine.ChangeState(eSandLurkerState_Attract);
+            return;
+        }
+		if (alId == H64("ProximityCheck"))
+		{
+			//First check if player has run out of the hunt range
+			if (cMath_Vector3Dist(mvHomePos, mBaseObj.GetPlayerPos()) > (mfMaxDistFromHome+20.0f))
+			{
+				mpStateMachine.ChangeState(eSandLurkerState_Wander);
+				return;
+			}
+			
+			if (mbSpeedUp == false)
+			{
+				if (mBaseObj.GetPlayerMovementTowardEntity() < 0.5 &&
+					cMath_Vector3Dist(mBaseObj.GetPosition(), mBaseObj.GetPlayerPos()) < 20)
+				{
+					mpMover.SetSpeedState(eSandLurkerSpeed_SlowHunt);
+				}
+				else
+				{
+					mpMover.SetSpeedState(eSandLurkerSpeed_FastHunt);
+				}
+			}
+			
+			bool bPlayerEscaped = mpProximitySensor.GetPlayerInsideState(eSandLurkerProximity_HuntRange)==false ||
+								  Entity_GetCollide("Player", msHuntArea)==false;
+			
+			// Check so player isn't just jumping
+			if (bPlayerEscaped) bPlayerEscaped=cLux_GetPlayer().GetCharacterBody().IsOnGround();
+			
+			if (bPlayerEscaped)
+			{
+				mvSearchPos = mBaseObj.GetLastKnownPlayerPos();
+				mpStateMachine.ChangeState(eSandLurkerState_Search);
+			}
+			else
+			{
+				mBaseObj.RevealPlayerPos();
+				mpStateMachine.AddTimer("ProximityCheck", 1);
+			}
+		}
+		
+		//////////////////////
+		// Update destionation 
+		if(alId == H64("Pursuit"))
+		{				
+			mpPathfinder.MoveTo(mBaseObj.GetPlayerFeetPos(),1,false,"",false);
+			mpStateMachine.AddTimer("Pursuit",1.0f);
+		}
+		
+		if(alId == H64("SpeedUp"))
+		{
+			mbSpeedUp = true;
+			mpMover.SetSpeedState(eSandLurkerSpeed_FastHunt);
+		}
+	}
+	
+	//------------------------------------------------------------
+	//}END STATE: HUNT
+	
+	//------------------------------------------------------------
+	
+	///////////////////////////////////
+	// STATE: ATTACK
+	//{////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	void State_Attack_Enter() 
+	{			
+        cLux_AddDebugMessage("Attack Enter");
+		mpStateMachine.AddTimer("EndAttack",1.0f);
+		
+		cLux_AddDebugMessage("[SandLurker] Attack start");
+		cSoundEntity@ pAttackSound = mBaseObj.PlaySound("AttackSound", gsAttackSound, true, false);
+		pAttackSound.SetVolume(0.45);
+		mBaseObj.PlaySound("AttackVocal", gsAttackSound, true, true);
+		cParticleSystem@ pPS = mBaseObj.CreateParticleSystem("SandMonsterDust", gpRunSplash, true, false);
+		
+		pPS.SetPosition(mBaseObj.GetPosition() + cMath_Vector3Normalize(mBaseObj.GetPlayerFeetPos() - mBaseObj.GetCharBody().GetFeetPosition())*2.0f);
+		
+		mpAttackDamage.Start(0, 2);
+		
+		mpBarkMachine.ChangeState(eSandLurkerBarkState_Silent);
+	}
+	
+	//------------------------------------------------------------
+	
+	void State_Attack_Leave() 
+	{
+	}
+	
+	//------------------------------------------------------------
+	
+	void State_Attack_Update(float afTimeStep) 
+	{
+		mpMover.TurnToPos(mBaseObj.GetPlayerFeetPos());
+		mpMover.MoveToPos(mBaseObj.GetPlayerFeetPos(),false);
+	}
+	
+	void State_Attack_TimerUp(uint64 alId) 
+	{
+		if(alId == H64("EndAttack"))
+		{
+			cLux_AddDebugMessage("[SandLurker] Attack end");
+			
+			mpStateMachine.ChangeState(eSandLurkerState_AfterAttack);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	//}END STATE: ATTACK
+	
+	//------------------------------------------------------------
+	
+	///////////////////////////////////
+	// STATE: AFTER ATTACK
+	//{////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	void State_AfterAttack_Enter() 
+	{			
+		mpStateMachine.AddTimer("Resume", 2);
+		mpPathfinder.Stop();
+	}
+	
+	void State_AfterAttack_TimerUp(uint64 alId) 
+	{
+		if (alId == H64("Resume"))
+		{
+			if (mpProximitySensor.GetPlayerInsideState(eSandLurkerProximity_AttackRange) && Entity_GetCollide("Player", msHuntArea))
+				mpStateMachine.ChangeState(eSandLurkerState_Attack);
+			else
+				mpStateMachine.ChangeState(eSandLurkerState_Hunt);
+		}
+	}
+	
+	//------------------------------------------------------------
+	
+	//}END STATE: AFTER ATTACK
+	
+	//------------------------------------------------------------
+	
+	///////////////////////////////////
+	// STATE: SEARCH
+	//{////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	int mlSearchPosCount = 0;
+	cVector3f mvSearchPos;
+	
+	//------------------------------------------------------------
+	
+	void State_Search_Enter() 
+	{		
+        cLux_AddDebugMessage("Search Enter");
+		mpMover.SetSpeedState(eSandLurkerSpeed_SlowHunt);
+		
+		GoToNewSearchNode(true);
+		
+		mpStateMachine.AddTimer("ProximityCheck", 1);
+		
+		mlSearchPosCount = cMath_RandRectl(2, 3);
+		
+		//mbMoveEffectsOn = true;
+		
+		mpBarkMachine.ChangeState(eSandLurkerBarkState_Idle);
+	}
+	
+	//------------------------------------------------------------
+	
+	bool State_Search_Message(int alMessageId) 
+	{ 
+		if(alMessageId == eLuxEntityMessage_EndOfPath)
+		{
+			mpMover.SetSpeedState(eSandLurkerSpeed_Wander);
+			mpStateMachine.AddTimer("MoveToNewPos", cMath_RandRectf(0.5, 2.5));
+			return true;
+		}
+		if(alMessageId == eLuxEntityMessage_SoundHeard)
+		{		
+			int lPrio = mpStateMachine.GetCurrentMessageData().mlX;
+			cVector3f vNewGoal = mpStateMachine.GetCurrentMessageData().mvX;
+			if (HandleSoundHeard(lPrio, vNewGoal))
+			{
+				mpStateMachine.StopTimer("MoveToNewPos");
+				GoToNewSearchNode(true);
+				mlSearchPosCount = cMath_RandRectl(3, 5);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	//------------------------------------------------------------
+	
+	void State_Search_TimerUp(uint64 alId) 
+	{
+		if (alId == H64("ProximityCheck"))
+		{
+			if (mpProximitySensor.GetPlayerInsideState(eSandLurkerProximity_HuntRange) && Entity_GetCollide("Player", msHuntArea))
+			{
+				float fMinHuntDist = 35;
+				float fMaxHuntDist = 50;
+				
+				cAINode@ pNode = mpPathfinder.GetNodeAtPos(mBaseObj.GetPlayerPos(), fMinHuntDist, fMaxHuntDist, false, false, false,  null);
+				mBaseObj.GetCharBody().SetFeetPosition(pNode.GetPosition(),false);
+				
+				mpStateMachine.ChangeState(eSandLurkerState_Hunt);
+			}
+			else
+			{
+				mpStateMachine.AddTimer("ProximityCheck", 1);
+			}
+		}
+		
+		if (alId == H64("MoveToNewPos"))
+		{
+			mlSearchPosCount--;
+			
+			// Select another node to search at
+			if (mlSearchPosCount > 0)
+			{
+				GoToNewSearchNode(false);
+			}
+			
+			// Give up and return to wander behavior
+			else
+			{
+				mpStateMachine.ChangeState(eSandLurkerState_Wander);
+			}
+		}
+	}
+	
+	//------------------------------------------------------------
+    
+    	///////////////////////////////////
+	// STATE: Attract
+	//{////////////////////////////////
+    
+    int eatTime = 0;
+    bool isEating = false;
+    int stuckThreshold = 10;
+    int stuckCounter = 0;
+    bool gbTravelling = false;
+    cVector3f gvMovingTo;
+    
+    void State_Attract_Enter(){
+        cLux_AddDebugMessage("Lurker being attracted...");
+        cLux_AddDebugMessage("Enter attract state");
+        //Get updated entity data
+        iLuxEntity@ attractedEntity = Map_GetEntity(closestEntity);
+        gvMovingTo = attractedEntity.GetPosition();
+        mpPathfinder.MoveTo(gvMovingTo,1,false,"",false);
+        mpStateMachine.AddTimer("travelling", 1.0);
+    }
+    
+    void State_Attract_Leave(){
+        cLux_AddDebugMessage("Leave attract state");
+        
+    }
+    
+    void State_Attract_TimerUp(uint64 alId){
+        if (alId == H64("travelling")){
+            gbTravelling = true;
+            if(mBaseObj.GetDistanceToPos(gvMovingTo) < 2){
+                cLux_AddDebugMessage("Reached attraction...");
+                gbTravelling = false;
+                stuckCounter = 0;
+                //Set lurkers x and z position to same as attraction
+                cVector3f updatedEntityPos = Map_GetEntity(closestEntity).GetPosition();
+                mBaseObj.SetPosition(cVector3f(updatedEntityPos.x, mBaseObj.GetPosition().y, updatedEntityPos.z));
+                //Destroy attraction start eating
+                Entity_Destroy(closestEntity);
+                eatTime = glEatDistractionTime;
+                isEating = true;
+                cParticleSystem@ pPS = mBaseObj.CreateParticleSystem("SandMonsterDust", gpRunSplash, true, false);
+                pPS.SetPosition(mBaseObj.GetCharBody().GetFeetPosition()+cVector3f_Up*0.25);
+                cSoundEntity@ pSound = mBaseObj.PlaySound("Movement", gsMoveSound, true, true);
+                pSound.FadeIn(2.0f);
+                mpStateMachine.AddTimer("eating", 0.1);
+            }else{
+                //Check if attraction still in water
+                if(!Entity_GetCollide(closestEntity, msHuntArea)){
+                    cLux_AddDebugMessage("Attraction left hunt area");
+                    mpStateMachine.ChangeState(eSandLurkerState_Wander);
+                }else{
+                    cLux_AddDebugMessage("Travelling...");
+                    if(stuckCounter < stuckThreshold) stuckCounter += 1;
+                    else{
+                        cLux_AddDebugMessage("Lurker stuck... teleporting...");
+                        mBaseObj.SetPosition(cVector3f(gvMovingTo.x, mBaseObj.GetPosition().y, gvMovingTo.z));
+                        stuckCounter = 0;
+                    }
+                    cParticleSystem@ pPS = mBaseObj.CreateParticleSystem("SandMonsterDust", gpWalkSplash, true, false);
+                    pPS.SetPosition(mBaseObj.GetCharBody().GetFeetPosition()+cVector3f_Up*0.25);
+                    cSoundEntity@ pSound = mBaseObj.PlaySound("Movement", gsMoveSound, true, true);
+                    pSound.FadeIn(2.0f);
+                    mpStateMachine.AddTimer("travelling", 1.0);
+                }
+            }
+        }
+        if (alId == H64("eating")){
+            //Play and manage eating effects
+            if(eatTime > 0){
+                cLux_AddDebugMessage("Eating...");
+                cParticleSystem@ pPS = mBaseObj.CreateParticleSystem("SandMonsterDust", gpEatSplash, true, false);
+                pPS.SetPosition(mBaseObj.GetCharBody().GetFeetPosition()+cVector3f_Up*0.25);
+                cSoundEntity@ pSound = mBaseObj.PlaySound("Movement", gsEatSound, true, true);
+                pSound.FadeIn(2.0f);
+                eatTime -= 1;
+                mpStateMachine.AddTimer("eating", 1.0);
+            }else{
+                isEating = false;
+                mpStateMachine.ChangeState(eSandLurkerState_Wander);
+            }
+        }
+    }
+    
+    //////////////////////////////////////////////
+	
+	void GoToNewSearchNode(bool abGetClosest)
+	{
+		cAINode@ pNode = mpPathfinder.GetNodeAtPos(mvSearchPos, 0, 7.5,  abGetClosest,  false, true,  null);
+		if (pNode != null) mpPathfinder.MoveTo(pNode.GetPosition(), 1, true);
+		else mpStateMachine.AddTimer("MoveToNewPos", 0.5);
+	}
+    
+    bool AttractedToEntity(tString asEntity){
+        if(Map_GetEntity(asEntity).GetMainBody() == null) return false;
+        for(int i = 0; i < gmAttractionMaterials.length(); i++){
+            tString sMat1 = gmAttractionMaterials[i];
+            tString asEntityMaterial = Map_GetEntity(asEntity).GetMainBody().GetMaterial().GetName();
+            if(cString_GetLastChar(sMat1) == "*"){
+                sMat1 = cString_Sub(sMat1,0,sMat1.length()-1);
+                if(cString_Sub(asEntityMaterial,0,sMat1.length()) == sMat1) return true;
+            }else if(asEntityMaterial == sMat1) return true;
+        }
+        return false;
+    }
+    
+    bool AttractionNearby(){
+        array<iLuxEntity@> vEntities;
+        Map_GetEntityArray("*", vEntities, eLuxEntityType_Prop);
+        for (int i=0; i<vEntities.length(); ++i){
+            closestEntity = vEntities[i].GetName();
+            if(AttractedToEntity(closestEntity) && 
+            Entity_GetCollide(closestEntity, msHuntArea) && 
+            mBaseObj.GetDistanceToPos(vEntities[i].GetPosition()) < gfattractionDistance &&
+            !Player_IsInteracting()){
+                return true;
+            }
+        }
+        /* Old detection code
+        float i = -1.0f;
+        float j = -1.0f;
+        float angleShift = 0.25f; //When looking for meat interval should be used to look around (90*angleShift = degrees of shift)
+        while(i <= 1.0f){
+            while(j <= 1.0f){
+                cVector3f currentPos = mBaseObj.GetPosition();
+                cLux_GetClosestEntity(currentPos, cVector3f(i,0,j), gfattractionDistance, 0, false, closestData);
+                if (closestData.mpEntity != null){
+                    if(AttractedToEntity(closestData.mpEntity) && Entity_GetCollide(closestData.mpEntity.GetName(), msHuntArea)){
+                        j = 1.0f;
+                        i = 1.0f;
+                        return true;
+                    }
+                }
+                j += angleShift;
+            }
+            j = -1.0f;
+            i += angleShift;
+        }
+        */
+        return false;
+    }
+	
+	//------------------------------------------------------------
+	
+	//}END STATE: SEARCH
+		
+	//===========================================================
+	//}END STATES
+	
+	//------------------------------------------------------------
+	/////////////////////////////////////////
+	// PROPERTIES
+	//{//////////////////////////////////////
+	
+	//------------------------------------------------------------
+	
+	cLuxStateMachine@ mpStateMachine;
+	cLuxSoundListener@ mpSoundListener;
+	cLuxBarkMachine@ mpBarkMachine;
+	cLuxHeadTracker@ mpHeadTracker;
+	cLuxLightSensor@ mpLightSensor;
+	cLuxProximitySensor@ mpProximitySensor;
+	cLuxAttackDamage@ mpAttackDamage;
+	
+	float mfMaxDistFromHome = 0;
+	float mfHuntDist = 0;
+	tString msHuntArea = "";
+	
+	float mfBulgeSize = 0.0f;
+	
+	//------------------------------------------------------------
+	
+	//} END PROPERTIES
+	
+	//------------------------------------------------------------
+	
+	
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.92.0 commit date:2021-02-24, commit time:16:25, hash:02948a2cab44</authoring_tool>
+    </contributor>
+    <created>2021-04-13T15:44:55</created>
+    <modified>2021-04-13T15:44:55</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="potatoes_mat-effect">
+      <profile_COMMON>
+        <newparam sid="potato_sack_dds-surface">
+          <surface type="2D">
+            <init_from>potato_sack_dds</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="potato_sack_dds-sampler">
+          <sampler2D>
+            <source>potato_sack_dds-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="potato_sack_dds-sampler" texcoord="potato_largeShape-map1"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color sid="alpha">0 0 0 0</color>
+            </transparent>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="potato_sack_dds" name="potato_sack_dds">
+      <init_from>/D:/SteamGames/steamapps/common/Amnesia%20Rebirth/mods/thewake/assets/entities/ptest/potato_sack/potato_sack.dds</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="potatoes_mat-material" name="potatoes_mat">
+      <instance_effect url="#potatoes_mat-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="potato_largeShape_002-mesh" name="potato_largeShape.002">
+      <mesh>
+        <source id="potato_largeShape_002-mesh-positions">
+          <float_array id="potato_largeShape_002-mesh-positions-array" count="84">-0.04277294 0.03087139 -0.02905243 -0.03070694 0.02891439 0.03485649 -6.10054e-4 0.04359537 0.0314424 -0.00127995 0.04634046 -0.02730333 -0.02461493 -0.03423845 0.03485649 -0.03668105 -0.03542846 -0.02905243 -0.00127995 -0.04634046 -0.02730333 -6.10054e-4 -0.04436248 0.0314424 0.05275094 -3.83501e-4 0.02651154 0.03793996 -0.03545737 0.02802944 0.03961795 -0.03664737 -0.02590429 0.05352205 0 -0.02590429 -0.04236406 -3.83501e-4 0.03485649 -0.05352205 0 -0.02905243 0.04109507 0.02891439 0.02802944 0.04277306 0.03087139 -0.02590429 0.004381954 -0.03968149 0.06287252 -0.03617101 -0.02025437 0.0613994 0.02914297 -0.01338636 0.06869441 0.004381954 0.01866638 0.06724053 -0.0316199 0.008898496 0.06358242 -9.29952e-4 -0.04428446 -0.06546729 0.02865993 -0.01425749 -0.0671333 -0.03570091 -0.02359735 -0.06873542 -0.03163504 0.007399499 -0.07363229 -9.29952e-4 0.01775425 -0.07526719 -0.001979053 -0.0212664 -0.0845884 -0.01446396 -0.01827436 0.0845884</float_array>
+          <technique_common>
+            <accessor source="#potato_largeShape_002-mesh-positions-array" count="28" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="potato_largeShape_002-mesh-normals">
+          <float_array id="potato_largeShape_002-mesh-normals-array" count="84">-0.6988389 0.6956343 -0.1664847 -0.6370567 0.7070066 0.3070837 -0.01141405 0.9755681 -0.2194006 -0.03790432 0.9528587 0.3010377 -0.6698122 -0.7422655 -0.01983767 -0.04062122 -0.9991725 -0.002105832 -0.6135584 -0.7798576 0.123969 -0.08759003 -0.9916596 0.0945484 0.657137 -0.7286432 0.1930027 0.6768596 -0.717664 -0.1637671 0.967739 0.00839281 0.2518154 0.967788 0.01074266 -0.2515376 -0.9852362 -0.008972465 0.1709659 -0.9965025 -0.02227878 -0.08053928 0.6725817 0.6724902 0.3088541 0.6882168 0.6736589 -0.2693354 -0.8236957 -0.425597 0.3746901 0.0973559 -0.8644228 0.4932495 0.6504576 -0.1116395 0.7512934 0.1426476 0.6305916 0.7628931 -0.6522428 0.4618896 0.6010302 0.06314486 -0.8754218 -0.4792175 0.7037685 -0.1238156 -0.6995568 -0.6948713 -0.4251997 -0.5799648 -0.5646387 0.3671479 -0.739179 0.1367246 0.5924936 -0.7938877 0.09442704 -0.2538909 -0.9626126 -0.222151 -0.2248672 0.9487275</float_array>
+          <technique_common>
+            <accessor source="#potato_largeShape_002-mesh-normals-array" count="28" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="potato_largeShape_002-mesh-map">
+          <float_array id="potato_largeShape_002-mesh-map-array" count="312">0.116647 0.845866 0.113229 0.909946 0.07955998 0.846996 0.07955998 0.846996 0.113229 0.909946 0.08183199 0.904439 0.174322 0.838541 0.207844 0.838769 0.1821399 0.907376 0.1821399 0.907376 0.207844 0.838769 0.207734 0.902207 0.2467769 0.896073 0.2478719 0.842329 0.285417 0.898235 0.285417 0.898235 0.2478719 0.842329 0.286882 0.83876 0.1821399 0.907376 0.143832 0.909416 0.174322 0.838541 0.174322 0.838541 0.143832 0.909416 0.141453 0.842705 0.141453 0.842705 0.143832 0.909416 0.116647 0.845866 0.116647 0.845866 0.143832 0.909416 0.113229 0.909946 0.04027295 0.902069 0.01041495 0.907632 0.03819596 0.848183 0.03819596 0.848183 0.01041495 0.907632 0.008667945 0.841404 0.03819596 0.848183 0.07955998 0.846996 0.04027295 0.902069 0.04027295 0.902069 0.07955998 0.846996 0.08183199 0.904439 0.207734 0.902207 0.207844 0.838769 0.2467769 0.896073 0.2467769 0.896073 0.207844 0.838769 0.2478719 0.842329 0.1630949 0.938312 0.1821399 0.907376 0.213045 0.935395 0.213045 0.935395 0.1821399 0.907376 0.207734 0.902207 0.251915 0.942925 0.213045 0.935395 0.2467769 0.896073 0.2467769 0.896073 0.213045 0.935395 0.207734 0.902207 0.04027295 0.902069 0.03716397 0.962257 0.01041495 0.907632 0.08183199 0.904439 0.08116 0.94778 0.04027295 0.902069 0.04027295 0.902069 0.08116 0.94778 0.03716397 0.962257 0.08183199 0.904439 0.113229 0.909946 0.08116 0.94778 0.08116 0.94778 0.113229 0.909946 0.126603 0.942338 0.1630949 0.938312 0.126603 0.942338 0.143832 0.909416 0.143832 0.909416 0.126603 0.942338 0.113229 0.909946 0.143832 0.909416 0.1821399 0.907376 0.1630949 0.938312 0.207844 0.838769 0.205759 0.798211 0.2478719 0.842329 0.2478719 0.842329 0.205759 0.798211 0.251436 0.794396 0.1593 0.794646 0.205759 0.798211 0.174322 0.838541 0.174322 0.838541 0.205759 0.798211 0.207844 0.838769 0.174322 0.838541 0.141453 0.842705 0.1593 0.794646 0.116647 0.845866 0.123215 0.799042 0.141453 0.842705 0.141453 0.842705 0.123215 0.799042 0.1593 0.794646 0.123215 0.799042 0.116647 0.845866 0.086555 0.789766 0.086555 0.789766 0.116647 0.845866 0.07955998 0.846996 0.03592598 0.784799 0.086555 0.789766 0.03819596 0.848183 0.03819596 0.848183 0.086555 0.789766 0.07955998 0.846996 0.008667945 0.841404 0.03592598 0.784799 0.03819596 0.848183 0.2478719 0.842329 0.251436 0.794396 0.286882 0.83876 0.251436 0.794396 0.205759 0.798211 0.221687 0.770679 0.205759 0.798211 0.1593 0.794646 0.190915 0.769489 0.1593 0.794646 0.123215 0.799042 0.1271589 0.758494 0.123215 0.799042 0.086555 0.789766 0.1271589 0.758494 0.086555 0.789766 0.03592598 0.784799 0.06059199 0.75502 0.1630949 0.938312 0.213045 0.935395 0.186537 0.963218 0.213045 0.935395 0.251915 0.942925 0.213335 0.972982 0.03716397 0.962257 0.08116 0.94778 0.07378399 0.995474 0.08116 0.94778 0.126603 0.942338 0.115984 0.982284 0.126603 0.942338 0.1630949 0.938312 0.156062 0.971713 0.285417 0.898235 0.251915 0.942925 0.2467769 0.896073</float_array>
+          <technique_common>
+            <accessor source="#potato_largeShape_002-mesh-map-array" count="156" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="potato_largeShape_002-mesh-vertices">
+          <input semantic="POSITION" source="#potato_largeShape_002-mesh-positions"/>
+        </vertices>
+        <triangles material="potatoes_mat-material" count="52">
+          <input semantic="VERTEX" source="#potato_largeShape_002-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#potato_largeShape_002-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#potato_largeShape_002-mesh-map" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 3 2 2 3 2 3 1 1 4 2 3 5 5 4 6 6 5 7 4 6 8 4 6 9 6 5 10 7 7 11 9 8 12 10 9 13 8 10 14 8 10 15 10 9 16 11 11 17 4 6 18 12 12 19 5 4 20 5 4 21 12 12 22 13 13 23 13 13 24 12 12 25 0 0 26 0 0 27 12 12 28 1 1 29 14 14 30 8 10 31 15 15 32 15 15 33 8 10 34 11 11 35 15 15 36 3 2 37 14 14 38 14 14 39 3 2 40 2 3 41 7 7 42 6 5 43 9 8 44 9 8 45 6 5 46 10 9 47 17 16 48 4 6 49 16 17 50 16 17 51 4 6 52 7 7 53 18 18 54 16 17 55 9 8 56 9 8 57 16 17 58 7 7 59 14 14 60 18 18 61 8 10 62 2 3 63 19 19 64 14 14 65 14 14 66 19 19 67 18 18 68 2 3 69 1 1 70 19 19 71 19 19 72 1 1 73 20 20 74 17 16 75 20 20 76 12 12 77 12 12 78 20 20 79 1 1 80 12 12 81 4 6 82 17 16 83 6 5 84 21 21 85 10 9 86 10 9 87 21 21 88 22 22 89 23 23 90 21 21 91 5 4 92 5 4 93 21 21 94 6 5 95 5 4 96 13 13 97 23 23 98 0 0 99 24 24 100 13 13 101 13 13 102 24 24 103 23 23 104 24 24 105 0 0 106 25 25 107 25 25 108 0 0 109 3 2 110 22 22 111 25 25 112 15 15 113 15 15 114 25 25 115 3 2 116 11 11 117 22 22 118 15 15 119 10 9 120 22 22 121 11 11 122 22 22 123 21 21 124 26 26 125 21 21 126 23 23 127 26 26 128 23 23 129 24 24 130 26 26 131 24 24 132 25 25 133 26 26 134 25 25 135 22 22 136 26 26 137 17 16 138 16 17 139 27 27 140 16 17 141 18 18 142 27 27 143 18 18 144 19 19 145 27 27 146 19 19 147 20 20 148 27 27 149 20 20 150 17 16 151 27 27 152 8 10 153 18 18 154 9 8 155</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="potato_large_001" name="potato_large.001" type="NODE">
+        <matrix sid="transform">0 0 1 0 0 1 0 0 -1 0 0 0 0 0 0 1</matrix>
+        <instance_geometry url="#potato_largeShape_002-mesh" name="potato_large.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="potatoes_mat-material" target="#potatoes_mat-material">
+                <bind_vertex_input semantic="potato_largeShape-map1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

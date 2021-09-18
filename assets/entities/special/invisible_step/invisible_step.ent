@@ -1,0 +1,22 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/ration/rotten_apple/rotten_apple.dae">
+            <SubMesh Active="true" GroupID="0" ID="2" Name="rotten_apple_mesh" Rotation="0.000000 0.000000 0.000000" Scale="0.500000 0.500000 0.500000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 -0.106754 0.000000" TriCount="128" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="0" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="2.000000 0.300000 0.300000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="2.000000 0.300000 0.300000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.000282 0.000000 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="false" ContinuousCollision="false" GroupID="0" HasGravity="false" ID="1" LinearDamping="0.000000" Mass="0.000000" Material="Silent" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="false" Volatile="false" WorldPos="-0.000282 0.000000 0.000000">
+                <Shape ID="0" />
+                <Children>
+                    <Child ID="2" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

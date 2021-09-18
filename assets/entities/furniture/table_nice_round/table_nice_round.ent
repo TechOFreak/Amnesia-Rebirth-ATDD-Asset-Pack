@@ -1,0 +1,35 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/penumbra/lux/redist/entities/furniture/table_nice_round/table_nice_round.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="table_nice_round_mesh" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="5" WorldPos="0.000000 0.000000 0.000000" TriCount="662" />
+        </Mesh>
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="BodyShape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.600000 0.075000 0.600000" RelativeTranslation="0.000000 0.514848 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.600000 0.075000 0.600000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="-0.001079 1.066490 -0.001129" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="BodyShape_1_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.100000 0.800000 0.100000" RelativeTranslation="0.000000 0.072265 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.100000 0.800000 0.100000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="-0.001079 0.623908 -0.001129" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="BodyShape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.130000 0.100000 0.267626" RelativeTranslation="0.001375 -0.502348 0.462788" Rotation="0.000000 0.000000 0.000000" Scale="0.130000 0.100000 0.267626" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="0.000296 0.049295 0.461659" />
+            <BodyShape Active="true" GroupID="0" ID="4" Name="BodyShape_2_clone_1" RelativeRotation="0.000000 1.047198 0.000000" RelativeScale="0.130000 0.100000 0.267626" RelativeTranslation="-0.394468 -0.502348 -0.224432" Rotation="0.000000 1.047198 0.000000" Scale="0.130000 0.100000 0.267626" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="-0.395547 0.049295 -0.225561" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="BodyShape_2_clone_1_clone_1" RelativeRotation="0.000000 -1.047198 0.000000" RelativeScale="0.130000 0.100000 0.267626" RelativeTranslation="0.395073 -0.502348 -0.225185" Rotation="0.000000 -1.047198 0.000000" Scale="0.130000 0.100000 0.267626" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="0.393994 0.049295 -0.226314" />
+            <BodyShape Active="true" GroupID="0" ID="6" Name="BodyShape_2_clone_1_clone_1_clone_1" RelativeRotation="-0.785398 -1.047198 0.000000" RelativeScale="0.130000 0.100000 0.450000" RelativeTranslation="0.185928 -0.328232 -0.107635" Rotation="-0.785398 -1.047198 0.000000" Scale="0.130000 0.100000 0.450000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="0.184849 0.223411 -0.108764" />
+            <BodyShape Active="true" GroupID="0" ID="7" Name="BodyShape_2_clone_1_clone_1_clone_1_clone_1" RelativeRotation="-0.785398 3.141593 0.000000" RelativeScale="0.130000 0.100000 0.450000" RelativeTranslation="0.000256 -0.328232 0.214752" Rotation="-0.785398 3.141593 0.000000" Scale="0.130000 0.100000 0.450000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="-0.000823 0.223411 0.213623" />
+            <BodyShape Active="true" GroupID="0" ID="8" Name="BodyShape_2_clone_1_clone_1_clone_1_clone_1_clone_1" RelativeRotation="-0.785398 1.047198 0.000000" RelativeScale="0.130000 0.100000 0.450000" RelativeTranslation="-0.174547 -0.328232 -0.098959" Rotation="-0.785398 1.047198 0.000000" Scale="0.130000 0.100000 0.450000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="-0.175626 0.223411 -0.100088" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="false" GroupID="0" ID="9" LinearDamping="0.000000" Mass="0.000000" Material="Wood" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" Volatile="false" WorldPos="-0.001079 0.551643 -0.001129">
+                <Shape ID="4" />
+                <Shape ID="8" />
+                <Shape ID="6" />
+                <Shape ID="5" />
+                <Shape ID="7" />
+                <Shape ID="3" />
+                <Shape ID="2" />
+                <Shape ID="1" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

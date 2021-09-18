@@ -1,0 +1,23 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/Skolarbeten och diverse projekt/3d/projekt/Frictional Games/SVN/redist/entities/ornament/paintings/painting02/painting02.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="painting_frame02" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="5" WorldPos="0.000000 0.000000 0.046022" TriCount="58" />
+            <SubMesh Active="true" GroupID="0" ID="1" Name="painting_image02" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="1" Tag="" Type="5" WorldPos="0.000000 0.000000 0.046022" TriCount="2" />
+        </Mesh>
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="2" Name="BodyShape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.799997 2.400000 0.080000" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.799997 2.400000 0.080000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="0.000000 0.000000 0.038769" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="3" LinearDamping="0.000000" Mass="0.000000" Material="Default Hard" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" Volatile="false" WorldPos="0.000000 0.000000 0.038769">
+                <Shape ID="2" />
+                <Children>
+                    <Child ID="0" />
+                    <Child ID="1" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

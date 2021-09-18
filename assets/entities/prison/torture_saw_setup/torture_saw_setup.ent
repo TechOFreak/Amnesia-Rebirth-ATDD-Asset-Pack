@@ -1,0 +1,38 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/prison/torture_saw_setup/torture_saw_setup.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="base" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="-1.569670 -0.018548 -0.003302" TriCount="534" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.160000 2.780000 0.110000" RelativeTranslation="-1.593176 -0.000612 -0.001787" Rotation="0.000000 0.000000 0.000000" Scale="0.160000 2.780000 0.110000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-1.569000 1.400000 -0.003000" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.160000 0.046000 1.480000" RelativeTranslation="-1.593176 -1.377612 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.160000 0.046000 1.480000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-1.569000 0.023000 -0.001213" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.160000 2.780000 0.110000" RelativeTranslation="1.593176 -0.000612 -0.001787" Rotation="0.000000 0.000000 0.000000" Scale="0.160000 2.780000 0.110000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="1.617351 1.400000 -0.003000" />
+            <BodyShape Active="true" GroupID="0" ID="4" Name="Shape_4" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.160000 0.046000 1.480000" RelativeTranslation="1.593176 -1.377612 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.160000 0.046000 1.480000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="1.617351 0.023000 -0.001213" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="Shape_5" RelativeRotation="0.000000 0.000000 1.570796" RelativeScale="0.160000 3.030000 0.110000" RelativeTranslation="0.001822 1.320612 -0.001787" Rotation="0.000000 0.000000 1.570796" Scale="0.160000 3.030000 0.110000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.025998 2.721224 -0.003000" />
+            <BodyShape Active="true" GroupID="0" ID="6" Name="Shape_6" RelativeRotation="1.570796 0.000000 0.785398" RelativeScale="0.130000 0.030000 0.780000" RelativeTranslation="1.321183 1.065790 0.064407" Rotation="1.570796 0.000000 0.785398" Scale="0.130000 0.030000 0.780000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="1.345358 2.466402 0.063194" />
+            <BodyShape Active="true" GroupID="0" ID="7" Name="Shape_7" RelativeRotation="1.570796 0.000000 0.785398" RelativeScale="0.130000 0.030000 0.780000" RelativeTranslation="1.321183 1.065790 -0.069462" Rotation="1.570796 0.000000 0.785398" Scale="0.130000 0.030000 0.780000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="1.345358 2.466402 -0.070675" />
+            <BodyShape Active="true" GroupID="0" ID="8" Name="Shape_8" RelativeRotation="-1.570796 0.000000 -0.785398" RelativeScale="0.130000 0.030000 0.780000" RelativeTranslation="-1.332945 1.065790 -0.069462" Rotation="-1.570796 0.000000 -0.785398" Scale="0.130000 0.030000 0.780000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-1.308769 2.466402 -0.070675" />
+            <BodyShape Active="true" GroupID="0" ID="9" Name="Shape_9" RelativeRotation="1.570796 0.000000 -0.785398" RelativeScale="0.130000 0.030000 0.780000" RelativeTranslation="-1.332945 1.065790 0.064407" Rotation="1.570796 0.000000 -0.785398" Scale="0.130000 0.030000 0.780000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-1.308769 2.466402 0.063194" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="10" LinearDamping="0.000000" Mass="0.000000" Material="Wood Robust" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.024176 1.400612 -0.001213">
+                <Shape ID="1" />
+                <Shape ID="2" />
+                <Shape ID="9" />
+                <Shape ID="6" />
+                <Shape ID="8" />
+                <Shape ID="5" />
+                <Shape ID="7" />
+                <Shape ID="3" />
+                <Shape ID="4" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

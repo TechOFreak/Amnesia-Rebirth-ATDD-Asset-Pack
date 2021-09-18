@@ -1,0 +1,79 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/debris/rock/rock_large01.dae">
+            <SubMesh ID="0" Name="stone_large01_mesh" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="186" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="1" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="-0.00722 0.461894 0.070176" Rotation="0 0.291544 0" Scale="0.721718 0.663229 1.16413" RelativeTranslation="-0.0212505 -0.0100985 0.231319" RelativeRotation="0 0.291544 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="14" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="-0.083356 0.853253 0.030237" Rotation="0 0.291544 0" Scale="0.494366 0.339113 0.650312" RelativeTranslation="-0.0973865 0.381261 0.19138" RelativeRotation="0 0.291544 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="15" Name="Shape_3" CreStamp="0" ModStamp="0" WorldPos="0.007191 0.090732 0.044473" Rotation="-0.067417 0.291544 0" Scale="0.645446 0.189113 0.852839" RelativeTranslation="-0.0068395 -0.38126 0.205615" RelativeRotation="-0.067417 0.291544 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="16" Name="Shape_4" CreStamp="0" ModStamp="0" WorldPos="-0.33748 0.453766 0.202977" Rotation="0.398764 0.026676 1.48177" Scale="0.494366 0.339113 0.650312" RelativeTranslation="-0.351511 -0.0182265 0.364119" RelativeRotation="0.398764 0.026676 1.48177" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="17" Name="Shape_5" CreStamp="0" ModStamp="0" WorldPos="0.365541 0.433788 -0.077064" Rotation="0.323315 -0.065309 1.75263" Scale="0.494366 0.339113 0.650312" RelativeTranslation="0.351511 -0.0382045 0.0840785" RelativeRotation="0.323315 -0.065309 1.75263" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="18" Name="Shape_6" CreStamp="0" ModStamp="0" WorldPos="-0.199116 0.479665 -0.525262" Rotation="0 0.291544 0" Scale="0.45342 0.49886 0.218056" RelativeTranslation="-0.213147 0.00767252 -0.364119" RelativeRotation="0 0.291544 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="19" Name="Body" CreStamp="0" ModStamp="1617400836" WorldPos="0.0140305 0.471992 -0.161142" Rotation="0 0 0" Scale="1 1 1" Material="Rock Robust" Mass="15" AngularDamping="0.2" LinearDamping="0.2" MaxAngularSpeed="20" MaxLinearSpeed="20" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="1" />
+                <Shape ID="14" />
+                <Shape ID="15" />
+                <Shape ID="16" />
+                <Shape ID="17" />
+                <Shape ID="18" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Push">
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="100" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="4" />
+        <Var ObjectId="4294967295" Name="PushAtPoint" Value="false" />
+        <Var ObjectId="4294967295" Name="ForceMul" Value="1" />
+        <Var ObjectId="4294967295" Name="ThrowImpulse" Value="3" />
+        <Var ObjectId="4294967295" Name="LookPushActive" Value="true" />
+        <Var ObjectId="4294967295" Name="MaxPlayerSpeedMul" Value="1.0" />
+    </UserDefinedVariables>
+</Entity>

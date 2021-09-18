@@ -1,0 +1,62 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/special/wood_blocking_pulley/wood_blocking_pulley.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="pCube1" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="36" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="1" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="0.09 0.09 0.5" RelativeTranslation="0 0 0" Rotation="0 0 0" Scale="0.09 0.09 1" ShapeType="Box" Tag="" WorldPos="0.000535 0 0" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="1" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="2" LinearDamping="1" Mass="10" Material="Wood" MaxAngularSpeed="0.5" MaxLinearSpeed="0.5" Name="Body_1" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 2" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000535 0 0">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="1" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointSlider Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="2" ConnectedParentBodyID="-1" ID="3" LimitStepCount="0" MaxDistance="0.05" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.1" MaxMoveFreqSpeed="1.5" MaxMoveSpeed="2" MaxMoveVolume="1" MiddleMoveSpeed="1" MiddleMoveVolume="0.7" MinDistance="0" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.95" MinMoveFreqSpeed="0.5" MinMoveSpeed="0.1" MinMoveVolume="0.3" MoveSound="06_pull_wood.snt" MoveType="Linear" Name="JointSlider_1" PinDir="0 -0.00614358 0.999981" Rotation="1.57694 0 0" Scale="1 1 1" StickyMaxLimit="false" StickyMinLimit="false" Stiffness="0" Tag="" WorldPos="0.000248645 0 0.567765" />
+        </Joints>
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Slide">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="true" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="10" />
+        <Var Name="BreakEntity" Value="wood_blocking_pulley_broken.ent" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="C:/SVN/amnesia/redist/sounds/06/06_break_wood.snt" />
+        <Var Name="BreakParticleSystem" Value="ps_break_wood_pulley_blocker.ps" />
+        <Var Name="BreakImpulse" Value="0.3" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+        <Var Name="SlideMaxSpeed" Value="1" />
+        <Var Name="SlideSlowDownFactor" Value="2" />
+        <Var Name="SlideSpeedFactor" Value="1" />
+        <Var Name="SlideThrowImpulse" Value="1" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=1;exportAnimations=1;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/floor/graveyard_floor.mb</source_data>
+    </contributor>
+    <created>2011-03-17T16:13:25</created>
+    <modified>2011-03-17T16:13:25</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="graveyard_floor_mat" name="graveyard_floor_mat">
+      <instance_effect url="#graveyard_floor_mat-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="graveyard_floor_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file17-surface">
+          <surface type="2D">
+            <init_from>file17</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file17-sampler">
+          <sampler2D>
+            <source>file17-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file17-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file17" name="file17">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/cellarbase/floor/cellarbase_floor_dirt_rough.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file17</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="graveyard_floor_dirt_pileShape" name="graveyard_floor_dirt_pileShape">
+      <mesh>
+        <source id="graveyard_floor_dirt_pileShape-positions" name="graveyard_floor_dirt_pileShape-positions">
+          <float_array id="graveyard_floor_dirt_pileShape-positions-array" count="222">-0.5537213 0.4180048 -0.4524341 -1.26494 -0.1682026 -0.4887793 -0.5394043 0.4275307 -0.2088184 -0.4512592 -0.1682026 -1.617305 -0.4588144 0.2859608 -1.055791 -0.4513434 0.05884275 0.6859485 0.3794116 0.05884276 1.001862 -0.0387616 0.1107489 0.7669727 0.1597238 0.5283237 -0.42875 0.1648437 0.5287098 -0.1657397 0.4802878 0.4541957 -0.1156165 0.4581677 0.4760878 -0.393313 -0.2378723 0.2952698 -1.068284 -0.4487292 0.1517677 0.1926416 0.6196426 0.3132907 0.1458813 0.3863489 0.3209438 0.2654504 0.9656488 0.1361948 -0.08490845 0.8780807 0.1079128 -0.2711157 0.6628339 0.3379588 -0.1957922 0.8668127 0.1585608 -0.4621851 1.263621 -0.1682026 -0.04759277 0.3415057 -0.1682026 -1.614285 0.5949548 0.1921318 -1.077593 0.7838937 0.2233168 0.2165796 0.9691199 0.1732128 0.3239624 1.027477 0.04869576 -0.9488623 0.7116437 0.2255418 -0.9196436 0.8842178 0.1337938 -0.6447314 0.6624438 0.3575438 -0.4273779 0.6876477 0.3544698 -0.6524927 0.1671509 0.4563858 -0.6823193 0.4069327 0.4764857 -0.6654736 0.5398816 0.2477877 -0.9434912 0.1654297 0.3562717 -0.9241431 0.3921048 0.3381428 -0.9194214 0.1658517 0.2218188 -1.074526 0.4132047 0.2033898 -1.120242 -0.2576212 0.3524178 -0.8710059 -0.04121124 0.3691848 -0.902002 -0.03766815 0.2570168 -1.074983 -0.3047952 0.4347697 -0.7033521 -0.04742035 0.4754927 -0.7016431 -0.3307242 0.5194157 -0.4364771 -0.04308624 0.4993727 -0.4431152 -0.3550253 0.4771978 -0.1824866 -0.07939423 0.4955508 -0.1839282 -0.4688513 0.2989627 -0.8438062 -0.5188654 0.3516737 -0.6944189 0.1350867 0.3247237 0.2788501 -0.3511942 0.2173608 0.2027954 -0.1365942 0.3122098 0.2497559 0.4293167 0.3857288 0.09210205 0.1538696 0.4544218 0.04869019 -0.1302802 0.4288927 0.05363403 -0.3538593 0.3245258 0.02589966 -0.4845291 0.3174347 0.01686035 1.26494 -0.1682026 0.3769934 -1.02443 -0.1682025 -1.351038 -1.157311 -0.1682025 -1.121626 -1.26475 -0.1682026 0.02495972 -1.122862 -0.1682026 0.6367224 -1.027614 -0.1682026 0.9954456 -0.8218726 -0.1682026 1.341035 -0.6583621 -0.1682026 1.462793 -0.4499487 -0.1682026 1.52766 -0.1729828 -0.1682026 1.617306 0.3294336 -0.1682026 1.545565 0.6890579 -0.1682025 1.38335 0.983111 -0.1682026 1.100006 1.111384 -0.1682026 0.869751 0.8161957 -0.1682026 -1.429709 1.127042 -0.1682026 -1.166538 1.20438 -0.1682026 -1.005474 1.25122 -0.1682026 -0.5945972</float_array>
+          <technique_common>
+            <accessor source="#graveyard_floor_dirt_pileShape-positions-array" count="74" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="graveyard_floor_dirt_pileShape-normals" name="graveyard_floor_dirt_pileShape-normals">
+          <float_array id="graveyard_floor_dirt_pileShape-normals-array" count="261">-0.4973221 0.8615476 -0.1020122 -0.6238242 0.7586293 0.1879492 -0.4295318 0.8421807 0.3259358 -0.05087811 0.7716276 -0.6340365 -0.4377715 0.8266024 -0.3536731 -0.2671956 0.8901091 -0.3692048 -0.2899115 0.9374526 0.1927017 -0.3416328 0.9339901 0.1046402 -0.3247689 0.9418541 0.08623257 0.05555874 0.9195225 0.3890907 0.05555874 0.9195225 0.3890907 0.05555874 0.9195225 0.3890907 0.03162035 0.9966713 -0.07514195 0.03039052 0.985706 0.1657104 0.3450263 0.9243785 0.1627304 0.3173246 0.9480146 -0.02394781 -0.05323956 0.901405 -0.4296912 -0.5152754 0.7947407 0.3207468 -0.3650744 0.9309784 1.35319e-4 0.372347 0.8948848 0.2460467 0.140122 0.9156985 0.376646 0.1481605 0.9337364 0.3258603 0.6831846 0.7114028 -0.1648174 0.59386 0.7906026 -0.1492575 0.6766534 0.7270532 -0.1163346 0.6092713 0.7922584 0.03339302 0.6871883 0.7252771 0.04177828 0.3917109 0.9085056 0.1455341 0.535188 0.8259255 0.1772591 0.4075489 0.8612448 -0.3035811 0.661575 0.7479414 -0.05387013 0.5352687 0.8065653 -0.2508778 0.6060469 0.7949846 0.02658246 0.515469 0.8232906 -0.2376641 0.0369976 0.9538357 -0.2980412 0.2375571 0.9304163 -0.2790916 0.2539993 0.8759968 -0.410017 0.03822062 0.8532625 -0.5200789 0.1769535 0.8520816 -0.4925893 0.3178248 0.8077505 -0.4965145 0.01242331 0.7968462 -0.6040545 0.1107777 0.817036 -0.565845 -0.1687567 0.8919813 -0.4193931 3.81107e-4 0.8768278 -0.4808044 0.05513767 0.8145661 -0.5774443 -0.2349997 0.8944662 -0.3804018 -0.02941407 0.9459561 -0.3229584 -0.1941466 0.9764714 -0.0938651 -0.04554766 0.9961001 -0.07556432 -0.2269678 0.9296964 0.2900866 -0.1232593 0.9724743 0.1977393 -0.320915 0.8985808 -0.2992758 -0.4295463 0.8457572 -0.3165192 -0.02575267 0.91337 0.4063153 -0.374255 0.8240497 0.4252942 -0.1738403 0.9267638 0.3329992 -0.2991841 0.8434926 0.4461044 0.2404499 0.9040245 0.3534451 0.01881705 0.9188321 0.3941999 -0.2166544 0.8835633 0.4151828 -0.2620959 0.8347701 0.4842154 -0.413645 0.7174918 0.5604492 -0.4856831 0.8276294 -0.281321 0.1032302 0.785046 -0.6107752 0.7424031 0.6605927 0.1116014 0.3322238 0.8909857 0.3094707 0.2352429 0.9071367 0.3489468 0.2919307 0.9071875 0.3029645 0.2352429 0.9071367 0.3489468 0.4255632 0.7524841 -0.5026567 0.4553696 0.7368572 -0.4996801 0.6104543 0.7501718 -0.2541414 0.6483263 0.7613624 -6.58546e-4 -0.1472557 0.9563603 0.2523703 0.1773018 0.9022529 0.3930698 -0.2820017 0.9446108 0.1678856 -0.2820017 0.9446108 0.1678856 -0.2820017 0.9446108 0.1678856 -0.1242898 0.9608321 0.247697 -0.1242898 0.9608321 0.247697 -0.3582627 0.9254863 0.1229762 -0.5933377 0.7895926 -0.1565056 0.2397792 0.7498214 -0.6166635 0.3207685 0.9301479 0.1786968 0.7190567 0.6578349 0.2240779 -0.0695214 0.9510781 0.3010271 -0.0695214 0.9510781 0.3010271</float_array>
+          <technique_common>
+            <accessor source="#graveyard_floor_dirt_pileShape-normals-array" count="87" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="graveyard_floor_dirt_pileShape-map1" name="graveyard_floor_dirt_pileShape-map1">
+          <float_array id="graveyard_floor_dirt_pileShape-map1-array" count="148">1.141064 -3.142281 1.329685 -3.14548 1.136679 -3.100189 1.110168 -3.385459 1.114098 -3.258125 1.125063 -2.910118 0.889941 -2.844607 1.011801 -2.89153 0.963165 -3.136097 0.962049 -3.087212 0.886502 -3.073888 0.893267 -3.127252 1.057652 -3.26195 1.131868 -3.008733 0.840133 -3.02269 0.901757 -3.000608 0.745488 -3.062434 0.762869 -3.104364 0.833911 -3.088741 0.777791 -3.145391 0.6508905 -3.066577 0.905051 -3.382373 0.834773 -3.273943 0.787269 -3.00463 0.734385 -2.981685 0.725067 -3.249129 0.81336 -3.240858 0.769648 -3.184921 0.839507 -3.135315 0.835199 -3.179859 0.959448 -3.185991 0.904101 -3.179419 0.855516 -3.247952 0.955668 -3.235898 0.898454 -3.235751 0.952373 -3.271126 0.887472 -3.281039 1.062613 -3.223944 1.008292 -3.230573 1.005551 -3.268096 1.073818 -3.188965 1.011253 -3.18871 1.080146 -3.137673 1.011932 -3.139813 1.087697 -3.091996 1.021119 -3.090755 1.116749 -3.219902 1.131127 -3.189535 0.966973 -2.997679 1.102773 -3.001621 1.035762 -3.003444 0.893492 -3.033588 0.963088 -3.046787 1.032461 -3.045251 1.092977 -3.045992 1.128679 -3.055109 0.6641783 -2.970745 1.255685 -3.324426 1.2931 -3.277342 1.333192 -3.043513 1.300324 -2.921707 1.274549 -2.85041 1.219146 -2.781682 1.175212 -2.757434 1.119745 -2.74432 1.04856 -2.728914 0.9183697 -2.745985 0.8219826 -2.77823 0.7449893 -2.830526 0.7093451 -2.872391 0.7841544 -3.346479 0.7031258 -3.293983 0.6786273 -3.260256 0.6542386 -3.172572</float_array>
+          <technique_common>
+            <accessor source="#graveyard_floor_dirt_pileShape-map1-array" count="74" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="graveyard_floor_dirt_pileShape-vertices" name="graveyard_floor_dirt_pileShape-vertices">
+          <input semantic="POSITION" source="#graveyard_floor_dirt_pileShape-positions"/>
+        </vertices>
+        <triangles material="blinn1SG" count="124">
+          <input semantic="VERTEX" source="#graveyard_floor_dirt_pileShape-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#graveyard_floor_dirt_pileShape-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#graveyard_floor_dirt_pileShape-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 3 3 3 57 4 57 4 5 4 5 6 5 60 7 60 61 8 61 6 9 6 65 10 65 66 11 66 8 12 8 9 13 9 11 15 11 11 15 11 9 13 9 10 14 10 12 16 12 3 3 3 4 5 4 13 17 13 1 1 1 59 18 59 14 19 14 15 20 15 6 21 6 17 22 17 16 23 16 20 24 20 18 25 18 17 22 17 19 26 19 23 27 23 24 28 24 16 23 16 16 23 16 24 28 24 20 24 20 18 25 18 16 23 16 17 22 17 26 29 26 27 30 27 25 31 25 28 32 28 18 25 18 19 26 19 18 25 18 14 19 14 16 23 16 28 32 28 19 26 19 29 33 29 29 33 29 19 26 19 27 30 27 30 34 30 8 12 8 31 35 31 31 35 31 8 12 8 11 15 11 32 36 32 29 33 29 26 29 26 33 37 33 30 34 30 34 38 34 34 38 34 30 34 30 31 35 31 22 39 22 26 29 26 25 31 25 22 39 22 32 36 32 26 29 26 33 37 33 34 38 34 35 40 35 35 40 35 34 38 34 36 41 36 10 14 10 18 25 18 11 15 11 11 15 11 18 25 18 28 32 28 31 35 31 11 15 11 29 33 29 29 33 29 11 15 11 28 32 28 34 38 34 31 35 31 32 36 32 32 36 32 31 35 31 29 33 29 34 38 34 32 36 32 36 41 36 36 41 36 32 36 32 22 39 22 37 42 37 38 43 38 12 16 12 12 16 12 38 43 38 39 44 39 40 45 40 41 46 41 37 42 37 37 42 37 41 46 41 38 43 38 42 47 42 43 48 43 40 45 40 40 45 40 43 48 43 41 46 41 44 49 44 45 50 45 42 47 42 42 47 42 45 50 45 43 48 43 43 48 43 45 50 45 8 12 8 8 12 8 45 50 45 9 13 9 41 46 41 43 48 43 30 34 30 30 34 30 43 48 43 8 12 8 41 46 41 30 34 30 38 43 38 38 43 38 30 34 30 33 37 33 38 43 38 33 37 33 39 44 39 39 44 39 33 37 33 35 40 35 12 16 12 46 51 46 37 42 37 46 51 46 47 52 47 40 45 40 47 52 47 0 0 0 40 45 40 40 45 40 0 0 0 42 47 42 0 0 0 2 2 2 42 47 42 42 47 42 2 2 2 44 49 44 6 21 6 15 20 15 48 53 48 5 6 5 49 54 49 13 17 13 7 55 7 48 53 48 50 56 50 7 55 7 49 54 49 5 6 5 18 25 18 10 14 10 14 19 14 14 19 14 10 14 10 51 57 51 51 57 51 10 14 10 52 58 52 52 58 52 10 14 10 9 13 9 53 59 53 52 58 52 45 50 45 45 50 45 52 58 52 9 13 9 54 60 54 53 59 53 44 49 44 44 49 44 53 59 53 45 50 45 55 61 55 54 60 54 2 2 2 14 19 14 51 57 51 15 20 15 48 53 48 15 20 15 52 58 52 52 58 52 15 20 15 51 57 51 50 56 50 48 53 48 53 59 53 53 59 53 48 53 48 52 58 52 49 54 49 50 56 50 54 60 54 55 61 55 49 54 49 54 60 54 57 4 57 46 51 46 4 5 4 57 4 57 47 52 47 46 51 46 58 62 58 47 52 47 57 4 57 2 2 2 1 1 1 55 61 55 55 61 55 1 1 1 13 17 13 21 63 21 36 41 36 22 39 22 21 63 21 35 40 35 36 41 36 3 3 3 39 44 39 21 63 21 21 63 21 39 44 39 35 40 35 39 44 39 3 3 3 12 16 12 16 23 16 14 19 14 23 27 23 4 5 4 46 51 46 12 16 12 46 51 46 40 45 40 37 42 37 13 17 13 49 54 49 55 61 55 2 2 2 54 60 54 44 49 44 54 60 54 50 56 50 53 59 53 7 55 7 50 56 50 49 54 49 6 21 6 48 53 48 7 55 7 26 29 26 29 33 29 27 30 27 23 27 23 14 19 14 6 21 6 24 28 24 23 27 23 6 21 6 56 64 56 20 24 20 24 28 24 69 65 69 24 28 24 6 21 6 67 66 67 68 67 68 6 68 6 70 69 70 22 39 22 71 70 71 22 39 22 25 31 25 71 70 71 71 70 71 25 31 25 72 71 72 72 71 72 25 31 25 73 72 73 73 72 73 25 31 25 27 30 27 73 72 73 27 30 27 19 26 19 20 24 20 73 72 73 17 22 17 17 22 17 73 72 73 19 26 19 7 55 7 5 6 5 64 73 64 6 68 6 66 74 66 67 66 67 5 75 5 61 76 61 62 77 62 64 73 64 5 6 5 63 79 63 5 6 5 62 78 62 63 79 63 59 80 59 60 7 60 13 17 13 13 17 13 60 7 60 5 6 5 58 81 58 1 1 1 47 52 47 47 52 47 1 1 1 0 0 0 70 82 70 21 63 21 22 39 22 6 21 6 68 83 68 69 65 69 69 84 69 56 64 56 24 28 24 6 21 6 7 55 7 65 86 65 65 86 65 7 55 7 64 85 64</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>graveyard_floor_dirt_pileShape</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="graveyard_floor">
+      <node id="graveyard_floor_dirt_pile" name="graveyard_floor_dirt_pile" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#graveyard_floor_dirt_pileShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#graveyard_floor_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>graveyard_floor_dirt_pile</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

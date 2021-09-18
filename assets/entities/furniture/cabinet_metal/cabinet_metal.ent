@@ -1,0 +1,91 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/furniture/cabinet_metal/cabinet_metal.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="rightDoor" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="215" />
+            <SubMesh Active="true" ID="1" Material="" Name="base" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 0 0" TriCount="164" />
+            <SubMesh Active="true" ID="2" Material="" Name="leftDoor" Rotation="0 0 0" Scale="1 1 1" SubMeshID="2" Tag="" WorldPos="0 0 0" TriCount="215" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="3" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="0.1 2.8 0.8" RelativeTranslation="0.777174 -0.02615 0.169801" Rotation="0 0 0" Scale="0.1 2.8 0.8" ShapeType="Box" Tag="" WorldPos="0.776341 1.40839 -0.021924" />
+            <BodyShape Active="true" ID="6" Name="Shape_3" RelativeRotation="0 0 0" RelativeScale="1.45 2.8 0.1" RelativeTranslation="0.00343897 -0.02615 -0.190591" Rotation="0 0 0" Scale="1.45 2.8 0.1" ShapeType="Box" Tag="" WorldPos="0.002606 1.40839 -0.382316" />
+            <BodyShape Active="true" ID="7" Name="Shape_4" RelativeRotation="0 0 0" RelativeScale="0.7 2.3 0.03" RelativeTranslation="0 0 0" Rotation="0 0 0" Scale="0.7 2.3 0.03" ShapeType="Box" Tag="" WorldPos="0.365506 1.44311 0.399652" />
+            <BodyShape Active="true" ID="8" Name="Shape_2" RelativeRotation="0 0 0" RelativeScale="0.1 2.8 0.8" RelativeTranslation="-0.777174 -0.02615 0.169801" Rotation="0 0 0" Scale="0.1 2.8 0.8" ShapeType="Box" Tag="" WorldPos="-0.778007 1.40839 -0.021924" />
+            <BodyShape Active="true" ID="9" Name="Shape_5" RelativeRotation="0 0 0" RelativeScale="0.7 2.3 0.03" RelativeTranslation="0 0 0" Rotation="0 0 0" Scale="0.7 2.3 0.03" ShapeType="Box" Tag="" WorldPos="-0.35732 1.44298 0.399652" />
+            <BodyShape Active="true" ID="10" Name="Shape_6" RelativeRotation="0 0 0" RelativeScale="1.7 0.2 0.8" RelativeTranslation="0.00197597 1.27307 0.190591" Rotation="0 0 0" Scale="1.7 0.2 0.8" ShapeType="Box" Tag="" WorldPos="0.001143 2.70761 -0.00113399" />
+            <BodyShape Active="true" ID="11" Name="Shape_7" RelativeRotation="0 0 0" RelativeScale="1.7 0.2 0.8" RelativeTranslation="0.00197597 -1.27307 0.190591" Rotation="0 0 0" Scale="1.7 0.2 0.8" ShapeType="Box" Tag="" WorldPos="0.001143 0.161469 -0.00113399" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="12" LinearDamping="0" Mass="0" Material="Metal" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="cabinet" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.000832975 1.43454 -0.191725">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="10" />
+                <Shape ID="6" />
+                <Shape ID="8" />
+                <Shape ID="3" />
+                <Shape ID="11" />
+            </Body>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="13" LinearDamping="0" Mass="5" Material="Metal" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="rightDoor" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0.365506 1.44311 0.399652">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="7" />
+            </Body>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="14" LinearDamping="0" Mass="5" Material="Metal" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="leftDoor" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.35732 1.44298 0.399652">
+                <Children>
+                    <Child ID="2" />
+                </Children>
+                <Shape ID="9" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="13" ConnectedParentBodyID="12" ID="15" LimitStepCount="0" MaxAngle="90" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.1" MaxMoveFreqSpeed="1.5" MaxMoveSpeed="2" MaxMoveVolume="0.4" MiddleMoveSpeed="1" MiddleMoveVolume="0.3" MinAngle="0" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.9" MinMoveFreqSpeed="0.6" MinMoveSpeed="0.1" MinMoveVolume="0.2" MoveSound="elevator_gate_move.snt" MoveType="Angular" Name="HingeJoint_1" PinDir="3.25841e-007 -1 0" Rotation="0 0 3.14159" Scale="1 1 1" StickyMaxLimit="true" StickyMinLimit="true" Stiffness="0" Tag="" WorldPos="0.728155 0 0.414776" />
+            <JointHinge Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="14" ConnectedParentBodyID="12" ID="16" LimitStepCount="0" MaxAngle="90" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="1.1" MaxMoveFreqSpeed="1.5" MaxMoveSpeed="2" MaxMoveVolume="0.4" MiddleMoveSpeed="1" MiddleMoveVolume="0.3" MinAngle="0" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.9" MinMoveFreqSpeed="0.6" MinMoveSpeed="0.1" MinMoveVolume="0.2" MoveSound="elevator_gate_move.snt" MoveType="Angular" Name="HingeJoint_2" PinDir="0 1 0" Rotation="0 0 0" Scale="1 1 1" StickyMaxLimit="true" StickyMinLimit="true" Stiffness="0" Tag="" WorldPos="-0.727193 0 0.414776" />
+        </Joints>
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_SwingDoor">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveMaxSpeed" Value="6" />
+        <Var Name="MoveSlowDownFactor" Value="3" />
+        <Var Name="MoveSpeedFactor" Value="1.0" />
+        <Var Name="MoveThrowImpulse" Value="6.0" />
+        <Var Name="CanInteractWithStaticBody" Value="false" />
+        <Var Name="CloseOnSound" Value="C:/SVN/amnesia/redist/sounds/joint/crank_old_stuck.snt" />
+        <Var Name="CloseOffSound" Value="C:/SVN/amnesia/redist/sounds/joint/crank_old_stuck.snt" />
+        <Var Name="LockOnSound" Value="" />
+        <Var Name="LockOffSound" Value="" />
+        <Var Name="InteractLockedSound" Value="" />
+        <Var Name="Breakable" Value="false" />
+        <Var Name="DamageMesh1" Value="" />
+        <Var Name="DamageMesh2" Value="" />
+        <Var Name="BrokenEntity" Value="" />
+        <Var Name="DamageSound" Value="" />
+        <Var Name="DamagePS" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakPS" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HealthDamage1" Value="66" />
+        <Var Name="HealthDamage2" Value="33" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

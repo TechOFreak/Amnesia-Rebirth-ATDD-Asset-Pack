@@ -1,0 +1,58 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/special/control_room_piston/control_room_piston_lever.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="piston_lever" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="24" />
+            <SubMesh Active="true" ID="1" Material="" Name="polySurface7" Rotation="0 0 0" Scale="1 1 1" SubMeshID="1" Tag="" WorldPos="0 0 0" TriCount="64" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="2" Name="Shape_1" RelativeRotation="0.418879 0 0" RelativeScale="0.04 0.29947 0.04" RelativeTranslation="-0.00847 -0.000546008 -0.083274" Rotation="0.418879 0 0" Scale="0.04 0.29947 0.04" ShapeType="Cylinder" Tag="" WorldPos="-0.00847 0.499454 0.166726" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="false" CollideNonCharacter="false" ContinuousCollision="true" HasGravity="false" ID="5" LinearDamping="0" Mass="0.5" Material="Wood" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_1" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0 0.5 0.25">
+                <Children>
+                    <Child ID="0" />
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="2" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge Active="true" BreakForce="0" BreakSound="" Breakable="false" CollideBodies="true" ConnectedChildBodyID="5" ConnectedParentBodyID="-1" ID="4" LimitStepCount="0" MaxAngle="20" MaxLimitMaxSpeed="0" MaxLimitMinSpeed="0" MaxLimitSound="" MaxMoveFreq="0.9" MaxMoveFreqSpeed="1.5" MaxMoveSpeed="2" MaxMoveVolume="0.8" MiddleMoveSpeed="1" MiddleMoveVolume="0.5" MinAngle="-40" MinLimitMaxSpeed="0" MinLimitMinSpeed="0" MinLimitSound="" MinMoveFreq="0.8" MinMoveFreqSpeed="0.4" MinMoveSpeed="0.1" MinMoveVolume="0.1" MoveSound="lever_metal_move.snt" MoveType="Linear" Name="HingeJoint_1" PinDir="1 3.13916e-007 0" Rotation="0 0.349066 -1.5708" Scale="1 1 1" StickyMaxLimit="true" StickyMinLimit="true" Stiffness="0" Tag="" WorldPos="0 0 0" />
+        </Joints>
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Lever">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="MoveMaxSpeed" Value="15" />
+        <Var Name="MoveSlowDownFactor" Value="1.0" />
+        <Var Name="MoveSpeedFactor" Value="5.0" />
+        <Var Name="MoveThrowImpulse" Value="3" />
+        <Var Name="CanInteractWithStaticBody" Value="true" />
+        <Var Name="MinLimitRange" Value="10" />
+        <Var Name="MaxLimitRange" Value="10" />
+        <Var Name="MinLimitSound" Value="lever_metal_min_max.snt" />
+        <Var Name="MaxLimitSound" Value="lever_metal_min_max.snt" />
+        <Var Name="AutoMoveSpeedFactor" Value="2" />
+        <Var Name="AutoMoveMaxSpeed" Value="8" />
+        <Var Name="AutoMoveGoal" Value="Middle" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

@@ -1,0 +1,27 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/ornament/tombstone02/tombstone02.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="polySurface9" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="398" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="2" Name="Shape_1" RelativeRotation="0.385084 0 0" RelativeScale="0.228 0.356 0.437" RelativeTranslation="0 0.182078 0.131854" Rotation="0.385084 0 0" Scale="0.228 0.356 0.437" ShapeType="Box" Tag="" WorldPos="0 0.806157 0.128376" />
+            <BodyShape Active="true" ID="3" Name="Shape_2" RelativeRotation="-0.400017 0 0" RelativeScale="0.228 0.356 0.425" RelativeTranslation="0 0.181921 -0.131854" Rotation="-0.400017 0 0" Scale="0.228 0.356 0.425" ShapeType="Box" Tag="" WorldPos="0 0.806 -0.135331" />
+            <BodyShape Active="true" ID="4" Name="Shape_3" RelativeRotation="0 0 0" RelativeScale="0.228 0.884 0.795" RelativeTranslation="0 -0.182079 0.0034775" Rotation="0 0 0" Scale="0.228 0.884 0.795" ShapeType="Box" Tag="" WorldPos="0 0.442 0" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="5" LinearDamping="0" Mass="0" Material="Rock" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_1" PushedByCharacterGravity="true" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="0 0.624079 -0.0034775">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="4" />
+                <Shape ID="3" />
+                <Shape ID="2" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

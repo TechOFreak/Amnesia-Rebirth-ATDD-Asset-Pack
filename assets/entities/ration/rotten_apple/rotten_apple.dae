@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-07-18T14:05:28Z</created>
+    <modified>2009-07-18T14:05:28Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file3" name="file3">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/ration/rotten_apple/rotten_apple.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file5" name="file5">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/ration/rotten_apple/rotten_apple_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file4" name="file4">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/ration/rotten_apple/rotten_apple_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="rotten_apple_material" name="rotten_apple_material">
+      <instance_effect url="#rotten_apple_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="rotten_apple_material-fx">
+      <profile_COMMON>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file5-surface">
+          <surface type="2D">
+            <init_from>file5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file5-sampler">
+          <sampler2D>
+            <source>file5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file4-surface">
+          <surface type="2D">
+            <init_from>file4</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file4-sampler">
+          <sampler2D>
+            <source>file4-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file3-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file4-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file5-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="rotten_apple_meshShape" name="rotten_apple_meshShape">
+      <mesh>
+        <source id="rotten_apple_meshShape-positions" name="position">
+          <float_array id="rotten_apple_meshShape-positions-array" count="207">0.000122 -0.049328 -0.000094 0.006938 -0.053696 0.017034 -0.018153 -0.050108 0.018181 0.021606 -0.053696 0.000513 0.006369 -0.051902 -0.015256 -0.01765 -0.053696 -0.00411 0.013054 -0.041329 0.028795 -0.021306 -0.041329 0.024532 0.035122 -0.041329 0.000327 0.012516 -0.041329 -0.028525 -0.030544 -0.041329 -0.010534 0.004549 -0.022156 0.04487 -0.027139 -0.022156 0.030042 0.0286 -0.022156 0.034908 0.043701 -0.022156 -0.000098 0.029198 -0.022156 -0.033539 0.003951 -0.022156 -0.045239 -0.030924 -0.023568 -0.016516 -0.036893 -0.018009 -0.006191 0.001047 -0.001639 0.053805 -0.034737 -0.001638 0.038246 0.03758 -0.001639 0.038673 0.051025 -0.001638 -0.000094 0.036912 -0.001534 -0.038592 0.001735 -0.001634 -0.053805 -0.036912 -0.001819 -0.034149 -0.051025 -0.00174 -0.001465 -0.02515 0.036249 0.029758 0.000156 0.036249 0.044325 0.00013 0.044263 0.029851 -0.018573 0.044263 0.019572 0.02998 0.030789 0.031972 0.021305 0.039293 0.02108 0.035521 0.0272 0.001593 0.025804 0.029915 0.000461 0.030526 0.033228 -0.027675 0.021305 0.038567 -0.021268 0.000156 0.036249 -0.040028 0.00013 0.044263 -0.030039 -0.029667 0.036249 -0.027675 -0.015013 0.045549 -0.020081 -0.037454 0.032297 0.002148 -0.025012 0.044263 -0.000094 0.000122 0.029143 -0.000094 0.03713 0.016659 -0.036404 0.000132 0.016546 -0.051885 -0.034497 0.017194 -0.034177 -0.047837 0.016016 0.000645 -0.033727 0.017285 0.037689 0.000133 0.017133 0.052707 0.036655 0.016844 0.037217 0.047211 0.017103 0.000719 -0.006855 0.053696 -0.00033 -0.009788 0.048865 -0.002447 -0.007743 0.052002 0.005392 -0.001064 0.029937 0.00246 0.001643 0.038676 0.002211 -0.002351 0.03781 -0.000765 0.00294 0.028668 0.000929 0.004378 0.039977 -0.001823 0.001471 0.029651 -0.003142 0.000395 0.03909 -0.004839 -0.002533 0.030226 -0.001611 -0.01068 0.047051 0.005957 -0.011837 0.045313 0.00051 -0.003809 0.041003 -0.001726 -0.000583 0.04224 0.003053 0.002568 0.046113 -0.000068 -0.000638 0.044874 -0.004876</float_array>
+          <technique_common>
+            <accessor source="#rotten_apple_meshShape-positions-array" count="69" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="rotten_apple_meshShape-normals" name="normal">
+          <float_array id="rotten_apple_meshShape-normals-array" count="207">-0.032556 -0.999159 0.024926 0.045917 -0.964945 0.258405 -0.238989 -0.934933 0.26227 0.204665 -0.9785 -0.025509 0.063352 -0.967919 -0.243146 -0.209734 -0.976919 -0.04051 0.290061 -0.636347 0.714792 -0.576049 -0.598045 0.557234 0.720192 -0.693775 -0.000315 0.233172 -0.700882 -0.674088 -0.736515 -0.53113 -0.418864 0.02345 -0.483766 0.874883 -0.637887 -0.510462 0.576653 0.608217 -0.461513 0.645816 0.871209 -0.490901 -0.003334 0.616553 -0.462118 -0.637424 -0.133332 -0.524859 -0.840682 -0.720479 -0.38857 -0.574389 -0.906936 -0.415546 -0.069199 -0.006098 -0.177848 0.984039 -0.706502 -0.245223 0.663867 0.718107 -0.136481 0.682418 0.990918 -0.134423 -0.003301 0.723535 -0.128931 -0.67814 -0.040295 -0.201062 -0.978749 -0.734143 -0.23501 -0.637027 -0.971938 -0.234535 -0.018144 -0.571235 0.670524 0.473378 0.016783 0.706699 0.707315 0.099326 0.99505 0.003225 -0.050399 0.998534 0.019751 0.568059 0.740206 0.359727 0.253132 0.955836 -0.149338 0.658854 0.751805 0.02648 0.25546 0.966766 0.010207 0.528143 0.778898 -0.338205 0.213177 0.966253 0.144604 0.012709 0.693736 -0.720117 0.142164 0.988635 -0.048885 -0.571572 0.666031 -0.479279 -0.003583 0.999951 0.00928 -0.766309 0.641825 0.028849 -0.075762 0.995221 0.061612 0.224822 0.974343 0.010544 0.701045 0.37847 -0.604397 -0.026421 0.311428 -0.949903 -0.713655 0.295003 -0.63535 -0.948707 0.315968 0.01094 -0.699094 0.291217 0.653039 -0.00985 0.271127 0.962493 0.701088 0.350437 0.621024 0.921967 0.38722 0.006107 0.084725 0.901513 -0.424377 -0.707532 0.182873 -0.682609 -0.111299 0.668796 0.735068 -0.512604 0.050313 0.85715 0.317932 -0.010798 0.948052 -0.93998 -0.186241 0.285922 0.871597 -0.105586 0.478718 0.9519 0.065989 -0.299218 0.473262 -0.200594 -0.857779 -0.278745 -0.148745 -0.948776 -0.88818 -0.057745 -0.455853 -0.503136 -0.502213 0.703304 -0.886126 -0.4042 -0.226722 -0.69503 -0.64228 -0.323125 -0.035494 -0.261985 0.964419 0.821889 0.483801 0.300724 0.169788 0.231736 -0.957847</float_array>
+          <technique_common>
+            <accessor source="#rotten_apple_meshShape-normals-array" count="69" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="rotten_apple_meshShape-map1" name="map1">
+          <float_array id="rotten_apple_meshShape-map1-array" count="200">0.472353 0.911367 0.447008 0.818539 0.5208 0.794062 0.861496 0.866149 0.926981 0.821844 0.523437 0.92554 0.418723 0.732124 0.524949 0.72513 0.574863 0.102538 0.717013 0.108697 0.574416 0.967517 0.547904 0.753555 0.418069 0.079378 0.369467 0.2256 0.257452 0.191786 0.27196 0.063487 0.449436 0.236364 0.569456 0.236873 0.683561 0.262076 0.768911 0.262778 0.835101 0.972952 0.904439 0.15483 0.139989 0.022952 0.128617 0.181923 0.094073 0.127181 0.352298 0.358209 0.24686 0.334426 0.457974 0.377648 0.567526 0.381191 0.678817 0.397606 0.787243 0.395115 0.919688 0.37684 0.125163 0.319776 0.019542 0.284898 0.246381 0.586538 0.341814 0.592817 0.331969 0.687351 0.243505 0.675149 0.450009 0.591045 0.450517 0.687789 0.556042 0.611696 0.605906 0.834889 0.659422 0.619233 0.661809 0.692141 0.768988 0.643972 0.750684 0.720262 0.871686 0.696287 0.818041 0.777622 0.047263 0.602551 0.145781 0.556059 0.151055 0.668693 0.076464 0.721392 0.270381 0.871234 0.370103 0.819776 0.589684 0.981133 0.683838 0.899465 0.561577 0.67849 0.772768 0.821379 0.174668 0.903526 0.192226 0.762811 0.670703 0.503504 0.787991 0.503966 0.906026 0.544971 0.014282 0.451071 0.129224 0.432866 0.244048 0.449128 0.346067 0.469415 0.456633 0.493189 0.562297 0.50966 0.156004 0.803623 0.137667 0.752296 0.178773 0.768555 0.042021 0.942574 0.081485 0.903928 0.084952 0.950676 0.032446 0.900207 0.07959 0.858227 0.029711 0.848215 0.074705 0.813132 0.028759 0.800428 0.065503 0.769943 0.158696 0.927922 0.147378 0.979285 0.103331 0.960538 0.164114 0.870335 0.104673 0.904588 0.106178 0.853624 0.100745 0.8068 0.087375 0.761911 0.125266 0.709313 0.05116 0.980593 0.146749 0.707561 0.174371 0.714015 0.874149 0.016721 0.969601 0.908589 0.926718 0.655119 0.974364 0.581274 0.410045 0.918129 0.355668 0.924872 0.892198 0.744293</float_array>
+          <technique_common>
+            <accessor source="#rotten_apple_meshShape-map1-array" count="100" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="rotten_apple_meshShape-vertices">
+          <input semantic="POSITION" source="#rotten_apple_meshShape-positions" />
+          <input semantic="NORMAL" source="#rotten_apple_meshShape-normals" />
+        </vertices>
+        <triangles material="blinn1SG" count="128">
+          <input semantic="VERTEX" source="#rotten_apple_meshShape-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#rotten_apple_meshShape-map1" offset="1" set="0" />
+          <p>0 0 1 1 2 2 0 0 3 97 1 1 0 99 4 4 3 3 0 99 5 95 4 4 0 0 2 2 5 5 2 2 1 1 7 7 7 7 1 1 6 6 1 1 3 97 6 6 6 6 3 97 8 98 4 4 9 94 3 3 3 3 9 94 8 20 5 95 10 96 4 4 4 4 10 96 9 94 2 2 7 11 5 5 5 5 7 11 10 10 6 12 11 13 7 15 7 15 11 13 12 14 6 12 13 16 11 13 14 17 13 16 8 8 8 8 13 16 6 12 9 9 15 18 8 8 8 8 15 18 14 17 9 9 16 19 15 18 10 93 17 21 16 19 10 22 18 23 17 24 12 14 18 23 7 15 7 15 18 23 10 22 11 13 19 25 12 14 12 14 19 25 20 26 21 27 19 25 13 16 13 16 19 25 11 13 22 28 21 27 14 17 14 17 21 27 13 16 22 28 14 17 23 29 23 29 14 17 15 18 24 30 23 29 16 19 16 19 23 29 15 18 24 30 16 19 25 31 25 31 16 19 17 21 26 32 25 33 18 23 18 23 25 33 17 24 20 26 26 32 12 14 12 14 26 32 18 23 28 35 29 36 27 34 27 34 29 36 30 37 31 38 32 39 28 35 28 35 32 39 29 36 31 38 33 40 32 39 32 39 33 40 34 56 33 40 35 42 34 56 34 56 35 42 36 43 35 42 37 44 36 43 36 43 37 44 38 45 39 46 40 47 37 44 37 44 40 47 38 45 41 49 42 50 39 48 39 48 42 50 40 51 27 34 30 37 41 49 41 49 30 37 42 50 30 37 29 36 43 52 29 36 32 53 43 52 32 54 34 41 43 55 34 41 36 43 43 55 36 43 38 45 43 55 38 45 40 57 43 55 40 58 42 59 43 52 42 59 30 37 43 52 45 61 37 44 44 60 44 60 37 44 35 42 45 61 46 62 37 44 37 44 46 62 39 46 46 63 47 64 39 48 39 48 47 64 41 49 47 64 48 65 41 49 41 49 48 65 27 34 48 65 49 66 27 34 27 34 49 66 28 35 50 67 31 38 49 66 49 66 31 38 28 35 51 68 33 40 50 67 50 67 33 40 31 38 44 60 35 42 51 68 51 68 35 42 33 40 48 65 47 64 20 26 20 26 47 64 26 32 48 65 20 26 49 66 49 66 20 26 19 25 49 66 19 25 50 67 50 67 19 25 21 27 50 67 21 27 51 68 51 68 21 27 22 28 51 68 22 28 44 60 44 60 22 28 23 29 44 60 23 29 45 61 45 61 23 29 24 30 24 30 25 31 45 61 45 61 25 31 46 62 46 63 25 33 47 64 47 64 25 33 26 32 52 69 53 70 54 71 55 72 56 73 57 74 58 75 59 76 56 73 60 77 61 78 59 76 62 79 57 80 61 78 63 81 64 82 65 83 54 84 63 81 66 85 52 69 54 84 67 86 68 87 53 70 52 69 65 88 64 89 53 70 56 73 67 86 66 85 59 76 68 87 67 86 61 78 65 88 68 87 57 74 66 85 65 83 58 75 60 77 59 76 56 73 59 76 67 86 54 84 66 85 67 86 60 77 62 79 61 78 59 76 61 78 68 87 52 69 67 86 68 87 62 90 55 72 57 74 61 78 57 80 65 88 65 88 53 70 68 87 55 72 58 75 56 73 57 74 56 73 66 85 63 81 65 83 66 85 54 71 53 70 63 92 63 92 53 70 64 91 10 93 16 19 9 9</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="rotten_apple">
+      <node id="rotten_apple_mesh" name="rotten_apple_mesh" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#rotten_apple_meshShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#rotten_apple_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

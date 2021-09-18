@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.92.0 commit date:2021-02-24, commit time:16:25, hash:02948a2cab44</authoring_tool>
+    </contributor>
+    <created>2021-05-03T11:17:22</created>
+    <modified>2021-05-03T11:17:22</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="hpl3export_machine_metal_sheets-effect">
+      <profile_COMMON>
+        <newparam sid="hpl3export_machine_metal_sheets_DIFFUSE-surface">
+          <surface type="2D">
+            <init_from>hpl3export_machine_metal_sheets_DIFFUSE</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="hpl3export_machine_metal_sheets_DIFFUSE-sampler">
+          <sampler2D>
+            <source>hpl3export_machine_metal_sheets_DIFFUSE-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="hpl3export_machine_metal_sheets_DIFFUSE-sampler" texcoord="pCubeShape1-mesh-map-0"/>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <color sid="alpha">0 0 0 0</color>
+            </transparent>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="hpl3export_machine_metal_sheets_DIFFUSE" name="hpl3export_machine_metal_sheets_DIFFUSE">
+      <init_from>/D:/SteamGames/steamapps/common/Amnesia%20Rebirth/mods/thewake/assets/static_objects/pCubeShape1/machine_metal_sheets.dds</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="hpl3export_machine_metal_sheets-material" name="hpl3export_machine_metal_sheets">
+      <instance_effect url="#hpl3export_machine_metal_sheets-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="pCubeShape1_004-mesh" name="pCubeShape1.004">
+      <mesh>
+        <source id="pCubeShape1_004-mesh-positions">
+          <float_array id="pCubeShape1_004-mesh-positions-array" count="24">-0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape1_004-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCubeShape1_004-mesh-normals">
+          <float_array id="pCubeShape1_004-mesh-normals-array" count="18">0 0 1 0 1 0 0 0 -1 0 -1 0 1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape1_004-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCubeShape1_004-mesh-map">
+          <float_array id="pCubeShape1_004-mesh-map-array" count="72">0.03788089 0.292277 0.03788089 0.187328 0.04522699 0.292277 0.04522699 0.292277 0.03788089 0.187328 0.04522699 0.187328 0.018031 0.307351 0.018031 0.256469 0.06894099 0.307351 0.06894099 0.307351 0.018031 0.256469 0.06894099 0.260611 0.0419169 0.291909 0.0419169 0.18696 0.049263 0.291909 0.049263 0.291909 0.0419169 0.18696 0.049263 0.18696 0.018031 0.307351 0.018031 0.256469 0.06894099 0.307351 0.06894099 0.307351 0.018031 0.256469 0.06894099 0.260611 0.0496869 0.207369 0.0496869 0.2732 0.04310399 0.207369 0.04310399 0.207369 0.0496869 0.2732 0.04310399 0.2732 0.03467798 0.277017 0.03467798 0.203552 0.04202497 0.277017 0.04202497 0.277017 0.03467798 0.203552 0.04202497 0.203552</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape1_004-mesh-map-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCubeShape1_004-mesh-vertices">
+          <input semantic="POSITION" source="#pCubeShape1_004-mesh-positions"/>
+        </vertices>
+        <triangles material="hpl3export_machine_metal_sheets-material" count="12">
+          <input semantic="VERTEX" source="#pCubeShape1_004-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pCubeShape1_004-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pCubeShape1_004-mesh-map" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 2 0 2 2 0 3 1 0 4 3 0 5 2 1 6 3 1 7 4 1 8 4 1 9 3 1 10 5 1 11 4 2 12 5 2 13 6 2 14 6 2 15 5 2 16 7 2 17 6 3 18 7 3 19 0 3 20 0 3 21 7 3 22 1 3 23 1 4 24 7 4 25 3 4 26 3 4 27 7 4 28 5 4 29 6 5 30 0 5 31 4 5 32 4 5 33 0 5 34 2 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="action_container-pCube1_001" name="pCube1.001">
+      <animation id="pCube1_001_pCube1Action_002_transform" name="pCube1.001">
+        <source id="pCube1_001_pCube1Action_002_transform-input">
+          <float_array id="pCube1_001_pCube1Action_002_transform-input-array" count="250">0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1 1.041667 1.083333 1.125 1.166667 1.208333 1.25 1.291667 1.333333 1.375 1.416667 1.458333 1.5 1.541667 1.583333 1.625 1.666667 1.708333 1.75 1.791667 1.833333 1.875 1.916667 1.958333 2 2.041667 2.083333 2.125 2.166667 2.208333 2.25 2.291667 2.333333 2.375 2.416667 2.458333 2.5 2.541667 2.583333 2.625 2.666667 2.708333 2.75 2.791667 2.833333 2.875 2.916667 2.958333 3 3.041667 3.083333 3.125 3.166667 3.208333 3.25 3.291667 3.333333 3.375 3.416667 3.458333 3.5 3.541667 3.583333 3.625 3.666667 3.708333 3.75 3.791667 3.833333 3.875 3.916667 3.958333 4 4.041666 4.083333 4.125 4.166666 4.208333 4.25 4.291666 4.333333 4.375 4.416666 4.458333 4.5 4.541666 4.583333 4.625 4.666666 4.708333 4.75 4.791666 4.833333 4.875 4.916666 4.958333 5 5.041666 5.083333 5.125 5.166666 5.208333 5.25 5.291666 5.333333 5.375 5.416666 5.458333 5.5 5.541666 5.583333 5.625 5.666666 5.708333 5.75 5.791666 5.833333 5.875 5.916666 5.958333 6 6.041666 6.083333 6.125 6.166666 6.208333 6.25 6.291666 6.333333 6.375 6.416666 6.458333 6.5 6.541666 6.583333 6.625 6.666666 6.708333 6.75 6.791666 6.833333 6.875 6.916666 6.958333 7 7.041666 7.083333 7.125 7.166666 7.208333 7.25 7.291666 7.333333 7.375 7.416666 7.458333 7.5 7.541666 7.583333 7.625 7.666666 7.708333 7.75 7.791666 7.833333 7.875 7.916666 7.958333 8 8.041667 8.083333 8.125 8.166667 8.208333 8.25 8.291667 8.333333 8.375 8.416667 8.458333 8.5 8.541667 8.583333 8.625 8.666667 8.708333 8.75 8.791667 8.833333 8.875 8.916667 8.958333 9 9.041667 9.083333 9.125 9.166667 9.208333 9.25 9.291667 9.333333 9.375 9.416667 9.458333 9.5 9.541667 9.583333 9.625 9.666667 9.708333 9.75 9.791667 9.833333 9.875 9.916667 9.958333 10 10.04167 10.08333 10.125 10.16667 10.20833 10.25 10.29167 10.33333 10.375 10.41667</float_array>
+          <technique_common>
+            <accessor source="#pCube1_001_pCube1Action_002_transform-input-array" count="250" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube1_001_pCube1Action_002_transform-output">
+          <float_array id="pCube1_001_pCube1Action_002_transform-output-array" count="4000">0 0 0.14 0 0 0.014 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139994 0 0 0.014006 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139976 0 0 0.014024 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139946 0 0 0.014054 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139904 0 0 0.014097 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.13985 0 0 0.01415 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139784 0 0 0.014216 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139707 0 0 0.014293 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139618 0 0 0.014382 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139518 0 0 0.014482 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139407 0 0 0.014593 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139284 0 0 0.014716 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.13915 0 0 0.01485 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.139006 0 0 0.014994 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.13885 0 0 0.01515 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.138683 0 0 0.015317 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.138506 0 0 0.015494 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.138318 0 0 0.015682 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.13812 0 0 0.01588 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.137911 0 0 0.016089 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.137692 0 0 0.016308 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.137463 0 0 0.016537 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.137223 0 0 0.016777 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.136973 0 0 0.017027 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.136714 0 0 0.017286 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.136445 0 0 0.017555 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.136166 0 0 0.017834 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.135877 0 0 0.018123 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.135579 0 0 0.018421 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.135271 0 0 0.018729 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.134954 0 0 0.019046 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.134627 0 0 0.019373 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.134292 0 0 0.019708 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.133947 0 0 0.020053 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.133594 0 0 0.020406 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.133231 0 0 0.020769 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.13286 0 0 0.02114 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.13248 0 0 0.02152 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.132092 0 0 0.021908 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.131695 0 0 0.022305 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.13129 0 0 0.02271 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.130876 0 0 0.023124 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.130455 0 0 0.023545 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.130025 0 0 0.023975 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.129587 0 0 0.024413 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.129142 0 0 0.024858 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.128688 0 0 0.025312 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.128227 0 0 0.025773 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.127758 0 0 0.026242 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.127282 0 0 0.026718 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.126799 0 0 0.027201 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.126308 0 0 0.027692 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.12581 0 0 0.02819 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.125305 0 0 0.028695 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.124792 0 0 0.029208 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.124273 0 0 0.029727 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.123747 0 0 0.030253 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.123215 0 0 0.030785 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.122676 0 0 0.031324 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.12213 0 0 0.03187 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.121578 0 0 0.032422 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.121019 0 0 0.032981 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.120455 0 0 0.033545 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.119884 0 0 0.034116 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.119307 0 0 0.034693 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.118724 0 0 0.035276 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.118136 0 0 0.035864 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.117541 0 0 0.036459 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.116941 0 0 0.037059 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.116336 0 0 0.037664 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.115725 0 0 0.038275 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.115109 0 0 0.038891 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.114487 0 0 0.039513 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.113861 0 0 0.040139 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.113229 0 0 0.040771 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.112593 0 0 0.041407 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.111951 0 0 0.042049 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.111305 0 0 0.042695 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.110654 0 0 0.043346 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.109999 0 0 0.044001 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.109339 0 0 0.044661 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.108674 0 0 0.045326 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.108006 0 0 0.045994 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.107333 0 0 0.046667 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.106657 0 0 0.047343 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.105976 0 0 0.048024 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.105291 0 0 0.048709 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.104603 0 0 0.049397 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.103911 0 0 0.050089 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.103216 0 0 0.050784 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.102516 0 0 0.051484 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.101814 0 0 0.052186 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.101108 0 0 0.052892 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.100399 0 0 0.053601 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.099687 0 0 0.054313 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.098973 0 0 0.055027 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.098255 0 0 0.055745 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.097534 0 0 0.056466 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.096811 0 0 0.057189 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.096085 0 0 0.057915 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.095356 0 0 0.058644 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.094626 0 0 0.059374 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.093892 0 0 0.060108 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.093157 0 0 0.060843 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.09242 0 0 0.06158 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.09168 0 0 0.06232 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.090939 0 0 0.063061 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.090196 0 0 0.063804 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.089451 0 0 0.064549 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.088704 0 0 0.065296 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.087956 0 0 0.066044 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.087207 0 0 0.066793 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.086456 0 0 0.067544 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.085704 0 0 0.068296 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.084951 0 0 0.069049 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.084197 0 0 0.069803 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.083442 0 0 0.070558 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.082686 0 0 0.071314 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.081929 0 0 0.072071 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.081172 0 0 0.072828 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.080414 0 0 0.073586 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.079656 0 0 0.074344 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.078897 0 0 0.075103 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.078139 0 0 0.075861 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.07738 0 0 0.07662 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.07662 0 0 0.07738 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.075861 0 0 0.078139 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.075103 0 0 0.078897 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.074344 0 0 0.079656 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.073586 0 0 0.080414 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.072828 0 0 0.081172 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.072071 0 0 0.081929 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.071314 0 0 0.082686 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.070558 0 0 0.083442 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.069803 0 0 0.084197 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.069049 0 0 0.084951 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.068296 0 0 0.085704 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.067544 0 0 0.086456 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.066793 0 0 0.087207 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.066044 0 0 0.087956 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.065296 0 0 0.088704 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.064549 0 0 0.089451 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.063804 0 0 0.090196 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.063061 0 0 0.090939 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.06232 0 0 0.09168 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.06158 0 0 0.09242 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.060843 0 0 0.093157 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.060108 0 0 0.093892 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.059374 0 0 0.094626 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.058644 0 0 0.095356 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.057915 0 0 0.096085 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.057189 0 0 0.096811 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.056466 0 0 0.097534 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.055745 0 0 0.098255 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.055027 0 0 0.098973 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.054313 0 0 0.099687 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.053601 0 0 0.100399 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.052892 0 0 0.101108 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.052186 0 0 0.101814 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.051484 0 0 0.102516 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.050784 0 0 0.103216 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.050089 0 0 0.103911 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.049397 0 0 0.104603 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.048709 0 0 0.105291 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.048024 0 0 0.105976 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.047343 0 0 0.106657 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.046667 0 0 0.107333 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.045994 0 0 0.108006 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.045326 0 0 0.108674 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.044661 0 0 0.109339 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.044001 0 0 0.109999 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.043346 0 0 0.110654 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.042695 0 0 0.111305 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.042049 0 0 0.111951 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.041407 0 0 0.112593 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.040771 0 0 0.113229 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.040139 0 0 0.113861 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.039513 0 0 0.114487 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.038891 0 0 0.115109 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.038275 0 0 0.115725 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.037664 0 0 0.116336 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.037059 0 0 0.116941 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.036459 0 0 0.117541 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.035864 0 0 0.118136 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.035276 0 0 0.118724 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.034693 0 0 0.119307 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.034116 0 0 0.119884 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.033545 0 0 0.120455 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.032981 0 0 0.121019 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.032422 0 0 0.121578 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.03187 0 0 0.12213 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.031324 0 0 0.122676 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.030785 0 0 0.123215 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.030253 0 0 0.123747 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.029727 0 0 0.124273 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.029208 0 0 0.124792 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.028695 0 0 0.125305 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.02819 0 0 0.12581 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.027692 0 0 0.126308 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.027201 0 0 0.126799 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.026718 0 0 0.127282 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.026242 0 0 0.127758 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.025773 0 0 0.128227 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.025312 0 0 0.128688 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.024858 0 0 0.129142 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.024413 0 0 0.129587 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.023975 0 0 0.130025 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.023545 0 0 0.130455 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.023124 0 0 0.130876 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.02271 0 0 0.13129 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.022305 0 0 0.131695 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.021908 0 0 0.132092 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.02152 0 0 0.13248 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.02114 0 0 0.13286 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.020769 0 0 0.133231 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.020406 0 0 0.133594 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.020053 0 0 0.133947 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.019708 0 0 0.134292 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.019373 0 0 0.134627 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.019046 0 0 0.134954 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.018729 0 0 0.135271 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.018422 0 0 0.135578 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.018123 0 0 0.135877 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.017834 0 0 0.136166 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.017555 0 0 0.136445 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.017286 0 0 0.136714 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.017027 0 0 0.136973 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.016777 0 0 0.137223 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.016537 0 0 0.137463 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.016308 0 0 0.137692 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.016089 0 0 0.137911 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.01588 0 0 0.13812 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.015682 0 0 0.138318 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.015494 0 0 0.138506 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.015317 0 0 0.138683 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.01515 0 0 0.13885 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014994 0 0 0.139006 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.01485 0 0 0.13915 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014716 0 0 0.139284 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014593 0 0 0.139407 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014482 0 0 0.139518 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014382 0 0 0.139618 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014293 0 0 0.139707 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014216 0 0 0.139784 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.01415 0 0 0.13985 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014097 0 0 0.139903 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014054 0 0 0.139946 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014024 0 0 0.139976 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014006 0 0 0.139994 0 0 -0.2 0 0 0 0 0 0 1 0 0 0.014 0 0 0.14 0 0 -0.2 0 0 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#pCube1_001_pCube1Action_002_transform-output-array" count="250" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube1_001_pCube1Action_002_transform-interpolation">
+          <Name_array id="pCube1_001_pCube1Action_002_transform-interpolation-array" count="250">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#pCube1_001_pCube1Action_002_transform-interpolation-array" count="250" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="pCube1_001_pCube1Action_002_transform-sampler">
+          <input semantic="INPUT" source="#pCube1_001_pCube1Action_002_transform-input"/>
+          <input semantic="OUTPUT" source="#pCube1_001_pCube1Action_002_transform-output"/>
+          <input semantic="INTERPOLATION" source="#pCube1_001_pCube1Action_002_transform-interpolation"/>
+        </sampler>
+        <channel source="#pCube1_001_pCube1Action_002_transform-sampler" target="pCube1_001/transform"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="pCube1_001" name="pCube1.001" type="NODE">
+        <matrix sid="transform">0 0 0.014 0 0 0.14 0 0 -0.2 0 0 0 0 0 0 1</matrix>
+        <instance_geometry url="#pCubeShape1_004-mesh" name="pCube1.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="hpl3export_machine_metal_sheets-material" target="#hpl3export_machine_metal_sheets-material">
+                <bind_vertex_input semantic="pCubeShape1-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

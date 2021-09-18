@@ -1,0 +1,42 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/penumbra/lux/redist/static_objects/debris/rock/stone_small01.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="stone_small01_mesh" Rotation="0.000000 0.000000 0.000000" Scale="2.000000 2.000000 2.000000" SubMeshID="0" Tag="" Type="11" WorldPos="0.000000 0.000000 0.000000" TriCount="58" />
+        </Mesh>
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 -0.602202 0.000000" RelativeScale="0.273112 0.156919 0.206919" RelativeTranslation="0.000000 0.000000 0.000000" Rotation="0.000000 -0.602202 0.000000" Scale="0.546224 0.313838 0.413838" ShapeType="Box" ShapeTypeID="0" Tag="" Type="8" WorldPos="-0.012951 0.207167 -0.004019" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="2" LinearDamping="0.000000" Mass="0.000000" Material="Rock" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="2.000000 2.000000 2.000000" Tag="" Type="9" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.012951 0.207167 -0.004019">
+                <Shape ID="1" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="SubItemTypeName" Value="" />
+        <Var Name="ImageFile" Value="coins_large.tga" />
+        <Var Name="PickSound" Value="Generic.snt" />
+        <Var Name="TempVar" Value="0" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

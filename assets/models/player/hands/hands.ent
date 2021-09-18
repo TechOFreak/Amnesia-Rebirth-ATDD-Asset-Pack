@@ -1,0 +1,44 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="models/player/hands/hands.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="hand" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="3336" />
+        </Mesh>
+        <Bones>
+            <Bone ID="1" Name="gameCamera" />
+            <Bone ID="2" Name="hand" />
+            <Bone ID="3" Name="shoulder" />
+            <Bone ID="4" Name="elbow" />
+            <Bone ID="5" Name="elbow_hand" />
+            <Bone ID="6" Name="little" />
+            <Bone ID="7" Name="little2" />
+            <Bone ID="8" Name="little3" />
+            <Bone ID="9" Name="little4" />
+            <Bone ID="10" Name="ring" />
+            <Bone ID="11" Name="ring2" />
+            <Bone ID="12" Name="ring3" />
+            <Bone ID="13" Name="ring4" />
+            <Bone ID="14" Name="middle" />
+            <Bone ID="15" Name="middle2" />
+            <Bone ID="16" Name="middle3" />
+            <Bone ID="17" Name="middle4" />
+            <Bone ID="18" Name="index" />
+            <Bone ID="19" Name="index2" />
+            <Bone ID="20" Name="index3" />
+            <Bone ID="21" Name="index4" />
+            <Bone ID="22" Name="thumb" />
+            <Bone ID="23" Name="thumb2" />
+            <Bone ID="24" Name="thumb3" />
+            <Bone ID="25" Name="attachpoint" />
+        </Bones>
+        <Shapes />
+        <Bodies />
+        <Joints />
+        <Animations>
+            <Animation File="animations/hands_lantern_idle.dae_anim" Name="Lantern_Idle" SpecialEventTime="0" Speed="1" />
+            <Animation File="animations/hands_lantern_draw.dae_anim" Name="Lantern_Draw" SpecialEventTime="0" Speed="1" />
+            <Animation File="animations/hands_lantern_holster.dae_anim" Name="Lantern_Holster" SpecialEventTime="0" Speed="1" />
+        </Animations>
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid" />
+</Entity>

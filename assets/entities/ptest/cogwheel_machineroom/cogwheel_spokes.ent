@@ -1,0 +1,76 @@
+﻿<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/ptest/cogwheel_machineroom/cogwheel_spokes.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="polySurface67" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" TriCount="407" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" ID="1" Name="Shape_1" RelativeRotation="0 0 0" RelativeScale="0.6 1.75 0.35" RelativeTranslation="0.226973 -0.359941 0.803869" Rotation="0 0 0" Scale="0.6 1.75 0.35" ShapeType="Box" Tag="" WorldPos="-0.29839 1.20484 0.805998" />
+            <BodyShape Active="true" ID="2" Name="Shape_2" RelativeRotation="0 0 0" RelativeScale="0.6 1.75 0.35" RelativeTranslation="0.226973 -0.359941 -0.810313" Rotation="0 0 0" Scale="0.6 1.75 0.35" ShapeType="Box" Tag="" WorldPos="-0.29839 1.20484 -0.808184" />
+            <BodyShape Active="true" ID="3" Name="Shape_3" RelativeRotation="0 0 0" RelativeScale="0.6 0.6 2" RelativeTranslation="0.167464 0.854944 0.00446981" Rotation="0 0 0" Scale="0.6 0.6 2" ShapeType="Box" Tag="" WorldPos="-0.357899 2.41972 0.00659913" />
+            <BodyShape Active="true" ID="4" Name="Shape_4" RelativeRotation="0 0 0" RelativeScale="0.6 0.5 0.35" RelativeTranslation="0.194504 1.41421 0.803869" Rotation="0 0 0" Scale="0.6 0.5 0.35" ShapeType="Box" Tag="" WorldPos="-0.330859 2.97899 0.805998" />
+            <BodyShape Active="true" ID="5" Name="Shape_5" RelativeRotation="0 0 0" RelativeScale="0.6 0.5 0.35" RelativeTranslation="0.194504 1.41421 -0.799088" Rotation="0 0 0" Scale="0.6 0.5 0.35" ShapeType="Box" Tag="" WorldPos="-0.330859 2.97899 -0.796959" />
+            <BodyShape Active="true" ID="6" Name="Shape_6" RelativeRotation="0 0 0" RelativeScale="0.35 2.15 1.35" RelativeTranslation="0.274349 -0.468801 0.0257242" Rotation="0 0 0" Scale="0.35 2.15 1.35" ShapeType="Box" Tag="" WorldPos="-0.251014 1.09598 0.0278535" />
+            <BodyShape Active="true" ID="7" Name="Shape_7" RelativeRotation="0 0 0" RelativeScale="0.65 0.25 0.45" RelativeTranslation="0.182151 -1.41421 0.855435" Rotation="0 0 0" Scale="0.65 0.25 0.45" ShapeType="Box" Tag="" WorldPos="-0.343213 0.150564 0.857564" />
+            <BodyShape Active="true" ID="8" Name="Shape_8" RelativeRotation="0 0 0" RelativeScale="0.65 0.25 0.45" RelativeTranslation="0.182151 -1.41421 -0.855435" Rotation="0 0 0" Scale="0.65 0.25 0.45" ShapeType="Box" Tag="" WorldPos="-0.343213 0.150564 -0.853305" />
+            <BodyShape Active="true" ID="10" Name="Shape_9" RelativeRotation="0 0 1.5708" RelativeScale="0.04 0.3 0.04" RelativeTranslation="-0.274349 -0.14109 0.798903" Rotation="0 0 1.5708" Scale="0.04 0.3 0.04" ShapeType="Cylinder" Tag="" WorldPos="-0.799712 1.42369 0.801032" />
+            <BodyShape Active="true" ID="11" Name="Shape_10" RelativeRotation="0 0 1.5708" RelativeScale="0.04 0.3 0.04" RelativeTranslation="-0.117084 -0.811749 0.0377001" Rotation="0 0 1.5708" Scale="0.04 0.3 0.04" ShapeType="Cylinder" Tag="" WorldPos="-0.642447 0.75303 0.0398294" />
+            <BodyShape Active="true" ID="13" Name="Shape_11" RelativeRotation="0 0 1.5708" RelativeScale="0.04 0.3 0.04" RelativeTranslation="-0.274349 -0.14109 -0.801337" Rotation="0 0 1.5708" Scale="0.04 0.3 0.04" ShapeType="Cylinder" Tag="" WorldPos="-0.799712 1.42369 -0.799208" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0" BlocksSound="false" BuoyancyDensityMul="1" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" HasGravity="true" ID="14" LinearDamping="0" Mass="0" Material="Metal" MaxAngularSpeed="0" MaxLinearSpeed="0" Name="Body_1" PushedByCharacterGravity="false" Rotation="0 0 0" Scale="1 1 1" Tag="" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.525363 1.56478 0.00212932">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="11" />
+                <Shape ID="10" />
+                <Shape ID="13" />
+                <Shape ID="2" />
+                <Shape ID="8" />
+                <Shape ID="6" />
+                <Shape ID="1" />
+                <Shape ID="7" />
+                <Shape ID="3" />
+                <Shape ID="4" />
+                <Shape ID="5" />
+            </Body>
+        </Bodies>
+        <Joints />
+        <Animations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Rigid">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="ShowMesh" Value="true" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="ShowHints" Value="true" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="false" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="100" />
+        <Var Name="BreakEntity" Value="" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+        <Var Name="MaxInteractDistance" Value="0" />
+    </UserDefinedVariables>
+</Entity>

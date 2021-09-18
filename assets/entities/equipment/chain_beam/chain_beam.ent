@@ -1,0 +1,54 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/equipment/chain_beam/chain_beam.dae">
+            <SubMesh ID="0" Name="chainlink1" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="8" Material="" Static="true" />
+            <SubMesh ID="1" Name="chainlink2" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="8" Material="" Static="true" />
+            <SubMesh ID="2" Name="chainlink3" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="8" Material="" Static="true" />
+            <SubMesh ID="3" Name="chainbody" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="352" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="4" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="1.06678 0.081937 0.35431" Rotation="0 0 0" Scale="0.15 0.245 0.15" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="5" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="1.06678 -0.287411 0.35431" Rotation="0 0 0" Scale="0.15 0.245 0.15" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="6" Name="Shape_3" CreStamp="0" ModStamp="0" WorldPos="1.06678 -0.653339 0.35431" Rotation="0 0 0" Scale="0.15 0.245 0.15" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="10" Name="Shape_4" CreStamp="0" ModStamp="0" WorldPos="0.062743 0.007175 -0.027695" Rotation="0 0 1.5708" Scale="0.5 1.5 0.5" RelativeTranslation="0 0 0" RelativeRotation="0 -0 1.5708" RelativeScale="1 1 1" ShapeType="Cylinder" />
+        </Shapes>
+        <Bodies>
+            <Body ID="7" Name="Body_1" CreStamp="0" ModStamp="0" WorldPos="1.06678 -0.653339 0.35431" Rotation="0 0 0" Scale="1 0.7 1" Material="Metal" Mass="0.5" AngularDamping="0.5" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="2" />
+                </Children>
+                <Shape ID="6" />
+            </Body>
+            <Body ID="8" Name="Body_2" CreStamp="0" ModStamp="0" WorldPos="1.06678 -0.287411 0.35431" Rotation="0 0 0" Scale="1 0.7 1" Material="Metal" Mass="0.5" AngularDamping="0.5" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="5" />
+            </Body>
+            <Body ID="9" Name="Body_3" CreStamp="0" ModStamp="0" WorldPos="1.06678 0.081937 0.35431" Rotation="0 0 0" Scale="1 0.7 1" Material="Metal" Mass="0.5" AngularDamping="0.5" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="4" />
+            </Body>
+            <Body ID="11" Name="Body_4" CreStamp="0" ModStamp="0" WorldPos="0.062743 0.007175 -0.027695" Rotation="0 0 0" Scale="1 1 1" Material="Metal" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="false" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="false" CollideNonCharacter="false" Volatile="false" UseSurfaceEffects="false" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="3" />
+                </Children>
+                <Shape ID="10" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointBall ID="12" Name="BallJoint_1" CreStamp="0" ModStamp="0" WorldPos="1.07096 0.211042 0.35431" Rotation="0 0 0" Scale="1 1 1" LimitStepCount="0" Stiffness="0" MinMoveSpeed="0.1" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveVolume="0.01" MaxMoveSpeed="2" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveVolume="0.8" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitSound="" MinLimitMinSpeed="0" MinLimitMaxSpeed="0" MaxLimitSound="" MaxLimitMinSpeed="0" MaxLimitMaxSpeed="0" Breakable="false" BreakForce="0" BreakSound="" CollideBodies="true" StickyMinLimit="false" StickyMaxLimit="false" MoveSound="" MoveType="Linear" MaxConeAngle="30" MaxTwistAngle="5" ConnectedParentBodyID="-1" ConnectedChildBodyID="9" />
+            <JointBall ID="13" Name="BallJoint_2" CreStamp="0" ModStamp="0" WorldPos="1.07096 -0.138472 0.35431" Rotation="0 0 0" Scale="1 1 1" LimitStepCount="0" Stiffness="0" MinMoveSpeed="0.1" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveVolume="0.01" MaxMoveSpeed="2" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveVolume="0.8" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitSound="" MinLimitMinSpeed="0" MinLimitMaxSpeed="0" MaxLimitSound="" MaxLimitMinSpeed="0" MaxLimitMaxSpeed="0" Breakable="false" BreakForce="0" BreakSound="" CollideBodies="true" StickyMinLimit="false" StickyMaxLimit="false" MoveSound="" MoveType="Linear" MaxConeAngle="30" MaxTwistAngle="5" ConnectedParentBodyID="9" ConnectedChildBodyID="8" />
+            <JointBall ID="14" Name="BallJoint_3" CreStamp="0" ModStamp="0" WorldPos="1.07096 -0.483236 0.35431" Rotation="0 0 0" Scale="1 1 1" LimitStepCount="0" Stiffness="0" MinMoveSpeed="0.1" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveVolume="0.01" MaxMoveSpeed="2" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveVolume="0.8" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitSound="" MinLimitMinSpeed="0" MinLimitMaxSpeed="0" MaxLimitSound="" MaxLimitMinSpeed="0" MaxLimitMaxSpeed="0" Breakable="false" BreakForce="0" BreakSound="" CollideBodies="true" StickyMinLimit="false" StickyMaxLimit="false" MoveSound="" MoveType="Linear" MaxConeAngle="30" MaxTwistAngle="5" ConnectedParentBodyID="8" ConnectedChildBodyID="7" />
+        </Joints>
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp">
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+    </UserDefinedVariables>
+</Entity>

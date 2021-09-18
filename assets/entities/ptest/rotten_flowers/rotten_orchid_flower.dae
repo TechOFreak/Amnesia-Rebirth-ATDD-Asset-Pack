@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=1;exportAnimations=1;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/entities/rotten%20flowers/rotten_flowers.ma</source_data>
+    </contributor>
+    <created>2011-02-17T19:52:13</created>
+    <modified>2011-02-17T19:52:13</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_materials>
+    <material id="orchid_material" name="orchid_material">
+      <instance_effect url="#orchid_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="orchid_material-fx">
+      <profile_COMMON>
+        <newparam sid="file10-surface">
+          <surface type="2D">
+            <init_from>file10</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file10-sampler">
+          <sampler2D>
+            <source>file10-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file10-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <texture texture="file10-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file10" name="file10">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/entities/ptest/rotten_flowers/orchid_rotten.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file10</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="orchid_mesh4Shape" name="orchid_mesh4Shape">
+      <mesh>
+        <source id="orchid_mesh4Shape-positions" name="orchid_mesh4Shape-positions">
+          <float_array id="orchid_mesh4Shape-positions-array" count="279">-0.012169 0.04704866 0.01781662 0.01404161 0.04769165 0.01557785 0.01427158 0.04631186 0.01787422 -0.01193901 0.04566881 0.02011299 0.01446495 0.02335604 0.01354446 -0.01174568 0.02271297 0.01578323 0.01327789 0.01482719 -0.002802887 -0.01293278 0.01418415 -5.64117e-4 0.01918104 0.02872513 -0.005069809 -0.01980419 0.02776869 -0.00173996 0.05346817 0.02063812 -0.006253586 0.09954195 0.04708451 0.05937401 0.08776102 0.0490641 -0.07798347 -0.006901932 0.01434713 -0.07036476 0.004878979 0.01236753 0.06699272 -0.05336092 0.01801733 0.002871246 -0.100658 0.04444153 -0.06188972 -0.08887707 0.04246202 0.07546783 0.007283802 0.01242655 0.06678749 -0.004497108 0.01440607 -0.07057007 -0.008262691 0.01653856 0.01047264 -0.01956881 0.02224821 -0.01623299 -0.02256287 0.02549574 8.97522e-4 -0.002737045 0.02473728 -0.02591972 7.024e-4 0.04168839 -0.02603249 0.008333645 0.01265049 -0.01785576 -0.01525091 0.04495255 0.002754211 -0.008683109 0.01692127 -0.01346481 0.0201458 0.02315298 -0.01538185 0.00482111 0.02653 -0.02355011 0.02391289 0.02486723 0.003754501 0.02266756 0.04164204 0.007784042 0.01291826 0.01228128 0.01112968 4.35829e-4 0.04562904 -0.0163755 2.1059e-4 0.005002804 -0.003768692 0.08653505 0.01957325 -0.1013606 -0.1020114 0.01494762 -0.08525604 -0.08662748 0.01478226 0.09480469 0.101919 0.01940788 0.07870003 -0.01214479 0.04825531 0.0184465 0.0140658 0.04889828 0.01620773 0.01429579 0.04751848 0.0185041 -0.01191486 0.04687546 0.02074287 0.01448914 0.02456264 0.01417435 -0.01172148 0.0239196 0.01641312 0.01330206 0.01603384 -0.00217308 -0.01290852 0.01539085 6.56891e-5 0.01920525 0.02993176 -0.004439926 -0.01977999 0.02897532 -0.001110077 0.00191906 0.007406845 -0.008996277 -0.006784859 0.007145252 -0.005321884 -0.004118233 0.01939964 -0.003544693 0.001229038 0.01956038 -0.005802078 -0.005977287 0.007009563 0.004093781 -0.003622074 0.01931631 0.002239838 0.003225765 0.00718729 0.006238708 0.002031803 0.01942551 0.00355751 0.008105812 0.007432823 -0.001851349 0.005029907 0.01957636 -0.001412506 0.01268478 0.008228264 -0.009035187 0.006101418 0.007805538 0.007457581 0.004117336 -0.01449055 -0.008105927 0.001874371 0.008029747 -0.01217911 -0.007968388 0.007610226 -4.81491e-4 0.05350729 0.02184233 -0.005450287 0.09958101 0.04828861 0.06017738 0.08780008 0.05026821 -0.07718018 -0.006862812 0.01555124 -0.06956139 0.00491806 0.01357167 0.06779602 -0.05332186 0.01922146 0.003674545 -0.1006189 0.04564571 -0.06108635 -0.08883801 0.04366609 0.07627113 0.007322903 0.01363068 0.06759071 -0.004458065 0.0156102 -0.06976677 -0.008238506 0.01774523 0.01110245 -0.0195446 0.02345484 -0.0156031 -0.02253866 0.02670225 0.001527405 -0.002712879 0.02594391 -0.02528984 7.26509e-4 0.04289497 -0.02540268 0.008357887 0.01385712 -0.01722588 -0.01522669 0.04615915 0.003384018 -0.008658905 0.0181279 -0.01283501 0.02016994 0.02435955 -0.01475204 0.004845257 0.02773659 -0.0229203 0.02393707 0.02607386 0.004384384 0.02269175 0.04284859 0.008413925 0.01294243 0.01348791 0.01175957 4.60014e-4 0.04683569 -0.01574562 2.34776e-4 0.006209431 -0.003138809 0.08655926 0.0207799 -0.1007308 -0.1019871 0.01615425 -0.08462616 -0.0866033 0.01598886 0.09543449 0.1019431 0.02061449 0.07932991</float_array>
+          <technique_common>
+            <accessor source="#orchid_mesh4Shape-positions-array" count="93" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="orchid_mesh4Shape-normals" name="orchid_mesh4Shape-normals">
+          <float_array id="orchid_mesh4Shape-normals-array" count="279">-0.03357284 0.993619 -0.1076762 -0.03357284 0.993619 -0.1076762 0.06758798 0.4107139 0.9092558 0.06758798 0.4107139 0.9092558 0.08286791 -0.5953547 0.7991781 0.08286791 -0.5953547 0.7991781 0.06089412 -0.8867511 0.4582189 0.06089412 -0.8867511 0.4582189 -0.07626768 0.7247769 -0.6847494 -0.07626768 0.7247769 -0.6847494 0.3477481 -0.9365865 -0.04332369 0.460315 -0.8870923 0.03431382 0.4455751 -0.8846154 -0.137544 0.228036 -0.96624 -0.1199159 0.242751 -0.9687127 0.05165111 -0.3040461 -0.9525774 0.01234966 -0.418838 -0.9058233 -0.06370875 -0.4040985 -0.9082999 0.1081469 -0.1830348 -0.9791582 0.08801888 -0.1977494 -0.9766859 -0.08354598 -0.4475749 -0.8942448 -0.00170333 -0.7780868 -0.3511115 -0.5208662 -0.9471762 -0.3018675 -0.10832 -0.4335197 -0.3307122 -0.8382662 -0.6455557 0.3247038 -0.691249 -0.3203005 -0.8664058 -0.3830778 -0.8241804 0.4472621 -0.3473953 0.1579189 -0.8726913 -0.4620297 0.7472343 -0.3147716 -0.5852861 0.4095811 -0.2579146 -0.8750563 0.9376624 -0.3101667 -0.1567987 0.8562376 0.3542756 -0.37596 0.47823 -0.850633 -0.2184482 0.5856181 0.4848281 -0.64961 0.02424182 -0.9997006 -0.003324351 0.08226486 -0.9937391 -0.07559796 -0.04541184 -0.9968714 -0.0646925 -0.03398772 -0.9970393 0.06897471 0.09368328 -0.9939071 0.05806972 0.03357232 -0.993619 0.1076763 0.03357232 -0.993619 0.1076763 -0.06758826 -0.410714 -0.9092557 -0.06758826 -0.410714 -0.9092557 -0.08286711 0.5953566 -0.7991768 -0.08286711 0.5953566 -0.7991768 -0.06089266 0.8867531 -0.4582148 -0.06089266 0.8867531 -0.4582148 0.0762675 -0.7247767 0.6847496 0.0762675 -0.7247767 0.6847496 0.2162292 0.2596409 -0.9411862 -0.8312235 0.2526939 -0.4951901 -0.6493365 0.6629233 -0.3726861 0.1565054 0.6748481 -0.7211699 -0.7341591 0.2363865 0.6364998 -0.5747787 0.6503969 0.4966017 0.3739382 0.2331423 0.8976718 0.2786498 0.6543247 0.7030032 0.9656512 0.2474615 -0.07924917 0.7408401 0.6695162 -0.05388797 0.8362187 -0.3331618 -0.4355932 0.3185194 -0.5614652 0.7637423 -0.006755136 -0.9220661 -0.3869734 -0.2781178 -0.1977112 -0.9399791 -0.8600966 -0.501875 0.0914079 -0.3477482 0.9365865 0.04332367 -0.4603144 0.8870926 -0.03431335 -0.4455747 0.8846157 0.1375435 -0.2280368 0.9662399 0.1199154 -0.2427515 0.9687126 -0.05165067 0.3040462 0.9525772 -0.01234918 0.4188386 0.9058229 0.06370952 0.4040983 0.9083 -0.1081462 0.1830344 0.9791583 -0.08801869 0.1977499 0.9766858 0.08354623 0.4475706 0.8942469 0.001704735 0.7780857 0.3511149 0.5208656 0.9471744 0.3018727 0.108321 0.4335196 0.3307153 0.8382649 0.6455576 -0.3247005 0.6912488 0.3203002 0.8664063 0.3830769 0.824182 -0.4472605 0.3473933 -0.1579177 0.8726922 0.4620286 -0.7472345 0.314772 0.5852855 -0.4095809 0.2579145 0.8750563 -0.9376624 0.3101665 0.156799 -0.8562376 -0.3542757 0.37596 -0.4782294 0.8506337 0.2184466 -0.5856189 -0.4848284 0.6496091 -0.02424184 0.9997005 0.00332452 -0.08226485 0.9937391 0.07559809 0.04541175 0.9968714 0.06469262 0.03398767 0.9970393 -0.06897451 -0.09368325 0.9939071 -0.05806952</float_array>
+          <technique_common>
+            <accessor source="#orchid_mesh4Shape-normals-array" count="93" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="orchid_mesh4Shape-map1" name="orchid_mesh4Shape-map1">
+          <float_array id="orchid_mesh4Shape-map1-array" count="198">0.362592 0.5995651 0.362592 0.5955852 0.323636 0.5955862 0.323636 0.5995662 0.362592 0.5610022 0.323636 0.5610022 0.362592 0.5336491 0.323636 0.5336491 0.3124808 0.6406822 0.3737492 0.6406811 0.9254947 0.9090416 0.9850158 0.9893967 0.9850158 0.8291225 0.8634527 0.9893967 0.8634527 0.8291225 0.7860007 0.9094777 0.7264787 0.8291225 0.7264787 0.9893967 0.8480427 0.8291225 0.8480427 0.9893967 0.006110176 0.06422431 0.04241129 0.06421551 0.04310797 0.03789134 0.07649919 0.006293532 0.04398161 0.008191319 0.009791452 0.006764933 0.08111788 0.06369463 0.006110158 0.06422431 0.04241127 0.06421551 0.04310798 0.03789133 0.07649919 0.006293515 0.0439816 0.008191318 0.009791479 0.006764944 0.08111788 0.06369463 0.1549713 0.741994 0.01455431 0.875339 0.2953883 0.875338 0.01456931 0.629092 0.2953723 0.629091 0.362592 0.5995651 0.323636 0.5995662 0.323636 0.5955862 0.362592 0.5955852 0.323636 0.5610022 0.362592 0.5610022 0.323636 0.5336491 0.362592 0.5336491 0.3124808 0.6406822 0.3737492 0.6406811 0.284798 0.01200426 0.3061278 0.01127679 0.302338 0.03962207 0.2892375 0.04006892 0.326654 0.01712093 0.3149429 0.04321213 0.3444 0.02897696 0.3258412 0.05049289 0.2466677 0.03034496 0.2645143 0.01864297 0.2767821 0.04414853 0.2658213 0.05133627 0.3068126 0.05194325 0.2964756 0.06000639 0.2856139 0.05266767 0.04232392 0.9864689 0.01611392 0.9849029 0.06002892 0.891765 0.05895892 0.9869288 0.1052379 0.9838169 0.08158692 0.9873068 0.9254947 0.9090416 0.9850158 0.8291225 0.9850158 0.9893967 0.8634527 0.9893967 0.8634527 0.8291225 0.7860007 0.9094777 0.7264787 0.9893967 0.7264787 0.8291225 0.8480427 0.8291225 0.8480427 0.9893967 0.006110176 0.06422431 0.04310797 0.03789134 0.04241129 0.06421551 0.04398161 0.008191319 0.07649919 0.006293532 0.009791452 0.006764933 0.08111788 0.06369463 0.006110158 0.06422431 0.04310798 0.03789133 0.04241127 0.06421551 0.0439816 0.008191318 0.07649919 0.006293515 0.009791479 0.006764944 0.08111788 0.06369463 0.1549713 0.741994 0.2953883 0.875338 0.01455431 0.875339 0.01456931 0.629092 0.2953723 0.629091</float_array>
+          <technique_common>
+            <accessor source="#orchid_mesh4Shape-map1-array" count="99" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="orchid_mesh4Shape-vertices" name="orchid_mesh4Shape-vertices">
+          <input semantic="POSITION" source="#orchid_mesh4Shape-positions" />
+          <input semantic="NORMAL" source="#orchid_mesh4Shape-normals" />
+        </vertices>
+        <triangles material="blinn1SG" count="81">
+          <input semantic="VERTEX" source="#orchid_mesh4Shape-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#orchid_mesh4Shape-map1" offset="1" set="0" />
+          <p>0 0 3 1 1 3 1 3 3 1 2 2 3 1 5 4 2 2 2 2 5 4 4 5 5 4 7 6 4 5 4 5 7 6 6 7 8 8 9 9 1 3 1 3 9 9 0 0 10 10 12 11 11 12 13 13 10 10 14 14 10 10 13 13 12 11 14 14 10 10 11 12 15 15 17 16 16 17 18 18 15 15 19 19 15 15 18 18 17 16 19 19 15 15 16 17 20 20 22 21 21 22 21 22 24 23 23 24 21 22 25 25 20 20 25 25 21 22 23 24 22 21 26 26 21 22 24 23 21 22 26 26 27 27 29 28 28 29 28 29 31 30 30 31 28 29 32 32 27 27 32 32 28 29 30 31 29 28 33 33 28 29 31 30 28 29 33 33 34 34 36 35 35 36 34 34 37 37 36 35 38 38 34 34 35 36 37 37 34 34 38 38 39 39 40 40 42 42 42 42 40 40 41 41 42 42 41 41 44 44 44 44 41 41 43 43 44 44 43 43 46 46 46 46 43 43 45 45 47 47 40 40 48 48 48 48 40 40 39 39 50 50 51 51 49 49 49 49 51 51 52 52 50 50 53 53 51 51 51 51 53 53 54 54 53 53 55 55 54 54 54 54 55 55 56 56 55 57 57 58 56 60 56 60 57 58 58 59 49 49 52 52 57 58 57 58 52 52 58 59 51 51 54 61 52 52 52 52 54 61 58 63 54 61 56 62 58 63 59 64 60 65 61 66 62 67 59 64 61 66 60 68 63 69 61 66 63 69 62 67 61 66 64 70 65 71 66 72 67 73 68 74 64 70 64 70 66 72 67 73 68 74 65 71 64 70 69 75 70 76 71 77 72 78 73 79 69 75 69 75 71 77 72 78 73 79 70 76 69 75 74 80 75 81 76 82 75 81 77 83 78 84 75 81 74 80 79 85 79 85 77 83 75 81 76 82 75 81 80 86 78 84 80 86 75 81 81 87 82 88 83 89 82 88 84 90 85 91 82 88 81 87 86 92 86 92 84 90 82 88 83 89 82 88 87 93 85 91 87 93 82 88 88 94 89 95 90 96 88 94 90 96 91 97 92 98 89 95 88 94 91 97 92 98 88 94</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>orchid_mesh4Shape</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="rotten_flowers">
+      <node id="orchid_mesh4" name="orchid_mesh4" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#orchid_mesh4Shape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#orchid_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>orchid_mesh4</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

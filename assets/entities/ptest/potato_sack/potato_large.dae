@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=0;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=0;exportAnimations=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/entities/potatosack/potatoes.mb</source_data>
+    </contributor>
+    <created>2011-01-25T10:01:59</created>
+    <modified>2011-01-25T10:01:59</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_materials>
+    <material id="potatoes_mat" name="potatoes_mat">
+      <instance_effect url="#potatoes_mat-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="potatoes_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file3-surface">
+          <surface type="2D">
+            <init_from>file3</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file3-sampler">
+          <sampler2D>
+            <source>file3-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file4-surface">
+          <surface type="2D">
+            <init_from>file4</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file4-sampler">
+          <sampler2D>
+            <source>file4-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file3-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="OpenCOLLADAMaya">
+              <bump>
+                <texture texture="file4-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="OpenCOLLADA3dsMax">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                    <technique profile="OpenCOLLADAMaya">
+                      <blend_mode>NONE</blend_mode>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <fast>0</fast>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <rotateFrame>0</rotateFrame>
+                      <rotateUV>0</rotateUV>
+                      <stagger>0</stagger>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file3" name="file3">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/entities/ptest/potato_sack/potato_sack.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file3</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+    <image id="file4" name="file4">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/entities/ptest/potato_sack/potato_sack_nrm.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file4</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="potato_largeShape" name="potato_largeShape">
+      <mesh>
+        <source id="potato_largeShape-positions" name="potato_largeShape-positions">
+          <float_array id="potato_largeShape-positions-array" count="84">-0.04277295 0.0308714 -0.02905245 -0.03070694 0.0289144 0.03485655 -6.10054e-4 0.0435954 0.03144245 -0.00127995 0.0463405 -0.02730335 -0.02461493 -0.0342385 0.03485655 -0.03668106 -0.0354285 -0.02905245 -0.00127995 -0.0463405 -0.02730335 -6.10054e-4 -0.0443625 0.03144245 0.05275095 -3.83501e-4 0.02651155 0.03793997 -0.0354574 0.02802945 0.03961796 -0.0366474 -0.02590435 0.05352205 0 -0.02590435 -0.04236406 -3.83501e-4 0.03485655 -0.05352205 0 -0.02905245 0.04109508 0.0289144 0.02802945 0.04277307 0.0308714 -0.02590435 0.004381955 -0.0396815 0.06287256 -0.03617102 -0.0202544 0.06139945 0.02914298 -0.0133864 0.06869446 0.004381955 0.0186664 0.06724055 -0.03161991 0.008898499 0.06358245 -9.29952e-4 -0.0442845 -0.06546734 0.02865994 -0.0142575 -0.06713335 -0.03570092 -0.0235974 -0.06873545 -0.03163505 0.007399499 -0.07363234 -9.29952e-4 0.0177543 -0.07526724 -0.001979053 -0.0212664 -0.08458845 -0.01446396 -0.0182744 0.08458845</float_array>
+          <technique_common>
+            <accessor source="#potato_largeShape-positions-array" count="28" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="potato_largeShape-normals" name="potato_largeShape-normals">
+          <float_array id="potato_largeShape-normals-array" count="84">-0.7269972 0.6594983 -0.1911472 -0.7070895 0.6398362 0.301055 0.03585391 0.9306229 0.364219 0.04105009 0.9582726 -0.2828932 -0.67161 -0.7357841 0.08695863 -0.6781653 -0.7344621 -0.02563476 -0.009065309 -0.9940966 -0.1081195 -0.01423525 -0.9837799 0.1788144 0.9644166 -0.02228617 0.2634466 0.6835184 -0.6989022 0.2105671 0.6921159 -0.6973309 -0.1862933 0.9673269 -0.02100495 -0.2526607 -0.9882613 -0.08442396 0.1273272 -0.9937066 -0.09397658 -0.0609536 0.7075536 0.6202624 0.3385888 0.7187111 0.6225777 -0.3095986 -0.001204952 -0.8578113 0.5139635 -0.8159391 -0.4487974 0.3644506 0.6682763 -0.09813517 0.737412 0.0710265 0.6007509 0.7962749 -0.608884 0.4463265 0.6557842 0.08032692 -0.8342947 -0.5454356 0.713738 -0.1180179 -0.6903984 -0.6954128 -0.4439975 -0.5650375 -0.5006538 0.330517 -0.8000652 0.146667 0.5345833 -0.8322917 0.02608331 -0.1926678 -0.9809173 -0.187831 -0.1224183 0.9745427</float_array>
+          <technique_common>
+            <accessor source="#potato_largeShape-normals-array" count="28" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="potato_largeShape-map1" name="potato_largeShape-map1">
+          <float_array id="potato_largeShape-map1-array" count="78">0.116647 0.845866 0.113229 0.909946 0.081832 0.904439 0.07956 0.846996 0.18214 0.907376 0.174322 0.838541 0.207844 0.838769 0.207734 0.902207 0.285417 0.898235 0.246777 0.896073 0.247872 0.842329 0.286882 0.83876 0.143832 0.909416 0.141453 0.842705 0.040273 0.902069 0.010415 0.907632 0.008668 0.841404 0.038196 0.848183 0.213045 0.935395 0.163095 0.938312 0.251915 0.942925 0.037164 0.962257 0.08116 0.94778 0.126603 0.942338 0.205759 0.798211 0.251436 0.794396 0.1593 0.794646 0.123215 0.799042 0.086555 0.789766 0.035926 0.784799 0.221687 0.770679 0.190915 0.769489 0.127159 0.758494 0.060592 0.75502 0.186537 0.963218 0.213335 0.972982 0.073784 0.995474 0.115984 0.982284 0.156062 0.971713</float_array>
+          <technique_common>
+            <accessor source="#potato_largeShape-map1-array" count="39" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="potato_largeShape-vertices" name="potato_largeShape-vertices">
+          <input semantic="POSITION" source="#potato_largeShape-positions" />
+          <input semantic="NORMAL" source="#potato_largeShape-normals" />
+        </vertices>
+        <triangles material="blinn1SG" count="52">
+          <input semantic="VERTEX" source="#potato_largeShape-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#potato_largeShape-map1" offset="1" set="0" />
+          <p>0 0 1 1 3 3 3 3 1 1 2 2 5 5 6 6 4 4 4 4 6 6 7 7 9 9 10 10 8 8 8 8 10 10 11 11 4 4 12 12 5 5 5 5 12 12 13 13 13 13 12 12 0 0 0 0 12 12 1 1 14 14 8 15 15 17 15 17 8 15 11 16 15 17 3 3 14 14 14 14 3 3 2 2 7 7 6 6 9 9 9 9 6 6 10 10 17 19 4 4 16 18 16 18 4 4 7 7 18 20 16 18 9 9 9 9 16 18 7 7 14 14 18 21 8 15 2 2 19 22 14 14 14 14 19 22 18 21 2 2 1 1 19 22 19 22 1 1 20 23 17 19 20 23 12 12 12 12 20 23 1 1 12 12 4 4 17 19 6 6 21 24 10 10 10 10 21 24 22 25 23 26 21 24 5 5 5 5 21 24 6 6 5 5 13 13 23 26 0 0 24 27 13 13 13 13 24 27 23 26 24 27 0 0 25 28 25 28 0 0 3 3 22 29 25 28 15 17 15 17 25 28 3 3 11 16 22 29 15 17 10 10 22 25 11 11 22 25 21 24 26 30 21 24 23 26 26 31 23 26 24 27 26 32 24 27 25 28 26 32 25 28 22 29 26 33 17 19 16 18 27 34 16 18 18 20 27 35 18 21 19 22 27 36 19 22 20 23 27 37 20 23 17 19 27 38 8 8 18 20 9 9</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>potato_largeShape</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="potatoes">
+      <node id="potato_large" name="potato_large" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#potato_largeShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1SG" target="#potatoes_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>potato_large</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

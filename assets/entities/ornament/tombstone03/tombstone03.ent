@@ -1,0 +1,26 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/ornament/tombstone03/tombstone03.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface6" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" TriCount="476" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.180000 1.450000 0.300000" RelativeTranslation="0.000000 0.000000 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.180000 1.450000 0.300000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.742251 -0.006973" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="1.570796 0.000000 0.000000" RelativeScale="0.180000 0.950000 0.260000" RelativeTranslation="0.000000 0.211756 -0.000000" Rotation="1.570796 0.000000 0.000000" Scale="0.180000 0.950000 0.260000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.954006 -0.006973" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 1.570796" RelativeScale="0.370000 0.180000 0.370000" RelativeTranslation="0.000000 0.215284 0.006820" Rotation="0.000000 0.000000 1.570796" Scale="0.370000 0.180000 0.370000" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="9" WorldPos="0.000000 0.957535 -0.000153" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" ID="4" LinearDamping="0.000000" Mass="0.000000" Material="Rock" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 0.742251 -0.006973">
+                <Shape ID="1" />
+                <Shape ID="2" />
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

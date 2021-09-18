@@ -1,0 +1,92 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/gameplay/elevator_lever/elevator_lever.dae">
+            <SubMesh ID="0" Name="lever" CreStamp="0" ModStamp="0" WorldPos="0 0.216322 -0.498156" Rotation="0.453516 0 0" Scale="1 1 1" TriCount="128" Material="" Static="true" />
+            <SubMesh ID="1" Name="bottom" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="233" Material="" Static="true" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <Shape ID="2" Name="Shape_1" CreStamp="0" ModStamp="0" WorldPos="0.00724 0.586432 0.17471" Rotation="0 0 0" Scale="0.7 1.1 0.35" RelativeTranslation="0 0 0" RelativeRotation="0 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+            <Shape ID="4" Name="Shape_2" CreStamp="0" ModStamp="0" WorldPos="0.000197 1.69015 0.402209" Rotation="0.681298 0 0" Scale="0.08 0.594739 0.0804" RelativeTranslation="-1.45519e-11 -1.19209e-07 -2.98023e-08" RelativeRotation="0.242108 -0 0" RelativeScale="1 1 1" ShapeType="Box" />
+        </Shapes>
+        <Bodies>
+            <Body ID="3" Name="Body_1" CreStamp="0" ModStamp="0" WorldPos="0.00724 0.586432 0.17471" Rotation="0 0 0" Scale="1 1 1" Material="Wood" Mass="0" AngularDamping="0" LinearDamping="0" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="true" PushedByCharacterGravity="true" CollideCharacter="true" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="true" BlocksLight="true">
+                <Children>
+                    <Child ID="1" />
+                </Children>
+                <Shape ID="2" />
+            </Body>
+            <Body ID="7" Name="Body_2" CreStamp="0" ModStamp="0" WorldPos="0.000197 1.69015 0.402209" Rotation="0.43919 0 0" Scale="1 1 1" Material="Metal" Mass="2" AngularDamping="1" LinearDamping="1" MaxAngularSpeed="0" MaxLinearSpeed="0" BuoyancyDensityMul="1" BlocksSound="false" ContinuousCollision="true" CanAttachCharacter="false" PushedByCharacterGravity="false" CollideCharacter="false" CollideNonCharacter="true" Volatile="false" UseSurfaceEffects="true" HasGravity="false" BlocksLight="true">
+                <Children>
+                    <Child ID="0" />
+                </Children>
+                <Shape ID="4" />
+            </Body>
+        </Bodies>
+        <Joints>
+            <JointHinge ID="6" Name="HingeJoint_1" CreStamp="0" ModStamp="1616707605" WorldPos="0 1.26333 0.042697" Rotation="1.5708 1.5708 0" Scale="1 1 1" LimitStepCount="0" Stiffness="0" MinMoveSpeed="0.1" MinMoveFreq="0.95" MinMoveFreqSpeed="0.2" MinMoveVolume="0.01" MaxMoveSpeed="2" MaxMoveFreq="1.1" MaxMoveFreqSpeed="0.7" MaxMoveVolume="0.8" MiddleMoveSpeed="0.5" MiddleMoveVolume="0.5" MinLimitSound="" MinLimitMinSpeed="0" MinLimitMaxSpeed="0" MaxLimitSound="" MaxLimitMinSpeed="0" MaxLimitMaxSpeed="0" Breakable="false" BreakForce="0" BreakSound="" CollideBodies="false" StickyMinLimit="false" StickyMaxLimit="false" MoveSound="elevator_lever_move.snt" MoveType="Angular" MinAngle="-38" MaxAngle="30" ConnectedParentBodyID="3" ConnectedChildBodyID="7" />
+        </Joints>
+        <Animations />
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Lever">
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="MaxInteractDistance" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="ShowHints" Value="true" />
+        <Var ObjectId="4294967295" Name="LifeLength" Value="0" />
+        <Var ObjectId="4294967295" Name="DissolveDuringLifeDecrease" Value="true" />
+        <Var ObjectId="4294967295" Name="QuickSave" Value="false" />
+        <Var ObjectId="4294967295" Name="FullGameSave" Value="false" />
+        <Var ObjectId="4294967295" Name="BlocksLineOfSight" Value="MaterialBased" />
+        <Var ObjectId="4294967295" Name="MainPhysicsBody" Value="" />
+        <Var ObjectId="4294967295" Name="NoGravityWhenUnderwater" Value="false" />
+        <Var ObjectId="4294967295" Name="DisableFreezeAtStart" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="ShowMesh" Value="true" />
+        <Var ObjectId="4294967295" Name="DissolveOnDestruction" Value="false" />
+        <Var ObjectId="4294967295" Name="DissolveTime" Value="1.0" />
+        <Var ObjectId="4294967295" Name="RandomizeAnimationStart" Value="true" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOffSound" Value="" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="StaticMoveCheckCollision" Value="false" />
+        <Var ObjectId="4294967295" Name="StaticMoveStartSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveStopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSound" Value="" />
+        <Var ObjectId="4294967295" Name="StaticMoveLoopSoundFade" Value="true" />
+        <Var ObjectId="4294967295" Name="BreakActive" Value="false" />
+        <Var ObjectId="4294967295" Name="CustomBreakBehaviour" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakOnlyOnMainBody" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakDestroyJoints" Value="false" />
+        <Var ObjectId="4294967295" Name="BreakMinEnergy" Value="100" />
+        <Var ObjectId="4294967295" Name="BreakEntity" Value="" />
+        <Var ObjectId="4294967295" Name="BreakEntityAlignBody" Value="" />
+        <Var ObjectId="4294967295" Name="BreakSound" Value="" />
+        <Var ObjectId="4294967295" Name="BreakParticleSystem" Value="" />
+        <Var ObjectId="4294967295" Name="BreakImpulse" Value="4" />
+        <Var ObjectId="4294967295" Name="CanInteractWithStaticBody" Value="true" />
+        <Var ObjectId="4294967295" Name="StuckSound" Value="" />
+        <Var ObjectId="4294967295" Name="InteractIcon" Value="PullLever" />
+        <Var ObjectId="4294967295" Name="MoveSound" Value="" />
+        <Var ObjectId="4294967295" Name="MinMoveSoundSpeed" Value="-1" />
+        <Var ObjectId="4294967295" Name="MoveMaxSpeed" Value="13.5" />
+        <Var ObjectId="4294967295" Name="MoveSlowDownFactor" Value="3.0" />
+        <Var ObjectId="4294967295" Name="MoveSpeedFactor" Value="1.0" />
+        <Var ObjectId="4294967295" Name="MoveThrowImpulse" Value="6.0" />
+        <Var ObjectId="4294967295" Name="MinLimitRange" Value="5" />
+        <Var ObjectId="4294967295" Name="MaxLimitRange" Value="5" />
+        <Var ObjectId="4294967295" Name="MinLimitSound" Value="elevator_lever_min.snt" />
+        <Var ObjectId="4294967295" Name="MaxLimitSound" Value="elevator_lever_max.snt" />
+        <Var ObjectId="4294967295" Name="MinInteractSound" Value="" />
+        <Var ObjectId="4294967295" Name="MaxInteractSound" Value="" />
+        <Var ObjectId="4294967295" Name="AutoMoveSpeedFactor" Value="2" />
+        <Var ObjectId="4294967295" Name="AutoMoveMaxSpeed" Value="8" />
+        <Var ObjectId="4294967295" Name="InteractConnectionSpeedFactor" Value="4" />
+    </UserDefinedVariables>
+</Entity>

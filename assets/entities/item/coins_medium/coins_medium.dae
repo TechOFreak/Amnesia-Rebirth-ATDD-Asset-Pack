@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Marcus Johansson</author>
+      <authoring_tool>Maya8.5 | ColladaMaya v3.05B</authoring_tool>
+      <comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=1;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/arbetsmapp/</source_data>
+    </contributor>
+    <created>2009-05-13T12:16:51Z</created>
+    <modified>2009-05-13T12:16:51Z</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_physics_scenes>
+    <physics_scene id="MayaNativePhysicsScene">
+      <technique_common>
+        <gravity>0 -980 0</gravity>
+        <time_step>0.083</time_step>
+      </technique_common>
+    </physics_scene>
+  </library_physics_scenes>
+  <library_images>
+    <image id="file2" name="file2">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/coins_medium/coins_medium.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file7" name="file7">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/coins_medium/coins_medium_nrm.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+    <image id="file6" name="file6">
+      <init_from>file:///C:/Skolarbeten%20och%20diverse%20projekt/3d/projekt/Frictional%20Games/SVN/redist/entities/item/coins_medium/coins_medium_spec.dds</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="coins_medium_material" name="coins_medium_material">
+      <instance_effect url="#coins_medium_material-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="coins_medium_material-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file7-surface">
+          <surface type="2D">
+            <init_from>file7</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file7-sampler">
+          <sampler2D>
+            <source>file7-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file6-surface">
+          <surface type="2D">
+            <init_from>file6</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="file6-sampler">
+          <sampler2D>
+            <source>file6-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <texture texture="file6-sampler" texcoord="TEX2">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <rotateFrame>0</rotateFrame>
+                    <stagger>0</stagger>
+                    <fast>0</fast>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <bump>
+                <texture texture="file7-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <rotateFrame>0</rotateFrame>
+                      <stagger>0</stagger>
+                      <fast>0</fast>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <blend_mode>NONE</blend_mode>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="coins_mediumShape" name="coins_mediumShape">
+      <mesh>
+        <source id="coins_mediumShape-positions" name="position">
+          <float_array id="coins_mediumShape-positions-array" count="201">0.064427 0.099002 0.025598 0.037225 0.099002 0.050569 0.048162 0.035734 0.060615 0.072641 0.028286 0.028562 -0.042569 0.099002 0.053929 -0.067571 0.099002 0.025598 -0.066918 0.028286 0.028562 -0.048162 0.035734 0.060615 0 0.012737 0.059313 0 0 0.029656 0.061665 0.008011 0.023039 0.038849 0.016399 0.048894 0 0.099002 -0.053888 0.042569 0.099002 -0.053224 0.048162 0.035734 -0.060615 0 0.035734 -0.073532 0 0.099002 0.065346 0 0.035734 0.073532 0.004842 0.166228 0.016964 0.017642 0.165947 0.000044 0.027107 0.183272 0.011484 -0.001349 0.188331 0.022375 -0.026773 0.189687 0.009715 -0.015227 0.165657 0.011176 -0.038849 0.016399 0.048894 -0.055942 0.008011 0.023039 -0.042569 0.099002 -0.053224 -0.048162 0.035734 -0.060615 0.001349 0.190194 -0.027289 0.006244 0.165912 -0.016918 -0.014944 0.165374 -0.012323 -0.01561 0.184114 -0.022675 0.038849 0.016399 -0.048894 0 0.012737 -0.059313 -0.038849 0.016399 -0.048894 0 0 -0.029656 -0.061665 0.008011 -0.023039 0.057399 0.008011 -0.023039 0.072641 0.028286 -0.028562 0.067571 0.099002 -0.024892 0.026773 0.190864 -0.009715 0.00886 0.195353 -0.011526 -0.072641 0.028286 -0.028562 -0.067571 0.099002 -0.024892 -0.036724 0.13962 -0.024723 -0.037323 0.139636 0.02627 0.014461 0.142478 0.039395 0.046496 0.142478 0.000352 0.014461 0.144554 -0.038689 -0.015036 0.155499 0.011681 -0.014948 0.155372 -0.011904 0.006473 0.155371 0.018748 0.019311 0.156769 -0.000046 0.00643 0.155992 -0.019266 -0.024549 0.189694 0.008909 -0.001244 0.188451 0.020103 0.024956 0.182746 0.010529 0.024534 0.190773 -0.008903 0.007369 0.195418 -0.009727 0.001229 0.190159 -0.025012 -0.014317 0.184585 -0.020782 0.001134 0.163946 0.000004 -0.01878 0.160259 -0.014881 0.007413 0.160972 -0.022239 -0.019008 0.160512 0.014093 0.006577 0.160784 0.022003 0.022354 0.161472 0.000025</float_array>
+          <technique_common>
+            <accessor source="#coins_mediumShape-positions-array" count="67" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="coins_mediumShape-normals" name="normal">
+          <float_array id="coins_mediumShape-normals-array" count="231">0.87836 0.323205 0.352169 0.523005 0.32828 0.786573 0.511832 -0.213161 0.83222 0.901338 -0.239846 0.360642 -0.524504 0.332399 0.783841 -0.888043 0.321746 0.328418 -0.903211 -0.253243 0.346522 -0.539349 -0.252739 0.803259 -0.002283 -0.766302 0.642477 -0.002644 -0.97764 0.210267 0.478062 -0.834149 0.275049 0.339258 -0.69358 0.635493 -0.03683 0.30803 -0.950664 0.429975 0.334304 -0.838667 0.486784 -0.231502 -0.842288 0 -0.184434 -0.982845 0.043025 0.330336 0.942882 0.013184 -0.223704 0.974568 0.221295 -0.386779 0.895226 0.830572 -0.552972 -0.066124 0.754688 0.301014 0.582956 -0.878931 0.439932 0.184228 -0.753343 -0.386949 0.531738 0.044797 0.688838 0.72353 -0.367621 -0.701242 0.610831 -0.506224 -0.812071 0.290307 -0.465179 0.349057 -0.813491 -0.485382 -0.218234 -0.846628 0.032435 0.693708 -0.719526 0.495172 -0.223825 -0.839468 -0.778186 -0.421903 -0.465213 -0.620481 0.535354 -0.573062 0.338889 -0.708351 -0.619187 0.001681 -0.765707 -0.643187 -0.339258 -0.69358 -0.635493 0.001219 -0.977644 -0.210262 -0.496392 -0.827877 -0.261177 0.471832 -0.835629 -0.281243 0.901156 -0.265506 -0.342673 0.901369 0.32497 -0.286232 0.77891 0.484814 -0.397811 0.355813 0.795648 -0.490247 -0.916844 -0.252595 -0.30918 -0.885593 0.341103 -0.315237 -0.540936 0.709714 -0.451325 -0.543628 0.720742 0.430115 0.215511 0.686402 0.694556 0.688798 0.724163 0.033848 0.156675 0.672813 -0.723032 -0.4117 0.859481 0.302978 -0.429952 0.849614 -0.305447 0.128363 0.861497 0.491269 0.462086 0.886657 0.017749 0.11354 0.871996 -0.476164 0.298579 0.933061 -0.200619 0.101007 0.888715 -0.447194 -0.252947 0.962802 -0.095027 -0.162298 0.814234 0.557388 -0.348858 0.809131 0.47287 -0.49406 0.832634 0.250252 0.077968 0.977501 0.195991 -0.165904 0.959275 0.228622 -0.583114 -0.670045 -0.459366 -0.792129 0.024587 -0.609858 0.354989 0.102466 -0.929238 0.299528 -0.587453 -0.751786 -0.594675 -0.658626 0.461057 -0.802396 0.021621 0.5964 0.297155 -0.553233 0.778224 0.327491 0.115119 0.937815 0.868066 -0.496232 0.014676 0.988552 0.149675 0.019019 0.699942 0.714033 0.015427 0.239478 0.714145 -0.65776 0.213855 0.699896 0.681478 -0.591924 0.6873 0.421003 -0.571448 0.699188 -0.429631</float_array>
+          <technique_common>
+            <accessor source="#coins_mediumShape-normals-array" count="77" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="coins_mediumShape-map1" name="map1">
+          <float_array id="coins_mediumShape-map1-array" count="216">0.323627 0.36147 0.259359 0.347327 0.268816 0.107068 0.347489 0.099078 0.109618 0.386618 0.038818 0.440463 0.014408 0.154688 0.087998 0.153488 0.86669 0.50727 0.872216 0.377367 0.990201 0.375021 0.94351 0.481909 0.539764 0.535462 0.478108 0.455772 0.526956 0.237999 0.607294 0.323066 0.187939 0.350056 0.177628 0.117862 0.819297 0.811872 0.855218 0.784615 0.867905 0.871188 0.761387 0.916401 0.779858 0.815668 0.814277 0.90605 0.793387 0.454506 0.847225 0.623132 0.604978 0.605363 0.68143 0.430084 0.92495 0.712773 0.871071 0.719347 0.872816 0.636012 0.915749 0.647676 0.082424 0.063503 0.011828 0.056822 0.17262 0.017833 0.269374 0.017988 0.359678 0.015858 0.545928 0.155324 0.634237 0.237581 0.709963 0.360663 0.889677 0.007457 0.882722 0.136389 0.762796 0.132929 0.812395 0.028866 0.990823 0.181948 0.962794 0.061761 0.458799 0.158365 0.471584 0.068256 0.416791 0.408983 0.904631 0.834852 0.922535 0.780216 0.746398 0.522573 0.652798 0.705731 0.857952 0.553049 0.908513 0.518623 0.821384 0.703164 0.70803 0.884325 0.564573 0.769958 0.609004 0.980384 0.123622 0.582606 0.233178 0.525565 0.346219 0.574597 0.460688 0.667949 0.5344 0.948171 0.514632 0.852336 0.236304 0.640642 0.187042 0.674895 0.286601 0.670213 0.406919 0.738013 0.365279 0.711059 0.470955 0.802927 0.765004 0.922463 0.81495 0.913267 0.870063 0.877812 0.906567 0.841576 0.925454 0.782103 0.928767 0.712322 0.919606 0.645504 0.912429 0.523617 0.681786 0.173262 0.61027 0.196539 0.629586 0.106557 0.675312 0.049622 0.715085 0.047519 0.736224 0.099957 0.751609 0.157695 0.741689 0.219085 0.703228 0.311682 0.083865 0.695792 0.100464 0.671008 0.18594 0.818529 0.176227 0.841281 0.006148 0.52342 0.017683 0.481195 0.521564 0.929766 0.515485 0.976332 0.399691 0.979485 0.401717 0.947019 0.281325 0.938261 0.286031 0.90992 0.293145 0.868268 0.204718 0.784265 0.400187 0.896033 0.505055 0.894114 0.116871 0.649044 0.042053 0.473192 0.767394 0.334638 0.782427 0.468289</float_array>
+          <technique_common>
+            <accessor source="#coins_mediumShape-map1-array" count="108" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="coins_mediumShape-vertices">
+          <input semantic="POSITION" source="#coins_mediumShape-positions" />
+        </vertices>
+        <triangles material="blinn2SG" count="130">
+          <input semantic="VERTEX" source="#coins_mediumShape-vertices" offset="0" />
+          <input semantic="NORMAL" source="#coins_mediumShape-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#coins_mediumShape-map1" offset="2" set="0" />
+          <p>1 1 1 2 2 2 0 0 0 0 0 0 2 2 2 3 3 3 4 4 4 5 5 5 7 7 7 7 7 7 5 5 5 6 6 6 8 8 8 9 9 9 11 11 11 11 11 11 9 9 9 10 10 10 12 12 12 13 13 13 15 15 15 15 15 15 13 13 13 14 14 14 16 16 16 17 17 17 1 1 1 1 1 1 17 17 17 2 2 2 18 18 18 19 19 19 20 20 20 22 21 21 23 22 22 21 23 23 21 23 23 23 22 22 18 18 18 16 16 16 4 4 4 17 17 17 17 17 17 4 4 4 7 7 7 25 25 106 9 9 9 24 24 24 24 24 24 9 9 9 8 8 8 12 12 12 15 15 15 26 26 26 26 26 26 15 15 15 27 27 27 28 28 28 29 29 29 31 31 31 31 31 31 29 29 29 30 30 30 7 7 7 6 6 6 24 24 32 24 24 32 6 6 6 25 25 33 8 8 34 17 17 17 24 24 32 24 24 32 17 17 17 7 7 7 8 8 34 11 11 35 17 17 17 17 17 17 11 11 35 2 2 2 2 2 2 11 11 35 3 3 3 3 3 3 11 11 35 10 10 36 33 33 38 15 15 15 32 32 37 32 32 37 15 15 15 14 14 14 27 27 27 15 15 15 34 34 39 34 34 39 15 15 15 33 33 38 33 33 40 35 35 41 34 34 43 34 34 43 35 35 41 36 36 42 37 37 44 35 35 41 32 32 45 32 32 45 35 35 41 33 33 40 14 14 14 38 38 46 32 32 37 32 32 37 38 38 46 37 37 47 13 13 13 39 39 48 14 14 14 14 14 14 39 39 48 38 38 46 40 40 49 29 29 29 41 41 50 42 42 51 43 43 52 27 27 27 27 27 27 43 43 52 26 26 26 27 27 27 34 34 39 42 42 51 42 42 51 34 34 39 36 36 107 9 9 9 25 25 106 35 35 41 35 35 41 25 25 106 36 36 42 10 10 10 9 9 9 37 37 44 37 37 44 9 9 9 35 35 41 3 3 3 10 10 36 38 38 46 38 38 46 10 10 36 37 37 47 0 0 0 3 3 3 39 39 48 39 39 48 3 3 3 38 38 46 20 20 20 19 19 19 40 40 49 30 30 30 23 22 53 22 21 54 5 5 56 43 43 52 6 6 55 6 6 55 43 43 52 42 42 51 42 42 51 36 36 107 6 6 55 6 6 55 36 36 107 25 25 25 26 26 26 43 43 52 44 44 57 43 43 52 5 5 56 44 44 57 44 44 57 5 5 56 45 45 58 45 45 59 5 5 5 4 4 4 4 4 4 16 16 16 45 45 59 45 45 59 16 16 16 46 46 60 46 46 60 16 16 16 1 1 1 0 0 0 47 47 61 1 1 1 1 1 1 47 47 61 46 46 60 47 47 61 0 0 0 39 39 48 48 48 62 47 47 61 13 13 13 13 13 13 47 47 61 39 39 48 13 13 13 12 12 12 48 48 62 48 48 62 12 12 12 44 44 57 44 44 57 12 12 12 26 26 26 45 45 58 49 49 63 44 44 57 44 44 57 49 49 63 50 50 64 45 45 59 46 46 60 49 49 66 49 49 66 46 46 60 51 51 65 47 47 61 52 52 67 46 46 60 46 46 60 52 52 67 51 51 65 53 53 68 52 52 69 48 48 62 48 48 62 52 52 69 47 47 61 53 53 70 48 48 62 50 50 64 50 50 64 48 48 62 44 44 57 22 21 21 21 23 23 54 54 71 54 54 71 21 23 23 55 55 72 55 55 72 21 23 23 56 56 73 56 56 73 21 23 23 20 20 20 56 56 73 20 20 20 57 57 74 57 57 74 20 20 20 40 40 49 40 40 49 41 41 50 57 57 74 57 57 74 41 41 50 58 58 75 28 28 28 59 59 76 41 41 50 41 41 50 59 59 76 58 58 75 31 31 31 60 60 77 28 28 28 28 28 28 60 60 77 59 59 76 60 60 77 31 31 31 54 54 78 54 54 78 31 31 31 22 21 54 61 61 79 54 54 80 55 55 81 61 61 79 55 55 81 56 56 82 61 61 79 56 56 82 57 57 83 57 57 83 58 58 84 61 61 79 58 58 84 59 59 85 61 61 79 59 59 85 60 60 86 61 61 79 61 61 79 60 60 86 54 54 87 29 29 29 28 28 28 41 41 50 62 63 89 63 64 90 50 62 88 50 62 88 63 64 90 53 65 91 62 63 89 50 62 88 64 67 93 64 67 93 50 62 88 49 66 92 64 67 94 49 66 95 65 69 97 65 69 97 49 66 95 51 68 96 65 69 97 51 68 96 66 71 99 66 71 99 51 68 96 52 70 98 66 71 99 52 70 98 63 64 90 63 64 90 52 70 98 53 65 91 19 72 100 66 71 99 29 73 101 29 73 101 66 71 99 63 64 90 65 69 97 66 71 99 18 74 102 18 74 102 66 71 99 19 72 100 23 75 103 64 67 94 18 74 102 18 74 102 64 67 94 65 69 97 30 76 104 62 63 89 23 75 105 23 75 105 62 63 89 64 67 93 62 63 89 30 76 104 63 64 90 63 64 90 30 76 104 29 73 101 30 30 30 22 21 54 31 31 31 40 40 49 19 19 19 29 29 29 18 18 18 20 20 20 21 23 23</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="MAYA">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="coins">
+      <node id="coins_medium" name="coins_medium" type="NODE">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#coins_mediumShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn2SG" target="#coins_medium_material">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX2" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0.041666</start_time>
+          <end_time>2</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_physics_scene url="#MayaNativePhysicsScene" />
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

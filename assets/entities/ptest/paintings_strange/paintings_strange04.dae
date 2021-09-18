@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=0;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=0;exportAnimations=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/entities/paintings%20strange/paintings_strange.mb</source_data>
+    </contributor>
+    <created>2011-01-26T11:15:55</created>
+    <modified>2011-01-26T11:15:55</modified>
+    <up_axis>Y_UP</up_axis>
+    <hpl2scaling />
+  </asset>
+  <library_materials>
+    <material id="paintings_strange_canvas" name="paintings_strange_canvas">
+      <instance_effect url="#paintings_strange_canvas-fx" />
+    </material>
+    <material id="paintings_strange_mat" name="paintings_strange_mat">
+      <instance_effect url="#paintings_strange_mat-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="paintings_strange_canvas-fx">
+      <profile_COMMON>
+        <newparam sid="file11-surface">
+          <surface type="2D">
+            <init_from>file11</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file11-sampler">
+          <sampler2D>
+            <source>file11-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file11-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="paintings_strange_mat-fx">
+      <profile_COMMON>
+        <newparam sid="file10-surface">
+          <surface type="2D">
+            <init_from>file10</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file10-sampler">
+          <sampler2D>
+            <source>file10-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file12-surface">
+          <surface type="2D">
+            <init_from>file12</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file12-sampler">
+          <sampler2D>
+            <source>file12-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file10-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.47934 0.47934 0.47934 1</color>
+            </specular>
+            <shininess>
+              <float>0.3</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="OpenCOLLADAMaya">
+              <bump>
+                <texture texture="file12-sampler" texcoord="TEX1">
+                  <extra>
+                    <technique profile="OpenCOLLADA3dsMax">
+                      <amount>1</amount>
+                      <bumpInterp>1</bumpInterp>
+                    </technique>
+                    <technique profile="OpenCOLLADAMaya">
+                      <blend_mode>NONE</blend_mode>
+                      <coverageU>1</coverageU>
+                      <coverageV>1</coverageV>
+                      <fast>0</fast>
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <noiseU>0</noiseU>
+                      <noiseV>0</noiseV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <rotateFrame>0</rotateFrame>
+                      <rotateUV>0</rotateUV>
+                      <stagger>0</stagger>
+                      <translateFrameU>0</translateFrameU>
+                      <translateFrameV>0</translateFrameV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file10" name="file10">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/entities/ptest/paintings_strange/paintings_strange.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file10</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+    <image id="file11" name="file11">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/entities/ptest/paintings_strange/paintings_strange_canvas.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file11</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+    <image id="file12" name="file12">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/entities/ptest/paintings_strange/paintings_strange_nrm.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file12</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="paintings_strange_canvas0Shape4" name="paintings_strange_canvas0Shape4">
+      <mesh>
+        <source id="paintings_strange_canvas0Shape4-positions" name="paintings_strange_canvas0Shape4-positions">
+          <float_array id="paintings_strange_canvas0Shape4-positions-array" count="12">-0.3767087 -0.4524995 0.00784727 0.3767087 -0.4524995 0.00784727 0.3767087 0.4524995 0.00784727 -0.3767087 0.4524995 0.00784727</float_array>
+          <technique_common>
+            <accessor source="#paintings_strange_canvas0Shape4-positions-array" count="4" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="paintings_strange_canvas0Shape4-normals" name="paintings_strange_canvas0Shape4-normals">
+          <float_array id="paintings_strange_canvas0Shape4-normals-array" count="12">0 0 1 0 0 1 0 0 1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#paintings_strange_canvas0Shape4-normals-array" count="4" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="paintings_strange_canvas0Shape4-map1" name="paintings_strange_canvas0Shape4-map1">
+          <float_array id="paintings_strange_canvas0Shape4-map1-array" count="8">0.6765863 0.6266922 0.9777908 0.6266922 0.9777908 0.9826618 0.6765863 0.9826618</float_array>
+          <technique_common>
+            <accessor source="#paintings_strange_canvas0Shape4-map1-array" count="4" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="paintings_strange_canvas0Shape4-vertices" name="paintings_strange_canvas0Shape4-vertices">
+          <input semantic="POSITION" source="#paintings_strange_canvas0Shape4-positions" />
+          <input semantic="NORMAL" source="#paintings_strange_canvas0Shape4-normals" />
+        </vertices>
+        <triangles material="blinn3SG" count="2">
+          <input semantic="VERTEX" source="#paintings_strange_canvas0Shape4-vertices" offset="0" />
+          <input semantic="TEXCOORD" source="#paintings_strange_canvas0Shape4-map1" offset="1" set="0" />
+          <p>0 0 1 1 3 3 3 3 1 1 2 2</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>paintings_strange_canvas0Shape4</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+    <geometry id="paintings_strange0Shape4" name="paintings_strange0Shape4">
+      <mesh>
+        <source id="paintings_strange0Shape4-positions" name="paintings_strange0Shape4-positions">
+          <float_array id="paintings_strange0Shape4-positions-array" count="96">-0.3767087 -0.4524995 0.00784729 0.3767087 0.4524995 0.00784729 -0.3767087 0.4524995 0.00784729 -0.4890559 0.5648745 0.01740295 0.4890559 0.5648745 0.01740295 0.4890559 0.5648745 0 -0.4890559 0.5648745 0 0.4890559 -0.5648745 0 -0.4890559 -0.5648745 0 -0.4890559 -0.5648745 0.01740295 -0.4396025 0.5157699 0.05371704 0.4396025 0.5157699 0.05371704 -0.4396025 -0.5157699 0.05371704 -0.4145422 -0.4901424 0.03881348 -0.3767087 -0.4524995 0.02022278 0.4145422 0.4901424 0.03881348 0.3767087 0.4524995 0.02022278 -0.4145422 0.4901424 0.03881348 -0.3767087 0.4524995 0.02022278 0.4312491 0.5072274 0.04720825 -0.4312491 0.5072274 0.04720825 -0.4228957 0.4986849 0.05371704 0.4228957 0.4986849 0.05371704 -0.4312491 -0.5072274 0.04720825 -0.4228957 -0.4986849 0.05371704 0.3767087 -0.4524995 0.00784729 0.4890559 -0.5648745 0.01740295 0.4396025 -0.5157699 0.05371704 0.4145422 -0.4901424 0.03881348 0.3767087 -0.4524995 0.02022278 0.4312491 -0.5072274 0.04720825 0.4228957 -0.4986849 0.05371704</float_array>
+          <technique_common>
+            <accessor source="#paintings_strange0Shape4-positions-array" count="32" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="paintings_strange0Shape4-normals" name="paintings_strange0Shape4-normals">
+          <float_array id="paintings_strange0Shape4-normals-array" count="252">0 0.8929155 0.4502242 0 0.8929155 0.4502242 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 -1 0 0 -0.8921533 0 0.4517327 -0.8921533 0 0.4517327 -1 0 0 0 -0.007164762 0.9999743 0 -0.007164762 0.9999743 0.01426471 0 0.9998983 0.01426471 0 0.9998983 0 -0.6849456 0.7285942 0 -0.6849456 0.7285942 0 -0.4428114 0.8966148 0 -0.4428114 0.8966148 0.6877079 0 0.7259874 0.6877079 0 0.7259874 0.4410153 0 0.8974997 0.4410153 0 0.8974997 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0.6060544 0.7954232 0 0.6060544 0.7954232 0 -0.1982946 0.9801424 0 -0.1982946 0.9801424 -0.6146294 0 0.788816 -0.6146294 0 0.788816 0.1976934 0 0.9802639 0.1976934 0 0.9802639 0 -0.6060562 0.7954218 0 -0.6060562 0.7954218 0.6146274 0 0.7888176 0.6146274 0 0.7888176 1 0 0 1 0 0 0.8921533 0 0.4517327 0.8921533 0 0.4517327 -0.01426478 0 0.9998983 -0.01426478 0 0.9998983 -0.6877079 0 0.7259874 -0.4410153 0 0.8974997 -0.4410153 0 0.8974997 -0.6877079 0 0.7259874 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0.6146295 0 0.788816 -0.1976934 0 0.9802639 -0.1976934 0 0.9802639 0.6146295 0 0.788816 -0.6146276 0 0.7888174 -0.6146276 0 0.7888174 0 -0.8929155 0.4502243 0 -1 0 0 -1 0 0 -0.8929155 0.4502243 0 0.007164462 0.9999744 0 0.007164462 0.9999744 0 0.6849461 0.7285938 0 0.4428114 0.8966148 0 0.4428114 0.8966148 0 0.6849461 0.7285938 0 1 0 0 1 0 0 1 0 0 1 0 0 -0.6060534 0.795424 0 0.1982959 0.9801422 0 0.1982959 0.9801422 0 -0.6060534 0.795424 0 0.6060556 0.7954223 0 0.6060556 0.7954223</float_array>
+          <technique_common>
+            <accessor source="#paintings_strange0Shape4-normals-array" count="84" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="paintings_strange0Shape4-map1" name="paintings_strange0Shape4-map1">
+          <float_array id="paintings_strange0Shape4-map1-array" count="136">0.6609395 0.7163803 0.9893805 0.7163801 0.9893805 0.7222375 0.6609395 0.7222372 0.2498688 0.2762166 0.02209428 0.2762166 0.02209428 0.01313128 0.2498688 0.01313128 0.2740743 0.4837841 0.2799112 0.4837841 0.2799112 0.8631896 0.2740743 0.8631896 0.677569 0.6958507 0.9727793 0.6958507 0.3004925 0.5002625 0.3004925 0.8466864 0.9643672 0.6850487 0.6860039 0.6850486 0.698742 0.6689303 0.9516647 0.6689303 0.3111905 0.8380737 0.3111905 0.5088602 0.3273748 0.5214874 0.3273748 0.8254141 0.6987423 0.6647804 0.9516653 0.6647811 0.3315341 0.5214874 0.3315341 0.8254141 0.9699684 0.6922327 0.6803796 0.6922328 0.6831897 0.6886513 0.9671661 0.6886513 0.3040504 0.8438144 0.3040504 0.5031275 0.3076187 0.5059953 0.3076187 0.8409441 0.2740743 0.4837841 0.2740743 0.8631896 0.2799112 0.8631896 0.2799112 0.4837841 0.3004925 0.8466864 0.3004925 0.5002625 0.3111905 0.8380737 0.3273748 0.8254141 0.3273748 0.5214874 0.3111905 0.5088602 0.3315341 0.8254141 0.3315341 0.5214874 0.3040504 0.8438144 0.3076187 0.8409441 0.3076187 0.5059953 0.3040504 0.5031275 0.6609395 0.7163803 0.6609395 0.7222372 0.9893805 0.7222375 0.9893805 0.7163801 0.9727793 0.6958507 0.677569 0.6958507 0.9643672 0.6850487 0.9516647 0.6689303 0.698742 0.6689303 0.6860039 0.6850486 0.9516653 0.6647811 0.6987423 0.6647804 0.9699684 0.6922327 0.9671661 0.6886513 0.6831897 0.6886513 0.6803796 0.6922328</float_array>
+          <technique_common>
+            <accessor source="#paintings_strange0Shape4-map1-array" count="68" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="paintings_strange0Shape4-vertices" name="paintings_strange0Shape4-vertices">
+          <input semantic="POSITION" source="#paintings_strange0Shape4-positions" />
+        </vertices>
+        <triangles material="blinn2SG" count="58">
+          <input semantic="VERTEX" source="#paintings_strange0Shape4-vertices" offset="0" />
+          <input semantic="NORMAL" source="#paintings_strange0Shape4-normals" offset="1" />
+          <input semantic="TEXCOORD" source="#paintings_strange0Shape4-map1" offset="2" set="0" />
+          <p>3 0 0 4 1 1 6 3 3 6 3 3 4 1 1 5 2 2 6 4 4 5 5 5 8 7 7 8 7 7 5 5 5 7 6 6 8 8 8 9 9 9 6 11 11 6 11 11 9 9 9 3 10 10 4 1 1 3 0 0 11 13 13 11 13 13 3 0 0 10 12 12 3 10 10 9 9 9 10 15 15 10 15 15 9 9 9 12 14 14 15 16 16 17 17 17 16 19 19 16 19 19 17 17 17 18 18 18 17 20 20 13 21 21 18 23 23 18 23 23 13 21 21 14 22 22 16 24 19 18 25 18 1 27 25 1 27 25 18 25 18 2 26 24 18 28 23 14 29 22 2 31 27 2 31 27 14 29 22 0 30 26 19 32 28 20 33 29 22 35 31 22 35 31 20 33 29 21 34 30 20 36 32 23 37 33 21 39 35 21 39 35 23 37 33 24 38 34 22 35 31 21 34 30 15 16 16 15 16 16 21 34 30 17 17 17 21 39 35 24 38 34 17 20 20 17 20 20 24 38 34 13 21 21 11 13 13 10 12 12 19 41 28 19 41 28 10 12 12 20 40 29 10 15 15 12 14 14 20 43 32 20 43 32 12 14 14 23 42 33 7 44 36 5 45 37 26 47 39 26 47 39 5 45 37 4 46 38 4 46 38 11 48 40 26 47 39 26 47 39 11 48 40 27 49 41 15 50 42 16 51 43 28 53 45 28 53 45 16 51 43 29 52 44 16 54 43 1 55 46 29 57 44 29 57 44 1 55 46 25 56 47 19 58 48 22 59 49 30 61 51 30 61 51 22 59 49 31 60 50 22 59 49 15 50 42 31 60 50 31 60 50 15 50 42 28 53 45 11 48 40 19 62 48 27 49 41 27 49 41 19 62 48 30 63 51 9 64 52 8 65 53 26 67 55 26 67 55 8 65 53 7 66 54 26 67 55 27 68 56 9 64 52 9 64 52 27 68 56 12 69 57 28 70 58 29 71 59 13 73 61 13 73 61 29 71 59 14 72 60 29 74 59 25 75 62 14 77 60 14 77 60 25 75 62 0 76 63 30 78 64 31 79 65 23 81 67 23 81 67 31 79 65 24 80 66 31 79 65 28 70 58 24 80 66 24 80 66 28 70 58 13 73 61 27 68 56 30 82 64 12 69 57 12 69 57 30 82 64 23 83 67</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>paintings_strange0Shape4</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="paintings_strange">
+      <node id="paintings_strange_canvas04" name="paintings_strange_canvas04" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#paintings_strange_canvas0Shape4">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn3SG" target="#paintings_strange_canvas">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>paintings_strange_canvas04</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+      <node id="paintings_strange04" name="paintings_strange04" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#paintings_strange0Shape4">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn2SG" target="#paintings_strange_mat">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0" />
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0" />
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>paintings_strange04</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode" />
+  </scene>
+</COLLADA>

@@ -1,0 +1,67 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/ornament/cross_small_wood/cross_small_wood.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface5" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="202" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.050000 0.100000 0.246615" RelativeTranslation="0.000563 0.123541 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.050000 0.100000 0.246615" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.005772 0.336763 -0.000452" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="1.570796 0.000000 0.000000" RelativeScale="0.050000 0.100000 0.446615" RelativeTranslation="0.000563 0.001836 -0.000000" Rotation="1.570796 0.000000 0.000000" Scale="0.050000 0.100000 0.446615" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.005772 0.215058 -0.000452" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.140383 0.050000 0.248589" RelativeTranslation="0.000000 -0.200144 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.140383 0.050000 0.248589" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.005209 0.013078 -0.000452" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.300000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="false" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="6" LinearDamping="0.300000" Mass="3.000000" Material="Wood" MaxAngularSpeed="16.000000" MaxLinearSpeed="16.000000" Name="Body" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="0.005209 0.213222 -0.000452">
+                <Shape ID="1" />
+                <Shape ID="2" />
+                <Shape ID="3" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="Prop_Grab">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="Grab_UseCustomDepth" Value="false" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="false" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="100" />
+        <Var Name="BreakEntity" Value="" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="" />
+        <Var Name="BreakParticleSystem" Value="" />
+        <Var Name="BreakImpulse" Value="4" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+        <Var Name="Grab_CustomDepth" Value="1.5" />
+        <Var Name="Grab_MinDepth" Value="1.0" />
+        <Var Name="GrabDepthInc" Value="0.15" />
+        <Var Name="Grab_MaxDepth" Value="2.2" />
+        <Var Name="Grab_UseCustomOffset" Value="false" />
+        <Var Name="Grab_ThrowImpulse" Value="7" />
+        <Var Name="Grab_MassMul" Value="0.1" />
+        <Var Name="Grab_ForceMul" Value="1" />
+        <Var Name="MaxInteractDistance" Value="0" />
+        <Var Name="Grab_TorqueMul" Value="1" />
+    </UserDefinedVariables>
+</Entity>

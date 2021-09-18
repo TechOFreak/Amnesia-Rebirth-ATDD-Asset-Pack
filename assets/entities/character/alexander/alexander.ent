@@ -1,0 +1,116 @@
+<Entity>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/alexander/alexander.dae">
+            <SubMesh ID="0" Name="alexanderShape" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="3388" Material="" Static="true" />
+            <SubMesh ID="1" Name="hair" CreStamp="0" ModStamp="0" WorldPos="0 0 0" Rotation="0 0 0" Scale="1 1 1" TriCount="1018" Material="" Static="true" />
+        </Mesh>
+        <Bones>
+            <Bone ID="2" Name="alexander" />
+            <Bone ID="3" Name="hair" />
+            <Bone ID="4" Name="alexanderShape1" />
+            <Bone ID="5" Name="center_root" />
+            <Bone ID="6" Name="center_spine" />
+            <Bone ID="7" Name="center_neck" />
+            <Bone ID="8" Name="center_head" />
+            <Bone ID="9" Name="center_head_parentConstraint1" />
+            <Bone ID="10" Name="center_neck_parentConstraint1" />
+            <Bone ID="11" Name="right_collar" />
+            <Bone ID="12" Name="right_shoulder" />
+            <Bone ID="13" Name="right_elbow" />
+            <Bone ID="14" Name="right_hand" />
+            <Bone ID="15" Name="right_thumb01" />
+            <Bone ID="16" Name="right_thumb02" />
+            <Bone ID="17" Name="right_index01" />
+            <Bone ID="18" Name="right_index02" />
+            <Bone ID="19" Name="right_middle01" />
+            <Bone ID="20" Name="right_middle02" />
+            <Bone ID="21" Name="right_ring01" />
+            <Bone ID="22" Name="right_ring02" />
+            <Bone ID="23" Name="right_pinky01" />
+            <Bone ID="24" Name="right_pinky02" />
+            <Bone ID="25" Name="right_hand_orientConstraint1" />
+            <Bone ID="26" Name="right_collar_parentConstraint1" />
+            <Bone ID="27" Name="left_collar" />
+            <Bone ID="28" Name="left_shoulder" />
+            <Bone ID="29" Name="left_elbow" />
+            <Bone ID="30" Name="left_hand" />
+            <Bone ID="31" Name="left_thumb01" />
+            <Bone ID="32" Name="left_thumb02" />
+            <Bone ID="33" Name="left_index01" />
+            <Bone ID="34" Name="left_index02" />
+            <Bone ID="35" Name="left_middle01" />
+            <Bone ID="36" Name="left_middle02" />
+            <Bone ID="37" Name="left_ring01" />
+            <Bone ID="38" Name="left_ring02" />
+            <Bone ID="39" Name="left_pinky01" />
+            <Bone ID="40" Name="left_pinky02" />
+            <Bone ID="41" Name="left_hand_orientConstraint1" />
+            <Bone ID="42" Name="left_collar_parentConstraint1" />
+            <Bone ID="43" Name="center_spine_parentConstraint1" />
+            <Bone ID="44" Name="right_hip" />
+            <Bone ID="45" Name="right_knee" />
+            <Bone ID="46" Name="right_foot" />
+            <Bone ID="47" Name="right_toes" />
+            <Bone ID="48" Name="right_knee_end" />
+            <Bone ID="49" Name="left_hip" />
+            <Bone ID="50" Name="left_knee" />
+            <Bone ID="51" Name="left_foot" />
+            <Bone ID="52" Name="left_toes" />
+            <Bone ID="53" Name="left_knee_end" />
+            <Bone ID="54" Name="center_root_parentConstraint1" />
+        </Bones>
+        <Shapes />
+        <Bodies />
+        <Joints />
+        <Animations>
+            <Animation Name="Idle" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/alexander/animations/idle.dae_anim" Layer="Default" Speed="1.1" />
+            <Animation Name="Death" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/alexander/animations/death.dae_anim" Layer="Default" Speed="1.25" />
+            <Animation Name="Release" File="mods/Project_Omega/assets/entities/the_dark_descent/entities/character/alexander/animations/release.dae_anim" Layer="Default" Speed="1" />
+        </Animations>
+        <ProcAnimations />
+    </ModelData>
+    <UserDefinedVariables EntityType="Agent_Humanoid_NPC">
+        <Var ObjectId="4294967295" Name="Note" Value="" />
+        <Var ObjectId="4294967295" Name="Health" Value="100" />
+        <Var ObjectId="4294967295" Name="Toughness" Value="0" />
+        <Var ObjectId="4294967295" Name="EventTag" Value="" />
+        <Var ObjectId="4294967295" Name="VoiceSourceBone" Value="" />
+        <Var ObjectId="4294967295" Name="CastShadows" Value="true" />
+        <Var ObjectId="4294967295" Name="EffectsOnTime" Value="1" />
+        <Var ObjectId="4294967295" Name="EffectsOffTime" Value="1" />
+        <Var ObjectId="4294967295" Name="RootMotionBone" Value="" />
+        <Var ObjectId="4294967295" Name="CutsceneEndAlignmentBone" Value="" />
+        <Var ObjectId="4294967295" Name="CharBodySize" Value="1 1 1" />
+        <Var ObjectId="4294967295" Name="MeshPositionOffset" Value="0 0 0" />
+        <Var ObjectId="4294967295" Name="MeshRotationOffset" Value="0 0 0" />
+        <Var ObjectId="4294967295" Name="MeshScaleOffset" Value="1 1 1" />
+        <Var ObjectId="4294967295" Name="CharBodyPosBone" Value="Hip" />
+        <Var ObjectId="4294967295" Name="CharBodyBoneIsFeet" Value="false" />
+        <Var ObjectId="4294967295" Name="CharBodyBoneYOffset" Value="0" />
+        <Var ObjectId="4294967295" Name="CharBodyMaterial" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptFile" Value="" />
+        <Var ObjectId="4294967295" Name="CustomScriptClass" Value="" />
+        <Var ObjectId="4294967295" Name="Movement_ForwadSpeed" Value="1" />
+        <Var ObjectId="4294967295" Name="Movement_BackwardSpeed" Value="1" />
+        <Var ObjectId="4294967295" Name="Movement_SidewaysSpeed" Value="1" />
+        <Var ObjectId="4294967295" Name="Movement_Acc" Value="1" />
+        <Var ObjectId="4294967295" Name="Movement_Deacc" Value="1" />
+        <Var ObjectId="4294967295" Name="HeadBone" Value="Head" />
+        <Var ObjectId="4294967295" Name="UsePathfinding" Value="true" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_WalkAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_RunAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_BackwardAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraAnim" Value="" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraMinWait" Value="4" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraMaxWait" Value="10" />
+        <Var ObjectId="4294967295" Name="CharMover_IdleExtraPauseProcedural" Value="true" />
+        <Var ObjectId="4294967295" Name="HeadTracker_Bones" Value="center_neck center_head" />
+        <Var ObjectId="4294967295" Name="HeadTracker_BoneMuls" Value="0.5 0.5" />
+        <Var ObjectId="4294967295" Name="HeadTracker_ChestBone" Value="" />
+        <Var ObjectId="4294967295" Name="HeadTracker_SpeedMul" Value="2" />
+        <Var ObjectId="4294967295" Name="HeadTracker_MaxSpeed" Value="3" />
+        <Var ObjectId="4294967295" Name="HeadTracker_MaxAngle" Value="80" />
+    </UserDefinedVariables>
+</Entity>

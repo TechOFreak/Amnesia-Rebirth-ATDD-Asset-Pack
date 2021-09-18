@@ -1,0 +1,36 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/special/barrier_machine/barrier_machine.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface1" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="13" WorldPos="0.000000 0.000000 0.000000" TriCount="996" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="Shape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.300000 1.200000 1.500000" RelativeTranslation="0.161501 -0.279168 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.300000 1.200000 1.500000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.002931 0.586365 0.032116" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="Shape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.780550 0.400000 1.500000" RelativeTranslation="0.161501 0.341828 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.780550 0.400000 1.500000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.002931 1.207362 0.032116" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="Shape_3" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.250000 0.600000 0.250000" RelativeTranslation="0.152094 0.817795 -0.031356" Rotation="0.000000 0.000000 0.000000" Scale="0.250000 0.600000 0.250000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.006476 1.683329 0.000760" />
+            <BodyShape Active="true" GroupID="0" ID="4" Name="Shape_4" RelativeRotation="0.000000 0.000000 1.570796" RelativeScale="0.250000 0.850000 0.250000" RelativeTranslation="0.648197 0.984502 -0.031356" Rotation="0.000000 0.000000 1.570796" Scale="0.250000 0.850000 0.250000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="0.489627 1.850036 0.000760" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="Shape_5" RelativeRotation="0.000000 0.000000 1.570796" RelativeScale="0.250000 0.850000 0.250000" RelativeTranslation="-0.369148 -0.303987 0.039591" Rotation="0.000000 0.000000 1.570796" Scale="0.250000 0.850000 0.250000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.527718 0.561546 0.071707" />
+            <BodyShape Active="true" GroupID="0" ID="6" Name="Shape_6" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.250000 0.600000 0.250000" RelativeTranslation="-0.865251 -0.532198 0.039591" Rotation="0.000000 0.000000 0.000000" Scale="0.250000 0.600000 0.250000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-1.023821 0.333335 0.071707" />
+            <BodyShape Active="true" GroupID="0" ID="7" Name="Shape_7" RelativeRotation="0.000000 0.000000 -0.558505" RelativeScale="0.500000 0.850000 0.250000" RelativeTranslation="-0.635969 -0.624895 0.459074" Rotation="0.000000 0.000000 -0.558505" Scale="0.500000 0.850000 0.250000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.794539 0.240638 0.491190" />
+            <BodyShape Active="true" GroupID="0" ID="8" Name="Shape_8" RelativeRotation="0.000000 0.000000 -0.558505" RelativeScale="0.500000 0.850000 0.250000" RelativeTranslation="-0.635969 -0.624895 -0.431636" Rotation="0.000000 0.000000 -0.558505" Scale="0.500000 0.850000 0.250000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="10" WorldPos="-0.794539 0.240638 -0.399520" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" BuoyancyDensityMul="1.000000" CanAttachCharacter="true" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="true" GroupID="0" HasGravity="true" ID="9" LinearDamping="0.000000" Mass="0.000000" Material="Metal" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body" PushedByCharacterGravity="true" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="11" UseSurfaceEffects="true" Volatile="false" WorldPos="-0.158570 0.865533 0.032116">
+                <Shape ID="3" />
+                <Shape ID="4" />
+                <Shape ID="2" />
+                <Shape ID="7" />
+                <Shape ID="5" />
+                <Shape ID="6" />
+                <Shape ID="1" />
+                <Shape ID="8" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>

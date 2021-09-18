@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>marcus</author>
+      <authoring_tool>OpenCOLLADA2008 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;copyTextures=0;exportTriangles=1;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJointsAndSkin=0;exportAnimations=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///D:/Projects/3d/work/amnesia%20game/arbetsmapp/#models/amnesia_portal2_add_on/mansionbase02_special_slot_machine.mb</source_data>
+    </contributor>
+    <created>2011-02-01T21:20:54</created>
+    <modified>2011-02-01T21:20:54</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="wood_lambert4" name="wood_plank_mat">
+      <instance_effect url="#wood_lambert4-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="wood_lambert4-fx">
+      <profile_COMMON>
+        <newparam sid="wood_file3-surface">
+          <surface type="2D">
+            <init_from>wood_file3</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="wood_file3-sampler">
+          <sampler2D>
+            <source>wood_file3-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="wood_file3-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU>1</wrapU><wrapV>1</wrapV><mirrorU>0</mirrorU><mirrorV>0</mirrorV><coverageU>1</coverageU><coverageV>1</coverageV><translateFrameU>0</translateFrameU><translateFrameV>0</translateFrameV><rotateFrame>0</rotateFrame><stagger>0</stagger><fast>0</fast><repeatU>1</repeatU><repeatV>1</repeatV><offsetU>0</offsetU><offsetV>0</offsetV><rotateUV>0</rotateUV><noiseU>0</noiseU><noiseV>0</noiseV><blend_mode>NONE</blend_mode>
+                  </technique>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU>1</coverageU>
+                    <coverageV>1</coverageV>
+                    <fast>0</fast>
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <noiseU>0</noiseU>
+                    <noiseV>0</noiseV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <rotateFrame>0</rotateFrame>
+                    <rotateUV>0</rotateUV>
+                    <stagger>0</stagger>
+                    <translateFrameU>0</translateFrameU>
+                    <translateFrameV>0</translateFrameV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="wood_file3" name="wood_file3">
+      <init_from>file:///D:/Projects/3d/work/amnesia%20game/SVN/redist/static_objects/ptest/wood_plank/wood_plank.dds</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>wood_file3</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="polySurfaceShape34" name="polySurfaceShape34">
+      <mesh>
+        <source id="polySurfaceShape34-positions" name="polySurfaceShape34-positions">
+          <float_array id="polySurfaceShape34-positions-array" count="60">-0.698325 -0.049736 -0.205792 -0.698325 -0.049736 0.238881 -0.698325 0.048349 0.238881 -0.698325 0.048349 -0.205792 0.12029 -0.053703 -0.189923 0.12029 -0.040949 0.241078 0.12029 0.055741 0.209311 0.12029 1.56e-4 -0.21784 0.564107 -0.055741 -0.214762 0.564107 0.002922 0.219054 0.564107 0.05336 0.185843 0.564107 0.039172 -0.241078 0.466164 0.042635 -0.136877 0.600382 0.04508 -0.063315 0.467977 0.047697 0.015424 0.698325 0.050528 0.100634 0.698325 -0.005707 0.155236 0.467977 -0.015586 0.082181 0.600382 -0.026485 0.001583 0.466164 -0.041113 -0.106589</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape34-positions-array" count="20" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape34-normals" name="polySurfaceShape34-normals">
+          <float_array id="polySurfaceShape34-normals-array" count="324">0.002782 -0.9998901 0.014563 0.027777 -0.9984771 0.04766601 0.002782 -0.9998901 0.014563 0.027777 -0.9984771 0.04766601 0.027777 -0.9984771 0.04766601 0.002782 -0.9998901 0.014563 0.014908 0.160949 0.9868501 0.014908 0.160949 0.9868501 0.014908 0.160949 0.9868501 0.014908 0.160949 0.9868501 0.014908 0.160949 0.9868501 0.014908 0.160949 0.9868501 0.023245 0.9977041 -0.06361001 0.023245 0.9977041 -0.06361001 0.023245 0.9977041 -0.06361001 0.023245 0.9977041 -0.06361001 0.023245 0.9977041 -0.06361001 0.023245 0.9977041 -0.06361001 -0.003461001 -0.180706 -0.9835311 -0.003461001 -0.180706 -0.9835311 -0.003461001 -0.180706 -0.9835311 -0.003461001 -0.180706 -0.9835311 -0.003461001 -0.180706 -0.9835311 -0.003461001 -0.180706 -0.9835311 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0.7766153 -0.6299742 0.001148 0.5685024 -0.8217455 0.03923702 0.7256378 -0.6880668 0.003713999 0.5867261 -0.5924821 0.5520121 0.7256378 -0.6880668 0.003713999 0.027777 -0.9984771 0.04766601 0.7256378 -0.6880668 0.003713999 0.5685024 -0.8217455 0.03923702 0.027777 -0.9984771 0.04766601 0.027777 -0.9984771 0.04766601 0.5685024 -0.8217455 0.03923702 0.027777 -0.9984771 0.04766601 0.027777 -0.9984771 0.04766601 0.5685024 -0.8217455 0.03923702 0.466081 -0.415812 0.780941 0.5685024 -0.8217455 0.03923702 0.5435731 -0.8356622 0.07872102 0.466081 -0.415812 0.780941 0.02798601 0.4038361 0.9144033 0.02798601 0.4038361 0.9144033 0.02798601 0.4038361 0.9144033 0.02798601 0.4038361 0.9144033 0.02798601 0.4038361 0.9144033 0.02798601 0.4038361 0.9144033 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.045948 0.995577 -0.081948 -0.036594 -0.342258 -0.9388931 -0.036594 -0.342258 -0.9388931 -0.036594 -0.342258 -0.9388931 -0.036594 -0.342258 -0.9388931 -0.036594 -0.342258 -0.9388931 -0.036594 -0.342258 -0.9388931 0.5435731 -0.8356622 0.07872102 0.4147191 0.5783162 0.7025372 0.466081 -0.415812 0.780941 0.4147191 0.5783162 0.7025372 0.4147191 0.5783162 0.7025372 0.466081 -0.415812 0.780941 0.2522789 -0.6894367 -0.6789938 0.2522789 -0.6894367 -0.6789938 0.5685024 -0.8217455 0.03923702 0.5435731 -0.8356622 0.07872102 0.5685024 -0.8217455 0.03923702 0.2522789 -0.6894367 -0.6789938 0.5685024 -0.8217455 0.03923702 0.7766153 -0.6299742 0.001148 0.4225341 0.6331572 0.6485192 0.7766153 -0.6299742 0.001148 0.4225341 0.6331572 0.6485192 0.4225341 0.6331572 0.6485192 0.7766153 -0.6299742 0.001148 0.7256378 -0.6880668 0.003713999 0.5210481 -0.4459971 -0.7277332 0.5210481 -0.4459971 -0.7277332 0.5210481 -0.4459971 -0.7277332 0.7256378 -0.6880668 0.003713999 0.7256378 -0.6880668 0.003713999 0.5867261 -0.5924821 0.5520121 0.7278556 0.2071059 0.6537076 0.5867261 -0.5924821 0.5520121 0.7278556 0.2071059 0.6537076 0.7278556 0.2071059 0.6537076</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape34-normals-array" count="108" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="polySurfaceShape34-polySurfaceShape34-map1" name="polySurfaceShape34-polySurfaceShape34-map1">
+          <float_array id="polySurfaceShape34-polySurfaceShape34-map1-array" count="112">-0.985838 0.998525 -0.985838 0.72828 -0.171861 0.728279 -0.171861 0.998525 -0.038554 0.74484 -0.038554 0.908721 -0.19304 0.908721 -0.19304 0.74484 -0.985838 0.998525 -0.985838 0.766843 -0.171861 0.766842 -0.171861 0.998525 -0.027452 0.745812 -0.027452 0.909693 -0.181937 0.909693 -0.181937 0.745812 -0.021534 0.187355 -0.192675 0.187355 -0.192675 0.064236 -0.021535 0.064236 -0.985838 0.606542 -0.171862 0.606541 -0.038554 0.99757 -0.19304 0.99757 -0.985838 0.642696 -0.171861 0.642695 -0.027452 0.998542 -0.181937 0.998542 -0.334807 0.691162 -0.48697 0.630065 -0.654959 0.692134 -0.847193 0.6008 -0.291605 0.545554 -0.428679 0.64082 -0.579906 0.586486 -0.782872 0.639353 -0.889113 0.009898 -0.421272 0.019119 -0.421272 0.042138 -0.889113 0.047743 -0.602293 0.011438 -0.036408 0.005267 -0.036408 0.044801 -0.602293 0.04657 -0.471792 0.015945 -0.091089 0.0145 -0.105491 0.041788 -0.483735 0.043891 -0.464036 0.048365 -0.875789 0.049647 -0.875789 0.012116 -0.464036 0.004444 -0.440202 0.041832 -0.865631 0.047975 -0.854665 0.012429 -0.444855 0.010975</float_array>
+          <technique_common>
+            <accessor source="#polySurfaceShape34-polySurfaceShape34-map1-array" count="56" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="polySurfaceShape34-vertices" name="polySurfaceShape34-vertices">
+          <input semantic="POSITION" source="#polySurfaceShape34-positions"/>
+        </vertices>
+        <triangles material="wood_lambert4SG" count="36">
+          <input semantic="VERTEX" source="#polySurfaceShape34-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#polySurfaceShape34-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#polySurfaceShape34-polySurfaceShape34-map1" offset="2" set="0"/>
+          <p>0 0 0 4 1 1 1 2 3 4 3 1 5 4 2 1 5 3 1 6 4 5 7 5 2 8 7 5 9 5 6 10 6 2 11 7 2 12 8 6 13 9 3 14 11 6 15 9 7 16 10 3 17 11 3 18 12 7 19 13 0 20 15 7 21 13 4 22 14 0 23 15 3 24 16 0 25 17 2 26 19 0 27 17 1 28 18 2 29 19 18 30 34 17 31 33 19 32 35 8 33 20 19 34 35 4 35 1 19 36 35 17 37 33 4 38 1 4 39 1 17 40 33 5 41 2 5 42 2 17 43 33 9 44 21 17 45 33 16 46 32 9 47 21 5 48 5 9 49 22 6 50 6 6 51 6 9 52 22 10 53 23 11 54 25 7 55 10 12 56 28 15 57 31 14 58 30 10 59 24 13 60 29 12 61 28 14 62 30 10 63 24 14 64 30 6 65 9 6 66 9 14 67 30 7 68 10 7 69 10 14 70 30 12 71 28 11 72 26 8 73 27 7 74 13 4 75 14 7 76 13 8 77 27 16 78 39 15 79 36 9 80 38 15 81 36 10 82 37 9 83 38 14 84 42 15 85 43 17 86 41 16 87 40 17 88 41 15 89 43 17 90 44 18 91 45 14 92 47 18 93 45 13 94 46 14 95 47 18 96 50 19 97 51 13 98 49 12 99 48 13 100 49 19 101 51 19 102 52 8 103 53 12 104 55 8 105 53 11 106 54 12 107 55</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>polySurfaceShape34</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="mansionbase02_special_slot_machine">
+      <node id="polySurface34" name="polySurface34" type="NODE">
+        <translate sid="translate">0 0 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#polySurfaceShape34">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="wood_lambert4SG" target="#wood_lambert4">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>polySurface34</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

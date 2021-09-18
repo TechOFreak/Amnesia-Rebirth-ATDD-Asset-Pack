@@ -1,0 +1,26 @@
+﻿<Entity>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="table_nice_wood01.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="Table01" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="5" WorldPos="0.000000 0.000000 0.000000" TriCount="620" />
+        </Mesh>
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="BodyShape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="1.984122 0.077826 0.988099" RelativeTranslation="0.000000 0.462057 -0.000000" Rotation="0.000000 0.000000 0.000000" Scale="1.984122 0.077826 0.988099" ShapeType="Box" ShapeTypeID="0" Tag="" Type="2" WorldPos="-0.007852 0.964051 0.001206" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="BodyShape_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.078801 0.895585 0.078801" RelativeTranslation="0.756790 -0.053178 0.301802" Rotation="0.000000 0.000000 0.000000" Scale="0.078801 0.895585 0.078801" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="0.748938 0.448816 0.303008" />
+            <BodyShape Active="true" GroupID="0" ID="3" Name="BodyShape_2_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.078801 0.895585 0.078801" RelativeTranslation="0.756790 -0.053178 -0.299142" Rotation="0.000000 0.000000 0.000000" Scale="0.078801 0.895585 0.078801" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="0.748938 0.448816 -0.297936" />
+            <BodyShape Active="true" GroupID="0" ID="4" Name="BodyShape_2_clone_1_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.078801 0.895585 0.078801" RelativeTranslation="-0.746042 -0.053178 -0.299142" Rotation="0.000000 0.000000 0.000000" Scale="0.078801 0.895585 0.078801" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="-0.753894 0.448816 -0.297936" />
+            <BodyShape Active="true" GroupID="0" ID="5" Name="BodyShape_2_clone_2" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.078801 0.895585 0.078801" RelativeTranslation="-0.746042 -0.053178 0.301802" Rotation="0.000000 0.000000 0.000000" Scale="0.078801 0.895585 0.078801" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="2" WorldPos="-0.753894 0.448816 0.303008" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="false" GroupID="0" ID="6" LinearDamping="0.000000" Mass="0.000000" Material="Wood Robust" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="3" Volatile="false" WorldPos="-0.007852 0.501994 0.001206">
+                <Shape ID="1" />
+                <Shape ID="5" />
+                <Shape ID="3" />
+                <Shape ID="2" />
+                <Shape ID="4" />
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+    <UserDefinedVariables EntityType="StaticProp" />
+</Entity>
