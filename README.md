@@ -50,9 +50,9 @@ Future Changes: Similar to the enemies I would like to recreate the AI from scra
 
 Any of the inventory items from TDD located under assets/entities/item can be added to the Amnesia: Rebirth game. The items could be added just like any other item in rebirth. Some inventory items had special uses that may require you to create your own script file (Ex. Tinderbox). It is also recommended that you specify the file extension when specifying the inventory icon in the inventory.cfg (Ex. "lantern.tga"). If you do not know how to add custom items check out episode 24, 25 and 49 of TechOFreak's Amenesia Rebirth tutorial series.
 
-Episode 24 Item Titles & Descriptions: https://youtu.be/3dkX7JsBWOM
-Episode 25 Keys! Unlocking Doors!: https://youtu.be/pBXM3Xu5IVA
-Episode 49 Custom Inventory Items: https://youtu.be/O3Yd_T7WBr0
+* Episode 24 Item Titles & Descriptions: https://youtu.be/3dkX7JsBWOM
+* Episode 25 Keys! Unlocking Doors!: https://youtu.be/pBXM3Xu5IVA
+* Episode 49 Custom Inventory Items: https://youtu.be/O3Yd_T7WBr0
 
 # Report Bugs
 
@@ -80,22 +80,22 @@ As of version 0.1.0a these are the known bugs:
 
 Join our community in the discord link below. Also below are links to other things you might find useful. If you would like to contribute to this project please join the discord and ask to join the team.
 
-TechOFreak's Amnesia Hub Discord: https://discord.gg/deuVwxFV44
-TechOFreak's Amnesia Rebirth Tutorial Series: https://www.youtube.com/playlist?list=PL4KkjlmOwLwwMVqedCNpi6caUxhgyf8Qr
-Github Repository Issue Report: https://github.com/TechOFreak/Amnesia-Rebirth-ATDD-Asset-Pack/issues
-Amnesia Rebirth ATDD Asset Pack Trailer: []
+* TechOFreak's Amnesia Hub Discord: https://discord.gg/deuVwxFV44
+* TechOFreak's Amnesia Rebirth Tutorial Series: https://www.youtube.com/playlist?list=PL4KkjlmOwLwwMVqedCNpi6caUxhgyf8Qr
+* Github Repository Issue Report: https://github.com/TechOFreak/Amnesia-Rebirth-ATDD-Asset-Pack/issues
+* Amnesia Rebirth ATDD Asset Pack Trailer: []
 
 # Featured Custom Stories
 
 Below are some of the custom stories that feature these assets:
 
-Amnesia: Reminiscence - Patrisiogames - https://www.moddb.com/mods/amnesia-reminiscence
+* Amnesia: Reminiscence - Patrisiogames - https://www.moddb.com/mods/amnesia-reminiscence
 
 # Credits
 
 TechOFreak & Patrisiogames are the primary workers on this project, all if this work is done soley as a contribution to the Amnesia Rebirth community and never for financial reasons. Thanks to florian. the creator the Amnesia: Remastered assets, these versions of the assets were used for their high quality. Thanks to frictional games for the amazing Amnesia franchise, also for the SOMA TDD Asset pack which contained some of the assets already ported over to the HPL3 engine.
 
-TechOFreak - Asset Porter & Tester
-Patrisiogames - Asset Porter & Tester
-florian. - Amnesia: Remastered - https://www.moddb.com/mods/amnesia-the-dark-descent-remastered
-Frictional Games - Amnesia: Rebirth & Amnesia The Dark Decent & SOMA TDD Asset Pack
+* TechOFreak - Asset Porter & Tester
+* Patrisiogames - Asset Porter & Tester
+* florian. - Amnesia: Remastered - https://www.moddb.com/mods/amnesia-the-dark-descent-remastered
+* Frictional Games - Amnesia: Rebirth & Amnesia The Dark Decent & SOMA TDD Asset Pack
