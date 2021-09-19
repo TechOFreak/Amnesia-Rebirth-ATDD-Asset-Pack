@@ -86,6 +86,7 @@ Join our community in the discord link below. Also below are links to other thin
 * TechOFreak's Amnesia Rebirth Tutorial Series: https://www.youtube.com/playlist?list=PL4KkjlmOwLwwMVqedCNpi6caUxhgyf8Qr
 * Github Repository Issue Report: https://github.com/TechOFreak/Amnesia-Rebirth-ATDD-Asset-Pack/issues
 * Amnesia Rebirth ATDD Asset Pack Trailer: https://youtu.be/2b56oXE6iAA
+* Steam Workshop Link: https://steamcommunity.com/sharedfiles/filedetails/?id=2606335924
 
 # Featured Custom Stories
 
