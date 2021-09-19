@@ -5,7 +5,7 @@ Assets from the Amnesia The Dark Descent ported over to Amnesia: Rebirth (HPL3).
 
 # Setup
 
-Included is a sample custom story which contains all the Amnesia The Dark Descent assets. A trailer of the sample maps can be found here [].
+Included is a sample custom story which contains all the Amnesia The Dark Descent assets. A trailer of the sample maps can be found here https://youtu.be/2b56oXE6iAA.
 
 1) [Skip if you have an existing custom story] If you do not have an existing project you can use this custom story as a template custom story for your new custom story that will be using these assets. Create a new folder in your Amnesia Rebirth/mods directory and give your custom story a name, then copy all the contents into that folder (assets, config, editor, etc.). Pretty much as if you were installing/creating a custom story.
 
@@ -85,7 +85,7 @@ Join our community in the discord link below. Also below are links to other thin
 * TechOFreak's Amnesia Hub Discord: https://discord.gg/deuVwxFV44
 * TechOFreak's Amnesia Rebirth Tutorial Series: https://www.youtube.com/playlist?list=PL4KkjlmOwLwwMVqedCNpi6caUxhgyf8Qr
 * Github Repository Issue Report: https://github.com/TechOFreak/Amnesia-Rebirth-ATDD-Asset-Pack/issues
-* Amnesia Rebirth ATDD Asset Pack Trailer: []
+* Amnesia Rebirth ATDD Asset Pack Trailer: https://youtu.be/2b56oXE6iAA
 
 # Featured Custom Stories
 
