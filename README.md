@@ -1,7 +1,7 @@
 # Amnesia-Rebirth-ATDD-Asset-Pack
 Assets from the Amnesia The Dark Descent ported over to Amnesia: Rebirth (HPL3). Assets come from a combination of sources, the TDD base game, SOMA TDD asset pack and Amnesia: Remasted mod. These core assets were then tested, ported and modified as required to work with Amnesia Rebirth's HPL3 game engine.
 
-Anyone can use these assets in their custom story as long as you credit us.
+<b>Anyone can use these assets in their custom story as long as you credit us.</b>
 
 # Setup
 
