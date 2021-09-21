@@ -17,9 +17,9 @@ Included is a sample custom story which contains all the Amnesia The Dark Descen
 
 5) Open your HPL3 level editor and check to see if you can see the entities and static objects.
 
-6) In the future if you start a new mod with these assets be sure to update the WIPMod with the new directory.
+6) If you start a new mod with these assets be sure to update the WIPMod with the new directory.
 
-7) In the future, when new updates are created for this asset pack you should take note of any changes before updating the assets on an existing custom story.
+7) In the future, when new versions for this asset pack are available, you should read the change log before updating the assets on an existing custom story. Some assets you are using may be affected by the new versions.
 
 # Usages
 
