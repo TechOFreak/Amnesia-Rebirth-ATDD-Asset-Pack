@@ -9,7 +9,7 @@ Included is a sample custom story which contains all the Amnesia The Dark Descen
 
 1) [Skip if you have an existing custom story] If you do not have an existing project you can use this custom story as a template custom story for your new custom story that will be using these assets. Create a new folder in your Amnesia Rebirth/mods directory and give your custom story a name, then copy all the contents into that folder (assets, config, editor, etc.). Pretty much as if you were installing/creating a custom story.
 
-2) If you have an existing custom story you should only copy over the /assets folder and the /script folder into your custom story folder. As a note, you may already have the files /script/custom/modules/ItemHandler.hps or /script/custom/player/ItemCallbacks.hps, as of v0.1.0a the changes to these script files are soley for the ATDD Lantern assuming that you have it added to your inventory.cfg file as item type ATDDLantern. If you already have your own version of these script files I would recommend copying over your changes to this script. If you do not want to mess with your script file then I would recommend replacing the Amnesia: Rebirth lantern with the one from TDD, this is the way I did it in the sample custom story and it will not require the use of those 2 script files.
+2) If you have an existing custom story you should only copy over the /assets folder, the /script folder and the /editor folder into your custom story folder. As a note, you may already have the files /script/custom/modules/ItemHandler.hps or /script/custom/player/ItemCallbacks.hps, as of v0.1.0a the changes to these script files are soley for the ATDD Lantern assuming that you have it added to your inventory.cfg file as item type ATDDLantern. If you already have your own version of these script files I would recommend copying over your changes to this script. If you do not want to mess with your script file then I would recommend replacing the Amnesia: Rebirth lantern with the one from TDD, this is the way I did it in the sample custom story and it will not require the use of those 2 script files.
 
 3) If you plan to keep the main menu from the sample custom story then you should open config/main_init.cfg and change the line Folder="ATDD_Asset_Pack/maps/" and replace "ATDD_Asset_Pack" with the name of your custom story folder.
 
@@ -18,6 +18,8 @@ Included is a sample custom story which contains all the Amnesia The Dark Descen
 5) Open your HPL3 level editor and check to see if you can see the entities and static objects.
 
 6) In the future if you start a new mod with these assets be sure to update the WIPMod with the new directory.
+
+7) In the future, when new updates are created for this asset pack you should take note of any changes before updating the assets on an existing custom story.
 
 # Usages
 
