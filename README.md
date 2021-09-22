@@ -13,7 +13,11 @@ Included is a sample custom story which contains all the Amnesia The Dark Descen
 
 3) If you plan to keep the main menu from the sample custom story then you should open config/main_init.cfg and change the line Folder="ATDD_Asset_Pack/maps/" and replace "ATDD_Asset_Pack" with the name of your custom story folder.
 
-4) Navigate to your Documents folder and locate the HPL3 folder (should be created automatically if you've started the level editor for the first time). Create a new file with the name WIPMod it should be a .cfg file. Inside of the file you should have the following <WIPmod Path="*FULL_PATH_TO_REBIRTH_FOLDER*\Amnesia Rebirth\mods\*YOUR_MOD_NAME*\entry.hpc" />
+4) Navigate to your Documents folder and locate the HPL3 folder (should be created automatically if you've started the level editor for the first time). Create a new file with the name WIPMod it should be a .cfg file. Inside of the file you should have the following 
+
+```
+<WIPmod Path="*FULL_PATH_TO_REBIRTH_FOLDER*\Amnesia Rebirth\mods\*YOUR_MOD_NAME*\entry.hpc" />
+```
 
 5) Open your HPL3 level editor and check to see if you can see the entities and static objects.
 
